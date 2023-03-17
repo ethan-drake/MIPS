@@ -16,7 +16,7 @@ get_uart_data:
 main_factorial:
 	#addi a2,zero,5 #loading factorial
 	jal ra,factorial #calling procedure
-	jal zero,exit # jump to exit label
+	jal zero,send_uart_data # jump to uart data send
 
 factorial:
 	slti t0, a2, 1, #if n<1
@@ -34,4 +34,22 @@ loop:
 	addi sp, sp, 8 #increase stack pointer
 	mul a0, a2, a0 # n*factorial(n-1)
 	jalr zero,ra,0 #return to caller
+	
+	
+send_uart_data:
+	addi t2, zero, 0x1 #bit para cargar a registros de señales
+	addi s0, zero, 0x4 #contador i para el loop
+send_loop:
+	sw a0, 0(a3) #cargar el factorial en la direccion de memoria de dato UART
+	sw t2, 4(a3) #cargar el bit 1 a la señal de enviar tx de uart
+wait_to_send:
+	lw t1, 8(a3) #obtener el valor de la bandera que termino de enviar la transmision
+	beq t1, zero, wait_to_send #checar si es un valor distinto de cero, sino seguir esperando que termine de enviarse
+	
+	sw zero, 4(a3) #cargar el bit 0 a la señal de enviar tx de uart
+	srli a0, a0, 0x8 #shift right register factorial number to get next 8 bits to send
+	addi s0, s0, -0x1 #decrease counter
+	bne s0, zero, send_loop #check if al bytes have been sent
+	
+	jal zero,get_uart_data # jump to wait next factorial number
 exit:
