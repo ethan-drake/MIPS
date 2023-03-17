@@ -5,7 +5,16 @@
 #0x10010030 dato a recibir de uart
 #0x10010034 señal que la uart ya recibio un dato
 main:
-	addi a2,zero,5 #loading factorial
+	auipc a3,    0x0000fc10 #cargar valor base de 10010024
+	addi a3, a3, 0x24
+	
+get_uart_data:
+	lw t1, 0x10(a3) #obtener la señal de 0x10010034 para ver si ya recibimos un dato
+	beq t1, zero, get_uart_data #checar si es un valor distinto de cero, sino seguir esperando
+	lw a2, 0xC(a3) #loading number from address
+	
+main_factorial:
+	#addi a2,zero,5 #loading factorial
 	jal ra,factorial #calling procedure
 	jal zero,exit # jump to exit label
 
