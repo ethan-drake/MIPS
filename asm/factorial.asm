@@ -1,6 +1,11 @@
 .text
+#0x10010024 dato a transmitir
+#0x10010028 señal start tx
+#0x1001002C señal que la uart ya termino de transmitir
+#0x10010030 dato a recibir de uart
+#0x10010034 señal que la uart ya recibio un dato
 main:
-	addi a2,zero,5 #loading constant
+	addi a2,zero,5 #loading factorial
 	jal ra,factorial #calling procedure
 	jal zero,exit # jump to exit label
 
