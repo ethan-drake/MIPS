@@ -1,28 +1,23 @@
-.text  # recursive implementation of factorial
-.globl __start
-fact:       # arg: n in a0, returns n! in a1
-    addi  sp, sp, -8    # reserve our stack area
-    sw ra, 0(sp)    # save the return address
-    li t0, 2
-    blt a0, t0, ret_one # 0! and 1! == 1
-    sw a0, 4(sp)    # save our n
-    addi a0, a0, -1
-    jal fact        # call fact (n-1)
-                    # a1 <- fact(n-1)
-    lw t0, 4(sp)    # t0 <- n
-    mul a1, t0, a1  # a1 <- n * fact(n-1)
-    j done
-ret_one:
-    li a1, 1
-done:
-    lw ra, 0(sp)    # restore return address from stack
-    addi sp, sp, 8  # free our stack frame
-    jr ra           # and return
+.text
+main:
+	addi a2,zero,5 #loading constant
+	jal ra,factorial #calling procedure
+	jal zero,exit # jump to exit label
 
-__start:
-    li a0, 5        # compute 5!
-    jal fact
-    li a0, 1        # print it
-    ecall
-    li a0, 17
-    ecall       # and exit
+factorial:
+	slti t0, a2, 1, #if n<1
+	beq t0, zero, loop #branch to loop
+	addi a0, zero, 1 #loading 1
+	jalr zero,ra,0 #return to the caler
+loop:
+	addi sp, sp, -8 #decreasing stack pointer
+	sw ra, 4(sp) #storing n
+	sw a2, 0(sp) #storing return addres
+	addi a2, a2, -1 #Decreasing n
+	jal ra,factorial #recursive function
+	lw a2, 0(sp) #load value from stack
+	lw ra, 4(sp) # load ra from stack
+	addi sp, sp, 8 #increase stack pointer
+	mul a0, a2, a0 # n*factorial(n-1)
+	jalr zero,ra,0 #return to caller
+exit:
