@@ -1,0 +1,4 @@
+Info (10281): Verilog HDL Declaration information at control_unit.v(20): object "MemRead" differs only in case from object "MEMREAD" in the same scope File: C:/Modulos_quartus/risk_v_multicycle/src/control_unit.v Line: 20
+Info (10281): Verilog HDL Declaration information at control_unit.v(22): object "Branch" differs only in case from object "BRANCH" in the same scope File: C:/Modulos_quartus/risk_v_multicycle/src/control_unit.v Line: 22
+Info (10281): Verilog HDL Declaration information at control_unit.v(18): object "MemWrite" differs only in case from object "MEMWRITE" in the same scope File: C:/Modulos_quartus/risk_v_multicycle/src/control_unit.v Line: 18
+Info (10281): Verilog HDL Declaration information at control_unit.v(23): object "Branch_NE" differs only in case from object "BRANCH_NE" in the same scope File: C:/Modulos_quartus/risk_v_multicycle/src/control_unit.v Line: 23
