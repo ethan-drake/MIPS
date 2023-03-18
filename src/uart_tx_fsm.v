@@ -20,18 +20,21 @@ module uart_tx_fsm(
     output reg o_load_serializer,
     output reg o_clear_bit_counter,
 	 output reg [2:0] current_state,
-	 output reg reset_delayer
+	 output reg reset_delayer,
+	 output reg enable_finish_ff,
+	 output reg clear_finish_ff
 );
 
 
 localparam [2:0]
-IDLE = 3'h0,
-REGISTER_DATA = 3'h1,
-LOAD_SERIALIZER = 3'h2,
+IDLE               = 3'h0,
+REGISTER_DATA      = 3'h1,
+LOAD_SERIALIZER    = 3'h2,
 START_TRANSMISSION = 3'h3,
-TRANSMIT_DATA = 3'h4,
-STOP_TRANSMISSION = 3'h5,
-DELAY_TRANSMISSION = 3'h6;
+TRANSMIT_DATA      = 3'h4,
+STOP_TRANSMISSION  = 3'h5,
+DELAY_TRANSMISSION = 3'h6,
+CLEAR_FLAGS        = 3'h7;
 
 reg[2:0] next_state/*synthesis keep*/;
 
@@ -89,9 +92,13 @@ always @(*) begin
 		  begin
 					if(fin_delay_w)
 					begin
-						next_state = IDLE;
+						next_state = CLEAR_FLAGS;
 					end
 		  end
+		  CLEAR_FLAGS:
+        begin
+            next_state = IDLE;
+        end
         default:
         begin
             next_state = IDLE;
@@ -111,6 +118,8 @@ always @(current_state)begin
             o_load_serializer <= 1'b0;
             o_clear_bit_counter <= 1'b1;
 				reset_delayer <= 1'b0;
+				enable_finish_ff <= 1'b0;
+				clear_finish_ff <= 1'b0;
         end
         REGISTER_DATA:
         begin
@@ -121,6 +130,8 @@ always @(current_state)begin
             o_load_serializer <= 1'b0;
             o_clear_bit_counter <= 1'b0;
 				reset_delayer <= 1'b0;
+				enable_finish_ff <= 1'b0;
+				clear_finish_ff <= 1'b1;
         end
         LOAD_SERIALIZER:
         begin
@@ -131,6 +142,8 @@ always @(current_state)begin
             o_load_serializer <= 1'b1;
             o_clear_bit_counter <= 1'b0;
 				reset_delayer <= 1'b0;
+				enable_finish_ff <= 1'b0;
+				clear_finish_ff <= 1'b0;
         end
         START_TRANSMISSION:
         begin
@@ -141,6 +154,8 @@ always @(current_state)begin
             o_load_serializer <= 1'b0;
             o_clear_bit_counter <= 1'b0;
 				reset_delayer <= 1'b0;
+				enable_finish_ff <= 1'b0;
+				clear_finish_ff <= 1'b0;
         end
         TRANSMIT_DATA:
         begin
@@ -151,6 +166,8 @@ always @(current_state)begin
             o_load_serializer <= 1'b0;
             o_clear_bit_counter <= 1'b0;
 				reset_delayer <= 1'b0;
+				enable_finish_ff <= 1'b0;
+				clear_finish_ff <= 1'b0;
         end
         STOP_TRANSMISSION:
         begin
@@ -161,6 +178,8 @@ always @(current_state)begin
             o_load_serializer <= 1'b0;
             o_clear_bit_counter <= 1'b0;
 				reset_delayer <= 1'b1;
+				enable_finish_ff <= 1'b0;
+				clear_finish_ff <= 1'b0;
         end
 		  DELAY_TRANSMISSION:
         begin
@@ -171,6 +190,20 @@ always @(current_state)begin
             o_load_serializer <= 1'b0;
             o_clear_bit_counter <= 1'b0;
 				reset_delayer <= 1'b0;
+				enable_finish_ff <= 1'b0;
+				clear_finish_ff <= 1'b0;
+        end
+		  CLEAR_FLAGS:
+        begin
+            o_tx_mux <= 1'b0;
+            o_tx_control <= 1'b1;
+            o_tx_reg_enable <= 1'b0;
+            o_bit_counter_enable <= 1'b0;
+            o_load_serializer <= 1'b0;
+            o_clear_bit_counter <= 1'b0;
+				reset_delayer <= 1'b0;
+				enable_finish_ff <= 1'b1;
+				clear_finish_ff <= 1'b0;
         end
         default:
         begin
@@ -181,6 +214,8 @@ always @(current_state)begin
             o_load_serializer <= 1'b0;
             o_clear_bit_counter <= 1'b1;
 				reset_delayer <= 1'b0;
+				enable_finish_ff <= 1'b0;
+				clear_finish_ff <= 1'b0;
         end
     endcase
 end

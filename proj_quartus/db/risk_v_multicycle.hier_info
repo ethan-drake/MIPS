@@ -2,7 +2,7 @@
 clk => clk.IN11
 rst_n => rst_n.IN8
 rx => rx.IN1
-tx << uart_IP:uart_IP_module.tx
+tx <= uart_IP:uart_IP_module.tx
 
 
 |risk_v_multicycle|control_unit:cu
@@ -1400,8 +1400,12 @@ address[2] => rom.RADDR2
 address[3] => rom.waddr_a[3].DATAIN
 address[3] => rom.WADDR3
 address[3] => rom.RADDR3
-address[4] => ~NO_FANOUT~
-address[5] => ~NO_FANOUT~
+address[4] => rom.waddr_a[4].DATAIN
+address[4] => rom.WADDR4
+address[4] => rom.RADDR4
+address[5] => rom.waddr_a[5].DATAIN
+address[5] => rom.WADDR5
+address[5] => rom.RADDR5
 address[6] => ~NO_FANOUT~
 address[7] => ~NO_FANOUT~
 address[8] => ~NO_FANOUT~
@@ -1432,6 +1436,8 @@ we => rom.we_a.DATAIN
 we => rom.WE
 re => ~NO_FANOUT~
 clk => rom.we_a.CLK
+clk => rom.waddr_a[5].CLK
+clk => rom.waddr_a[4].CLK
 clk => rom.waddr_a[3].CLK
 clk => rom.waddr_a[2].CLK
 clk => rom.waddr_a[1].CLK
@@ -1769,7 +1775,7 @@ we => uart_val.OUTPUTSELECT
 we => uart_val.OUTPUTSELECT
 we => uart_val.OUTPUTSELECT
 we => uart_val.OUTPUTSELECT
-we => uart_val[6][0].ENA
+we => uart_val.OUTPUTSELECT
 we => uart_val[0][31].ENA
 we => uart_val[0][30].ENA
 we => uart_val[0][29].ENA
@@ -1950,11 +1956,12 @@ Rx_Data[4] <= UART_Rx:rx_uart.Rx_Data_w
 Rx_Data[5] <= UART_Rx:rx_uart.Rx_Data_w
 Rx_Data[6] <= UART_Rx:rx_uart.Rx_Data_w
 Rx_Data[7] <= UART_Rx:rx_uart.Rx_Data_w
+tx_finish <= uart_tx:tx_uart.tx_finish
 
 
 |risk_v_multicycle|uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|UART_Rx:rx_uart
 clk => clk.IN7
-n_rst => n_rst.IN4
+n_rst => n_rst.IN5
 rx => rx.IN2
 rx_flag_clr => rx_flag_clr.IN1
 parity_error <= parity_error.DB_MAX_OUTPUT_PORT_TYPE
@@ -1966,7 +1973,7 @@ Rx_Data_w[4] <= ffd_param:rx_Data_Reg_i.q
 Rx_Data_w[5] <= ffd_param:rx_Data_Reg_i.q
 Rx_Data_w[6] <= ffd_param:rx_Data_Reg_i.q
 Rx_Data_w[7] <= ffd_param:rx_Data_Reg_i.q
-rx_flag <= ffd_param:ff_rx_flag.q
+rx_flag <= ffd_param_clear:ff_rx_flag.q
 parity <= ffd_param:ff_par.q
 
 
@@ -2061,11 +2068,12 @@ d[0] => q[0]~reg0.DATAIN
 q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|risk_v_multicycle|uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|UART_Rx:rx_uart|ffd_param:ff_rx_flag
+|risk_v_multicycle|uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|UART_Rx:rx_uart|ffd_param_clear:ff_rx_flag
 i_clk => q[0]~reg0.CLK
 i_rst_n => q[0]~reg0.ACLR
-i_en => q[0]~reg0.ENA
-d[0] => q[0]~reg0.DATAIN
+i_en => q.OUTPUTSELECT
+i_clear => q.OUTPUTSELECT
+d[0] => q.DATAB
 q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -2170,8 +2178,8 @@ Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |risk_v_multicycle|uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|uart_tx:tx_uart
-clk => clk.IN6
-rst_n => rst_n.IN5
+clk => clk.IN7
+rst_n => rst_n.IN6
 tx_data[0] => tx_data[0].IN1
 tx_data[1] => tx_data[1].IN1
 tx_data[2] => tx_data[2].IN1
@@ -2182,6 +2190,7 @@ tx_data[6] => tx_data[6].IN1
 tx_data[7] => tx_data[7].IN1
 tx_send => tx_send.IN1
 transmit_data <= multiplexor_param:tx_data_mux.out
+tx_finish <= ffd_param_clear:ff_tx_finish_flag.q
 
 
 |risk_v_multicycle|uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|uart_tx:tx_uart|uart_tx_fsm:tx_fsm
@@ -2208,11 +2217,22 @@ o_tx_control <= o_tx_control.DB_MAX_OUTPUT_PORT_TYPE
 o_tx_reg_enable <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 o_bit_counter_enable <= o_tx_control.DB_MAX_OUTPUT_PORT_TYPE
 o_load_serializer <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-o_clear_bit_counter <= o_clear_bit_counter.DB_MAX_OUTPUT_PORT_TYPE
+o_clear_bit_counter <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 current_state[0] <= current_state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 current_state[1] <= current_state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 current_state[2] <= current_state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 reset_delayer <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+enable_finish_ff <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+clear_finish_ff <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|risk_v_multicycle|uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|uart_tx:tx_uart|ffd_param_clear:ff_tx_finish_flag
+i_clk => q[0]~reg0.CLK
+i_rst_n => q[0]~reg0.ACLR
+i_en => q.OUTPUTSELECT
+i_clear => q.OUTPUTSELECT
+d[0] => q.DATAB
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |risk_v_multicycle|uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|uart_tx:tx_uart|Delayer:delay_5ms

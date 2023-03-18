@@ -11,7 +11,8 @@ module uart_tx #(parameter baud_rate=5210) (
     input[7:0] tx_data,
     input tx_send,
     //outputs
-    output transmit_data
+    output transmit_data,
+	 output tx_finish
 	);
 
 wire baud_rate_overflow;
@@ -29,6 +30,8 @@ wire pre_overflow;
 wire clear_bit_counter;
 wire reset_delayer;
 wire fin_delay_w;
+wire enable_finish_ff;
+wire clear_finish_ff;
 
 //uart tx state machine
 uart_tx_fsm tx_fsm(
@@ -44,8 +47,20 @@ uart_tx_fsm tx_fsm(
     .o_load_serializer(load_serializer),
     .o_clear_bit_counter(clear_bit_counter),
 	 .reset_delayer(reset_delayer),
-	 .fin_delay_w(fin_delay_w)
+	 .fin_delay_w(fin_delay_w),
+	 .enable_finish_ff(enable_finish_ff),
+	 .clear_finish_ff(clear_finish_ff)
 );
+
+//TX-finish 
+ffd_param_clear #(.LENGTH(1) ) ff_tx_finish_flag (
+	.i_rst_n(rst_n), 
+	.d(1'b1),
+	.i_clk(clk),
+	.i_clear(clear_finish_ff),
+	.i_en(enable_finish_ff), 
+	.q(tx_finish)
+);	
 
 //Delayer for UART 5ms because of 50Mhz clock 250_000
 Delayer # (.YY(250_000)) delay_5ms (

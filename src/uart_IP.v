@@ -17,8 +17,16 @@ module uart_IP #(parameter DATA_WIDTH = 32) (
 );
 
 //Module wires
-wire rx_flag_clr, uart_tx_finish, rx_flag;
+wire uart_tx_finish, rx_flag;
 wire [7:0] rx_data;
+
+//Risk-V  --  Memory_Map   --   UART
+//10010024       4                1     Tx data (FPGA)
+//10010028       8                2     TX start sending data
+//1001002c       c                3     TX Finish sending data
+//10010030       10               4     Rx data (FPGA)
+//10010034       14               5     Data processed from UART to Risk V
+//10010038       18               6     Clear RX data
 
 //UART full duplex module
 uart_full_duplex UART_full_duplex(
@@ -29,11 +37,12 @@ uart_full_duplex UART_full_duplex(
     .rx(rx), //Input from Serial console
 	 .Rx_Data(rx_data), //Decoded data
 	 .rx_flag(rx_flag), //Indication that we finish reception
-	 .rx_flag_clr(rx_flag_clr), //To clear state
+	 .rx_flag_clr(uart_val[6][0]), //To clear state
 	 //Tx
 	 .tx(tx), //Output to serial console
 	 .tx_data(uart_val[1][7:0]), //Decoded data
-    .tx_send(uart_val[2][0]) //Indication to send the data
+    .tx_send(uart_val[2][0]), //Indication to send the data
+	 .tx_finish(uart_tx_finish) //Indication that UART finish to transmit data
 );
 
 //Reg to retain uart_val value
@@ -47,17 +56,17 @@ always @(posedge clk, negedge rst_n) begin
 		uart_val[3] <= 32'h0; //Finish sending data - Tx
 		uart_val[4] <= 32'h0; //Rx Data
 		uart_val[5] <= 32'h0; //Data received
-		uart_val[6] <= 32'h0; //Not used
+		uart_val[6] <= 32'h0; //Rx flag clear
 	end else begin
 		if(we) begin
 			uart_val[address] <= wd;
 		end
 		//Assign the finish of sending data
-		uart_val[3] <= {{30{1'b0}},uart_tx_finish};
+		uart_val[3] <= {{31{1'b0}},uart_tx_finish};
 		//Save Rx data from UART
 		uart_val[4] <= {{24{1'b0}},rx_data};
 		//UART Rx received a data
-		uart_val[5] <= {{30{1'b0}},rx_flag};
+		uart_val[5] <= {{31{1'b0}},rx_flag};
 	end
 end
 

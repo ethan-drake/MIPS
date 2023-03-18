@@ -66,7 +66,6 @@ always @(Rx_state)
 						rst_BR = 1'b1;
 						rst_bit_counter = 1'b1;
 						enable_out_reg = 1'b0;
-						
 					end
 				START_S: 	
 					begin
@@ -75,7 +74,6 @@ always @(Rx_state)
 						rst_BR = 1'b0;
 						rst_bit_counter = 1'b1;
 						enable_out_reg = 1'b0;
-						
 					end
 				RX_BITS_S: 	
 					begin

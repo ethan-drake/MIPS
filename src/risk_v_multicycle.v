@@ -92,7 +92,7 @@ master_memory_map #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_map (
 );
 
 //Memory ROM
-instr_data_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(4)) memory_rom (
+instr_data_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.wd(data_memory_2_slave),
 	.address(address_memory_2_slave),
 	.we(we_memory_2_rom),

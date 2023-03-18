@@ -1,0 +1,28 @@
+
+State Machine - |risk_v_multicycle|uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|UART_Rx:rx_uart|FSM_UART_Rx:FSM_Rx|Rx_state
+Name Rx_state.SAVE_RX_DATA_S Rx_state.STOP_S Rx_state.RX_WAIT_S Rx_state.SAMPLE_S Rx_state.RX_BITS_S Rx_state.START_S Rx_state.INI_S 
+Rx_state.INI_S 0 0 0 0 0 0 0 
+Rx_state.START_S 0 0 0 0 0 1 1 
+Rx_state.RX_BITS_S 0 0 0 0 1 0 1 
+Rx_state.SAMPLE_S 0 0 0 1 0 0 1 
+Rx_state.RX_WAIT_S 0 0 1 0 0 0 1 
+Rx_state.STOP_S 0 1 0 0 0 0 1 
+Rx_state.SAVE_RX_DATA_S 1 0 0 0 0 0 1 
+
+State Machine - |risk_v_multicycle|control_unit:cu|FSM_state
+Name FSM_state.BRANCH_NE FSM_state.MEMWRITE FSM_state.EXECUTE_AUIPC FSM_state.EXECUTE_LUI FSM_state.COMPLETION_JALR FSM_state.EXECUTE_I FSM_state.EXECUTE_J FSM_state.BRANCH FSM_state.COMPLETION FSM_state.EXECUTE_R FSM_state.MEMREAD_COMP FSM_state.MEMREAD FSM_state.MEMADR FSM_state.DECODE FSM_state.FETCH 
+FSM_state.FETCH 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+FSM_state.DECODE 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+FSM_state.MEMADR 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+FSM_state.MEMREAD 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+FSM_state.MEMREAD_COMP 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+FSM_state.EXECUTE_R 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+FSM_state.COMPLETION 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+FSM_state.BRANCH 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+FSM_state.EXECUTE_J 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+FSM_state.EXECUTE_I 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+FSM_state.COMPLETION_JALR 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+FSM_state.EXECUTE_LUI 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+FSM_state.EXECUTE_AUIPC 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+FSM_state.MEMWRITE 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+FSM_state.BRANCH_NE 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

@@ -54,10 +54,11 @@ ffd_param #(.LENGTH(1) ) ff_par (
 );	
 
 //RX-flag 
-ffd_param #(.LENGTH(1) ) ff_rx_flag (
-	.i_rst_n(rx_flag_clr), 
+ffd_param_clear #(.LENGTH(1) ) ff_rx_flag (
+	.i_rst_n(n_rst), 
 	.d(1'b1),
 	.i_clk(clk),
+	.i_clear(rx_flag_clr),
 	.i_en(enable_out_reg_w), 
 	.q(rx_flag)
 );		

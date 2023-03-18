@@ -29,8 +29,8 @@ always @(address) begin
 	//ROM
 	if (address >= 32'h400_000 && address < 32'h10_010_020) begin
 		add_val = 2'b01;
-	//GPIO
-	end else if (address >= 32'h10_010_020 && address < 32'h10_010_02c) begin
+	//UART
+	end else if (address >= 32'h10_010_020 && address < 32'h10_010_040) begin
 		add_val = 2'b10;
 	end else begin
 		add_val = 2'b00;
@@ -51,13 +51,13 @@ always @(add_val, we, wd, address) begin
 				map_Data = wd;
 			end
 		2'b10:
-			begin //GPIO
+			begin //UART
 				mult_map = 2'b10;
 				HSel_1 = 1'b0;
 				HSel_2 = 1'b1;
 				WSel_1 = 1'b0;
 				WSel_2 = we;
-				map_Address = address + (~32'h10_010_020 + 1'b1) >> 2'h2; //to gpio
+				map_Address = address + (~32'h10_010_020 + 1'b1) >> 2'h2; //to UART
 				map_Data = wd;
 			end
 		default: //Reserved
