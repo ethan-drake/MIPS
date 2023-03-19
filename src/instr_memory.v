@@ -19,7 +19,7 @@ reg [DATA_WIDTH-1:0] rom[0:(ADDR_WIDTH*ADDR_WIDTH)-1];
 //Initial data with program to execute
 initial begin
 	// program
-	$readmemh("C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/asm/factorial_hexa.txt", rom);
+	$readmemh("../asm/factorial_hexa.txt", rom);
 end
 
 always @(posedge clk)

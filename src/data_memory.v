@@ -16,11 +16,11 @@ module data_memory #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32) (
 // Declare the RAM array
 reg [DATA_WIDTH-1:0] rom[0:(ADDR_WIDTH*ADDR_WIDTH)-1];
 
-//Initial data with program to execute
-//initial begin
-//	//UART program
-//	$readmemb("../assembly_code/Tarea_GPIO.txt", rom);
-//end
+integer i;
+initial begin
+	for(i=0;i<((ADDR_WIDTH*ADDR_WIDTH)-1);i=i+1)
+		rom[i] <= 32'h0;
+end
 
 always @(posedge clk)
 begin

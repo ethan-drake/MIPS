@@ -2,7 +2,11 @@ proj_questasim/work/
 proj_questa/
 proj_questa/work/@_opt1/_data/
 proj_questa/work/@_opt1
+questa/
+questa/work/@_opt1/_data/
+questa/work/@_opt1
 proj_quartus/output_files/
+proj_quartus/db/
 proj_questasim/vsim.wlf
 **/db/
 **/incremental_db/
