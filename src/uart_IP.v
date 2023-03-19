@@ -28,6 +28,9 @@ wire [7:0] rx_data;
 //10010034       14               5     Data processed from UART to Risk V
 //10010038       18               6     Clear RX data
 
+//Reg to retain uart_val value
+reg [31:0] uart_val [0:6];
+
 //UART full duplex module
 uart_full_duplex UART_full_duplex(
 	 //Platform signals
@@ -45,8 +48,7 @@ uart_full_duplex UART_full_duplex(
 	 .tx_finish(uart_tx_finish) //Indication that UART finish to transmit data
 );
 
-//Reg to retain uart_val value
-reg [31:0] uart_val [0:6];
+
 
 always @(posedge clk, negedge rst_n) begin
 	if(!rst_n) begin

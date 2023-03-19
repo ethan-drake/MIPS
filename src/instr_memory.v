@@ -5,7 +5,7 @@
 // Project Name:	  risk_v_multicycle
 // Description:	  Memory that contains instructions to perform
 
-module instr_data_memory #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32) (
+module instr_memory #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32) (
 	//inputs
 	input [(DATA_WIDTH-1):0] wd, address,
 	input we, re, clk,
@@ -17,10 +17,10 @@ module instr_data_memory #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32)
 reg [DATA_WIDTH-1:0] rom[0:(ADDR_WIDTH*ADDR_WIDTH)-1];
 
 //Initial data with program to execute
-//initial begin
-//	//UART program
-//	$readmemb("../assembly_code/Tarea_GPIO.txt", rom);
-//end
+initial begin
+	// program
+	$readmemh("C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/asm/factorial_hexa.txt", rom);
+end
 
 always @(posedge clk)
 begin

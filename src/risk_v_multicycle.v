@@ -23,8 +23,8 @@ wire [31:0] memory_out, instr2perf, wd3_wire, addr_uart, rd_uart;
 wire [31:0] rd1_ff, rd2_ff, SrcA, SrcB, imm_gen, alu_result;
 wire [1:0] alu_SrcB, mem2Reg;
 wire [2:0] ALUOp;
-wire [31:0] data_memory_2_slave, address_memory_2_slave, data_return_rom, data_return_uart;
-wire we_memory_2_rom, re_memory_2_rom, we_memory_2_uart, re_memory_2_uart;
+wire [31:0] data_memory_2_slave, address_memory_2_slave, data_return_rom, data_return_ram, data_return_uart;
+wire we_memory_2_rom, re_memory_2_rom, we_memory_2_ram, re_memory_2_ram, we_memory_2_uart, re_memory_2_uart;
 
 //Branch & PC-write logic
 assign branch_equal = (Branch & Zero);
@@ -85,14 +85,18 @@ master_memory_map #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_map (
 	.HRData1(data_return_rom),
 	.WSel_1(we_memory_2_rom),
 	.HSel_1(re_memory_2_rom),
-	//Memory_map <--> GPIO
-	.HRData2(data_return_uart),
-	.WSel_2(we_memory_2_uart),
-	.HSel_2(re_memory_2_uart)
+	//Memory_map <--> RAM
+	.HRData2(data_return_ram),
+	.WSel_2(we_memory_2_ram),
+	.HSel_2(re_memory_2_ram),
+	//Memory_map <--> UART
+	.HRData3(data_return_uart),
+	.WSel_3(we_memory_2_uart),
+	.HSel_3(re_memory_2_uart)
 );
 
 //Memory ROM
-instr_data_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
+instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.wd(data_memory_2_slave),
 	.address(address_memory_2_slave),
 	.we(we_memory_2_rom),
@@ -100,6 +104,17 @@ instr_data_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.clk(clk),
 	.rd(data_return_rom)
 );
+
+//Memory RAM
+data_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_ram (
+	.wd(data_memory_2_slave),
+	.address(address_memory_2_slave),
+	.we(we_memory_2_ram),
+	.re(re_memory_2_ram),
+	.clk(clk),
+	.rd(data_return_ram)
+);
+
 
 //UART
 uart_IP #(.DATA_WIDTH(32)) uart_IP_module (

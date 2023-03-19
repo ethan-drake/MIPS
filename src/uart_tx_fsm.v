@@ -19,12 +19,12 @@ module uart_tx_fsm(
     output reg o_bit_counter_enable,
     output reg o_load_serializer,
     output reg o_clear_bit_counter,
-	 output reg [2:0] current_state,
 	 output reg reset_delayer,
 	 output reg enable_finish_ff,
 	 output reg clear_finish_ff
 );
 
+reg [2:0] current_state;
 
 localparam [2:0]
 IDLE               = 3'h0,

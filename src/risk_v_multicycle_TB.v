@@ -8,21 +8,25 @@
  `timescale 1ns / 1ps
 module risk_v_multicycle_TB();
 
-reg clk, rst;
+reg clk, rst, rx;
+wire tx;
 reg [7:0] gpio_port_in;
 wire [7:0] gpio_port_out;
 
 risk_v_multicycle procesador (
-	.clk_50Mhz(clk),
+	//Inputs - Platform
+	.clk(clk),
 	.rst_n(rst),
-	.gpio_port_in(gpio_port_in),
-	.gpio_port_out(gpio_port_out)
+	//Input - RX
+	.rx(rx),
+	//Output - Tx
+	.tx(tx)
 );
 
 initial begin
 	clk = 0;
 	rst = 1;
-	gpio_port_in = 3;
+	rx = 0;
 	#1 rst = 0;
 	#1 rst = 1;
 end
