@@ -18,7 +18,7 @@ reg [DATA_WIDTH-1:0] ram[0:(ADDR_WIDTH*ADDR_WIDTH)-1];
 
 integer i;
 initial begin
-	for(i=0;i<((ADDR_WIDTH*ADDR_WIDTH)-1);i=i+1)
+	for(i=0;i<((ADDR_WIDTH*ADDR_WIDTH));i=i+1)
 		ram[i] <= 32'h0;
 end
 

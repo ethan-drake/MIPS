@@ -28,31 +28,55 @@ n@_opt
 OL;O;2021.2;73
 R1
 vALU
-Z3 !s110 1679257105
+Z3 !s110 1679265320
 !i10b 1
-!s100 RaFz`dWAR5lHmVn]YXMce0
+!s100 =5X0O<AX>=YeVZ_kZ9Yk63
 Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IPi=B[]g6cDnnm:Yh1LU7h2
+IbZ4T6I=RgmgmP>JLK[5U_3
 Z5 VDg1SIo80bB@j0V0VzS_@n1
 Z6 dC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/questa
-w1679017856
+w1678333435
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ALU.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ALU.v
-!i122 410
-L0 8 92
+!i122 842
+L0 8 81
 Z7 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z8 !s108 1679257105.000000
+Z8 !s108 1679265320.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ALU.v|
 !i113 1
 Z9 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 n@a@l@u
-vBit_Rate_Pulse
+vALU_control
 R3
+!i10b 1
+!s100 W^433zc]zU0V1<6z2cEd>1
+R4
+I@k22;aLM^HWfOMFi7N4Y41
+R5
+R6
+w1678249810
+8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ALU_control.v
+FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ALU_control.v
+!i122 843
+L0 8 96
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ALU_control.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ALU_control.v|
+!i113 1
+R9
+R2
+n@a@l@u_control
+vBit_Rate_Pulse
+Z10 !s110 1679265321
 !i10b 1
 !s100 QK^Sh53zRgQHYZli]CRn[2
 R4
@@ -62,7 +86,7 @@ R6
 w1666406162
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Bit_Rate_Pulse.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Bit_Rate_Pulse.v
-!i122 411
+!i122 844
 L0 7 30
 R7
 r1
@@ -76,23 +100,23 @@ R9
 R2
 n@bit_@rate_@pulse
 vcontrol_unit
-Z10 !s110 1679257106
+R10
 !i10b 1
-!s100 Zo[kO^O?MIWNAneIbo0Ab1
+!s100 P<F6lg2`J?DHd9676BNhB0
 R4
-INTSYfAPIUANl`[i6U6Mom1
+IID:zICf5be:XDGXzb?J3k2
 R5
 R6
-w1679017750
+w1678416814
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/control_unit.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/control_unit.v
-!i122 412
-L0 8 412
+!i122 845
+L0 6 408
 R7
 r1
 !s85 0
 31
-R8
+Z11 !s108 1679265321.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/control_unit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/control_unit.v|
 !i113 1
@@ -109,13 +133,13 @@ R6
 w1666409440
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Counter_02Limit_ovf.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Counter_02Limit_ovf.v
-!i122 413
+!i122 846
 L0 6 28
 R7
 r1
 !s85 0
 31
-Z11 !s108 1679257106.000000
+R11
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Counter_02Limit_ovf.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Counter_02Limit_ovf.v|
 !i113 1
@@ -123,7 +147,7 @@ R9
 R2
 n@counter_02@limit_ovf
 vCounter_Param
-R10
+Z12 !s110 1679265322
 !i10b 1
 !s100 jA2EDKg_Ba6H0C:[KQT@J0
 R4
@@ -133,13 +157,13 @@ R6
 w1596572838
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Counter_Param.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Counter_Param.v
-!i122 414
+!i122 847
 L0 6 19
 R7
 r1
 !s85 0
 31
-R11
+Z13 !s108 1679265322.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Counter_Param.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Counter_Param.v|
 !i113 1
@@ -147,30 +171,30 @@ R9
 R2
 n@counter_@param
 vdata_memory
-Z12 !s110 1679257112
+R12
 !i10b 1
-!s100 3ao:3mSUzBaoz9D@j;Who1
+!s100 2>UZhI_he]L>W06?GH0?^0
 R4
-IIQFeQO1]@kL[`T:FQdL5K3
+I4Dm3=Z?0ebHDNLee7<3_W0
 R5
 R6
-w1679255778
+w1679263755
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/data_memory.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/data_memory.v
-!i122 434
-Z13 L0 8 28
+!i122 848
+Z14 L0 8 28
 R7
 r1
 !s85 0
 31
-Z14 !s108 1679257112.000000
+R13
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/data_memory.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/data_memory.v|
 !i113 1
 R9
 R2
 vDelayer
-Z15 !s110 1679257107
+Z15 !s110 1679265323
 !i10b 1
 !s100 A1?M];kL9f4W6[f^z5IA23
 R4
@@ -180,13 +204,13 @@ R6
 w1679037968
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Delayer.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Delayer.v
-!i122 415
+!i122 849
 L0 6 29
 R7
 r1
 !s85 0
 31
-R11
+R13
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Delayer.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Delayer.v|
 !i113 1
@@ -201,16 +225,16 @@ R4
 ILjQUJ1Anko;RjjzHnJ1cn3
 R5
 R6
-w1679017688
+w1669855100
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/double_multiplexor_param.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/double_multiplexor_param.v
-!i122 416
+!i122 850
 L0 8 27
 R7
 r1
 !s85 0
 31
-Z16 !s108 1679257107.000000
+Z16 !s108 1679265323.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/double_multiplexor_param.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/double_multiplexor_param.v|
 !i113 1
@@ -219,15 +243,15 @@ R2
 vffd_param
 R15
 !i10b 1
-!s100 fRP3YbN3GSYDECDn=^JZz0
+!s100 OjO9oUR5`W[feM<d4_74^2
 R4
-IHjz@I5>nIZmBzfXB;nZUl2
+IojAi=R=nGNAgV^djnNBVG2
 R5
 R6
-w1679017642
+w1678328802
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ffd_param.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ffd_param.v
-!i122 417
+!i122 851
 Z17 L0 8 22
 R7
 r1
@@ -240,7 +264,7 @@ R16
 R9
 R2
 vffd_param_clear
-R15
+Z18 !s110 1679265324
 !i10b 1
 !s100 hHF0@WiZTZE?0dP^J6F7G0
 R4
@@ -250,7 +274,7 @@ R6
 w1679166586
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ffd_param_clear.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ffd_param_clear.v
-!i122 418
+!i122 852
 L0 8 25
 R7
 r1
@@ -263,7 +287,7 @@ R16
 R9
 R2
 vffd_param_pc_risk
-Z18 !s110 1679257108
+R18
 !i10b 1
 !s100 ?`CoTih8E1LE94:]]]RLm1
 R4
@@ -273,20 +297,20 @@ R6
 w1679017620
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ffd_param_pc_risk.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ffd_param_pc_risk.v
-!i122 419
+!i122 853
 R17
 R7
 r1
 !s85 0
 31
-R16
+Z19 !s108 1679265324.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ffd_param_pc_risk.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/ffd_param_pc_risk.v|
 !i113 1
 R9
 R2
 vFSM_UART_Rx
-R18
+Z20 !s110 1679265325
 !i10b 1
 !s100 IcAgU0`F<EinkknR>8edY3
 R4
@@ -296,21 +320,44 @@ R6
 w1679166984
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/FSM_UART_Rx.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/FSM_UART_Rx.v
-!i122 420
+!i122 854
 L0 7 122
 R7
 r1
 !s85 0
 31
-Z19 !s108 1679257108.000000
+R19
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/FSM_UART_Rx.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/FSM_UART_Rx.v|
 !i113 1
 R9
 R2
 n@f@s@m_@u@a@r@t_@rx
+vimm_gen
+R20
+!i10b 1
+!s100 _VQL>^:A]Abe4c[S3a@1_2
+R4
+IEZmBLHzbEmH::TfOhzSdL3
+R5
+R6
+w1678297201
+8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/imm_gen.v
+FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/imm_gen.v
+!i122 855
+L0 5 49
+R7
+r1
+!s85 0
+31
+Z21 !s108 1679265325.000000
+!s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/imm_gen.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/imm_gen.v|
+!i113 1
+R9
+R2
 vimm_gen_module
-R18
+R20
 !i10b 1
 !s100 cEZ=ME0[He3K6V?TKCzA`1
 R4
@@ -320,13 +367,13 @@ R6
 w1679017592
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/imm_gen_module.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/imm_gen_module.v
-!i122 421
+!i122 856
 L0 8 58
 R7
 r1
 !s85 0
 31
-R19
+R21
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/imm_gen_module.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/imm_gen_module.v|
 !i113 1
@@ -342,7 +389,7 @@ w1679165027
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/instr_data_memory.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/instr_data_memory.v
 !i122 35
-R13
+R14
 R5
 OL;L;2021.2;73
 r1
@@ -355,7 +402,7 @@ r1
 R9
 R2
 vinstr_memory
-R12
+Z22 !s110 1679265326
 !i10b 1
 !s100 Y8Lza>Xjf@8F?J^M;;]^Y0
 R4
@@ -365,66 +412,66 @@ R6
 w1679252420
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/instr_memory.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/instr_memory.v
-!i122 435
-R13
+!i122 857
+R14
 R7
 r1
 !s85 0
 31
-R14
+R21
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/instr_memory.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/instr_memory.v|
 !i113 1
 R9
 R2
 vmaster_memory_map
-R18
+R22
 !i10b 1
-!s100 gCzG86UP2l0WN<i2:PeMa2
+!s100 D@<oEA<z=oYFOC@@>:o0J2
 R4
-IlSBm?HY<KCN<7KPHQQkg30
+I];z6URgE;LT=XeQYRUP^A0
 R5
 R6
-w1679252366
+w1679264130
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/master_memory_map.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/master_memory_map.v
-!i122 422
+!i122 858
 L0 8 118
 R7
 r1
 !s85 0
 31
-R19
+Z23 !s108 1679265326.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/master_memory_map.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/master_memory_map.v|
 !i113 1
 R9
 R2
 vmultiplexor_param
-Z20 !s110 1679257109
+Z24 !s110 1679265327
 !i10b 1
 !s100 7ZC3nJH5Ilhnka:M?dg:B2
 R4
 IKC[OG[CL^o]BQoJe@F<7D0
 R5
 R6
-w1679017454
+w1678239372
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/multiplexor_param.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/multiplexor_param.v
-!i122 423
+!i122 859
 L0 8 13
 R7
 r1
 !s85 0
 31
-Z21 !s108 1679257109.000000
+R23
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/multiplexor_param.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/multiplexor_param.v|
 !i113 1
 R9
 R2
 vparallel2serial
-R20
+R24
 !i10b 1
 !s100 j8[BoZdE`5Q[LVba_PSDk2
 R4
@@ -434,43 +481,66 @@ R6
 w1666743042
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/parallel2serial.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/parallel2serial.v
-!i122 424
+!i122 860
 L0 7 27
 R7
 r1
 !s85 0
 31
-R21
+Z25 !s108 1679265327.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/parallel2serial.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/parallel2serial.v|
 !i113 1
 R9
 R2
 vregister_file
-R20
+R24
 !i10b 1
-!s100 F?`9WT>W2jn0J<fY1Ea`U2
+!s100 hi7YQbYne`E^1bLHaOKGg0
 R4
-I9ez4d>RiJebESDONnmhjz1
+Izil<LP>kSD`ogNIgA026N3
 R5
 R6
-w1679256524
+w1679262289
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/register_file.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/register_file.v
-!i122 425
-L0 8 34
+!i122 861
+L0 8 60
 R7
 r1
 !s85 0
 31
-R21
+R25
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/register_file.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/register_file.v|
 !i113 1
 R9
 R2
+vrisc_v_top
+Z26 !s110 1679265328
+!i10b 1
+!s100 I<lE@lN@mD0R`OOeY1Tn81
+R4
+I1oXb2;^=5[d@o^bfQYQ4<1
+R5
+R6
+w1679261429
+8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risc_v_top.v
+FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risc_v_top.v
+!i122 862
+L0 6 284
+R7
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risc_v_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risc_v_top.v|
+!i113 1
+R9
+R2
 vrisk_v_multicycle
-Z22 !s110 1679257110
+R26
 !i10b 1
 !s100 2G;2>MK93T>_UT^P]lz@U3
 R4
@@ -480,36 +550,36 @@ R6
 w1679253030
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risk_v_multicycle.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risk_v_multicycle.v
-!i122 426
+!i122 863
 L0 8 234
 R7
 r1
 !s85 0
 31
-R21
+Z27 !s108 1679265328.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risk_v_multicycle.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risk_v_multicycle.v|
 !i113 1
 R9
 R2
 vrisk_v_multicycle_TB
-R22
+R26
 !i10b 1
-!s100 m`cm0^04QdRedfG:[ag=@3
+!s100 1Fm92TS_GWoNOC7CZHHgh3
 R4
-IHj5flFon9[OkmPeL>DJ9>1
+I:U:_<^]4Q:Hn?7>De?Gj_3
 R5
 R6
-w1679255258
+w1679265307
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risk_v_multicycle_TB.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risk_v_multicycle_TB.v
-!i122 427
+!i122 864
 L0 9 40
 R7
 r1
 !s85 0
 31
-Z23 !s108 1679257110.000000
+R27
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risk_v_multicycle_TB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/risk_v_multicycle_TB.v|
 !i113 1
@@ -517,7 +587,7 @@ R9
 R2
 nrisk_v_multicycle_@t@b
 vShift_Register_R_Param
-R22
+Z28 !s110 1679265329
 !i10b 1
 !s100 G6cDHRkcFnU7l2S2d9SIz0
 R4
@@ -527,13 +597,13 @@ R6
 w1666559440
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Shift_Register_R_Param.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Shift_Register_R_Param.v
-!i122 428
+!i122 865
 L0 7 17
 R7
 r1
 !s85 0
 31
-R23
+R27
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Shift_Register_R_Param.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/Shift_Register_R_Param.v|
 !i113 1
@@ -541,7 +611,7 @@ R9
 R2
 n@shift_@register_@r_@param
 vuart_full_duplex
-R22
+R28
 !i10b 1
 !s100 MJki^DUTJ7[>4>W^62`803
 R4
@@ -551,36 +621,36 @@ R6
 w1679168896
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_full_duplex.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_full_duplex.v
-!i122 429
+!i122 866
 L0 8 41
 R7
 r1
 !s85 0
 31
-R23
+Z29 !s108 1679265329.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_full_duplex.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_full_duplex.v|
 !i113 1
 R9
 R2
 vuart_IP
-Z24 !s110 1679257111
+Z30 !s110 1679265330
 !i10b 1
 !s100 JbS]4D9zeG>aEB`f;HB[@3
 R4
 IZ>6nn7mn`Y`eAK=bf8N==3
 R5
 R6
-Z25 w1679251710
+Z31 w1679251710
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_IP.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_IP.v
-!i122 430
+!i122 867
 L0 8 71
 R7
 r1
 !s85 0
 31
-Z26 !s108 1679257111.000000
+R29
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_IP.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_IP.v|
 !i113 1
@@ -588,7 +658,7 @@ R9
 R2
 nuart_@i@p
 vUART_Rx
-R24
+R30
 !i10b 1
 !s100 nh4ZA8[n7hmHe4[UZGJ9k1
 R4
@@ -598,13 +668,13 @@ R6
 w1679253166
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/UART_Rx.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/UART_Rx.v
-!i122 431
+!i122 868
 L0 4 99
 R7
 r1
 !s85 0
 31
-R26
+!s108 1679265330.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/UART_Rx.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/UART_Rx.v|
 !i113 1
@@ -612,7 +682,7 @@ R9
 R2
 n@u@a@r@t_@rx
 vuart_tx
-R24
+!s110 1679265331
 !i10b 1
 !s100 4hdK^k4mnQ3B5@]R_M8Xb2
 R4
@@ -622,36 +692,36 @@ R6
 w1679169210
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_tx.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_tx.v
-!i122 432
+!i122 869
 L0 7 120
 R7
 r1
 !s85 0
 31
-R26
+Z32 !s108 1679265331.000000
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_tx.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_tx.v|
 !i113 1
 R9
 R2
 vuart_tx_fsm
-R12
+!s110 1679265332
 !i10b 1
 !s100 8eo9FS7ci<2R:bkfX?nmX0
 R4
 ILGz=lF;dzN6Z82fHOGVR42
 R5
 R6
-R25
+R31
 8C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_tx_fsm.v
 FC:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_tx_fsm.v
-!i122 433
+!i122 870
 L0 7 217
 R7
 r1
 !s85 0
 31
-R26
+R32
 !s107 C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_tx_fsm.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/eduar/electronic_design_master/micros/DM_Michel_Castillo_RISC_V/src/uart_tx_fsm.v|
 !i113 1

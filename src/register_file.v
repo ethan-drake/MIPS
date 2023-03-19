@@ -19,7 +19,7 @@ reg [31:0] registers [0:31];
 
 //Syncronus write to registers
 always @(posedge clk) begin
-	if(we3) begin
+	if(we3 && a3!=5'h0) begin
 		registers[a3] <= wd3;
 	end
 end
