@@ -27,7 +27,9 @@ end
 //Initialize registers
 integer i;
 initial begin
-	for(i=0;i<32;i=i+1)
+	registers[0] <= 32'h0;
+	registers[1] <= 32'h7fff_effc;
+	for(i=2;i<32;i=i+1)
 		registers[i] <= 32'h0;
 end
 
