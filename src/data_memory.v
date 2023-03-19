@@ -14,22 +14,22 @@ module data_memory #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32) (
 );
 
 // Declare the RAM array
-reg [DATA_WIDTH-1:0] rom[0:(ADDR_WIDTH*ADDR_WIDTH)-1];
+reg [DATA_WIDTH-1:0] ram[0:(ADDR_WIDTH*ADDR_WIDTH)-1];
 
 integer i;
 initial begin
 	for(i=0;i<((ADDR_WIDTH*ADDR_WIDTH)-1);i=i+1)
-		rom[i] <= 32'h0;
+		ram[i] <= 32'h0;
 end
 
 always @(posedge clk)
 begin
 	//Write
 	if (we)
-		rom[address] <= wd;
+		ram[address] <= wd;
 end
 	
 // Reading if memory read enable
-assign rd = rom[address];
+assign rd = ram[address];
 
 endmodule

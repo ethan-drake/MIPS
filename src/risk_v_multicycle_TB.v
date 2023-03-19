@@ -10,8 +10,7 @@ module risk_v_multicycle_TB();
 
 reg clk, rst, rx;
 wire tx;
-reg [7:0] gpio_port_in;
-wire [7:0] gpio_port_out;
+reg [7:0] rx_val_array;
 
 risk_v_multicycle procesador (
 	//Inputs - Platform
@@ -26,13 +25,24 @@ risk_v_multicycle procesador (
 initial begin
 	clk = 0;
 	rst = 1;
-	rx = 0;
+	rx = 1; //Initial value for Rx
 	#1 rst = 0;
 	#1 rst = 1;
+	//Data 0x3 
+	#100 rx = 1'b0;   //start
+	#10420 rx = 1'b1; //bit0
+	#10420 rx = 1'b1; //bit1
+	#10420 rx = 1'b0; //bit2
+	#10420 rx = 1'b0; //bit3
+	#10420 rx = 1'b0; //bit4
+	#10420 rx = 1'b0; //bit5
+	#10420 rx = 1'b0; //bit6
+	#10420 rx = 1'b0; //bit7
+	#10420 rx = 1'b0; //parity
 end
 
 always begin
-	#2 clk = ~clk;
+	#1 clk = ~clk;
 end
 
 endmodule
