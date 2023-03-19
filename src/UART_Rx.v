@@ -23,10 +23,14 @@ wire parity;
 //Negedge rst module
 assign n_rst_BR_w = ~rst_BR_w;
 //Even parity calculate
-assign parity_calc = ^Rx_Data_w[7:0];
+
+//Not needed in this project
+//assign parity_calc = ^Rx_Data_w[7:0];
+
+//Not needed in this project
 //Parity error checker, both need to match
-assign parity_error = parity_received ^ parity_calc;
-assign parity = parity_received;
+//assign parity_error = parity_received ^ parity_calc;
+//assign parity = parity_received;
 
 Shift_Register_R_Param #(.width(9) ) shift_reg (
 	.clk(clk), 
