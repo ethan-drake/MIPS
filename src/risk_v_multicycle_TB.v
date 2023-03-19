@@ -12,7 +12,7 @@ reg clk, rst, rx;
 wire tx;
 reg [7:0] rx_val_array;
 
-risk_v_multicycle procesador (
+risk_v_top procesador (
 	//Inputs - Platform
 	.clk(clk),
 	.rst_n(rst),

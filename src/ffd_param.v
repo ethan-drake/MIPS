@@ -1,11 +1,11 @@
-// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
-// Date:            16/03/23
-// File:			     ffd_param.v
-// Module name:	  ffd_param
-// Project Name:	  risk_v_multicycle
-// Description:	  This is a flipflopD register module
+// Coder:           Eduardo Ethandrake Castillo
+// Date:            November 20th, 2022
+// File:			ffd_param.v
+// Module name:		ffd_param
+// Project Name:	MIPS
+// Description:		This is a flipflopD register module
 
-module ffd_param #(parameter LENGTH=1)(
+module ffd_param #(parameter LENGTH=1, parameter INIT_VALUE=0)(
 	//inputs
 	input i_clk,
 	input i_rst_n,
@@ -19,7 +19,7 @@ module ffd_param #(parameter LENGTH=1)(
 always@(posedge i_clk, negedge i_rst_n)
 begin
 	if(!i_rst_n)
-		q <= 0;
+		q <= INIT_VALUE;
 	else if(i_en)
 		q <= d;
 	else

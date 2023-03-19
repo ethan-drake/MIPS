@@ -1,9 +1,9 @@
-// Coder:           David Adrian Michel Torres
-// Date:            16/03/23
-// File:			     double_multiplexor_param.v
-// Module name:	  double_multiplexor_param
-// Project Name:	  risk_v_multicycle
-// Description:	  This is a 4 input multiplexor, with 2 bits selector
+// Coder:           Eduardo Ethandrake Castillo, David Adrian Michel Torres
+// Date:            November 20th, 2022
+// File:			double_multiplexor_param.v
+// Module name:		double_multiplexor_param
+// Project Name:	MIPS
+// Description:		This is a 4 input multiplexor, with 2 bits selector
 
 module double_multiplexor_param #(parameter LENGTH=1)(
     //inputs

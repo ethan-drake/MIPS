@@ -1,99 +1,88 @@
-// Coder:           David Adrian Michel Torres
-// Date:            16/03/23
-// File:			     ALU.v
-// Module name:	  ALU
-// Project Name:	  risk_v_multicycle
-// Description:	  ALU logic
+// Coder:           Eduardo Ethandrake Castillo
+// Date:            November 20th, 2022
+// File:			ALU.v
+// Module name:		ALU
+// Project Name:	RISCV
+// Description:		ALU logic
 
 module ALU #(parameter LENGTH=32) (
     //inputs
-	 input [LENGTH-1:0] i_a,
+	input [LENGTH-1:0] i_a,
     input [LENGTH-1:0] i_b,
-    input [2:0] aluOp, funct3,
-	 input [6:0] funct7, opcode,
-	 //outputs
-    output reg [LENGTH-1:0] alu_result,
-	 output Zero
+    input [3:0] i_control,
+	//outputs
+	output o_alu_zero,
+    output [LENGTH-1:0] alu_result
 );
 
-//Evaluate Zero condition
-assign Zero = (alu_result == {LENGTH-1{1'b0}}) ? 1'b1 : 1'b0;
 
-//Opcodes
-localparam R_TYPE = 7'b0110011;
-localparam I_TYPE = 7'b0010011;
-localparam B_TYPE = 7'b1100011;
-localparam J_TYPE = 7'b1101111;
-localparam AUIPC_TYPE = 7'b0010111;
+//add 0
+//subs 1
+//mult 2
+//shift left 3
+//set less than 4
+//xor 5
+//shift right 6
+//or 7
+//and 8
+//shift left imm 9
+//shift right imm A
 
-//ALU operation logic
+reg [LENGTH-1:0] temp_result;
+
 always@(*) begin
-	alu_result = {LENGTH-1{1'b0}};
-	case(aluOp)
-		3'h0: //ALU performs an add operation
+	temp_result= {LENGTH-1{1'b0}};
+	case(i_control)
+		4'h0 : //Add operation 
 			begin
-				alu_result = i_a + i_b;
+				temp_result= i_a + i_b;
 			end
-		3'h1: //ALU performs ad substract operation
+		4'h1 : //Substract operation 
 			begin
-				alu_result = i_a + (~i_b + 1'b1);
+				temp_result= i_a + (~i_b + 1'b1);
 			end
-		3'h2: //Function field determines the ALU operation
+		4'h2 : //Mult operation 
 			begin
-				case(opcode)
-					I_TYPE:
-						begin
-							case(funct3)
-								3'h0: alu_result = i_a + i_b;
-								3'h1: alu_result = i_a << i_b[4:0];
-								3'h2: alu_result = (i_a < i_b) ? {LENGTH-1{1'b1}} : {LENGTH-1{1'b0}};
-								3'h3: alu_result = (i_a < i_b) ? {LENGTH-1{1'b1}} : {LENGTH-1{1'b0}}; //Zero-extends
-								3'h4: alu_result = i_a ^ i_b;
-								3'h5: alu_result = i_a >> i_b[4:0];
-								3'h6: alu_result = i_a | i_b;
-								3'h7: alu_result = i_a & i_b;
-								default: alu_result = {LENGTH-1{1'b0}}; //Shouldn't happen
-							endcase
-						end
-					R_TYPE:
-						begin
-							case(funct3)
-								3'h0:
-									begin
-										case(funct7)
-											7'h0:  alu_result = i_a + i_b;
-											7'h1:  alu_result = i_a * i_b;
-											7'h20: alu_result = i_a + (~i_b + 1'b1);
-											default: alu_result = i_a + i_b; //Default
-										endcase
-									end
-								3'h1: alu_result = i_a << i_b;
-								3'h2: alu_result = (i_a < i_b) ? {LENGTH-1{1'b1}} : {LENGTH-1{1'b0}};
-								3'h3: alu_result = (i_a < i_b) ? {LENGTH-1{1'b1}} : {LENGTH-1{1'b0}}; //Zero-extends
-								3'h4: alu_result = i_a ^ i_b;
-								3'h5: alu_result = i_a >> i_b;
-								3'h6: alu_result = i_a | i_b;
-								3'h7: alu_result = i_a & i_b;
-								default: alu_result = {LENGTH-1{1'b0}}; //Shouldn't happen
-							endcase
-						end
-					AUIPC_TYPE:
-						begin
-							alu_result = (i_a - 3'h4) + i_b; //removing pc+4
-						end
-					B_TYPE:
-						begin
-							alu_result = (i_a - 3'h4) + i_b; //removing pc+4
-						end
-					J_TYPE:
-						begin
-							alu_result = (i_a - 3'h4) + i_b; //removing pc+4
-						end
-					default: alu_result = {LENGTH-1{1'b0}}; //Shouldn't happen
-				endcase
+				temp_result= i_a * i_b;
 			end
-		default: alu_result = {LENGTH-1{1'b0}}; //Shouldn't happen
+		4'h3 : //shift left 
+			begin
+				temp_result= i_a << i_b;
+			end
+		4'h4 : //set less than
+			begin
+				temp_result = (i_a < i_b) ? {LENGTH-1{1'b1}} : {LENGTH-1{1'b0}};
+			end
+		4'h5 : //xor
+			begin
+				temp_result= i_a ^ i_b;
+			end
+		4'h6 : //shift right
+			begin
+				temp_result= i_a >> i_b;
+			end
+		4'h7 : //or
+			begin
+				temp_result= i_a | i_b;
+			end
+		4'h8: //and
+			begin
+				temp_result= i_a & i_b;
+			end
+		4'h9: //shift left imm
+			begin
+				temp_result= i_a << i_b[4:0];
+			end
+		4'hA: //shift right imm
+			begin
+				temp_result= i_a >> i_b[4:0];
+			end
+		default: temp_result= 0; //Not specified which is the default value
 	endcase
 end
+
+assign o_alu_zero = (temp_result == {(LENGTH-1){1'b0}}) ? 1'b1 : 1'b0;
+assign alu_result = temp_result;
+
 
 endmodule

@@ -1,9 +1,9 @@
-// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
-// Date:            08/03/23
-// File:			     multiplexor_param.v
-// Module name:	  multiplexor_param
-// Project Name:	  risk_v_multicycle
-// Description:	  This is a 2 input multiplexor, 0 selects a, 1 selects b
+// Coder:           Eduardo Ethandrake Castillo, 
+// Date:            November 20th, 2022
+// File:			multiplexor_param.v
+// Module name:		multiplexor_param
+// Project Name:	MIPS
+// Description:		This is a 2 input multiplexor, 0 selects a, 1 selects b
 
 module multiplexor_param #(parameter LENGTH=1)(
     //inputs
