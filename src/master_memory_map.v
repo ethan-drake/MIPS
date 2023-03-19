@@ -115,7 +115,7 @@ end
 
 double_multiplexor_param #(.LENGTH(DATA_WIDTH)) memory_map_mult (
 	.i_a(HRData1),//ROM
-	.i_b(HRdata2),//RAM & STACK
+	.i_b(HRData2),//RAM & STACK
 	.i_c(HRData3),// UART
 	.i_d(32'h0),
 	.i_selector(mult_map),
