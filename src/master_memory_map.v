@@ -85,7 +85,7 @@ always @(add_val, we, wd, address) begin
 				map_Address = address + (~32'h10_010_020 + 1'b1) >> 2'h2; //to UART
 				map_Data = wd;
 			end
-		2'b10:
+		2'b11:
 			begin //STACK (inside RAM)
 				mult_map = 2'b01;
 				HSel_1 = 1'b0;
