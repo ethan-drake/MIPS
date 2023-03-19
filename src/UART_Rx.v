@@ -6,10 +6,8 @@ module UART_Rx #(parameter baud_rate=5210) (
 	input n_rst,
 	input rx,
 	input rx_flag_clr,
-	output parity_error,
 	output [7:0] Rx_Data_w,
-	output rx_flag,
-	output parity
+	output rx_flag
 );
 
 wire rst_bit_counter_w, rst_BR_w, n_rst_BR_w;
@@ -18,6 +16,9 @@ wire end_bit_time_w, end_half_time_w;
 wire bit_count_enable_w, enable_out_reg_w;
 wire [3:0] count_bits_w;
 wire [8:0] Q_SR_w /* synthesis keep */;
+
+wire parity_error;
+wire parity;
 
 //Negedge rst module
 assign n_rst_BR_w = ~rst_BR_w;
