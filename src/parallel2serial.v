@@ -1,9 +1,10 @@
 // Coder:           Eduardo Ethandrake Castillo, David Adrian Michel Torres
 // Date:            October 20, 2022
-// File:			parallel2serial.v
-// Module name:		parallel2serial
-// Project Name:	P3_UART_FULL_DUPLEX
-// Description:		Module that converts parallel2serial that is used in uart_tx
+// File:			     parallel2serial.v
+// Module name:	  parallel2serial
+// Project Name:	  risc_v_top
+// Description:	  Module that converts parallel2serial that is used in uart_tx
+
 module parallel2serial #(parameter N=9) (
     input i_clk,
     input i_rst_n,

@@ -2,7 +2,7 @@
 // Date:            16/03/23
 // File:			     imm_gen_module.v
 // Module name:	  imm_gen_module
-// Project Name:	  risk_v_multicycle
+// Project Name:	  risc_v_top
 // Description:     Immediate generator for risk-v instructions
 
 module imm_gen_module (

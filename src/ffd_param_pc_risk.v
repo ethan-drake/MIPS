@@ -2,7 +2,7 @@
 // Date:            16/03/23
 // File:			     ffd_param_pc_risk.v
 // Module name:	  ffd_param_pc_risk
-// Project Name:	  risk_v_multicycle
+// Project Name:	  risc_v_top
 // Description:	  This is a flipflopD register module with PC start hack
 
 module ffd_param_pc_risk #(parameter LENGTH=1)(

@@ -2,7 +2,7 @@
 // Date:            16/03/23
 // File:			     instr_data_memory.v
 // Module name:	  instr_data_memory
-// Project Name:	  risk_v_multicycle
+// Project Name:	  risc_v_top
 // Description:	  Memory that contains instructions to perform
 
 module data_memory #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32) (

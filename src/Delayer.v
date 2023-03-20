@@ -1,8 +1,10 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: ITESO 
-// Engineer:  Cuauhtemoc Aguilera
-//////////////////////////////////////////////////////////////////////////////////
+// Coder:           Cuauhtemoc Aguilera
+// Date:            09/09/22
+// File:			     Delayer.v
+// Module name:	  Delayer
+// Project Name:	  risc_v_top
+// Description:	  Delayer
+
 module Delayer
  # (parameter YY = 10 ) // Se requieren 27 bits para representar 100,000,0000 de cuentas
    (

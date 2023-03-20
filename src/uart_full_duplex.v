@@ -1,9 +1,9 @@
 // Coder:           Eduardo Ethandrake Castillo, David Adrian Michel Torres
 // Date:            October 21, 2022
-// File:			uart_full_duplex.v
-// Module name:		uart_full_duplex
-// Project Name:	P3_uart_full_duplex
-// Description:		This is the top module for the uart full duplex
+// File:			     uart_full_duplex.v
+// Module name:	  uart_full_duplex
+// Project Name:	  risc_v_top
+// Description:	  This is the top module for the uart full duplex
 
 module uart_full_duplex #(parameter baud_rate=5210) (
 	 //UART - Inputs

@@ -1,9 +1,10 @@
 // Coder:           Eduardo Ethandrake Castillo, David Adrian Michel Torres
 // Date:            October 19, 2022
-// File:			uart_tx.v
-// Module name:		uart_tx
-// Project Name:	P3_uart_full_duplex
-// Description:		This the uart tx top module, as part of the full duplex uart project
+// File:			     uart_tx.v
+// Module name:	  uart_tx
+// Project Name:	  risc_v_top
+// Description:	  This the uart tx top module, as part of the full duplex uart project
+
 module uart_tx #(parameter baud_rate=5210) (
     //inputs
     input clk,

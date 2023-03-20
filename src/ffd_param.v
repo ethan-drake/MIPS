@@ -1,9 +1,9 @@
-// Coder:           Eduardo Ethandrake Castillo
-// Date:            November 20th, 2022
-// File:			ffd_param.v
-// Module name:		ffd_param
-// Project Name:	MIPS
-// Description:		This is a flipflopD register module
+// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
+// Date:            16/03/23
+// File:			     ffd_param.v
+// Module name:	  ffd_param
+// Project Name:	  risc_v_top
+// Description:	  This is a flipflopD register module
 
 module ffd_param #(parameter LENGTH=1)(
 	//inputs

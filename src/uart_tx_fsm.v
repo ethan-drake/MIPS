@@ -1,9 +1,10 @@
 // Coder:           Eduardo Ethandrake Castillo, David Adrian Michel Torres
 // Date:            October 20, 2022
-// File:			uart_tx_fsm.v
-// Module name:		uart_tx_fsm
-// Project Name:	P3_UART_FULL_DUPLEX
-// Description:		This is the state machine used for UART TX control
+// File:			     uart_tx_fsm.v
+// Module name:	  uart_tx_fsm
+// Project Name:	  risc_v_top
+// Description:	  This is the state machine used for UART TX control
+
 module uart_tx_fsm(
     //inputs
     input i_clk,

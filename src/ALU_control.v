@@ -1,9 +1,9 @@
-// Coder:           Eduardo Ethandrake Castillo
-// Date:            November 20th, 2022
-// File:			ALU.v
-// Module name:		ALU
-// Project Name:	RISCV
-// Description:		ALU logic
+// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
+// Date:            16/03/23
+// File:			     ALU_control.v
+// Module name:	  ALU_control
+// Project Name:	  risc_v_top
+// Description:	  ALU control module
 
 module ALU_control (
     //inputs
