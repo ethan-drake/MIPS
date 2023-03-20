@@ -1,6 +1,10 @@
-// ITESO
-// Cuauhtemoc Aguilera
-// This the uart rx top module, as part of the full duplex uart project
+// Coder:           Cuauhtemoc Aguilera
+// Date:            09/09/22
+// File:			     UART_Rx.v
+// Module name:	  UART_Rx
+// Project Name:	  risc_v_top
+// Description:	  This the uart rx top module, as part of the full duplex uart project
+
 module UART_Rx #(parameter baud_rate=5210) (
 	input clk,
 	input n_rst,

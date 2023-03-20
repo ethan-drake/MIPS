@@ -1,8 +1,10 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: ITESO
-// Engineer: Cuauhtemoc Aguilera
-//////////////////////////////////////////////////////////////////////////
+// Coder:           Cuauhtemoc Aguilera
+// Date:            09/09/22
+// File:			     Counter_02Limit_ovf.v
+// Module name:	  Counter_02Limit_ovf
+// Project Name:	  risc_v_top
+// Description:	  Counter overflow
+
 module Counter_02Limit_ovf #(parameter N=3, parameter Limit = 4)(
     input rst_n,
     input enable,
@@ -12,6 +14,7 @@ module Counter_02Limit_ovf #(parameter N=3, parameter Limit = 4)(
     output overflow,
     output pre_overflow
  );
+
 assign overflow = (Q==Limit)? 1'b1 : 1'b0;
 assign pre_overflow = (Q==(Limit-1'b1))? 1'b1 : 1'b0;
 

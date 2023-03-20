@@ -2,7 +2,7 @@
 // Date:            16/03/23
 // File:			     master_memory_map.v
 // Module name:	  master_memory_map
-// Project Name:	  risk_v_multicycle
+// Project Name:	  risc_v_top
 // Description:	  Master that constrolls the memory mapping
 
 module master_memory_map #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32) (

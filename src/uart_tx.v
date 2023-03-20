@@ -1,9 +1,10 @@
 // Coder:           Eduardo Ethandrake Castillo, David Adrian Michel Torres
 // Date:            October 19, 2022
-// File:			uart_tx.v
-// Module name:		uart_tx
-// Project Name:	P3_uart_full_duplex
-// Description:		This the uart tx top module, as part of the full duplex uart project
+// File:			     uart_tx.v
+// Module name:	  uart_tx
+// Project Name:	  risc_v_top
+// Description:	  This the uart tx top module, as part of the full duplex uart project
+
 module uart_tx #(parameter baud_rate=5210) (
     //inputs
     input clk,
@@ -62,8 +63,8 @@ ffd_param_clear #(.LENGTH(1) ) ff_tx_finish_flag (
 	.q(tx_finish)
 );	
 
-//Delayer for UART 20ms because of 50Mhz clock 1_000_000
-Delayer # (.YY(1_000_000)) delay_20ms (
+//Delayer for UART 5ms because of 50Mhz clock 250_000
+Delayer # (.YY(250_000)) delay_5ms (
 	.clk(clk), 
 	.rst(reset_delayer), 
 	.enable(1'b1), 

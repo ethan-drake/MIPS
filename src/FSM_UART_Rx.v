@@ -1,9 +1,10 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: ITESO
-// Engineer: Cuauhtemoc Aguilera
-// Finite State Machine to control a RS232 Receiver
-////////////////////////////////////////////////////////////////////////////////////
+// Coder:           Cuauhtemoc Aguilera
+// Date:            09/09/22
+// File:			     UART_Rx.v
+// Module name:	  UART_Rx
+// Project Name:	  risc_v_top
+// Description:	  UART RX FSM
+
 module FSM_UART_Rx(
     input rx,
     input clk,

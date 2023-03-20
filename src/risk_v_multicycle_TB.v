@@ -2,7 +2,7 @@
 // Date:            16/03/23
 // File:			     risk_v_multicycle_TB.v
 // Module name:	  risk_v_multicycle_TB
-// Project Name:	  risk_v_multicycle
+// Project Name:	  risc_v_top
 // Description:	  TB to test risk-v implementation
 
  `timescale 1ns / 1ps

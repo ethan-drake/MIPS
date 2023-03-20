@@ -1,9 +1,9 @@
 // Coder:           Eduardo Ethandrake Castillo, David Adrian Michel Torres
 // Date:            November 20th, 2022
-// File:			double_multiplexor_param.v
-// Module name:		double_multiplexor_param
-// Project Name:	MIPS
-// Description:		This is a 4 input multiplexor, with 2 bits selector
+// File:			     double_multiplexor_param.v
+// Module name:	  double_multiplexor_param
+// Project Name:    risc_v_top
+// Description:	  This is a 4 input multiplexor, with 2 bits selector
 
 module double_multiplexor_param #(parameter LENGTH=1)(
     //inputs

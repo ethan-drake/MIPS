@@ -2,7 +2,7 @@
 // Date:            16/03/23
 // File:			     ffd_param_clear.v
 // Module name:	  ffd_param_clear
-// Project Name:	  risk_v_multicycle
+// Project Name:	  risc_v_top
 // Description:	  This is a flipflopD register module
 
 module ffd_param_clear #(parameter LENGTH=1)(

@@ -1,7 +1,9 @@
-// Coder:           Eduardo Ethandrake Castillo
-// File:			control_unit.v
-// Module name:		control_unit
-// Project Name:	RISCV
+// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
+// Date:            16/03/23
+// File:			     control_unit.v
+// Module name:	  control_unit
+// Project Name:	  risc_v_top
+// Description:	  RISC_V control unit
 
 module control_unit(
     //Inputs FSM

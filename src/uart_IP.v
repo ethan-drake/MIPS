@@ -2,7 +2,7 @@
 // Date:            16/03/23
 // File:			     uart_IP.v
 // Module name:	  uart_IP
-// Project Name:	  risk_v_multicycle
+// Project Name:	  risc_v_top
 // Description:	  UART IP
 
 module uart_IP #(parameter DATA_WIDTH = 32) (

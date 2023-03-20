@@ -1,9 +1,9 @@
-// Coder:           Eduardo Ethandrake Castillo
-// Date:            November 20th, 2022
-// File:			register_file.v
-// Module name:		register_file
-// Project Name:	MIPS
-// Description:		Register file that contains registers data
+// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
+// Date:            16/03/23
+// File:			     register_file.v
+// Module name:	  register_file
+// Project Name:	  risc_v_top
+// Description:	  Register file that contains registers data
 
 module register_file (
 	//inputs

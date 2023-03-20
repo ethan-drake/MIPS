@@ -1,9 +1,10 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: ITES0
-// Engineer: Cuauhtemoc Aguilera
-// Parametric Right Shift Register
-//////////////////////////////////////////////////////////////////////////////////
+// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
+// Date:            16/03/23
+// File:			     Shift_Register_R_Param.v
+// Module name:	  Shift_Register_R_Param
+// Project Name:	  risc_v_top
+// Description:	  Shifter for UART rx
+
 module Shift_Register_R_Param #(parameter width = 9)
     (
     input clk,
@@ -12,6 +13,7 @@ module Shift_Register_R_Param #(parameter width = 9)
     input d,
     output reg [width-1:0] Q
     );
+
 always @(negedge rst, posedge clk)
 	begin
 		if (!rst)

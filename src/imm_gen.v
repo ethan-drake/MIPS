@@ -1,6 +1,10 @@
-// Coder:           Eduardo Ethandrake Castillo
-// Date:            November 20th, 2022
-// Project Name:	RISCV
+// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
+// Date:            16/03/23
+// File:			     imm_gen.v
+// Module name:	  imm_gen
+// Project Name:	  risc_v_top
+// Description:	  Risc_V immediate generator
+
 
 module imm_gen (
 	//inputs

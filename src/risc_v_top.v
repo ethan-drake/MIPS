@@ -1,9 +1,11 @@
-// Coder:           Eduardo Ethandrake Castillo
-// Date:            March 7th, 2023
+// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
+// Date:            16/03/23
+// File:			     risc_v_top.v
+// Module name:	  risc_v_top
+// Project Name:	  risc_v_top
+// Description:	  Main module for RISCV project
 
-// Description:		Main module for RISCV project
-
-module risc_v_top(
+module risc_v_top (
 	//Inputs - Platform
 	input clk,
 	input rst_n,
