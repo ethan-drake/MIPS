@@ -17,11 +17,11 @@ module risk_v_multicycle (
 
 //Wires to interconnect modules
 wire pc_write, iorD, MemWrite, MemRead, irWrite, pc_src;
-wire alu_SrcA, regWrite, Branch, Branch_NE, Zero, branch_equal, branch_not_equal, pc_enable;
-wire [31:0] pc_prim, pc_out, alu_out, adr, rd1_data, rd2_data, ff_pc_save;
+wire regWrite, Branch, Branch_NE, Zero, branch_equal, branch_not_equal, pc_enable;
+wire [31:0] pc_prim, pc_out, alu_out, adr, rd1_data, rd2_data, ff_pc_save, pc_prime;
 wire [31:0] memory_out, instr2perf, wd3_wire, addr_uart, rd_uart; 
 wire [31:0] rd1_ff, rd2_ff, SrcA, SrcB, imm_gen, alu_result;
-wire [1:0] alu_SrcB, mem2Reg;
+wire [1:0] alu_SrcA, alu_SrcB, mem2Reg;
 wire [2:0] ALUOp;
 wire [31:0] data_memory_2_slave, address_memory_2_slave, data_return_rom, data_return_ram, data_return_uart;
 wire we_memory_2_rom, re_memory_2_rom, we_memory_2_ram, re_memory_2_ram, we_memory_2_uart, re_memory_2_uart;
@@ -145,6 +145,15 @@ ffd_param #(.LENGTH(32)) ff_saver (
 	.q(ff_pc_save)
 );
 
+//PC -4 
+ffd_param #(.LENGTH(32)) ff_pc_prime (
+	.i_clk(clk), 
+	.i_rst_n(rst_n), 
+	.i_en(pc_enable),
+	.d(pc_out),
+	.q(pc_prime)
+);
+
 //Multiple multiplexor to WD3 (Register file)
 double_multiplexor_param #(.LENGTH(32)) mult_write_Data (
 	.i_a(alu_out),
@@ -185,10 +194,12 @@ ffd_param #(.LENGTH(32)) ff_rd2 (
 	.q(rd2_ff)
 );
 
-//Multiplexor to select pc or rd1
-multiplexor_param #(.LENGTH(32)) mult_pc_or_data (
+//Multiple multiplexor
+double_multiplexor_param #(.LENGTH(32)) mult_pc_or_data (
 	.i_a(pc_out),
 	.i_b(rd1_ff),
+	.i_c(pc_prime),
+	.i_d(32'h0),
 	.i_selector(alu_SrcA),
 	.out(SrcA)
 );
