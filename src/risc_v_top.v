@@ -49,9 +49,8 @@ multiplexor_param #(.LENGTH(1)) mult_branch (
 	.out(alu_zero_bne)
 );
 
-
 //PC
-ffd_param #(.LENGTH(32), .INIT_VALUE(32'h400000)) ff_pc (
+ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 	.i_clk(clk), 
 	.i_rst_n(rst_n), 
 	.i_en(PCEnable),
@@ -60,15 +59,13 @@ ffd_param #(.LENGTH(32), .INIT_VALUE(32'h400000)) ff_pc (
 );
 
 //PC
-ffd_param #(.LENGTH(32), .INIT_VALUE(32'h400000)) ff_pc_prime (
+ffd_param_pc_risk #(.LENGTH(32)) ff_pc_prime (
 	.i_clk(clk), 
 	.i_rst_n(rst_n), 
 	.i_en(PCEnable),
 	.d(pc_out),
 	.q(pc_prime)
 );
-
-
 
 //Multiplexor to select between PC and ALU_OUT
 multiplexor_param #(.LENGTH(32)) mult_pc_memory (

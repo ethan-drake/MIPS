@@ -62,8 +62,8 @@ ffd_param_clear #(.LENGTH(1) ) ff_tx_finish_flag (
 	.q(tx_finish)
 );	
 
-//Delayer for UART 5ms because of 50Mhz clock 250_000
-Delayer # (.YY(250_000)) delay_5ms (
+//Delayer for UART 20ms because of 50Mhz clock 1_000_000
+Delayer # (.YY(1_000_000)) delay_20ms (
 	.clk(clk), 
 	.rst(reset_delayer), 
 	.enable(1'b1), 
