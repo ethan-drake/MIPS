@@ -19,7 +19,7 @@ reg [31:0] registers [0:31];
 
 //Syncronus write to registers
 always @(posedge clk) begin
-	if(we3) begin
+	if(we3 && a3 != 5'h0) begin
 		registers[a3] <= wd3;
 	end
 end
@@ -28,8 +28,9 @@ end
 integer i;
 initial begin
 	registers[0] <= 32'h0;
-	registers[1] <= 32'h7fff_effc;
-	for(i=2;i<32;i=i+1)
+	registers[1] <= 32'h0;
+	registers[2] <= 32'h7fff_efe4;
+	for(i=3;i<32;i=i+1)
 		registers[i] <= 32'h0;
 end
 

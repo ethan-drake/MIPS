@@ -53,6 +53,12 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AH3 -to tx
+set_location_assignment PIN_AH5 -to rx
+set_location_assignment PIN_AA30 -to rst_n
+set_location_assignment PIN_AF14 -to clk
+set_global_assignment -name VERILOG_FILE ../src/instr_memory.v
+set_global_assignment -name VERILOG_FILE ../src/data_memory.v
 set_global_assignment -name VERILOG_FILE ../src/uart_IP.v
 set_global_assignment -name VERILOG_FILE ../src/uart_tx_fsm.v
 set_global_assignment -name VERILOG_FILE ../src/uart_tx.v
@@ -69,7 +75,6 @@ set_global_assignment -name VERILOG_FILE ../src/risk_v_multicycle.v
 set_global_assignment -name VERILOG_FILE ../src/register_file.v
 set_global_assignment -name VERILOG_FILE ../src/multiplexor_param.v
 set_global_assignment -name VERILOG_FILE ../src/master_memory_map.v
-set_global_assignment -name VERILOG_FILE ../src/instr_data_memory.v
 set_global_assignment -name VERILOG_FILE ../src/imm_gen_module.v
 set_global_assignment -name VERILOG_FILE ../src/ffd_param_pc_risk.v
 set_global_assignment -name VERILOG_FILE ../src/ffd_param.v
@@ -78,8 +83,4 @@ set_global_assignment -name VERILOG_FILE ../src/control_unit.v
 set_global_assignment -name VERILOG_FILE ../src/ALU.v
 set_global_assignment -name VERILOG_FILE ../src/Delayer.v
 set_global_assignment -name VERILOG_FILE ../src/ffd_param_clear.v
-set_location_assignment PIN_AH3 -to tx
-set_location_assignment PIN_AH5 -to rx
-set_location_assignment PIN_AA30 -to rst_n
-set_location_assignment PIN_AF14 -to clk
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
