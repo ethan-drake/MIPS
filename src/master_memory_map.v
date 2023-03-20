@@ -94,7 +94,7 @@ always @(add_val, we, wd, address) begin
 				WSel_1 = 1'b0;
 				WSel_2 = we;
 				WSel_3 = 1'b0;
-				map_Address = (address - 32'h7fff_effc + 32'h48) >> 2'h2; //to STACK(inside RAM) address - upper limit + current RAM size
+				map_Address = (address - 32'h7fff_effc + 32'hD4) >> 2'h2; //to STACK(inside RAM) address - upper limit + current RAM size
 				map_Data = wd;
 			end
 			//RAM Stack

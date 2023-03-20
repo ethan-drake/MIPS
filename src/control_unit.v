@@ -23,8 +23,7 @@ module control_unit(
 	 output reg Branch_NE,
 	 output reg PCSrc,
 	 output reg [2:0] ALUOp,
-	 output reg ALUSrcA,
-	 output reg [1:0] ALUSrcB 
+	 output reg [1:0] ALUSrcA, ALUSrcB 
 );
 
 //States
@@ -161,7 +160,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b0;
+						 ALUSrcA = 2'b00;
 						 ALUSrcB = 2'b01;
 						 ALUOp = 2'b00;
 						 IorD = 1'b0;
@@ -177,10 +176,10 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b0;
+						 ALUSrcA = 2'b10;
 						 ALUSrcB = 2'b10;
-						 ALUOp = 2'b10; //proposal previous 00
-						 IorD = 1'b1;
+						 ALUOp = 2'b00;
+						 IorD = 1'b0;
 						 IRWrite = 1'b0;
 						 PCWrite = 1'b0;
 						 PCSrc = 1'b0;
@@ -193,7 +192,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b1;
+						 ALUSrcA = 2'b01;
 						 ALUSrcB = 2'b10;
 						 ALUOp = 2'b00;
 						 IorD = 1'b0;
@@ -209,7 +208,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b1;
+						 ALUSrcA = 2'b01;
 						 ALUSrcB = 2'b10;
 						 ALUOp = 2'b00;
 						 IorD = 1'b1;
@@ -225,7 +224,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b0;
 						 MemWrite = 1'b1;
-						 ALUSrcA = 1'b1;
+						 ALUSrcA = 2'b01;
 						 ALUSrcB = 2'b10;
 						 ALUOp = 2'b00;
 						 IorD = 1'b1;
@@ -241,7 +240,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b1;
+						 ALUSrcA = 2'b01;
 						 ALUSrcB = 2'b10;
 						 ALUOp = 2'b00;
 						 IorD = 1'b1;
@@ -257,7 +256,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b1;
+						 ALUSrcA = 2'b01;
 						 ALUSrcB = 2'b00;
 						 ALUOp = 2'b10;
 						 IorD = 1'b0;
@@ -273,7 +272,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b1;
+						 ALUSrcA = 2'b01;
 						 ALUSrcB = 2'b00;
 						 ALUOp = 2'b10;
 						 IorD = 1'b0;
@@ -289,7 +288,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b1;
+						 ALUSrcA = 2'b01;
 						 ALUSrcB = 2'b00;
 						 ALUOp = 2'b01;
 						 IorD = 1'b0;
@@ -305,7 +304,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b1;
+						 ALUSrcA = 2'b01;
 						 ALUSrcB = 2'b00;
 						 ALUOp = 2'b01;
 						 IorD = 1'b0;
@@ -321,8 +320,8 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b0;
-						 ALUSrcB = 2'b10;
+						 ALUSrcA = 2'b00;
+						 ALUSrcB = 2'b00;
 						 ALUOp = 2'b00;
 						 IorD = 1'b0;
 						 IRWrite = 1'b0;
@@ -337,7 +336,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b1;
+						 ALUSrcA = 2'b01;
 						 ALUSrcB = 2'b10;
 						 ALUOp = 2'b10;
 						 IorD = 1'b0;
@@ -353,7 +352,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b1;
+						 ALUSrcA = 2'b01;
 						 ALUSrcB = 2'b10;
 						 ALUOp = 2'b10;
 						 IorD = 1'b0;
@@ -369,7 +368,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b0;
+						 ALUSrcA = 2'b00;
 						 ALUSrcB = 2'b10;
 						 ALUOp = 2'b00;
 						 IorD = 1'b0;
@@ -385,9 +384,9 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b0;
+						 ALUSrcA = 2'b10;
 						 ALUSrcB = 2'b10;
-						 ALUOp = 2'b10; //proposal previous 00
+						 ALUOp = 2'b00;
 						 IorD = 1'b0;
 						 IRWrite = 1'b0;
 						 PCWrite = 1'b0;
@@ -401,7 +400,7 @@ always @(FSM_state)
 					begin
 						 MemRead = 1'b1;
 						 MemWrite = 1'b0;
-						 ALUSrcA = 1'b0;
+						 ALUSrcA = 2'b00;
 						 ALUSrcB = 2'b01;
 						 ALUOp = 2'b00;
 						 IorD = 1'b0;
