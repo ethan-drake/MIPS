@@ -39,6 +39,7 @@ initial begin
 	#10420 rx = 1'b0; //bit6
 	#10420 rx = 1'b0; //bit7
 	#10420 rx = 1'b0; //parity
+	#10420 rx = 1'b1; //up again
 end
 
 always begin
