@@ -14,8 +14,8 @@ get_uart_data:
 	lw t1, 0x10(a3) #obtener la señal de 0x10010034 para ver si ya recibimos un dato
 	beq t1, zero, get_uart_data #checar si es un valor distinto de cero, sino seguir esperando
 	lw a2, 0xC(a3) #loading number from address
-	sw t2, 0x14(a3) #limpiar la variable de RX uart
-	sw zero, 0x14(a3) #limpiar la variable de RX uart
+	sw t2, 0x14(a3) #levantar señal para limpiar la bandera de rx
+	sw zero, 0x14(a3) #bajar señal para limpiar la bandera de rx
 	
 main_factorial:
 	#addi a2,zero,5 #loading factorial

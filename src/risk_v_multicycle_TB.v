@@ -28,12 +28,12 @@ initial begin
 	rx = 1; //Initial value for Rx
 	#1 rst = 0;
 	#1 rst = 1;
-	//Data 0x9 
+	//Data 0x3
 	#100 rx = 1'b0;   //start
 	#10420 rx = 1'b1; //bit0
-	#10420 rx = 1'b0; //bit1
+	#10420 rx = 1'b1; //bit1
 	#10420 rx = 1'b0; //bit2
-	#10420 rx = 1'b1; //bit3
+	#10420 rx = 1'b0; //bit3
 	#10420 rx = 1'b0; //bit4
 	#10420 rx = 1'b0; //bit5
 	#10420 rx = 1'b0; //bit6

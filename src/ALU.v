@@ -51,7 +51,7 @@ always@(*) begin
 			end
 		4'h4 : //set less than
 			begin
-				temp_result = (i_a < i_b) ? {LENGTH-1{1'b1}} : {LENGTH-1{1'b0}};
+				temp_result = (i_a < i_b) ? {{LENGTH-2{1'b0}},1'b1} : {LENGTH-1{1'b0}};
 			end
 		4'h5 : //xor
 			begin
