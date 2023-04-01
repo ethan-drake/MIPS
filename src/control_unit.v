@@ -14,16 +14,16 @@ module control_unit(
     //Multiplexer Selects
     output reg [1:0] MemtoReg,
     output reg PCSrc,
-    output reg ALUSrc,
+    output reg ALUSrcA,
+    output reg ALUSrcB,
     //Register Enables
     output reg MemWrite,
     output reg MemRead,
-    output reg PCWrite,
     output reg PCWriteCond,
     output reg BNE,
     output reg RegWrite,
     //Outputs ALU Decoder
-    output reg [2:0] ALUOp
+    output reg [2:0] ALUOP
 );
 
 //opcodes
@@ -41,9 +41,18 @@ parameter LOAD_INS = 7'b0000011;
 //ADDITION 010, ALUOP 00
 
 //OUTPUT DEFINITION
-always @(opcode)
+always @(*)
 	begin
-		ALUOp = 2'b00;
+		 BNE = 1'b0;
+		 PCWriteCond = 1'b0;
+		 MemRead = 1'b0;
+		 MemWrite = 1'b0;
+		 MemtoReg = 2'b00;
+		 PCSrc = 1'b0;
+		 ALUOP = 2'b00;
+         ALUSrcA = 1'b0;
+		 ALUSrcB = 1'b0;
+		 RegWrite = 1'b0;
 		case(opcode)
             LOAD_INS:
             begin
@@ -54,7 +63,8 @@ always @(opcode)
                 MemtoReg = 2'b01;
                 PCSrc = 1'b0;
                 ALUOP = 2'b00;
-                ALUSrc = 1'b1;
+                ALUSrcA = 1'b1;
+                ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
             end
             S_TYPE:
@@ -66,7 +76,8 @@ always @(opcode)
                 MemtoReg = 2'b00;
                 PCSrc = 1'b0;
                 ALUOP = 2'b00;
-                ALUSrc = 1'b1;
+                ALUSrcA = 1'b1;
+                ALUSrcB = 1'b1;
                 RegWrite = 1'b0;
             end
             R_TYPE:
@@ -78,7 +89,8 @@ always @(opcode)
                 MemtoReg = 2'b00;
                 PCSrc = 1'b0;
                 ALUOP = 2'b10;
-                ALUSrc = 1'b0;
+                ALUSrcA = 1'b1;
+                ALUSrcB = 1'b0;
                 RegWrite = 1'b1;
             end
             I_TYPE:
@@ -90,7 +102,8 @@ always @(opcode)
                 MemtoReg = 2'b00;
                 PCSrc = 1'b0;
                 ALUOP = 2'b10;
-                ALUSrc = 1'b1;
+                ALUSrcA = 1'b1;
+                ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
             end
             JALR_INS:
@@ -102,7 +115,8 @@ always @(opcode)
                 MemtoReg = 2'b10;
                 PCSrc = 1'b1;
                 ALUOP = 2'b10;
-                ALUSrc = 1'b1;
+                ALUSrcA = 1'b1;
+                ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
             end
             B_TYPE:
@@ -116,7 +130,8 @@ always @(opcode)
                     MemtoReg = 2'b00;
                     PCSrc = 1'b1;
                     ALUOP = 2'b01;
-                    ALUSrc = 1'b0;
+                    ALUSrcA = 1'b1;
+                    ALUSrcB = 1'b0;
                     RegWrite = 1'b0;
                 end
                 else if(func3 == 3'b000) //BNE
@@ -128,10 +143,10 @@ always @(opcode)
                     MemtoReg = 2'b00;
                     PCSrc = 1'b1;
                     ALUOP = 2'b01;
-                    ALUSrc = 1'b0;
+                    ALUSrcA = 1'b1;
+                    ALUSrcB = 1'b0;
                     RegWrite = 1'b0;
                 end
-
             end
             LUI_INS:
             begin
@@ -142,7 +157,8 @@ always @(opcode)
                 MemtoReg = 2'b11;
                 PCSrc = 1'b0;
                 ALUOP = 2'b00;
-                ALUSrc = 1'b1;
+                ALUSrcA = 1'b1;
+                ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
             end
             AUIPC_INS:
@@ -154,7 +170,8 @@ always @(opcode)
                 MemtoReg = 2'b00;
                 PCSrc = 1'b0;
                 ALUOP = 2'b00;
-                ALUSrc = 1'b1;
+                ALUSrcA = 1'b0;
+                ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
             end
             JAL_INS:
@@ -166,7 +183,8 @@ always @(opcode)
                 MemtoReg = 2'b10;
                 PCSrc = 1'b1;
                 ALUOP = 2'b00;
-                ALUSrc = 1'b1;
+                ALUSrcA = 1'b1;
+                ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
             end
             default:
@@ -178,7 +196,8 @@ always @(opcode)
                 MemtoReg = 2'b00;
                 PCSrc = 1'b0;
                 ALUOP = 2'b00;
-                ALUSrc = 1'b0;
+                ALUSrcA = 1'b1;
+                ALUSrcB = 1'b0;
                 RegWrite = 1'b0;
             end
 			endcase

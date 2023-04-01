@@ -17,14 +17,13 @@ module risc_v_top (
 
 
 //Wires to interconnect modules
-wire pc_write, iorD, MemWrite, irWrite, pc_src;
-wire [1:0] mem2Reg,alu_SrcA;
+wire pc_write, ALUSrcB, ALUSrcA, MemWrite, irWrite, pc_src;
+wire [1:0] mem2Reg;
 wire regWrite, go_n_halt_mips;
-wire [31:0] pc_prim, pc_out, alu_out, adr, rd1_data, rd2_data,pc_prime, pc_next, pc_plus_4, pc_target;
+wire [31:0] pc_prim, pc_out, adr, rd1_data, rd1_data_reg, rd2_data, rd2_data_reg, pc_prime, pc_next, pc_plus_4, pc_target;
 wire [31:0] memory_out, instr2perf, data2write, wd3_wire, mem_data_out, imm_gen_out; 
 wire [31:0] rd1_ff, rd2_ff, SrcA, SrcB, alu_result, instr_2_perform;
 wire [4:0] a3_wire;
-wire [1:0] alu_SrcB;
 wire [2:0] alu_control;
 wire[3:0] alu_operation;
 wire [31:0] data_memory_2_slave, address_memory_2_slave, data_return_rom, data_return_ram, data_return_uart;
@@ -74,11 +73,61 @@ instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.rd(instr2perf)
 );
 
+//IMMEDIATE GENERATOR
+imm_gen immediate_gen(
+	.i_instruction(instr2perf),
+	.o_immediate(imm_gen_out)
+);
+
+//Register file
+register_file reg_file (
+	.clk(clk),
+	.we3(regWrite),
+	.a1(instr2perf[19:15]),
+	.a2(instr2perf[24:20]),
+	.a3(instr2perf[11:7]),
+	.wd3(wd3_wire),
+	.rd1(rd1_data_reg),
+	.rd2(rd2_data_reg)
+);
+
+ALU_control alu_ctrl(
+    //inputs
+	.i_opcode(instr2perf[6:0]),
+	.i_funct7(instr2perf[31:25]),
+	.i_funct3(instr2perf[14:12]),
+	.i_aluop(alu_control),
+	 //outputs
+    .o_alu_operation(alu_operation)
+);
+
+multiplexor_param #(.LENGTH(32)) mult_alu_srcB (
+	.i_a(rd2_data_reg),
+	.i_b(imm_gen_out),
+	.i_selector(ALUSrcB),
+	.out(rd2_data)
+);
+
+multiplexor_param #(.LENGTH(32)) mult_alu_srcA (
+	.i_a(pc_out),
+	.i_b(rd1_data_reg),
+	.i_selector(ALUSrcA),
+	.out(rd1_data)
+);
+
+ALU #(.LENGTH(32)) alu_block (
+	.i_a(rd1_data),
+	.i_b(rd2_data),
+	.i_control(alu_operation),
+	.o_alu_zero(alu_zero),
+	.alu_result(alu_result)
+);
+
 //Memory map
 master_memory_map #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_map (
 	//CORES <--> Memory map
-	.wd(rd2_ff),
-	.address(adr),
+	.wd(rd2_data_reg),
+	.address(alu_result),
 	.we(MemWrite),
 	.re(MemRead),
 	.clk(clk),
@@ -86,18 +135,14 @@ master_memory_map #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_map (
 	//Memory_map <--> Slaves
 	.map_Data(data_memory_2_slave),
 	.map_Address(address_memory_2_slave),
-	//Memory_map <--> ROM
-	.HRData1(data_return_rom),
-	.WSel_1(we_memory_2_rom),
-	.HSel_1(re_memory_2_rom),
 	//Memory_map <--> RAM
-	.HRData2(data_return_ram),
-	.WSel_2(we_memory_2_ram),
-	.HSel_2(re_memory_2_ram),
+	.HRData1(data_return_ram),
+	.WSel_1(we_memory_2_ram),
+	.HSel_1(re_memory_2_ram),
 	//Memory_map <--> UART
-	.HRData3(data_return_uart),
-	.WSel_3(we_memory_2_uart),
-	.HSel_3(re_memory_2_uart)
+	.HRData2(data_return_uart),
+	.WSel_2(we_memory_2_uart),
+	.HSel_2(re_memory_2_uart)
 );
 
 //Memory RAM
@@ -122,85 +167,34 @@ uart_IP #(.DATA_WIDTH(32)) uart_IP_module (
 	.tx(tx)
 );
 
-//IMMEDIATE GENERATOR
-imm_gen immediate_gen(
-	.i_instruction(instr2perf),
-	.o_immediate(imm_gen_out)
+adder #(.LENGTH(32)) adder_pc_4 (
+	.i_a(32'h4),
+	.i_b(pc_out),
+	.q(pc_plus_4)
 );
 
-//Register file
-register_file reg_file (
-	.clk(clk),
-	.we3(regWrite),
-	.a1(instr2perf[19:15]),
-	.a2(instr2perf[24:20]),
-	.a3(instr2perf[11:7]),
-	.wd3(wd3_wire),
-	.rd1(rd1_data),
-	.rd2(rd2_data_reg)
+adder #(.LENGTH(32)) adder_jump (
+	.i_a(imm_gen_out),
+	.i_b(pc_out),
+	.q(pc_target)
 );
 
-ALU_control alu_ctrl(
-    //inputs
-	.i_opcode(instr2perf[6:0]),
-	.i_funct7(instr2perf[31:25]),
-	.i_funct3(instr2perf[14:12]),
-	.i_aluop(alu_control),
-	 //outputs
-    .o_alu_operation(alu_operation)
-);
-
-multiplexor_param #(.LENGTH(1)) mult_alu_srcB (
-	.i_a(rd2_data_reg),
-	.i_b(imm_gen_out),
-	.i_selector(ALUSrc),
-	.out(rd2_data)
-);
-
-//ALU
-ALU #(.LENGTH(32)) alu_block (
-	.i_a(rd1_data),
-	.i_b(rd2_data),
-	.i_control(alu_operation),
-	.o_alu_zero(alu_zero),
-	.alu_result(alu_result)
-);
-
-///////////////////////MEM////////////////////////////////////////////////
-///////////////////////WB/////////////////////////////////////////////////
-
-
-//FF to save alu_result (ALUOut)
-ffd_param #(.LENGTH(32)) ff_alu_result (
-	.i_clk(clk), 
-	.i_rst_n(rst_n), 
-	.i_en(1'b1),
-	.d(alu_result),
-	.q(alu_out)
-);
-
-//Multiplexor to select alu_result or alu_out
-multiplexor_param #(.LENGTH(32)) mult_alu (
+double_multiplexor_param #(.LENGTH(32)) mult_alu_param (
 	.i_a(alu_result),
-	.i_b(alu_out),
-	.i_selector(pc_src),
-	.out(pc_prim)
+	.i_b(memory_out),
+	.i_c(pc_plus_4),
+	.i_d(imm_gen_out),
+	.i_selector(mem2Reg),
+	.out(wd3_wire)
 );
 
-
-/////////////////////////////CONTROL PATH/////////////////////////////////////
-//Control unit
 control_unit cu (
-	.clk(clk),
-	.rst_n(rst_n),
 	.opcode(instr2perf[6:0]),
 	.func3(instr2perf[14:12]),
-	.IorD(iorD),
-	.ALUSrcA(alu_SrcA),
-	.ALUSrcB(alu_SrcB),
+	.ALUSrcA(ALUSrcA),
+	.ALUSrcB(ALUSrcB),
 	.PCSrc(pc_src),
-	.ALUOp(alu_control),
-	.IRWrite(irWrite),
+	.ALUOP(alu_control),
 	.MemWrite(MemWrite),
 	.MemRead(MemRead),
 	.RegWrite(regWrite),

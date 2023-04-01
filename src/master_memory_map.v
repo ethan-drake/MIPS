@@ -26,21 +26,18 @@ module master_memory_map #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32)
 reg [1:0] mult_map, add_val;
 //To evaluate address mapping conditions
 always @(address) begin
-	//ROM
-	if (address >= 32'h400_000 && address < 32'h10_010_000) begin
-		add_val = 2'b00;
 	//RAM/UART
-	end else if (address >= 32'h10_010_000 && address < 32'h10_040_000) begin
+	if (address >= 32'h10_010_000 && address < 32'h10_040_000) begin
 		//UART
 		if (address >= 32'h10_010_020 && address <= 32'h10_010_038) begin
-			add_val = 2'b10;
+			add_val = 2'b01;
 		end
 		else
 		begin
-			add_val = 2'b01;
+			add_val = 2'b00;
 		end
 	end else if (address >= 32'h10_040_000 && address < 32'h7fff_effc) begin
-		add_val = 2'b11;
+		add_val = 2'b10;
 	end else begin
 		add_val = 2'b00;
 	end
@@ -50,7 +47,7 @@ end
 always @(add_val, we, wd, address) begin
 	case(add_val)
 		2'b00:
-			begin  //ROM
+			begin  //RAM
 				mult_map = 2'b00;
 				HSel_1 = 1'b1;
 				HSel_2 = 1'b0;
@@ -58,11 +55,11 @@ always @(add_val, we, wd, address) begin
 				WSel_1 = we;
 				WSel_2 = 1'b0;
 				WSel_3 = 1'b0;
-				map_Address = (address + (~32'h400_000 + 1'b1)) >> 2'h2; //400_000
+				map_Address = (address + (~32'h10_010_000 + 1'b1)) >> 2'h2; //10_010_000
 				map_Data = wd;
 			end
 		2'b01:
-			begin  //RAM
+			begin //UART
 				mult_map = 2'b01;
 				HSel_1 = 1'b0;
 				HSel_2 = 1'b1;
@@ -70,29 +67,17 @@ always @(add_val, we, wd, address) begin
 				WSel_1 = 1'b0;
 				WSel_2 = we;
 				WSel_3 = 1'b0;
-				map_Address = (address + (~32'h10_010_000 + 1'b1)) >> 2'h2; //10_010_000
-				map_Data = wd;
-			end
-		2'b10:
-			begin //UART
-				mult_map = 2'b10;
-				HSel_1 = 1'b0;
-				HSel_2 = 1'b0;
-				HSel_3 = 1'b1;
-				WSel_1 = 1'b0;
-				WSel_2 = 1'b0;
-				WSel_3 = we;
 				map_Address = address + (~32'h10_010_020 + 1'b1) >> 2'h2; //to UART
 				map_Data = wd;
 			end
-		2'b11:
+		2'b10:
 			begin //STACK (inside RAM)
-				mult_map = 2'b01;
-				HSel_1 = 1'b0;
-				HSel_2 = 1'b1;
+				mult_map = 2'b00;
+				HSel_1 = 1'b1;
+				HSel_2 = 1'b0;
 				HSel_3 = 1'b0;
-				WSel_1 = 1'b0;
-				WSel_2 = we;
+				WSel_1 = we;
+				WSel_2 = 1'b0;
 				WSel_3 = 1'b0;
 				map_Address = (address - 32'h7fff_effc + 32'hD4) >> 2'h2; //to STACK(inside RAM) address - upper limit + current RAM size
 				map_Data = wd;
@@ -114,9 +99,9 @@ always @(add_val, we, wd, address) begin
 end
 
 double_multiplexor_param #(.LENGTH(DATA_WIDTH)) memory_map_mult (
-	.i_a(HRData1),//ROM
-	.i_b(HRData2),//RAM & STACK
-	.i_c(HRData3),// UART
+	.i_a(HRData1),//RAM & STACK
+	.i_b(HRData2),//UART
+	.i_c(32'h0),
 	.i_d(32'h0),
 	.i_selector(mult_map),
 	.out(rd)
