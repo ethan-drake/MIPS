@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at control_unit.v(23): object "MemRead" differs only in case from object "MEMREAD" in the same scope File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/control_unit.v Line: 23
