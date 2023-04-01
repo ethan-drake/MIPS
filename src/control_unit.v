@@ -3,7 +3,7 @@
 // File:			     control_unit.v
 // Module name:	  control_unit
 // Project Name:	  risc_v_top
-// Description:	  RISC_V control unit
+// Description:	  RISC_V control unit single cycle
 
 module control_unit(
     //Inputs FSM
