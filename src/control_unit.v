@@ -128,7 +128,7 @@ always @(*)
                     MemRead = 1'b1;
                     MemWrite = 1'b0;
                     MemtoReg = 2'b00;
-                    PCSrc = 1'b1;
+                    PCSrc = 1'b0;
                     ALUOP = 2'b01;
                     ALUSrcA = 1'b1;
                     ALUSrcB = 1'b0;
@@ -141,7 +141,7 @@ always @(*)
                     MemRead = 1'b1;
                     MemWrite = 1'b0;
                     MemtoReg = 2'b00;
-                    PCSrc = 1'b1;
+                    PCSrc = 1'b0;
                     ALUOP = 2'b01;
                     ALUSrcA = 1'b1;
                     ALUSrcB = 1'b0;
