@@ -13,10 +13,8 @@ module control_unit(
     //Output control unit
     //Multiplexer Selects
     output reg [1:0] MemtoReg,
-    output reg IorD, 
     output reg PCSrc,
-    output reg [1:0] ALUSrcB,
-    output reg [1:0] ALUSrcA,
+    output reg ALUSrc,
     //Register Enables
     output reg MemWrite,
     output reg MemRead,
@@ -49,172 +47,139 @@ always @(opcode)
 		case(opcode)
             LOAD_INS:
             begin
-                MemtoReg = 2'b00; //no care
-                IorD = 1'b0;
-                PCSrc = 1'b0;
-                ALUSrcB = 2'b01;
-                ALUSrcA = 2'b00;
-                MemWrite = 1'b0; //no care
+                BNE = 1'b0;
+                PCWriteCond = 1'b0;
                 MemRead = 1'b1;
-                PCWrite = 1'b1;
-                PCWriteCond = 1'b0; //no care
-                BNE = 1'b0; //no care
-                RegWrite = 1'b0; //no care
-                ALUOp = 2'b00;
+                MemWrite = 1'b0;
+                MemtoReg = 2'b01;
+                PCSrc = 1'b0;
+                ALUOP = 2'b00;
+                ALUSrc = 1'b1;
+                RegWrite = 1'b1;
             end
             S_TYPE:
             begin
-                MemtoReg = 2'b00; //no care
-                IorD = 1'b0; //no care
-                PCSrc = 1'b0; //no care
-                ALUSrcB = 2'b10;
-                ALUSrcA = 2'b10;
-                MemWrite = 1'b0; //no care
-                MemRead = 1'b0; //no care
-                PCWrite = 1'b0; //no care
-                PCWriteCond = 1'b0; //no care
-                BNE = 1'b0; //no care
-                RegWrite = 1'b0; //no care
-                ALUOp = 2'b00;
+                BNE = 1'b0;
+                PCWriteCond = 1'b0;
+                MemRead = 1'b1;
+                MemWrite = 1'b1;
+                MemtoReg = 2'b00;
+                PCSrc = 1'b0;
+                ALUOP = 2'b00;
+                ALUSrc = 1'b1;
+                RegWrite = 1'b0;
             end
             R_TYPE:
             begin
-                MemtoReg = 2'b00; //no care
-                IorD = 1'b0; //no care
-                PCSrc = 1'b0; //no care
-                ALUSrcB = 2'b10;
-                ALUSrcA = 2'b01;
-                MemWrite = 1'b0; //no care
-                MemRead = 1'b0; //no care
-                PCWrite = 1'b0; //no care
-                PCWriteCond = 1'b0; //no care
-                BNE = 1'b0; //no care
-                RegWrite = 1'b0; //no care
-                ALUOp = 2'b00;
+                BNE = 1'b0;
+                PCWriteCond = 1'b0;
+                MemRead = 1'b1;
+                MemWrite = 1'b0;
+                MemtoReg = 2'b00;
+                PCSrc = 1'b0;
+                ALUOP = 2'b10;
+                ALUSrc = 1'b0;
+                RegWrite = 1'b1;
             end
             I_TYPE:
             begin
-                MemtoReg  = 2'b00; //no care
-                IorD = 1'b1;
-                PCSrc = 1'b0; //no care
-                ALUSrcB = 2'b00; //no care
-                ALUSrcA = 2'b00; //no care
-                MemWrite = 1'b0; //no care
+                BNE = 1'b0;
+                PCWriteCond = 1'b0;
                 MemRead = 1'b1;
-                PCWrite = 1'b0; //no care
-                PCWriteCond = 1'b0; //no care
-                BNE = 1'b0; //no care
-                RegWrite = 1'b0; //no care
-                ALUOp = 2'b00; //no care
+                MemWrite = 1'b0;
+                MemtoReg = 2'b00;
+                PCSrc = 1'b0;
+                ALUOP = 2'b10;
+                ALUSrc = 1'b1;
+                RegWrite = 1'b1;
             end
             JALR_INS:
             begin
-                MemtoReg  = 2'b01;
-                IorD = 1'b0; //no care
-                PCSrc = 1'b0; //no care
-                ALUSrcB = 2'b00; //no care
-                ALUSrcA = 2'b00; //no care
-                MemWrite = 1'b0; //no care
-                MemRead = 1'b0; // no care
-                PCWrite = 1'b0; //no care
-                PCWriteCond = 1'b0; //no care
-                BNE = 1'b0; //no care
+                BNE = 1'b0;
+                PCWriteCond = 1'b0;
+                MemRead = 1'b1;
+                MemWrite = 1'b0;
+                MemtoReg = 2'b10;
+                PCSrc = 1'b1;
+                ALUOP = 2'b10;
+                ALUSrc = 1'b1;
                 RegWrite = 1'b1;
-                ALUOp = 2'b00; //no care
             end
             B_TYPE:
             begin
                 if(func3 == 3'b000) //BEQ
                 begin
-                    MemtoReg  = 2'b00;//no care
-                    IorD = 1'b1;
-                    PCSrc = 1'b0; //no care
-                    ALUSrcB = 2'b00; //no care
-                    ALUSrcA = 2'b00; //no care
-                    MemWrite = 1'b1;
-                    MemRead = 1'b0; // no care
-                    PCWrite = 1'b0; //no care
-                    PCWriteCond = 1'b0; //no care
-                    BNE = 1'b0; //no care
-                    RegWrite = 1'b0;//no care
-                    ALUOp = 2'b00; //no care
+                    BNE = 1'b0;
+                    PCWriteCond = 1'b1;
+                    MemRead = 1'b1;
+                    MemWrite = 1'b0;
+                    MemtoReg = 2'b00;
+                    PCSrc = 1'b1;
+                    ALUOP = 2'b01;
+                    ALUSrc = 1'b0;
+                    RegWrite = 1'b0;
                 end
                 else if(func3 == 3'b000) //BNE
                 begin
-                    MemtoReg  = 2'b00;//no care
-                    IorD = 1'b1;
-                    PCSrc = 1'b0; //no care
-                    ALUSrcB = 2'b00; //no care
-                    ALUSrcA = 2'b00; //no care
-                    MemWrite = 1'b1;
-                    MemRead = 1'b0; // no care
-                    PCWrite = 1'b0; //no care
-                    PCWriteCond = 1'b0; //no care
-                    BNE = 1'b0; //no care
-                    RegWrite = 1'b0;//no care
-                    ALUOp = 2'b00; //no care
+                    BNE = 1'b1;
+                    PCWriteCond = 1'b1;
+                    MemRead = 1'b1;
+                    MemWrite = 1'b0;
+                    MemtoReg = 2'b00;
+                    PCSrc = 1'b1;
+                    ALUOP = 2'b01;
+                    ALUSrc = 1'b0;
+                    RegWrite = 1'b0;
                 end
 
             end
             LUI_INS:
             begin
-                MemtoReg  = 2'b00;//no care
-                IorD = 1'b0; //no care
-                PCSrc = 1'b0; //no care
-                ALUSrcB = 2'b00;
-                ALUSrcA = 2'b01;
-                MemWrite = 1'b0; //no care
-                MemRead = 1'b0; // no care
-                PCWrite = 1'b0; //no care
-                PCWriteCond = 1'b0; //no care
-                BNE = 1'b0; //no care
-                RegWrite = 1'b0;//no care
-                ALUOp = 2'b10;
+                BNE = 1'b0;
+                PCWriteCond = 1'b0;
+                MemRead = 1'b1;
+                MemWrite = 1'b0;
+                MemtoReg = 2'b11;
+                PCSrc = 1'b0;
+                ALUOP = 2'b00;
+                ALUSrc = 1'b1;
+                RegWrite = 1'b1;
             end
             AUIPC_INS:
             begin
-                MemtoReg  = 2'b00;
-                IorD = 1'b0; //no care
-                PCSrc = 1'b0; //no care
-                ALUSrcB = 2'b00; //no care
-                ALUSrcA = 2'b00; //no care
-                MemWrite = 1'b0; //no care
-                MemRead = 1'b0; // no care
-                PCWrite = 1'b0; //no care
-                PCWriteCond = 1'b0; //no care
-                BNE = 1'b0; //no care
+                BNE = 1'b0;
+                PCWriteCond = 1'b0;
+                MemRead = 1'b1;
+                MemWrite = 1'b0;
+                MemtoReg = 2'b00;
+                PCSrc = 1'b0;
+                ALUOP = 2'b00;
+                ALUSrc = 1'b1;
                 RegWrite = 1'b1;
-                ALUOp = 2'b00; //no care
             end
             JAL_INS:
             begin
-                MemtoReg  = 2'b00; //no care
-                IorD = 1'b0; //no care
-                PCSrc = 1'b0; //no care
-                ALUSrcB = 2'b10;
-                ALUSrcA = 2'b01;
-                MemWrite = 1'b0; //no care
-                MemRead = 1'b0; // no care
-                PCWrite = 1'b0; //no care
-                PCWriteCond = 1'b0; //no care
-                BNE = 1'b0; //no care
-                RegWrite = 1'b0;//no care
-                ALUOp = 2'b10;
+                BNE = 1'b0;
+                PCWriteCond = 1'b0;
+                MemRead = 1'b1;
+                MemWrite = 1'b0;
+                MemtoReg = 2'b10;
+                PCSrc = 1'b1;
+                ALUOP = 2'b00;
+                ALUSrc = 1'b1;
+                RegWrite = 1'b1;
             end
             default:
             begin
-                MemtoReg  = 2'b00; //no care
-                IorD = 1'b0; //no care
-                PCSrc = 1'b0; //no care
-                ALUSrcB = 2'b00; //no care
-                ALUSrcA = 2'b00; //no care
-                MemWrite = 1'b0; //no care
-                MemRead = 1'b0; // no care
-                PCWrite = 1'b0; //no care
-                PCWriteCond = 1'b0; //no care
-                BNE = 1'b0; //no care
-                RegWrite = 1'b0;//no care
-                ALUOp = 2'b00; //no care
+                BNE = 1'b0;
+                PCWriteCond = 1'b0;
+                MemRead = 1'b0;
+                MemWrite = 1'b0;
+                MemtoReg = 2'b00;
+                PCSrc = 1'b0;
+                ALUOP = 2'b00;
+                ALUSrc = 1'b0;
+                RegWrite = 1'b0;
             end
 			endcase
 	end
