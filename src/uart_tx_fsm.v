@@ -119,7 +119,7 @@ always @(current_state)begin
             o_load_serializer <= 1'b0;
             o_clear_bit_counter <= 1'b1;
 				reset_delayer <= 1'b0;
-				enable_finish_ff <= 1'b0;
+				enable_finish_ff <= 1'b1;
 				clear_finish_ff <= 1'b0;
         end
         REGISTER_DATA:
@@ -203,7 +203,7 @@ always @(current_state)begin
             o_load_serializer <= 1'b0;
             o_clear_bit_counter <= 1'b0;
 				reset_delayer <= 1'b0;
-				enable_finish_ff <= 1'b1;
+				enable_finish_ff <= 1'b0;
 				clear_finish_ff <= 1'b0;
         end
         default:

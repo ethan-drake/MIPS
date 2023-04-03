@@ -22,6 +22,7 @@ module control_unit(
     output reg PCWriteCond,
     output reg BNE,
     output reg RegWrite,
+	 output reg JALR_o,
     //Outputs ALU Decoder
     output reg [2:0] ALUOP
 );
@@ -50,9 +51,10 @@ always @(*)
 		 MemtoReg = 2'b00;
 		 PCSrc = 1'b0;
 		 ALUOP = 2'b00;
-         ALUSrcA = 1'b0;
+       ALUSrcA = 1'b0;
 		 ALUSrcB = 1'b0;
 		 RegWrite = 1'b0;
+		 JALR_o = 1'b0;
 		case(opcode)
             LOAD_INS:
             begin
@@ -66,6 +68,7 @@ always @(*)
                 ALUSrcA = 1'b1;
                 ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
+					 JALR_o = 1'b0;
             end
             S_TYPE:
             begin
@@ -79,6 +82,7 @@ always @(*)
                 ALUSrcA = 1'b1;
                 ALUSrcB = 1'b1;
                 RegWrite = 1'b0;
+					 JALR_o = 1'b0;
             end
             R_TYPE:
             begin
@@ -92,6 +96,7 @@ always @(*)
                 ALUSrcA = 1'b1;
                 ALUSrcB = 1'b0;
                 RegWrite = 1'b1;
+					 JALR_o = 1'b0;
             end
             I_TYPE:
             begin
@@ -105,6 +110,7 @@ always @(*)
                 ALUSrcA = 1'b1;
                 ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
+					 JALR_o = 1'b0;
             end
             JALR_INS:
             begin
@@ -118,6 +124,7 @@ always @(*)
                 ALUSrcA = 1'b1;
                 ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
+					 JALR_o = 1'b1;
             end
             B_TYPE:
             begin
@@ -133,8 +140,9 @@ always @(*)
                     ALUSrcA = 1'b1;
                     ALUSrcB = 1'b0;
                     RegWrite = 1'b0;
+						  JALR_o = 1'b0;
                 end
-                else if(func3 == 3'b000) //BNE
+                else if(func3 == 3'b001) //BNE
                 begin
                     BNE = 1'b1;
                     PCWriteCond = 1'b1;
@@ -146,6 +154,7 @@ always @(*)
                     ALUSrcA = 1'b1;
                     ALUSrcB = 1'b0;
                     RegWrite = 1'b0;
+						  JALR_o = 1'b0;
                 end
             end
             LUI_INS:
@@ -160,6 +169,7 @@ always @(*)
                 ALUSrcA = 1'b1;
                 ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
+					 JALR_o = 1'b0;
             end
             AUIPC_INS:
             begin
@@ -173,6 +183,7 @@ always @(*)
                 ALUSrcA = 1'b0;
                 ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
+					 JALR_o = 1'b0;
             end
             JAL_INS:
             begin
@@ -186,6 +197,7 @@ always @(*)
                 ALUSrcA = 1'b1;
                 ALUSrcB = 1'b1;
                 RegWrite = 1'b1;
+					 JALR_o = 1'b0;
             end
             default:
             begin
@@ -199,6 +211,7 @@ always @(*)
                 ALUSrcA = 1'b1;
                 ALUSrcB = 1'b0;
                 RegWrite = 1'b0;
+					 JALR_o = 1'b0;
             end
 			endcase
 	end

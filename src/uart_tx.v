@@ -13,7 +13,8 @@ module uart_tx #(parameter baud_rate=5210) (
     input tx_send,
     //outputs
     output transmit_data,
-	 output tx_finish
+	 output tx_finish,
+	 output tx_busy
 	);
 
 wire baud_rate_overflow;
@@ -106,6 +107,7 @@ ffd_param #(.LENGTH(8))tx_reg(
 
 assign parity_bit = ^tx_data;
 assign shift_register_enable = baud_rate_overflow & bit_counter_enable;
+assign tx_busy = ~tx_finish;
 
 //parallel to serial converter
 parallel2serial #(.N(10))shift_right_reg(

@@ -17,7 +17,8 @@ module uart_full_duplex #(parameter baud_rate=5210) (
     output tx,
 	 output rx_flag,
 	 output [7:0] Rx_Data,
-	 output tx_finish
+	 output tx_finish,
+	 output tx_busy
 );
 
 // For a baud rate of 9600 baudios: bit time 104.2 us, half time 52.1 us
@@ -42,7 +43,8 @@ uart_tx #(.baud_rate(baud_rate)) tx_uart(
 	.tx_data(tx_data),
 	.tx_send(tx_send),
 	.transmit_data(tx),
-	.tx_finish(tx_finish)
+	.tx_finish(tx_finish),
+	.tx_busy(tx_busy)
 );
 
 endmodule

@@ -29,7 +29,7 @@ always @(address) begin
 	//RAM/UART
 	if (address >= 32'h10_010_000 && address < 32'h10_040_000) begin
 		//UART
-		if (address >= 32'h10_010_020 && address <= 32'h10_010_038) begin
+		if (address >= 32'h10_010_020 && address <= 32'h10_010_040) begin
 			add_val = 2'b01;
 		end
 		else

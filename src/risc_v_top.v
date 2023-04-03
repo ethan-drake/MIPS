@@ -17,18 +17,15 @@ module risc_v_top (
 
 
 //Wires to interconnect modules
-wire pc_write, ALUSrcB, ALUSrcA, MemWrite, irWrite, pc_src;
+wire ALUSrcB, ALUSrcA, MemWrite, pc_src, jalr_o, regWrite;
 wire [1:0] mem2Reg;
-wire regWrite, go_n_halt_mips;
-wire [31:0] pc_prim, pc_out, adr, rd1_data, rd1_data_reg, rd2_data, rd2_data_reg, pc_prime, pc_next, pc_plus_4, pc_target;
-wire [31:0] memory_out, instr2perf, data2write, wd3_wire, mem_data_out, imm_gen_out; 
-wire [31:0] rd1_ff, rd2_ff, SrcA, SrcB, alu_result, instr_2_perform;
-wire [4:0] a3_wire;
+wire [31:0] pc_prim, pc_out, adr, rd1_data, rd1_data_reg, rd2_data, rd2_data_reg, pc_next, pc_plus_4, pc_target;
+wire [31:0] memory_out, instr2perf, wd3_wire, imm_gen_out; 
+wire [31:0] SrcA, SrcB, alu_result, pc_jal;
 wire [2:0] alu_control;
 wire[3:0] alu_operation;
 wire [31:0] data_memory_2_slave, address_memory_2_slave, data_return_rom, data_return_ram, data_return_uart;
 wire we_memory_2_rom, re_memory_2_rom, we_memory_2_ram, re_memory_2_ram, we_memory_2_uart, re_memory_2_uart;
-
 wire PCEnable;
 wire PCWriteCond;
 wire bne;
@@ -176,7 +173,14 @@ adder #(.LENGTH(32)) adder_pc_4 (
 adder #(.LENGTH(32)) adder_jump (
 	.i_a(imm_gen_out),
 	.i_b(pc_out),
-	.q(pc_target)
+	.q(pc_jal)
+);
+
+multiplexor_param #(.LENGTH(32)) mult_jalr (
+	.i_a(pc_jal),
+	.i_b(alu_result),
+	.i_selector(jalr_o),
+	.out(pc_target)
 );
 
 double_multiplexor_param #(.LENGTH(32)) mult_alu_param (
@@ -199,6 +203,7 @@ control_unit cu (
 	.MemRead(MemRead),
 	.RegWrite(regWrite),
 	.MemtoReg(mem2Reg),
+	.JALR_o(jalr_o),
 	.PCWriteCond(PCWriteCond),
 	.BNE(bne)
 );
