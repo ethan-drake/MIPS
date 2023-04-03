@@ -1,5 +1,5 @@
 Analysis & Synthesis report for risk_v_multicycle
-Sun Apr  2 19:35:35 2023
+Sun Apr  2 20:28:27 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -79,12 +79,13 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
  71. Port Connectivity Checks: "uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|UART_Rx:rx_uart|ffd_param:ff_par"
  72. Port Connectivity Checks: "master_memory_map:memory_map|double_multiplexor_param:memory_map_mult"
  73. Port Connectivity Checks: "master_memory_map:memory_map"
- 74. Port Connectivity Checks: "ffd_param_pc_risk:ff_pc"
- 75. Signal Tap Logic Analyzer Settings
- 76. Post-Synthesis Netlist Statistics for Top Partition
- 77. Elapsed Time Per Partition
- 78. Connections to In-System Debugging Instance "auto_signaltap_0"
- 79. Analysis & Synthesis Messages
+ 74. Port Connectivity Checks: "instr_memory:memory_rom"
+ 75. Port Connectivity Checks: "ffd_param_pc_risk:ff_pc"
+ 76. Signal Tap Logic Analyzer Settings
+ 77. Post-Synthesis Netlist Statistics for Top Partition
+ 78. Elapsed Time Per Partition
+ 79. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 80. Analysis & Synthesis Messages
 
 
 
@@ -111,7 +112,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Apr  2 19:35:35 2023       ;
+; Analysis & Synthesis Status     ; Successful - Sun Apr  2 20:28:27 2023       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; risk_v_multicycle                           ;
 ; Top-level Entity Name           ; risc_v_top                                  ;
@@ -1525,6 +1526,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------+
+; Port Connectivity Checks: "instr_memory:memory_rom" ;
++------+-------+----------+---------------------------+
+; Port ; Type  ; Severity ; Details                   ;
++------+-------+----------+---------------------------+
+; we   ; Input ; Info     ; Stuck at GND              ;
++------+-------+----------+---------------------------+
+
+
++-----------------------------------------------------+
 ; Port Connectivity Checks: "ffd_param_pc_risk:ff_pc" ;
 +------+-------+----------+---------------------------+
 ; Port ; Type  ; Severity ; Details                   ;
@@ -1584,7 +1594,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:15     ;
+; Top            ; 00:00:13     ;
 +----------------+--------------+
 
 
@@ -1689,7 +1699,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Sun Apr  2 19:34:50 2023
+    Info: Processing started: Sun Apr  2 20:27:44 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off risk_v_multicycle -c risk_v_multicycle
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 1 design units, including 1 entities, in source file /modulos_quartus/dm_michel_castillo_risc_v/src/risc_v_top.v
@@ -1754,18 +1764,15 @@ Info (12127): Elaborating entity "risc_v_top" for the top level hierarchy
 Info (12128): Elaborating entity "multiplexor_param" for hierarchy "multiplexor_param:mult_branch" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 48
 Info (12128): Elaborating entity "multiplexor_param" for hierarchy "multiplexor_param:mult_pc" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 56
 Info (12128): Elaborating entity "ffd_param_pc_risk" for hierarchy "ffd_param_pc_risk:ff_pc" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 65
-Info (12128): Elaborating entity "instr_memory" for hierarchy "instr_memory:memory_rom" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 71
-Warning (10030): Net "rom_memory.data_a" at instr_memory.v(16) has no driver or initial value, using a default initial value '0' File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/instr_memory.v Line: 16
-Warning (10030): Net "rom_memory.waddr_a" at instr_memory.v(16) has no driver or initial value, using a default initial value '0' File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/instr_memory.v Line: 16
-Warning (10030): Net "rom_memory.we_a" at instr_memory.v(16) has no driver or initial value, using a default initial value '0' File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/instr_memory.v Line: 16
-Info (12128): Elaborating entity "imm_gen" for hierarchy "imm_gen:immediate_gen" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 77
-Info (12128): Elaborating entity "register_file" for hierarchy "register_file:reg_file" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 89
-Info (12128): Elaborating entity "ALU_control" for hierarchy "ALU_control:alu_ctrl" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 99
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu_block" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 121
-Info (12128): Elaborating entity "master_memory_map" for hierarchy "master_memory_map:memory_map" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 143
+Info (12128): Elaborating entity "instr_memory" for hierarchy "instr_memory:memory_rom" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 73
+Info (12128): Elaborating entity "imm_gen" for hierarchy "imm_gen:immediate_gen" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 79
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:reg_file" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 91
+Info (12128): Elaborating entity "ALU_control" for hierarchy "ALU_control:alu_ctrl" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 101
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu_block" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 123
+Info (12128): Elaborating entity "master_memory_map" for hierarchy "master_memory_map:memory_map" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 145
 Info (12128): Elaborating entity "double_multiplexor_param" for hierarchy "master_memory_map:memory_map|double_multiplexor_param:memory_map_mult" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/master_memory_map.v Line: 108
-Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory_ram" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 153
-Info (12128): Elaborating entity "uart_IP" for hierarchy "uart_IP:uart_IP_module" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 165
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory_ram" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 155
+Info (12128): Elaborating entity "uart_IP" for hierarchy "uart_IP:uart_IP_module" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 167
 Info (12128): Elaborating entity "uart_full_duplex" for hierarchy "uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/uart_IP.v Line: 51
 Info (12128): Elaborating entity "UART_Rx" for hierarchy "uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|UART_Rx:rx_uart" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/uart_full_duplex.v Line: 37
 Info (12128): Elaborating entity "Shift_Register_R_Param" for hierarchy "uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|UART_Rx:rx_uart|Shift_Register_R_Param:shift_reg" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/UART_Rx.v Line: 45
@@ -1780,8 +1787,8 @@ Info (12128): Elaborating entity "uart_tx_fsm" for hierarchy "uart_IP:uart_IP_mo
 Info (12128): Elaborating entity "Delayer" for hierarchy "uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|uart_tx:tx_uart|Delayer:delay_5ms" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/uart_tx.v Line: 73
 Info (12128): Elaborating entity "Counter_02Limit_ovf" for hierarchy "uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|uart_tx:tx_uart|Counter_02Limit_ovf:bit_counter" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/uart_tx.v Line: 84
 Info (12128): Elaborating entity "parallel2serial" for hierarchy "uart_IP:uart_IP_module|uart_full_duplex:UART_full_duplex|uart_tx:tx_uart|parallel2serial:shift_right_reg" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/uart_tx.v Line: 120
-Info (12128): Elaborating entity "adder" for hierarchy "adder:adder_pc_4" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 171
-Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:cu" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 209
+Info (12128): Elaborating entity "adder" for hierarchy "adder:adder_pc_4" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 173
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:cu" File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/risc_v_top.v Line: 211
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ll84.tdf
     Info (12023): Found entity 1: altsyncram_ll84 File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/proj_quartus/db/altsyncram_ll84.tdf Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dla.tdf
@@ -1808,7 +1815,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/proj_quartus/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2023.04.02.20:35:09 Progress: Loading sld9a67fb97/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2023.04.02.21:28:03 Progress: Loading sld9a67fb97/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1834,7 +1841,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/ip/s
 Info (276014): Found 3 instances of uninferred RAM logic
     Info (276007): RAM logic "data_memory:memory_ram|ram" is uninferred due to asynchronous read logic File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/data_memory.v Line: 17
     Info (276007): RAM logic "register_file:reg_file|registers" is uninferred due to asynchronous read logic File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/register_file.v Line: 18
-    Info (276004): RAM logic "instr_memory:memory_rom|rom_memory" is uninferred due to inappropriate RAM size File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/instr_memory.v Line: 16
+    Info (276004): RAM logic "instr_memory:memory_rom|rom_memory" is uninferred due to inappropriate RAM size File: C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/src/instr_memory.v Line: 17
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (36) in the Memory Initialization File "C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/proj_quartus/db/risk_v_multicycle.ram0_instr_memory_4a371b49.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (49) in the Memory Initialization File "C:/Modulos_quartus/DM_Michel_Castillo_RISC_V/proj_quartus/db/risk_v_multicycle.ram0_data_memory_9cb3ce62.hdl.mif" -- setting initial value for remaining addresses to 0
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
@@ -1859,10 +1866,10 @@ Info (21057): Implemented 6398 device resources after synthesis - the final reso
     Info (21061): Implemented 6171 logic cells
     Info (21064): Implemented 216 RAM segments
     Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4941 megabytes
-    Info: Processing ended: Sun Apr  2 19:35:35 2023
-    Info: Elapsed time: 00:00:45
-    Info: Total CPU time (on all processors): 00:00:32
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4935 megabytes
+    Info: Processing ended: Sun Apr  2 20:28:27 2023
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:00:34
 
 

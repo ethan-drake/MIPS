@@ -1,8 +1,8 @@
 |risc_v_top
-clk => clk.IN5
+clk => clk.IN6
 rst_n => rst_n.IN2
 rx => rx.IN1
-tx <= uart_IP:uart_IP_module.tx
+tx << uart_IP:uart_IP_module.tx
 
 
 |risc_v_top|multiplexor_param:mult_branch
@@ -307,11 +307,21 @@ q[31] <= q[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |risc_v_top|instr_memory:memory_rom
-address[0] => ~NO_FANOUT~
-address[1] => ~NO_FANOUT~
+address[0] => rom_memory.waddr_a[0].DATAIN
+address[0] => rom_memory.WADDR
+address[1] => rom_memory.waddr_a[1].DATAIN
+address[1] => rom_memory.WADDR1
+address[2] => rom_memory.waddr_a[2].DATAIN
+address[2] => rom_memory.WADDR2
 address[2] => rom_memory.RADDR
+address[3] => rom_memory.waddr_a[3].DATAIN
+address[3] => rom_memory.WADDR3
 address[3] => rom_memory.RADDR1
+address[4] => rom_memory.waddr_a[4].DATAIN
+address[4] => rom_memory.WADDR4
 address[4] => rom_memory.RADDR2
+address[5] => rom_memory.waddr_a[5].DATAIN
+address[5] => rom_memory.WADDR5
 address[5] => rom_memory.RADDR3
 address[6] => rom_memory.RADDR4
 address[7] => rom_memory.RADDR5
@@ -339,6 +349,48 @@ address[28] => ~NO_FANOUT~
 address[29] => ~NO_FANOUT~
 address[30] => ~NO_FANOUT~
 address[31] => ~NO_FANOUT~
+we => rom_memory.we_a.DATAIN
+we => rom_memory.WE
+clk => rom_memory.we_a.CLK
+clk => rom_memory.waddr_a[5].CLK
+clk => rom_memory.waddr_a[4].CLK
+clk => rom_memory.waddr_a[3].CLK
+clk => rom_memory.waddr_a[2].CLK
+clk => rom_memory.waddr_a[1].CLK
+clk => rom_memory.waddr_a[0].CLK
+clk => rom_memory.data_a[31].CLK
+clk => rom_memory.data_a[30].CLK
+clk => rom_memory.data_a[29].CLK
+clk => rom_memory.data_a[28].CLK
+clk => rom_memory.data_a[27].CLK
+clk => rom_memory.data_a[26].CLK
+clk => rom_memory.data_a[25].CLK
+clk => rom_memory.data_a[24].CLK
+clk => rom_memory.data_a[23].CLK
+clk => rom_memory.data_a[22].CLK
+clk => rom_memory.data_a[21].CLK
+clk => rom_memory.data_a[20].CLK
+clk => rom_memory.data_a[19].CLK
+clk => rom_memory.data_a[18].CLK
+clk => rom_memory.data_a[17].CLK
+clk => rom_memory.data_a[16].CLK
+clk => rom_memory.data_a[15].CLK
+clk => rom_memory.data_a[14].CLK
+clk => rom_memory.data_a[13].CLK
+clk => rom_memory.data_a[12].CLK
+clk => rom_memory.data_a[11].CLK
+clk => rom_memory.data_a[10].CLK
+clk => rom_memory.data_a[9].CLK
+clk => rom_memory.data_a[8].CLK
+clk => rom_memory.data_a[7].CLK
+clk => rom_memory.data_a[6].CLK
+clk => rom_memory.data_a[5].CLK
+clk => rom_memory.data_a[4].CLK
+clk => rom_memory.data_a[3].CLK
+clk => rom_memory.data_a[2].CLK
+clk => rom_memory.data_a[1].CLK
+clk => rom_memory.data_a[0].CLK
+clk => rom_memory.CLK0
 rd[0] <= rom_memory.DATAOUT
 rd[1] <= rom_memory.DATAOUT1
 rd[2] <= rom_memory.DATAOUT2

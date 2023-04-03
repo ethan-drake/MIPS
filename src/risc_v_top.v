@@ -67,7 +67,9 @@ ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 //Memory ROM
 instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.address(pc_out),
-	.rd(instr2perf)
+	.rd(instr2perf),
+	.clk(clk),
+	.we(1'b0) //RO memory
 );
 
 //IMMEDIATE GENERATOR
