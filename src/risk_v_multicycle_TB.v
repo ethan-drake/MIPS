@@ -14,7 +14,7 @@ reg [7:0] rx_val_array;
 
 risc_v_top procesador (
 	//Inputs - Platform
-	.clk(clk),
+	.clk_50Mhz(clk),
 	.rst_n(rst),
 	//Input - RX
 	.rx(rx),

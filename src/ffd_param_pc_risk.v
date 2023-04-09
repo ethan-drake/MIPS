@@ -10,6 +10,7 @@ module ffd_param_pc_risk #(parameter LENGTH=1)(
 	input i_clk,
 	input i_rst_n,
 	input i_en,
+	input pll_lock,
 	input [LENGTH-1:0] d,
 	//outputs
 	output reg[LENGTH-1:0] q
@@ -20,7 +21,7 @@ always@(posedge i_clk, negedge i_rst_n)
 begin
 	if(!i_rst_n)
 		q <= 32'h400_000;  //Default risk-v address 32'h400_000
-	else if(i_en)
+	else if(i_en && pll_lock)
 		q <= d;
 	else
 		q <= q;

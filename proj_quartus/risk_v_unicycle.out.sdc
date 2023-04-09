@@ -20,7 +20,7 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition"
 
-## DATE    "Sun Apr  2 19:48:14 2023"
+## DATE    "Sat Apr  8 00:19:16 2023"
 
 ##
 ## DEVICE  "5CSXFC6D6F31C6"
@@ -39,7 +39,7 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-create_clock -name {clk} -period 20.000 -waveform { 0.000 10.000 } [get_ports {clk}]
+create_clock -name {clk_pll} -period 25.000 -waveform { 0.000 12.500 } [get_ports {clk_50Mhz}]
 
 
 #**************************************************************
@@ -58,14 +58,10 @@ create_clock -name {clk} -period 20.000 -waveform { 0.000 10.000 } [get_ports {c
 # Set Clock Uncertainty
 #**************************************************************
 
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk}] -setup 0.170  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk}] -hold 0.060  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}] -setup 0.170  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}] -hold 0.060  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk}] -setup 0.170  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk}] -hold 0.060  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}] -setup 0.170  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}] -hold 0.060   
+set_clock_uncertainty -rise_from [get_clocks {clk_pll}] -rise_to [get_clocks {clk_pll}]  0.120  
+set_clock_uncertainty -rise_from [get_clocks {clk_pll}] -fall_to [get_clocks {clk_pll}]  0.120  
+set_clock_uncertainty -fall_from [get_clocks {clk_pll}] -rise_to [get_clocks {clk_pll}]  0.120  
+set_clock_uncertainty -fall_from [get_clocks {clk_pll}] -fall_to [get_clocks {clk_pll}]  0.120  
 
 
 #**************************************************************
@@ -84,7 +80,6 @@ set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}] 
 # Set Clock Groups
 #**************************************************************
 
-set_clock_groups -asynchronous -group [get_clocks {clk}] 
 
 
 #**************************************************************
@@ -114,3 +109,4 @@ set_clock_groups -asynchronous -group [get_clocks {clk}]
 #**************************************************************
 # Set Input Transition
 #**************************************************************
+

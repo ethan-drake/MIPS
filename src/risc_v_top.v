@@ -7,7 +7,7 @@
 
 module risc_v_top (
 	//Inputs - Platform
-	input clk,
+	input clk_50Mhz,
 	input rst_n,
 	//Input - RX
 	input rx,
@@ -15,9 +15,8 @@ module risc_v_top (
 	output tx
 );
 
-
 //Wires to interconnect modules
-wire ALUSrcB, ALUSrcA, MemWrite, pc_src, jalr_o, regWrite;
+wire ALUSrcB, ALUSrcA, MemWrite, pc_src, jalr_o, regWrite, clk, pll_lock;
 wire [1:0] mem2Reg;
 wire [31:0] pc_prim, pc_out, adr, rd1_data, rd1_data_reg, rd2_data, rd2_data_reg, pc_next, pc_plus_4, pc_target;
 wire [31:0] memory_out, instr2perf, wd3_wire, imm_gen_out; 
@@ -38,6 +37,17 @@ wire mem_select;
 ///////////////////////FETCH//////////////////////////////////////////////
 
 assign PCEnable = (pc_src | (PCWriteCond & alu_zero_bne));
+
+//`define SIMULATION
+//`ifndef SIMULATION
+//	pll_risc_v PLL_RISCV ( .refclk(clk_50Mhz), .rst(~rst_n), .outclk_0(clk), .locked(pll_lock) );
+//`else
+//	assign clk = clk_50Mhz;
+//	assign pll_lock = 1'b1;
+//`endif
+
+assign clk = clk_50Mhz;
+assign pll_lock = 1'b1;
 
 //Multiplexor to select between ZERO & NOT ZERO FOR BRANCHES
 multiplexor_param #(.LENGTH(1)) mult_branch (
@@ -60,6 +70,7 @@ ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 	.i_clk(clk), 
 	.i_rst_n(rst_n), 
 	.i_en(1'b1),
+	.pll_lock(pll_lock), //start the program when PLL is lock
 	.d(pc_next),
 	.q(pc_out)
 );
