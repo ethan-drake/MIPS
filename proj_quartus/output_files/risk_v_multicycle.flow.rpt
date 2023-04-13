@@ -1,5 +1,5 @@
 Flow report for risk_v_multicycle
-Sun Apr  9 13:38:14 2023
+Sun Apr  9 13:50:52 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Apr  9 13:38:03 2023       ;
+; Flow Status                     ; Successful - Sun Apr  9 13:50:41 2023       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; risk_v_multicycle                           ;
 ; Top-level Entity Name           ; risc_v_top                                  ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/09/2023 13:36:05 ;
+; Start date & time ; 04/09/2023 13:48:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; risk_v_multicycle   ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+-------------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value     ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+-------------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 1099450701566.168106896505256          ; --                ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 1099450701566.168106973914116          ; --                ; --          ; --         ;
 ; ENABLE_SIGNALTAP                    ; Off                                    ; --                ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                ; --          ; --         ;
@@ -100,11 +100,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4871 MB             ; 00:00:17                           ;
-; Fitter               ; 00:01:29     ; 1.2                     ; 6574 MB             ; 00:02:50                           ;
+; Analysis & Synthesis ; 00:00:17     ; 1.0                     ; 4871 MB             ; 00:00:16                           ;
+; Fitter               ; 00:01:16     ; 1.2                     ; 6570 MB             ; 00:02:26                           ;
 ; Assembler            ; 00:00:06     ; 1.0                     ; 4908 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:10     ; 2.6                     ; 5240 MB             ; 00:00:15                           ;
-; Total                ; 00:02:04     ; --                      ; --                  ; 00:03:27                           ;
+; Timing Analyzer      ; 00:00:10     ; 2.6                     ; 5241 MB             ; 00:00:15                           ;
+; Total                ; 00:01:49     ; --                      ; --                  ; 00:03:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
