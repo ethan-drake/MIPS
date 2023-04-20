@@ -36,14 +36,14 @@ wire [31:0] decoded_address,ram_rom_data, gpio_data;
 wire mem_select;
 
 //Datapath Pipeline registers
-wire if_id_datapath;
-wire id_ex_datapath;
-wire ex_mem_datapath;
-wire mem_wb_datapath;
+wire [63:0] if_id_datapath_out;
+wire id_ex_datapath_out;
+wire ex_mem_datapath_out;
+wire mem_wb_datapath_out;
 //Control Path Pipeline registers
-wire id_ex_controlpath;
-wire ex_mem_controlpath;
-wire mem_wb_controlpath;
+wire id_ex_controlpath_out;
+wire ex_mem_controlpath_out;
+wire mem_wb_controlpath_out;
 
 ///////////////////////FETCH//////////////////////////////////////////////
 
@@ -86,22 +86,6 @@ ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 	.q(pc_out)
 );
 
-
-/////////////////////////FETCH->DECODE/////////////////////////////////////
-
-ffd_param_clear_n #(.LENGTH(1))(
-	//inputs
-	.i_clk(),
-	.i_rst_n(rst_n),
-	.i_en(),
-	.i_clear(),
-	.d(),
-	//outputs
-	.q()
-);
-
-/////////////////////////DECODE///////////////////////////////////////////
-
 //Memory ROM
 instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.address(pc_out),
@@ -110,9 +94,44 @@ instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.we(1'b0) //RO memory
 );
 
+/////////////////////////FETCH->DECODE/////////////////////////////////////
+//if_id_datapath
+//	PC : 31:0
+//	rs1 : 
+//	rs2	:
+//	Imm	:
+//	Opcode :
+//	rd	:
+wire [63:0] id_ex_datapath_in = {};
+
+ffd_param_clear_n #(.LENGTH(1)) if_id_datapath_ffd(
+	//inputs
+	.i_clk(clk),
+	.i_rst_n(rst_n),
+	.i_en(1'b1),
+	.i_clear(),
+	.d(id_ex_datapath_in),
+	//outputs
+	.q(id_ex_datapath_out)
+);
+
+
+ffd_param_clear_n #(.LENGTH(1)) if_id_datapath_ffd(
+	//inputs
+	.i_clk(clk),
+	.i_rst_n(rst_n),
+	.i_en(1'b1),
+	.i_clear(),
+	.d(id_ex_datapath_in),
+	//outputs
+	.q(id_ex_datapath_out)
+);
+
+/////////////////////////DECODE///////////////////////////////////////////
+
 //IMMEDIATE GENERATOR
 imm_gen immediate_gen(
-	.i_instruction(instr2perf),
+	.i_instruction(if_id_datapath_out[63:32]),//instr2perf
 	.o_immediate(imm_gen_out)
 );
 
@@ -127,6 +146,22 @@ register_file reg_file (
 	.rd1(rd1_data_reg),
 	.rd2(rd2_data_reg)
 );
+
+/////////////////////////DECODE->EXECUTE////////////////////////////////////
+
+ffd_param_clear_n #(.LENGTH(1)) id_ex_datapath_ffd(
+	//inputs
+	.i_clk(clk),
+	.i_rst_n(rst_n),
+	.i_en(1'b1),
+	.i_clear(),
+	.d(if_id_datapath_in),
+	//outputs
+	.q(if_id_datapath_out)
+);
+
+
+/////////////////////////EXECUTE////////////////////////////////////////////
 
 ALU_control alu_ctrl(
     //inputs
