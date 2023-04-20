@@ -86,6 +86,22 @@ ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 	.q(pc_out)
 );
 
+
+/////////////////////////FETCH->DECODE/////////////////////////////////////
+
+ffd_param_clear_n #(.LENGTH(1))(
+	//inputs
+	.i_clk(),
+	.i_rst_n(rst_n),
+	.i_en(),
+	.i_clear(),
+	.d(),
+	//outputs
+	.q()
+);
+
+/////////////////////////DECODE///////////////////////////////////////////
+
 //Memory ROM
 instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.address(pc_out),
