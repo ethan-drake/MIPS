@@ -34,6 +34,17 @@ wire alu_zero_bne;
 wire [1:0] cs;
 wire [31:0] decoded_address,ram_rom_data, gpio_data;
 wire mem_select;
+
+//Datapath Pipeline registers
+wire if_id_datapath;
+wire id_ex_datapath;
+wire ex_mem_datapath;
+wire mem_wb_datapath;
+//Control Path Pipeline registers
+wire id_ex_controlpath;
+wire ex_mem_controlpath;
+wire mem_wb_controlpath;
+
 ///////////////////////FETCH//////////////////////////////////////////////
 
 assign PCEnable = (pc_src | (PCWriteCond & alu_zero_bne));
