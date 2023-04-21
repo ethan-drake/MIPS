@@ -153,7 +153,7 @@ control_unit cu (
 //	rd1 : 63:32
 //	rd2	: 95:64
 //	Imm	: 127:96
-//	Instruction: 105:74
+//	Instruction: 160:128
 
 wire [159:0] id_ex_datapath_in = {if_id_datapath_out[63:32],imm_gen_out,rd2_data_reg,rd1_data_reg,if_id_datapath_out[31:0]};
 
@@ -257,7 +257,7 @@ ALU #(.LENGTH(32)) alu_block (
 //	rd2: 	160:129	
 //	rd:		165:161
 
-wire [165:0] ex_mem_datapath_in = {id_ex_datapath_out[85:81],id_ex_datapath_out[95:64],id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
+wire [165:0] ex_mem_datapath_in = {id_ex_datapath_out[139:135],id_ex_datapath_out[95:64],id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
 
 ffd_param_clear_n #(.LENGTH(166)) ex_mem_datapath_ffd(
 	//inputs
