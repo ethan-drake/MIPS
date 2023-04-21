@@ -86,6 +86,12 @@ ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 	.q(pc_out)
 );
 
+adder #(.LENGTH(32)) adder_pc_4 (
+	.i_a(32'h4),
+	.i_b(pc_out),
+	.q(pc_plus_4)
+);
+
 //Memory ROM
 instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.address(pc_out),
@@ -106,7 +112,7 @@ ffd_param_clear_n #(.LENGTH(1)) if_id_datapath_ffd(
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
-	.i_clear(),
+	.i_clear(1'b0),
 	.d(if_id_datapath_in),
 	//outputs
 	.q(if_id_datapath_out)
@@ -123,32 +129,35 @@ imm_gen immediate_gen(
 //Register file
 register_file reg_file (
 	.clk(clk),
-	.we3(regWrite),
-	.a1(instr2perf[19:15]),
-	.a2(instr2perf[24:20]),
-	.a3(instr2perf[11:7]),
-	.wd3(wd3_wire),
+	.we3(regWrite),******************************
+	.a1(if_id_datapath_out[51:47]),//instr2perf[19:15]),
+	.a2(if_id_datapath_out[56:52]),//instr2perf[24:20]),
+	.a3(mem_wb_datapath_out[43:39]),//instr2perf[11:7]),
+	.wd3(wd3_wire),*******************************
 	.rd1(rd1_data_reg),
 	.rd2(rd2_data_reg)
 );
 
 /////////////////////////DECODE->EXECUTE////////////////////////////////////
+//if_id_datapath
+//	PC : 31:0
+//	rd1 : 36:32
+//	rd2	: 41:37
+//	Imm	: 73:42
+//	Opcode : 80:74
+//	rd	: 85:81
 
-//	rs1 : 
-//	rs2	:
-//	Imm	:
-//	Opcode :
-//	rd	:
+wire [85:0] id_ex_datapath_in = {if_id_datapath_out[43:39],if_id_datapath_out[38:32],imm_gen_out,rd2_data_reg,rd1_data_reg,pc_out};
 
 ffd_param_clear_n #(.LENGTH(1)) id_ex_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
-	.i_clear(),
-	.d(if_id_datapath_in),
+	.i_clear(1'b0),
+	.d(id_ex_datapath_in),
 	//outputs
-	.q(if_id_datapath_out)
+	.q(id_ex_datapath_out)
 );
 
 
@@ -230,11 +239,7 @@ uart_IP #(.DATA_WIDTH(32)) uart_IP_module (
 	.tx(tx)
 );
 
-adder #(.LENGTH(32)) adder_pc_4 (
-	.i_a(32'h4),
-	.i_b(pc_out),
-	.q(pc_plus_4)
-);
+
 
 adder #(.LENGTH(32)) adder_jump (
 	.i_a(imm_gen_out),
