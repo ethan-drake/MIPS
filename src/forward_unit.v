@@ -7,8 +7,8 @@
 
 module forward_unit (
 	//Inputs
-	input ex_mem_regWrite, mem_wb_regWrite
-	input [4:0] ex_mem_rd, id_ex_reg_rs1, id_ex_reg_rs2, mem_wb_rd
+	input ex_mem_regWrite, mem_wb_regWrite,
+	input [4:0] ex_mem_rd, id_ex_reg_rs1, id_ex_reg_rs2, mem_wb_rd,
 	//Outputs
 	output reg [1:0] forwardA, forwardB
 );
