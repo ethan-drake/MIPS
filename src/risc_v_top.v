@@ -38,16 +38,15 @@ wire mem_select;
 //Datapath Pipeline registers
 wire [63:0] if_id_datapath_out;
 wire [105:0] id_ex_datapath_out;
-wire ex_mem_datapath_out;
+wire [165:0]ex_mem_datapath_out;
 wire mem_wb_datapath_out;
 //Control Path Pipeline registers
 wire [13:0] id_ex_controlpath_out;
-wire ex_mem_controlpath_out;
+wire [7:0]ex_mem_controlpath_out;
 wire mem_wb_controlpath_out;
 
 ///////////////////////FETCH//////////////////////////////////////////////
 
-assign PCEnable = (pc_src | (PCWriteCond & alu_zero_bne));
 
 //`define SIMULATION
 //`ifndef SIMULATION
@@ -60,13 +59,7 @@ assign PCEnable = (pc_src | (PCWriteCond & alu_zero_bne));
 assign clk = clk_50Mhz;
 assign pll_lock = 1'b1;
 
-//Multiplexor to select between ZERO & NOT ZERO FOR BRANCHES
-multiplexor_param #(.LENGTH(1)) mult_branch (
-	.i_a(alu_zero),
-	.i_b(~alu_zero),
-	.i_selector(bne),
-	.out(alu_zero_bne)
-);
+
 
 //PC multiplexor
 multiplexor_param #(.LENGTH(32)) mult_pc (
@@ -219,8 +212,8 @@ ALU_control alu_ctrl(
 );
 
 adder #(.LENGTH(32)) adder_jump (
-	.i_a(id_ex_datapath_out[73:42]),//imm_gen_out),
-	.i_b(id_ex_datapath_out[31:0]),//pc_out),
+	.i_a(id_ex_datapath_out[73:42]), //imm_gen_out),
+	.i_b(id_ex_datapath_out[31:0]),  //pc_out),
 	.q(pc_jal)
 );
 
@@ -255,16 +248,60 @@ ALU #(.LENGTH(32)) alu_block (
 
 ///////////////////////EXECUTE -> MEM//////////////////////////////////////
 
+//ex_mem_datapath
+//	PC : 31:0
+//	PC_JUMP_TARGET : 63:32
+//	ALU_zero	: 64
+//	Alu_result	: 96:65
+//	Immediate	: 128:97
+//	rd2: 	160:129	
+//	rd:		165:161
 
+wire [165:0] ex_mem_datapath_in = {id_ex_datapath_out[85:81],id_ex_datapath_out[41:37],id_ex_datapath_out[73:42],alu_result,alu_zero,pc_target,pc_out};
+
+ffd_param_clear_n #(.LENGTH(166)) ex_mem_datapath_ffd(
+	//inputs
+	.i_clk(clk),
+	.i_rst_n(rst_n),
+	.i_en(1'b1),
+	.i_clear(1'b0),
+	.d(ex_mem_datapath_in),
+	//outputs
+	.q(ex_mem_datapath_out)
+);
+
+//ex_mem_controlpath
+//MEM
+//	BNE:		0
+//	PCWriteCond:1
+//	PCSrc:		2
+//	MemRead:	3
+//	MemWrite:   4
+//WB
+//	MemToReg:  6:5
+//	RegWrite:	7
+
+wire [7:0] ex_mem_controlpath_in = {id_ex_controlpath_out[13:6]};
+
+ffd_param_clear_n #(.LENGTH(1)) ex_mem_controlpath_ffd(
+	//inputs
+	.i_clk(clk),
+	.i_rst_n(rst_n),
+	.i_en(1'b1),
+	.i_clear(1'b0),
+	.d(ex_mem_controlpath_in),
+	//outputs
+	.q(ex_mem_controlpath_out)
+);
 
 ///////////////////////////MEM/////////////////////////////////////////////
 //Memory map
 master_memory_map #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_map (
 	//CORES <--> Memory map
-	.wd(rd2_data_reg),
-	.address(alu_result),
-	.we(MemWrite),
-	.re(MemRead),
+	.wd(ex_mem_datapath_out[160:129]),//rd2_data_reg),
+	.address(ex_mem_datapath_out[96:65]),//alu_result),
+	.we(ex_mem_controlpath_out[4]),//MemWrite),
+	.re(ex_mem_controlpath_out[3]),//MemRead),
 	.clk(clk),
 	.rd(memory_out),
 	//Memory_map <--> Slaves
@@ -303,10 +340,17 @@ uart_IP #(.DATA_WIDTH(32)) uart_IP_module (
 );
 
 
+assign PCEnable = (ex_mem_controlpath_out[2]/*pc_src*/ | (ex_mem_controlpath_out[1]/*PCWriteCond*/ & alu_zero_bne));
 
-
-
-
+//Multiplexor to select between ZERO & NOT ZERO FOR BRANCHES
+multiplexor_param #(.LENGTH(1)) mult_branch (
+	.i_a(ex_mem_datapath_out[64])//alu_zero),
+	.i_b(~ex_mem_datapath_out[64]),//~alu_zero),
+	.i_selector(ex_mem_controlpath_out[0]),//bne),
+	.out(alu_zero_bne)
+);
+///////////////////////////////////////MEM -> WB////////////////////////////////////////////////
+////////////////////////////////////////WB/////////////////////////////////////////////////////
 
 double_multiplexor_param #(.LENGTH(32)) mult_alu_param (
 	.i_a(alu_result),
