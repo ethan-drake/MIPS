@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-21T02:56:36.598Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.48" etag="gsSCzYF1b8hQWlH4JyPU" version="21.2.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-21T03:20:24.303Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.48" etag="Nz6b9mxiE3BkxpxCytzm" version="21.2.1" type="github">
   <diagram name="Page-1" id="W0EPyd7C3ClBssLKZqVx">
     <mxGraphModel dx="2819" dy="519" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1642,7 +1642,7 @@
         <mxCell id="qqBCLxACkRVpvStxZVP7-95" value="Read Data" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="2038.995" y="835.008" width="56.25" height="21.240000000000006" as="geometry" />
         </mxCell>
-        <mxCell id="qqBCLxACkRVpvStxZVP7-96" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.023;entryY=0.632;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.099;exitY=0.759;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1" source="MZPnDUbDqqe_rVotMyF6-16">
+        <mxCell id="qqBCLxACkRVpvStxZVP7-96" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.023;entryY=0.632;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1394" y="820" as="sourcePoint" />
             <mxPoint x="1820.9189999999999" y="846.6800000000001" as="targetPoint" />
@@ -1653,10 +1653,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="GhmqDvaRfxOicXqdA_vX-4" value="rs2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="qqBCLxACkRVpvStxZVP7-96">
-          <mxGeometry x="-0.6417" y="5" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
+        <mxCell id="qqBCLxACkRVpvStxZVP7-97" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverting_contact;fillColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1389" y="816" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="qqBCLxACkRVpvStxZVP7-98" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1.021;exitY=0.635;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" target="qqBCLxACkRVpvStxZVP7-91" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -1976,17 +1974,6 @@
         </mxCell>
         <mxCell id="MZPnDUbDqqe_rVotMyF6-72" value="" style="shape=xor;whiteSpace=wrap;html=1;rotation=-1;" parent="1" vertex="1">
           <mxGeometry x="2099" y="501.38" width="38" height="42" as="geometry" />
-        </mxCell>
-        <mxCell id="GhmqDvaRfxOicXqdA_vX-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.045;entryY=0.761;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="GhmqDvaRfxOicXqdA_vX-1" target="MZPnDUbDqqe_rVotMyF6-17">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="GhmqDvaRfxOicXqdA_vX-3" value="Instr[24:20]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GhmqDvaRfxOicXqdA_vX-2">
-          <mxGeometry x="-0.2777" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="GhmqDvaRfxOicXqdA_vX-1" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverting_contact;fillColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="846" y="923" width="10" height="10" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
