@@ -37,11 +37,11 @@ wire mem_select;
 
 //Datapath Pipeline registers
 wire [63:0] if_id_datapath_out;
-wire id_ex_datapath_out;
+wire [85:0] id_ex_datapath_out;
 wire ex_mem_datapath_out;
 wire mem_wb_datapath_out;
 //Control Path Pipeline registers
-wire id_ex_controlpath_out;
+wire [13:0] id_ex_controlpath_out;
 wire ex_mem_controlpath_out;
 wire mem_wb_controlpath_out;
 
@@ -107,7 +107,7 @@ instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 
 wire [63:0] if_id_datapath_in = {instr2perf,pc_out};
 
-ffd_param_clear_n #(.LENGTH(1)) if_id_datapath_ffd(
+ffd_param_clear_n #(.LENGTH(64)) if_id_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -138,6 +138,22 @@ register_file reg_file (
 	.rd2(rd2_data_reg)
 );
 
+control_unit cu (
+	.opcode(if_id_datapath_out[38:32]),//instr2perf[6:0]),
+	.func3(if_id_datapath_out[46:44]),//instr2perf[14:12]),
+	.ALUSrcA(ALUSrcA),
+	.ALUSrcB(ALUSrcB),
+	.PCSrc(pc_src),
+	.ALUOP(alu_control),
+	.MemWrite(MemWrite),
+	.MemRead(MemRead),
+	.RegWrite(regWrite),
+	.MemtoReg(mem2Reg),
+	.JALR_o(jalr_o),
+	.PCWriteCond(PCWriteCond),
+	.BNE(bne)
+);
+
 /////////////////////////DECODE->EXECUTE////////////////////////////////////
 //if_id_datapath
 //	PC : 31:0
@@ -149,7 +165,7 @@ register_file reg_file (
 
 wire [85:0] id_ex_datapath_in = {if_id_datapath_out[43:39],if_id_datapath_out[38:32],imm_gen_out,rd2_data_reg,rd1_data_reg,pc_out};
 
-ffd_param_clear_n #(.LENGTH(1)) id_ex_datapath_ffd(
+ffd_param_clear_n #(.LENGTH(86)) id_ex_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -158,6 +174,36 @@ ffd_param_clear_n #(.LENGTH(1)) id_ex_datapath_ffd(
 	.d(id_ex_datapath_in),
 	//outputs
 	.q(id_ex_datapath_out)
+);
+
+//id_ex_controlpath
+//EX:
+//	ALUSrcA:	0
+//	ALUSrcB:	1
+//	ALUOp:	  4:2
+//	JALR:		5
+//MEM
+//	BNE:		6
+//	PCWriteCond:7
+//	PCSrc:		8
+//	MemRead:	9
+//	MemWrite:  10
+//WB
+//	MemToReg: 12:11
+//	RegWrite:	13	
+
+
+wire [13:0] id_ex_controlpath_in = {regWrite,mem2Reg,MemWrite,MemRead,pc_src,PCWriteCond,bne,jalr_o,alu_control,ALUSrcB,ALUSrcA};
+
+ffd_param_clear_n #(.LENGTH(1)) id_ex_controlpath_ffd(
+	//inputs
+	.i_clk(clk),
+	.i_rst_n(rst_n),
+	.i_en(1'b1),
+	.i_clear(1'b0),
+	.d(id_ex_controlpath_in),
+	//outputs
+	.q(id_ex_controlpath_out)
 );
 
 
@@ -263,20 +309,6 @@ double_multiplexor_param #(.LENGTH(32)) mult_alu_param (
 	.out(wd3_wire)
 );
 
-control_unit cu (
-	.opcode(instr2perf[6:0]),
-	.func3(instr2perf[14:12]),
-	.ALUSrcA(ALUSrcA),
-	.ALUSrcB(ALUSrcB),
-	.PCSrc(pc_src),
-	.ALUOP(alu_control),
-	.MemWrite(MemWrite),
-	.MemRead(MemRead),
-	.RegWrite(regWrite),
-	.MemtoReg(mem2Reg),
-	.JALR_o(jalr_o),
-	.PCWriteCond(PCWriteCond),
-	.BNE(bne)
-);
+
 
 endmodule
