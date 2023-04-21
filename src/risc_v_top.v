@@ -97,12 +97,9 @@ instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 /////////////////////////FETCH->DECODE/////////////////////////////////////
 //if_id_datapath
 //	PC : 31:0
-//	rs1 : 
-//	rs2	:
-//	Imm	:
-//	Opcode :
-//	rd	:
-wire [63:0] id_ex_datapath_in = {};
+// Instruction : 63:32
+
+wire [63:0] if_id_datapath_in = {instr2perf,pc_out};
 
 ffd_param_clear_n #(.LENGTH(1)) if_id_datapath_ffd(
 	//inputs
@@ -110,21 +107,9 @@ ffd_param_clear_n #(.LENGTH(1)) if_id_datapath_ffd(
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
 	.i_clear(),
-	.d(id_ex_datapath_in),
+	.d(if_id_datapath_in),
 	//outputs
-	.q(id_ex_datapath_out)
-);
-
-
-ffd_param_clear_n #(.LENGTH(1)) if_id_datapath_ffd(
-	//inputs
-	.i_clk(clk),
-	.i_rst_n(rst_n),
-	.i_en(1'b1),
-	.i_clear(),
-	.d(id_ex_datapath_in),
-	//outputs
-	.q(id_ex_datapath_out)
+	.q(if_id_datapath_out)
 );
 
 /////////////////////////DECODE///////////////////////////////////////////
@@ -148,6 +133,12 @@ register_file reg_file (
 );
 
 /////////////////////////DECODE->EXECUTE////////////////////////////////////
+
+//	rs1 : 
+//	rs2	:
+//	Imm	:
+//	Opcode :
+//	rd	:
 
 ffd_param_clear_n #(.LENGTH(1)) id_ex_datapath_ffd(
 	//inputs
