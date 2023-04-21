@@ -24,10 +24,12 @@ always @(*) begin
 	end
 	
 	//MEM forward unit
-	if ((mem_wb_regWrite) && (mem_wb_rd != 0) && (mem_wb_rd == id_ex_reg_rs1)) begin
+	if ((mem_wb_regWrite) && (mem_wb_rd != 0) && 
+		(ex_mem_rd != id_ex_reg_rs1) && (mem_wb_rd == id_ex_reg_rs2)) begin
 		assign forwardA = 2'b01;
 	end
-	if ((mem_wb_regWrite) && (mem_wb_rd != 0) && (mem_wb_rd == id_ex_reg_rs2)) begin
+	if ((mem_wb_regWrite) && (mem_wb_rd != 0) && 
+		(ex_mem_rd != id_ex_reg_rs2) && (mem_wb_rd == id_ex_reg_rs2)) begin
 		assign forwardB = 2'b01;
 	end
 end
