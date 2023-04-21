@@ -39,11 +39,11 @@ wire mem_select;
 wire [63:0] if_id_datapath_out;
 wire [105:0] id_ex_datapath_out;
 wire [165:0]ex_mem_datapath_out;
-wire mem_wb_datapath_out;
+wire [132:0]mem_wb_datapath_out;
 //Control Path Pipeline registers
 wire [13:0] id_ex_controlpath_out;
 wire [7:0]ex_mem_controlpath_out;
-wire mem_wb_controlpath_out;
+wire [2:0]mem_wb_controlpath_out;
 
 ///////////////////////FETCH//////////////////////////////////////////////
 
@@ -122,11 +122,11 @@ imm_gen immediate_gen(
 //Register file
 register_file reg_file (
 	.clk(clk),
-	.we3(regWrite),******************************
+	.we3(mem_wb_controlpath_out[2]),//regWrite),******************************
 	.a1(if_id_datapath_out[51:47]),//instr2perf[19:15]),
 	.a2(if_id_datapath_out[56:52]),//instr2perf[24:20]),
-	.a3(mem_wb_datapath_out[43:39]),//instr2perf[11:7]),
-	.wd3(wd3_wire),*******************************
+	.a3(mem_wb_datapath_out[132:128]),//instr2perf[11:7]),-***************
+	.wd3(wd3_wire),
 	.rd1(rd1_data_reg),
 	.rd2(rd2_data_reg)
 );
@@ -155,7 +155,7 @@ control_unit cu (
 //	Imm	: 73:42
 //	Instruction: 105:74
 
-wire [105:0] id_ex_datapath_in = {if_id_datapath_out[63:32],imm_gen_out,rd2_data_reg,rd1_data_reg,pc_out};
+wire [105:0] id_ex_datapath_in = {if_id_datapath_out[63:32],imm_gen_out,rd2_data_reg,rd1_data_reg,if_id_datapath_out[31:0]};
 
 ffd_param_clear_n #(.LENGTH(106)) id_ex_datapath_ffd(
 	//inputs
@@ -187,7 +187,7 @@ ffd_param_clear_n #(.LENGTH(106)) id_ex_datapath_ffd(
 
 wire [13:0] id_ex_controlpath_in = {regWrite,mem2Reg,MemWrite,MemRead,pc_src,PCWriteCond,bne,jalr_o,alu_control,ALUSrcB,ALUSrcA};
 
-ffd_param_clear_n #(.LENGTH(1)) id_ex_controlpath_ffd(
+ffd_param_clear_n #(.LENGTH(14)) id_ex_controlpath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -257,7 +257,7 @@ ALU #(.LENGTH(32)) alu_block (
 //	rd2: 	160:129	
 //	rd:		165:161
 
-wire [165:0] ex_mem_datapath_in = {id_ex_datapath_out[85:81],id_ex_datapath_out[41:37],id_ex_datapath_out[73:42],alu_result,alu_zero,pc_target,pc_out};
+wire [165:0] ex_mem_datapath_in = {id_ex_datapath_out[85:81],id_ex_datapath_out[41:37],id_ex_datapath_out[73:42],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
 
 ffd_param_clear_n #(.LENGTH(166)) ex_mem_datapath_ffd(
 	//inputs
@@ -283,7 +283,7 @@ ffd_param_clear_n #(.LENGTH(166)) ex_mem_datapath_ffd(
 
 wire [7:0] ex_mem_controlpath_in = {id_ex_controlpath_out[13:6]};
 
-ffd_param_clear_n #(.LENGTH(1)) ex_mem_controlpath_ffd(
+ffd_param_clear_n #(.LENGTH(8)) ex_mem_controlpath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -349,15 +349,56 @@ multiplexor_param #(.LENGTH(1)) mult_branch (
 	.i_selector(ex_mem_controlpath_out[0]),//bne),
 	.out(alu_zero_bne)
 );
+
 ///////////////////////////////////////MEM -> WB////////////////////////////////////////////////
+
+//mem_wb_datapath
+//	PC : 31:0
+//	mem rd : 63:32
+//	Alu_result	: 95:64
+//	Immediate	: 127:96
+//	rd:		132:128
+
+wire [132:0] mem_wb_datapath_in = {ex_mem_datapath_out[165:161],ex_mem_datapath_out[128:97],ex_mem_datapath_out[96:65],memory_out,ex_mem_datapath_out[31:0]};
+
+ffd_param_clear_n #(.LENGTH(133)) ex_mem_datapath_ffd(
+	//inputs
+	.i_clk(clk),
+	.i_rst_n(rst_n),
+	.i_en(1'b1),
+	.i_clear(1'b0),
+	.d(mem_wb_datapath_in),
+	//outputs
+	.q(mem_wb_datapath_out)
+);
+
+//mem_wb_controlpath
+//WB
+//	MemToReg:  1:0
+//	RegWrite:	2
+
+wire [2:0] mem_wb_controlpath_in = {ex_mem_controlpath_out[7:5]};
+
+ffd_param_clear_n #(.LENGTH(3)) ex_mem_controlpath_ffd(
+	//inputs
+	.i_clk(clk),
+	.i_rst_n(rst_n),
+	.i_en(1'b1),
+	.i_clear(1'b0),
+	.d(mem_wb_controlpath_in),
+	//outputs
+	.q(mem_wb_controlpath_out)
+);
+
+
 ////////////////////////////////////////WB/////////////////////////////////////////////////////
 
 double_multiplexor_param #(.LENGTH(32)) mult_alu_param (
-	.i_a(alu_result),
-	.i_b(memory_out),
-	.i_c(pc_plus_4),
-	.i_d(imm_gen_out),
-	.i_selector(mem2Reg),
+	.i_a(mem_wb_datapath_out[95:64]),//alu_result),
+	.i_b(mem_wb_datapath_out[63:32]),//memory_out),
+	.i_c(mem_wb_datapath_out[31:0] + 32'h4),//pc_plus_4),
+	.i_d(mem_wb_datapath_out[127:96]),//imm_gen_out),
+	.i_selector(mem_wb_controlpath_out[1:0])//mem2Reg),
 	.out(wd3_wire)
 );
 
