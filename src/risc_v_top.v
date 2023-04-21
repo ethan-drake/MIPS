@@ -37,7 +37,7 @@ wire mem_select;
 
 //Datapath Pipeline registers
 wire [63:0] if_id_datapath_out;
-wire [85:0] id_ex_datapath_out;
+wire [105:0] id_ex_datapath_out;
 wire ex_mem_datapath_out;
 wire mem_wb_datapath_out;
 //Control Path Pipeline registers
@@ -155,17 +155,16 @@ control_unit cu (
 );
 
 /////////////////////////DECODE->EXECUTE////////////////////////////////////
-//if_id_datapath
+//id_ex_datapath
 //	PC : 31:0
 //	rd1 : 36:32
 //	rd2	: 41:37
 //	Imm	: 73:42
-//	Opcode : 80:74
-//	rd	: 85:81
+//	Instruction: 105:74
 
-wire [85:0] id_ex_datapath_in = {if_id_datapath_out[43:39],if_id_datapath_out[38:32],imm_gen_out,rd2_data_reg,rd1_data_reg,pc_out};
+wire [105:0] id_ex_datapath_in = {if_id_datapath_out[63:32],imm_gen_out,rd2_data_reg,rd1_data_reg,pc_out};
 
-ffd_param_clear_n #(.LENGTH(86)) id_ex_datapath_ffd(
+ffd_param_clear_n #(.LENGTH(106)) id_ex_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -211,25 +210,38 @@ ffd_param_clear_n #(.LENGTH(1)) id_ex_controlpath_ffd(
 
 ALU_control alu_ctrl(
     //inputs
-	.i_opcode(instr2perf[6:0]),
-	.i_funct7(instr2perf[31:25]),
-	.i_funct3(instr2perf[14:12]),
-	.i_aluop(alu_control),
+	.i_opcode(id_ex_datapath_out[80:74]),//instr2perf[6:0]),
+	.i_funct7(id_ex_datapath_out[105:99]),//instr2perf[31:25]),
+	.i_funct3(id_ex_datapath_out[88:86]),//instr2perf[14:12]),
+	.i_aluop(id_ex_controlpath_out[4:2]),//alu_control),
 	 //outputs
     .o_alu_operation(alu_operation)
 );
 
+adder #(.LENGTH(32)) adder_jump (
+	.i_a(id_ex_datapath_out[73:42]),//imm_gen_out),
+	.i_b(id_ex_datapath_out[31:0]),//pc_out),
+	.q(pc_jal)
+);
+
+multiplexor_param #(.LENGTH(32)) mult_jalr (
+	.i_a(pc_jal),
+	.i_b(alu_result),
+	.i_selector(id_ex_controlpath_out[5]),//jalr_o),
+	.out(pc_target)
+);
+
 multiplexor_param #(.LENGTH(32)) mult_alu_srcB (
-	.i_a(rd2_data_reg),
-	.i_b(imm_gen_out),
-	.i_selector(ALUSrcB),
+	.i_a(id_ex_datapath_out[41:37]),//rd2_data_reg),
+	.i_b(id_ex_datapath_out[73:42]),//imm_gen_out),
+	.i_selector(id_ex_controlpath_out[1]),//ALUSrcB),
 	.out(rd2_data)
 );
 
 multiplexor_param #(.LENGTH(32)) mult_alu_srcA (
-	.i_a(pc_out),
-	.i_b(rd1_data_reg),
-	.i_selector(ALUSrcA),
+	.i_a(id_ex_datapath_out[31:0]),//pc_out),
+	.i_b(id_ex_datapath_out[36:32]),//rd1_data_reg),
+	.i_selector(id_ex_controlpath_out[0]),//ALUSrcA),
 	.out(rd1_data)
 );
 
@@ -241,6 +253,11 @@ ALU #(.LENGTH(32)) alu_block (
 	.alu_result(alu_result)
 );
 
+///////////////////////EXECUTE -> MEM//////////////////////////////////////
+
+
+
+///////////////////////////MEM/////////////////////////////////////////////
 //Memory map
 master_memory_map #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_map (
 	//CORES <--> Memory map
@@ -287,18 +304,9 @@ uart_IP #(.DATA_WIDTH(32)) uart_IP_module (
 
 
 
-adder #(.LENGTH(32)) adder_jump (
-	.i_a(imm_gen_out),
-	.i_b(pc_out),
-	.q(pc_jal)
-);
 
-multiplexor_param #(.LENGTH(32)) mult_jalr (
-	.i_a(pc_jal),
-	.i_b(alu_result),
-	.i_selector(jalr_o),
-	.out(pc_target)
-);
+
+
 
 double_multiplexor_param #(.LENGTH(32)) mult_alu_param (
 	.i_a(alu_result),
