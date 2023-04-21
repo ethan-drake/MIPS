@@ -344,7 +344,7 @@ assign PCEnable = (ex_mem_controlpath_out[2]/*pc_src*/ | (ex_mem_controlpath_out
 
 //Multiplexor to select between ZERO & NOT ZERO FOR BRANCHES
 multiplexor_param #(.LENGTH(1)) mult_branch (
-	.i_a(ex_mem_datapath_out[64])//alu_zero),
+	.i_a(ex_mem_datapath_out[64]),//alu_zero),
 	.i_b(~ex_mem_datapath_out[64]),//~alu_zero),
 	.i_selector(ex_mem_controlpath_out[0]),//bne),
 	.out(alu_zero_bne)
@@ -361,7 +361,7 @@ multiplexor_param #(.LENGTH(1)) mult_branch (
 
 wire [132:0] mem_wb_datapath_in = {ex_mem_datapath_out[165:161],ex_mem_datapath_out[128:97],ex_mem_datapath_out[96:65],memory_out,ex_mem_datapath_out[31:0]};
 
-ffd_param_clear_n #(.LENGTH(133)) ex_mem_datapath_ffd(
+ffd_param_clear_n #(.LENGTH(133)) mem_wb_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -379,7 +379,7 @@ ffd_param_clear_n #(.LENGTH(133)) ex_mem_datapath_ffd(
 
 wire [2:0] mem_wb_controlpath_in = {ex_mem_controlpath_out[7:5]};
 
-ffd_param_clear_n #(.LENGTH(3)) ex_mem_controlpath_ffd(
+ffd_param_clear_n #(.LENGTH(3)) mem_wb_controlpath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -398,7 +398,7 @@ double_multiplexor_param #(.LENGTH(32)) mult_alu_param (
 	.i_b(mem_wb_datapath_out[63:32]),//memory_out),
 	.i_c(mem_wb_datapath_out[31:0] + 32'h4),//pc_plus_4),
 	.i_d(mem_wb_datapath_out[127:96]),//imm_gen_out),
-	.i_selector(mem_wb_controlpath_out[1:0])//mem2Reg),
+	.i_selector(mem_wb_controlpath_out[1:0]),//mem2Reg),
 	.out(wd3_wire)
 );
 
