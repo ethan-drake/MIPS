@@ -15,23 +15,34 @@ module forward_unit (
 
 //EX Forward Unit
 always @(*) begin
-	//EX forward UNIT 1st
+	//EX forward unit (forwardA)
 	if ((ex_mem_regWrite) && (ex_mem_rd != 0) && (ex_mem_rd == id_ex_reg_rs1)) begin
 		assign forwardA = 2'b10;
 	end
-	if ((ex_mem_regWrite) && (ex_mem_rd != 0) && (ex_mem_rd == id_ex_reg_rs2)) begin
-		assign forwardB = 2'b10;
-	end
-	
-	//MEM forward unit
-	if ((mem_wb_regWrite) && (mem_wb_rd != 0) && 
+	//MEM forward unit (forwardA)
+	else if ((mem_wb_regWrite) && (mem_wb_rd != 0) && 
 		(ex_mem_rd != id_ex_reg_rs1) && (mem_wb_rd == id_ex_reg_rs2)) begin
 		assign forwardA = 2'b01;
 	end
-	if ((mem_wb_regWrite) && (mem_wb_rd != 0) && 
+	//Default value
+	else begin
+		assign forwardA = 2'b00;
+	end
+	
+	//EX forward unit (forwardB)
+	if ((ex_mem_regWrite) && (ex_mem_rd != 0) && (ex_mem_rd == id_ex_reg_rs2)) begin
+		assign forwardB = 2'b10;
+	end
+	//MEM forward unit (forwardB)
+	else if ((mem_wb_regWrite) && (mem_wb_rd != 0) && 
 		(ex_mem_rd != id_ex_reg_rs2) && (mem_wb_rd == id_ex_reg_rs2)) begin
 		assign forwardB = 2'b01;
 	end
+	//Default value
+	else begin
+		assign forwardB = 2'b00;
+	end
+	
 end
 	
 endmodule
