@@ -74,7 +74,7 @@ always @(*)
             begin
                 BNE = 1'b0;
                 PCWriteCond = 1'b0;
-                MemRead = 1'b1;
+                MemRead = 1'b0;
                 MemWrite = 1'b1;
                 MemtoReg = 2'b00;
                 PCSrc = 1'b0;
@@ -88,7 +88,7 @@ always @(*)
             begin
                 BNE = 1'b0;
                 PCWriteCond = 1'b0;
-                MemRead = 1'b1;
+                MemRead = 1'b0;
                 MemWrite = 1'b0;
                 MemtoReg = 2'b00;
                 PCSrc = 1'b0;
@@ -102,7 +102,7 @@ always @(*)
             begin
                 BNE = 1'b0;
                 PCWriteCond = 1'b0;
-                MemRead = 1'b1;
+                MemRead = 1'b0;
                 MemWrite = 1'b0;
                 MemtoReg = 2'b00;
                 PCSrc = 1'b0;
@@ -116,7 +116,7 @@ always @(*)
             begin
                 BNE = 1'b0;
                 PCWriteCond = 1'b0;
-                MemRead = 1'b1;
+                MemRead = 1'b0;
                 MemWrite = 1'b0;
                 MemtoReg = 2'b10;
                 PCSrc = 1'b1;
@@ -132,7 +132,7 @@ always @(*)
                 begin
                     BNE = 1'b0;
                     PCWriteCond = 1'b1;
-                    MemRead = 1'b1;
+                    MemRead = 1'b0;
                     MemWrite = 1'b0;
                     MemtoReg = 2'b00;
                     PCSrc = 1'b0;
@@ -146,7 +146,7 @@ always @(*)
                 begin
                     BNE = 1'b1;
                     PCWriteCond = 1'b1;
-                    MemRead = 1'b1;
+                    MemRead = 1'b0;
                     MemWrite = 1'b0;
                     MemtoReg = 2'b00;
                     PCSrc = 1'b0;
@@ -161,7 +161,7 @@ always @(*)
             begin
                 BNE = 1'b0;
                 PCWriteCond = 1'b0;
-                MemRead = 1'b1;
+                MemRead = 1'b0;
                 MemWrite = 1'b0;
                 MemtoReg = 2'b11;
                 PCSrc = 1'b0;
@@ -175,7 +175,7 @@ always @(*)
             begin
                 BNE = 1'b0;
                 PCWriteCond = 1'b0;
-                MemRead = 1'b1;
+                MemRead = 1'b0;
                 MemWrite = 1'b0;
                 MemtoReg = 2'b00;
                 PCSrc = 1'b0;
@@ -189,7 +189,7 @@ always @(*)
             begin
                 BNE = 1'b0;
                 PCWriteCond = 1'b0;
-                MemRead = 1'b1;
+                MemRead = 1'b0;
                 MemWrite = 1'b0;
                 MemtoReg = 2'b10;
                 PCSrc = 1'b1;
