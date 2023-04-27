@@ -21,6 +21,8 @@ wire [1:0] mem2Reg;
 wire [31:0] pc_prim, pc_out, adr, rd1_data, rd1_data_reg, rd2_data, rd2_data_reg, pc_next, pc_plus_4, pc_target;
 wire [31:0] memory_out, instr2perf, wd3_wire, imm_gen_out; 
 wire [31:0] SrcA, SrcB, alu_result, pc_jal;
+wire [31:0] aluSrcA_2_fwdA, aluSrcB_2_fwdB;
+wire [1:0] ForwardA, ForwardB;
 wire [2:0] alu_control;
 wire[3:0] alu_operation;
 wire [31:0] data_memory_2_slave, address_memory_2_slave, data_return_rom, data_return_ram, data_return_uart;
@@ -228,14 +230,34 @@ multiplexor_param #(.LENGTH(32)) mult_alu_srcB (
 	.i_a(id_ex_datapath_out[95:64]),//rd2_data_reg),
 	.i_b(id_ex_datapath_out[127:96]),//imm_gen_out),
 	.i_selector(id_ex_controlpath_out[1]),//ALUSrcB),
-	.out(rd2_data)
+	.out(aluSrcB_2_fwdB)
 );
 
 multiplexor_param #(.LENGTH(32)) mult_alu_srcA (
 	.i_a(id_ex_datapath_out[31:0]),//pc_out),
 	.i_b(id_ex_datapath_out[63:32]),//rd1_data_reg),
 	.i_selector(id_ex_controlpath_out[0]),//ALUSrcA),
+	.out(aluSrcA_2_fwdA)
+);
+
+//ForwardA - Mux
+double_multiplexor_param #(.LENGTH(32)) forwardA_mux (
+	.i_a(aluSrcA_2_fwdA),
+	.i_b(mem_wb_datapath_out[95:64]),
+	.i_c(ex_mem_datapath_out[96:65]),
+	.i_d(32'h0),
+	.i_selector(ForwardA),
 	.out(rd1_data)
+);
+
+//ForwardB - Mux
+double_multiplexor_param #(.LENGTH(32)) forwardB_mux (
+	.i_a(aluSrcB_2_fwdB),
+	.i_b(mem_wb_datapath_out[95:64]),
+	.i_c(ex_mem_datapath_out[96:65]),
+	.i_d(32'h0),
+	.i_selector(ForwardB),
+	.out(rd2_data)
 );
 
 ALU #(.LENGTH(32)) alu_block (
@@ -244,6 +266,17 @@ ALU #(.LENGTH(32)) alu_block (
 	.i_control(alu_operation),
 	.o_alu_zero(alu_zero),
 	.alu_result(alu_result)
+);
+
+forward_unit fwd_unit (
+	.ex_mem_regWrite(ex_mem_controlpath_out[7]),
+	.mem_wb_regWrite(mem_wb_controlpath_out[2]),
+	.ex_mem_rd(ex_mem_datapath_out[165:161]),
+	.mem_wb_rd(mem_wb_datapath_out[132:128]),
+	.id_ex_reg_rs1(id_ex_datapath_out[147:143]),
+	.id_ex_reg_rs2(id_ex_datapath_out[152:148]),
+	.forwardA(ForwardA),
+	.forwardB(ForwardB)
 );
 
 ///////////////////////EXECUTE -> MEM//////////////////////////////////////
