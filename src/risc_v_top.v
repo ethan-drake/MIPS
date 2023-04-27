@@ -37,6 +37,11 @@ wire [1:0] cs;
 wire [31:0] decoded_address,ram_rom_data, gpio_data;
 wire mem_select;
 
+wire stall_mux;
+wire pc_stall;
+wire if_id_stall;
+wire [13:0] id_ex_controlpath_in;
+
 //Datapath Pipeline registers
 wire [63:0] if_id_datapath_out;
 wire [159:0] id_ex_datapath_out;
@@ -75,7 +80,7 @@ multiplexor_param #(.LENGTH(32)) mult_pc (
 ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 	.i_clk(clk), 
 	.i_rst_n(rst_n), 
-	.i_en(1'b1),
+	.i_en(pc_stall),
 	.pll_lock(pll_lock), //start the program when PLL is lock
 	.d(pc_next),
 	.q(pc_out)
@@ -106,7 +111,7 @@ ffd_param_clear_n #(.LENGTH(64)) if_id_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
-	.i_en(1'b1),
+	.i_en(if_id_stall),
 	.i_clear(1'b0),
 	.d(if_id_datapath_in),
 	//outputs
@@ -149,6 +154,24 @@ control_unit cu (
 	.BNE(bne)
 );
 
+hazard_detection_unit hazard_detection(
+    .id_ex_memread(id_ex_controlpath_out[9]),
+    .id_ex_rd(id_ex_datapath_out[139:135]),
+    .if_id_rs1(if_id_datapath_out[51:47]),
+    .if_id_rs2(if_id_datapath_out[56:52]),
+    .pc_stall(pc_stall),
+    .if_id_stall(if_id_stall),
+    .stall_mux(stall_mux)
+);
+
+multiplexor_param #(.LENGTH(14)) mult_id_ex_control_path (
+	.i_a({regWrite,mem2Reg,MemWrite,MemRead,pc_src,PCWriteCond,bne,jalr_o,alu_control,ALUSrcB,ALUSrcA}),
+	.i_b(14'h0),
+	.i_selector(stall_mux),
+	.out(id_ex_controlpath_in)
+);
+
+
 /////////////////////////DECODE->EXECUTE////////////////////////////////////
 //id_ex_datapath
 //	PC : 31:0
@@ -187,7 +210,6 @@ ffd_param_clear_n #(.LENGTH(160)) id_ex_datapath_ffd(
 //	RegWrite:	13	
 
 
-wire [13:0] id_ex_controlpath_in = {regWrite,mem2Reg,MemWrite,MemRead,pc_src,PCWriteCond,bne,jalr_o,alu_control,ALUSrcB,ALUSrcA};
 
 ffd_param_clear_n #(.LENGTH(14)) id_ex_controlpath_ffd(
 	//inputs
