@@ -7,7 +7,7 @@
 
 module forward_unit (
 	//Inputs
-	input ex_mem_regWrite, mem_wb_regWrite,
+	input ex_mem_regWrite, mem_wb_regWrite, ALUSrcB,
 	input [4:0] ex_mem_rd, id_ex_reg_rs1, id_ex_reg_rs2, mem_wb_rd,
 	//Outputs
 	output reg [1:0] forwardA, forwardB
@@ -30,11 +30,11 @@ always @(*) begin
 	end
 	
 	//EX forward unit (forwardB)
-	if ((ex_mem_regWrite) && (ex_mem_rd != 0) && (ex_mem_rd == id_ex_reg_rs2)) begin
+	if (~ALUSrcB && (ex_mem_regWrite) && (ex_mem_rd != 0) && (ex_mem_rd == id_ex_reg_rs2)) begin
 		forwardB = 2'b10;
 	end
 	//MEM forward unit (forwardB)
-	else if ((mem_wb_regWrite) && (mem_wb_rd != 0) && 
+	else if (~ALUSrcB && (mem_wb_regWrite) && (mem_wb_rd != 0) && 
 		(ex_mem_rd != id_ex_reg_rs2) && (mem_wb_rd == id_ex_reg_rs2)) begin
 		forwardB = 2'b01;
 	end

@@ -80,7 +80,7 @@ multiplexor_param #(.LENGTH(32)) mult_pc (
 ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 	.i_clk(clk), 
 	.i_rst_n(rst_n), 
-	.i_en(pc_stall),
+	.i_en(~pc_stall),
 	.pll_lock(pll_lock), //start the program when PLL is lock
 	.d(pc_next),
 	.q(pc_out)
@@ -111,7 +111,7 @@ ffd_param_clear_n #(.LENGTH(64)) if_id_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
-	.i_en(if_id_stall),
+	.i_en(~if_id_stall),
 	.i_clear(1'b0),
 	.d(if_id_datapath_in),
 	//outputs
@@ -265,7 +265,7 @@ multiplexor_param #(.LENGTH(32)) mult_alu_srcA (
 //ForwardA - Mux
 double_multiplexor_param #(.LENGTH(32)) forwardA_mux (
 	.i_a(aluSrcA_2_fwdA),
-	.i_b(mem_wb_datapath_out[95:64]),
+	.i_b(wd3_wire),//mem_wb_datapath_out[95:64]),
 	.i_c(ex_mem_datapath_out[96:65]),
 	.i_d(32'h0),
 	.i_selector(ForwardA),
@@ -275,7 +275,7 @@ double_multiplexor_param #(.LENGTH(32)) forwardA_mux (
 //ForwardB - Mux
 double_multiplexor_param #(.LENGTH(32)) forwardB_mux (
 	.i_a(aluSrcB_2_fwdB),
-	.i_b(mem_wb_datapath_out[95:64]),
+	.i_b(wd3_wire),//mem_wb_datapath_out[95:64]),
 	.i_c(ex_mem_datapath_out[96:65]),
 	.i_d(32'h0),
 	.i_selector(ForwardB),
@@ -297,6 +297,7 @@ forward_unit fwd_unit (
 	.mem_wb_rd(mem_wb_datapath_out[132:128]),
 	.id_ex_reg_rs1(id_ex_datapath_out[147:143]),
 	.id_ex_reg_rs2(id_ex_datapath_out[152:148]),
+	.ALUSrcB(id_ex_controlpath_out[1]),
 	.forwardA(ForwardA),
 	.forwardB(ForwardB)
 );
