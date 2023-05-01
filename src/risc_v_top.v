@@ -21,25 +21,16 @@ wire [1:0] mem2Reg;
 wire [31:0] pc_prim, pc_out, adr, rd1_data, rd1_data_reg, rd2_data, rd2_data_reg, pc_next, pc_plus_4, pc_target;
 wire [31:0] memory_out, instr2perf, wd3_wire, imm_gen_out; 
 wire [31:0] SrcA, SrcB, alu_result, pc_jal;
-wire [31:0] aluSrcA_2_fwdA, aluSrcB_2_fwdB;
-wire [1:0] ForwardA, ForwardB;
+wire [31:0] aluSrcA_2_fwdA, aluSrcB_2_fwdB, fwd_SW_2_wd;
+wire [1:0] ForwardA, ForwardB, ForwardSW;
 wire [2:0] alu_control;
 wire[3:0] alu_operation;
 wire [31:0] data_memory_2_slave, address_memory_2_slave, data_return_rom, data_return_ram, data_return_uart;
 wire we_memory_2_rom, re_memory_2_rom, we_memory_2_ram, re_memory_2_ram, we_memory_2_uart, re_memory_2_uart;
-wire PCEnable;
-wire PCWriteCond;
-wire bne;
-wire alu_zero;
-wire MemRead;
-wire alu_zero_bne;
+wire PCEnable, PCWriteCond, bne, alu_zero, MemRead, alu_zero_bne;
 wire [1:0] cs;
 wire [31:0] decoded_address,ram_rom_data, gpio_data;
-wire mem_select;
-
-wire stall_mux;
-wire pc_stall;
-wire if_id_stall;
+wire mem_select, stall_mux, pc_stall, if_id_stall;
 wire [13:0] id_ex_controlpath_in;
 
 //Datapath Pipeline registers
@@ -65,8 +56,6 @@ wire [2:0]mem_wb_controlpath_out;
 
 assign clk = clk_50Mhz;
 assign pll_lock = 1'b1;
-
-
 
 //PC multiplexor
 multiplexor_param #(.LENGTH(32)) mult_pc (
@@ -290,6 +279,16 @@ ALU #(.LENGTH(32)) alu_block (
 	.alu_result(alu_result)
 );
 
+//ForwardSW - Mux
+double_multiplexor_param #(.LENGTH(32)) mult_fwd_SW (
+	.i_a(id_ex_datapath_out[95:64]),
+	.i_b(wd3_wire),
+	.i_c(ex_mem_datapath_out[96:65]),
+	.i_d(32'h0),
+	.i_selector(ForwardSW),
+	.out(fwd_SW_2_wd)
+);
+
 forward_unit fwd_unit (
 	.ex_mem_regWrite(ex_mem_controlpath_out[7]),
 	.mem_wb_regWrite(mem_wb_controlpath_out[2]),
@@ -299,7 +298,8 @@ forward_unit fwd_unit (
 	.id_ex_reg_rs2(id_ex_datapath_out[152:148]),
 	.ALUSrcB(id_ex_controlpath_out[1]),
 	.forwardA(ForwardA),
-	.forwardB(ForwardB)
+	.forwardB(ForwardB),
+	.forwardSW(ForwardSW)
 );
 
 ///////////////////////EXECUTE -> MEM//////////////////////////////////////
@@ -313,7 +313,7 @@ forward_unit fwd_unit (
 //	rd2: 	160:129	
 //	rd:		165:161
 
-wire [165:0] ex_mem_datapath_in = {id_ex_datapath_out[139:135],id_ex_datapath_out[95:64],id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
+wire [165:0] ex_mem_datapath_in = {id_ex_datapath_out[139:135],fwd_SW_2_wd,id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
 
 ffd_param_clear_n #(.LENGTH(166)) ex_mem_datapath_ffd(
 	//inputs

@@ -1,7 +1,7 @@
 .text
 main:
-	auipc s2,    0x0000fc10 #cargar valor base de 10010024
-	addi s2, s2, 4
+auipc s2,    0x0000fc10 #cargar valor base de 10010024
+addi s2, s2, 4
 lw s1, 4(s2)
 add s4,s1,s5
 and s6,s1,s4
