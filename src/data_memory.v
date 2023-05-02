@@ -19,14 +19,7 @@ reg [DATA_WIDTH-1:0] ram[0:(ADDR_WIDTH*ADDR_WIDTH)-1];
 integer i;
 initial begin
 	for(i=0;i<((ADDR_WIDTH*ADDR_WIDTH));i=i+1)
-		//Temp
-		if (i < 5) begin
-			ram[i] <= 32'h3;
-		end else begin
-			ram[i] <= 32'h0;
-		end
-		//Temp
-		//ram[i] <= 32'h0;
+		ram[i] <= 32'h0;
 end
 
 always @(posedge clk)

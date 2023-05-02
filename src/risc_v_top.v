@@ -21,7 +21,7 @@ wire [1:0] mem2Reg;
 wire [31:0] pc_prim, pc_out, adr, rd1_data, rd1_data_reg, rd2_data, rd2_data_reg, pc_next, pc_plus_4, pc_target;
 wire [31:0] memory_out, instr2perf, wd3_wire, imm_gen_out; 
 wire [31:0] SrcA, SrcB, alu_result, pc_jal;
-wire [31:0] aluSrcA_2_fwdA, aluSrcB_2_fwdB, fwd_SW_2_wd;
+wire [31:0] aluSrcA_2_fwdA, aluSrcB_2_fwdB, fwd_SW_2_wd, instr_stall;
 wire [1:0] ForwardA, ForwardB, ForwardSW;
 wire [2:0] alu_control;
 wire[3:0] alu_operation;
@@ -82,7 +82,7 @@ adder #(.LENGTH(32)) adder_pc_4 (
 );
 
 //Memory ROM
-instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(4)) memory_rom (
+instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.address(pc_out),
 	.rd(instr2perf),
 	.clk(clk),
@@ -160,6 +160,17 @@ multiplexor_param #(.LENGTH(14)) mult_id_ex_control_path (
 	.out(id_ex_controlpath_in)
 );
 
+//Stall control
+// 1'b0  -->  if_id_datapath_out[63:32]
+// 1'b1  -->  32'h0
+// Out   -->  instr_stall [31:0]
+multiplexor_param #(.LENGTH(32)) mux_stall_control (
+	.i_a(if_id_datapath_out[63:32]),
+	.i_b(32'h0),
+	.i_selector(stall_mux),
+	.out(instr_stall)
+);
+
 
 /////////////////////////DECODE->EXECUTE////////////////////////////////////
 //id_ex_datapath
@@ -169,7 +180,7 @@ multiplexor_param #(.LENGTH(14)) mult_id_ex_control_path (
 //	Imm	: 127:96
 //	Instruction: 160:128
 
-wire [159:0] id_ex_datapath_in = {if_id_datapath_out[63:32],imm_gen_out,rd2_data_reg,rd1_data_reg,if_id_datapath_out[31:0]};
+wire [159:0] id_ex_datapath_in = {instr_stall,imm_gen_out,rd2_data_reg,rd1_data_reg,if_id_datapath_out[31:0]};
 
 ffd_param_clear_n #(.LENGTH(160)) id_ex_datapath_ffd(
 	//inputs

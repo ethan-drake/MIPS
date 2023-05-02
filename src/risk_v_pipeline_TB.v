@@ -1,12 +1,12 @@
 // Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
 // Date:            16/03/23
-// File:			     risk_v_singlecycle_TB.v
-// Module name:	  risk_v_singlecycle_TB
+// File:			     risk_v_pipeline_TB.v
+// Module name:	  risk_v_pipeline_TB
 // Project Name:	  risc_v_top
 // Description:	  TB to test risk-v implementation
 
  `timescale 1ns / 1ps
-module risk_v_singlecycle_TB();
+module risk_v_pipeline_TB();
 
 reg clk, rst, rx;
 wire tx;
