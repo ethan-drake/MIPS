@@ -93,7 +93,7 @@ instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 
 multiplexor_param #(.LENGTH(64)) mult_if_pipe (
 	.i_a({instr2perf,pc_out}),
-	.i_b(32'h0),
+	.i_b(64'h0),
 	.i_selector(nop_inject),
 	.out(mult_if_pipe_out)
 );
