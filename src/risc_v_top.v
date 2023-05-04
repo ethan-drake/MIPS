@@ -40,7 +40,7 @@ wire [165:0]ex_mem_datapath_out;
 wire [132:0]mem_wb_datapath_out;
 //Control Path Pipeline registers
 wire [13:0] id_ex_controlpath_out;
-wire [7:0]ex_mem_controlpath_out;
+wire [4:0]ex_mem_controlpath_out;
 wire [2:0]mem_wb_controlpath_out;
 
 ///////////////////////FETCH//////////////////////////////////////////////
@@ -313,6 +313,16 @@ forward_unit fwd_unit (
 	.forwardSW(ForwardSW)
 );
 
+//Multiplexor to select between ZERO & NOT ZERO FOR BRANCHES
+multiplexor_param #(.LENGTH(1)) mult_branch (
+	.i_a(alu_zero),
+	.i_b(~alu_zero),
+	.i_selector(id_ex_controlpath_out[6]),//bne),
+	.out(alu_zero_bne)
+);
+
+assign PCEnable = (id_ex_controlpath_out[8]/*pc_src*/ | (id_ex_controlpath_out[7]/*PCWriteCond*/ & alu_zero_bne));
+
 ///////////////////////EXECUTE -> MEM//////////////////////////////////////
 
 //ex_mem_datapath
@@ -339,18 +349,15 @@ ffd_param_clear_n #(.LENGTH(166)) ex_mem_datapath_ffd(
 
 //ex_mem_controlpath
 //MEM
-//	BNE:		0
-//	PCWriteCond:1
-//	PCSrc:		2
-//	MemRead:	3
-//	MemWrite:   4
+//	MemRead:	0
+//	MemWrite:   1
 //WB
-//	MemToReg:  6:5
-//	RegWrite:	7
+//	MemToReg:  3:2
+//	RegWrite:	4
 
-wire [7:0] ex_mem_controlpath_in = {id_ex_controlpath_out[13:6]};
+wire [4:0] ex_mem_controlpath_in = {id_ex_controlpath_out[13:9]};
 
-ffd_param_clear_n #(.LENGTH(8)) ex_mem_controlpath_ffd(
+ffd_param_clear_n #(.LENGTH(5)) ex_mem_controlpath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -367,8 +374,8 @@ master_memory_map #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_map (
 	//CORES <--> Memory map
 	.wd(ex_mem_datapath_out[160:129]),//rd2_data_reg),
 	.address(ex_mem_datapath_out[96:65]),//alu_result),
-	.we(ex_mem_controlpath_out[4]),//MemWrite),
-	.re(ex_mem_controlpath_out[3]),//MemRead),
+	.we(ex_mem_controlpath_out[1]),//MemWrite),
+	.re(ex_mem_controlpath_out[0]),//MemRead),
 	.clk(clk),
 	.rd(memory_out),
 	//Memory_map <--> Slaves
@@ -406,17 +413,6 @@ uart_IP #(.DATA_WIDTH(32)) uart_IP_module (
 	.tx(tx)
 );
 
-
-assign PCEnable = (ex_mem_controlpath_out[2]/*pc_src*/ | (ex_mem_controlpath_out[1]/*PCWriteCond*/ & alu_zero_bne));
-
-//Multiplexor to select between ZERO & NOT ZERO FOR BRANCHES
-multiplexor_param #(.LENGTH(1)) mult_branch (
-	.i_a(ex_mem_datapath_out[64]),//alu_zero),
-	.i_b(~ex_mem_datapath_out[64]),//~alu_zero),
-	.i_selector(ex_mem_controlpath_out[0]),//bne),
-	.out(alu_zero_bne)
-);
-
 ///////////////////////////////////////MEM -> WB////////////////////////////////////////////////
 
 //mem_wb_datapath
@@ -444,7 +440,7 @@ ffd_param_clear_n #(.LENGTH(133)) mem_wb_datapath_ffd(
 //	MemToReg:  1:0
 //	RegWrite:	2
 
-wire [2:0] mem_wb_controlpath_in = {ex_mem_controlpath_out[7:5]};
+wire [2:0] mem_wb_controlpath_in = {ex_mem_controlpath_out[4:2]};
 
 ffd_param_clear_n #(.LENGTH(3)) mem_wb_controlpath_ffd(
 	//inputs
