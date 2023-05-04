@@ -315,7 +315,7 @@ double_multiplexor_param #(.LENGTH(32)) mult_fwd_SW (
 );
 
 forward_unit fwd_unit (
-	.ex_mem_regWrite(ex_mem_controlpath_out[7]),
+	.ex_mem_regWrite(ex_mem_controlpath_out[4]),
 	.mem_wb_regWrite(mem_wb_controlpath_out[2]),
 	.ex_mem_rd(ex_mem_datapath_out[165:161]),
 	.mem_wb_rd(mem_wb_datapath_out[132:128]),
