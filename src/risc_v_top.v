@@ -103,7 +103,7 @@ ffd_param #(.LENGTH(1)) nop_delayer(
 	.q(nop_inject_delayed)
 );
 
-assign nop_inject_desicion = nop_inject or nop_inject_delayed;
+assign nop_inject_desicion = nop_inject | nop_inject_delayed;
 
 multiplexor_param #(.LENGTH(64)) mult_if_pipe (
 	.i_a({instr2perf,pc_out}),
