@@ -32,8 +32,10 @@ wire [1:0] cs;
 wire [31:0] decoded_address,ram_rom_data, gpio_data;
 wire mem_select, stall_mux, pc_stall, if_id_stall;
 wire [13:0] id_ex_controlpath_in;
+wire nop_inject;
 
 //Datapath Pipeline registers
+wire [63:0] mult_if_pipe_out;
 wire [63:0] if_id_datapath_out;
 wire [159:0] id_ex_datapath_out;
 wire [165:0]ex_mem_datapath_out;
@@ -89,12 +91,19 @@ instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.we(1'b0) //RO memory
 );
 
+multiplexor_param #(.LENGTH(64)) mult_if_pipe (
+	.i_a({instr2perf,pc_out}),
+	.i_b(32'h0),
+	.i_selector(nop_inject),
+	.out(mult_if_pipe_out)
+);
+
 /////////////////////////FETCH->DECODE/////////////////////////////////////
 //if_id_datapath
 //	PC : 31:0
 // Instruction : 63:32
 
-wire [63:0] if_id_datapath_in = {instr2perf,pc_out};
+wire [63:0] if_id_datapath_in = mult_if_pipe_out;
 
 ffd_param_clear_n #(.LENGTH(64)) if_id_datapath_ffd(
 	//inputs
@@ -125,6 +134,11 @@ register_file reg_file (
 	.wd3(wd3_wire),
 	.rd1(rd1_data_reg),
 	.rd2(rd2_data_reg)
+);
+
+jump_detection_unit jump_detection(
+    .opcode(if_id_datapath_out[38:32]),
+    .nop_inject(nop_inject)
 );
 
 control_unit cu (
