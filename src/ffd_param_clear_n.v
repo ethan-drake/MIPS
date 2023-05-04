@@ -16,7 +16,7 @@ module ffd_param_clear_n #(parameter LENGTH=1)(
 	output reg[LENGTH-1:0] q
 );
 
-//Parametrized flip flop with synchronous reset and enable signal
+//Parametrized flip flop with asynchronous reset and enable signal
 always@(negedge i_clk, negedge i_rst_n)
 begin
 	if(!i_rst_n)

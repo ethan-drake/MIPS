@@ -35,12 +35,13 @@ wire [13:0] id_ex_controlpath_in;
 wire nop_inject;
 wire nop_inject_delayed;
 wire nop_inject_desicion;
+wire branch_flush_clear;
 
 //Datapath Pipeline registers
 wire [63:0] mult_if_pipe_out;
 wire [63:0] if_id_datapath_out;
 wire [159:0] id_ex_datapath_out;
-wire [165:0]ex_mem_datapath_out;
+wire [172:0]ex_mem_datapath_out;
 wire [132:0]mem_wb_datapath_out;
 //Control Path Pipeline registers
 wire [13:0] id_ex_controlpath_out;
@@ -93,11 +94,12 @@ instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 	.we(1'b0) //RO memory
 );
 
-ffd_param #(.LENGTH(1)) nop_delayer(
+ffd_param_clear #(.LENGTH(1)) nop_delayer(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
+	.i_clear(branch_flush_clear),
 	.d(nop_inject),
 	//outputs
 	.q(nop_inject_delayed)
@@ -124,7 +126,7 @@ ffd_param_clear_n #(.LENGTH(64)) if_id_datapath_ffd(
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(~if_id_stall),
-	.i_clear(1'b0),
+	.i_clear(branch_flush_clear),
 	.d(if_id_datapath_in),
 	//outputs
 	.q(if_id_datapath_out)
@@ -215,7 +217,7 @@ ffd_param_clear_n #(.LENGTH(160)) id_ex_datapath_ffd(
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
-	.i_clear(1'b0),
+	.i_clear(branch_flush_clear),
 	.d(id_ex_datapath_in),
 	//outputs
 	.q(id_ex_datapath_out)
@@ -244,7 +246,7 @@ ffd_param_clear_n #(.LENGTH(14)) id_ex_controlpath_ffd(
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
-	.i_clear(1'b0),
+	.i_clear(branch_flush_clear),
 	.d(id_ex_controlpath_in),
 	//outputs
 	.q(id_ex_controlpath_out)
@@ -351,15 +353,16 @@ forward_unit fwd_unit (
 //	Immediate	: 128:97
 //	rd2: 	160:129	
 //	rd:		165:161
+//	opcode:	172:166
 
-wire [165:0] ex_mem_datapath_in = {id_ex_datapath_out[139:135],fwd_SW_2_wd,id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
+wire [172:0] ex_mem_datapath_in = {id_ex_datapath_out[134:128],id_ex_datapath_out[139:135],fwd_SW_2_wd,id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
 
-ffd_param_clear_n #(.LENGTH(166)) ex_mem_datapath_ffd(
+ffd_param_clear_n #(.LENGTH(173)) ex_mem_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
-	.i_clear(1'b0),
+	.i_clear(branch_flush_clear),
 	.d(ex_mem_datapath_in),
 	//outputs
 	.q(ex_mem_datapath_out)
@@ -383,7 +386,7 @@ ffd_param_clear_n #(.LENGTH(8)) ex_mem_controlpath_ffd(
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
-	.i_clear(1'b0),
+	.i_clear(branch_flush_clear),
 	.d(ex_mem_controlpath_in),
 	//outputs
 	.q(ex_mem_controlpath_out)
@@ -443,6 +446,12 @@ multiplexor_param #(.LENGTH(1)) mult_branch (
 	.i_b(~ex_mem_datapath_out[64]),//~alu_zero),
 	.i_selector(ex_mem_controlpath_out[0]),//bne),
 	.out(alu_zero_bne)
+);
+
+branch_control_unit branch_control(
+    .take_branch(PCEnable),
+    .opcode(ex_mem_datapath_out[172:166]),
+    .clear(branch_flush_clear)
 );
 
 ///////////////////////////////////////MEM -> WB////////////////////////////////////////////////
