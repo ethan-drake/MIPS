@@ -105,7 +105,7 @@ ffd_param_clear #(.LENGTH(1)) nop_delayer(
 	.q(nop_inject_delayed)
 );
 
-assign nop_inject_desicion = nop_inject | nop_inject_delayed;
+assign nop_inject_desicion = (nop_inject | nop_inject_delayed) & (~branch_flush_clear);
 
 multiplexor_param #(.LENGTH(64)) mult_if_pipe (
 	.i_a({instr2perf,pc_out}),
