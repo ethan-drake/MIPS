@@ -36,6 +36,7 @@ wire nop_inject;
 wire nop_inject_delayed;
 wire nop_inject_desicion;
 wire branch_flush_clear;
+wire nop_inject_delayed_2;
 
 //Datapath Pipeline registers
 wire [63:0] mult_if_pipe_out;
@@ -105,7 +106,18 @@ ffd_param_clear #(.LENGTH(1)) nop_delayer(
 	.q(nop_inject_delayed)
 );
 
-assign nop_inject_desicion = (nop_inject | nop_inject_delayed) & (~branch_flush_clear);
+ffd_param_clear #(.LENGTH(1)) nop_delayer_2(
+	//inputs
+	.i_clk(clk),
+	.i_rst_n(rst_n),
+	.i_en(1'b1),
+	.i_clear(branch_flush_clear),
+	.d(nop_inject_delayed),
+	//outputs
+	.q(nop_inject_delayed_2)
+);
+
+assign nop_inject_desicion = (nop_inject | nop_inject_delayed_2) & (~branch_flush_clear);
 
 multiplexor_param #(.LENGTH(64)) mult_if_pipe (
 	.i_a({instr2perf,pc_out}),
