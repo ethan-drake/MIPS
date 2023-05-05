@@ -126,7 +126,7 @@ ffd_param_clear_n #(.LENGTH(64)) if_id_datapath_ffd(
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(~if_id_stall),
-	.i_clear(branch_flush_clear),
+	.i_clear(1'b0),
 	.d(if_id_datapath_in),
 	//outputs
 	.q(if_id_datapath_out)
