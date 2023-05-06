@@ -16,10 +16,10 @@ main:
 	#for peque;o que vaya por columnas de la row, producto punto
 	#la a1, row_0
 	auipc a1,    0x0000fc10
-	addi a1, a1, 0xfffffffc
+	addi a1, a1, 0x4C
 	#la a2, result
 	auipc a2,    0x0000fc10
-	addi a2, a2, 0x00000034
+	addi a2, a2, 0x00000084
 	
 Column_loop:
 
@@ -28,7 +28,7 @@ Column_loop:
 	beqz t1, Exit #exit for if condition is not met
 	#la a0, vector
 	auipc a0,    0x0000fc10
-	addi a0, a0, 0xffffffd4
+	addi a0, a0, 0x24
 	addi s2, zero, 0 #int j = 0
 	addi t3, zero, 0#resetear la variable temporal t3
 Row_loop:
