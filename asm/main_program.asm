@@ -91,6 +91,7 @@ uart_start:
 	addi a4, a3, 0x7c #obtiene la direccion del resultado
 	addi t0, zero, 0x0 #se inicializa la base
 	addi t6, zero, 0x4 #se va a relaizar 4 veces el envio de datos
+	addi t2, zero, 0x1 #bit para cargar a registros de seÃ±ales
 send_uart_data:
 	addi s0, zero, 0x20 #contador i para el loop
 	add t5, a4, t0 #se realiza suma para saber el offset de los datos
