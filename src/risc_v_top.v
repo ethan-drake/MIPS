@@ -95,7 +95,7 @@ instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(10)) memory_rom (
 	.we(1'b0) //RO memory
 );
 
-ffd_param_clear #(.LENGTH(1)) nop_delayer(
+ffd_param_clear_n #(.LENGTH(1)) nop_delayer(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -103,19 +103,19 @@ ffd_param_clear #(.LENGTH(1)) nop_delayer(
 	.i_clear(branch_flush_clear),
 	.d(nop_inject),
 	//outputs
-	.q(nop_inject_delayed)
-);
-
-ffd_param_clear #(.LENGTH(1)) nop_delayer_2(
-	//inputs
-	.i_clk(clk),
-	.i_rst_n(rst_n),
-	.i_en(1'b1),
-	.i_clear(branch_flush_clear),
-	.d(nop_inject_delayed),
-	//outputs
 	.q(nop_inject_delayed_2)
 );
+
+//ffd_param_clear #(.LENGTH(1)) nop_delayer_2(
+//	//inputs
+//	.i_clk(clk),
+//	.i_rst_n(rst_n),
+//	.i_en(1'b1),
+//	.i_clear(branch_flush_clear),
+//	.d(nop_inject_delayed),
+//	//outputs
+//	.q(nop_inject_delayed_2)
+//);
 
 assign nop_inject_desicion = (nop_inject | nop_inject_delayed_2) & (~branch_flush_clear);
 
