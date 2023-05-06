@@ -52,7 +52,7 @@ start_calculation:
 Column_loop:
 	#for(i=0;i<4;i++)
 	slti t1, s1, 0x4 
-	beqz t1, Exit #exit for if condition is not met
+	beqz t1, uart_start #exit when calculation is done
 	auipc a0,    0x0000fc10
 	addi a0, a0, -0x44
 	addi s2, zero, 0 #int j = 0
@@ -85,7 +85,32 @@ ProductFunction:
 	sw t0, -12(sp) #save result to 12(sp)
 	lw ra, 0(sp) #load ra
 	jalr zero, ra, 0
-Exit:
-	addi zero, zero, 0
 
 #Programa para enviar los resultados al UART
+uart_start:
+	addi a4, a3, 0x7c #obtiene la direccion del resultado
+	addi t0, zero, 0x0 #se inicializa la base
+	addi t6, zero, 0x4 #se va a relaizar 4 veces el envio de datos
+send_uart_data:
+	addi s0, zero, 0x20 #contador i para el loop
+	add t5, a4, t0 #se realiza suma para saber el offset de los datos
+	lw a0, 0(t5) #se carga el valor a enviar
+send_loop:
+	addi s0, s0, -0x8 #decrease counter
+	srl t3, a0, s0 #shift right register factorial number to get 8 bits to send
+	sw t3, 0(a3) #cargar el factorial en la direccion de memoria de dato UART
+	sw t2, 4(a3) #cargar el bit 1 a la seÃ±al de enviar tx de uart
+	sw zero, 4(a3) #cargar el bit 0 a la seÃ±al de enviar tx de uart tipo one shot
+wait_uart_working:
+	lw t4, 0x18(a3) #obtener que UART ya empezo nuestra solicitud Tx
+	beq t4, zero, wait_uart_working #checar si es un valor distinto de cero, sino seguir esperando que empiece solicitud
+wait_to_send:
+	lw t1, 8(a3) #obtener el valor de la bandera que termino de enviar la transmision
+	beq t1, zero, wait_to_send #checar si es un valor distinto de cero, sino seguir esperando que termine de enviarse
+	bne s0, zero, send_loop #check if al bytes have been sent
+next_iteration:
+	addi t6, t6, -0x1 #reduce el contador
+	addi t0, t0, 0x4 #aumenta el offset por 4
+	bne t6, zero, send_uart_data #si no ha acabado de enviar 4 veces, repite el proceso
+finish_program:
+	j main #regresa al inicio del prgrama
