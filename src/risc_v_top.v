@@ -88,7 +88,7 @@ adder #(.LENGTH(32)) adder_pc_4 (
 );
 
 //Memory ROM
-instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(8)) memory_rom (
+instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(10)) memory_rom (
 	.address(pc_out),
 	.rd(instr2perf),
 	.clk(clk),
