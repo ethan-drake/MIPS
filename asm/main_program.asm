@@ -44,9 +44,9 @@ get_uart_data:
 	bne s1, t5, get_uart_data #poll until 4 times happen
 	bne t3, zero, wait_for_row
 	bne t6, zero, wait_for_matrix
-finish:
-	nop
-start_matrix:
+
+#start calculation
+start_calculation:
 	addi s0, zero, 4 #matrix size
 	addi s1, zero, 0 #int i = 0
 	addi s3, zero, 0 #int resultado = 0
@@ -56,10 +56,10 @@ start_matrix:
 	#for peque;o que vaya por columnas de la row, producto punto
 	#la a1, row_0
 	auipc a1,    0x0000fc10
-	addi a1, a1, 0xfffffffc
+	addi a1, a1, -0x1c
 	#la a2, result
 	auipc a2,    0x0000fc10
-	addi a2, a2, 0x00000034
+	addi a2, a2, 0x1c
 	
 Column_loop:
 
@@ -68,7 +68,7 @@ Column_loop:
 	beqz t1, Exit #exit for if condition is not met
 	#la a0, vector
 	auipc a0,    0x0000fc10
-	addi a0, a0, 0xffffffd4
+	addi a0, a0, -0x44
 	addi s2, zero, 0 #int j = 0
 	addi t3, zero, 0#resetear la variable temporal t3
 Row_loop:
@@ -92,8 +92,6 @@ Row_loop_done:
 	addi a2, a2, 4#mover el apuntador del vector
 	addi s1, s1, 1#add i++
 	jal zero, Column_loop #jump to column loop
-Exit:
-	addi zero, zero, 0
 
 ProductFunction:
 	sw ra, 0(sp) #save ra in 0(sp)
@@ -103,3 +101,6 @@ ProductFunction:
 	sw t0, -12(sp) #save result to 12(sp)
 	lw ra, 0(sp) #load ra
 	jalr zero, ra, 0
+	
+Exit:
+	addi zero, zero, 0
