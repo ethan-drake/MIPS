@@ -88,7 +88,7 @@ adder #(.LENGTH(32)) adder_pc_4 (
 );
 
 //Memory ROM
-instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
+instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(8)) memory_rom (
 	.address(pc_out),
 	.rd(instr2perf),
 	.clk(clk),
@@ -190,6 +190,7 @@ hazard_detection_unit hazard_detection(
     .id_ex_rd(id_ex_datapath_out[139:135]),
     .if_id_rs1(if_id_datapath_out[51:47]),
     .if_id_rs2(if_id_datapath_out[56:52]),
+	.branch_taken(branch_flush_clear),
     .pc_stall(pc_stall),
     .if_id_stall(if_id_stall),
     .stall_mux(stall_mux)
@@ -428,7 +429,7 @@ master_memory_map #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_map (
 );
 
 //Memory RAM
-data_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_ram (
+data_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(9)) memory_ram (
 	.wd(data_memory_2_slave),
 	.address(address_memory_2_slave),
 	.we(we_memory_2_ram),
