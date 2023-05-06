@@ -19,13 +19,17 @@ main:
 	addi a3, a3, 0x24
 	addi t5, zero, 0x10
 	addi t2, zero, 0x1 #bit para cargar a registros de seÃ±ales
-	addi t3, zero, 0x3 #matrix of 4 elements 
+	addi t3, zero, 0x4 #matrix of 4 elements 
 	addi t6, zero, 0x1 #vector of 1 element
+	addi a5, a4, 0x0
 wait_for_row:
-	addi a5, a4, 0x10
+	addi t3, t3, -1
+	addi a5, a5, 0x10
 	j init_ctt
 wait_for_matrix:
 	addi t3, zero, 0x0
+	addi t6, t6, -1
+	addi a5, a4, 0x0
 init_ctt:
 	addi s1, zero, 0x0
 get_uart_data:
@@ -37,13 +41,11 @@ get_uart_data:
 	add t4, a5, s1
 	sw a2, 0(t4) #load vaue based in matrix base + offset
 	addi s1, s1, 4	#contador 
-	bne s1, t5, get_uart_data #poll until f4 times happen
-	addi t3, t3, -1
+	bne s1, t5, get_uart_data #poll until 4 times happen
 	bne t3, zero, wait_for_row
-	
+	bne t6, zero, wait_for_matrix
 finish:
 	nop
-
 start_matrix:
 	addi s0, zero, 4 #matrix size
 	addi s1, zero, 0 #int i = 0
