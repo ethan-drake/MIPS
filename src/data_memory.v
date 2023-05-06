@@ -16,17 +16,19 @@ module data_memory #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32) (
 // Declare the RAM array
 reg [DATA_WIDTH-1:0] ram[0:(ADDR_WIDTH*ADDR_WIDTH)-1];
 
-/*integer i;
+integer i;
 initial begin
 	for(i=0;i<((ADDR_WIDTH*ADDR_WIDTH));i=i+1)
 		ram[i] <= 32'h0;
 end
-*/
+
+/*
 //Initial data with program to execute
 initial begin
 	// program
 	$readmemh("../asm/vector_matrix_data.txt", ram);
 end
+*/
 
 always @(posedge clk)
 begin

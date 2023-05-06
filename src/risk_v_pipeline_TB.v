@@ -28,17 +28,30 @@ initial begin
 	rx = 1; //Initial value for Rx
 	#1 rst = 0;
 	#1 rst = 1;
-	//Data 0xc
+	//Data 0x1
 	#100 rx = 1'b0;   //start
-	#10420 rx = 1'b0; //bit0
+	#10420 rx = 1'b1; //bit0
 	#10420 rx = 1'b0; //bit1
-	#10420 rx = 1'b1; //bit2
-	#10420 rx = 1'b1; //bit3
+	#10420 rx = 1'b0; //bit2
+	#10420 rx = 1'b0; //bit3
 	#10420 rx = 1'b0; //bit4
 	#10420 rx = 1'b0; //bit5
 	#10420 rx = 1'b0; //bit6
 	#10420 rx = 1'b0; //bit7
-	#10420 rx = 1'b0; //parity
+	#10420 rx = 1'b1; //parity
+	#10420 rx = 1'b1; //up again
+	#430000;  //Delay to send the other data
+	//Data 0x2
+	#100 rx = 1'b0;   //start
+	#10420 rx = 1'b0; //bit0
+	#10420 rx = 1'b1; //bit1
+	#10420 rx = 1'b0; //bit2
+	#10420 rx = 1'b0; //bit3
+	#10420 rx = 1'b0; //bit4
+	#10420 rx = 1'b0; //bit5
+	#10420 rx = 1'b0; //bit6
+	#10420 rx = 1'b0; //bit7
+	#10420 rx = 1'b1; //parity
 	#10420 rx = 1'b1; //up again
 	#430000;  //Delay to send the other data
 	//Data 0x3
@@ -52,6 +65,19 @@ initial begin
 	#10420 rx = 1'b0; //bit6
 	#10420 rx = 1'b0; //bit7
 	#10420 rx = 1'b0; //parity
+	#10420 rx = 1'b1; //up again
+	#430000;  //Delay to send the other data
+	//Data 0x4
+	#100 rx = 1'b0;   //start
+	#10420 rx = 1'b0; //bit0
+	#10420 rx = 1'b0; //bit1
+	#10420 rx = 1'b1; //bit2
+	#10420 rx = 1'b0; //bit3
+	#10420 rx = 1'b0; //bit4
+	#10420 rx = 1'b0; //bit5
+	#10420 rx = 1'b0; //bit6
+	#10420 rx = 1'b0; //bit7
+	#10420 rx = 1'b1; //parity
 	#10420 rx = 1'b1; //up again
 	#430000;  //Delay to send the other data
 	//Data 0xe
