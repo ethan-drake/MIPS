@@ -114,3 +114,5 @@ next_iteration:
 	bne t6, zero, send_uart_data #si no ha acabado de enviar 4 veces, repite el proceso
 finish_program:
 	j main #regresa al inicio del prgrama
+nop
+nop
