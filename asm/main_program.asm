@@ -1,12 +1,12 @@
 #Data
-.data 
-	vector: .word 1 2 3 4  
-	row_0: .word 1 2 3 4  
-	row_1: .word 5 6 7 8 
-	row_2: .word 9 10 11 12 
-	row_3: .word 13 14 15 16
-	result: .word 0     
-.text
+#.data 
+#	vector: .word 1 2 3 4  
+#	row_0: .word 1 2 3 4  
+#	row_1: .word 5 6 7 8 
+#	row_2: .word 9 10 11 12 
+#	row_3: .word 13 14 15 16
+#	result: .word 0     
+#.text
 #0x10010024 dato a transmitir
 #0x10010028 seÃ±al start tx
 #0x1001002C seÃ±al que la uart ya termino de transmitir
@@ -15,16 +15,19 @@
 #0x10010038 seÃ±al para limpiar el rx uart
 main:
 	auipc a3,    0x0000fc10 #cargar valor base de 10010024
+	addi a4, a3, 0x50 #cargar base de las matrices
 	addi a3, a3, 0x24
-	addi s1, zero, 0x4
-	addi a5, a3, 0x50 #cargar base de las matrices
-	addi t2, zero, 0x10
+	addi t5, zero, 0x10
+	addi t2, zero, 0x1 #bit para cargar a registros de seÃ±ales
 	addi t3, zero, 0x3 #matrix of 4 elements 
-wait_for_matrix:
-	beqz t3, finish
+	addi t6, zero, 0x1 #vector of 1 element
 wait_for_row:
-	addi s1, s1, 4	#contador 
-	addi a5, a5, 0x10
+	addi a5, a4, 0x10
+	j init_ctt
+wait_for_matrix:
+	addi t3, zero, 0x0
+init_ctt:
+	addi s1, zero, 0x0
 get_uart_data:
 	lw t1, 0x10(a3) #obtener la seÃ±al de 0x10010034 para ver si ya recibimos un dato
 	beq t1, zero, get_uart_data #checar si es un valor distinto de cero, sino seguir esperando
@@ -33,8 +36,11 @@ get_uart_data:
 	sw zero, 0x14(a3) #bajar seÃ±al para limpiar la bandera de rx
 	add t4, a5, s1
 	sw a2, 0(t4) #load vaue based in matrix base + offset
-	bne s1, t2, wait_for_row #poll until f4 times happen
-	j wait_for_matrix
+	addi s1, s1, 4	#contador 
+	bne s1, t5, get_uart_data #poll until f4 times happen
+	addi t3, t3, -1
+	bne t3, zero, wait_for_row
+	
 finish:
 	nop
 
