@@ -16,15 +16,27 @@
 main:
 	auipc a3,    0x0000fc10 #cargar valor base de 10010024
 	addi a3, a3, 0x24
-	addi t2, zero, 0x1 #bit para cargar a registros de seÃ±ales
-	addi s1, zero, 0
+	addi s1, zero, 0x4
+	addi a5, a3, 0x50 #cargar base de las matrices
+	addi t2, zero, 0x10
+	addi t3, zero, 0x3 #matrix of 4 elements 
+wait_for_matrix:
+	beqz t3, finish
+wait_for_row:
+	addi s1, s1, 4	#contador 
+	addi a5, a5, 0x10
 get_uart_data:
 	lw t1, 0x10(a3) #obtener la seÃ±al de 0x10010034 para ver si ya recibimos un dato
 	beq t1, zero, get_uart_data #checar si es un valor distinto de cero, sino seguir esperando
 	lw a2, 0xC(a3) #loading number from address
 	sw t2, 0x14(a3) #levantar seÃ±al para limpiar la bandera de rx
 	sw zero, 0x14(a3) #bajar seÃ±al para limpiar la bandera de rx
-	
+	add t4, a5, s1
+	sw a2, 0(t4) #load vaue based in matrix base + offset
+	bne s1, t2, wait_for_row #poll until f4 times happen
+	j wait_for_matrix
+finish:
+	nop
 
 start_matrix:
 	addi s0, zero, 4 #matrix size
