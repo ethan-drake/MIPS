@@ -17,12 +17,14 @@ main:
 	auipc a3,    0x0000fc10 #cargar valor base de 10010024
 	addi a3, a3, 0x24
 	addi t2, zero, 0x1 #bit para cargar a registros de seÃ±ales
+	addi s1, zero, 0
 get_uart_data:
 	lw t1, 0x10(a3) #obtener la seÃ±al de 0x10010034 para ver si ya recibimos un dato
 	beq t1, zero, get_uart_data #checar si es un valor distinto de cero, sino seguir esperando
 	lw a2, 0xC(a3) #loading number from address
 	sw t2, 0x14(a3) #levantar seÃ±al para limpiar la bandera de rx
 	sw zero, 0x14(a3) #bajar seÃ±al para limpiar la bandera de rx
+	
 
 start_matrix:
 	addi s0, zero, 4 #matrix size
