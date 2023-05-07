@@ -37,6 +37,9 @@ wire nop_inject_delayed;
 wire nop_inject_desicion;
 wire branch_flush_clear;
 wire nop_inject_delayed_2;
+wire branch_prediction;
+wire [31:0] branch_prediction_target;
+wire [31:0] mult_branch_predict_out;
 
 //Datapath Pipeline registers
 wire [63:0] mult_if_pipe_out;
@@ -87,9 +90,30 @@ adder #(.LENGTH(32)) adder_pc_4 (
 	.q(pc_plus_4)
 );
 
+branch_prediction #(.DATA_WIDTH(32), .BRANCH_NO(8)) branch_predictor(
+    .i_clk(clk),
+    .i_rst_n(rst_n),
+    .ex_mem_opcode(ex_mem_datapath_out[172:166]),
+    .if_id_opcode(if_id_datapath_out[38:32]),
+    .ex_mem_branch_taken(branch_flush_clear),
+    .ex_mem_branch_target(ex_mem_datapath_out[63:32]),
+    .if_pc(pc_out[4:2]),
+    .ex_mem_pc(ex_mem_datapath_out[4:2]),
+    .prediction(branch_prediction),
+    .branch_target(branch_prediction_target)
+);
+
+//branch predictor mux
+multiplexor_param #(.LENGTH(32)) mult_branch_predict (
+	.i_a(pc_out),
+	.i_b(branch_prediction_target),
+	.i_selector(branch_prediction),
+	.out(mult_branch_predict_out)
+);
+
 //Memory ROM
 instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(8)) memory_rom (
-	.address(pc_out),
+	.address(mult_branch_predict_out),
 	.rd(instr2perf),
 	.clk(clk),
 	.we(1'b0) //RO memory
@@ -125,6 +149,8 @@ multiplexor_param #(.LENGTH(64)) mult_if_pipe (
 	.i_selector(nop_inject_desicion),
 	.out(mult_if_pipe_out)
 );
+
+
 
 /////////////////////////FETCH->DECODE/////////////////////////////////////
 //if_id_datapath
