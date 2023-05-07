@@ -30,6 +30,10 @@ module data_memory #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32) (
 	output [31:0] reg18,
 	output [31:0] reg19,
 	output [31:0] reg20,
+	output [31:0] rst1,
+	output [31:0] rst2,
+	output [31:0] rst3,
+	output [31:0] rst4,
 	//
 	//outputs
 	output [(DATA_WIDTH-1):0] rd
@@ -83,6 +87,10 @@ assign reg17 = ram[36];
 assign reg18 = ram[37];
 assign reg19 = ram[38];
 assign reg20 = ram[39];
+assign rst1  = ram[40];
+assign rst2  = ram[41];
+assign rst3  = ram[42];
+assign rst4  = ram[43];
 //For signal tap debug
 
 endmodule
