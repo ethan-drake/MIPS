@@ -22,6 +22,7 @@ reg [DATA_WIDTH-1:0] BHB [0:(BRANCH_NO)-1];
 reg BHT [0:(BRANCH_NO)-1];
 parameter B_TYPE = 7'b1100011;
 
+integer i;
 initial begin
 	for(i=0;i<(BRANCH_NO);i=i+1)
 		BHB[i] <= 32'h0;
