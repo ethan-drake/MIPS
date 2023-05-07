@@ -11,7 +11,7 @@ module register_file (
 	input [4:0] a1, a2, a3,
 	input [31:0] wd3,
 	//Just used for signal tap
-	//output [31:0] register_ra, register_sp, register_a0, register_a1,
+	output [31:0] register_s1, register_t3, register_t6, register_t5,
 	//Finish 
 	//outputs
 	output [31:0] rd1, rd2
@@ -68,10 +68,10 @@ assign rd1 = registers[a1];
 assign rd2 = registers[a2];
 
 //Just used for signal tap
-//assign register_ra = registers[1];
-//assign register_sp = registers[2];
-//assign register_a0 = registers[10];
-//assign register_a1 = registers[12];
+assign register_s1 = registers[9];
+assign register_t3 = registers[28];
+assign register_t5 = registers[30];
+assign register_t6 = registers[31];
 //finish
 
 endmodule
