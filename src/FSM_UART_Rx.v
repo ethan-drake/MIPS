@@ -31,7 +31,6 @@ localparam SAVE_RX_DATA_S	= 3'b110;
 
 reg [2:0] Rx_state;
 
-
 always @(negedge rst, posedge clk)
 	begin
 		if (!rst) 

@@ -43,7 +43,7 @@ wire [132:0]mem_wb_datapath_out;
 //Control Path Pipeline registers
 wire [13:0] id_ex_controlpath_out;
 wire [7:0]ex_mem_controlpath_out;
-wire [2:0]mem_wb_controlpath_out;
+wire [2:0]mem_wb_controlpath_out;	
 
 ///////////////////////FETCH//////////////////////////////////////////////
 
