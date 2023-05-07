@@ -5,8 +5,8 @@
 #10010060  row3
 #10010060  row4
 main:
-	auipc a3,    0x0000fc10 #cargar valor base de 10010000
-	addi a3, a3, 0x50
+	auipc s11,  0x0000fc10
+	addi a3, s11, 0x50
 	addi t1, zero, 0x4
 	addi t2, zero, 0x10
 	addi t0, zero, 0x0
@@ -30,15 +30,15 @@ start_calculation:
 	addi s4, zero, 4 #word size
 	mul s7, s4, s0 #row size
 	auipc a1,    0x0000fc10
-	addi a1, a1, -0x1c
+	addi a1, a1, 0x14
 	auipc a2,    0x0000fc10
-	addi a2, a2, 0x1c
+	addi a2, a2, 0x4c
 Column_loop:
 	#for(i=0;i<4;i++)
 	slti t1, s1, 0x4 
 	beqz t1, uart_start #exit when calculation is done
 	auipc a0,    0x0000fc10
-	addi a0, a0, -0x44
+	addi a0, a0, -0x14
 	addi s2, zero, 0 #int j = 0
 	addi t3, zero, 0#resetear la variable temporal t3
 Row_loop:
@@ -72,6 +72,8 @@ ProductFunction:
 
 #Programa para enviar los resultados al UART
 uart_start:
+	addi s11, s11, 0x24
+	addi a3, s11, 0x0
 	addi a4, a3, 0x7c #obtiene la direccion del resultado
 	addi t0, zero, 0x0 #se inicializa la base
 	addi t6, zero, 0x4 #se va a relaizar 4 veces el envio de datos
