@@ -11,19 +11,22 @@ main:
 	addi t1, zero, 0x4
 	addi t2, zero, 0x10
 	addi t0, zero, 0x0
+	addi t5, zero, 0x1
 wait:
 	lw t4, 0x10(a3) #obtener la seÃ±al de 0x10010034 para ver si ya recibimos un dato
 	beq t4, zero, wait #checar si es un valor distinto de cero, sino seguir esperando
+	sw t5, 0x14(a3) #levantar seÃ±al para limpiar la bandera de rx
+	sw zero, 0x14(a3) #bajar seÃ±al para limpiar la bandera de rx
 vector:
 	addi t0, t0, 0x1
 	sw t0, 0(a4)
 	addi a4, a4, 0x4
 	bne t0, t1, vector
-	addi t0, zero, 0x0
+	addi t0, zero, 0x1
 matrix:
-	addi t0, t0, 0x1
 	sw t0, 0(a4)
 	addi a4, a4, 0x4
+	addi t0, t0, 0x1
 	bne t0, t2, matrix
 
 #Inicio de programa para calcular matriz x vector
@@ -34,15 +37,15 @@ start_calculation:
 	addi s4, zero, 4 #word size
 	mul s7, s4, s0 #row size
 	auipc a1,    0x0000fc10
-	addi a1, a1, 0x8
+	addi a1, a1, -0x4
 	auipc a2,    0x0000fc10
-	addi a2, a2, 0x40
+	addi a2, a2, 0x34
 Column_loop:
 	#for(i=0;i<4;i++)
 	slti t1, s1, 0x4 
 	beqz t1, uart_start #exit when calculation is done
 	auipc a0,    0x0000fc10
-	addi a0, a0, -0x20
+	addi a0, a0, -0x2c
 	addi s2, zero, 0 #int j = 0
 	addi t3, zero, 0#resetear la variable temporal t3
 Row_loop:
