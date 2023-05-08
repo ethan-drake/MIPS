@@ -40,6 +40,8 @@ wire nop_inject_delayed_2;
 wire branch_prediction;
 wire [31:0] branch_prediction_target;
 wire [31:0] mult_branch_predict_out;
+wire branch_prediction_delayed;
+
 
 //Datapath Pipeline registers
 wire [63:0] mult_if_pipe_out;
@@ -80,7 +82,7 @@ ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 	.i_rst_n(rst_n), 
 	.i_en(~pc_stall),
 	.pll_lock(pll_lock), //start the program when PLL is lock
-	.d(pc_next),
+	.d(mult_branch_predict_out),
 	.q(pc_out)
 );
 
@@ -97,15 +99,16 @@ branch_prediction #(.DATA_WIDTH(32), .BRANCH_NO(8)) branch_predictor(
     .if_id_opcode(if_id_datapath_out[38:32]),
     .ex_mem_branch_taken(branch_flush_clear),
     .ex_mem_branch_target(ex_mem_datapath_out[63:32]),
-    .if_pc(pc_out[4:2]),
+    .if_pc(if_id_datapath_out[4:2]),
     .ex_mem_pc(ex_mem_datapath_out[4:2]),
     .prediction(branch_prediction),
     .branch_target(branch_prediction_target)
 );
 
+
 //branch predictor mux
 multiplexor_param #(.LENGTH(32)) mult_branch_predict (
-	.i_a(pc_out),
+	.i_a(pc_next),
 	.i_b(branch_prediction_target),
 	.i_selector(branch_prediction),
 	.out(mult_branch_predict_out)
@@ -113,7 +116,7 @@ multiplexor_param #(.LENGTH(32)) mult_branch_predict (
 
 //Memory ROM
 instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(8)) memory_rom (
-	.address(mult_branch_predict_out),
+	.address(pc_out),
 	.rd(instr2perf),
 	.clk(clk),
 	.we(1'b0) //RO memory

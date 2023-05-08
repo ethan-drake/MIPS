@@ -18,23 +18,23 @@ module branch_prediction #(parameter DATA_WIDTH = 32,parameter BRANCH_NO=8)(
     output[31:0] branch_target
 );
 
-reg [DATA_WIDTH-1:0] BHB [0:(BRANCH_NO)-1];
-reg BHT [0:(BRANCH_NO)-1];
+reg [DATA_WIDTH-1:0] BHB [(BRANCH_NO)-1:0];
+reg [BRANCH_NO-1:0] BHT = {BRANCH_NO{1'b0}};
 parameter B_TYPE = 7'b1100011;
 
 integer i;
 initial begin
 	for(i=0;i<(BRANCH_NO);i=i+1)
 		BHB[i] <= 32'h0;
-        BHT[i] <= 1'b0;
 end
 
 always @(posedge i_clk)
 begin
 	//Write
-	if (ex_mem_opcode==B_TYPE)
+	if (ex_mem_opcode==B_TYPE) begin
 		BHT[ex_mem_pc] <= ex_mem_branch_taken;
         BHB[ex_mem_pc] <= ex_mem_branch_target;
+    end
 end
 	
 // Reading if memory read enable
