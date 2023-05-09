@@ -11,14 +11,6 @@ module register_file (
 	input [4:0] a1, a2, a3,
 	input [31:0] wd3,
 	input rst_n,
-	//Just used for signal tap
-	/*
-	output [31:0] register_s1, register_t3, register_t6, 
-	output [31:0] register_t4, register_t1,
-	output [31:0] register_t5, register_t0, register_a4,
-	output [31:0] register_t1, register_t2,
-	*/
-	//Finish 
 	//outputs
 	output [31:0] rd1, rd2
 );
@@ -51,14 +43,6 @@ generate
 		end
 	end
 endgenerate
-
-/*
-//Syncronus write to registers
-always @(posedge clk) begin
-	if(we3 && a3!=5'h0) begin
-		registers[a3] <= wd3;
-	end
-end
 
 //Initialize registers
 initial begin
@@ -95,24 +79,9 @@ initial begin
 	registers[30] <= 32'h0;
 	registers[31] <= 32'h0;
 end
-*/
 
 //Asyncronus read to registers
 assign rd1 = registers[a1];
 assign rd2 = registers[a2];
-
-//Just used for signal tap
-/*
-assign register_s1 = registers[9];
-assign register_t3 = registers[28];
-assign register_t6 = registers[31];
-assign register_t4 = registers[29];
-assign register_t1 = registers[6];
-assign register_t5 = registers[30];
-assign register_t0 = registers[5];
-assign register_a4 = registers[14];
-assign register_t2 = registers[7];
-*/
-//finish
 
 endmodule
