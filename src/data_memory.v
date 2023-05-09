@@ -68,8 +68,8 @@ end
 // Reading if memory read enable
 assign rd = ram[address];
 
-//For signal tap debug
 /*
+//For signal tap debug
 assign reg1 = ram[20];
 assign reg2 = ram[21];
 assign reg3 = ram[22];

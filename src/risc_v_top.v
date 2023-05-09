@@ -57,7 +57,7 @@ wire [2:0]mem_wb_controlpath_out;
 //`endif
 
 assign clk = clk_50Mhz;
-assign pll_lock = 1'b1;
+//assign pll_lock = 1'b1;
 
 //PC multiplexor
 multiplexor_param #(.LENGTH(32)) mult_pc (
@@ -68,11 +68,10 @@ multiplexor_param #(.LENGTH(32)) mult_pc (
 );
 
 //PC
-ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
+ffd_param_pc_risk #(.LENGTH(32), .RST_VAL(32'h400_000)) ff_pc (
 	.i_clk(clk), 
 	.i_rst_n(rst_n), 
 	.i_en(~pc_stall),
-	.pll_lock(pll_lock), //start the program when PLL is lock
 	.d(pc_next),
 	.q(pc_out)
 );
@@ -146,7 +145,8 @@ register_file reg_file (
 	.a3(mem_wb_datapath_out[132:128]),//instr2perf[11:7]),-***************
 	.wd3(wd3_wire),
 	.rd1(rd1_data_reg),
-	.rd2(rd2_data_reg)
+	.rd2(rd2_data_reg),
+	.rst_n(rst_n)
 );
 
 jump_detection_unit jump_detection(

@@ -10,9 +10,12 @@ module register_file (
 	input clk, we3,
 	input [4:0] a1, a2, a3,
 	input [31:0] wd3,
+	input rst_n,
 	//Just used for signal tap
 	/*
-	output [31:0] register_s1, register_t3, register_t6, register_t5, register_t0, register_a4,
+	output [31:0] register_s1, register_t3, register_t6, 
+	output [31:0] register_t4, register_t1,
+	output [31:0] register_t5, register_t0, register_a4,
 	output [31:0] register_t1, register_t2,
 	*/
 	//Finish 
@@ -23,6 +26,33 @@ module register_file (
 //Declare our memory
 reg [31:0] registers [0:31];
 
+generate
+	genvar i;
+	for(i=0;i<32;i=i+1) begin : test
+		if(i==2) begin
+			always@(posedge clk, negedge rst_n) begin
+				if(!rst_n)
+					registers[i] <= 32'h7fffefe4;
+				else if(we3 && a3!=5'h0 && a3==i)
+					registers[i] <= wd3;
+				else
+					registers[i] <= registers[i];
+			end
+		end
+		else begin
+			always@(posedge clk, negedge rst_n) begin
+				if(!rst_n)
+					registers[i] <= 32'h0;
+				else if(we3 && a3!=5'h0 && a3==i)
+					registers[i] <= wd3;
+				else
+					registers[i] <= registers[i];
+			end
+		end
+	end
+endgenerate
+
+/*
 //Syncronus write to registers
 always @(posedge clk) begin
 	if(we3 && a3!=5'h0) begin
@@ -65,6 +95,7 @@ initial begin
 	registers[30] <= 32'h0;
 	registers[31] <= 32'h0;
 end
+*/
 
 //Asyncronus read to registers
 assign rd1 = registers[a1];
@@ -74,11 +105,12 @@ assign rd2 = registers[a2];
 /*
 assign register_s1 = registers[9];
 assign register_t3 = registers[28];
-assign register_t5 = registers[30];
 assign register_t6 = registers[31];
+assign register_t4 = registers[29];
+assign register_t1 = registers[6];
+assign register_t5 = registers[30];
 assign register_t0 = registers[5];
 assign register_a4 = registers[14];
-assign register_t1 = registers[6];
 assign register_t2 = registers[7];
 */
 //finish
