@@ -22,11 +22,11 @@ vector:
 	sw t0, 0(a4)
 	addi a4, a4, 0x4
 	bne t0, t1, vector
-	addi t0, zero, 0x1
+	addi t0, zero, 0x0
 matrix:
+	addi t0, t0, 0x1
 	sw t0, 0(a4)
 	addi a4, a4, 0x4
-	addi t0, t0, 0x1
 	bne t0, t2, matrix
 
 #Inicio de programa para calcular matriz x vector
