@@ -11,6 +11,9 @@ module register_file (
 	input [4:0] a1, a2, a3,
 	input [31:0] wd3,
 	input rst_n,
+	//signal tap debug
+	output [31:0] reg_t2, reg_t3,
+	//
 	//outputs
 	output [31:0] rd1, rd2
 );
@@ -83,5 +86,10 @@ end
 //Asyncronus read to registers
 assign rd1 = registers[a1];
 assign rd2 = registers[a2];
+
+//Signal tap debug
+assign reg_t2 = registers[7];
+assign reg_t3 = registers[28];
+//
 
 endmodule
