@@ -9,6 +9,7 @@ module data_memory #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32) (
 	//inputs
 	input [(DATA_WIDTH-1):0] wd, address,
 	input we, re, clk,
+	/*
 	//For signal tap debug
 	output [31:0] reg1,
 	output [31:0] reg2,
@@ -39,6 +40,7 @@ module data_memory #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32) (
 	output [31:0] sp3,
 	output [31:0] sp4,
 	//For signal tap debug
+	*/
 	//outputs
 	output [(DATA_WIDTH-1):0] rd
 );
@@ -70,6 +72,7 @@ end
 // Reading if memory read enable
 assign rd = ram[address];
 
+/*
 //For signal tap debug
 assign reg1 = ram[20];
 assign reg2 = ram[21];
@@ -100,5 +103,6 @@ assign sp2  = ram[45];
 assign sp3  = ram[46];
 assign sp4  = ram[47];
 //For signal tap debug
+*/
 
 endmodule

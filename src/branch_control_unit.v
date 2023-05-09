@@ -1,5 +1,11 @@
+// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
+// Date:            03/05/23
+// File:			     branch_control_unit.v
+// Module name:	  branch_control_unit
+// Project Name:	  risc_v_top
+// Description:	  This is the branch unit located in mem stage
 
-module branch_control_unit(
+module branch_control_unit (
     input take_branch,
     input[6:0] opcode,
     output clear
