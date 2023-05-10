@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-10T02:56:12.078Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35" etag="YbUi039JhR3vqCekKtnt" version="21.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-10T03:22:18.264Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35" etag="egqJIQPLUkkk5FKUupG_" version="21.2.9" type="github">
   <diagram name="Page-1" id="W0EPyd7C3ClBssLKZqVx">
     <mxGraphModel dx="2956" dy="605" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2233,6 +2233,11 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="4gh6ZKtN0_aBUhuWtVkS-2" value="prediction_checkout_ex_mem" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4gh6ZKtN0_aBUhuWtVkS-1">
+          <mxGeometry x="-0.8528" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="gTveDuttDXLq-1Oi3Z18-1" value="&lt;b&gt;Branch Prediction&lt;/b&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="312" y="233.75" width="97" height="79" as="geometry" />
         </mxCell>
@@ -2304,7 +2309,7 @@
         </mxCell>
         <mxCell id="WOSR5VaF01CCpFiaySz1-6" value="ex_mem_branch_target" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WOSR5VaF01CCpFiaySz1-5" vertex="1" connectable="0">
           <mxGeometry x="-0.5733" y="-2" relative="1" as="geometry">
-            <mxPoint x="78" y="1" as="offset" />
+            <mxPoint x="9" y="-12" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="WOSR5VaF01CCpFiaySz1-4" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverting_contact;fillColor=#000000;" parent="1" vertex="1">
