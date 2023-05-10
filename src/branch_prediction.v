@@ -15,7 +15,8 @@ module branch_prediction #(parameter DATA_WIDTH = 32,parameter BRANCH_NO=8)(
     input[2:0] if_pc,
     input[2:0] ex_mem_pc,
     output prediction,
-    output[31:0] branch_target
+    output[31:0] branch_target,
+    output prediction_checkout_ex_mem
 );
 
 reg [DATA_WIDTH-1:0] BHB [(BRANCH_NO)-1:0];
@@ -40,6 +41,6 @@ end
 // Reading if memory read enable
 assign prediction = (if_id_opcode == B_TYPE) ? BHT[if_pc] : 1'b0;
 assign branch_target = (if_id_opcode == B_TYPE) ? BHB[if_pc] : 32'b0;
-
+assign prediction_checkout_ex_mem = (ex_mem_opcode == B_TYPE) ? BHT[ex_mem_pc] : 1'b0;
 
 endmodule
