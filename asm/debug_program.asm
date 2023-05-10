@@ -1,42 +1,33 @@
-#0x10010024 dato a transmitir
-#0x10010028 seÃ±al start tx
-#0x1001002C seÃ±al que la uart ya termino de transmitir
-#0x10010030 dato a recibir de uart
-#0x10010034 seÃ±al que la uart ya recibio un dato
-#0x10010038 seÃ±al para limpiar el rx uart
-
-#Inicio programa para recibir datos de UART
+#debug program
+#10010050  vector
+#10010060  row1
+#10010060  row2
+#10010060  row3
+#10010060  row4
 main:
-	auipc a3,    0x0000fc10 #cargar valor base de 10010000
-	addi a4, a3, 0x50 #cargar base de las matrices
-	addi a3, a3, 0x24 #direccion inicial 10010024
-	addi t5, zero, 0x10 #contador de iteracion para recorrer elemento por elemento
-	addi t2, zero, 0x1 #bit para cargar a registros de seÃ±ales
-	addi t3, zero, 0x4 #matrix of 4 elements 
-	addi t6, zero, 0x1 #vector of 1 element
-	addi a5, a4, 0x0 #guardar el valor en a5 de la base
-wait_for_row:
-	addi t3, t3, -1 #reduce iteracion 1
-	addi a5, a5, 0x10 #se a�ade 0x10 al offset
-	j init_ctt
-wait_for_matrix:
-	addi t3, zero, 0x0 #candado para no entrar de nuevo a recorrer matriz
-	addi t6, t6, -1  #reduce iteracion 1
-	addi a5, a4, 0x0 #se guarda el valor en a5 de la base
-init_ctt:
-	addi s1, zero, 0x0 #inicializa contador
-get_uart_data:
-	lw t1, 0x10(a3) #obtener la seÃ±al de 0x10010034 para ver si ya recibimos un dato
-	beq t1, zero, get_uart_data #checar si es un valor distinto de cero, sino seguir esperando
-	lw a2, 0xC(a3) #loading number from address
-	sw t2, 0x14(a3) #levantar seÃ±al para limpiar la bandera de rx
+	auipc a3,  0x0000fc10
+	addi a4, a3, 0x50
+	addi a3, a3, 0x24
+	addi t1, zero, 0x4
+	addi t2, zero, 0x10
+	addi t0, zero, 0x0
+	addi t5, zero, 0x1
+wait:
+	lw t4, 0x10(a3) #obtener la seÃ±al de 0x10010034 para ver si ya recibimos un dato
+	beq t4, zero, wait #checar si es un valor distinto de cero, sino seguir esperando
+	sw t5, 0x14(a3) #levantar seÃ±al para limpiar la bandera de rx
 	sw zero, 0x14(a3) #bajar seÃ±al para limpiar la bandera de rx
-	add t4, a5, s1 #calcular el offset a escribir
-	sw a2, 0(t4) #load vaue based in matrix base + offset
-	addi s1, s1, 4	#contador 
-	bne s1, t5, get_uart_data #poll until 4 times happen
-	bne t3, zero, wait_for_row #iteraciones para recorrer los rows
-	bne t6, zero, wait_for_matrix #iteraciones para recorrer los vectores
+vector:
+	addi t0, t0, 0x1
+	sw t0, 0(a4)
+	addi a4, a4, 0x4
+	bne t0, t1, vector
+	addi t0, zero, 0x0
+matrix:
+	addi t0, t0, 0x1
+	sw t0, 0(a4)
+	addi a4, a4, 0x4
+	bne t0, t2, matrix
 
 #Inicio de programa para calcular matriz x vector
 start_calculation:
@@ -46,15 +37,15 @@ start_calculation:
 	addi s4, zero, 4 #word size
 	mul s7, s4, s0 #row size
 	auipc a1,    0x0000fc10
-	addi a1, a1, -0x1c
+	addi a1, a1, -0x4
 	auipc a2,    0x0000fc10
-	addi a2, a2, 0x1c
+	addi a2, a2, 0x34
 Column_loop:
 	#for(i=0;i<4;i++)
 	slti t1, s1, 0x4 
 	beqz t1, uart_start #exit when calculation is done
 	auipc a0,    0x0000fc10
-	addi a0, a0, -0x44
+	addi a0, a0, -0x2c
 	addi s2, zero, 0 #int j = 0
 	addi t3, zero, 0#resetear la variable temporal t3
 Row_loop:
