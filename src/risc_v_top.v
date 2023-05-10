@@ -32,13 +32,26 @@ wire [1:0] cs;
 wire [31:0] decoded_address,ram_rom_data, gpio_data;
 wire mem_select, stall_mux, pc_stall, if_id_stall;
 wire [13:0] id_ex_controlpath_in;
-wire nop_inject, nop_inject_desition, branch_flush_clear, nop_inject_delayed;
+wire nop_inject;
+wire nop_inject_delayed;
+wire nop_inject_desicion;
+wire branch_flush_clear;
+wire nop_inject_delayed_2;
+wire branch_prediction;
+wire [31:0] branch_prediction_target;
+wire [31:0] mult_branch_predict_out;
+wire branch_prediction_delayed;
+wire prediction_checkout_ex_mem;
+wire [31:0] pc_prev_plus_4;
+wire [31:0] pc_target_jump;
+wire pc_restore;
+
 
 //Datapath Pipeline registers
 wire [63:0] mult_if_pipe_out;
 wire [63:0] if_id_datapath_out;
-wire [159:0] id_ex_datapath_out;
-wire [172:0]ex_mem_datapath_out;
+wire [160:0] id_ex_datapath_out;
+wire [173:0]ex_mem_datapath_out;
 wire [132:0]mem_wb_datapath_out;
 //Control Path Pipeline registers
 wire [13:0] id_ex_controlpath_out;
@@ -62,8 +75,8 @@ assign clk = clk_50Mhz;
 //PC multiplexor
 multiplexor_param #(.LENGTH(32)) mult_pc (
 	.i_a(pc_plus_4),
-	.i_b(ex_mem_datapath_out[63:32]),
-	.i_selector(PCEnable),
+	.i_b(pc_target_jump),
+	.i_selector(PCEnable|branch_flush_clear),
 	.out(pc_next)
 );
 
@@ -72,7 +85,8 @@ ffd_param_pc_risk #(.LENGTH(32), .RST_VAL(32'h400_000)) ff_pc (
 	.i_clk(clk), 
 	.i_rst_n(rst_n), 
 	.i_en(~pc_stall),
-	.d(pc_next),
+//	.pll_lock(pll_lock), //start the program when PLL is lock
+	.d(mult_branch_predict_out),
 	.q(pc_out)
 );
 
@@ -80,6 +94,29 @@ adder #(.LENGTH(32)) adder_pc_4 (
 	.i_a(32'h4),
 	.i_b(pc_out),
 	.q(pc_plus_4)
+);
+
+branch_prediction #(.DATA_WIDTH(32), .BRANCH_NO(8)) branch_predictor(
+    .i_clk(clk),
+    .i_rst_n(rst_n),
+    .ex_mem_opcode(ex_mem_datapath_out[172:166]),
+    .if_id_opcode(if_id_datapath_out[38:32]),
+    .ex_mem_branch_taken(PCEnable),
+    .ex_mem_branch_target(ex_mem_datapath_out[63:32]),
+    .if_pc(if_id_datapath_out[4:2]),
+    .ex_mem_pc(ex_mem_datapath_out[4:2]),
+    .prediction(branch_prediction),
+    .branch_target(branch_prediction_target),
+	.prediction_checkout_ex_mem(prediction_checkout_ex_mem)
+);
+
+
+//branch predictor mux
+multiplexor_param #(.LENGTH(32)) mult_branch_predict (
+	.i_a(pc_next),
+	.i_b(branch_prediction_target),
+	.i_selector(branch_prediction),
+	.out(mult_branch_predict_out)
 );
 
 //Memory ROM
@@ -110,11 +147,12 @@ multiplexor_param #(.LENGTH(64)) mult_if_pipe (
 	.out(mult_if_pipe_out)
 );
 
+
+
 /////////////////////////FETCH->DECODE/////////////////////////////////////
 //if_id_datapath
 //	PC : 31:0
 // Instruction : 63:32
-
 wire [63:0] if_id_datapath_in = mult_if_pipe_out;
 
 ffd_param_clear_n #(.LENGTH(64)) if_id_datapath_ffd(
@@ -206,11 +244,12 @@ multiplexor_param #(.LENGTH(32)) mux_stall_control (
 //	rd1 : 63:32
 //	rd2	: 95:64
 //	Imm	: 127:96
-//	Instruction: 160:128
+//	Instruction: 159:128
+// branch_prediction : 160
 
-wire [159:0] id_ex_datapath_in = {instr_stall,imm_gen_out,rd2_data_reg,rd1_data_reg,if_id_datapath_out[31:0]};
+wire [160:0] id_ex_datapath_in = {branch_prediction,instr_stall,imm_gen_out,rd2_data_reg,rd1_data_reg,if_id_datapath_out[31:0]};
 
-ffd_param_clear_n #(.LENGTH(160)) id_ex_datapath_ffd(
+ffd_param_clear_n #(.LENGTH(161)) id_ex_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -352,10 +391,11 @@ forward_unit fwd_unit (
 //	rd2: 	160:129	
 //	rd:		165:161
 //	opcode:	172:166
+// branch_prediction : 173
 
-wire [172:0] ex_mem_datapath_in = {id_ex_datapath_out[134:128],id_ex_datapath_out[139:135],fwd_SW_2_wd,id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
+wire [173:0] ex_mem_datapath_in = {id_ex_datapath_out[160],id_ex_datapath_out[134:128],id_ex_datapath_out[139:135],fwd_SW_2_wd,id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
 
-ffd_param_clear_n #(.LENGTH(173)) ex_mem_datapath_ffd(
+ffd_param_clear_n #(.LENGTH(174)) ex_mem_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -449,7 +489,22 @@ multiplexor_param #(.LENGTH(1)) mult_branch (
 branch_control_unit branch_control(
     .take_branch(PCEnable),
     .opcode(ex_mem_datapath_out[172:166]),
-    .clear(branch_flush_clear)
+	.prediction_checkout_ex_mem(ex_mem_datapath_out[173]),
+    .clear(branch_flush_clear),
+	.PC_restore(pc_restore)
+);
+
+
+adder #(.LENGTH(32)) adder_pc_prev_4 (
+	.i_a(32'h4),
+	.i_b(ex_mem_datapath_out[31:0]),
+	.q(pc_prev_plus_4)
+);
+multiplexor_param #(.LENGTH(32)) mult_pc_restore (
+	.i_a(ex_mem_datapath_out[63:32]),
+	.i_b(pc_prev_plus_4),
+	.i_selector(pc_restore),
+	.out(pc_target_jump)
 );
 
 ///////////////////////////////////////MEM -> WB////////////////////////////////////////////////
