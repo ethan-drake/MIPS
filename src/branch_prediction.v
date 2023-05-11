@@ -21,7 +21,7 @@ module branch_prediction #(parameter DATA_WIDTH = 32,parameter BRANCH_NO=8)(
 
 reg [DATA_WIDTH-1:0] BHB [(BRANCH_NO)-1:0];
 reg [BRANCH_NO-1:0] BHT = {BRANCH_NO{1'b0}};
-parameter B_TYPE = 7'b1100011;
+localparam B_TYPE = 7'b1100011;
 
 integer i;
 initial begin

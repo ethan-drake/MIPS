@@ -34,7 +34,7 @@ wire mem_select, stall_mux, pc_stall, if_id_stall;
 wire [13:0] id_ex_controlpath_in;
 wire nop_inject;
 wire nop_inject_delayed;
-wire nop_inject_desicion;
+wire nop_inject_desition;
 wire branch_flush_clear;
 wire nop_inject_delayed_2;
 wire branch_prediction;
@@ -396,7 +396,6 @@ forward_unit fwd_unit (
 // branch_prediction : 173
 // branch_prediction_target : 205:174
 
-wire [31:0] branch_prediction_target_id_ex = id_ex_datapath_out[192:161];
 
 wire [205:0] ex_mem_datapath_in = {id_ex_datapath_out[192:161],id_ex_datapath_out[160],id_ex_datapath_out[134:128],id_ex_datapath_out[139:135],fwd_SW_2_wd,id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
 
