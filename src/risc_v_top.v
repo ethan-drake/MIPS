@@ -50,8 +50,8 @@ wire pc_restore;
 //Datapath Pipeline registers
 wire [63:0] mult_if_pipe_out;
 wire [63:0] if_id_datapath_out;
-wire [160:0] id_ex_datapath_out;
-wire [173:0]ex_mem_datapath_out;
+wire [192:0] id_ex_datapath_out;
+wire [205:0]ex_mem_datapath_out;
 wire [132:0]mem_wb_datapath_out;
 //Control Path Pipeline registers
 wire [13:0] id_ex_controlpath_out;
@@ -103,8 +103,8 @@ branch_prediction #(.DATA_WIDTH(32), .BRANCH_NO(8)) branch_predictor(
     .if_id_opcode(if_id_datapath_out[38:32]),
     .ex_mem_branch_taken(PCEnable),
     .ex_mem_branch_target(ex_mem_datapath_out[63:32]),
-    .if_pc(if_id_datapath_out[4:2]),
-    .ex_mem_pc(ex_mem_datapath_out[4:2]),
+    .if_pc(if_id_datapath_out[31:0]),
+    .ex_mem_pc(ex_mem_datapath_out[31:0]),
     .prediction(branch_prediction),
     .branch_target(branch_prediction_target),
 	.prediction_checkout_ex_mem(prediction_checkout_ex_mem)
@@ -246,10 +246,12 @@ multiplexor_param #(.LENGTH(32)) mux_stall_control (
 //	Imm	: 127:96
 //	Instruction: 159:128
 // branch_prediction : 160
+// branch_prediction_target : 192:161
 
-wire [160:0] id_ex_datapath_in = {branch_prediction,instr_stall,imm_gen_out,rd2_data_reg,rd1_data_reg,if_id_datapath_out[31:0]};
 
-ffd_param_clear_n #(.LENGTH(161)) id_ex_datapath_ffd(
+wire [192:0] id_ex_datapath_in = {branch_prediction_target,branch_prediction,instr_stall,imm_gen_out,rd2_data_reg,rd1_data_reg,if_id_datapath_out[31:0]};
+
+ffd_param_clear_n #(.LENGTH(193)) id_ex_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -392,10 +394,13 @@ forward_unit fwd_unit (
 //	rd:		165:161
 //	opcode:	172:166
 // branch_prediction : 173
+// branch_prediction_target : 205:174
 
-wire [173:0] ex_mem_datapath_in = {id_ex_datapath_out[160],id_ex_datapath_out[134:128],id_ex_datapath_out[139:135],fwd_SW_2_wd,id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
+wire [31:0] branch_prediction_target_id_ex = id_ex_datapath_out[192:161];
 
-ffd_param_clear_n #(.LENGTH(174)) ex_mem_datapath_ffd(
+wire [205:0] ex_mem_datapath_in = {id_ex_datapath_out[192:161],id_ex_datapath_out[160],id_ex_datapath_out[134:128],id_ex_datapath_out[139:135],fwd_SW_2_wd,id_ex_datapath_out[127:96],alu_result,alu_zero,pc_target,id_ex_datapath_out[31:0]};
+
+ffd_param_clear_n #(.LENGTH(206)) ex_mem_datapath_ffd(
 	//inputs
 	.i_clk(clk),
 	.i_rst_n(rst_n),
@@ -491,7 +496,9 @@ branch_control_unit branch_control(
     .opcode(ex_mem_datapath_out[172:166]),
 	.prediction_checkout_ex_mem(ex_mem_datapath_out[173]),
     .clear(branch_flush_clear),
-	.PC_restore(pc_restore)
+	.PC_restore(pc_restore),
+	.prediction_target_ex_mem(ex_mem_datapath_out[205:174]),
+	.real_target(ex_mem_datapath_out[63:32])
 );
 
 

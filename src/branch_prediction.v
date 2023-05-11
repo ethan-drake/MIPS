@@ -12,8 +12,8 @@ module branch_prediction #(parameter DATA_WIDTH = 32,parameter BRANCH_NO=8)(
     input[6:0] if_id_opcode,
     input ex_mem_branch_taken,
     input[31:0] ex_mem_branch_target,
-    input[2:0] if_pc,
-    input[2:0] ex_mem_pc,
+    input[31:0] if_pc,
+    input[31:0] ex_mem_pc,
     output prediction,
     output[31:0] branch_target,
     output prediction_checkout_ex_mem
@@ -33,14 +33,14 @@ always @(posedge i_clk)
 begin
 	//Write
 	if (ex_mem_opcode==B_TYPE) begin
-		BHT[ex_mem_pc] <= ex_mem_branch_taken;
-        BHB[ex_mem_pc] <= ex_mem_branch_target;
+		BHT[ex_mem_pc[2:0]] <= ex_mem_branch_taken;
+        BHB[ex_mem_pc[2:0]] <= ex_mem_branch_target;
     end
 end
 	
 // Reading if memory read enable
-assign prediction = (if_id_opcode == B_TYPE) ? BHT[if_pc] : 1'b0;
-assign branch_target = (if_id_opcode == B_TYPE) ? BHB[if_pc] : 32'b0;
-assign prediction_checkout_ex_mem = (ex_mem_opcode == B_TYPE) ? BHT[ex_mem_pc] : 1'b0;
+assign prediction = (if_id_opcode == B_TYPE) ? BHT[if_pc[2:0]] : 1'b0;
+assign branch_target = (if_id_opcode == B_TYPE) ? BHB[if_pc[2:0]] : 32'b0;
+assign prediction_checkout_ex_mem = (ex_mem_opcode == B_TYPE) ? BHT[ex_mem_pc[2:0]] : 1'b0;
 
 endmodule
