@@ -12,8 +12,8 @@ module jump_detection_unit(
 
 //check if opcode relates to a jump and link or a jump and link reg
 //if true, set nop inject
-parameter JAL_INS = 7'b1101111;
-parameter JALR_INS = 7'b1100111;
+localparam JAL_INS = 7'b1101111;
+localparam JALR_INS = 7'b1100111;
 
 assign nop_inject = (opcode == JAL_INS) ? 1'b1 : (opcode == JALR_INS) ? 1'b1 : 1'b0;
 

@@ -33,6 +33,7 @@ wire [31:0] decoded_address,ram_rom_data, gpio_data;
 wire mem_select, stall_mux, pc_stall, if_id_stall;
 wire [13:0] id_ex_controlpath_in;
 wire nop_inject;
+wire branch_validated;
 wire nop_inject_delayed;
 wire nop_inject_desition;
 wire branch_flush_clear;
@@ -76,7 +77,7 @@ assign clk = clk_50Mhz;
 multiplexor_param #(.LENGTH(32)) mult_pc (
 	.i_a(pc_plus_4),
 	.i_b(pc_target_jump),
-	.i_selector(PCEnable|branch_flush_clear),
+	.i_selector((PCEnable|branch_flush_clear)&branch_validated),
 	.out(pc_next)
 );
 
@@ -497,7 +498,8 @@ branch_control_unit branch_control(
     .clear(branch_flush_clear),
 	.PC_restore(pc_restore),
 	.prediction_target_ex_mem(ex_mem_datapath_out[205:174]),
-	.real_target(ex_mem_datapath_out[63:32])
+	.real_target(ex_mem_datapath_out[63:32]),
+	.branch_validated(branch_validated)
 );
 
 

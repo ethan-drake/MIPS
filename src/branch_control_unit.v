@@ -12,16 +12,21 @@ module branch_control_unit (
     input[31:0] prediction_target_ex_mem,
     input[31:0] real_target,
     output clear,
-    output PC_restore
+    output PC_restore,
+	 output branch_validated
 );
 
 // check if opcode is beq or bne, and if take branch is set
 // if so, clear the IF, ID, EX and jump delay flops
-parameter B_TYPE = 7'b1100011;
+localparam B_TYPE = 7'b1100011;
+localparam JAL_INS = 7'b1101111;
+localparam JALR_INS = 7'b1100111;
 
 assign clear = (opcode ==B_TYPE) && ( (take_branch != prediction_checkout_ex_mem) || ( (take_branch == 1'b1) && (take_branch == prediction_checkout_ex_mem) && (prediction_target_ex_mem != real_target)) );
 
 assign PC_restore = ((opcode ==B_TYPE) && (prediction_checkout_ex_mem == 1'b1) && (take_branch == 1'b0)) ? 1'b1 : ((opcode ==B_TYPE) && (prediction_checkout_ex_mem == 1'b0) && (take_branch == 1'b1)) ? 1'b0:1'b0;
+
+assign branch_validated = (opcode == JALR_INS) ||  (opcode == JAL_INS) || ~( (opcode == B_TYPE) && (take_branch == 1'b1) && (take_branch == prediction_checkout_ex_mem) && (prediction_target_ex_mem == real_target) );
 
 //assign = (opcode == B_TYPE) && (take_branch == prediction_checkout_ex_mem) && (prediction_target_ex_mem != real_target)
 

@@ -12,7 +12,7 @@ module register_file (
 	input [31:0] wd3,
 	input rst_n,
 	//signal tap debug
-	output [31:0] reg_t2, reg_t3,
+	output [31:0] reg_t2, reg_t3, reg_t6,
 	//signal tap debug
 	//outputs
 	output [31:0] rd1, rd2
@@ -90,6 +90,7 @@ assign rd2 = registers[a2];
 //Signal tap debug
 assign reg_t2 = registers[7];
 assign reg_t3 = registers[28];
+assign reg_t6 = registers[31];
 //Signal tap debug
 
 endmodule
