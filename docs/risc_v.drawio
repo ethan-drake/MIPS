@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-11T05:31:31.583Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="sPAZnN0Ygst_3uTAJ3BK" version="21.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-11T05:32:08.860Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="Jkdha4YcUtinDpjUxe-L" version="21.2.9" type="github">
   <diagram name="Page-1" id="W0EPyd7C3ClBssLKZqVx">
     <mxGraphModel dx="2808" dy="816" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -2068,6 +2068,11 @@
               <mxPoint x="2413" y="282" />
               <mxPoint x="2413" y="67" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E3bbyY9c6v1kvtxbKQzI-4" value="branch_validated" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="E3bbyY9c6v1kvtxbKQzI-3">
+          <mxGeometry x="-0.8704" y="2" relative="1" as="geometry">
+            <mxPoint x="59" y="-385" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="WQReJr341f5kt1-_hPxn-15" value="Branch Control" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
