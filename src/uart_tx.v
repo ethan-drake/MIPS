@@ -77,7 +77,7 @@ Counter_02Limit_ovf #(.N($clog2(10)), .Limit(10)) bit_counter(
     .rst_n(rst_n),
     .enable(shift_register_enable),
     .clk(clk),
-    .Q(),
+    //.Q(),
     .overflow(bit_counter_overflow),
     .pre_overflow(pre_overflow),
     .clear(clear_bit_counter)
@@ -92,8 +92,8 @@ Bit_Rate_Pulse #(.delay_counts(baud_rate)) baudrate_counter(
     .clk(clk),
     .rst_n(rst_n),
     .enable(~tx_control),
-    .end_bit_time(baud_rate_overflow),
-    .end_half_time()
+    .end_bit_time(baud_rate_overflow)
+    //.end_half_time()
 );
 
 //8 bit data

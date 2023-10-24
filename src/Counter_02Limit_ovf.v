@@ -10,11 +10,12 @@ module Counter_02Limit_ovf #(parameter N=3, parameter Limit = 4)(
     input enable,
     input clk,
     input clear,
-    output reg [N-1:0] Q,
+    //output reg [N-1:0] Q,
     output overflow,
     output pre_overflow
  );
 
+reg [N-1:0] Q;
 assign overflow = (Q==Limit)? 1'b1 : 1'b0;
 assign pre_overflow = (Q==(Limit-1'b1))? 1'b1 : 1'b0;
 

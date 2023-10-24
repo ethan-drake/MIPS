@@ -23,7 +23,7 @@ module branch_prediction #(parameter DATA_WIDTH = 32,parameter BRANCH_NO=8)(
 //reg [31:0] registers [0:31];
 localparam B_TYPE = 7'b1100011;
 reg [DATA_WIDTH-1:0] BHB [(BRANCH_NO)-1:0];
-reg [BRANCH_NO-1:0] BHT = {BRANCH_NO{1'b0}};
+reg [BRANCH_NO-1:0] BHT;// = {BRANCH_NO{1'b0}};
 
 generate
 	genvar i;
