@@ -37,7 +37,7 @@ STOP_TRANSMISSION  = 3'h5,
 DELAY_TRANSMISSION = 3'h6,
 CLEAR_FLAGS        = 3'h7;
 
-reg[2:0] next_state/*synthesis keep*/;
+reg[2:0] next_state;
 
 //always dedicated to assign current state from next state
 always@(posedge i_clk, negedge i_rst_n)

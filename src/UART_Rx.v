@@ -19,7 +19,7 @@ wire sample_bit_w, parity_received, parity_calc;
 wire end_bit_time_w, end_half_time_w;
 wire bit_count_enable_w, enable_out_reg_w;
 wire [3:0] count_bits_w;
-wire [8:0] Q_SR_w /* synthesis keep */;
+wire [8:0] Q_SR_w;
 
 wire parity_error;
 wire parity;
