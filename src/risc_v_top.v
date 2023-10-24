@@ -7,7 +7,7 @@
 
 module risc_v_top (
 	//Inputs - Platform
-	input clk_50Mhz,
+	input clk,
 	input rst_n,
 	//Input - RX
 	input rx,
@@ -16,7 +16,7 @@ module risc_v_top (
 );
 
 //Wires to interconnect modules
-wire ALUSrcB, ALUSrcA, MemWrite, pc_src, jalr_o, regWrite, clk, pll_lock;
+wire ALUSrcB, ALUSrcA, MemWrite, pc_src, jalr_o, regWrite, pll_lock;
 wire [1:0] mem2Reg;
 wire [31:0] pc_prim, pc_out, adr, rd1_data, rd1_data_reg, rd2_data, rd2_data_reg, pc_next, pc_plus_4, pc_target;
 wire [31:0] memory_out, instr2perf, wd3_wire, imm_gen_out; 
@@ -70,7 +70,7 @@ wire [2:0]mem_wb_controlpath_out;
 //	assign pll_lock = 1'b1;
 //`endif
 
-assign clk = clk_50Mhz;
+//assign clk = clk_50Mhz;
 //assign pll_lock = 1'b1;
 
 //PC multiplexor

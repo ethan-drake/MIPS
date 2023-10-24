@@ -23,7 +23,7 @@ set MAXFALL 50.0
 #define_clock -name $EXTCLK -period 2000 -rise 50 -fall 50 [clock_ports]
 
 #create_clock -name "refclk" -add -period 8.0 -waveform {0.0 4.0} [get_ports refclk]
-create_clock -name $EXTCLK  -add -period $EXTCLK_PERIOD [clock_ports]
+create_clock -name $EXTCLK  -add -period $EXTCLK_PERIOD [get_ports clk]
 
 # Clock Definition using SDC format 50% Duty Cycle
 #	create_clock -period 2000 -name my_clock [clock_ports]
@@ -50,13 +50,9 @@ set_clock_latency -fall -source 20 -early -late $EXTCLK
 set_clock_latency -rise 15 $EXTCLK
 set_clock_latency -fall 10 $EXTCLK
 
-
 # CLOCK UNCERTAINTY
 set_clock_uncertainty -setup 8 [get_clocks $EXTCLK]
 set_clock_uncertainty -hold  4 [get_clocks $EXTCLK]
-
-
-
 
 # Input delay definition: This is the delay coming from outside the design
 # for this design it's defined at 10% the period of the clock.
@@ -77,7 +73,7 @@ set_output_delay -clock [get_clocks $EXTCLK] -add_delay 200 -name O_DELAY [get_p
 # does not is applied [get_db ports {X Y A B cin nrst}]
 #set_driving_cell -lib_cell BUFX2 [get_db ports {X Y A B cin nrst}]
 # Genus tested
-set_driving_cell -lib_cell BUFX2 [all_inputs]
+set_driving_cell -lib_cell BUFX2 [get_ports {rst_n rx}]
 
 ### SDC FORMAT
 
