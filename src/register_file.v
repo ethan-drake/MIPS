@@ -48,6 +48,8 @@ generate
 endgenerate
 
 //Initialize registers
+//synthesis
+/*
 initial begin
 	registers[0] <= 32'h0;
 	registers[1] <= 32'h0;
@@ -82,7 +84,7 @@ initial begin
 	registers[30] <= 32'h0;
 	registers[31] <= 32'h0;
 end
-
+*/
 //Asyncronus read to registers
 assign rd1 = registers[a1];
 assign rd2 = registers[a2];

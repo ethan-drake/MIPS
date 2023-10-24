@@ -1,0 +1,1123 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 20.11-s111_1, built Mon Apr 26 07:57:38 PDT 2021
+Options: -files ../Genus_inputs/Script_Adders_mmmc.tcl -log log_Adders_mmmc.log 
+Date:    Tue Oct 24 16:24:21 2023
+Host:    ip-172-31-46-123.us-east-2.compute.internal (x86_64 w/Linux 3.10.0-1160.95.1.el7.x86_64) (8cores*8cpus*1physical cpu*Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz 46080KB) (32778796KB)
+PID:     10797
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (12 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source ../Genus_inputs/Script_Adders_mmmc.tcl
+#@ Begin verbose source ../Genus_inputs/Script_Adders_mmmc.tcl
+@file(Script_Adders_mmmc.tcl) 7: if {[file exists /proc/cpuinfo]} {
+  sh grep "model name" /proc/cpuinfo
+  sh grep "cpu MHz"    /proc/cpuinfo
+}
+model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+cpu MHz		: 2300.081
+cpu MHz		: 2300.081
+cpu MHz		: 2300.081
+cpu MHz		: 2300.081
+cpu MHz		: 2300.081
+cpu MHz		: 2300.081
+cpu MHz		: 2300.081
+cpu MHz		: 2300.081
+@file(Script_Adders_mmmc.tcl) 12: puts "Hostname : [info hostname]"
+Hostname : ip-172-31-46-123.us-east-2.compute.internal
+@file(Script_Adders_mmmc.tcl) 17: set DESIGN risc_v_top
+@file(Script_Adders_mmmc.tcl) 18: set Timing_Libs_Path /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/
+@file(Script_Adders_mmmc.tcl) 19: set LEF_Libs_Path /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/ 
+@file(Script_Adders_mmmc.tcl) 24: set LEF_List {gsclib045_tech.lef gsclib045_macro.lef gsclib045_multibitsDFF.lef}
+@file(Script_Adders_mmmc.tcl) 26: set GEN_EFF high
+@file(Script_Adders_mmmc.tcl) 27: set MAP_OPT_EFF high
+@file(Script_Adders_mmmc.tcl) 28: set DATE [clock format [clock seconds] -format "%b%d-%T"] 
+@file(Script_Adders_mmmc.tcl) 30: set RELEASE [lindex [get_db program_version] end]
+@file(Script_Adders_mmmc.tcl) 32: set _OUTPUTS_PATH outputs_${DATE}
+@file(Script_Adders_mmmc.tcl) 33: set _NETLIST_PATH Netlist
+@file(Script_Adders_mmmc.tcl) 34: set _REPORTS_PATH reports_${DATE}
+@file(Script_Adders_mmmc.tcl) 35: set _LOG_PATH logs_${DATE}
+@file(Script_Adders_mmmc.tcl) 39: set RTL_LIST {Counter_02Limit_ovf.v risc_v_top.v multiplexor_param.v ffd_param_pc_risk.v adder.v branch_prediction.v instr_memory.v ffd_param_clear_n.v imm_gen.v register_file.v jump_detection_unit.v control_unit.v hazard_detection_unit.v ALU_control.v double_multiplexor_param.v ALU.v forward_unit.v master_memory_map.v data_memory.v uart_IP.v branch_control_unit.v uart_full_duplex.v UART_Rx.v uart_tx.v uart_tx_fsm.v ffd_param_clear.v Delayer.v Bit_Rate_Pulse.v ffd_param.v parallel2serial.v Shift_Register_R_Param.v FSM_UART_Rx.v Counter_Param.v}
+@file(Script_Adders_mmmc.tcl) 40: set QRC_TECH_FILE {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch}
+@file(Script_Adders_mmmc.tcl) 44: set_db init_lib_search_path "$Timing_Libs_Path $LEF_Libs_Path"
+  Setting attribute of root '/': 'init_lib_search_path' = /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/ /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/
+@file(Script_Adders_mmmc.tcl) 45: set_db / .script_search_path {../Genus_inputs} 
+  Setting attribute of root '/': 'script_search_path' = ../Genus_inputs
+@file(Script_Adders_mmmc.tcl) 46: set_db / .init_hdl_search_path {../../src} 
+  Setting attribute of root '/': 'init_hdl_search_path' = ../../src
+@file(Script_Adders_mmmc.tcl) 47: set_db qos_report_power true
+  Setting attribute of root '/': 'qos_report_power' = true
+@file(Script_Adders_mmmc.tcl) 57: set_db / .information_level 11 
+  Setting attribute of root '/': 'information_level' = 11
+@file(Script_Adders_mmmc.tcl) 59: set_db hdl_track_filename_row_col true 
+Info   : Enabled hdl_track_filename_row_col attribute.
+       : Setting this attribute to 'true' can have an impact on the run time. Use this attribute only when filename, line number, and column information are needed in reports.
+  Setting attribute of root '/': 'hdl_track_filename_row_col' = true
+@file(Script_Adders_mmmc.tcl) 61: set_db lp_power_unit mW 
+  Setting attribute of root '/': 'lp_power_unit' = mW
+@file(Script_Adders_mmmc.tcl) 75: read_mmmc ../Genus_inputs/mmmc_Adders.tcl
+Sourcing '../Genus_inputs/mmmc_Adders.tcl' (Tue Oct 24 16:24:34 UTC 2023)...
+#@ Begin verbose source ../Genus_inputs/mmmc_Adders.tcl
+@file(mmmc_Adders.tcl) 8: create_library_set -name LS_slow -timing { 
+/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib  \ 
+/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib }
+@file(mmmc_Adders.tcl) 12: create_library_set -name LS_fast -timing {
+/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib \
+/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib }
+@file(mmmc_Adders.tcl) 19: create_opcond -name OP_Adders_slow	-process 1 -voltage 0.9  -temperature 125
+@file(mmmc_Adders.tcl) 20: create_opcond -name OP_Adders_fast	-process 1 -voltage 1.32 -temperature 0
+@file(mmmc_Adders.tcl) 24: create_timing_condition -name TC_Adders_slow    -opcond OP_Adders_slow  -library_sets { LS_slow }
+@file(mmmc_Adders.tcl) 25: create_timing_condition -name TC_Adders_fast    -opcond OP_Adders_fast  -library_sets { LS_fast }
+@file(mmmc_Adders.tcl) 40: create_delay_corner -name DC_Adders_slow -early_timing_condition TC_Adders_slow \
+                    -late_timing_condition TC_Adders_slow 
+@file(mmmc_Adders.tcl) 48: create_delay_corner -name DC_Adders_fast -early_timing_condition TC_Adders_fast \
+                    -late_timing_condition TC_Adders_fast
+@file(mmmc_Adders.tcl) 56: create_constraint_mode -name CM_Adders_slow -sdc_files { \
+   ../Genus_inputs/constraints_Adders_slow_sdc.tcl
+}
+            Reading file '/users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/../Genus_inputs/constraints_Adders_slow_sdc.tcl'
+@file(mmmc_Adders.tcl) 60: create_constraint_mode -name CM_Adders_fast -sdc_files { \
+   ../Genus_inputs/constraints_Adders_fast_sdc.tcl
+}
+            Reading file '/users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/../Genus_inputs/constraints_Adders_fast_sdc.tcl'
+@file(mmmc_Adders.tcl) 69: create_analysis_view -name view_Adders_slow -constraint_mode CM_Adders_slow -delay_corner  DC_Adders_slow
+@file(mmmc_Adders.tcl) 70: create_analysis_view -name view_Adders_fast -constraint_mode CM_Adders_fast -delay_corner  DC_Adders_fast
+@file(mmmc_Adders.tcl) 74: set_analysis_view -setup { view_Adders_slow view_Adders_fast }
+
+Threads Configured:6
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Y' for the cell 'HOLDX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib, Line 67517)
+
+Reading library /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.libInfo    : Appending library. [LBR-3]
+        : Appending library 'slow_vdd1v0' to the previously read library of the same name and nominal PVT. Cell definitions from the previously read library will not be overridden. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+        : Appending libraries will overwrite some of the characteristics of the library.
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 3574)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 3578)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1N' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 3684)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2N' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 3688)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 4486)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 4490)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1N' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 4596)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2N' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 4600)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6358)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6362)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q3' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6366)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q4' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6370)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6476)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6480)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q3N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6484)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q4N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6488)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1' for the cell 'SDFF4RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 8262)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2' for the cell 'SDFF4RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 8266)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q3' for the cell 'SDFF4RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 8270)
+
+  Message Summary for Library both libraries:
+  *******************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 49
+  Appending library. [LBR-3]: 1
+  *******************************************
+ 
+            Reading file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib'
+            Reading file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib'
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_multibitsDFF.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'HOLDX1/Y' has no function.
+        : If the remainder of this library cell's semantic checks are successful, it will be considered as a timing-model (because one of its outputs does not have a valid function.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Info    : Set default library domain. [LBR-109]
+        : The default library domain is 'library_domain:TC_Adders_slow'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
+        : The 'timing_sense' attribute will be respected.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX1'.
+        : Setting the 'timing_sense' to non_unate.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX1'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX1'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX2'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX2'.
+Info    : Setting the maximum print count of this message to 10 if information_level is less than 9. [LBR-161]
+        : To print all the warning messages, set the information_level to 9.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX2'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX4' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX4' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX4'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX4' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX4' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX4'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX4' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX4' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX4'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHXL' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHXL' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX1'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX1'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFX1'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX2'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX2'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFX2'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX4'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX4'.
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+#@ End verbose source ../Genus_inputs/mmmc_Adders.tcl
+@file(Script_Adders_mmmc.tcl) 77: puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_mmmc command"
+REVIEW LOG FILE FOR EXECUTION RESULTS OF read_mmmc command
+@file(Script_Adders_mmmc.tcl) 78: suspend
+
+Execution has been suspended temporarily.
+Enter 'resume' to continue.
+Enter 'stop_suspend' to stop script execution
+[SUSPEND]genus:root: 1> resume
+
+Resuming...@file(Script_Adders_mmmc.tcl) 84: read_physical -lef $LEF_List
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_HV' has no resistance value.
+        : If this is the expected behavior, this message can be ignored.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_2x1_HV_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_2x1_HV_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_1x2_HV_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M2_M1_1x2_HV_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_M_NH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_M_SH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_2x1_VH_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_2x1_VH_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_1x2_VH_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M3_M2_1x2_VH_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M4_M3_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned for resistance value. [PHYS-129]
+        : Via 'M4_M3_VV' has no resistance value.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2RX1' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2RX2' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2X1' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF2X2' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4RX1' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4RX2' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4X1' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'DFF4X2' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF2RX1' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF2RX2' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF4RX1' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SDFF4RX2' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF2RX1' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF2RX2' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF4RX1' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+Warning : Duplicate macro definition. [PHYS-107]
+        : Macro 'SPDFF4RX2' is already defined. Ignoring this definition in file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef//gsclib045_multibitsDFF.lef'.
+
+  According to lef_library, there are total 11 routing layers [ V(5) / H(6) ]
+
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL1 cannot be found in library.
+        : Ensure that the proper library files are available and have been imported.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL16 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL2 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL32 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL4 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL64 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FILL8 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FSWNX1 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell FSWX1 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HSWDNX1 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HSWDX1 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HSWNX1 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell HSWX1 cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell ISOHLDX1_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell ISOHLDX1_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell ISOHX1_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell ISOHX1_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell ISOLX1_OFF cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell ISOLX1_ON cannot be found in library.
+Warning : Physical cell not defined in library. [PHYS-279]
+        : The physical (LEF) cell ISONLX1_OFF cannot be found in library.
+@file(Script_Adders_mmmc.tcl) 86: puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_physical command"
+REVIEW LOG FILE FOR EXECUTION RESULTS OF read_physical command
+@file(Script_Adders_mmmc.tcl) 87: suspend
+
+Execution has been suspended temporarily.
+Enter 'resume' to continue.
+Enter 'stop_suspend' to stop script execution
+[SUSPEND]genus:root: 0> resume
+
+Resuming...@file(Script_Adders_mmmc.tcl) 96: puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_qrc command"
+REVIEW LOG FILE FOR EXECUTION RESULTS OF read_qrc command
+@file(Script_Adders_mmmc.tcl) 97: suspend
+
+Execution has been suspended temporarily.
+Enter 'resume' to continue.
+Enter 'stop_suspend' to stop script execution
+[SUSPEND]genus:root: -1> resume
+
+Resuming...@file(Script_Adders_mmmc.tcl) 105: set_db tns_opto true 
+  Setting attribute of root '/': 'tns_opto' = true
+@file(Script_Adders_mmmc.tcl) 110: read_hdl -v2001 $RTL_LIST
+            Reading Verilog file '../../src/Counter_02Limit_ovf.v'
+            Reading Verilog file '../../src/risc_v_top.v'
+            Reading Verilog file '../../src/multiplexor_param.v'
+            Reading Verilog file '../../src/ffd_param_pc_risk.v'
+            Reading Verilog file '../../src/adder.v'
+            Reading Verilog file '../../src/branch_prediction.v'
+            Reading Verilog file '../../src/instr_memory.v'
+            Reading Verilog file '../../src/ffd_param_clear_n.v'
+            Reading Verilog file '../../src/imm_gen.v'
+            Reading Verilog file '../../src/register_file.v'
+            Reading Verilog file '../../src/jump_detection_unit.v'
+            Reading Verilog file '../../src/control_unit.v'
+            Reading Verilog file '../../src/hazard_detection_unit.v'
+            Reading Verilog file '../../src/ALU_control.v'
+            Reading Verilog file '../../src/double_multiplexor_param.v'
+            Reading Verilog file '../../src/ALU.v'
+            Reading Verilog file '../../src/forward_unit.v'
+            Reading Verilog file '../../src/master_memory_map.v'
+            Reading Verilog file '../../src/data_memory.v'
+            Reading Verilog file '../../src/uart_IP.v'
+            Reading Verilog file '../../src/branch_control_unit.v'
+            Reading Verilog file '../../src/uart_full_duplex.v'
+            Reading Verilog file '../../src/UART_Rx.v'
+            Reading Verilog file '../../src/uart_tx.v'
+            Reading Verilog file '../../src/uart_tx_fsm.v'
+            Reading Verilog file '../../src/ffd_param_clear.v'
+            Reading Verilog file '../../src/Delayer.v'
+            Reading Verilog file '../../src/Bit_Rate_Pulse.v'
+            Reading Verilog file '../../src/ffd_param.v'
+            Reading Verilog file '../../src/parallel2serial.v'
+            Reading Verilog file '../../src/Shift_Register_R_Param.v'
+            Reading Verilog file '../../src/FSM_UART_Rx.v'
+            Reading Verilog file '../../src/Counter_Param.v'
+@file(Script_Adders_mmmc.tcl) 111: elaborate $DESIGN
+          INLINE_INFO: Skipping marking small hierarchies inline as the variable 'hdl_dissolve_primitive_instance_hierarchy_threshold' has not been set to a positive value.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'risc_v_top' from file '../../src/risc_v_top.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'multiplexor_param_LENGTH32' from file '../../src/multiplexor_param.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'ffd_param_pc_risk_LENGTH32_RST_VAL32h00400000' from file '../../src/ffd_param_pc_risk.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'adder_LENGTH32' from file '../../src/adder.v'.
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/add_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'ADD_UNS_OP' (pin widths: A=32 B=32 Z=32) at line 15 in the file '../../src/adder.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'ADD_UNS_OP' (pin widths: A=32 B=32 Z=32) at line 15 in the file '../../src/adder.v' will be considered in the following order: {'hdl_implementation:GB/add_unsigned/very_fast' (priority 1), 'hdl_implementation:GB/add_unsigned/medium' (priority 1), 'hdl_implementation:GB/add_unsigned/slow' (priority 1)}
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'branch_prediction_DATA_WIDTH32_BRANCH_NO8' from file '../../src/branch_prediction.v'.
+Info    : Processing multi-dimensional arrays. [CDFG-250]
+        : Variable 'BHB' in module 'branch_prediction_DATA_WIDTH32_BRANCH_NO8' in file '../../src/branch_prediction.v' on line 25.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '%bit-select%' in file '../../src/branch_prediction.v' on line 46.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '%bit-select%' in file '../../src/branch_prediction.v' on line 71.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '%bit-select%' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '%bit-select%' in file '../../src/branch_prediction.v' on line 70.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '%bit-select%' in file '../../src/branch_prediction.v' on line 69.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../../src/branch_prediction.v' on line 71.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../../src/branch_prediction.v' on line 45.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../../src/branch_prediction.v' on line 45.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../../src/branch_prediction.v' on line 45.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../../src/branch_prediction.v' on line 45.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../../src/branch_prediction.v' on line 45.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../../src/branch_prediction.v' on line 45.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../../src/branch_prediction.v' on line 45.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../../src/branch_prediction.v' on line 45.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../../src/branch_prediction.v' on line 34.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../../src/branch_prediction.v' on line 45.
+Info    : Common subexpression eliminated. [CDFG-738]
+        : Eliminated '==' in file '../../src/branch_prediction.v' on line 70.
+Info    : Common subexpression kept. [CDFG-739]
+        : Kept '==' in file '../../src/branch_prediction.v' on line 69.
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=7 B=7 Z=1) at line 45 in the file '../../src/branch_prediction.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=7 B=7 Z=1) at line 45 in the file '../../src/branch_prediction.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=1 Z=1) at line 34 in the file '../../src/branch_prediction.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=1 Z=1) at line 34 in the file '../../src/branch_prediction.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=1 Z=1) at line 34 in the file '../../src/branch_prediction.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=1 Z=1) at line 34 in the file '../../src/branch_prediction.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=2 Z=1) at line 34 in the file '../../src/branch_prediction.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=2 Z=1) at line 34 in the file '../../src/branch_prediction.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=2 Z=1) at line 34 in the file '../../src/branch_prediction.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=2 Z=1) at line 34 in the file '../../src/branch_prediction.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=3 Z=1) at line 34 in the file '../../src/branch_prediction.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=3 Z=1) at line 34 in the file '../../src/branch_prediction.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=3 Z=1) at line 34 in the file '../../src/branch_prediction.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=3 Z=1) at line 34 in the file '../../src/branch_prediction.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=3 Z=1) at line 34 in the file '../../src/branch_prediction.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=3 Z=1) at line 34 in the file '../../src/branch_prediction.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=3 Z=1) at line 34 in the file '../../src/branch_prediction.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=3 B=3 Z=1) at line 34 in the file '../../src/branch_prediction.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=7 B=7 Z=1) at line 69 in the file '../../src/branch_prediction.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=7 B=7 Z=1) at line 69 in the file '../../src/branch_prediction.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'instr_memory_DATA_WIDTH32_ADDR_WIDTH10' from file '../../src/instr_memory.v'.
+Info    : Processing multi-dimensional arrays. [CDFG-250]
+        : Variable 'rom_memory' in module 'instr_memory_DATA_WIDTH32_ADDR_WIDTH10' in file '../../src/instr_memory.v' on line 17.
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/add_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'ADD_UNS_OP' (pin widths: A=32 B=32 Z=32) at line 18 in the file '../../src/instr_memory.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'ADD_UNS_OP' (pin widths: A=32 B=32 Z=32) at line 18 in the file '../../src/instr_memory.v' will be considered in the following order: {'hdl_implementation:GB/add_unsigned/very_fast' (priority 1), 'hdl_implementation:GB/add_unsigned/medium' (priority 1), 'hdl_implementation:GB/add_unsigned/slow' (priority 1)}
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'ffd_param_clear_n_LENGTH1' from file '../../src/ffd_param_clear_n.v'.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'q' [1] doesn't match the width of right hand side [32] in assignment in file '../../src/ffd_param_clear_n.v' on line 23.
+        : Review and make sure the mismatch is unintentional. Genus can possibly issue bitwidth mismatch warning for explicit assignments present in RTL as-well-as for implicit assignments inferred by the tool. For example, in case of enum declaration without value, the tool will implicitly assign value to the enum variables. It also issues the warning for any bitwidth mismatch that appears in this implicit assignment.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'q' [1] doesn't match the width of right hand side [32] in assignment in file '../../src/ffd_param_clear_n.v' on line 25.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'multiplexor_param_LENGTH64' from file '../../src/multiplexor_param.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'ffd_param_clear_n_LENGTH64' from file '../../src/ffd_param_clear_n.v'.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'q' [64] doesn't match the width of right hand side [32] in assignment in file '../../src/ffd_param_clear_n.v' on line 23.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'q' [64] doesn't match the width of right hand side [32] in assignment in file '../../src/ffd_param_clear_n.v' on line 25.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'imm_gen' from file '../../src/imm_gen.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'register_file' from file '../../src/register_file.v'.
+Info    : Processing multi-dimensional arrays. [CDFG-250]
+        : Variable 'registers' in module 'register_file' in file '../../src/register_file.v' on line 22.
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/nequal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'NE_UNS_OP' (pin widths: A=5 B=1 Z=1) at line 31 in the file '../../src/register_file.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'NE_UNS_OP' (pin widths: A=5 B=1 Z=1) at line 31 in the file '../../src/register_file.v' will be considered in the following order: {'hdl_implementation:GB/nequal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=1 Z=1) at line 41 in the file '../../src/register_file.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=1 Z=1) at line 41 in the file '../../src/register_file.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=1 Z=1) at line 41 in the file '../../src/register_file.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=1 Z=1) at line 41 in the file '../../src/register_file.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=2 Z=1) at line 31 in the file '../../src/register_file.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=2 Z=1) at line 31 in the file '../../src/register_file.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=2 Z=1) at line 41 in the file '../../src/register_file.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=2 Z=1) at line 41 in the file '../../src/register_file.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=3 Z=1) at line 41 in the file '../../src/register_file.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=3 Z=1) at line 41 in the file '../../src/register_file.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=3 Z=1) at line 41 in the file '../../src/register_file.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=3 Z=1) at line 41 in the file '../../src/register_file.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : An implementation was inferred. [CWD-19]
+        : The implementation 'hdl_implementation:GB/equal_unsigned/very_fast' was inferred through the binding 'b1' for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=3 Z=1) at line 41 in the file '../../src/register_file.v'.
+Info    : Sorted the set of valid implementations for synthetic operator. [CWD-36]
+        : The implementations for the call to synthetic operator 'EQ_UNS_OP' (pin widths: A=5 B=3 Z=1) at line 41 in the file '../../src/register_file.v' will be considered in the following order: {'hdl_implementation:GB/equal_unsigned/very_fast' (priority 1)}
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'reg_t2' of instance 'reg_file' of module 'register_file' inside module 'risc_v_top' in file '../../src/risc_v_top.v' on line 179.
+        : Please check the reported scenario of unconnected instance port to ensure that it matches the design intent.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'reg_t3' of instance 'reg_file' of module 'register_file' inside module 'risc_v_top' in file '../../src/risc_v_top.v' on line 179.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'reg_t6' of instance 'reg_file' of module 'register_file' inside module 'risc_v_top' in file '../../src/risc_v_top.v' on line 179.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'jump_detection_unit' from file '../../src/jump_detection_unit.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'control_unit' from file '../../src/control_unit.v'.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 53.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 67.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 81.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 95.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 109.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 123.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 139.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 153.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 168.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 182.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 196.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'ALUOP' [3] doesn't match the width of right hand side [2] in assignment in file '../../src/control_unit.v' on line 210.
+Info    : Identified sum-of-products logic to be optimized during syn_generic. [CDFG-769]
+        : Sum-of-products logic in module 'control_unit' in file '../../src/control_unit.v' on line 58.
+Info    : Identified sum-of-products logic to be optimized during syn_generic. [CDFG-769]
+        : Sum-of-products logic in module 'control_unit' in file '../../src/control_unit.v' on line 131.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'hazard_detection_unit' from file '../../src/hazard_detection_unit.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'multiplexor_param_LENGTH14' from file '../../src/multiplexor_param.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'ffd_param_clear_n_LENGTH193' from file '../../src/ffd_param_clear_n.v'.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'q' [193] doesn't match the width of right hand side [32] in assignment in file '../../src/ffd_param_clear_n.v' on line 23.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'q' [193] doesn't match the width of right hand side [32] in assignment in file '../../src/ffd_param_clear_n.v' on line 25.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'ffd_param_clear_n_LENGTH14' from file '../../src/ffd_param_clear_n.v'.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'q' [14] doesn't match the width of right hand side [32] in assignment in file '../../src/ffd_param_clear_n.v' on line 23.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'q' [14] doesn't match the width of right hand side [32] in assignment in file '../../src/ffd_param_clear_n.v' on line 25.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'ALU_control' from file '../../src/ALU_control.v'.
+Warning : Unreachable statements for case item. [CDFG-472]
+        : Case item 'default' in module 'ALU_control' in file '../../src/ALU_control.v' on line 46.
+Warning : Unreachable statements for case item. [CDFG-472]
+        : Case item 'default' in module 'ALU_control' in file '../../src/ALU_control.v' on line 77.
+Info    : Identified sum-of-products logic to be optimized during syn_generic. [CDFG-769]
+        : Sum-of-products logic in module 'ALU_control' in file '../../src/ALU_control.v' on line 49.
+Info    : Identified sum-of-products logic to be optimized during syn_generic. [CDFG-769]
+        : Sum-of-products logic in module 'ALU_control' in file '../../src/ALU_control.v' on line 46.
+Info    : Identified sum-of-products logic to be optimized during syn_generic. [CDFG-769]
+        : Sum-of-products logic in module 'ALU_control' in file '../../src/ALU_control.v' on line 77.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'double_multiplexor_param_LENGTH32' from file '../../src/double_multiplexor_param.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'ALU_LENGTH32' from file '../../src/ALU.v'.
+Info    : Skipping an invalid binding for a subprogram call. [CWD-21]
+        : The binding 'hdl_bind:CW/CW_mult_unsigned/b1' is invalid for the call to synthetic operator 'MULT_UNS_OP' (pin widths: A=32 B=32 Z=32) at line 46 in the file '../../src/ALU.v' because the 'avoid' attribute on the binding is set to 'true'.
+Info    : Skipping an invalid binding for a subprogram call. [CWD-21]
+        : The binding 'hdl_bind:GB/decoder/b2' is invalid for the call to synthetic operator 'SLL_VLOG_UNS_OP' (pin widths: A=32 SH=5 Z=32) because the constraint '1' on the synthetic operator pin 'A' does not match the actual pin value 'bound'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'forward_unit' from file '../../src/forward_unit.v'.
+Info    : Identified sum-of-products logic to be optimized during syn_generic. [CDFG-769]
+        : Sum-of-products logic in module 'master_memory_map_DATA_WIDTH32_ADDR_WIDTH7' in file '../../src/master_memory_map.v' on line 51.
+Info    : Unused module input port. [CDFG-500]
+        : Input port 're' is not used in module 'master_memory_map_DATA_WIDTH32_ADDR_WIDTH7' in file '../../src/master_memory_map.v' on line 11.
+        : (In port definition within the module, the input port is not used in any assignment statements or conditional expressions for decision statements.
+Info    : Unused module input port. [CDFG-500]
+        : Input port 'clk' is not used in module 'master_memory_map_DATA_WIDTH32_ADDR_WIDTH7' in file '../../src/master_memory_map.v' on line 11.
+Info    : Processing multi-dimensional arrays. [CDFG-250]
+        : Variable 'ram' in module 'data_memory_DATA_WIDTH32_ADDR_WIDTH9' in file '../../src/data_memory.v' on line 49.
+Info    : Unused module input port. [CDFG-500]
+        : Input port 're' is not used in module 'data_memory_DATA_WIDTH32_ADDR_WIDTH9' in file '../../src/data_memory.v' on line 11.
+Info    : Processing multi-dimensional arrays. [CDFG-250]
+        : Variable 'uart_val' in module 'uart_IP_DATA_WIDTH32' in file '../../src/uart_IP.v' on line 33.
+Info    : Identified sum-of-products logic to be optimized during syn_generic. [CDFG-769]
+        : Sum-of-products logic in module 'FSM_UART_Rx' in file '../../src/FSM_UART_Rx.v' on line 61.
+Warning : Unreachable statements for case item. [CDFG-472]
+        : Case item 'default' in module 'uart_tx_fsm' in file '../../src/uart_tx_fsm.v' on line 58.
+Warning : Unreachable statements for case item. [CDFG-472]
+        : Case item 'default' in module 'uart_tx_fsm' in file '../../src/uart_tx_fsm.v' on line 112.
+Info    : Identified sum-of-products logic to be optimized during syn_generic. [CDFG-769]
+        : Sum-of-products logic in module 'uart_tx_fsm' in file '../../src/uart_tx_fsm.v' on line 112.
+Info    : Unused instance port. [ELABUTL-132]
+        : Unused Port 'end_half_time' of instance 'baudrate_counter' of module 'Bit_Rate_Pulse_delay_counts5210' inside module 'uart_tx_baud_rate5210' in file '../../src/uart_tx.v' on line 91.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'risc_v_top'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+--------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (ms) | 
+--------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |         1.00 | 
+--------------------------------------------------------
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: risc_v_top, recur: true)
+Completed clip mux common data inputs (accepts: 1, rejects: 0, runtime: 0.003s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: risc_v_top, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.001s)
+        Computing net loads.
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(Script_Adders_mmmc.tcl) 114: puts "Runtime & Memory after 'read_hdl'"
+Runtime & Memory after 'read_hdl'
+@file(Script_Adders_mmmc.tcl) 115: time_info Elaboration
+stamp 'Elaboration' being created for table 'default'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:06(00:00:00) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:24:28 (Oct24) |  144.0 MB | init
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:21(00:01:16) |  00:00:15(00:01:16) | 100.0(100.0) |   16:25:44 (Oct24) |  314.7 MB | Elaboration
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: default, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+@file(Script_Adders_mmmc.tcl) 117: check_design
+
+
+ 	 Check Design Report (c)
+	 ------------------- 
+ Summary
+ ------- 
+
+              Name                       Total
+----------------------------------------------
+Unresolved References                        0
+Empty Modules                                0
+Unloaded Port(s)                             0
+Unloaded Sequential Pin(s)                   0
+Unloaded Combinational Pin(s)               38
+Assigns                                     34
+Undriven Port(s)                             0
+Undriven Leaf Pin(s)                         0
+Undriven hierarchical pin(s)                 0
+Multidriven Port(s)                          0
+Multidriven Leaf Pin(s)                      0
+Multidriven hierarchical Pin(s)              0
+Multidriven unloaded net(s)                  0
+Constant Port(s)                             0
+Constant Leaf Pin(s)                       100
+Constant hierarchical Pin(s)              1575
+Preserved leaf instance(s)                   0
+Preserved hierarchical instance(s)           0
+Feedthrough Modules(s)                       0
+Libcells with no LEF cell                    0
+Physical (LEF) cells with no libcell        78
+Subdesigns with long module name             0
+Physical only instance(s)                    0
+Logical only instance(s)                     0
+
+
+  Done Checking the design.
+@file(Script_Adders_mmmc.tcl) 119: puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF check_design COMMAND & REVIEW RTL SCHEMATIC"
+REVIEW LOG FILE FOR EXECUTION RESULTS OF check_design COMMAND & REVIEW RTL SCHEMATIC
+@file(Script_Adders_mmmc.tcl) 120: suspend
+
+Execution has been suspended temporarily.
+Enter 'resume' to continue.
+Enter 'stop_suspend' to stop script execution
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 289s, ST: 30s, FG: 30s, CPU: 6.3%}, MEM {curr: 1.0G, peak: 1.1G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.7, cpu: 8, total: 31.3G, free: 6.5G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 334s, ST: 32s, FG: 32s, CPU: 6.2%}, MEM {curr: 1.0G, peak: 1.1G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.6, cpu: 8, total: 31.3G, free: 6.5G}
+[SUSPEND]genus:root: -2> resum
+
+Resuming...@file(Script_Adders_mmmc.tcl) 123: init_design
+
+Threads Configured:6
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Y' for the cell 'HOLDX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib, Line 67517)
+
+Reading library /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.libInfo    : Appending library. [LBR-3]
+        : Appending library 'fast_vdd1v2' to the previously read library of the same name and nominal PVT. Cell definitions from the previously read library will not be overridden. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 3574)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 3578)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1N' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 3684)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2N' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 3688)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 4486)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 4490)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1N' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 4596)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2N' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 4600)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 6358)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 6362)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q3' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 6366)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q4' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 6370)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 6476)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 6480)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q3N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 6484)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q4N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 6488)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q1' for the cell 'SDFF4RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 8262)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q2' for the cell 'SDFF4RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 8266)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Q3' for the cell 'SDFF4RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib, Line 8270)
+
+  Message Summary for Library both libraries:
+  *******************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 49
+  Appending library. [LBR-3]: 1
+  *******************************************
+ 
+            Reading file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib'
+            Reading file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib'
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.320000, 0.000000) in library 'fast_vdd1v2_multibitsDFF.lib'.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'HOLDX1/Y' has no function.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX1'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX1'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX1'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX2'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX2'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX2'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX4' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX4' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX4'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX4' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX4' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX4'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX4' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX4' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX4'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHXL' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHXL' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX1'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX1'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFX1'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX2'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX2'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFX2'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX4'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX4'.
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+Warning : Inconsistency detected among the units specified in the timing libraries being used. [LBR-714]
+        : Libraries with inconsistent time/capacitance units were loaded.
+        : Default system time/capacitance unit will be used.
+Started checking and loading power intent for design risc_v_top...
+==================================================================
+No power intent for design 'risc_v_top'.
+Completed checking and loading power intent for design risc_v_top (runtime 0.00s).
+==================================================================================
+#
+# Reading SDC ../Genus_inputs/constraints_Adders_slow_sdc.tcl for view:view_Adders_slow (constraint_mode:CM_Adders_slow)
+#
+Statistics for commands executed by read_sdc:
+ "all_inputs"               - successful      1 , failed      0 (runtime  0.00)
+ "all_outputs"              - successful      2 , failed      0 (runtime  0.00)
+ "create_clock"             - successful      1 , failed      0 (runtime  0.00)
+ "current_design"           - successful      3 , failed      0 (runtime  0.00)
+ "get_clocks"               - successful      8 , failed      0 (runtime  0.00)
+ "get_ports"                - successful      2 , failed      0 (runtime  0.00)
+ "set_clock_latency"        - successful      4 , failed      0 (runtime  0.00)
+ "set_clock_transition"     - successful      4 , failed      0 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      2 , failed      0 (runtime  0.00)
+ "set_driving_cell"         - successful      1 , failed      0 (runtime  0.00)
+ "set_input_delay"          - successful      1 , failed      0 (runtime  0.00)
+ "set_load"                 - successful      1 , failed      0 (runtime  0.00)
+ "set_load_unit"            - successful      1 , failed      0 (runtime  0.00)
+ "set_max_capacitance"      - successful      1 , failed      0 (runtime  0.00)
+ "set_max_fanout"           - successful      1 , failed      0 (runtime  0.00)
+ "set_max_transition"       - successful      1 , failed      0 (runtime  0.00)
+ "set_output_delay"         - successful      1 , failed      0 (runtime  0.00)
+ "set_time_unit"            - successful      1 , failed      0 (runtime  0.00)
+read_sdc completed in 00:00:01 (hh:mm:ss)
+#
+# Reading SDC ../Genus_inputs/constraints_Adders_fast_sdc.tcl for view:view_Adders_fast (constraint_mode:CM_Adders_fast)
+#
+Statistics for commands executed by read_sdc:
+ "all_inputs"               - successful      1 , failed      0 (runtime  0.00)
+ "all_outputs"              - successful      2 , failed      0 (runtime  0.00)
+ "create_clock"             - successful      1 , failed      0 (runtime  0.00)
+ "current_design"           - successful      3 , failed      0 (runtime  0.00)
+ "get_clocks"               - successful      8 , failed      0 (runtime  0.00)
+ "get_ports"                - successful      2 , failed      0 (runtime  0.00)
+ "set_clock_latency"        - successful      4 , failed      0 (runtime  0.00)
+ "set_clock_transition"     - successful      4 , failed      0 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      2 , failed      0 (runtime  0.00)
+ "set_driving_cell"         - successful      1 , failed      0 (runtime  0.00)
+ "set_input_delay"          - successful      1 , failed      0 (runtime  0.00)
+ "set_load"                 - successful      1 , failed      0 (runtime  0.00)
+ "set_load_unit"            - successful      1 , failed      0 (runtime  0.00)
+ "set_max_capacitance"      - successful      1 , failed      0 (runtime  0.00)
+ "set_max_fanout"           - successful      1 , failed      0 (runtime  0.00)
+ "set_max_transition"       - successful      1 , failed      0 (runtime  0.00)
+ "set_output_delay"         - successful      1 , failed      0 (runtime  0.00)
+ "set_time_unit"            - successful      1 , failed      0 (runtime  0.00)
+read_sdc completed in 00:00:00 (hh:mm:ss)
+  Setting attribute of root '/': 'read_qrc_tech_file_rc_corner' = true
+@file(Script_Adders_mmmc.tcl) 124: time_info init_design
+stamp 'init_design' being created for table 'default'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:06(00:00:00) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:24:28 (Oct24) |  144.0 MB | init
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:21(00:01:16) |  00:00:15(00:01:16) |  42.9( 15.0) |   16:25:44 (Oct24) |  314.7 MB | Elaboration
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:41(00:08:25) |  00:00:20(00:07:09) |  57.1( 85.0) |   16:32:53 (Oct24) |  337.9 MB | init_design
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: default, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+@file(Script_Adders_mmmc.tcl) 126: puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF init_design command"
+REVIEW LOG FILE FOR EXECUTION RESULTS OF init_design command
+@file(Script_Adders_mmmc.tcl) 127: suspend
+
+Execution has been suspended temporarily.
+Enter 'resume' to continue.
+Enter 'stop_suspend' to stop script execution
+[SUSPEND]genus:root: -3> gui_show
+Cadence Help logging started at /users/iteso-s012/.config/cadence/cdnshelp.log file.
+[SUSPEND]genus:root: -3> 
+[SUSPEND]genus:root: -3> exit
+Normal exit.

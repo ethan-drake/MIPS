@@ -18,10 +18,13 @@ reg [DATA_WIDTH-1:0] rom_memory [0:(ADDR_WIDTH*ADDR_WIDTH)-1];
 wire [DATA_WIDTH-1:0] map_Address = (address + (~32'h400_000 + 1'b1)) >> 2'h2;
 
 //Initial data with program to execute
+//synthesis
+/*
 initial begin
 	// program
 	$readmemh("../asm/main_program.txt", rom_memory);
 end
+*/
 
 always @(posedge clk)
 begin

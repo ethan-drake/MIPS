@@ -11,7 +11,7 @@ set_load_unit -femtofarads
 
 # COMMON VARIABLES 
 set EXTCLK "My_CLK"
-set EXTCLK_PERIOD 2000.0
+set EXTCLK_PERIOD 100000.0
 set SKEW 40.0
 set MINRISE 40.0
 set MAXRISE 55.0
@@ -24,6 +24,9 @@ set MAXFALL 50.0
 
 #create_clock -name "refclk" -add -period 8.0 -waveform {0.0 4.0} [get_ports refclk]
 create_clock -name $EXTCLK  -add -period $EXTCLK_PERIOD [get_ports clk]
+#create_clock -name $EXTCLK  -add -period $EXTCLK_PERIOD [clock_ports]
+#create_clock -name $EXTCLK  -add -period $EXTCLK_PERIOD [get_ports clk_50Mhz]
+
 
 # Clock Definition using SDC format 50% Duty Cycle
 #	create_clock -period 2000 -name my_clock [clock_ports]
