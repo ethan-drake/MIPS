@@ -69,7 +69,7 @@ always@(*) begin
 								o_alu_operation = 4'h7;
 							3'h7:
 								o_alu_operation = 4'h8;
-							default: o_alu_operation = {4'b0}; 
+							//default: o_alu_operation = {4'b0}; 
 						endcase
 					end
 				I_TYPE:
@@ -90,7 +90,7 @@ always@(*) begin
 								o_alu_operation = 4'h7;
 							3'h7:
 								o_alu_operation = 4'h8;
-							default: o_alu_operation = {4'b0};
+							//default: o_alu_operation = {4'b0};
 						endcase
 					end
 				default: o_alu_operation = {4'b0}; 

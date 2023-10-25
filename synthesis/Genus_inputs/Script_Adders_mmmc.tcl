@@ -84,7 +84,7 @@ suspend
 read_physical -lef $LEF_List
 
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_physical command"
-suspend
+#suspend
 ## Provide either cap_table_file or the qrc_tech_file
 #	set_db / .cap_table_file <file> 
 #	read_qrc <qrcTechFile name>
@@ -94,7 +94,7 @@ suspend
 #read_qrc $QRC_TECH_FILE
 
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_qrc command"
-suspend
+#suspend
 
 
 # Attribute for low power design
@@ -108,6 +108,8 @@ set_db tns_opto true
 ## Load Design
 ####################################################################
 read_hdl -v2001 $RTL_LIST
+puts "AQUI MERO HDL"
+suspend
 elaborate $DESIGN
 #read_def ../DEF/dtmf.def
 

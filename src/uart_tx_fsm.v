@@ -100,10 +100,10 @@ always @(*) begin
         begin
             next_state = IDLE;
         end
-        default:
+        /*default:
         begin
             next_state = IDLE;
-        end
+        end*/
     endcase
 end
 
@@ -206,7 +206,7 @@ always @(current_state)begin
 				enable_finish_ff <= 1'b0;
 				clear_finish_ff <= 1'b0;
         end
-        default:
+       /* default:
         begin
             o_tx_mux <= 1'b0; 
             o_tx_control <= 1'b1; 
@@ -217,7 +217,7 @@ always @(current_state)begin
 				reset_delayer <= 1'b0;
 				enable_finish_ff <= 1'b0;
 				clear_finish_ff <= 1'b0;
-        end
+        end*/
     endcase
 end
 

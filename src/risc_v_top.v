@@ -469,6 +469,7 @@ data_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(9)) memory_ram (
 );
 
 //UART
+
 uart_IP #(.DATA_WIDTH(32)) uart_IP_module (
 	.wd(data_memory_2_slave),
 	.address(address_memory_2_slave),
