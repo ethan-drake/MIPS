@@ -5899,18 +5899,3 @@ Number of threads: 8 * 1   (id: default, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
 Info: CPU time includes time of parent + longest thread
 @file(Script_Adders_mmmc.tcl) 279: file copy [get_db / .stdout_log] ${_LOG_PATH}/.
-@file(Script_Adders_mmmc.tcl) 281: puts "============================"
-============================
-@file(Script_Adders_mmmc.tcl) 282: puts "Synthesis Finished ........."
-Synthesis Finished .........
-@file(Script_Adders_mmmc.tcl) 283: puts "============================"
-============================
-#@ End verbose source ../Genus_inputs/Script_Adders_mmmc.tcl
-WARNING: This version of the tool is 912 days old.
-@genus:root: -10> resume
-
-Incorrect usage: resume command is used only when you are in suspend mode
-1
-@genus:root: -9> 
-@genus:root: -9> exit
-Normal exit.

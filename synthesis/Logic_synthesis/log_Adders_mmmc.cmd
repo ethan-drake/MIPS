@@ -1,22 +1,49 @@
 # Cadence Genus(TM) Synthesis Solution, Version 20.11-s111_1, built Apr 26 2021 14:57:38
 
-# Date: Tue Oct 24 16:24:21 2023
+# Date: Thu Oct 26 01:10:23 2023
 # Host: ip-172-31-46-123.us-east-2.compute.internal (x86_64 w/Linux 3.10.0-1160.95.1.el7.x86_64) (8cores*8cpus*1physical cpu*Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz 46080KB)
 # OS:   CentOS Linux release 7.9.2009 (Core)
 
 source ../Genus_inputs/Script_Adders_mmmc.tcl
 # entering suspend mode
-resume
-# resuming normal operation
-# entering suspend mode
-resume
-# resuming normal operation
-# entering suspend mode
-resume
-# resuming normal operation
-# entering suspend mode
-resum
-# resuming normal operation
-# entering suspend mode
+gui show
+show gui
 gui_show
+resume
+# resuming normal operation
+# entering suspend mode
+resume
+# resuming normal operation
+# entering suspend mode
+resume
+# resuming normal operation
+# entering suspend mode
+resume
+# resuming normal operation
+# entering suspend mode
+resume
+# resuming normal operation
+# entering suspend mode
+resume
+# resuming normal operation
+# entering suspend mode
+resume
+# resuming normal operation
+# entering suspend mode
+resume
+# resuming normal operation
+# entering suspend mode
+resume
+# resuming normal operation
+# entering suspend mode
+report_area
+resume
+# resuming normal operation
+# entering suspend mode
+resume
+# resuming normal operation
+# entering suspend mode
+resume
+# resuming normal operation
+resume
 exit

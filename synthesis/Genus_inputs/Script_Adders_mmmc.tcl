@@ -45,6 +45,8 @@ set_db init_lib_search_path "$Timing_Libs_Path $LEF_Libs_Path"
 set_db / .script_search_path {../Genus_inputs} 
 set_db / .init_hdl_search_path {../../src} 
 set_db qos_report_power true
+set_db delete_unloaded_seqs false
+set_db delete_unloaded_insts false
 
 ##Uncomment and specify machine names to enable super-threading.
 ##set_db / .super_thread_servers {<machine names>} 

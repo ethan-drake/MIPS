@@ -11,7 +11,7 @@ set_load_unit -femtofarads
 
 # COMMON VARIABLES 
 set EXTCLK "My_CLK"
-set EXTCLK_PERIOD 100000.0
+set EXTCLK_PERIOD 1000.0
 set SKEW 40.0
 set MINRISE 40.0
 set MAXRISE 55.0
@@ -64,13 +64,13 @@ set_clock_uncertainty -hold  4 [get_clocks $EXTCLK]
 # for this design it's defined at 10% the period of the clock.
 ## external_delay -clock [find / -clock 500MHz_CLK] -input 200 -name IDelay [find /des* -port ports_in/*]
 ## SDC FORMAT
-set_input_delay -clock [get_clocks $EXTCLK] -add_delay 1000 -name I_DELAY [get_ports {rst_n rx}]
+set_input_delay -clock [get_clocks $EXTCLK] -add_delay 100 -name I_DELAY [get_ports {rst_n rx}]
 
 # Output delay definition: This is the delay going outside the design
 # for this design it's defined at 10% the period of the clock.
 ##external_delay -clock [find / -clock 500MHz_CLK] -output 200 -name ODelay [find /des* -port ports_out/*]
 ## SDC FORMAT
-set_output_delay -clock [get_clocks $EXTCLK] -add_delay 1000 -name O_DELAY [get_ports {tx}]
+set_output_delay -clock [get_clocks $EXTCLK] -add_delay 100 -name O_DELAY [get_ports {tx}]
 
 # Driving cell definition
 ## BUFx2 is a buffer of 2 drive strength of the slow_vdd1v0_basicCells library
