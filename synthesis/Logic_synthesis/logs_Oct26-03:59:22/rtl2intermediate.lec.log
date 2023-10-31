@@ -1,0 +1,31 @@
+                          CONFORMAL (R)
+                   Version 21.10-p100 (15-Apr-2021) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2021. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 922 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: usage -auto -elapse
+// Command: usage -auto -elapse
+CPU time     : 0.62    seconds
+Elapse time  : 7       seconds
+Memory usage : 61.76   M bytes
+0
+// Command: set_verification_information fv_map_risc_v_top_intermediatev_db
+// Command: set_verification_information fv_map_risc_v_top_intermediatev_db
+// Note: Verification information fv_map_risc_v_top_intermediatev_db does not exist. New directory created.
+// Verification information is set to /users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/fv_map_risc_v_top_intermediatev_db.
+// Advanced reporting is enabled and the output is written to /users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/fv_map_risc_v_top_intermediatev_db
+0
+// Command: read_implementation_information fv/risc_v_top -golden fv_map -revised risc_v_top_intermediatev
+// Command: read_implementation_information fv/risc_v_top -golden fv_map -revised risc_v_top_intermediatev
+// Reading implementation information from fv/risc_v_top ...
+// Warning: Cannot find implementation information for risc_v_top_intermediatev
+// Error: Cannot find all the specified implementation information
+1
+// 'dofile /users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/./outputs_Oct26-03:59:22/rtl2intermediate.lec.do' is aborted at line 57

@@ -1,0 +1,2 @@
+[{"object": {"name": "lec_run"}, "lec": "21.10-p100 (15-Apr-2021) (64 bit executable)", "pid": "10043"},
+{"Total_DesignSize": "5165", "Inout_count": "0", "Output_count": "1", "object": {"OBJID": "0", "NAME": "risc_v_top", "DESIGN": "golden"}, "DESFILE": "1", "LIBFILE": "4", "Input_count": "3", "Root_name": "risc_v_top", "Total_Hierachies": "2", "Design_search_path": ["."]}]

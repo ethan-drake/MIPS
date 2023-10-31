@@ -1,0 +1,331 @@
+{
+ "filetype": "conformal-table",
+ "data": [
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[34]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[2]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[2]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[35]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[3]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[3]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[36]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[4]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[4]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[37]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[5]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[5]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[38]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[6]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[6]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[39]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[7]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[7]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[40]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[8]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[8]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[41]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[9]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[9]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[42]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[10]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[10]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[43]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[11]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[11]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[44]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[12]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[12]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[45]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[13]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[13]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[46]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[14]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[14]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[47]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[15]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[15]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[48]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[16]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[16]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[49]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[17]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[17]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[50]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[18]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[18]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[51]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[19]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[19]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[52]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[20]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[20]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[53]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[21]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[21]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[54]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[22]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[22]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[55]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[23]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[23]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[56]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[24]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[24]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[57]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[25]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[25]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[58]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[26]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[26]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[59]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[27]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[27]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[60]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[28]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[28]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[61]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[29]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[29]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[62]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[30]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[30]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  },
+  {
+   "Object": "/ex_mem_datapath_ffd/q_reg[63]",
+   "Type": "DFF",
+   "Design": "G",
+   "User Setup representative": "/ex_mem_datapath_ffd_q_reg[31]",
+   "LEC representative": "/ex_mem_datapath_ffd/q_reg[31]",
+   "User Setup phase": "+",
+   "LEC phase": "+",
+   "highlite": 0
+  }
+ ],
+ "cols": [
+  {
+   "key": "Object"
+  },
+  {
+   "key": "Type"
+  },
+  {
+   "key": "Design"
+  },
+  {
+   "key": "User Setup representative"
+  },
+  {
+   "key": "LEC representative"
+  },
+  {
+   "key": "User Setup phase"
+  },
+  {
+   "key": "LEC phase"
+  }
+ ],
+ "sort": [
+  "-highlite"
+ ]
+}

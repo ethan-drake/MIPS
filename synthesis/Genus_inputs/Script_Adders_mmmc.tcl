@@ -74,10 +74,10 @@ set_db lp_power_unit mW
 # read_libs $Liberty_List
 
 ## Reading in MMMC definition file
-read_mmmc ../Genus_inputs/mmmc_Adders.tcl
+read_mmmc ../Genus_inputs/mmmc_risc_v.tcl
 
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_mmmc command"
-suspend
+#suspend
 
 
 
@@ -86,7 +86,7 @@ suspend
 read_physical -lef $LEF_List
 
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_physical command"
-#suspend
+##suspend
 ## Provide either cap_table_file or the qrc_tech_file
 #	set_db / .cap_table_file <file> 
 #	read_qrc <qrcTechFile name>
@@ -96,7 +96,7 @@ puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_physical command"
 #read_qrc $QRC_TECH_FILE
 
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_qrc command"
-#suspend
+##suspend
 
 
 # Attribute for low power design
@@ -111,7 +111,7 @@ set_db tns_opto true
 ####################################################################
 read_hdl -v2001 $RTL_LIST
 puts "AQUI MERO HDL"
-suspend
+#suspend
 elaborate $DESIGN
 #read_def ../DEF/dtmf.def
 
@@ -121,21 +121,21 @@ time_info Elaboration
 check_design
 
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF check_design COMMAND & REVIEW RTL SCHEMATIC"
-suspend
+#suspend
 
 # MMMC Command
 init_design
 time_info init_design
 
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF init_design command"
-suspend
+#suspend
 
 
 #check_design -unresolved
 check_design
 
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF check_design command"
-suspend
+#suspend
 
 ## Set the innovus executable to be used for placement and routing
 ## set_db innovus_executable  <Innovus Executables>
@@ -151,22 +151,22 @@ suspend
 puts "$::dc::sdc_failed_commands > failed.sdc"
 
 puts "CHECK FOR NO-APPLIED CONSTRAINTS"
-suspend
+#suspend
 
 # Timing Lint
 check_timing_intent -verbose
 
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF check_timing_intent command"
-suspend
+#suspend
 
 report clocks
 puts "Review Timing Lint Reporte and Clock reports"
-suspend
+#suspend
 
 
 puts "The number of exceptions is [llength [vfind "design:$DESIGN" -exception *]]"
 puts "REVIEW EXCEPTIONS"
-suspend
+#suspend
 
 if {![file exists ${_OUTPUTS_PATH}]} {
   file mkdir ${_OUTPUTS_PATH}
@@ -204,7 +204,7 @@ report_summary -directory $_REPORTS_PATH
 write_hdl -generic > ${_OUTPUTS_PATH}/${DESIGN}_generic.v
 
 puts "VIEW GENERIC SCHEMATIC"
-suspend
+#suspend
 
 ####################################################################################################
 ## Synthesizing to Gates (Maped)
@@ -226,13 +226,13 @@ write_hdl -lec > ${_OUTPUTS_PATH}/${DESIGN}_intermediate.v
 # LEC Do File RTL to Intermediate
 #write_do_lec -revised_design fv_map -logfile ${_LOG_PATH}/rtl2intermediate.lec.log > $_OUTPUTS_PATH}/rtl2intermediate.lec.do
 #write_do_lec -no_exit -revised_design ${_OUTPUTS_PATH}/${DESIGN}_intermediate.v -logfile ${_LOG_PATH}/rtl2intermediate.lec.log > ${_OUTPUTS_PATH}/rtl2intermediate.lec.do
-write_do_lec -no_exit -revised_design ${_NETLIST_PATH}/Adders_intermediate_BUG.v -logfile ${_LOG_PATH}/rtl2intermediate_bug.lec.log > ${_OUTPUTS_PATH}/rtl2intermediate_bug.lec.do
+write_do_lec -no_exit -revised_design ${_NETLIST_PATH}/${DESIGN}_intermediate.v -logfile ${_LOG_PATH}/rtl2intermediate.lec.log > ${_OUTPUTS_PATH}/rtl2intermediate.lec.do
 
 
 
 ## ungroup -threshold <value>
 puts "VIEW MAPPED SCHEMATIC"
-suspend
+#suspend
 
 #######################################################################################################
 ## Optimize Netlist
@@ -251,27 +251,27 @@ time_info OPT
 #write_snapshot -outdir $_REPORTS_PATH -tag final
 
 report_summary -directory $_REPORTS_PATH
-write_hdl  > ${_OUTPUTS_PATH}/${DESIGN}_hdl_opt.v
+write_hdl  > ${_OUTPUTS_PATH}/${DESIGN}_opt.v
 write_design -basename ${_OUTPUTS_PATH}/${DESIGN}_opt
 ## write_script > ${_OUTPUTS_PATH}/${DESIGN}_m.script
 
 #write_sdc > ${_OUTPUTS_PATH}/${DESIGN}_opt.sdc
 #write_sdc -version 1.1 -view analysis_view -constraint_mode constraint_mode design > ${_OUTPUTS_PATH}/${DESIGN}_opt.sdc
-write_sdc -version 1.1 -view view_Adders_slow $DESIGN > ${_OUTPUTS_PATH}/${DESIGN}_opt_slow.sdc
+write_sdc -version 1.1 -view view_risc_v_slow $DESIGN > ${_OUTPUTS_PATH}/${DESIGN}_opt_slow.sdc
 
 puts "REVIEW OPTIMIZED REPORTS AND SCHEMATIC DIAGRAM"
-suspend
+#suspend
 
 #################################
 ### write_do_lec
 #################################
 #write_do_lec -no_exit -golden_design ${_OUTPUTS_PATH}/${DESIGN}_intermediate.v -revised_design ${_OUTPUTS_PATH}/${DESIGN}_opt.v -logfile  ${_LOG_PATH}/intermediate2final.lec.log > ${_OUTPUTS_PATH}/intermediate2final.lec.do
 
-write_do_lec -no_exit -golden_design ${_NETLIST_PATH}/Adders_intermediate_BUG.v -revised_design ${_NETLIST_PATH}/Adders_opt_BUG.v -logfile  ${_LOG_PATH}/intermediate2final_bug.lec.log > ${_OUTPUTS_PATH}/intermediate2final_bug.lec.do
+write_do_lec -no_exit -golden_design ${_NETLIST_PATH}/${DESIGN}_intermediate.v -revised_design ${_NETLIST_PATH}/${DESIGN}_opt.v -logfile  ${_LOG_PATH}/intermediate2final.lec.log > ${_OUTPUTS_PATH}/intermediate2final.lec.do
 
 ##Uncomment if the RTL is to be compared with the final netlist..
 #write_do_lec -no_exit -revised_design ${_OUTPUTS_PATH}/${DESIGN}_opt.v -logfile ${_LOG_PATH}/rtl2final.lec.log > ${_OUTPUTS_PATH}/rtl2final.lec.do
-write_do_lec -no_exit -revised_design ${_NETLIST_PATH}/Adders_opt_BUG.v -logfile ${_LOG_PATH}/rtl2final_bug.lec.log > ${_OUTPUTS_PATH}/rtl2final_bug.lec.do
+write_do_lec -no_exit -revised_design ${_NETLIST_PATH}/${DESIGN}_opt.v -logfile ${_LOG_PATH}/rtl2final.lec.log > ${_OUTPUTS_PATH}/rtl2final.lec.do
 
 puts "Final Runtime & Memory."
 time_info FINAL

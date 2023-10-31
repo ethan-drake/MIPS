@@ -1,0 +1,102 @@
+                          CONFORMAL (R)
+                   Version 21.10-p100 (15-Apr-2021) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2021. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 922 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: usage -auto -elapse
+// Command: usage -auto -elapse
+CPU time     : 0.61    seconds
+Elapse time  : 6       seconds
+Memory usage : 61.75   M bytes
+0
+// Command: set_verification_information fv_map_risc_v_intermediatev_db
+// Command: set_verification_information fv_map_risc_v_intermediatev_db
+// Verification information is set to /users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/fv_map_risc_v_intermediatev_db.
+// Advanced reporting is enabled and the output is written to /users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/fv_map_risc_v_intermediatev_db
+0
+// Command: read_implementation_information fv/risc_v_top -golden fv_map -revised risc_v_intermediatev
+// Command: read_implementation_information fv/risc_v_top -golden fv_map -revised risc_v_intermediatev
+// Reading implementation information from fv/risc_v_top ...
+================================================================================
+          Information Category                         Count
+--------------------------------------------------------------------------------
+     Sequential instance phase                          7046
+       Sequential optimization                          3200
+        Sequential duplication                             0
+         Boundary optimization                             0
+            Synthesis equation                             0
+    Combinational loop breaker                             0
+                       Mapping                             0
+================================================================================
+// Note: Read implementation information successfully.
+0
+CPU time     : 0.73    seconds
+Elapse time  : 7       seconds
+Memory usage : 74.15   M bytes
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Number of threads is set to 1,4.
+0
+// Command: set_compare_options -threads 1,4
+// Command: set_compare_options -threads 1,4
+Set computing threads of compare to 1,4.
+0
+// Command: set env(RC_VERSION)     "20.11-s111_1"
+20.11-s111_1
+// Command: set env(CDN_SYNTH_ROOT) "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86
+// Command: set CDN_SYNTH_ROOT      "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86
+// Command: set env(CW_DIR) "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware
+// Command: set CW_DIR      "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware
+// Command: set_undefined_cell black_box -noascend -both
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: add_search_path /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/ /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/ -library -both
+// Command: add_search_path /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/ /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/ -library -both
+0
+// Command: read_library -liberty -both /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib
+// Command: read_library -liberty -both /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib ...
+// Warning: (RTL9.16) Duplicated operating_condition, the second one is ignored (occurrence:2)
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:20)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:32)
+// Warning: (IGN3.2) Duplicate modules/entities are detected. Subsequent modules/entities are ignored (occurrence:505)
+// Note: Read Liberty library successfully
+0
+CPU time     : 1.25    seconds
+Elapse time  : 8       seconds
+Memory usage : 99.66   M bytes
+// Command: read_design -verilog95   -golden -lastmod -noelab fv/risc_v_top/fv_map.v.gz
+// Command: read_design -verilog95 -golden -lastmod -noelab fv/risc_v_top/fv_map.v.gz
+// Parsing file fv/risc_v_top/fv_map.v.gz ...
+0
+CPU time     : 1.39    seconds
+Elapse time  : 8       seconds
+Memory usage : 110.68  M bytes
+// Command: elaborate_design -golden -root {risc_v_top}
+// Command: elaborate_design -golden -root risc_v_top
+// Golden root module is set to 'risc_v_top'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:308)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:1)
+0
+// Command: read_design -verilog95   -revised -lastmod -noelab Netlist/risc_v_intermediate.v
+// Command: read_design -verilog95 -revised -lastmod -noelab Netlist/risc_v_intermediate.v
+// Error: Cannot open file 'Netlist/risc_v_intermediate.v'.
+// Error: FIL1.2: Failed to open file
+//  Design file not found
+// Error: Total 1 error(s) of fail to open file found during read design. Please review parsing message.
+1
+// 'dofile /users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/./outputs_Oct26-03:59:22/rtl2intermediate.lec.do' is aborted at line 79
