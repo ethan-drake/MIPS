@@ -17811,20 +17811,20 @@
 "object":"/designs/risc_v_top/instances_seq/uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[17]",
 "type":"instance"},
 {"index": "2", 
- "date": "Thu Oct 26 04:26:10 UTC 2023",
- "seconds": 1698294370.584426,
+ "date": "Fri Nov 03 01:24:39 UTC 2023",
+ "seconds": 1698974679.9314718,
  "netlist": "Netlist/risc_v_top_intermediate.v", 
  "netlist_exists": "1", 
- "netlist_normalize": "/users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/Netlist/risc_v_top_intermediate.v", 
- "netlist_mtime": "1698292951", 
- "netlist_timestamp": "Thu Oct 26 04:02:31 UTC 2023", 
+ "netlist_normalize": "/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/Netlist/risc_v_top_intermediate.v", 
+ "netlist_mtime": "1698725722", 
+ "netlist_timestamp": "Tue Oct 31 04:15:22 UTC 2023", 
  "netlist_size": "436959", 
- "netlist_cksum": "4020176632", 
+ "netlist_cksum": "3907380440", 
  "design_name": "risc_v_top", 
- "synth_workdir": "/users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis", 
+ "synth_workdir": "/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis", 
  "synthesis_command":"",
  "current_label": "risc_v_top_intermediatev", 
  "previous_label": "fv_map", 
- "write_verif_file_runtime": 3.349863 
+ "write_verif_file_runtime": 3.3175649999999997 
  }
 ]
