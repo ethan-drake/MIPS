@@ -36,7 +36,7 @@ set _LOG_PATH logs_${DATE}
 
 
 # Variables used by Cadence training
-set RTL_LIST {risc_v_Pad_Frame.v Counter_02Limit_ovf.v risc_v_top.v multiplexor_param.v ffd_param_pc_risk.v adder.v branch_prediction.v instr_memory.v ffd_param_clear_n.v imm_gen.v register_file.v jump_detection_unit.v control_unit.v hazard_detection_unit.v ALU_control.v double_multiplexor_param.v ALU.v forward_unit.v master_memory_map.v data_memory.v uart_IP.v branch_control_unit.v uart_full_duplex.v UART_Rx.v uart_tx.v uart_tx_fsm.v ffd_param_clear.v Delayer.v Bit_Rate_Pulse.v ffd_param.v parallel2serial.v Shift_Register_R_Param.v FSM_UART_Rx.v Counter_Param.v}
+set RTL_LIST {Counter_02Limit_ovf.v risc_v_top.v multiplexor_param.v ffd_param_pc_risk.v adder.v branch_prediction.v instr_memory.v ffd_param_clear_n.v imm_gen.v register_file.v jump_detection_unit.v control_unit.v hazard_detection_unit.v ALU_control.v double_multiplexor_param.v ALU.v forward_unit.v master_memory_map.v data_memory.v uart_IP.v branch_control_unit.v uart_full_duplex.v UART_Rx.v uart_tx.v uart_tx_fsm.v ffd_param_clear.v Delayer.v Bit_Rate_Pulse.v ffd_param.v parallel2serial.v Shift_Register_R_Param.v FSM_UART_Rx.v Counter_Param.v risc_v_Pad_Frame.v}
 set QRC_TECH_FILE {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch}
 
 ##set MODUS_WORKDIR <MODUS work directory>

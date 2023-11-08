@@ -4,10 +4,10 @@ Cadence and the Cadence logo are registered trademarks and Genus is a trademark
 of Cadence Design Systems, Inc. in the United States and other countries.
 
 Version: 20.11-s111_1, built Mon Apr 26 07:57:38 PDT 2021
-Options: -files ../Genus_inputs/Script_Adders_mmmc.tcl -log log_Adders_mmmc.log 
-Date:    Thu Oct 26 02:37:31 2023
+Options: -files ../Genus_inputs/Script_risc_v_mmmc.tcl -log log_Adders_mmmc.log 
+Date:    Wed Nov 08 02:12:23 2023
 Host:    ip-172-31-46-123.us-east-2.compute.internal (x86_64 w/Linux 3.10.0-1160.95.1.el7.x86_64) (8cores*8cpus*1physical cpu*Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz 46080KB) (32778796KB)
-PID:     14947
+PID:     14059
 OS:      CentOS Linux release 7.9.2009 (Core)
 
 Checking out license: Genus_Synthesis
@@ -22,9 +22,9 @@ Loading tool scripts...
 Finished loading tool scripts (12 seconds elapsed).
 
 #@ Processing -files option
-@genus 1> source ../Genus_inputs/Script_Adders_mmmc.tcl
-#@ Begin verbose source ../Genus_inputs/Script_Adders_mmmc.tcl
-@file(Script_Adders_mmmc.tcl) 7: if {[file exists /proc/cpuinfo]} {
+@genus 1> source ../Genus_inputs/Script_risc_v_mmmc.tcl
+#@ Begin verbose source ../Genus_inputs/Script_risc_v_mmmc.tcl
+@file(Script_risc_v_mmmc.tcl) 7: if {[file exists /proc/cpuinfo]} {
   sh grep "model name" /proc/cpuinfo
   sh grep "cpu MHz"    /proc/cpuinfo
 }
@@ -44,266 +44,12 @@ cpu MHz		: 2300.081
 cpu MHz		: 2300.081
 cpu MHz		: 2300.081
 cpu MHz		: 2300.081
-@file(Script_Adders_mmmc.tcl) 12: puts "Hostname : [info hostname]"
+@file(Script_risc_v_mmmc.tcl) 12: puts "Hostname : [info hostname]"
 Hostname : ip-172-31-46-123.us-east-2.compute.internal
-@file(Script_Adders_mmmc.tcl) 17: set DESIGN risc_v_top
-@file(Script_Adders_mmmc.tcl) 18: set Timing_Libs_Path /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/
-@file(Script_Adders_mmmc.tcl) 19: set LEF_Libs_Path /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/ 
-@file(Script_Adders_mmmc.tcl) 24: set LEF_List {gsclib045_tech.lef gsclib045_macro.lef gsclib045_multibitsDFF.lef}
-@file(Script_Adders_mmmc.tcl) 26: set GEN_EFF high
-@file(Script_Adders_mmmc.tcl) 27: set MAP_OPT_EFF high
-@file(Script_Adders_mmmc.tcl) 28: set DATE [clock format [clock seconds] -format "%b%d-%T"] 
-@file(Script_Adders_mmmc.tcl) 30: set RELEASE [lindex [get_db program_version] end]
-@file(Script_Adders_mmmc.tcl) 32: set _OUTPUTS_PATH outputs_${DATE}
-@file(Script_Adders_mmmc.tcl) 33: set _NETLIST_PATH Netlist
-@file(Script_Adders_mmmc.tcl) 34: set _REPORTS_PATH reports_${DATE}
-@file(Script_Adders_mmmc.tcl) 35: set _LOG_PATH logs_${DATE}
-@file(Script_Adders_mmmc.tcl) 39: set RTL_LIST {Counter_02Limit_ovf.v risc_v_top.v multiplexor_param.v ffd_param_pc_risk.v adder.v branch_prediction.v instr_memory.v ffd_param_clear_n.v imm_gen.v register_file.v jump_detection_unit.v control_unit.v hazard_detection_unit.v ALU_control.v double_multiplexor_param.v ALU.v forward_unit.v master_memory_map.v data_memory.v uart_IP.v branch_control_unit.v uart_full_duplex.v UART_Rx.v uart_tx.v uart_tx_fsm.v ffd_param_clear.v Delayer.v Bit_Rate_Pulse.v ffd_param.v parallel2serial.v Shift_Register_R_Param.v FSM_UART_Rx.v Counter_Param.v}
-@file(Script_Adders_mmmc.tcl) 40: set QRC_TECH_FILE {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch}
-@file(Script_Adders_mmmc.tcl) 44: set_db init_lib_search_path "$Timing_Libs_Path $LEF_Libs_Path"
-  Setting attribute of root '/': 'init_lib_search_path' = /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/ /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/
-@file(Script_Adders_mmmc.tcl) 45: set_db / .script_search_path {../Genus_inputs} 
-  Setting attribute of root '/': 'script_search_path' = ../Genus_inputs
-@file(Script_Adders_mmmc.tcl) 46: set_db / .init_hdl_search_path {../../src} 
-  Setting attribute of root '/': 'init_hdl_search_path' = ../../src
-@file(Script_Adders_mmmc.tcl) 47: set_db qos_report_power true
-  Setting attribute of root '/': 'qos_report_power' = true
-@file(Script_Adders_mmmc.tcl) 48: set_db delete_unloaded_seqs false
-  Setting attribute of root '/': 'delete_unloaded_seqs' = false
-@file(Script_Adders_mmmc.tcl) 49: set_db delete_unloaded_insts false
-  Setting attribute of root '/': 'delete_unloaded_insts' = false
-@file(Script_Adders_mmmc.tcl) 59: set_db / .information_level 11 
-  Setting attribute of root '/': 'information_level' = 11
-@file(Script_Adders_mmmc.tcl) 61: set_db hdl_track_filename_row_col true 
-Info   : Enabled hdl_track_filename_row_col attribute.
-       : Setting this attribute to 'true' can have an impact on the run time. Use this attribute only when filename, line number, and column information are needed in reports.
-  Setting attribute of root '/': 'hdl_track_filename_row_col' = true
-@file(Script_Adders_mmmc.tcl) 63: set_db lp_power_unit mW 
-  Setting attribute of root '/': 'lp_power_unit' = mW
-@file(Script_Adders_mmmc.tcl) 77: read_mmmc ../Genus_inputs/mmmc_risc_v.tcl
-Sourcing '../Genus_inputs/mmmc_risc_v.tcl' (Thu Oct 26 02:37:43 UTC 2023)...
-#@ Begin verbose source ../Genus_inputs/mmmc_risc_v.tcl
-@file(mmmc_risc_v.tcl) 8: create_library_set -name LS_slow -timing { 
-/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib  \ 
-/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib }
-@file(mmmc_risc_v.tcl) 12: create_library_set -name LS_fast -timing {
-/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib \
-/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib }
-@file(mmmc_risc_v.tcl) 19: create_opcond -name OP_risc_v_slow	-process 1 -voltage 0.9  -temperature 125
-@file(mmmc_risc_v.tcl) 20: create_opcond -name OP_risc_v_fast	-process 1 -voltage 1.32 -temperature 0
-@file(mmmc_risc_v.tcl) 24: create_timing_condition -name TC_risc_v_slow    -opcond OP_risc_v_slow  -library_sets { LS_slow }
-@file(mmmc_risc_v.tcl) 25: create_timing_condition -name TC_risc_v_fast    -opcond OP_risc_v_fast  -library_sets { LS_fast }
-@file(mmmc_risc_v.tcl) 40: create_delay_corner -name DC_risc_v_slow -early_timing_condition TC_risc_v_slow \
-                    -late_timing_condition TC_risc_v_slow 
-@file(mmmc_risc_v.tcl) 48: create_delay_corner -name DC_risc_v_fast -early_timing_condition TC_risc_v_fast \
-                    -late_timing_condition TC_risc_v_fast
-@file(mmmc_risc_v.tcl) 56: create_constraint_mode -name CM_risc_v_slow -sdc_files { \
-   ../Genus_inputs/constraints_risc_v_slow_sdc.tcl
-}
-            Reading file '/users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/../Genus_inputs/constraints_risc_v_slow_sdc.tcl'
-@file(mmmc_risc_v.tcl) 60: create_constraint_mode -name CM_risc_v_fast -sdc_files { \
-   ../Genus_inputs/constraints_risc_v_fast_sdc.tcl
-}
-            Reading file '/users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/../Genus_inputs/constraints_risc_v_fast_sdc.tcl'
-@file(mmmc_risc_v.tcl) 69: create_analysis_view -name view_risc_v_slow -constraint_mode CM_risc_v_slow -delay_corner  DC_risc_v_slow
-@file(mmmc_risc_v.tcl) 70: create_analysis_view -name view_risc_v_fast -constraint_mode CM_risc_v_fast -delay_corner  DC_risc_v_fast
-@file(mmmc_risc_v.tcl) 74: set_analysis_view -setup { view_risc_v_slow view_risc_v_fast }
-
-Threads Configured:6
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Y' for the cell 'HOLDX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib, Line 67517)
-
-Reading library /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.libInfo    : Appending library. [LBR-3]
-        : Appending library 'slow_vdd1v0' to the previously read library of the same name and nominal PVT. Cell definitions from the previously read library will not be overridden. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
-        : Appending libraries will overwrite some of the characteristics of the library.
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q1' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 3574)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q2' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 3578)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q1N' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 3684)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q2N' for the cell 'SDFF2RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 3688)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q1' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 4486)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q2' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 4490)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q1N' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 4596)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q2N' for the cell 'SDFF2RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 4600)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q1' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6358)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q2' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6362)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q3' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6366)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q4' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6370)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q1N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6476)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q2N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6480)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q3N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6484)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q4N' for the cell 'SDFF4RX1'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 6488)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q1' for the cell 'SDFF4RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 8262)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q2' for the cell 'SDFF4RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 8266)
-Info    : Missing a function attribute in the output pin definition. [LBR-518]
-        : Functionality is missing at pin 'Q3' for the cell 'SDFF4RX2'. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib, Line 8270)
-
-  Message Summary for Library both libraries:
-  *******************************************
-  Missing a function attribute in the output pin definition. [LBR-518]: 49
-  Appending library. [LBR-3]: 1
-  *******************************************
- 
-            Reading file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib'
-            Reading file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib'
-Info    : Created nominal operating condition. [LBR-412]
-        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_multibitsDFF.lib'.
-        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'ANTENNA' must have an output pin.
-        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'ANTENNA' must have an output pin.
-Info    : An output library pin lacks a function attribute. [LBR-41]
-        : Output pin 'HOLDX1/Y' has no function.
-        : If the remainder of this library cell's semantic checks are successful, it will be considered as a timing-model (because one of its outputs does not have a valid function.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP10' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP10' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP2' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP2' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP3' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP3' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP4' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP4' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP5' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP5' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP6' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP6' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP7' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP7' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP8' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP8' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP9' must have an output pin.
-Warning : Library cell has no output pins defined. [LBR-9]
-        : Library cell 'DECAP9' must have an output pin.
-Info    : Set default library domain. [LBR-109]
-        : The default library domain is 'library_domain:TC_risc_v_slow'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
-        : The 'timing_sense' attribute will be respected.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX1'.
-        : Setting the 'timing_sense' to non_unate.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX1'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX1'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX2'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX2'.
-Info    : Setting the maximum print count of this message to 10 if information_level is less than 9. [LBR-161]
-        : To print all the warning messages, set the information_level to 9.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX2'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX4' is 'pos_unate', but unateness determined from function is 'non_unate'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX4' is 'neg_unate', but unateness determined from function is 'non_unate'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX4'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX4' is 'pos_unate', but unateness determined from function is 'non_unate'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX4' is 'neg_unate', but unateness determined from function is 'non_unate'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX4'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX4' is 'pos_unate', but unateness determined from function is 'non_unate'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX4' is 'neg_unate', but unateness determined from function is 'non_unate'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX4'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHXL' is 'pos_unate', but unateness determined from function is 'non_unate'.
-Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
-        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHXL' is 'neg_unate', but unateness determined from function is 'non_unate'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHXL'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHXL'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHXL'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX1'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX1'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFX1'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX2'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX2'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFX2'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX4'.
-Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
-        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX4'.
-  Library has 324 usable logic and 128 usable sequential lib-cells.
-#@ End verbose source ../Genus_inputs/mmmc_risc_v.tcl
-@file(Script_Adders_mmmc.tcl) 79: puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_mmmc command"
-REVIEW LOG FILE FOR EXECUTION RESULTS OF read_mmmc command
-@file(Script_Adders_mmmc.tcl) 80: suspend
-
-Execution has been suspended temporarily.
-Enter 'resume' to continue.
-Enter 'stop_suspend' to stop script execution
-[SUSPEND]genus:root: 1> exit
+@file(Script_risc_v_mmmc.tcl) 17: set DESIGN risc_v_Pad_Frame #risc_v_top
+#@ End verbose source ../Genus_inputs/Script_risc_v_mmmc.tcl
+wrong # args: should be "set varName ?newValue?"
+Encountered problems processing file: ../Genus_inputs/Script_risc_v_mmmc.tcl
+WARNING: This version of the tool is 925 days old.
+@genus:root: 2> exit
 Normal exit.
