@@ -14,7 +14,7 @@ puts "Hostname : [info hostname]"
 ##############################################################################
 ## Preset global variables and attributes
 ##############################################################################
-set DESIGN risc_v_Pad_Frame #risc_v_top
+set DESIGN risc_v_Pad_Frame 
 set Timing_Libs_Path {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/ /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/}
 set LEF_Libs_Path {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/ /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef}
 

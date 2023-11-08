@@ -3,7 +3,7 @@
 # User Constraint File: constraints_Adders_fast.tcl
 
 # Set the current design
-current_design risc_v_top
+current_design risc_v_Pad_Frame
 
 # Genus COMMANDS TO SET UNITS
 set_time_unit -picoseconds
