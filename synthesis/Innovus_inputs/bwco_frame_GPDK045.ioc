@@ -30,18 +30,8 @@
  
     ( left
       ( locals ring_number = 1)
-( inst name= "pad_nrst" )
-( inst name= "pad_clk" )
-( inst name= "pad_q3"  place_status = placed)
-
-# Power PADs do not have defined allocation. These will placed automatically
-#( inst name= "pad_VSS" )
-#( inst name= "pad_VDD" )
-#( inst name= "pad_DVSS" )
-#( inst name= "pad_DVDD" )
-
-
- )
+( inst name= "pad_nrst" place_status = placed)
+)
 
 ( bottomleft
        (locals ring_number = 1)
@@ -50,11 +40,7 @@
  
  ( bottom
       ( locals ring_number = 1    )
-( inst name= "pad_bw3" )
-( inst name= "pad_bw2" )
-( inst name= "pad_bw1" )
-
-) 
+( inst name= "pad_clk" )
 
 ( bottomright
        (locals ring_number = 1)
@@ -63,9 +49,7 @@
 
  ( right
       ( locals ring_number = 1    )
-( inst name= "pad_bw0" )
-( inst name= "pad_ovf1" )
-( inst name= "pad_ovf2" )
+( inst name= "pad_rx" )
 
 )
 
@@ -76,9 +60,7 @@
 ( top
       ( locals ring_number = 1    )
 
-( inst name= "pad_q2")
-( inst name= "pad_q1" )
-( inst name= "pad_q0" )
+( inst name= "pad_tx")
 
 )
 )
