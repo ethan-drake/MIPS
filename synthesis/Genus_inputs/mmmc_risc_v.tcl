@@ -6,11 +6,13 @@
 
 # LIBRARY SET DEFINITIONS 
 create_library_set -name LS_slow -timing { 
-/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib  \ 
+/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib  \
+/CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_SS_s1vg.lib \
 /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib }
 
 create_library_set -name LS_fast -timing {
 /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib \
+/CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_FF_s1vg.lib \
 /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib }
 
 # create_library_set -name LS_typ  -timing { }

@@ -76,7 +76,8 @@ set_output_delay -clock [get_clocks $EXTCLK] -add_delay 1000 -name O_DELAY [get_
 # does not is applied [get_db ports {X Y A B cin nrst}]
 #set_driving_cell -lib_cell BUFX2 [get_db ports {X Y A B cin nrst}]
 # Genus tested
-set_driving_cell -lib_cell BUFX2 [get_ports {rst_n rx}]
+#Commented just for testing
+#set_driving_cell -lib_cell BUFX2 [get_ports {rst_n rx}]
 
 ### SDC FORMAT
 
