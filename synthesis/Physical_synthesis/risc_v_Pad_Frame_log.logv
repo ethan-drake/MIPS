@@ -1,0 +1,795 @@
+[11/08 02:43:50      0s] 
+[11/08 02:43:50      0s] Cadence Innovus(TM) Implementation System.
+[11/08 02:43:50      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[11/08 02:43:50      0s] 
+[11/08 02:43:50      0s] Version:	v21.12-s106_1, built Wed Dec 8 18:19:02 PST 2021
+[11/08 02:43:50      0s] Options:	-log risc_v_Pad_Frame_log.log 
+[11/08 02:43:50      0s] Date:		Wed Nov  8 02:43:50 2023
+[11/08 02:43:50      0s] Host:		ip-172-31-46-123.us-east-2.compute.internal (x86_64 w/Linux 3.10.0-1160.95.1.el7.x86_64) (8cores*8cpus*Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz 46080KB)
+[11/08 02:43:50      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[11/08 02:43:50      0s] 
+[11/08 02:43:50      0s] License:
+[11/08 02:43:50      0s] 		[02:43:50.302449] Configured Lic search path (20.02-s004): 50009@10.16.0.85
+
+[11/08 02:43:50      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[11/08 02:43:50      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[11/08 02:44:09     16s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.12-s106_1 (64bit) 12/08/2021 18:19 (Linux 3.10.0-693.el7.x86_64)
+[11/08 02:44:13     20s] @(#)CDS: NanoRoute 21.12-s106_1 NR211128-2235/21_12-UB (database version 18.20.567) {superthreading v2.17}
+[11/08 02:44:13     20s] @(#)CDS: AAE 21.12-s039 (64bit) 12/08/2021 (Linux 3.10.0-693.el7.x86_64)
+[11/08 02:44:13     20s] @(#)CDS: CTE 21.12-s043_1 () Dec  1 2021 10:06:22 ( )
+[11/08 02:44:13     20s] @(#)CDS: SYNTECH 21.12-s014_1 () Oct 27 2021 04:39:25 ( )
+[11/08 02:44:13     20s] @(#)CDS: CPE v21.12-s094
+[11/08 02:44:13     20s] @(#)CDS: IQuantus/TQuantus 20.1.2-s624 (64bit) Thu Sep 2 20:12:03 PDT 2021 (Linux 2.6.32-431.11.2.el6.x86_64)
+[11/08 02:44:13     20s] @(#)CDS: OA 22.60-p059 Mon Jun 28 12:16:29 2021
+[11/08 02:44:13     20s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[11/08 02:44:13     20s] @(#)CDS: RCDB 11.15.0
+[11/08 02:44:13     20s] @(#)CDS: STYLUS 21.11-s011_1 (12/08/2021 02:58 PST)
+[11/08 02:44:13     20s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_24357_ip-172-31-46-123.us-east-2.compute.internal_iteso-s012_88yZy0.
+
+[11/08 02:44:13     20s] Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+[11/08 02:44:16     22s] 
+[11/08 02:44:16     22s] **INFO:  MMMC transition support version v31-84 
+[11/08 02:44:16     22s] 
+[11/08 02:44:16     22s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[11/08 02:44:16     22s] <CMD> suppressMessage ENCEXT-2799
+[11/08 02:44:16     22s] <CMD> win
+[11/08 02:51:55    174s] <CMD> save_global ../Innovus_inputs/Default_risc_v.globals
+[11/08 02:52:01    175s] <CMD> set init_gnd_net VSS
+[11/08 02:52:01    175s] <CMD> set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef}
+[11/08 02:52:01    175s] <CMD> set init_verilog ../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v
+[11/08 02:52:01    175s] <CMD> set init_mmmc_file ../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view
+[11/08 02:52:01    175s] <CMD> set init_pwr_net VDD
+[11/08 02:52:01    175s] <CMD> init_design
+[11/08 02:52:01    175s] #% Begin Load MMMC data ... (date=11/08 02:52:01, mem=664.8M)
+[11/08 02:52:01    175s] **ERROR: (TCLCMD-989):	cannot open SDC file '../Logic_synthesis/bwco_opt.CM_bwco_slow.sdc' for mode 'ConstraintMode_WC'
+<CMD> set init_gnd_net VSS
+[11/08 02:53:22    184s] <CMD> set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef}
+[11/08 02:53:22    184s] <CMD> set init_verilog ../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v
+[11/08 02:53:22    184s] <CMD> set init_mmmc_file ../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view
+[11/08 02:53:22    184s] <CMD> set init_pwr_net VDD
+[11/08 02:53:22    184s] <CMD> init_design
+[11/08 02:53:22    184s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/08 02:53:22    184s] % Begin Load MMMC data ... (date=11/08 02:53:22, mem=664.9M)
+[11/08 02:53:22    184s] Extraction setup Started 
+[11/08 02:53:22    184s] 
+[11/08 02:53:22    184s] Trim Metal Layers:
+[11/08 02:53:22    184s] 
+[11/08 02:53:22    184s] Trim Metal Layers:
+[11/08 02:53:22    184s] 
+[11/08 02:53:22    184s] Trim Metal Layers:
+[11/08 02:53:22    184s] Extraction setup Started 
+[11/08 02:53:22    184s] 
+[11/08 02:53:22    184s] Trim Metal Layers:
+[11/08 02:53:22    184s] 
+[11/08 02:53:22    184s] Trim Metal Layers:
+[11/08 02:53:22    184s] 
+[11/08 02:53:22    184s] Trim Metal Layers:
+[11/08 02:53:22    184s] **ERROR: (TCLCMD-989):	cannot open SDC file '../Logic_synthesis/bwco_opt.CM_bwco_slow.sdc' for mode 'ConstraintMode_WC'
+<CMD> set init_gnd_net VSS
+[11/08 02:54:34    193s] <CMD> set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef}
+[11/08 02:54:34    193s] <CMD> set init_verilog ../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v
+[11/08 02:54:34    193s] <CMD> set init_mmmc_file ../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view
+[11/08 02:54:34    193s] <CMD> set init_pwr_net VDD
+[11/08 02:54:34    193s] <CMD> init_design
+[11/08 02:54:34    193s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/08 02:54:34    193s] % Begin Load MMMC data ... (date=11/08 02:54:34, mem=665.1M)
+[11/08 02:54:34    193s] Extraction setup Started 
+[11/08 02:54:34    193s] 
+[11/08 02:54:34    193s] Trim Metal Layers:
+[11/08 02:54:34    193s] 
+[11/08 02:54:34    193s] Trim Metal Layers:
+[11/08 02:54:34    193s] 
+[11/08 02:54:34    193s] Trim Metal Layers:
+[11/08 02:54:34    193s] Extraction setup Started 
+[11/08 02:54:34    193s] 
+[11/08 02:54:34    193s] Trim Metal Layers:
+[11/08 02:54:34    193s] 
+[11/08 02:54:34    193s] Trim Metal Layers:
+[11/08 02:54:34    193s] 
+[11/08 02:54:34    193s] Trim Metal Layers:
+[11/08 02:54:34    193s] **ERROR: (TCLCMD-989):	cannot open SDC file '../Logic_synthesis/constraints_risc_v_slow_sdc.sdc' for mode 'ConstraintMode_WC'
+<CMD> set init_gnd_net VSS
+[11/08 02:54:53    199s] <CMD> set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef}
+[11/08 02:54:53    199s] <CMD> set init_verilog ../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v
+[11/08 02:54:53    199s] <CMD> set init_mmmc_file ../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view
+[11/08 02:54:53    199s] <CMD> set init_pwr_net VDD
+[11/08 02:54:53    199s] <CMD> init_design
+[11/08 02:54:53    199s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/08 02:54:53    199s] % Begin Load MMMC data ... (date=11/08 02:54:53, mem=665.2M)
+[11/08 02:54:53    199s] Extraction setup Started 
+[11/08 02:54:53    199s] 
+[11/08 02:54:53    199s] Trim Metal Layers:
+[11/08 02:54:53    199s] 
+[11/08 02:54:53    199s] Trim Metal Layers:
+[11/08 02:54:53    199s] 
+[11/08 02:54:53    199s] Trim Metal Layers:
+[11/08 02:54:53    199s] Extraction setup Started 
+[11/08 02:54:53    199s] 
+[11/08 02:54:53    199s] Trim Metal Layers:
+[11/08 02:54:53    199s] 
+[11/08 02:54:53    199s] Trim Metal Layers:
+[11/08 02:54:53    199s] 
+[11/08 02:54:53    199s] Trim Metal Layers:
+[11/08 02:54:53    199s] **ERROR: (TCLCMD-989):	cannot open SDC file '../Logic_synthesis/constraints_risc_v_slow_sdc.sdc' for mode 'ConstraintMode_WC'
+<CMD> set init_gnd_net VSS
+[11/08 02:55:32    204s] <CMD> set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef}
+[11/08 02:55:32    204s] <CMD> set init_verilog ../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v
+[11/08 02:55:32    204s] <CMD> set init_mmmc_file ../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view
+[11/08 02:55:32    204s] <CMD> set init_pwr_net VDD
+[11/08 02:55:32    204s] <CMD> init_design
+[11/08 02:55:32    204s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/08 02:55:32    204s] % Begin Load MMMC data ... (date=11/08 02:55:32, mem=665.2M)
+[11/08 02:55:32    204s] Extraction setup Started 
+[11/08 02:55:32    204s] 
+[11/08 02:55:32    204s] Trim Metal Layers:
+[11/08 02:55:32    204s] 
+[11/08 02:55:32    204s] Trim Metal Layers:
+[11/08 02:55:32    204s] 
+[11/08 02:55:32    204s] Trim Metal Layers:
+[11/08 02:55:32    204s] Extraction setup Started 
+[11/08 02:55:32    204s] 
+[11/08 02:55:32    204s] Trim Metal Layers:
+[11/08 02:55:32    204s] 
+[11/08 02:55:32    204s] Trim Metal Layers:
+[11/08 02:55:32    204s] 
+[11/08 02:55:32    204s] Trim Metal Layers:
+[11/08 02:55:32    204s] **ERROR: (TCLCMD-989):	cannot open SDC file '../Logic_synthesis/constraints_risc_v_slow_sdc.tcl' for mode 'ConstraintMode_WC'
+<CMD> set init_gnd_net VSS
+[11/08 02:58:33    225s] <CMD> set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef}
+[11/08 02:58:33    225s] <CMD> set init_verilog ../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v
+[11/08 02:58:33    225s] <CMD> set init_mmmc_file ../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view
+[11/08 02:58:33    225s] <CMD> set init_pwr_net VDD
+[11/08 02:58:33    225s] <CMD> init_design
+[11/08 02:58:33    225s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/08 02:58:33    225s] % Begin Load MMMC data ... (date=11/08 02:58:33, mem=665.2M)
+[11/08 02:58:33    225s] Extraction setup Started 
+[11/08 02:58:33    225s] 
+[11/08 02:58:33    225s] Trim Metal Layers:
+[11/08 02:58:33    225s] 
+[11/08 02:58:33    225s] Trim Metal Layers:
+[11/08 02:58:33    225s] 
+[11/08 02:58:33    225s] Trim Metal Layers:
+[11/08 02:58:33    225s] Extraction setup Started 
+[11/08 02:58:33    225s] 
+[11/08 02:58:33    225s] Trim Metal Layers:
+[11/08 02:58:33    225s] 
+[11/08 02:58:33    225s] Trim Metal Layers:
+[11/08 02:58:33    225s] 
+[11/08 02:58:33    225s] Trim Metal Layers:
+[11/08 02:58:33    225s] **ERROR: (TCLCMD-989):	cannot open SDC file 'risc_v_Pad_Frame_opt.CM_risc_v_slow.sdc' for mode 'ConstraintMode_WC'
+<CMD> set init_gnd_net VSS
+[11/08 02:59:20    231s] <CMD> set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef}
+[11/08 02:59:20    231s] <CMD> set init_verilog ../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v
+[11/08 02:59:20    231s] <CMD> set init_mmmc_file ../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view
+[11/08 02:59:20    231s] <CMD> set init_pwr_net VDD
+[11/08 02:59:20    231s] <CMD> init_design
+[11/08 02:59:20    231s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/08 02:59:20    231s] % Begin Load MMMC data ... (date=11/08 02:59:20, mem=665.2M)
+[11/08 02:59:20    231s] Extraction setup Started 
+[11/08 02:59:20    231s] 
+[11/08 02:59:20    231s] Trim Metal Layers:
+[11/08 02:59:20    231s] 
+[11/08 02:59:20    231s] Trim Metal Layers:
+[11/08 02:59:20    231s] 
+[11/08 02:59:20    231s] Trim Metal Layers:
+[11/08 02:59:20    231s] Extraction setup Started 
+[11/08 02:59:20    231s] 
+[11/08 02:59:20    231s] Trim Metal Layers:
+[11/08 02:59:20    231s] 
+[11/08 02:59:20    231s] Trim Metal Layers:
+[11/08 02:59:20    231s] 
+[11/08 02:59:20    231s] Trim Metal Layers:
+[11/08 02:59:20    231s] **ERROR: (TCLCMD-989):	cannot open SDC file 'risc_v_Pad_Frame_opt_slow.sdc' for mode 'ConstraintMode_WC'
+<CMD> set init_gnd_net VSS
+[11/08 03:01:18    245s] <CMD> set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef}
+[11/08 03:01:18    245s] <CMD> set init_verilog ../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v
+[11/08 03:01:18    245s] <CMD> set init_mmmc_file ../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view
+[11/08 03:01:18    245s] <CMD> set init_pwr_net VDD
+[11/08 03:01:18    245s] <CMD> init_design
+[11/08 03:01:18    245s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/08 03:01:18    245s] % Begin Load MMMC data ... (date=11/08 03:01:18, mem=665.2M)
+[11/08 03:01:18    245s] Extraction setup Started 
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] Trim Metal Layers:
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] Trim Metal Layers:
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] Trim Metal Layers:
+[11/08 03:01:18    245s] Extraction setup Started 
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] Trim Metal Layers:
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] Trim Metal Layers:
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] Trim Metal Layers:
+[11/08 03:01:18    245s] % End Load MMMC data ... (date=11/08 03:01:18, total cpu=0:00:00.0, real=0:00:00.0, peak res=665.3M, current mem=665.3M)
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] Loading LEF file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef ...
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] Loading LEF file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef ...
+[11/08 03:01:18    245s] Set DBUPerIGU to M2 pitch 400.
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] Loading LEF file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef ...
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'DFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'DFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'DFF2X1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'DFF2X2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'DFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'DFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'DFF4X1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'DFF4X2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'SDFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'SDFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'SDFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'SDFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'SPDFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'SPDFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'SPDFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-58):	MACRO 'SPDFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-58' for more detail.
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] Loading LEF file /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef ...
+[11/08 03:01:18    245s] **WARN: (IMPLF-61):	16 duplicated MACRO definitions have been found in the LEF file(s). Their content except DENSITY and PIN ANTENNA* data, and certain properties, have been ignored.
+[11/08 03:01:18    245s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/08 03:01:18    245s] Type 'man IMPLF-61' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED60' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED60' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED5' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED5' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED3' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED3' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED10' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED10' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED1' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED1' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VSS25' in macro 'PADVSS25' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'VDD25' in macro 'PADVDD25' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'OEN' in macro 'PADDOZ' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'A' in macro 'PADDOZ' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDOZ' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-201' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'A' in macro 'PADDO' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDO' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-201' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDI' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-201' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'PAD' in macro 'PADDI' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-201):	Pin 'Y' in macro 'PADDI' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-201' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-201):	Pin 'Y' in macro 'PADDB' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-201' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'A' in macro 'PADDB' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'OEN' in macro 'PADDB' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDB' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-201' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'PAD' in macro 'PADDB' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (IMPLF-200):	Pin 'AY' in macro 'PADANALOG' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/08 03:01:18    245s] Type 'man IMPLF-200' for more detail.
+[11/08 03:01:18    245s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[11/08 03:01:18    245s] To increase the message display limit, refer to the product command reference manual.
+[11/08 03:01:18    245s] 
+[11/08 03:01:18    245s] viaInitial starts at Wed Nov  8 03:01:18 2023
+viaInitial ends at Wed Nov  8 03:01:18 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[11/08 03:01:18    245s] Loading view definition file from ../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view
+[11/08 03:01:18    245s] Reading Lib_Set_WC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib' ...
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP7'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP6'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP5'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP4'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP3'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP2'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/08 03:01:19    246s] Read 489 cells in library 'slow_vdd1v0' 
+[11/08 03:01:19    246s] Reading Lib_Set_WC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib' ...
+[11/08 03:01:19    246s] **WARN: (TECHLIB-459):	Appending library 'slow_vdd1v0' to the previously read library of the same name and nominal PVT. Cell definitions from the previously read library will not be overridden. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP7'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP6'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP5'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP4'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP3'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP2'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/08 03:01:19    246s] Read 16 cells in library 'slow_vdd1v0' 
+[11/08 03:01:19    246s] Ending "PreSetAnalysisView" (total cpu=0:00:00.8, real=0:00:01.0, peak res=725.6M, current mem=682.1M)
+[11/08 03:01:19    246s] *** End library_loading (cpu=0.01min, real=0.02min, mem=14.5M, fe_cpu=4.11min, fe_real=17.48min, fe_mem=899.1M) ***
+[11/08 03:01:19    246s] % Begin Load netlist data ... (date=11/08 03:01:19, mem=682.1M)
+[11/08 03:01:19    246s] *** Begin netlist parsing (mem=899.1M) ***
+[11/08 03:01:19    246s] Pin 'VDD' of cell 'SDFF4RX2' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/08 03:01:19    246s] Pin 'VSS' of cell 'SDFF4RX2' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/08 03:01:19    246s] Pin 'VDD' of cell 'SDFF4RX1' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/08 03:01:19    246s] Pin 'VSS' of cell 'SDFF4RX1' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/08 03:01:19    246s] Created 505 new cells from 1 timing libraries.
+[11/08 03:01:19    246s] Reading netlist ...
+[11/08 03:01:19    246s] Backslashed names will retain backslash and a trailing blank character.
+[11/08 03:01:19    246s] Reading verilog netlist '../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v'
+[11/08 03:01:19    246s] 
+[11/08 03:01:19    246s] *** Memory Usage v#1 (Current mem = 899.062M, initial mem = 311.355M) ***
+[11/08 03:01:19    246s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=899.1M) ***
+[11/08 03:01:19    246s] % End Load netlist data ... (date=11/08 03:01:19, total cpu=0:00:00.1, real=0:00:00.0, peak res=691.0M, current mem=691.0M)
+[11/08 03:01:19    246s] Top level cell is risc_v_Pad_Frame.
+[11/08 03:01:20    246s] Hooked 505 DB cells to tlib cells.
+[11/08 03:01:20    246s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:00.0, peak res=698.8M, current mem=698.8M)
+[11/08 03:01:20    246s] Starting recursive module instantiation check.
+[11/08 03:01:20    246s] No recursion found.
+[11/08 03:01:20    246s] Building hierarchical netlist for Cell risc_v_Pad_Frame ...
+[11/08 03:01:20    246s] *** Netlist is unique.
+[11/08 03:01:20    246s] Setting Std. cell height to 3420 DBU (smallest netlist inst).
+[11/08 03:01:20    246s] ** info: there are 601 modules.
+[11/08 03:01:20    246s] ** info: there are 3868 stdCell insts.
+[11/08 03:01:20    246s] ** info: there are 8 Pad insts.
+[11/08 03:01:20    246s] 
+[11/08 03:01:20    246s] *** Memory Usage v#1 (Current mem = 955.488M, initial mem = 311.355M) ***
+[11/08 03:01:20    246s] Initializing I/O assignment ...
+[11/08 03:01:20    246s] Adjusting Core to Bottom to: 0.1600.
+[11/08 03:01:20    246s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/08 03:01:20    246s] Type 'man IMPFP-3961' for more detail.
+[11/08 03:01:20    246s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/08 03:01:20    246s] Type 'man IMPFP-3961' for more detail.
+[11/08 03:01:20    246s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/08 03:01:20    246s] Type 'man IMPFP-3961' for more detail.
+[11/08 03:01:20    246s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/08 03:01:20    246s] Type 'man IMPFP-3961' for more detail.
+[11/08 03:01:20    246s] Start create_tracks
+[11/08 03:01:20    246s] Set Default Net Delay as 1000 ps.
+[11/08 03:01:20    246s] Set Default Net Load as 0.5 pF. 
+[11/08 03:01:20    246s] Set Default Input Pin Transition as 0.1 ps.
+[11/08 03:01:20    246s] Pre-connect netlist-defined P/G connections...
+[11/08 03:01:20    246s]   Updated 4 instances.
+[11/08 03:01:20    247s] Extraction setup Started 
+[11/08 03:01:20    247s] 
+[11/08 03:01:20    247s] Trim Metal Layers:
+[11/08 03:01:20    247s] Initializing multi-corner RC extraction with 2 active RC Corners ...
+[11/08 03:01:20    247s] Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[11/08 03:01:20    247s] __QRC_SADV_USE_LE__ is set 0
+[11/08 03:01:21    248s] Metal Layer Id 1 is Metal1 
+[11/08 03:01:21    248s] Metal Layer Id 2 is Metal2 
+[11/08 03:01:21    248s] Metal Layer Id 3 is Metal3 
+[11/08 03:01:21    248s] Metal Layer Id 4 is Metal4 
+[11/08 03:01:21    248s] Metal Layer Id 5 is Metal5 
+[11/08 03:01:21    248s] Metal Layer Id 6 is Metal6 
+[11/08 03:01:21    248s] Metal Layer Id 7 is Metal7 
+[11/08 03:01:21    248s] Metal Layer Id 8 is Metal8 
+[11/08 03:01:21    248s] Metal Layer Id 9 is Metal9 
+[11/08 03:01:21    248s] Metal Layer Id 10 is Metal10 
+[11/08 03:01:21    248s] Metal Layer Id 11 is Metal11 
+[11/08 03:01:21    248s] Via Layer Id 33 is Cont 
+[11/08 03:01:21    248s] Via Layer Id 34 is Via1 
+[11/08 03:01:21    248s] Via Layer Id 35 is Via2 
+[11/08 03:01:21    248s] Via Layer Id 36 is Via3 
+[11/08 03:01:21    248s] Via Layer Id 37 is Via4 
+[11/08 03:01:21    248s] Via Layer Id 38 is Via5 
+[11/08 03:01:21    248s] Via Layer Id 39 is Via6 
+[11/08 03:01:21    248s] Via Layer Id 40 is Via7 
+[11/08 03:01:21    248s] Via Layer Id 41 is Via8 
+[11/08 03:01:21    248s] Via Layer Id 42 is Via9 
+[11/08 03:01:21    248s] Via Layer Id 43 is Via10 
+[11/08 03:01:21    248s] Via Layer Id 44 is Bondpad 
+[11/08 03:01:21    248s] 
+[11/08 03:01:21    248s] Trim Metal Layers:
+[11/08 03:01:21    248s] Generating auto layer map file.
+[11/08 03:01:21    248s]  lef metal Layer Id 1 mapped to tech Id 5 of Layer metal_1 
+[11/08 03:01:21    248s]  lef via Layer Id 1 mapped to tech Id 6 of Layer via_1 
+[11/08 03:01:21    248s]  lef metal Layer Id 2 mapped to tech Id 7 of Layer metal_2 
+[11/08 03:01:21    248s]  lef via Layer Id 2 mapped to tech Id 8 of Layer via_2 
+[11/08 03:01:21    248s]  lef metal Layer Id 3 mapped to tech Id 9 of Layer metal_3 
+[11/08 03:01:21    248s]  lef via Layer Id 3 mapped to tech Id 10 of Layer via_3 
+[11/08 03:01:21    248s]  lef metal Layer Id 4 mapped to tech Id 11 of Layer metal_4 
+[11/08 03:01:21    248s]  lef via Layer Id 4 mapped to tech Id 12 of Layer via_4 
+[11/08 03:01:21    248s]  lef metal Layer Id 5 mapped to tech Id 13 of Layer metal_5 
+[11/08 03:01:21    248s]  lef via Layer Id 5 mapped to tech Id 14 of Layer via_5 
+[11/08 03:01:21    248s]  lef metal Layer Id 6 mapped to tech Id 15 of Layer metal_6 
+[11/08 03:01:21    248s]  lef via Layer Id 6 mapped to tech Id 16 of Layer via_6 
+[11/08 03:01:21    248s]  lef metal Layer Id 7 mapped to tech Id 17 of Layer metal_7 
+[11/08 03:01:21    248s]  lef via Layer Id 7 mapped to tech Id 18 of Layer via_7 
+[11/08 03:01:21    248s]  lef metal Layer Id 8 mapped to tech Id 19 of Layer metal_8 
+[11/08 03:01:21    248s]  lef via Layer Id 8 mapped to tech Id 20 of Layer via_8 
+[11/08 03:01:21    248s]  lef metal Layer Id 9 mapped to tech Id 21 of Layer metal_9 
+[11/08 03:01:21    248s]  lef via Layer Id 9 mapped to tech Id 22 of Layer via_9 
+[11/08 03:01:21    248s]  lef metal Layer Id 10 mapped to tech Id 23 of Layer metal_10 
+[11/08 03:01:21    248s]  lef via Layer Id 10 mapped to tech Id 24 of Layer via_10 
+[11/08 03:01:21    248s]  lef metal Layer Id 11 mapped to tech Id 25 of Layer metal_11 
+[11/08 03:01:21    248s] Metal Layer Id 1 mapped to 5 
+[11/08 03:01:21    248s] Via Layer Id 1 mapped to 6 
+[11/08 03:01:21    248s] Metal Layer Id 2 mapped to 7 
+[11/08 03:01:21    248s] Via Layer Id 2 mapped to 8 
+[11/08 03:01:21    248s] Metal Layer Id 3 mapped to 9 
+[11/08 03:01:21    248s] Via Layer Id 3 mapped to 10 
+[11/08 03:01:21    248s] Metal Layer Id 4 mapped to 11 
+[11/08 03:01:21    248s] Via Layer Id 4 mapped to 12 
+[11/08 03:01:21    248s] Metal Layer Id 5 mapped to 13 
+[11/08 03:01:21    248s] Via Layer Id 5 mapped to 14 
+[11/08 03:01:21    248s] Metal Layer Id 6 mapped to 15 
+[11/08 03:01:21    248s] Via Layer Id 6 mapped to 16 
+[11/08 03:01:21    248s] Metal Layer Id 7 mapped to 17 
+[11/08 03:01:21    248s] Via Layer Id 7 mapped to 18 
+[11/08 03:01:21    248s] Metal Layer Id 8 mapped to 19 
+[11/08 03:01:21    248s] Via Layer Id 8 mapped to 20 
+[11/08 03:01:21    248s] Metal Layer Id 9 mapped to 21 
+[11/08 03:01:21    248s] Via Layer Id 9 mapped to 22 
+[11/08 03:01:21    248s] Metal Layer Id 10 mapped to 23 
+[11/08 03:01:21    248s] Via Layer Id 10 mapped to 24 
+[11/08 03:01:21    248s] Metal Layer Id 11 mapped to 25 
+[11/08 03:01:21    248s] eee: pegPreRouteEnableSaveRestoreRCPatterns:1, retVal:1, doesAnyTechFileNeedExtraction1
+[11/08 03:01:21    248s] eee: Reading patterns meta data.
+[11/08 03:01:21    248s] eee: PatternAvail:0, PreRoutePatternReadFailed:1
+[11/08 03:01:21    248s] Restore PreRoute Pattern Extraction data failed.
+[11/08 03:01:21    248s] Importing multi-corner technology file(s) for preRoute extraction...
+[11/08 03:01:21    248s] /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch
+[11/08 03:01:22    249s] Metal Layer Id 1 is Metal1 
+[11/08 03:01:22    249s] Metal Layer Id 2 is Metal2 
+[11/08 03:01:22    249s] Metal Layer Id 3 is Metal3 
+[11/08 03:01:22    249s] Metal Layer Id 4 is Metal4 
+[11/08 03:01:22    249s] Metal Layer Id 5 is Metal5 
+[11/08 03:01:22    249s] Metal Layer Id 6 is Metal6 
+[11/08 03:01:22    249s] Metal Layer Id 7 is Metal7 
+[11/08 03:01:22    249s] Metal Layer Id 8 is Metal8 
+[11/08 03:01:22    249s] Metal Layer Id 9 is Metal9 
+[11/08 03:01:22    249s] Metal Layer Id 10 is Metal10 
+[11/08 03:01:22    249s] Metal Layer Id 11 is Metal11 
+[11/08 03:01:22    249s] Via Layer Id 33 is Cont 
+[11/08 03:01:22    249s] Via Layer Id 34 is Via1 
+[11/08 03:01:22    249s] Via Layer Id 35 is Via2 
+[11/08 03:01:22    249s] Via Layer Id 36 is Via3 
+[11/08 03:01:22    249s] Via Layer Id 37 is Via4 
+[11/08 03:01:22    249s] Via Layer Id 38 is Via5 
+[11/08 03:01:22    249s] Via Layer Id 39 is Via6 
+[11/08 03:01:22    249s] Via Layer Id 40 is Via7 
+[11/08 03:01:22    249s] Via Layer Id 41 is Via8 
+[11/08 03:01:22    249s] Via Layer Id 42 is Via9 
+[11/08 03:01:22    249s] Via Layer Id 43 is Via10 
+[11/08 03:01:22    249s] Via Layer Id 44 is Bondpad 
+[11/08 03:01:22    249s] 
+[11/08 03:01:22    249s] Trim Metal Layers:
+[11/08 03:01:22    249s] Generating auto layer map file.
+[11/08 03:01:22    249s]  lef metal Layer Id 1 mapped to tech Id 5 of Layer metal_1 
+[11/08 03:01:22    249s]  lef via Layer Id 1 mapped to tech Id 6 of Layer via_1 
+[11/08 03:01:22    249s]  lef metal Layer Id 2 mapped to tech Id 7 of Layer metal_2 
+[11/08 03:01:22    249s]  lef via Layer Id 2 mapped to tech Id 8 of Layer via_2 
+[11/08 03:01:22    249s]  lef metal Layer Id 3 mapped to tech Id 9 of Layer metal_3 
+[11/08 03:01:22    249s]  lef via Layer Id 3 mapped to tech Id 10 of Layer via_3 
+[11/08 03:01:22    249s]  lef metal Layer Id 4 mapped to tech Id 11 of Layer metal_4 
+[11/08 03:01:22    249s]  lef via Layer Id 4 mapped to tech Id 12 of Layer via_4 
+[11/08 03:01:22    249s]  lef metal Layer Id 5 mapped to tech Id 13 of Layer metal_5 
+[11/08 03:01:22    249s]  lef via Layer Id 5 mapped to tech Id 14 of Layer via_5 
+[11/08 03:01:22    249s]  lef metal Layer Id 6 mapped to tech Id 15 of Layer metal_6 
+[11/08 03:01:22    249s]  lef via Layer Id 6 mapped to tech Id 16 of Layer via_6 
+[11/08 03:01:22    249s]  lef metal Layer Id 7 mapped to tech Id 17 of Layer metal_7 
+[11/08 03:01:22    249s]  lef via Layer Id 7 mapped to tech Id 18 of Layer via_7 
+[11/08 03:01:22    249s]  lef metal Layer Id 8 mapped to tech Id 19 of Layer metal_8 
+[11/08 03:01:22    249s]  lef via Layer Id 8 mapped to tech Id 20 of Layer via_8 
+[11/08 03:01:22    249s]  lef metal Layer Id 9 mapped to tech Id 21 of Layer metal_9 
+[11/08 03:01:22    249s]  lef via Layer Id 9 mapped to tech Id 22 of Layer via_9 
+[11/08 03:01:22    249s]  lef metal Layer Id 10 mapped to tech Id 23 of Layer metal_10 
+[11/08 03:01:22    249s]  lef via Layer Id 10 mapped to tech Id 24 of Layer via_10 
+[11/08 03:01:22    249s]  lef metal Layer Id 11 mapped to tech Id 25 of Layer metal_11 
+[11/08 03:01:22    249s] Metal Layer Id 1 mapped to 5 
+[11/08 03:01:22    249s] Via Layer Id 1 mapped to 6 
+[11/08 03:01:22    249s] Metal Layer Id 2 mapped to 7 
+[11/08 03:01:22    249s] Via Layer Id 2 mapped to 8 
+[11/08 03:01:22    249s] Metal Layer Id 3 mapped to 9 
+[11/08 03:01:22    249s] Via Layer Id 3 mapped to 10 
+[11/08 03:01:22    249s] Metal Layer Id 4 mapped to 11 
+[11/08 03:01:22    249s] Via Layer Id 4 mapped to 12 
+[11/08 03:01:22    249s] Metal Layer Id 5 mapped to 13 
+[11/08 03:01:22    249s] Via Layer Id 5 mapped to 14 
+[11/08 03:01:22    249s] Metal Layer Id 6 mapped to 15 
+[11/08 03:01:22    249s] Via Layer Id 6 mapped to 16 
+[11/08 03:01:22    249s] Metal Layer Id 7 mapped to 17 
+[11/08 03:01:22    249s] Via Layer Id 7 mapped to 18 
+[11/08 03:01:22    249s] Metal Layer Id 8 mapped to 19 
+[11/08 03:01:22    249s] Via Layer Id 8 mapped to 20 
+[11/08 03:01:22    249s] Metal Layer Id 9 mapped to 21 
+[11/08 03:01:22    249s] Via Layer Id 9 mapped to 22 
+[11/08 03:01:22    249s] Metal Layer Id 10 mapped to 23 
+[11/08 03:01:22    249s] Via Layer Id 10 mapped to 24 
+[11/08 03:01:22    249s] Metal Layer Id 11 mapped to 25 
+[11/08 03:01:26    252s] Completed (cpu: 0:00:05.6 real: 0:00:06.0)
+[11/08 03:01:26    252s] Set Shrink Factor to 1.00000
+[11/08 03:01:26    252s] Summary of Active RC-Corners : 
+[11/08 03:01:26    252s]  
+[11/08 03:01:26    252s]  Analysis View: AnalysisView_WC
+[11/08 03:01:26    252s]     RC-Corner Name        : RC_Extraction_WC
+[11/08 03:01:26    252s]     RC-Corner Index       : 0
+[11/08 03:01:26    252s]     RC-Corner Temperature : 25 Celsius
+[11/08 03:01:26    252s]     RC-Corner Cap Table   : ''
+[11/08 03:01:26    252s]     RC-Corner PreRoute Res Factor         : 1
+[11/08 03:01:26    252s]     RC-Corner PreRoute Cap Factor         : 1
+[11/08 03:01:26    252s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[11/08 03:01:26    252s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[11/08 03:01:26    252s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[11/08 03:01:26    252s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[11/08 03:01:26    252s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[11/08 03:01:26    252s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[11/08 03:01:26    252s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[11/08 03:01:26    252s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[11/08 03:01:26    252s]     RC-Corner Technology file: '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch'
+[11/08 03:01:26    252s]  
+[11/08 03:01:26    252s]  Analysis View: AnalysisView_BC
+[11/08 03:01:26    252s]     RC-Corner Name        : RC_Extraction_BC
+[11/08 03:01:26    252s]     RC-Corner Index       : 1
+[11/08 03:01:26    252s]     RC-Corner Temperature : 25 Celsius
+[11/08 03:01:26    252s]     RC-Corner Cap Table   : ''
+[11/08 03:01:26    252s]     RC-Corner PreRoute Res Factor         : 1
+[11/08 03:01:26    252s]     RC-Corner PreRoute Cap Factor         : 1
+[11/08 03:01:26    252s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[11/08 03:01:26    252s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[11/08 03:01:26    252s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[11/08 03:01:26    252s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[11/08 03:01:26    252s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[11/08 03:01:26    252s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[11/08 03:01:26    252s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[11/08 03:01:26    252s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[11/08 03:01:26    252s]     RC-Corner Technology file: '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch'
+[11/08 03:01:26    252s] Technology file '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch' associated with first view 'AnalysisView_WC' will be used as the primary corner for the multi-corner extraction.
+[11/08 03:01:26    252s] 
+[11/08 03:01:26    252s] Trim Metal Layers:
+[11/08 03:01:26    252s] LayerId::1 widthSet size::1
+[11/08 03:01:26    252s] LayerId::2 widthSet size::1
+[11/08 03:01:26    252s] LayerId::3 widthSet size::1
+[11/08 03:01:26    252s] LayerId::4 widthSet size::1
+[11/08 03:01:26    252s] LayerId::5 widthSet size::1
+[11/08 03:01:26    252s] LayerId::6 widthSet size::1
+[11/08 03:01:26    252s] LayerId::7 widthSet size::1
+[11/08 03:01:26    252s] LayerId::8 widthSet size::1
+[11/08 03:01:26    252s] LayerId::9 widthSet size::1
+[11/08 03:01:26    252s] LayerId::10 widthSet size::1
+[11/08 03:01:26    252s] LayerId::11 widthSet size::1
+[11/08 03:01:26    252s] Updating RC grid for preRoute extraction ...
+[11/08 03:01:26    252s] eee: pegSigSF::1.070000
+[11/08 03:01:26    252s] Initializing multi-corner resistance tables ...
+[11/08 03:01:26    252s] eee: l::1 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] eee: l::2 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] eee: l::3 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] eee: l::4 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] eee: l::5 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] eee: l::6 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] eee: l::7 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] eee: l::8 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] eee: l::11 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/08 03:01:26    252s] {RT RC_Extraction_WC 0 11 11 {8 0} {10 0} 2}
+[11/08 03:01:26    252s] Preroute length aware model: n: 40 ; LLS: 2-3 ; HLS: 3-5 ; rDens: 0.000000 ; uaWl: 0.000000 ; uaWlH: 0.000000 ; aWlH: 0.000000 ; Pmax: 0.850000 ; wcR: 0.000000 ; newSi: 0.000000 ; pMod: 82 ; wHLS: 2.500000 ;
+[11/08 03:01:26    252s] Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+[11/08 03:01:26    252s] *Info: initialize multi-corner CTS.
+[11/08 03:01:26    252s] Reading Lib_Set_BC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib' ...
+[11/08 03:01:27    253s] Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[11/08 03:01:27    253s] Read 489 cells in library 'fast_vdd1v2' 
+[11/08 03:01:27    253s] Reading Lib_Set_BC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib' ...
+[11/08 03:01:27    253s] **WARN: (TECHLIB-459):	Appending library 'fast_vdd1v2' to the previously read library of the same name and nominal PVT. Cell definitions from the previously read library will not be overridden. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib)
+[11/08 03:01:27    253s] Read 16 cells in library 'fast_vdd1v2' 
+[11/08 03:01:27    253s] Ending "SetAnalysisView" (total cpu=0:00:00.9, real=0:00:01.0, peak res=955.5M, current mem=781.8M)
+[11/08 03:01:27    253s] Reading timing constraints file '../Innovus_inputs/risc_v_Pad_Frame_opt.CM_risc_v_slow.sdc' ...
+[11/08 03:01:27    254s] Current (total cpu=0:04:14, real=0:17:37, peak res=1043.2M, current mem=1043.2M)
+[11/08 03:01:27    254s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../Innovus_inputs/risc_v_Pad_Frame_opt.CM_risc_v_slow.sdc, Line 9).
+[11/08 03:01:27    254s] 
+[11/08 03:01:27    254s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../Innovus_inputs/risc_v_Pad_Frame_opt.CM_risc_v_slow.sdc, Line 10).
+[11/08 03:01:27    254s] 
+[11/08 03:01:27    254s] INFO (CTE): Reading of timing constraints file ../Innovus_inputs/risc_v_Pad_Frame_opt.CM_risc_v_slow.sdc completed, with 2 WARNING
+[11/08 03:01:27    254s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1054.5M, current mem=1054.5M)
+[11/08 03:01:27    254s] Current (total cpu=0:04:14, real=0:17:37, peak res=1054.5M, current mem=1054.5M)
+[11/08 03:01:27    254s] Reading timing constraints file '../Innovus_inputs/risc_v_Pad_Frame_opt.CM_risc_v_fast.sdc' ...
+[11/08 03:01:27    254s] Current (total cpu=0:04:14, real=0:17:37, peak res=1054.5M, current mem=1054.5M)
+[11/08 03:01:27    254s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../Innovus_inputs/risc_v_Pad_Frame_opt.CM_risc_v_fast.sdc, Line 9).
+[11/08 03:01:27    254s] 
+[11/08 03:01:27    254s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../Innovus_inputs/risc_v_Pad_Frame_opt.CM_risc_v_fast.sdc, Line 10).
+[11/08 03:01:27    254s] 
+[11/08 03:01:27    254s] INFO (CTE): Reading of timing constraints file ../Innovus_inputs/risc_v_Pad_Frame_opt.CM_risc_v_fast.sdc completed, with 2 WARNING
+[11/08 03:01:28    254s] Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:01.0, peak res=1054.7M, current mem=1054.7M)
+[11/08 03:01:28    254s] Current (total cpu=0:04:14, real=0:17:38, peak res=1054.7M, current mem=1054.7M)
+[11/08 03:01:28    254s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[11/08 03:01:28    254s] 
+[11/08 03:01:28    254s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[11/08 03:01:28    254s] Summary for sequential cells identification: 
+[11/08 03:01:28    254s]   Identified SBFF number: 104
+[11/08 03:01:28    254s]   Identified MBFF number: 16
+[11/08 03:01:28    254s]   Identified SB Latch number: 0
+[11/08 03:01:28    254s]   Identified MB Latch number: 0
+[11/08 03:01:28    254s]   Not identified SBFF number: 16
+[11/08 03:01:28    254s]   Not identified MBFF number: 0
+[11/08 03:01:28    254s]   Not identified SB Latch number: 0
+[11/08 03:01:28    254s]   Not identified MB Latch number: 0
+[11/08 03:01:28    254s]   Number of sequential cells which are not FFs: 32
+[11/08 03:01:28    254s] Total number of combinational cells: 327
+[11/08 03:01:28    254s] Total number of sequential cells: 168
+[11/08 03:01:28    254s] Total number of tristate cells: 10
+[11/08 03:01:28    254s] Total number of level shifter cells: 0
+[11/08 03:01:28    254s] Total number of power gating cells: 0
+[11/08 03:01:28    254s] Total number of isolation cells: 0
+[11/08 03:01:28    254s] Total number of power switch cells: 0
+[11/08 03:01:28    254s] Total number of pulse generator cells: 0
+[11/08 03:01:28    254s] Total number of always on buffers: 0
+[11/08 03:01:28    254s] Total number of retention cells: 0
+[11/08 03:01:28    254s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[11/08 03:01:28    254s] Total number of usable buffers: 16
+[11/08 03:01:28    254s] List of unusable buffers:
+[11/08 03:01:28    254s] Total number of unusable buffers: 0
+[11/08 03:01:28    254s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[11/08 03:01:28    254s] Total number of usable inverters: 19
+[11/08 03:01:28    254s] List of unusable inverters:
+[11/08 03:01:28    254s] Total number of unusable inverters: 0
+[11/08 03:01:28    254s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[11/08 03:01:28    254s] Total number of identified usable delay cells: 8
+[11/08 03:01:28    254s] List of identified unusable delay cells:
+[11/08 03:01:28    254s] Total number of identified unusable delay cells: 0
+[11/08 03:01:28    254s] 
+[11/08 03:01:28    254s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+[11/08 03:01:28    254s] 
+[11/08 03:01:28    254s] TimeStamp Deleting Cell Server Begin ...
+[11/08 03:01:28    254s] 
+[11/08 03:01:28    254s] TimeStamp Deleting Cell Server End ...
+[11/08 03:01:28    254s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1075.5M, current mem=1075.5M)
+[11/08 03:01:28    254s] 
+[11/08 03:01:28    254s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[11/08 03:01:28    254s] Summary for sequential cells identification: 
+[11/08 03:01:28    254s]   Identified SBFF number: 104
+[11/08 03:01:28    254s]   Identified MBFF number: 16
+[11/08 03:01:28    254s]   Identified SB Latch number: 0
+[11/08 03:01:28    254s]   Identified MB Latch number: 0
+[11/08 03:01:28    254s]   Not identified SBFF number: 16
+[11/08 03:01:28    254s]   Not identified MBFF number: 0
+[11/08 03:01:28    254s]   Not identified SB Latch number: 0
+[11/08 03:01:28    254s]   Not identified MB Latch number: 0
+[11/08 03:01:28    254s]   Number of sequential cells which are not FFs: 32
+[11/08 03:01:28    254s]  Visiting view : AnalysisView_WC
+[11/08 03:01:28    254s]    : PowerDomain = none : Weighted F : unweighted  = 38.00 (1.000) with rcCorner = 0
+[11/08 03:01:28    254s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[11/08 03:01:28    254s]  Visiting view : AnalysisView_BC
+[11/08 03:01:28    254s]    : PowerDomain = none : Weighted F : unweighted  = 9.90 (1.000) with rcCorner = 1
+[11/08 03:01:28    254s]    : PowerDomain = none : Weighted F : unweighted  = 4.50 (1.000) with rcCorner = -1
+[11/08 03:01:28    254s]  Visiting view : AnalysisView_WC
+[11/08 03:01:28    254s]    : PowerDomain = none : Weighted F : unweighted  = 38.00 (1.000) with rcCorner = 0
+[11/08 03:01:28    254s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[11/08 03:01:28    254s]  Visiting view : AnalysisView_BC
+[11/08 03:01:28    254s]    : PowerDomain = none : Weighted F : unweighted  = 9.90 (1.000) with rcCorner = 1
+[11/08 03:01:28    254s]    : PowerDomain = none : Weighted F : unweighted  = 4.50 (1.000) with rcCorner = -1
+[11/08 03:01:28    254s] TLC MultiMap info (StdDelay):
+[11/08 03:01:28    254s]   : DelayCorner_BC + Lib_Set_BC + 1 + no RcCorner := 4.5ps
+[11/08 03:01:28    254s]   : DelayCorner_BC + Lib_Set_BC + 1 + RC_Extraction_BC := 9.9ps
+[11/08 03:01:28    254s]   : DelayCorner_WC + Lib_Set_WC + 1 + no RcCorner := 20.1ps
+[11/08 03:01:28    254s]   : DelayCorner_WC + Lib_Set_WC + 1 + RC_Extraction_WC := 38ps
+[11/08 03:01:28    254s]  Setting StdDelay to: 38ps
+[11/08 03:01:28    254s] 
+[11/08 03:01:28    254s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[11/08 03:01:28    254s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVSSIOR; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/08 03:01:28    254s] Type 'man IMPSYC-2' for more detail.
+[11/08 03:01:28    254s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVSS; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/08 03:01:28    254s] Type 'man IMPSYC-2' for more detail.
+[11/08 03:01:28    254s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVDDIOR; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/08 03:01:28    254s] Type 'man IMPSYC-2' for more detail.
+[11/08 03:01:28    254s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVDD; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/08 03:01:28    254s] Type 'man IMPSYC-2' for more detail.
+[11/08 03:01:28    254s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADDO; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/08 03:01:28    254s] Type 'man IMPSYC-2' for more detail.
+[11/08 03:01:28    254s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADDI; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/08 03:01:28    254s] Type 'man IMPSYC-2' for more detail.
+[11/08 03:01:28    254s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/08 03:02:13    260s] <CMD> fit
+[11/08 03:02:21    261s] <CMD> zoomBox -512.24150 11.86650 1168.22550 630.29450
+[11/08 03:02:24    262s] <CMD> zoomBox -827.00500 -85.93950 1498.90150 770.01650
+[11/08 03:02:25    262s] <CMD> zoomBox -827.00500 -171.53500 1498.90150 684.42100
+[11/08 03:15:36    371s] <CMD> saveDesign risc_v_Pad_Frame.tcl
+[11/08 03:15:37    371s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/08 03:15:37    371s] % Begin save design ... (date=11/08 03:15:37, mem=1134.2M)
+[11/08 03:15:37    371s] % Begin Save ccopt configuration ... (date=11/08 03:15:37, mem=1134.2M)
+[11/08 03:15:37    371s] % End Save ccopt configuration ... (date=11/08 03:15:37, total cpu=0:00:00.0, real=0:00:00.0, peak res=1135.2M, current mem=1135.2M)
+[11/08 03:15:37    371s] % Begin Save netlist data ... (date=11/08 03:15:37, mem=1135.2M)
+[11/08 03:15:37    371s] Writing Binary DB to risc_v_Pad_Frame.tcl.dat/risc_v_Pad_Frame.v.bin in single-threaded mode...
+[11/08 03:15:37    371s] % End Save netlist data ... (date=11/08 03:15:37, total cpu=0:00:00.0, real=0:00:00.0, peak res=1135.3M, current mem=1135.3M)
+[11/08 03:15:37    371s] Saving symbol-table file ...
+[11/08 03:15:37    371s] Saving congestion map file risc_v_Pad_Frame.tcl.dat/risc_v_Pad_Frame.route.congmap.gz ...
+[11/08 03:15:37    371s] % Begin Save AAE data ... (date=11/08 03:15:37, mem=1135.9M)
+[11/08 03:15:37    371s] Saving AAE Data ...
+[11/08 03:15:37    371s] % End Save AAE data ... (date=11/08 03:15:37, total cpu=0:00:00.0, real=0:00:00.0, peak res=1135.9M, current mem=1135.9M)
+[11/08 03:15:37    372s] Saving preference file risc_v_Pad_Frame.tcl.dat/gui.pref.tcl ...
+[11/08 03:15:37    372s] Saving mode setting ...
+[11/08 03:15:37    372s] Saving global file ...
+[11/08 03:15:38    372s] % Begin Save floorplan data ... (date=11/08 03:15:38, mem=1139.1M)
+[11/08 03:15:38    372s] Saving floorplan file ...
+[11/08 03:15:38    372s] % End Save floorplan data ... (date=11/08 03:15:38, total cpu=0:00:00.1, real=0:00:00.0, peak res=1139.7M, current mem=1139.7M)
+[11/08 03:15:38    372s] Saving Drc markers ...
+[11/08 03:15:38    372s] ... No Drc file written since there is no markers found.
+[11/08 03:15:38    372s] % Begin Save placement data ... (date=11/08 03:15:38, mem=1139.7M)
+[11/08 03:15:38    372s] ** Saving stdCellPlacement_binary (version# 2) ...
+[11/08 03:15:38    372s] Save Adaptive View Pruning View Names to Binary file
+[11/08 03:15:38    372s] *** Completed savePlace (cpu=0:00:00.0 real=0:00:00.0 mem=1415.3M) ***
+[11/08 03:15:38    372s] % End Save placement data ... (date=11/08 03:15:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=1139.8M, current mem=1139.8M)
+[11/08 03:15:38    372s] % Begin Save routing data ... (date=11/08 03:15:38, mem=1139.8M)
+[11/08 03:15:38    372s] Saving route file ...
+[11/08 03:15:38    372s] *** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1412.3M) ***
+[11/08 03:15:38    372s] % End Save routing data ... (date=11/08 03:15:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=1140.0M, current mem=1140.0M)
+[11/08 03:15:38    372s] Saving property file risc_v_Pad_Frame.tcl.dat/risc_v_Pad_Frame.prop
+[11/08 03:15:38    372s] *** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1415.3M) ***
+[11/08 03:15:38    372s] Saving preRoute extracted patterns in file 'risc_v_Pad_Frame.tcl.dat/risc_v_Pad_Frame.techData.gz' ...
+[11/08 03:15:38    372s] Saving preRoute extraction data in directory 'risc_v_Pad_Frame.tcl.dat/extraction/' ...
+[11/08 03:15:38    372s] Checksum of RCGrid density data::132
+[11/08 03:15:38    372s] % Begin Save power constraints data ... (date=11/08 03:15:38, mem=1142.7M)
+[11/08 03:15:38    372s] % End Save power constraints data ... (date=11/08 03:15:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=1142.8M, current mem=1142.8M)
+[11/08 03:15:39    372s] Generated self-contained design risc_v_Pad_Frame.tcl.dat
+[11/08 03:15:39    372s] % End save design ... (date=11/08 03:15:39, total cpu=0:00:00.8, real=0:00:02.0, peak res=1169.9M, current mem=1145.6M)
+[11/08 03:15:39    372s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/08 03:16:27    379s] 
+--------------------------------------------------------------------------------
+Exiting Innovus on Wed Nov  8 03:16:27 2023
+  Total CPU time:     0:06:23
+  Total real time:    0:32:43
+  Peak memory (main): 1153.34MB
+
+[11/08 03:16:27    379s] 
+[11/08 03:16:27    379s] *** Memory Usage v#1 (Current mem = 1479.348M, initial mem = 311.355M) ***
+[11/08 03:16:27    379s] 
+[11/08 03:16:27    379s] *** Summary of all messages that are not suppressed in this session:
+[11/08 03:16:27    379s] Severity  ID               Count  Summary                                  
+[11/08 03:16:27    379s] WARNING   IMPLF-58            16  MACRO '%s' has been found in the databas...
+[11/08 03:16:27    379s] WARNING   IMPLF-61             1  %d duplicated MACRO definitions have bee...
+[11/08 03:16:27    379s] WARNING   IMPLF-200           25  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[11/08 03:16:27    379s] WARNING   IMPLF-201            6  Pin '%s' in macro '%s' has no ANTENNADIF...
+[11/08 03:16:27    379s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[11/08 03:16:27    379s] WARNING   IMPSYC-2             6  Timing information is not defined for ce...
+[11/08 03:16:27    379s] ERROR     TCLCMD-989           7  cannot open SDC file '%s' for mode '%s'  
+[11/08 03:16:27    379s] WARNING   TCLCMD-1461          4  Skipped unsupported command: %s          
+[11/08 03:16:27    379s] WARNING   TECHLIB-302         40  No function defined for cell '%s'. The c...
+[11/08 03:16:27    379s] WARNING   TECHLIB-459          2  Appending library '%s' to the previously...
+[11/08 03:16:27    379s] *** Message Summary: 104 warning(s), 7 error(s)
+[11/08 03:16:27    379s] 
+[11/08 03:16:27    379s] --- Ending "Innovus" (totcpu=0:06:20, real=0:32:37, mem=1479.3M) ---

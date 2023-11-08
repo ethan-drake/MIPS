@@ -1,7 +1,7 @@
 source /CMC/scripts/cadence.genus20.11.000.csh
 source /CMC/scripts/cadence.innovus21.12.000.csh
 # To run with file option
-innovus -log bwco_Pad_Frame_log.log
+innovus -log risc_v_Pad_Frame_log.log
 
 
 
