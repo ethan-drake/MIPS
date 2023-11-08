@@ -33,6 +33,7 @@ set report_inactive_arcs_format {from to when arc_type sense reason}
 set spgUnflattenIlmInCheckPlace 2
 set timing_remove_data_path_pessimism_min_slack_threshold -1.70141e+38
 set defStreamOutCheckUncolored false
+set init_io_file {../Innovus_inputs/bwco_frame_GPDK045.ioc}
 set init_verilog_tolerate_port_mismatch 0
 set load_netlist_ignore_undefined_cell 1
 
