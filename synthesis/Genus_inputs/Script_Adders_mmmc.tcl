@@ -45,6 +45,8 @@ set_db init_lib_search_path "$Timing_Libs_Path $LEF_Libs_Path"
 set_db / .script_search_path {../Genus_inputs} 
 set_db / .init_hdl_search_path {../../src} 
 set_db qos_report_power true
+set_db optimize_constant_0_flops true
+set_db optimize_constant_1_flops true
 set_db delete_unloaded_seqs false
 set_db delete_unloaded_insts false
 
@@ -121,7 +123,7 @@ time_info Elaboration
 check_design
 
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF check_design COMMAND & REVIEW RTL SCHEMATIC"
-#suspend
+suspend
 
 # MMMC Command
 init_design

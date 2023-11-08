@@ -89,5 +89,4 @@ WRIte VErification Information
 REPort VErification Information
 REPort IMplementation Information
 SET SYstem Mode lec
-ANAlyze RESults -logfiles logs_Oct26-04:22:58/rtl2intermediate.lec.log
-REPort GAte 5 -Golden -fanin 1
+ANAlyze RESults -logfiles logs_Nov01-02:55:10/rtl2intermediate.lec.log

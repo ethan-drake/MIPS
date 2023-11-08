@@ -39,12 +39,20 @@ generate
 	end
 endgenerate
 
-always @(posedge i_clk)
+always @(posedge i_clk, negedge i_rst_n)
 begin
+	if(!i_rst_n)
+	begin
+		BHT <= {BRANCH_NO{1'b0}};
+	end
+	else
+	begin
 	//Write
-	if (ex_mem_opcode==B_TYPE) begin
-		BHT[ex_mem_pc[2:0]] <= ex_mem_branch_taken;
-    end
+		if (ex_mem_opcode==B_TYPE)
+		begin
+			BHT[ex_mem_pc[2:0]] <= ex_mem_branch_taken;
+    		end
+	end
 end
 
 /*
