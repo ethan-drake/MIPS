@@ -3,7 +3,7 @@
 // Company: ITESO
 // Engineer: Cuauhtemoc Aguilera
 //////////////////////////////////////////////////////////////////////////////////
-module bwco_Pad_Frame(
+module risc_v_Pad_Frame(
     inout VDD1,
     inout VSS1,
     inout VDDIOR1,
@@ -15,7 +15,6 @@ module bwco_Pad_Frame(
     );
 
 wire clk_w, reset_n_w, rx_w, tx_w;
-
 
 
 risc_v_top risc_v_top_i (
