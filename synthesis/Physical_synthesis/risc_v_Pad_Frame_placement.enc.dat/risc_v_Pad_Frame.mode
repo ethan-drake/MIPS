@@ -11,7 +11,10 @@ catch {setNanoRouteMode -quiet -timingEngine ""}
 
 catch { setPlaceMode -place_design_floorplan_mode false }
 catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
+<<<<<<< HEAD
 catch { setActiveLogicViewMode -keepHighFanoutCriticalInsts false }
+=======
+>>>>>>> 9bcbdf0eaf70e38d1c1471a80b5923462e015b64
 catch { setUsefulSkewMode -maxAllowedDelay 1 }
 catch { setUsefulSkewMode -noBoundary false }
 catch { setSrouteMode -viaConnectToShape noshape }

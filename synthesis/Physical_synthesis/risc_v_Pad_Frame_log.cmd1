@@ -1,7 +1,11 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
+<<<<<<< HEAD
 #  Created on Thu Nov  9 05:43:52 2023                
+=======
+#  Created on Wed Nov  8 23:25:44 2023                
+>>>>>>> 9bcbdf0eaf70e38d1c1471a80b5923462e015b64
 #                                                     
 #######################################################
 
@@ -19,6 +23,7 @@ win
 encMessage warning 0
 encMessage debug 0
 is_common_ui_mode
+<<<<<<< HEAD
 restoreDesign /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_powerring.enc.dat risc_v_Pad_Frame
 setDrawView fplan
 encMessage warning 1
@@ -129,3 +134,10 @@ timeDesign -postCTS -prefix postCTS_setup
 timeDesign -postCTS -prefix postCTS_hold -hold
 report_ccopt_clock_trees -file clock_trees.rpt
 report_ccopt_skew_groups -file skew_groups.rpt
+=======
+restoreDesign /users/iteso-s012/my_designs/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_h_v_stripes.tcl.dat risc_v_Pad_Frame
+setDrawView fplan
+encMessage warning 1
+encMessage debug 0
+------------------------------------placement
+>>>>>>> 9bcbdf0eaf70e38d1c1471a80b5923462e015b64
