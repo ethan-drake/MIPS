@@ -7,16 +7,16 @@
  
 ( row_margin
   ( top
-  ( io_row ring_number = 1 margin = 50)
+  ( io_row ring_number = 1 margin = 10)
  )
   ( bottom
-  ( io_row ring_number = 1 margin = 50)
+  ( io_row ring_number = 1 margin = 10)
  )
   ( left
-  ( io_row ring_number = 1 margin = 50)
+  ( io_row ring_number = 1 margin = 10)
 )
   ( right
-  ( io_row ring_number = 1 margin = 50)
+  ( io_row ring_number = 1 margin = 10)
 )
   )
  
@@ -32,7 +32,9 @@
       ( locals ring_number = 1)
       ( inst name= "pad_vdd_dummy")
       ( inst name= "pad_nrst")
+      ( inst name= "pad_vdd_dummy2")
       ( inst name= "pad_vdd_i1" )
+      ( inst name= "pad_vdd_dummy3")
    )
 
    ( bottomleft
@@ -44,7 +46,9 @@
        ( locals ring_number = 1 )
        ( inst name= "pad_vss_dummy")
        ( inst name= "pad_clk" )
+       ( inst name= "pad_vss_dummy2")
        ( inst name= "pad_vss_i1" )
+       ( inst name= "pad_vss_dummy3")
    )
    
    ( bottomright
@@ -56,7 +60,9 @@
        ( locals ring_number = 1    )
        ( inst name= "pad_vdd_ior_dummy")
        ( inst name= "pad_rx" )
+       ( inst name= "pad_vdd_ior_dummy2")
        ( inst name= "pad_vdd_ior" )
+       ( inst name= "pad_vdd_ior_dummy3")
    )
 
    ( topright
@@ -67,7 +73,9 @@
        ( locals ring_number = 1    )
        ( inst name= "pad_vss_ior_dummy")
        ( inst name= "pad_tx")
+       ( inst name= "pad_vss_ior_dummy2")
        ( inst name= "pad_vss_ior" )
+       ( inst name= "pad_vss_ior_dummy3")
    )
 )
 

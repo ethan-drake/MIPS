@@ -9897,8 +9897,16 @@ padIORINGCORNER NW();
 padIORINGCORNER SE();
 padIORINGCORNER SW();
 PADVDD pad_vdd_dummy();
+PADVDD pad_vdd_dummy2();
+PADVDD pad_vdd_dummy3();
 PADVSS pad_vss_dummy();
+PADVSS pad_vss_dummy2();
+PADVSS pad_vss_dummy3();
 PADVDDIOR pad_vdd_ior_dummy();
+PADVDDIOR pad_vdd_ior_dummy2();
+PADVDDIOR pad_vdd_ior_dummy3();
 PADVSSIOR pad_vss_ior_dummy();
+PADVSSIOR pad_vss_ior_dummy2();
+PADVDDIOR pad_vss_ior_dummy3();
 endmodule
 
