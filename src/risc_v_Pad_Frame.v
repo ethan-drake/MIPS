@@ -54,9 +54,9 @@ PADVDDIOR pad_vdd_ior ( .VDDIOR(VDDIOR1) );
 PADVSSIOR pad_vss_ior ( .VSSIOR(VSSIOR1) );
 
 // CORNER PAD: This cell provides I/O-cell and power-distribution continuity around a chip corner.
-padIORINGCORNER NE_padIORINGCORNER (); 
-padIORINGCORNER NW_padIORINGCORNER ();
-padIORINGCORNER SE_padIORINGCORNER ();
-padIORINGCORNER SW_padIORINGCORNER ();
+padIORINGCORNER NE(); 
+padIORINGCORNER NW();
+padIORINGCORNER SE();
+padIORINGCORNER SW();
 
 endmodule
