@@ -1,0 +1,65 @@
+[11/09 06:12:41      0s] 
+[11/09 06:12:41      0s] Cadence Innovus(TM) Implementation System.
+[11/09 06:12:41      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[11/09 06:12:41      0s] 
+[11/09 06:12:41      0s] Version:	v21.12-s106_1, built Wed Dec 8 18:19:02 PST 2021
+[11/09 06:12:41      0s] Options:	-log risc_v_Pad_Frame_log.log 
+[11/09 06:12:41      0s] Date:		Thu Nov  9 06:12:41 2023
+[11/09 06:12:41      0s] Host:		ip-172-31-46-123.us-east-2.compute.internal (x86_64 w/Linux 3.10.0-1160.95.1.el7.x86_64) (8cores*8cpus*Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz 46080KB)
+[11/09 06:12:41      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[11/09 06:12:41      0s] 
+[11/09 06:12:41      0s] License:
+[11/09 06:12:41      0s] 		[06:12:41.302449] Configured Lic search path (20.02-s004): 50009@10.16.0.85
+
+[11/09 06:12:41      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[11/09 06:12:41      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[11/09 06:12:57     16s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.12-s106_1 (64bit) 12/08/2021 18:19 (Linux 3.10.0-693.el7.x86_64)
+[11/09 06:13:01     19s] @(#)CDS: NanoRoute 21.12-s106_1 NR211128-2235/21_12-UB (database version 18.20.567) {superthreading v2.17}
+[11/09 06:13:01     19s] @(#)CDS: AAE 21.12-s039 (64bit) 12/08/2021 (Linux 3.10.0-693.el7.x86_64)
+[11/09 06:13:01     19s] @(#)CDS: CTE 21.12-s043_1 () Dec  1 2021 10:06:22 ( )
+[11/09 06:13:01     19s] @(#)CDS: SYNTECH 21.12-s014_1 () Oct 27 2021 04:39:25 ( )
+[11/09 06:13:01     19s] @(#)CDS: CPE v21.12-s094
+[11/09 06:13:01     19s] @(#)CDS: IQuantus/TQuantus 20.1.2-s624 (64bit) Thu Sep 2 20:12:03 PDT 2021 (Linux 2.6.32-431.11.2.el6.x86_64)
+[11/09 06:13:01     19s] @(#)CDS: OA 22.60-p059 Mon Jun 28 12:16:29 2021
+[11/09 06:13:01     19s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[11/09 06:13:01     19s] @(#)CDS: RCDB 11.15.0
+[11/09 06:13:01     19s] @(#)CDS: STYLUS 21.11-s011_1 (12/08/2021 02:58 PST)
+[11/09 06:13:01     19s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_25935_ip-172-31-46-123.us-east-2.compute.internal_iteso-s018_bUA6C5.
+
+[11/09 06:13:01     19s] Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+[11/09 06:13:03     22s] 
+[11/09 06:13:03     22s] **INFO:  MMMC transition support version v31-84 
+[11/09 06:13:03     22s] 
+[11/09 06:13:03     22s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[11/09 06:13:03     22s] <CMD> suppressMessage ENCEXT-2799
+[11/09 06:13:03     22s] <CMD> win
+[11/09 06:13:43     28s] <CMD> encMessage warning 0
+[11/09 06:13:43     28s] Suppress "**WARN ..." messages.
+[11/09 06:13:43     28s] <CMD> encMessage debug 0
+[11/09 06:13:43     28s] **ERROR: (IMPSYT-6300):	Failed to execute command 'source'. For more details, refer to error message: invalid command name "<<<<<<<"
+[11/09 06:13:47     29s] <CMD> encMessage warning 1
+[11/09 06:13:47     29s] Un-suppress "**WARN ..." messages.
+[11/09 06:13:47     29s] <CMD> encMessage debug 0
+[11/09 06:13:49     29s] <CMD> encMessage warning 0
+[11/09 06:13:49     29s] Suppress "**WARN ..." messages.
+[11/09 06:13:49     29s] <CMD> encMessage debug 0
+[11/09 06:13:49     29s] **ERROR: (IMPSYT-6300):	Failed to execute command 'source'. For more details, refer to error message: invalid command name "<<<<<<<"
+[11/09 06:13:52     29s] <CMD> encMessage warning 1
+[11/09 06:13:52     29s] Un-suppress "**WARN ..." messages.
+[11/09 06:13:52     29s] <CMD> encMessage debug 0
+[11/09 06:13:57     30s] 
+--------------------------------------------------------------------------------
+Exiting Innovus on Thu Nov  9 06:13:57 2023
+  Total CPU time:     0:00:31
+  Total real time:    0:01:17
+  Peak memory (main): 652.98MB
+
+[11/09 06:13:57     30s] 
+[11/09 06:13:57     30s] *** Memory Usage v#1 (Current mem = 871.418M, initial mem = 311.355M) ***
+[11/09 06:13:57     30s] 
+[11/09 06:13:57     30s] *** Summary of all messages that are not suppressed in this session:
+[11/09 06:13:57     30s] Severity  ID               Count  Summary                                  
+[11/09 06:13:57     30s] ERROR     IMPSYT-6300          4  Failed to execute command '%s'. For more...
+[11/09 06:13:57     30s] *** Message Summary: 0 warning(s), 4 error(s)
+[11/09 06:13:57     30s] 
+[11/09 06:13:57     30s] --- Ending "Innovus" (totcpu=0:00:30.7, real=0:01:16, mem=871.4M) ---
