@@ -24,7 +24,8 @@ set floorplan_default_site {CoreSite}
 set fpIsMaxIoHeight 0
 set init_gnd_net {VSS}
 set init_io_file {../Innovus_inputs/bwco_frame_GPDK045.ioc}
-set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef}
+#set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef}
+set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045_Hemanth.lef}
 set init_mmmc_file {../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view}
 set init_original_verilog_files {../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v}
 set init_pwr_net {VDD}

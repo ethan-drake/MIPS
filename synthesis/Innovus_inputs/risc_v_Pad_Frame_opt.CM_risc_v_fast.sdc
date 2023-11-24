@@ -12,7 +12,7 @@ set_units -time 1000ps
 # Set the current design
 current_design risc_v_Pad_Frame
 
-create_clock -name "My_CLK" -period 1.0 -waveform {0.0 0.5} [get_ports clk]
+create_clock -name "My_CLK" -period 10.0 -waveform {0.0 5.0} [get_ports clk]
 set_clock_transition -rise -min 0.04 [get_clocks My_CLK]
 set_clock_transition -rise -max 0.055 [get_clocks My_CLK]
 set_clock_transition -fall -min 0.03 [get_clocks My_CLK]
@@ -23,8 +23,8 @@ set_load -pin_load 0.005 [get_ports VSS1]
 set_load -pin_load 0.005 [get_ports VDDIOR1]
 set_load -pin_load 0.005 [get_ports VSSIOR1]
 set_clock_gating_check -setup 0.0 
-set_input_delay -clock [get_clocks My_CLK] -add_delay 0.1 [get_ports rx]
-set_output_delay -clock [get_clocks My_CLK] -add_delay 0.1 [get_ports tx]
+set_input_delay -clock [get_clocks My_CLK] -add_delay 1.0 [get_ports rx]
+set_output_delay -clock [get_clocks My_CLK] -add_delay 1.0 [get_ports tx]
 set_max_fanout 15.000 [current_design]
 set_max_transition 0.02 [current_design]
 set_max_capacitance 0.005 [get_ports tx]
