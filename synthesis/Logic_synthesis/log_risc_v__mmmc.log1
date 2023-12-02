@@ -1,0 +1,24 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 20.11-s111_1, built Mon Apr 26 07:57:38 PDT 2021
+Options: -files ../Genus_inputs/Script_risc_v_mmmc.tcl -log log_risc_v__mmmc.log 
+Date:    Tue Nov 28 04:33:11 2023
+Host:    iteso-server (x86_64 w/Linux 3.10.0-1160.95.1.el7.x86_64) (8cores*8cpus*1physical cpu*Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz 46080KB) (32778792KB)
+PID:     15596
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 35s, ST: 33s, FG: 33s, CPU: 97.4%}, MEM {curr: 0.7G, peak: 0.7G, phys curr: 0.2G, phys peak: 0.2G}, SYS {load: 2.1, cpu: 8, total: 31.3G, free: 9.8G}
+Abnormal exit.

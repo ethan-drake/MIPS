@@ -1,0 +1,14 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream In
+Program   : @(#)$CDS: strmin version 6.1.8-64b 01/19/2021 19:04 (sjfhw317) $
+          : sub-version  IC6.1.8-64b.500.16 
+Started at: 29-Nov-2023  03:18:04
+User Name : iteso-s018
+Host Name : iteso-server
+Directory : /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+ERROR (XSTRM-13): Failed to open input Stream file `/users/iteso-t001/MyDesigns/BWCO_Pad_Frame_Hemanth_LEF/Saved_designs/GDS_Innovus/bwco_Pad_Frame_Hemanth_LEF_Innovus_1.gds'. Check that the file exists in the run directory and that you have permission to read it.
+INFO (XSTRM-273): Translation failed. '1' error(s) and '0' warning(s) found.

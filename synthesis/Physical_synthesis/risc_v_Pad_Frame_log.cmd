@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Fri Nov 24 01:48:18 2023                
+#  Created on Tue Nov 28 05:41:18 2023                
 #                                                     
 #######################################################
 
@@ -16,7 +16,6 @@
 set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 suppressMessage ENCEXT-2799
 win
-setLayerPreference ilmBlock -isSelectable 0
 set ::TimeLib::tsgMarkCellLatchConstructFlag 1
 set dbgDualViewAwareXTree 1
 set dcgHonorSignalNetNDR 1
@@ -55,6 +54,7 @@ set defStreamOutCheckUncolored false
 set init_verilog_tolerate_port_mismatch 0
 set load_netlist_ignore_undefined_cell 1
 init_design
+setDesignMode -process 45
 floorPlan -site CoreSite -b 0.0 0.0 800.0 800.0 250.0 250.0 550.0 550.0 290.0 290 510 509.41
 clearGlobalNets
 globalNetConnect VDD -type pgpin -pin VDD -instanceBasename * -hierarchicalInstance {} -verbose
@@ -81,6 +81,60 @@ set sprCreateIeStripeWidth 10.0
 set sprCreateIeStripeThreshold 1.0
 setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer Metal11 -stacked_via_bottom_layer Metal1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
 addRing -nets {VDD VSS} -type core_rings -follow core -layer {top Metal1 bottom Metal1 left Metal2 right Metal2} -width {top 10 bottom 10 left 10 right 10} -spacing {top 5 bottom 5 left 5 right 5} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 1 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+setSrouteMode -viaConnectToShape { noshape }
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1(1) Metal3(3) } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1(1) Metal11(11) } -nets { VDD VSS } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { Metal1(1) Metal11(11) }
+setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer Metal11 -stacked_via_bottom_layer Metal1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe -nets {VDD VSS} -layer Metal2 -direction vertical -width 0.3 -spacing 0.16 -number_of_sets 6 -start_from left -start_offset 15 -stop_offset 15 -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit Metal11 -padcore_ring_bottom_layer_limit Metal1 -block_ring_top_layer_limit Metal11 -block_ring_bottom_layer_limit Metal1 -use_wire_group 0 -snap_wire_center_to_grid None
+setPlaceMode -congEffort high -timingDriven 1 -clkGateAware 1 -powerDriven 0 -ignoreScan 1 -reorderScan 1 -ignoreSpare 0 -placeIOPins 1 -moduleAwareSpare 0 -preserveRouting 1 -rmAffectedRouting 1 -checkRoute 1 -honorSoftBlockage true -swapEEQ 0
+setPlaceMode -fp false
+place_design
+globalNetConnect VDD -type tiehi -pin VDD -instanceBasename * -hierarchicalInstance {} -verbose
+globalNetConnect VSS -type tielo -pin VSS -instanceBasename * -hierarchicalInstance {} -verbose
+checkPlace
+checkPinAssignment -report_violating_pin
+setAnalysisMode -analysisType onChipVariation
+timeDesign -preCTS -prefix preCTS_setup
+timeDesign -preCTS -prefix preCTS_hold -hold
+set_ccopt_property buffer_cells {CLKBUFX2 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20}
+set_ccopt_property inverter_cells {CLKINVX1 CLKINVX2     CLKINVX3 CLKINVX4 CLKINVX6 CLKINVX8 CLKINVX12 CLKINVX16 CLKINVX20}
+set_ccopt_property target_max_trans 100ps
+create_ccopt_clock_tree_spec -file risc_v_Pad_Frame_ccopt_CTS.spec
+get_ccopt_clock_trees
+ccopt_check_and_flatten_ilms_no_restore
+set_ccopt_property cts_is_sdc_clock_root -pin clk true
+create_ccopt_clock_tree -name My_CLK -source clk -no_skew_group
+set_ccopt_property target_max_trans_sdc -delay_corner DelayCorner_WC -early -clock_tree My_CLK 0.400
+set_ccopt_property target_max_trans_sdc -delay_corner DelayCorner_WC -late -clock_tree My_CLK 0.550
+set_ccopt_property target_max_trans_sdc -delay_corner DelayCorner_BC -early -clock_tree My_CLK 0.400
+set_ccopt_property target_max_trans_sdc -delay_corner DelayCorner_BC -late -clock_tree My_CLK 0.550
+set_ccopt_property source_latency -delay_corner DelayCorner_WC -early -rise -clock_tree My_CLK 0.200
+set_ccopt_property source_latency -delay_corner DelayCorner_WC -early -fall -clock_tree My_CLK 0.150
+set_ccopt_property source_latency -delay_corner DelayCorner_WC -late -rise -clock_tree My_CLK 0.200
+set_ccopt_property source_latency -delay_corner DelayCorner_WC -late -fall -clock_tree My_CLK 0.150
+set_ccopt_property source_latency -delay_corner DelayCorner_BC -early -rise -clock_tree My_CLK 0.200
+set_ccopt_property source_latency -delay_corner DelayCorner_BC -early -fall -clock_tree My_CLK 0.150
+set_ccopt_property source_latency -delay_corner DelayCorner_BC -late -rise -clock_tree My_CLK 0.200
+set_ccopt_property source_latency -delay_corner DelayCorner_BC -late -fall -clock_tree My_CLK 0.150
+set_ccopt_property clock_period -pin clk 10
+set_ccopt_property timing_connectivity_info {}
+create_ccopt_skew_group -name My_CLK/ConstraintMode_WC -sources clk -auto_sinks
+set_ccopt_property include_source_latency -skew_group My_CLK/ConstraintMode_WC true
+set_ccopt_property target_insertion_delay -skew_group My_CLK/ConstraintMode_WC 0.600
+set_ccopt_property extracted_from_clock_name -skew_group My_CLK/ConstraintMode_WC My_CLK
+set_ccopt_property extracted_from_constraint_mode_name -skew_group My_CLK/ConstraintMode_WC ConstraintMode_WC
+set_ccopt_property extracted_from_delay_corners -skew_group My_CLK/ConstraintMode_WC DelayCorner_WC
+create_ccopt_skew_group -name My_CLK/ConstraintMode_BC -sources clk -auto_sinks
+set_ccopt_property include_source_latency -skew_group My_CLK/ConstraintMode_BC true
+set_ccopt_property extracted_from_clock_name -skew_group My_CLK/ConstraintMode_BC My_CLK
+set_ccopt_property extracted_from_constraint_mode_name -skew_group My_CLK/ConstraintMode_BC ConstraintMode_BC
+set_ccopt_property extracted_from_delay_corners -skew_group My_CLK/ConstraintMode_BC DelayCorner_BC
+check_ccopt_clock_tree_convergence
+get_ccopt_property auto_design_state_for_ilms
+ccopt_design
+timeDesign -postCTS -prefix postCTS_setup
+timeDesign -postCTS -prefix postCTS_hold -hold
+report_ccopt_clock_trees -file clock_trees.rpt
+report_ccopt_skew_groups -file skew_groups.rpt
 getMultiCpuUsage -localCpu
 get_verify_drc_mode -disable_rules -quiet
 get_verify_drc_mode -quiet -area
@@ -96,34 +150,27 @@ get_verify_drc_mode -limit -quiet
 set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report risc_v_Pad_Frame.drc.rpt -limit 1000
 verify_drc
 set_verify_drc_mode -area {0 0 0 0}
-setSrouteMode -viaConnectToShape { noshape }
-sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1(1) Metal3(3) } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1(1) Metal11(11) } -nets { VDD VSS } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { Metal1(1) Metal11(11) }
-setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer Metal11 -stacked_via_bottom_layer Metal1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
-addStripe -nets {VDD VSS} -layer Metal2 -direction vertical -width 0.3 -spacing 0.16 -number_of_sets 6 -start_from left -start_offset 15 -stop_offset 15 -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit Metal11 -padcore_ring_bottom_layer_limit Metal1 -block_ring_top_layer_limit Metal11 -block_ring_bottom_layer_limit Metal1 -use_wire_group 0 -snap_wire_center_to_grid None
-setRouteMode -earlyGlobalHonorMsvRouteConstraint false -earlyGlobalRoutePartitionPinGuide true
-setEndCapMode -reset
-setEndCapMode -boundary_tap false
-setNanoRouteMode -quiet -droutePostRouteSpreadWire 1
-setNanoRouteMode -quiet -droutePostRouteWidenWireRule LEFSpecialRouteSpec
+setOptMode -fixFanoutLoad true
+setOptMode -addInstancePrefix postCTSdrv
+optDesign -postCTS -drv
+timeDesign -postCTS -prefix postCTS_setup_DRVfix
+timeDesign -postCTS -prefix postCTS_hold_DRVfix -hold
+setOptMode -addInstancePrefix postCTSsetup
+optDesign -postCTS
+timeDesign -postCTS -prefix postCTS_setup_Setupfix
+timeDesign -postCTS -prefix postCTS_hold_Setupfix -hold
+setOptMode -addInstancePrefix postCTShold
+optDesign -postCTS -hold
+timeDesign -postCTS -prefix postCTS_setup_Holdfix
+timeDesign -postCTS -prefix postCTS_hold_Holdfix -hold
 setNanoRouteMode -quiet -timingEngine {}
-setUsefulSkewMode -noBoundary false -maxAllowedDelay 1
-setPlaceMode -fp false
-place_design
-setDrawView placecheckPlace
-checkPinAssignment -report_violating_pin
-setAnalysisMode -analysisType onChipVariation
-timeDesign -preCTS -prefix preCTS_setup
-timeDesign -preCTS -prefix preCTS_hold -hold
-set_ccopt_property buffer_cells {CLKBUFX2 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20}
-set_ccopt_property inverter_cells {CLKINVX1 CLKINVX2     CLKINVX3 CLKINVX4 CLKINVX6 CLKINVX8 CLKINVX12 CLKINVX16 CLKINVX20}
-set_ccopt_property target_max_trans 100ps
-create_ccopt_clock_tree_spec -file bwco_Pad_Frame_ccopt_CTS.spec
-get_ccopt_clock_trees
-ccopt_check_and_flatten_ilms_no_restore
-set_ccopt_property cts_is_sdc_clock_root -pin clk true
-set_ccopt_property timing_connectivity_info {}
-check_ccopt_clock_tree_convergence
-get_ccopt_property auto_design_state_for_ilms
+setNanoRouteMode -quiet -routeWithSiPostRouteFix 0
+setNanoRouteMode -quiet -routeTopRoutingLayer default
+setNanoRouteMode -quiet -routeBottomRoutingLayer 2
+setNanoRouteMode -quiet -drouteEndIteration default
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven true
+routeDesign -globalDetail
 get_verify_drc_mode -disable_rules -quiet
 get_verify_drc_mode -quiet -area
 get_verify_drc_mode -quiet -layer_range
@@ -138,16 +185,364 @@ get_verify_drc_mode -limit -quiet
 set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report risc_v_Pad_Frame.drc.rpt -limit 1000
 verify_drc
 set_verify_drc_mode -area {0 0 0 0}
-zoomBox -121.65650 136.00000 921.65650 1016.00000
-zoomBox -121.65650 312.00000 921.65650 1192.00000
-zoomBox -121.65650 400.00000 921.65650 1280.00000
-zoomBox -121.65650 224.00000 921.65650 1104.00000
-zoomBox -121.65650 136.00000 921.65650 1016.00000
-zoomBox -121.65650 -216.00000 921.65650 664.00000
-zoomBox -48.57050 -130.15950 838.24550 617.84050
-zoomBox 121.42450 107.83450 584.34850 498.29550
-zoomBox 193.06100 208.12600 477.35500 447.91850
-zoomBox 224.69950 252.41950 430.10150 425.66950
-zoomBox 237.05500 269.71800 411.64700 416.98050
-saveDesign risc_v_Pad_Frame_stripes_hemmanth_100M_befote_ccopt.enc
-ccopt_design
+zoomIn
+setDrawView place
+fit
+zoomBox -563.04750 13.44900 1345.02650 761.53350
+zoomBox -301.32800 96.55000 1077.25700 637.04150
+zoomBox -112.23550 156.59000 883.79300 547.09550
+zoomBox 24.38450 199.96950 744.01500 482.10950
+zoomBox 125.61400 234.67300 645.54700 438.51950
+zoomBox 199.18600 260.26700 574.83800 407.54600
+zoomBox 227.98650 270.33000 547.29100 395.51750
+zoomBox 253.87750 281.67750 525.28700 388.08700
+zoomBox 275.95900 291.88600 506.65700 382.33400
+zoomBox 295.58150 301.64500 491.67500 378.52600
+zoomBox 312.26050 309.94000 478.94000 375.28900
+zoomBox 325.82050 317.44200 467.49950 372.98900
+zoomBox 337.84600 323.75500 458.27300 370.97000
+zoomBox 348.05600 329.12100 450.42000 369.25400
+zoomBox 356.69800 333.63600 443.70750 367.74900
+zoomBox 364.04400 337.47350 438.00200 366.46950
+zoomBox 380.96400 343.89100 434.39850 364.84050
+zoomBox 393.11700 348.61650 431.72350 363.75250
+zoomBox 401.86800 352.03050 429.76150 362.96650
+zoomBox 408.08200 354.51150 428.23500 362.41250
+zoomBox 412.48650 356.27650 427.04800 361.98550
+zoomBox 415.94750 357.12300 426.46900 361.24800
+zoomBox 417.24650 357.42950 426.19000 360.93600
+zoomBox 419.34600 357.81900 425.80800 360.35250
+zoomBox 420.84250 358.10600 425.51200 359.93650
+zoomBox 421.91650 358.31600 425.29100 359.63900
+zoomBox 422.33550 358.39800 425.20500 359.52300
+zoomBox 422.69250 358.46800 425.13150 359.42400
+zoomBox 421.92000 358.31050 425.29600 359.63400
+zoomBox 420.85100 358.08250 425.52350 359.91450
+zoomBox 419.37100 357.76300 425.83850 360.29850
+zoomBox 418.43150 357.55100 426.04050 360.53400
+zoomBox 417.32550 357.30800 426.27700 360.81750
+zoomBox 416.07400 356.99650 426.60550 361.12550
+zoomBox 414.60200 356.63000 426.99200 361.48750
+zoomBox 411.21650 355.61950 428.36550 362.34300
+zoomBox 409.05800 354.97000 429.23350 362.88000
+zoomBox 406.51900 354.20750 430.25450 363.51350
+zoomBox 395.87300 351.01450 434.52350 366.16800
+zoomBox 390.99950 349.54600 436.47200 367.37400
+zoomBox 385.26700 347.81850 438.76400 368.79250
+zoomBox 378.52300 345.78600 441.46050 370.46150
+verifyConnectivity -type all -error 1000 -warning 50
+zoomBox 373.01250 343.50200 447.05700 372.53200
+zoomBox 358.90350 337.65250 461.38800 377.83300
+zoomBox 346.64200 330.17300 488.48950 385.78600
+verifyProcessAntenna -report risc_v_Pad_Frame.antenna.rpt -error 1000
+verifyACLimit -report risc_v_Pad_Frame.aclimit.rpt -toggle 1.0 -error 1000
+verifyEndCap
+setMetalFill -layer Metal1 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+setMetalFill -layer Metal2 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+setMetalFill -layer Metal3 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+setMetalFill -layer Metal4 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+setMetalFill -layer Metal5 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+setMetalFill -layer Metal6 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+setMetalFill -layer Metal7 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+setMetalFill -layer Metal8 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+setMetalFill -layer Metal9 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+setMetalFill -layer Metal10 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+setMetalFill -layer Metal11 -windowSize 120.000 120.000 -windowStep 60.000 60.000 -minDensity 20.000 -maxDensity 65.000
+verifyMetalDensity -report risc_v_Pad_Frame.density.rpt
+setViaFill -layer Via1 -windowSize 10.000 10.000 -windowStep 5.000 5.000 -minDensity 0.00 -maxDensity 30.00
+setViaFill -layer Via2 -windowSize 10.000 10.000 -windowStep 5.000 5.000 -minDensity 0.00 -maxDensity 30.00
+setViaFill -layer Via3 -windowSize 10.000 10.000 -windowStep 5.000 5.000 -minDensity 0.00 -maxDensity 30.00
+setViaFill -layer Via4 -windowSize 10.000 10.000 -windowStep 5.000 5.000 -minDensity 0.00 -maxDensity 30.00
+setViaFill -layer Via5 -windowSize 10.000 10.000 -windowStep 5.000 5.000 -minDensity 0.00 -maxDensity 30.00
+setViaFill -layer Via6 -windowSize 10.000 10.000 -windowStep 5.000 5.000 -minDensity 0.00 -maxDensity 30.00
+setViaFill -layer Via7 -windowSize 10.000 10.000 -windowStep 5.000 5.000 -minDensity 0.00 -maxDensity 30.00
+setViaFill -layer Via8 -windowSize 10.000 10.000 -windowStep 5.000 5.000 -minDensity 0.00 -maxDensity 30.00
+setViaFill -layer Via9 -windowSize 10.000 10.000 -windowStep 5.000 5.000 -minDensity 0.00 -maxDensity 30.00
+setViaFill -layer Via10 -windowSize 10.000 10.000 -windowStep 5.000 5.000 -minDensity 0.00 -maxDensity 30.00
+verifyCutDensity
+verifyPowerVia
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+zoomBox 482.13 246.645 488.83 251.675
+zoomBox 476.73150 245.76500 494.48900 252.72700
+zoomBox 473.50400 244.55100 498.08150 254.18700
+zoomBox 469.03600 242.87100 503.05400 256.20800
+zoomBox 471.46000 243.74550 500.37550 255.08200
+zoomBox 476.76050 245.65800 494.51800 252.62000
+zoomBox 479.10150 246.50250 491.93100 251.53250
+uiSetTool addVia
+editAddVia 483.869 249.928
+editAddVia 484.0235 249.758
+zoomBox 480.09650 246.90050 491.00200 251.17600
+zoomBox 480.94250 247.23900 490.21200 250.87300
+editAddVia 484.51 249.563
+editAddVia 485.396 249.251
+editAddVia 484.1585 249.836
+uiSetTool addVia
+editAddVia 483.551 250.193
+uiSetTool select
+selectMarker 483.8050 248.3200 487.1550 250.0000 3 3 101
+deselectAll
+selectWire 483.8050 248.3200 487.1550 267.4700 2 VSS
+deselectAll
+selectWire 432.8450 246.6400 487.1550 250.0000 3 VSS
+deselectAll
+selectMarker 483.8050 248.3200 487.1550 250.0000 3 3 101
+deselectAll
+selectMarker 483.8050 248.3200 487.1550 250.0000 3 3 101
+violationBrowserClose
+deselectAll
+selectWire 483.8050 248.3200 487.1550 267.4700 2 VSS
+deselectAll
+selectWire 432.8450 246.6400 487.1550 250.0000 3 VSS
+deselectAll
+selectWire 483.8050 248.3200 487.1550 267.4700 2 VSS
+setLayerPreference Metal2 -isVisible 0
+setLayerPreference Metal2 -isVisible 1
+setLayerPreference Metal2 -isSelectable 0
+setLayerPreference Metal2 -isSelectable 1
+setLayerPreference Metal2 -isVisible 0
+setLayerPreference Metal2 -isVisible 1
+setLayerPreference Metal3 -isVisible 0
+setLayerPreference Metal3 -isVisible 1
+setLayerPreference Via2 -isVisible 0
+setLayerPreference Via2 -isVisible 1
+setLayerPreference Metal2 -isVisible 0
+setLayerPreference Metal3 -isVisible 0
+uiSetTool addVia
+editAddVia 485.5745 249.2455
+editAddVia 485.53 250.0815
+uiSetTool select
+setLayerPreference Metal3 -isVisible 1
+setLayerPreference Metal2 -isVisible 1
+deselectAll
+selectMarker 169.2650 169.2650 630.7350 630.8250 -1 3 7
+deselectAll
+selectMarker 483.8050 248.3200 487.1550 250.0000 3 3 101
+deselectAll
+selectWire 483.8050 248.3200 487.1550 267.4700 2 VSS
+selectWire 432.8450 246.6400 487.1550 250.0000 3 VSS
+uiSetTool addVia
+editAddVia 483.9245 249.8755
+editAddVia 486.851 248.348
+editAddVia 486.8065 248.3035
+editAddVia 486.7785 248.437
+editAddVia 486.104 250.065
+editAddVia 485.9425 250.36
+editAddVia 484.9835 250.36
+editAddVia 484.142 250.483
+editAddVia 483.5845 250.4495
+editAddVia 483.2725 250.0705
+editAddVia 483.2445 249.719
+editAddVia 483.4395 249.58
+editAddVia 484.348 249.853
+editAddVia 484.3985 250.338
+uiSetTool select
+uiSetTool addPoly
+editAddPoly 483.919 250.0035
+editAddPoly 487.1465 249.9475
+editAddPoly 486.89 248.3815
+editAddPoly 483.841 248.5875
+editAddPoly 483.93 249.9865
+editAddPoly 483.9355 249.97
+editAddPoly 487.0405 249.8475
+editAddPoly 486.851 248.4315
+editAddPoly 483.88 248.7605
+editCommitPoly 483.88 248.7605
+uiSetTool addVia
+editAddVia 484.7775 249.485
+undo
+editAddVia 486.472 249.9255
+uiSetTool select
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+zoomBox 482.13 246.645 488.83 251.675
+dbSetStripBoxState [uiGetRecordObjByInfo -objType sWire -rect {432.845 246.64 487.155 250.0} -layer 3 -name VSS] ROUTED
+zoomBox 482.13 246.645 488.83 251.675
+zoomBox 482.13 246.645 488.83 251.675
+deselectAll
+selectWire 432.8450 246.6400 487.1550 250.0000 3 VSS
+zoomBox 482.13 246.645 488.83 251.675
+zoomBox 482.13 246.645 488.83 251.675
+setLayerPreference Metal2 -isVisible 1
+setLayerPreference Via1 -isVisible 1
+setLayerPreference Metal1 -isVisible 1
+setLayerPreference Cont -isVisible 1
+setLayerPreference Poly -isVisible 1
+saveDesign risc_v_Pad_Frame_issues.enc
+deselectAll
+selectMarker 483.8050 248.3200 487.1550 250.0000 3 3 101
+zoomBox 482.13 246.645 488.83 251.675
+violationBrowserClose
+setLayerPreference Poly -isVisible 1
+setLayerPreference Cont -isVisible 1
+setLayerPreference Metal1 -isVisible 1
+setLayerPreference Via1 -isVisible 1
+setLayerPreference Metal2 -isVisible 1
+deselectAll
+selectMarker 483.8050 248.3200 487.1550 250.0000 3 3 101
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+violationBrowserHide -tool Verify -type Connectivity -subtype MissingVia -violation {  Metal3(3)  VSS    (483.805, 248.32) (487.155, 250)  0x7f860d7098e0}
+zoomBox 482.13 246.645 488.83 251.675
+setLayerPreference violation -isVisible 0
+uiSetTool addVia
+editAddVia 485.661 249.299
+editAddVia 485.5915 250.2325
+editAddVia 481.7805 251.135
+zoomBox 477.25400 245.26400 495.01150 252.22600
+zoomBox 474.71850 243.32400 499.29750 252.96050
+editAddVia 488.508 248.9255
+editAddVia 487.252 249.2805
+editAddVia 486.6755 249.502
+setLayerPreference node_misc -isVisible 1
+zoomBox 476.26350 244.12200 497.15600 252.31300
+zoomBox 477.57700 244.80000 495.33550 251.76250
+zoomBox 478.69250 245.37650 493.78850 251.29500
+setLayerPreference Metal2 -isVisible 0
+setLayerPreference Metal2 -isVisible 1
+uiSetTool addPoly
+zoomBox 480.37450 246.01100 491.28200 250.28750
+zoomBox 481.03150 246.26100 490.30300 249.89600
+editAddPoly 483.875 248.3905
+editAddPoly 483.8525 248.469
+editAddPoly 484.0865 246.601
+editAddPoly 487.27 246.601
+editAddPoly 487.376 248.5245
+editCommitPoly 487.376 248.5245
+violationBrowser -all -no_display_false -displayByLayer
+uiSetTool moveWire
+deselectAll
+selectWire 483.8500 246.6000 487.2700 248.4700 1 _NULL
+undo
+violationBrowser -all -no_display_false -displayByLayer
+uiSetTool addVia
+report_via -name_only -special
+setEditMode -via_cut_layer Via1
+setEditMode -cut_class {}
+setEditMode -via_cell_name 0x0
+setEditMode -via_create_by viacell
+setEditMode -via_cell_name M2_M1_HV
+setEditMode -via_cell_name M2_M1_VV
+setEditMode -via_cell_name M2_M1_VH
+setEditMode -via_cell_name M2_M1_HH
+setEditMode -via_cell_name M2_M1_2x1_HV_W
+setEditMode -via_create_by parameters
+editAddVia 484.215 249.545
+violationBrowser -all -no_display_false -displayByLayer
+undo
+violationBrowser -all -no_display_false -displayByLayer
+zoomBox 481.72400 246.64500 489.60450 249.73450
+zoomBox 482.31200 246.97100 489.01100 249.59750
+zoomBox 481.72300 246.64450 489.60450 249.73450
+zoomBox 481.03000 246.26050 490.30300 249.89600
+zoomBox 480.21500 245.80900 491.12450 250.08600
+zoomBox 479.25650 245.27750 492.09100 250.30950
+zoomBox 476.80150 243.91700 494.56650 250.88200
+zoomBox 478.08800 244.87650 493.18850 250.79700
+zoomBox 479.18100 245.69250 492.01700 250.72500
+zoomBox 480.90000 246.97500 490.17550 250.61150
+zoomBox 481.57200 247.47600 489.45600 250.56700
+report_via -name_only -special
+setEditMode -via_cut_layer Via1
+setEditMode -via_type auto
+setEditMode -via_type auto
+setEditMode -via_cut_layer Via2
+setEditMode -via_cut_layer Via2
+setEditMode -cut_class {}
+setEditMode -cut_class {}
+editAddVia 485.085 249.2915
+violationBrowser -all -no_display_false -displayByLayer
+undo
+violationBrowser -all -no_display_false -displayByLayer
+editAddVia 484.682 249.377
+violationBrowser -all -no_display_false -displayByLayer
+uiSetTool select
+undo
+violationBrowser -all -no_display_false -displayByLayer
+redo
+violationBrowser -all -no_display_false -displayByLayer
+verifyPowerVia
+violationBrowser -all -no_display_false -displayByLayer
+zoomBox 482.16050 247.72550 488.86200 250.35300
+zoomBox 483.08600 248.11800 487.92850 250.01650
+zoomBox 483.75450 248.40150 487.25400 249.77350
+zoomBox 484.23800 248.60600 486.76650 249.59750
+zoomBox 484.01550 248.51150 486.99050 249.67800
+zoomBox 483.44550 248.27000 487.56450 249.88500
+zoomBox 482.15600 247.72350 488.86400 250.35350
+uiSetTool addVia
+report_via -name_only -special
+setEditMode -via_cut_layer Via2
+setEditMode -via_cut_layer Via2
+setEditMode -via_type auto
+setEditMode -via_type auto
+setEditMode -via_type auto
+setEditMode -via_type auto
+uiSetTool select
+saveDesign risc_v_Pad_Frame_issues_power_via_good.enc
+zoomBox -89.0 305.59 889.0 889.21
+selectInst pad_vss_ior_dummy3
+zoomBox -473.03450 264.67750 1278.24750 951.28950
+zoomBox -803.48950 159.51400 1620.43100 1109.84250
+zoomBox -1013.89300 91.60900 1837.77850 1209.64250
+zoomBox -1261.42600 11.72050 2093.48150 1327.05400
+zoomBox -1546.94500 -37.40850 2400.00500 1510.04250
+zoomBox -1882.84950 -95.20800 2760.62100 1725.32300
+zoomBox -2279.51100 -166.16350 3183.39700 1975.63800
+zoomBox -1828.64850 -156.30850 2814.82300 1664.22250
+zoomBox -1119.66750 -140.81200 2235.24100 1174.52200
+zoomBox -607.42950 -127.93600 1816.49250 822.39300
+zoomBox -407.37950 -122.47050 1652.95450 685.30950
+zoomBox -275.06350 -69.69250 1476.22200 616.92100
+zoomBox -161.64600 -24.83100 1326.94700 558.79050
+zoomBox -62.28750 16.65800 1203.01700 512.73650
+zoomBox 93.32050 74.08700 1007.50350 432.50400
+zoomBox 205.28900 117.25750 865.78700 376.21400
+zoomBox 248.06450 134.47500 809.48800 354.58800
+zoomBox 314.36400 161.54900 719.99300 320.58100
+zoomBox 362.01450 181.11000 655.08250 296.01100
+zoomBox 396.44250 197.10150 608.18400 280.11750
+zoomBox 421.30000 208.79650 574.28450 268.77600
+zoomBox 430.87650 215.36500 560.91350 266.34750
+zoomBox 439.01650 220.94750 549.54800 264.28300
+deselectAll
+selectWire 483.8050 248.3200 487.1550 267.4700 2 VSS
+deselectAll
+selectWire 483.8050 248.3200 487.1550 267.4700 2 VSS
+zoomBox 446.01500 224.91550 539.96700 261.75050
+zoomBox 451.93000 228.32200 531.78950 259.63200
+zoomBox 461.23100 233.69700 518.93000 256.31850
+zoomBox 467.95100 237.67250 509.63900 254.01700
+zoomBox 472.80600 240.54550 502.92600 252.35450
+zoomBox 476.30800 242.64850 498.07100 251.18100
+deselectAll
+selectMarker 485.4450 249.1250 485.5150 249.1950 35 1 35
+zoomBox 470.03000 240.80400 500.15200 252.61350
+zoomBox 455.81350 236.55800 504.86450 255.78900
+zoomBox 432.68400 229.64450 512.55600 260.95950
+zoomBox 395.02100 218.38750 525.08000 269.37900
+zoomBox 333.69300 200.05800 545.47350 283.08900
+zoomBox 233.83050 170.21100 578.68100 305.41400
+zoomBox 188.16050 156.56150 593.86750 315.62400
+zoomBox 71.22100 121.61050 632.75350 341.76650
+zoomBox -90.63350 73.23600 686.57550 377.95050
+zoomBox -314.65350 6.28150 761.06950 428.03200
+zoomBox -457.11400 -36.29700 808.44200 459.88000
+zoomBox -624.71500 -86.38950 864.17450 497.34850
+zoomBox -307.10700 7.90600 768.61700 429.65700
+zoomBox -77.52300 75.39850 699.68800 380.11400
+zoomBox 88.35050 124.16200 649.88700 344.31950
+zoomBox 147.45850 140.92700 624.76500 328.06100
+zoomBox 198.60400 156.72700 604.31500 315.79100
+zoomBox 241.71250 170.01050 586.56650 305.21500
+zoomBox 309.90200 191.70450 559.06000 289.39000
+zoomBox 241.71050 170.00950 586.56700 305.21500
+zoomBox 147.32700 139.98200 624.63850 327.11800
+zoomBox 16.69350 98.42200 677.33300 357.43400
+zoomBox -164.11400 40.89900 750.26700 399.39350
+zoomBox -414.36700 -38.71750 851.21300 457.46900
+zoomBox -607.48800 -87.60200 881.43000 496.14700
+zoomBox -834.68900 -145.11300 916.97950 541.65050
+zoomBox -494.74900 40.20250 770.83150 536.38900
+zoomBox -815.39750 -13.87250 936.27100 672.89100

@@ -86,7 +86,7 @@ puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_mmmc command"
 
 # Reading LEF Libraries
 read_physical -lef $LEF_List
-
+report messages
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF read_physical command"
 ##suspend
 ## Provide either cap_table_file or the qrc_tech_file
@@ -112,7 +112,6 @@ set_db tns_opto true
 ## Load Design
 ####################################################################
 read_hdl -v2001 $RTL_LIST
-puts "AQUI MERO HDL"
 #suspend
 elaborate $DESIGN
 #read_def ../DEF/dtmf.def
@@ -121,21 +120,21 @@ puts "Runtime & Memory after 'read_hdl'"
 time_info Elaboration
 #check_design -unresolved
 check_design
-
+report messages
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF check_design COMMAND & REVIEW RTL SCHEMATIC"
 suspend
 
 # MMMC Command
 init_design
 time_info init_design
-
+report messages
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF init_design command"
 #suspend
 
 
 #check_design -unresolved
 check_design
-
+report messages
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF check_design command"
 #suspend
 
@@ -157,7 +156,7 @@ puts "CHECK FOR NO-APPLIED CONSTRAINTS"
 
 # Timing Lint
 check_timing_intent -verbose
-
+report messages
 puts "REVIEW LOG FILE FOR EXECUTION RESULTS OF check_timing_intent command"
 #suspend
 
@@ -204,7 +203,7 @@ report_summary -directory $_REPORTS_PATH
 
 # Generate Generic Netlist
 write_hdl -generic > ${_OUTPUTS_PATH}/${DESIGN}_generic.v
-
+report messages
 puts "VIEW GENERIC SCHEMATIC"
 #suspend
 
@@ -259,8 +258,11 @@ write_design -basename ${_OUTPUTS_PATH}/${DESIGN}_opt
 
 #write_sdc > ${_OUTPUTS_PATH}/${DESIGN}_opt.sdc
 #write_sdc -version 1.1 -view analysis_view -constraint_mode constraint_mode design > ${_OUTPUTS_PATH}/${DESIGN}_opt.sdc
-write_sdc -version 1.1 -view view_risc_v_slow $DESIGN > ${_OUTPUTS_PATH}/${DESIGN}_opt_slow.sdc
+#write_sdc -version 1.1 -view view_risc_v_slow $DESIGN > ${_OUTPUTS_PATH}/${DESIGN}_opt_slow.sdc
 
+write_sdc -version 2.0 -view view_risc_v_slow $DESIGN > ${_OUTPUTS_PATH}/${DESIGN}_opt_slow.sdc          
+write_sdc -version 2.0 -view view_risc_v_fast $DESIGN > ${_OUTPUTS_PATH}/${DESIGN}_opt_fast.sdc
+report messages
 puts "REVIEW OPTIMIZED REPORTS AND SCHEMATIC DIAGRAM"
 #suspend
 

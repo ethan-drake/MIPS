@@ -1,0 +1,2561 @@
+[11/29 05:11:28      0s] 
+[11/29 05:11:28      0s] Cadence Innovus(TM) Implementation System.
+[11/29 05:11:28      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[11/29 05:11:28      0s] 
+[11/29 05:11:28      0s] Version:	v21.12-s106_1, built Wed Dec 8 18:19:02 PST 2021
+[11/29 05:11:28      0s] Options:	-log risc_v_Pad_Frame_log.log 
+[11/29 05:11:28      0s] Date:		Wed Nov 29 05:11:28 2023
+[11/29 05:11:28      0s] Host:		iteso-server (x86_64 w/Linux 3.10.0-1160.95.1.el7.x86_64) (8cores*8cpus*Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz 46080KB)
+[11/29 05:11:28      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[11/29 05:11:28      0s] 
+[11/29 05:11:28      0s] License:
+[11/29 05:11:28      0s] 		[05:11:28.302473] Configured Lic search path (20.02-s004): 50009@10.16.0.85
+
+[11/29 05:11:28      1s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[11/29 05:11:28      1s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[11/29 05:12:41     73s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.12-s106_1 (64bit) 12/08/2021 18:19 (Linux 3.10.0-693.el7.x86_64)
+[11/29 05:12:55     87s] @(#)CDS: NanoRoute 21.12-s106_1 NR211128-2235/21_12-UB (database version 18.20.567) {superthreading v2.17}
+[11/29 05:12:55     87s] @(#)CDS: AAE 21.12-s039 (64bit) 12/08/2021 (Linux 3.10.0-693.el7.x86_64)
+[11/29 05:12:55     87s] @(#)CDS: CTE 21.12-s043_1 () Dec  1 2021 10:06:22 ( )
+[11/29 05:12:55     87s] @(#)CDS: SYNTECH 21.12-s014_1 () Oct 27 2021 04:39:25 ( )
+[11/29 05:12:55     87s] @(#)CDS: CPE v21.12-s094
+[11/29 05:12:55     87s] @(#)CDS: IQuantus/TQuantus 20.1.2-s624 (64bit) Thu Sep 2 20:12:03 PDT 2021 (Linux 2.6.32-431.11.2.el6.x86_64)
+[11/29 05:12:55     87s] @(#)CDS: OA 22.60-p059 Mon Jun 28 12:16:29 2021
+[11/29 05:12:55     87s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[11/29 05:12:55     87s] @(#)CDS: RCDB 11.15.0
+[11/29 05:12:55     87s] @(#)CDS: STYLUS 21.11-s011_1 (12/08/2021 02:58 PST)
+[11/29 05:12:55     87s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_9460_iteso-server_iteso-s018_VbjoJY.
+
+[11/29 05:12:55     87s] Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+[11/29 05:13:06     98s] 
+[11/29 05:13:06     98s] **INFO:  MMMC transition support version v31-84 
+[11/29 05:13:06     98s] 
+[11/29 05:13:06     98s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[11/29 05:13:06     98s] <CMD> suppressMessage ENCEXT-2799
+[11/29 05:13:07     99s] <CMD> win
+[11/29 05:13:30    103s] <CMD> encMessage warning 0
+[11/29 05:13:30    103s] Suppress "**WARN ..." messages.
+[11/29 05:13:30    103s] <CMD> encMessage debug 0
+[11/29 05:13:30    103s] <CMD> is_common_ui_mode
+[11/29 05:13:30    103s] <CMD> restoreDesign /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat risc_v_Pad_Frame
+[11/29 05:13:31    103s] #% Begin load design ... (date=11/29 05:13:30, mem=654.5M)
+[11/29 05:13:31    104s] Set Default Input Pin Transition as 0.1 ps.
+[11/29 05:13:33    106s] Loading design 'risc_v_Pad_Frame' saved by 'Innovus' '21.12-s106_1' on 'Tue Nov 28 21:12:35 2023'.
+[11/29 05:13:33    106s] % Begin Load MMMC data ... (date=11/29 05:13:33, mem=656.3M)
+[11/29 05:13:34    107s] % End Load MMMC data ... (date=11/29 05:13:34, total cpu=0:00:00.2, real=0:00:01.0, peak res=656.8M, current mem=656.8M)
+[11/29 05:13:34    107s] 
+[11/29 05:13:34    107s] Loading LEF file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/lef/gsclib045_tech.lef ...
+[11/29 05:13:34    107s] 
+[11/29 05:13:34    107s] Loading LEF file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/lef/gsclib045_macro.lef ...
+[11/29 05:13:34    107s] Set DBUPerIGU to M2 pitch 400.
+[11/29 05:13:35    108s] 
+[11/29 05:13:35    108s] Loading LEF file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/lef/gsclib045_multibitsDFF.lef ...
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'DFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'DFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'DFF2X1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'DFF2X2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'DFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'DFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'DFF4X1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'DFF4X2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'SDFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'SDFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'SDFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'SDFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'SPDFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'SPDFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'SPDFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-58):	MACRO 'SPDFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-58' for more detail.
+[11/29 05:13:35    108s] 
+[11/29 05:13:35    108s] Loading LEF file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/lef/giolib045_Hemanth.lef ...
+[11/29 05:13:35    108s] **WARN: (IMPLF-61):	16 duplicated MACRO definitions have been found in the LEF file(s). Their content except DENSITY and PIN ANTENNA* data, and certain properties, have been ignored.
+[11/29 05:13:35    108s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 05:13:35    108s] Type 'man IMPLF-61' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED60' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED60' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED5' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED5' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED3' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED3' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED10' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED10' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED1' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED1' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VSS25' in macro 'PADVSS25' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'VDD25' in macro 'PADVDD25' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'OEN' in macro 'PADDOZ' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'A' in macro 'PADDOZ' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDOZ' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-201' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'A' in macro 'PADDO' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDO' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-201' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDI' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-201' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'PAD' in macro 'PADDI' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-201):	Pin 'Y' in macro 'PADDI' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-201' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-201):	Pin 'Y' in macro 'PADDB' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-201' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'A' in macro 'PADDB' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'OEN' in macro 'PADDB' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDB' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-201' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'PAD' in macro 'PADDB' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (IMPLF-200):	Pin 'AY' in macro 'PADANALOG' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 05:13:35    108s] Type 'man IMPLF-200' for more detail.
+[11/29 05:13:35    108s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[11/29 05:13:35    108s] To increase the message display limit, refer to the product command reference manual.
+[11/29 05:13:35    108s] 
+[11/29 05:13:35    108s] viaInitial starts at Wed Nov 29 05:13:35 2023
+viaInitial ends at Wed Nov 29 05:13:35 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[11/29 05:13:35    108s] Loading view definition file from /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/viewDefinition.tcl
+[11/29 05:13:35    108s] Reading Lib_Set_WC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib' ...
+[11/29 05:13:38    111s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 05:13:38    111s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 05:13:38    111s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP7'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 05:13:38    111s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP6'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 05:13:38    111s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP5'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 05:13:38    111s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP4'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 05:13:38    111s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP3'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 05:13:38    111s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP2'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 05:13:38    111s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 05:13:38    111s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 05:13:38    111s] Read 489 cells in library 'slow_vdd1v0' 
+[11/29 05:13:38    111s] Reading Lib_Set_WC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib' ...
+[11/29 05:13:38    111s] **WARN: (TECHLIB-459):	Appending library 'slow_vdd1v0' to the previously read library of the same name and nominal PVT. Cell definitions from the previously read library will not be overridden. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP7'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP6'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP5'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP4'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP3'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP2'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 05:13:39    112s] Read 16 cells in library 'slow_vdd1v0' 
+[11/29 05:13:39    112s] Reading Lib_Set_WC timing library '/CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_SS_s1vg.lib' ...
+[11/29 05:13:39    112s] Read 8 cells in library 'giolib045' 
+[11/29 05:13:39    112s] Ending "PreSetAnalysisView" (total cpu=0:00:03.9, real=0:00:04.0, peak res=717.2M, current mem=673.8M)
+[11/29 05:13:39    112s] *** End library_loading (cpu=0.06min, real=0.07min, mem=13.9M, fe_cpu=1.88min, fe_real=2.18min, fe_mem=896.7M) ***
+[11/29 05:13:39    112s] % Begin Load netlist data ... (date=11/29 05:13:39, mem=673.8M)
+[11/29 05:13:39    112s] *** Begin netlist parsing (mem=896.7M) ***
+[11/29 05:13:39    112s] Pin 'VDD' of cell 'SDFF4RX2' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/29 05:13:39    112s] Pin 'VSS' of cell 'SDFF4RX2' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/29 05:13:39    112s] Pin 'VDD' of cell 'SDFF4RX1' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/29 05:13:39    112s] Pin 'VSS' of cell 'SDFF4RX1' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VDDIOR' of cell 'PADDOZ' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VSSIOR' of cell 'PADDOZ' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'PADDOZ' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'PADDOZ' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VDDIOR' of cell 'PADDO' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VSSIOR' of cell 'PADDO' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'PADDO' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'PADDO' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VDDIOR' of cell 'PADDI' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VSSIOR' of cell 'PADDI' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'PADDI' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'PADDI' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'PADDB' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'PADDB' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VSSIOR' of cell 'PADDB' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] **WARN: (IMPVL-159):	Pin 'VDDIOR' of cell 'PADDB' is defined in LEF but not in the timing library.
+[11/29 05:13:39    112s] Type 'man IMPVL-159' for more detail.
+[11/29 05:13:39    112s] Created 513 new cells from 2 timing libraries.
+[11/29 05:13:39    112s] Reading netlist ...
+[11/29 05:13:39    112s] Backslashed names will retain backslash and a trailing blank character.
+[11/29 05:13:39    112s] Reading verilogBinary netlist '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.v.bin'
+[11/29 05:13:39    112s] 
+[11/29 05:13:39    112s] *** Memory Usage v#1 (Current mem = 903.676M, initial mem = 311.355M) ***
+[11/29 05:13:39    112s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=903.7M) ***
+[11/29 05:13:39    112s] % End Load netlist data ... (date=11/29 05:13:39, total cpu=0:00:00.2, real=0:00:00.0, peak res=682.1M, current mem=682.1M)
+[11/29 05:13:39    112s] Top level cell is risc_v_Pad_Frame.
+[11/29 05:13:40    113s] Hooked 513 DB cells to tlib cells.
+[11/29 05:13:40    113s] ** Removed 4 unused lib cells.
+[11/29 05:13:40    113s] Ending "BindLib:" (total cpu=0:00:00.3, real=0:00:00.0, peak res=690.7M, current mem=690.7M)
+[11/29 05:13:40    113s] Starting recursive module instantiation check.
+[11/29 05:13:40    113s] No recursion found.
+[11/29 05:13:40    113s] Building hierarchical netlist for Cell risc_v_Pad_Frame ...
+[11/29 05:13:40    114s] *** Netlist is unique.
+[11/29 05:13:40    114s] Setting Std. cell height to 3420 DBU (smallest netlist inst).
+[11/29 05:13:40    114s] ** info: there are 601 modules.
+[11/29 05:13:40    114s] ** info: there are 3899 stdCell insts.
+[11/29 05:13:40    114s] ** info: there are 24 Pad insts.
+[11/29 05:13:40    114s] 
+[11/29 05:13:40    114s] *** Memory Usage v#1 (Current mem = 953.102M, initial mem = 311.355M) ***
+[11/29 05:13:40    114s] *info: set bottom ioPad orient R0
+[11/29 05:13:40    114s] Reading IO assignment file "/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/iofile/bwco_frame_GPDK045.ioc" ...
+[11/29 05:13:40    114s] **WARN: (IMPFP-4008):	The ring number '1' is specified at sides ' top  left  bottom  right ' , so all IO pads defined in this ring honor margins for these sides to calculate the location.
+[11/29 05:13:40    114s] Type 'man IMPFP-4008' for more detail.
+[11/29 05:13:40    114s] Adjusting Core to Bottom to: 40.0600.
+[11/29 05:13:40    114s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 05:13:40    114s] Type 'man IMPFP-3961' for more detail.
+[11/29 05:13:40    114s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 05:13:40    114s] Type 'man IMPFP-3961' for more detail.
+[11/29 05:13:40    114s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 05:13:40    114s] Type 'man IMPFP-3961' for more detail.
+[11/29 05:13:40    114s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 05:13:40    114s] Type 'man IMPFP-3961' for more detail.
+[11/29 05:13:40    114s] Start create_tracks
+[11/29 05:13:40    114s] Set Default Net Delay as 1000 ps.
+[11/29 05:13:40    114s] Set Default Net Load as 0.5 pF. 
+[11/29 05:13:40    114s] Set Default Input Pin Transition as 0.1 ps.
+[11/29 05:13:40    114s] Pre-connect netlist-defined P/G connections...
+[11/29 05:13:40    114s]   Updated 4 instances.
+[11/29 05:13:41    114s] Loading preference file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/gui.pref.tcl ...
+[11/29 05:13:41    115s] ##  Process: 45            (User Set)               
+[11/29 05:13:41    115s] ##     Node: (not set)                           
+[11/29 05:13:41    115s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[11/29 05:13:41    115s] Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[11/29 05:13:41    115s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[11/29 05:13:41    115s] 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+[11/29 05:13:41    115s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+[11/29 05:13:41    115s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+[11/29 05:13:41    115s] **WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+[11/29 05:13:41    115s] Type 'man IMPOPT-3602' for more detail.
+[11/29 05:13:41    115s] Effort level <high> specified for reg2reg path_group
+[11/29 05:13:42    115s] AAE_INFO: switching -siAware from false to true ...
+[11/29 05:13:42    115s] AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+[11/29 05:13:42    115s] addRing command will ignore shorts while creating rings.
+[11/29 05:13:42    115s] addRing command will disallow rings to go over rows.
+[11/29 05:13:42    115s] addRing command will consider rows while creating rings.
+[11/29 05:13:42    115s] The ring targets are set to core/block ring wires.
+[11/29 05:13:42    115s] addStripe will allow jog to connect padcore ring and block ring.
+[11/29 05:13:42    115s] 
+[11/29 05:13:42    115s] Stripes will not extend to closest target.
+[11/29 05:13:42    115s] When breaking rings, the power planner will consider the existence of blocks.
+[11/29 05:13:42    115s] addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+[11/29 05:13:42    115s] The entire stripe set will break at the domain if one of the nets is not in the domain.
+[11/29 05:13:42    115s] Stripes will not be created over regions without power planning wires.
+[11/29 05:13:42    115s] Offset for stripe breaking is set to 0.
+[11/29 05:13:42    115s] Stripes will stop at the boundary of the specified area.
+[11/29 05:13:42    115s] The power planner will set stripe antenna targets to none (no trimming allowed).
+[11/29 05:13:42    115s] Change floorplan default-technical-site to 'CoreSite'.
+[11/29 05:13:43    116s] Extraction setup Delayed 
+[11/29 05:13:43    116s] *Info: initialize multi-corner CTS.
+[11/29 05:13:43    116s] Reading Lib_Set_BC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib' ...
+[11/29 05:13:46    119s] Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[11/29 05:13:46    119s] Read 489 cells in library 'fast_vdd1v2' 
+[11/29 05:13:46    120s] Reading Lib_Set_BC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib' ...
+[11/29 05:13:46    120s] **WARN: (TECHLIB-459):	Appending library 'fast_vdd1v2' to the previously read library of the same name and nominal PVT. Cell definitions from the previously read library will not be overridden. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib)
+[11/29 05:13:47    120s] Read 16 cells in library 'fast_vdd1v2' 
+[11/29 05:13:47    120s] Reading Lib_Set_BC timing library '/CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_FF_s1vg.lib' ...
+[11/29 05:13:47    120s] Read 4 cells in library 'giolib045' 
+[11/29 05:13:47    120s] Ignored 4 cells in library 'giolib045' because they are not defined in the LEF file, and they are not used in the Verilog netlist.
+[11/29 05:13:47    120s] Ending "SetAnalysisView" (total cpu=0:00:04.4, real=0:00:04.0, peak res=945.1M, current mem=724.0M)
+[11/29 05:13:48    121s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[11/29 05:13:48    121s] 
+[11/29 05:13:48    121s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[11/29 05:13:48    121s] Summary for sequential cells identification: 
+[11/29 05:13:48    121s]   Identified SBFF number: 104
+[11/29 05:13:48    121s]   Identified MBFF number: 16
+[11/29 05:13:48    121s]   Identified SB Latch number: 0
+[11/29 05:13:48    121s]   Identified MB Latch number: 0
+[11/29 05:13:48    121s]   Not identified SBFF number: 16
+[11/29 05:13:48    121s]   Not identified MBFF number: 0
+[11/29 05:13:48    121s]   Not identified SB Latch number: 0
+[11/29 05:13:48    121s]   Not identified MB Latch number: 0
+[11/29 05:13:48    121s]   Number of sequential cells which are not FFs: 32
+[11/29 05:13:48    121s] Total number of combinational cells: 327
+[11/29 05:13:48    121s] Total number of sequential cells: 168
+[11/29 05:13:48    121s] Total number of tristate cells: 10
+[11/29 05:13:48    121s] Total number of level shifter cells: 0
+[11/29 05:13:48    121s] Total number of power gating cells: 0
+[11/29 05:13:48    121s] Total number of isolation cells: 0
+[11/29 05:13:48    121s] Total number of power switch cells: 0
+[11/29 05:13:48    121s] Total number of pulse generator cells: 0
+[11/29 05:13:48    121s] Total number of always on buffers: 0
+[11/29 05:13:48    121s] Total number of retention cells: 0
+[11/29 05:13:48    121s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[11/29 05:13:48    121s] Total number of usable buffers: 16
+[11/29 05:13:48    121s] List of unusable buffers:
+[11/29 05:13:48    121s] Total number of unusable buffers: 0
+[11/29 05:13:48    121s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[11/29 05:13:48    121s] Total number of usable inverters: 19
+[11/29 05:13:48    121s] List of unusable inverters:
+[11/29 05:13:48    121s] Total number of unusable inverters: 0
+[11/29 05:13:48    121s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[11/29 05:13:48    121s] Total number of identified usable delay cells: 8
+[11/29 05:13:48    121s] List of identified unusable delay cells:
+[11/29 05:13:48    121s] Total number of identified unusable delay cells: 0
+[11/29 05:13:48    121s] 
+[11/29 05:13:48    121s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[11/29 05:13:48    121s] 
+[11/29 05:13:48    121s] TimeStamp Deleting Cell Server Begin ...
+[11/29 05:13:48    121s] 
+[11/29 05:13:48    121s] TimeStamp Deleting Cell Server End ...
+[11/29 05:13:48    122s] Ending "Cell type marking" (total cpu=0:00:00.1, real=0:00:00.0, peak res=965.4M, current mem=965.4M)
+[11/29 05:13:48    122s] 
+[11/29 05:13:48    122s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[11/29 05:13:48    122s] Summary for sequential cells identification: 
+[11/29 05:13:48    122s]   Identified SBFF number: 104
+[11/29 05:13:48    122s]   Identified MBFF number: 16
+[11/29 05:13:48    122s]   Identified SB Latch number: 0
+[11/29 05:13:48    122s]   Identified MB Latch number: 0
+[11/29 05:13:48    122s]   Not identified SBFF number: 16
+[11/29 05:13:48    122s]   Not identified MBFF number: 0
+[11/29 05:13:48    122s]   Not identified SB Latch number: 0
+[11/29 05:13:48    122s]   Not identified MB Latch number: 0
+[11/29 05:13:48    122s]   Number of sequential cells which are not FFs: 32
+[11/29 05:13:48    122s] 
+[11/29 05:13:48    122s] Trim Metal Layers:
+[11/29 05:13:48    122s]  Visiting view : AnalysisView_WC
+[11/29 05:13:48    122s]    : PowerDomain = none : Weighted F : unweighted  = 37.90 (1.000) with rcCorner = 0
+[11/29 05:13:48    122s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[11/29 05:13:48    122s]  Visiting view : AnalysisView_BC
+[11/29 05:13:48    122s]    : PowerDomain = none : Weighted F : unweighted  = 9.90 (1.000) with rcCorner = 1
+[11/29 05:13:48    122s]    : PowerDomain = none : Weighted F : unweighted  = 4.50 (1.000) with rcCorner = -1
+[11/29 05:13:48    122s]  Visiting view : AnalysisView_WC
+[11/29 05:13:48    122s]    : PowerDomain = none : Weighted F : unweighted  = 37.90 (1.000) with rcCorner = 0
+[11/29 05:13:48    122s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[11/29 05:13:48    122s]  Visiting view : AnalysisView_BC
+[11/29 05:13:48    122s]    : PowerDomain = none : Weighted F : unweighted  = 9.90 (1.000) with rcCorner = 1
+[11/29 05:13:48    122s]    : PowerDomain = none : Weighted F : unweighted  = 4.50 (1.000) with rcCorner = -1
+[11/29 05:13:48    122s] 
+[11/29 05:13:48    122s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[11/29 05:13:48    122s] **WARN: (IMPSYC-2):	Timing information is not defined for cell padIORINGCORNER; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/29 05:13:48    122s] Type 'man IMPSYC-2' for more detail.
+[11/29 05:13:48    122s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVSSIOR; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/29 05:13:48    122s] Type 'man IMPSYC-2' for more detail.
+[11/29 05:13:48    122s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVSS; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/29 05:13:48    122s] Type 'man IMPSYC-2' for more detail.
+[11/29 05:13:48    122s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVDDIOR; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/29 05:13:48    122s] Type 'man IMPSYC-2' for more detail.
+[11/29 05:13:48    122s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVDD; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/29 05:13:48    122s] Type 'man IMPSYC-2' for more detail.
+[11/29 05:13:48    122s] Reading floorplan file - /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.fp.gz (mem = 1200.6M).
+[11/29 05:13:49    122s] % Begin Load floorplan data ... (date=11/29 05:13:48, mem=966.1M)
+[11/29 05:13:49    122s] *info: reset 4814 existing net BottomPreferredLayer and AvoidDetour
+[11/29 05:13:49    122s] Pre-connect netlist-defined P/G connections...
+[11/29 05:13:49    122s]   Updated 4 instances.
+[11/29 05:13:49    122s] Deleting old partition specification.
+[11/29 05:13:50    122s] Set FPlanBox to (0 0 1600000 1600180)
+[11/29 05:13:50    122s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 05:13:50    122s] Type 'man IMPFP-3961' for more detail.
+[11/29 05:13:50    122s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 05:13:50    122s] Type 'man IMPFP-3961' for more detail.
+[11/29 05:13:50    122s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 05:13:50    122s] Type 'man IMPFP-3961' for more detail.
+[11/29 05:13:50    122s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 05:13:50    122s] Type 'man IMPFP-3961' for more detail.
+[11/29 05:13:50    122s] Start create_tracks
+[11/29 05:13:50    122s]  ... processed partition successfully.
+[11/29 05:13:50    122s] Reading binary special route file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.fp.spr.gz (Created by Innovus v21.12-s106_1 on Tue Nov 28 21:12:33 2023, version: 1)
+[11/29 05:13:50    122s] Convert 0 swires and 0 svias from compressed groups
+[11/29 05:13:50    122s] 51 swires and 214 svias were compressed
+[11/29 05:13:50    122s] 51 swires and 214 svias were decompressed from small or sparse groups
+[11/29 05:13:50    122s] Ending "Read special route file" (total cpu=0:00:00.1, real=0:00:00.0, peak res=967.1M, current mem=967.1M)
+[11/29 05:13:50    122s] There are 24 io inst loaded
+[11/29 05:13:50    122s] There are 41 nets with weight being set
+[11/29 05:13:50    122s] There are 41 nets with bottomPreferredRoutingLayer being set
+[11/29 05:13:50    122s] There are 41 nets with avoidDetour being set
+[11/29 05:13:50    122s] Extracting standard cell pins and blockage ...... 
+[11/29 05:13:50    122s] Pin and blockage extraction finished
+[11/29 05:13:50    122s] % End Load floorplan data ... (date=11/29 05:13:50, total cpu=0:00:00.4, real=0:00:01.0, peak res=968.3M, current mem=968.3M)
+[11/29 05:13:50    122s] Reading congestion map file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.route.congmap.gz ...
+[11/29 05:13:50    122s] % Begin Load SymbolTable ... (date=11/29 05:13:50, mem=968.5M)
+[11/29 05:13:51    122s] routingBox: (200 190) (1599800 1599990)
+[11/29 05:13:51    122s] coreBox:    (580000 579880) (1020000 1018780)
+[11/29 05:13:51    122s] Un-suppress "**WARN ..." messages.
+[11/29 05:13:51    123s] % End Load SymbolTable ... (date=11/29 05:13:51, total cpu=0:00:00.2, real=0:00:01.0, peak res=974.8M, current mem=974.7M)
+[11/29 05:13:51    123s] Loading place ...
+[11/29 05:13:51    123s] % Begin Load placement data ... (date=11/29 05:13:51, mem=974.7M)
+[11/29 05:13:51    123s] Reading placement file - /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.place.gz.
+[11/29 05:13:51    123s] ** Reading stdCellPlacement_binary (Created by Innovus v21.12-s106_1 on Tue Nov 28 21:12:34 2023, version# 2) ...
+[11/29 05:13:51    123s] Read Views for adaptive view pruning ...
+[11/29 05:13:51    123s] Read 0 views from Binary DB for adaptive view pruning
+[11/29 05:13:51    123s] *** Completed restorePlace (cpu=0:00:00.1 real=0:00:00.0 mem=1208.8M) ***
+[11/29 05:13:51    123s] Total net length = 8.471e+03 (4.447e+03 4.025e+03) (ext = 0.000e+00)
+[11/29 05:13:51    123s] % End Load placement data ... (date=11/29 05:13:51, total cpu=0:00:00.2, real=0:00:00.0, peak res=975.7M, current mem=975.5M)
+[11/29 05:13:52    123s] Reading PG file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.pg.gz, version#2, (Created by Innovus v21.12-s106_1 on       Tue Nov 28 21:12:34 2023)
+[11/29 05:13:52    123s] *** Completed restorePGFile (cpu=0:00:00.0 real=0:00:01.0 mem=1204.8M) ***
+[11/29 05:13:52    123s] % Begin Load routing data ... (date=11/29 05:13:52, mem=975.7M)
+[11/29 05:13:52    123s] Reading routing file - /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.route.gz.
+[11/29 05:13:53    123s] Reading Innovus routing data (Created by Innovus v21.12-s106_1 on Tue Nov 28 21:12:34 2023 Format: 20.1) ...
+[11/29 05:13:53    123s] *** Total 4243 nets are successfully restored.
+[11/29 05:13:53    123s] *** Completed restoreRoute (cpu=0:00:00.1 real=0:00:01.0 mem=1207.8M) ***
+[11/29 05:13:53    123s] % End Load routing data ... (date=11/29 05:13:53, total cpu=0:00:00.2, real=0:00:01.0, peak res=978.9M, current mem=977.9M)
+[11/29 05:13:53    123s] TAT_INFO: restoreCongMap REAL = 1 : CPU = 0 : MEM = 0.
+[11/29 05:13:53    123s] Reading property file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.prop
+[11/29 05:13:53    123s] *** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1211.8M) ***
+[11/29 05:13:54    123s] Reading dirtyarea snapshot file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.db.da.gz (Create by Innovus v21.12-s106_1 on Tue Nov 28 21:12:34 2023, version: 4).
+[11/29 05:13:55    124s] Set Default Input Pin Transition as 0.1 ps.
+[11/29 05:13:57    126s] Loading preRoute extraction data from directory '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/extraction/' ...
+[11/29 05:13:57    126s] Restore PreRoute RC Grid meta data successful.
+[11/29 05:13:57    126s] Extraction setup Started 
+[11/29 05:13:57    126s] 
+[11/29 05:13:57    126s] Trim Metal Layers:
+[11/29 05:13:57    126s] Initializing multi-corner RC extraction with 2 active RC Corners ...
+[11/29 05:13:57    126s] Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[11/29 05:13:57    126s] __QRC_SADV_USE_LE__ is set 0
+[11/29 05:14:01    130s] Metal Layer Id 1 is Metal1 
+[11/29 05:14:01    130s] Metal Layer Id 2 is Metal2 
+[11/29 05:14:01    130s] Metal Layer Id 3 is Metal3 
+[11/29 05:14:01    130s] Metal Layer Id 4 is Metal4 
+[11/29 05:14:01    130s] Metal Layer Id 5 is Metal5 
+[11/29 05:14:01    130s] Metal Layer Id 6 is Metal6 
+[11/29 05:14:01    130s] Metal Layer Id 7 is Metal7 
+[11/29 05:14:01    130s] Metal Layer Id 8 is Metal8 
+[11/29 05:14:01    130s] Metal Layer Id 9 is Metal9 
+[11/29 05:14:01    130s] Metal Layer Id 10 is Metal10 
+[11/29 05:14:01    130s] Metal Layer Id 11 is Metal11 
+[11/29 05:14:01    130s] Via Layer Id 33 is Cont 
+[11/29 05:14:01    130s] Via Layer Id 34 is Via1 
+[11/29 05:14:01    130s] Via Layer Id 35 is Via2 
+[11/29 05:14:01    130s] Via Layer Id 36 is Via3 
+[11/29 05:14:01    130s] Via Layer Id 37 is Via4 
+[11/29 05:14:01    130s] Via Layer Id 38 is Via5 
+[11/29 05:14:01    130s] Via Layer Id 39 is Via6 
+[11/29 05:14:01    130s] Via Layer Id 40 is Via7 
+[11/29 05:14:01    130s] Via Layer Id 41 is Via8 
+[11/29 05:14:01    130s] Via Layer Id 42 is Via9 
+[11/29 05:14:01    130s] Via Layer Id 43 is Via10 
+[11/29 05:14:01    130s] Via Layer Id 44 is Bondpad 
+[11/29 05:14:01    130s] 
+[11/29 05:14:01    130s] Trim Metal Layers:
+[11/29 05:14:01    130s] Generating auto layer map file.
+[11/29 05:14:01    130s]  lef metal Layer Id 1 mapped to tech Id 5 of Layer metal_1 
+[11/29 05:14:01    130s]  lef via Layer Id 1 mapped to tech Id 6 of Layer via_1 
+[11/29 05:14:01    130s]  lef metal Layer Id 2 mapped to tech Id 7 of Layer metal_2 
+[11/29 05:14:01    130s]  lef via Layer Id 2 mapped to tech Id 8 of Layer via_2 
+[11/29 05:14:01    130s]  lef metal Layer Id 3 mapped to tech Id 9 of Layer metal_3 
+[11/29 05:14:01    130s]  lef via Layer Id 3 mapped to tech Id 10 of Layer via_3 
+[11/29 05:14:01    130s]  lef metal Layer Id 4 mapped to tech Id 11 of Layer metal_4 
+[11/29 05:14:01    130s]  lef via Layer Id 4 mapped to tech Id 12 of Layer via_4 
+[11/29 05:14:01    130s]  lef metal Layer Id 5 mapped to tech Id 13 of Layer metal_5 
+[11/29 05:14:01    130s]  lef via Layer Id 5 mapped to tech Id 14 of Layer via_5 
+[11/29 05:14:01    130s]  lef metal Layer Id 6 mapped to tech Id 15 of Layer metal_6 
+[11/29 05:14:01    130s]  lef via Layer Id 6 mapped to tech Id 16 of Layer via_6 
+[11/29 05:14:01    130s]  lef metal Layer Id 7 mapped to tech Id 17 of Layer metal_7 
+[11/29 05:14:01    130s]  lef via Layer Id 7 mapped to tech Id 18 of Layer via_7 
+[11/29 05:14:01    130s]  lef metal Layer Id 8 mapped to tech Id 19 of Layer metal_8 
+[11/29 05:14:01    130s]  lef via Layer Id 8 mapped to tech Id 20 of Layer via_8 
+[11/29 05:14:01    130s]  lef metal Layer Id 9 mapped to tech Id 21 of Layer metal_9 
+[11/29 05:14:01    130s]  lef via Layer Id 9 mapped to tech Id 22 of Layer via_9 
+[11/29 05:14:01    130s]  lef metal Layer Id 10 mapped to tech Id 23 of Layer metal_10 
+[11/29 05:14:01    130s]  lef via Layer Id 10 mapped to tech Id 24 of Layer via_10 
+[11/29 05:14:01    130s]  lef metal Layer Id 11 mapped to tech Id 25 of Layer metal_11 
+[11/29 05:14:01    130s] Metal Layer Id 1 mapped to 5 
+[11/29 05:14:01    130s] Via Layer Id 1 mapped to 6 
+[11/29 05:14:01    130s] Metal Layer Id 2 mapped to 7 
+[11/29 05:14:01    130s] Via Layer Id 2 mapped to 8 
+[11/29 05:14:01    130s] Metal Layer Id 3 mapped to 9 
+[11/29 05:14:01    130s] Via Layer Id 3 mapped to 10 
+[11/29 05:14:01    130s] Metal Layer Id 4 mapped to 11 
+[11/29 05:14:01    130s] Via Layer Id 4 mapped to 12 
+[11/29 05:14:01    130s] Metal Layer Id 5 mapped to 13 
+[11/29 05:14:01    130s] Via Layer Id 5 mapped to 14 
+[11/29 05:14:01    130s] Metal Layer Id 6 mapped to 15 
+[11/29 05:14:01    130s] Via Layer Id 6 mapped to 16 
+[11/29 05:14:01    130s] Metal Layer Id 7 mapped to 17 
+[11/29 05:14:01    130s] Via Layer Id 7 mapped to 18 
+[11/29 05:14:01    130s] Metal Layer Id 8 mapped to 19 
+[11/29 05:14:01    130s] Via Layer Id 8 mapped to 20 
+[11/29 05:14:01    130s] Metal Layer Id 9 mapped to 21 
+[11/29 05:14:01    130s] Via Layer Id 9 mapped to 22 
+[11/29 05:14:01    130s] Metal Layer Id 10 mapped to 23 
+[11/29 05:14:01    130s] Via Layer Id 10 mapped to 24 
+[11/29 05:14:01    130s] Metal Layer Id 11 mapped to 25 
+[11/29 05:14:02    131s] eee: pegPreRouteEnableSaveRestoreRCPatterns:1, retVal:1, doesAnyTechFileNeedExtraction1
+[11/29 05:14:02    131s] eee: Reading patterns meta data.
+[11/29 05:14:02    131s] Restore PreRoute Pattern Extraction data successful in header.
+[11/29 05:14:02    131s] Loading preRoute extracted patterns from file '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.techData.gz' ...
+[11/29 05:14:02    131s] readViaRC viaRead:119, nrVia:119
+[11/29 05:14:02    131s] isWireRCValid Validate checksum:4711880, FromFile:4711880accessWirePatterns Pattern count:31752, FromFile:31752 Checksum:4711880, FromFile:4711880
+[11/29 05:14:02    131s] eee: PatternAvail:1, PreRoutePatternReadFailed:0
+[11/29 05:14:02    131s] Restore PreRoute Pattern Extraction data successful.
+[11/29 05:14:02    131s] Completed (cpu: 0:00:04.6 real: 0:00:05.0)
+[11/29 05:14:02    131s] Set Shrink Factor to 1.00000
+[11/29 05:14:02    131s] Summary of Active RC-Corners : 
+[11/29 05:14:02    131s]  
+[11/29 05:14:02    131s]  Analysis View: AnalysisView_WC
+[11/29 05:14:02    131s]     RC-Corner Name        : RC_Extraction_WC
+[11/29 05:14:02    131s]     RC-Corner Index       : 0
+[11/29 05:14:02    131s]     RC-Corner Temperature : 25 Celsius
+[11/29 05:14:02    131s]     RC-Corner Cap Table   : ''
+[11/29 05:14:02    131s]     RC-Corner PreRoute Res Factor         : 1
+[11/29 05:14:02    131s]     RC-Corner PreRoute Cap Factor         : 1
+[11/29 05:14:02    131s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[11/29 05:14:02    131s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[11/29 05:14:02    131s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[11/29 05:14:02    131s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[11/29 05:14:02    131s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[11/29 05:14:02    131s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[11/29 05:14:02    131s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[11/29 05:14:02    131s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[11/29 05:14:02    131s]     RC-Corner Technology file: '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch'
+[11/29 05:14:02    131s]  
+[11/29 05:14:02    131s]  Analysis View: AnalysisView_BC
+[11/29 05:14:02    131s]     RC-Corner Name        : RC_Extraction_BC
+[11/29 05:14:02    131s]     RC-Corner Index       : 1
+[11/29 05:14:02    131s]     RC-Corner Temperature : 25 Celsius
+[11/29 05:14:02    131s]     RC-Corner Cap Table   : ''
+[11/29 05:14:02    131s]     RC-Corner PreRoute Res Factor         : 1
+[11/29 05:14:02    131s]     RC-Corner PreRoute Cap Factor         : 1
+[11/29 05:14:02    131s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[11/29 05:14:02    131s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[11/29 05:14:02    131s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[11/29 05:14:02    131s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[11/29 05:14:02    131s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[11/29 05:14:02    131s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[11/29 05:14:02    131s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[11/29 05:14:02    131s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[11/29 05:14:02    131s]     RC-Corner Technology file: '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch'
+[11/29 05:14:02    131s] Technology file '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch' associated with first view 'AnalysisView_WC' will be used as the primary corner for the multi-corner extraction.
+[11/29 05:14:02    131s] 
+[11/29 05:14:02    131s] Trim Metal Layers:
+[11/29 05:14:02    131s] LayerId::1 widthSet size::1
+[11/29 05:14:02    131s] LayerId::2 widthSet size::1
+[11/29 05:14:02    131s] LayerId::3 widthSet size::1
+[11/29 05:14:02    131s] LayerId::4 widthSet size::1
+[11/29 05:14:02    131s] LayerId::5 widthSet size::1
+[11/29 05:14:02    131s] LayerId::6 widthSet size::1
+[11/29 05:14:02    131s] LayerId::7 widthSet size::1
+[11/29 05:14:02    131s] LayerId::8 widthSet size::1
+[11/29 05:14:02    131s] LayerId::9 widthSet size::1
+[11/29 05:14:02    131s] LayerId::10 widthSet size::1
+[11/29 05:14:02    131s] LayerId::11 widthSet size::1
+[11/29 05:14:02    131s] Checksum of RCGrid density data read::(132 132) passed::1
+[11/29 05:14:02    131s] Restore PreRoute RC Grid data successful.
+[11/29 05:14:02    131s] eee: pegSigSF::1.070000
+[11/29 05:14:02    131s] Initializing multi-corner resistance tables ...
+[11/29 05:14:02    131s] ReadRoutingBlockageFactor status::1
+[11/29 05:14:02    131s] Restore PreRoute Blockage data successful.
+[11/29 05:14:02    131s] eee: Reading Grid unit RC.
+[11/29 05:14:02    131s] pesRestorePreRouteExtractionData::readRCGridUnitRC called for corner::RC_Extraction_WC
+[11/29 05:14:02    131s] RCCorner in design data Name::RC_Extraction_WC Tech::/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 05:14:02    131s] RCCorner in saved data Name::RC_Extraction_WC Tech::/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 05:14:02    131s] RCCorner in design data Name::RC_Extraction_WC Tech::/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 05:14:02    131s] RCCorner in saved data Name::RC_Extraction_BC Tech::/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 05:14:02    131s] RC corner RC_Extraction_WC not found in the saved preRoute extraction data.
+[11/29 05:14:02    131s] eee: RCGridUnitRC data read is unsuccessful
+[11/29 05:14:02    131s] pesRestorePreRouteExtractionData::readRCGridUnitRC called for corner::RC_Extraction_BC
+[11/29 05:14:02    131s] RCCorner in design data Name::RC_Extraction_BC Tech::/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 05:14:02    131s] RCCorner in saved data Name::RC_Extraction_WC Tech::/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 05:14:02    131s] RCCorner in design data Name::RC_Extraction_BC Tech::/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 05:14:02    131s] RCCorner in saved data Name::RC_Extraction_BC Tech::/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 05:14:02    131s] RC corner RC_Extraction_BC not found in the saved preRoute extraction data.
+[11/29 05:14:02    131s] eee: RCGridUnitRC data read is unsuccessful
+[11/29 05:14:02    131s] Number of RC corner to be extracted::4
+[11/29 05:14:02    131s] eee: l::1 avDens::0.081844 usedTrk::2114.035086 availTrk::25830.000000 sigTrk::2114.035086
+[11/29 05:14:02    131s] eee: l::2 avDens::0.016909 usedTrk::303.596198 availTrk::17955.000000 sigTrk::303.596198
+[11/29 05:14:02    131s] eee: l::3 avDens::0.033456 usedTrk::478.748830 availTrk::14310.000000 sigTrk::478.748830
+[11/29 05:14:02    131s] eee: l::4 avDens::0.020397 usedTrk::429.013452 availTrk::21033.000000 sigTrk::429.013452
+[11/29 05:14:02    131s] eee: l::5 avDens::0.001259 usedTrk::1.812865 availTrk::1440.000000 sigTrk::1.812865
+[11/29 05:14:02    131s] eee: l::6 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/29 05:14:02    131s] eee: l::7 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/29 05:14:02    131s] eee: l::8 avDens::0.021685 usedTrk::189.112281 availTrk::8721.000000 sigTrk::189.112281
+[11/29 05:14:02    131s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/29 05:14:02    131s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/29 05:14:02    131s] eee: l::11 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/29 05:14:02    131s] Preroute length aware model: n: 40 ; LLS: 2-3 ; HLS: 3-5 ; rDens: 0.000000 ; uaWl: 1.000000 ; uaWlH: 0.051600 ; aWlH: 0.000000 ; Pmax: 0.805900 ; wcR: 0.772700 ; newSi: 0.001600 ; pMod: 83 ; wHLS: 1.000000 ;
+[11/29 05:14:02    131s] Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+[11/29 05:14:02    131s] Restore PreRoute all RC Grid data successful.Start generating vias ..
+[11/29 05:14:03    131s] #create default rule from bind_ndr_rule rule=0x7fdfaea23660 0x7fdf950b2568
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:03    131s] ### import design signature (1): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1
+[11/29 05:14:03    131s] #Skip building auto via since it is not turned on.
+[11/29 05:14:03    131s] Extracting standard cell pins and blockage ...... 
+[11/29 05:14:03    132s] Pin and blockage extraction finished
+[11/29 05:14:03    132s] Via generation completed.
+[11/29 05:14:03    132s] % Begin Load power constraints ... (date=11/29 05:14:03, mem=1023.9M)
+[11/29 05:14:03    132s] % End Load power constraints ... (date=11/29 05:14:03, total cpu=0:00:00.2, real=0:00:00.0, peak res=1030.4M, current mem=1030.4M)
+[11/29 05:14:04    132s] % Begin load AAE data ... (date=11/29 05:14:03, mem=1050.6M)
+[11/29 05:14:06    135s] AAE DB initialization (MEM=1295.3 CPU=0:00:00.1 REAL=0:00:00.0) 
+[11/29 05:14:06    135s] % End load AAE data ... (date=11/29 05:14:06, total cpu=0:00:02.7, real=0:00:02.0, peak res=1056.4M, current mem=1056.4M)
+[11/29 05:14:06    135s] Restoring CCOpt config...
+[11/29 05:14:06    135s]   Extracting original clock gating for My_CLK...
+[11/29 05:14:07    135s]     clock_tree My_CLK contains 3519 sinks and 0 clock gates.
+[11/29 05:14:07    135s]   Extracting original clock gating for My_CLK done.
+[11/29 05:14:07    136s]   The skew group My_CLK/ConstraintMode_BC was created. It contains 3519 sinks and 1 sources.
+[11/29 05:14:07    136s]   The skew group My_CLK/ConstraintMode_WC was created. It contains 3519 sinks and 1 sources.
+[11/29 05:14:07    136s]   The skew group My_CLK/ConstraintMode_BC was created. It contains 3519 sinks and 1 sources.
+[11/29 05:14:07    136s]   The skew group My_CLK/ConstraintMode_WC was created. It contains 3519 sinks and 1 sources.
+[11/29 05:14:07    136s] **WARN: (IMPCCOPT-2332):	The property locked_originally is deprecated. It still works, but it may be removed in a future release.
+[11/29 05:14:07    136s] Restoring CCOpt config done.
+[11/29 05:14:07    136s] 
+[11/29 05:14:07    136s] TimeStamp Deleting Cell Server Begin ...
+[11/29 05:14:07    136s] 
+[11/29 05:14:07    136s] TimeStamp Deleting Cell Server End ...
+[11/29 05:14:07    136s] 
+[11/29 05:14:07    136s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[11/29 05:14:07    136s] Summary for sequential cells identification: 
+[11/29 05:14:07    136s]   Identified SBFF number: 104
+[11/29 05:14:07    136s]   Identified MBFF number: 16
+[11/29 05:14:07    136s]   Identified SB Latch number: 0
+[11/29 05:14:07    136s]   Identified MB Latch number: 0
+[11/29 05:14:07    136s]   Not identified SBFF number: 16
+[11/29 05:14:07    136s]   Not identified MBFF number: 0
+[11/29 05:14:07    136s]   Not identified SB Latch number: 0
+[11/29 05:14:07    136s]   Not identified MB Latch number: 0
+[11/29 05:14:07    136s]   Number of sequential cells which are not FFs: 32
+[11/29 05:14:07    136s] Total number of combinational cells: 327
+[11/29 05:14:07    136s] Total number of sequential cells: 168
+[11/29 05:14:07    136s] Total number of tristate cells: 10
+[11/29 05:14:07    136s] Total number of level shifter cells: 0
+[11/29 05:14:07    136s] Total number of power gating cells: 0
+[11/29 05:14:07    136s] Total number of isolation cells: 0
+[11/29 05:14:07    136s] Total number of power switch cells: 0
+[11/29 05:14:07    136s] Total number of pulse generator cells: 0
+[11/29 05:14:07    136s] Total number of always on buffers: 0
+[11/29 05:14:07    136s] Total number of retention cells: 0
+[11/29 05:14:07    136s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[11/29 05:14:07    136s] Total number of usable buffers: 16
+[11/29 05:14:07    136s] List of unusable buffers:
+[11/29 05:14:07    136s] Total number of unusable buffers: 0
+[11/29 05:14:07    136s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[11/29 05:14:07    136s] Total number of usable inverters: 19
+[11/29 05:14:07    136s] List of unusable inverters:
+[11/29 05:14:07    136s] Total number of unusable inverters: 0
+[11/29 05:14:07    136s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[11/29 05:14:07    136s] Total number of identified usable delay cells: 8
+[11/29 05:14:07    136s] List of identified unusable delay cells:
+[11/29 05:14:07    136s] Total number of identified unusable delay cells: 0
+[11/29 05:14:07    136s] 
+[11/29 05:14:07    136s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[11/29 05:14:07    136s] 
+[11/29 05:14:07    136s] TimeStamp Deleting Cell Server Begin ...
+[11/29 05:14:07    136s] 
+[11/29 05:14:07    136s] TimeStamp Deleting Cell Server End ...
+[11/29 05:14:07    136s] #% End load design ... (date=11/29 05:14:07, total cpu=0:00:32.6, real=0:00:36.0, peak res=1081.1M, current mem=1060.7M)
+[11/29 05:14:07    136s] 
+[11/29 05:14:07    136s] *** Summary of all messages that are not suppressed in this session:
+[11/29 05:14:07    136s] Severity  ID               Count  Summary                                  
+[11/29 05:14:07    136s] WARNING   IMPLF-58            16  MACRO '%s' has been found in the databas...
+[11/29 05:14:07    136s] WARNING   IMPLF-61             1  %d duplicated MACRO definitions have bee...
+[11/29 05:14:07    136s] WARNING   IMPLF-200           25  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[11/29 05:14:07    136s] WARNING   IMPLF-201            6  Pin '%s' in macro '%s' has no ANTENNADIF...
+[11/29 05:14:07    136s] WARNING   IMPFP-3961           8  The techSite '%s' has no related standar...
+[11/29 05:14:07    136s] WARNING   IMPFP-4008           1  The ring number '%d' is specified at sid...
+[11/29 05:14:07    136s] WARNING   IMPSYC-2             5  Timing information is not defined for ce...
+[11/29 05:14:07    136s] WARNING   IMPVL-159           16  Pin '%s' of cell '%s' is defined in LEF ...
+[11/29 05:14:07    136s] WARNING   IMPOPT-3602          1  The specified path group name %s is not ...
+[11/29 05:14:07    136s] WARNING   IMPCCOPT-2332        1  The property %s is deprecated. It still ...
+[11/29 05:14:07    136s] WARNING   TECHLIB-302         40  No function defined for cell '%s'. The c...
+[11/29 05:14:07    136s] WARNING   TECHLIB-459          2  Appending library '%s' to the previously...
+[11/29 05:14:07    136s] *** Message Summary: 122 warning(s), 0 error(s)
+[11/29 05:14:07    136s] 
+[11/29 05:14:07    136s] <CMD> setDrawView fplan
+[11/29 05:14:07    136s] <CMD> encMessage warning 1
+[11/29 05:14:07    136s] <CMD> encMessage debug 0
+[11/29 05:14:36    141s] <CMD> getMultiCpuUsage -localCpu
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -disable_rules -quiet
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -quiet -area
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -quiet -layer_range
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -check_only -quiet
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -check_same_via_cell -quiet
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -exclude_pg_net -quiet
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -ignore_trial_route -quiet
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+[11/29 05:14:36    141s] <CMD> get_verify_drc_mode -limit -quiet
+[11/29 05:14:39    142s] <CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report risc_v_Pad_Frame.drc.rpt -limit 1000
+[11/29 05:14:39    142s] <CMD> verify_drc
+[11/29 05:14:39    142s] #-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+[11/29 05:14:39    142s] #-check_same_via_cell true               # bool, default=false, user setting
+[11/29 05:14:39    142s] #-report risc_v_Pad_Frame.drc.rpt        # string, default="", user setting
+[11/29 05:14:39    142s]  *** Starting Verify DRC (MEM: 1367.1) ***
+[11/29 05:14:39    142s] 
+[11/29 05:14:39    142s] #create default rule from bind_ndr_rule rule=0x7fdfaea23660 0x7fdfb1ea4568
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 05:14:39    142s] ### import design signature (2): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1
+[11/29 05:14:39    142s]   VERIFY DRC ...... Starting Verification
+[11/29 05:14:39    142s]   VERIFY DRC ...... Initializing
+[11/29 05:14:39    142s]   VERIFY DRC ...... Deleting Existing Violations
+[11/29 05:14:39    142s]   VERIFY DRC ...... Creating Sub-Areas
+[11/29 05:14:39    142s]   VERIFY DRC ...... Using new threading
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {0.000 0.000 80.640 80.640} 1 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 1 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {80.640 0.000 161.280 80.640} 2 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 2 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {161.280 0.000 241.920 80.640} 3 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 3 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {241.920 0.000 322.560 80.640} 4 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 4 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {322.560 0.000 403.200 80.640} 5 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 5 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {403.200 0.000 483.840 80.640} 6 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 6 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {483.840 0.000 564.480 80.640} 7 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 7 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {564.480 0.000 645.120 80.640} 8 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 8 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {645.120 0.000 725.760 80.640} 9 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 9 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {725.760 0.000 800.000 80.640} 10 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 10 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {0.000 80.640 80.640 161.280} 11 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 11 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {80.640 80.640 161.280 161.280} 12 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 12 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {161.280 80.640 241.920 161.280} 13 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 13 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {241.920 80.640 322.560 161.280} 14 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 14 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {322.560 80.640 403.200 161.280} 15 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 15 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {403.200 80.640 483.840 161.280} 16 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 16 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {483.840 80.640 564.480 161.280} 17 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 17 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {564.480 80.640 645.120 161.280} 18 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 18 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {645.120 80.640 725.760 161.280} 19 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 19 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {725.760 80.640 800.000 161.280} 20 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 20 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {0.000 161.280 80.640 241.920} 21 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 21 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {80.640 161.280 161.280 241.920} 22 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 22 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {161.280 161.280 241.920 241.920} 23 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 23 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {241.920 161.280 322.560 241.920} 24 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 24 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {322.560 161.280 403.200 241.920} 25 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 25 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {403.200 161.280 483.840 241.920} 26 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 26 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {483.840 161.280 564.480 241.920} 27 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 27 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {564.480 161.280 645.120 241.920} 28 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 28 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {645.120 161.280 725.760 241.920} 29 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 29 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {725.760 161.280 800.000 241.920} 30 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 30 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {0.000 241.920 80.640 322.560} 31 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 31 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {80.640 241.920 161.280 322.560} 32 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 32 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {161.280 241.920 241.920 322.560} 33 of 100
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area : 33 complete 0 Viols.
+[11/29 05:14:39    142s]   VERIFY DRC ...... Sub-Area: {241.920 241.920 322.560 322.560} 34 of 100
+[11/29 05:14:55    158s]   VERIFY DRC ...... Sub-Area : 34 complete 0 Viols.
+[11/29 05:14:55    158s]   VERIFY DRC ...... Sub-Area: {322.560 241.920 403.200 322.560} 35 of 100
+[11/29 05:15:10    173s]   VERIFY DRC ...... Sub-Area : 35 complete 0 Viols.
+[11/29 05:15:10    173s]   VERIFY DRC ...... Sub-Area: {403.200 241.920 483.840 322.560} 36 of 100
+[11/29 05:15:11    174s]   VERIFY DRC ...... Sub-Area : 36 complete 0 Viols.
+[11/29 05:15:11    174s]   VERIFY DRC ...... Sub-Area: {483.840 241.920 564.480 322.560} 37 of 100
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area : 37 complete 0 Viols.
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area: {564.480 241.920 645.120 322.560} 38 of 100
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area : 38 complete 0 Viols.
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area: {645.120 241.920 725.760 322.560} 39 of 100
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area : 39 complete 0 Viols.
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area: {725.760 241.920 800.000 322.560} 40 of 100
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area : 40 complete 0 Viols.
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area: {0.000 322.560 80.640 403.200} 41 of 100
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area : 41 complete 0 Viols.
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area: {80.640 322.560 161.280 403.200} 42 of 100
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area : 42 complete 0 Viols.
+[11/29 05:15:15    178s]   VERIFY DRC ...... Sub-Area: {161.280 322.560 241.920 403.200} 43 of 100
+[11/29 05:15:16    179s]   VERIFY DRC ...... Sub-Area : 43 complete 0 Viols.
+[11/29 05:15:16    179s]   VERIFY DRC ...... Sub-Area: {241.920 322.560 322.560 403.200} 44 of 100
+[11/29 05:15:19    182s]   VERIFY DRC ...... Sub-Area : 44 complete 0 Viols.
+[11/29 05:15:19    182s]   VERIFY DRC ...... Sub-Area: {322.560 322.560 403.200 403.200} 45 of 100
+[11/29 05:15:19    182s]   VERIFY DRC ...... Sub-Area : 45 complete 0 Viols.
+[11/29 05:15:19    182s]   VERIFY DRC ...... Sub-Area: {403.200 322.560 483.840 403.200} 46 of 100
+[11/29 05:15:20    182s]   VERIFY DRC ...... Sub-Area : 46 complete 0 Viols.
+[11/29 05:15:20    182s]   VERIFY DRC ...... Sub-Area: {483.840 322.560 564.480 403.200} 47 of 100
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area : 47 complete 0 Viols.
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area: {564.480 322.560 645.120 403.200} 48 of 100
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area : 48 complete 0 Viols.
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area: {645.120 322.560 725.760 403.200} 49 of 100
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area : 49 complete 0 Viols.
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area: {725.760 322.560 800.000 403.200} 50 of 100
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area : 50 complete 0 Viols.
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area: {0.000 403.200 80.640 483.840} 51 of 100
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area : 51 complete 0 Viols.
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area: {80.640 403.200 161.280 483.840} 52 of 100
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area : 52 complete 0 Viols.
+[11/29 05:15:20    183s]   VERIFY DRC ...... Sub-Area: {161.280 403.200 241.920 483.840} 53 of 100
+[11/29 05:15:21    184s]   VERIFY DRC ...... Sub-Area : 53 complete 0 Viols.
+[11/29 05:15:21    184s]   VERIFY DRC ...... Sub-Area: {241.920 403.200 322.560 483.840} 54 of 100
+[11/29 05:15:25    188s]   VERIFY DRC ...... Sub-Area : 54 complete 0 Viols.
+[11/29 05:15:25    188s]   VERIFY DRC ...... Sub-Area: {322.560 403.200 403.200 483.840} 55 of 100
+[11/29 05:15:25    188s]   VERIFY DRC ...... Sub-Area : 55 complete 0 Viols.
+[11/29 05:15:25    188s]   VERIFY DRC ...... Sub-Area: {403.200 403.200 483.840 483.840} 56 of 100
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area : 56 complete 0 Viols.
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area: {483.840 403.200 564.480 483.840} 57 of 100
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area : 57 complete 0 Viols.
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area: {564.480 403.200 645.120 483.840} 58 of 100
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area : 58 complete 0 Viols.
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area: {645.120 403.200 725.760 483.840} 59 of 100
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area : 59 complete 0 Viols.
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area: {725.760 403.200 800.000 483.840} 60 of 100
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area : 60 complete 0 Viols.
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area: {0.000 483.840 80.640 564.480} 61 of 100
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area : 61 complete 0 Viols.
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area: {80.640 483.840 161.280 564.480} 62 of 100
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area : 62 complete 0 Viols.
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area: {161.280 483.840 241.920 564.480} 63 of 100
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area : 63 complete 0 Viols.
+[11/29 05:15:26    189s]   VERIFY DRC ...... Sub-Area: {241.920 483.840 322.560 564.480} 64 of 100
+[11/29 05:15:29    192s]   VERIFY DRC ...... Sub-Area : 64 complete 0 Viols.
+[11/29 05:15:29    192s]   VERIFY DRC ...... Sub-Area: {322.560 483.840 403.200 564.480} 65 of 100
+[11/29 05:15:29    192s]   VERIFY DRC ...... Sub-Area : 65 complete 0 Viols.
+[11/29 05:15:29    192s]   VERIFY DRC ...... Sub-Area: {403.200 483.840 483.840 564.480} 66 of 100
+[11/29 05:15:29    192s]   VERIFY DRC ...... Sub-Area : 66 complete 0 Viols.
+[11/29 05:15:29    192s]   VERIFY DRC ...... Sub-Area: {483.840 483.840 564.480 564.480} 67 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 67 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {564.480 483.840 645.120 564.480} 68 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 68 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {645.120 483.840 725.760 564.480} 69 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 69 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {725.760 483.840 800.000 564.480} 70 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 70 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {0.000 564.480 80.640 645.120} 71 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 71 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {80.640 564.480 161.280 645.120} 72 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 72 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {161.280 564.480 241.920 645.120} 73 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 73 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {241.920 564.480 322.560 645.120} 74 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 74 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {322.560 564.480 403.200 645.120} 75 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 75 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {403.200 564.480 483.840 645.120} 76 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 76 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {483.840 564.480 564.480 645.120} 77 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 77 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {564.480 564.480 645.120 645.120} 78 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 78 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {645.120 564.480 725.760 645.120} 79 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 79 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {725.760 564.480 800.000 645.120} 80 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 80 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {0.000 645.120 80.640 725.760} 81 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 81 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {80.640 645.120 161.280 725.760} 82 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 82 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {161.280 645.120 241.920 725.760} 83 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 83 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {241.920 645.120 322.560 725.760} 84 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 84 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {322.560 645.120 403.200 725.760} 85 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 85 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {403.200 645.120 483.840 725.760} 86 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 86 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {483.840 645.120 564.480 725.760} 87 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 87 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {564.480 645.120 645.120 725.760} 88 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 88 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {645.120 645.120 725.760 725.760} 89 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 89 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {725.760 645.120 800.000 725.760} 90 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 90 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {0.000 725.760 80.640 800.090} 91 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 91 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {80.640 725.760 161.280 800.090} 92 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 92 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {161.280 725.760 241.920 800.090} 93 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 93 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {241.920 725.760 322.560 800.090} 94 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 94 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {322.560 725.760 403.200 800.090} 95 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 95 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {403.200 725.760 483.840 800.090} 96 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 96 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {483.840 725.760 564.480 800.090} 97 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 97 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {564.480 725.760 645.120 800.090} 98 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 98 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {645.120 725.760 725.760 800.090} 99 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 99 complete 0 Viols.
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area: {725.760 725.760 800.000 800.090} 100 of 100
+[11/29 05:15:32    195s]   VERIFY DRC ...... Sub-Area : 100 complete 0 Viols.
+[11/29 05:15:32    195s] 
+[11/29 05:15:32    195s]   Verification Complete : 0 Viols.
+[11/29 05:15:32    195s] 
+[11/29 05:15:32    195s]  *** End Verify DRC (CPU: 0:00:52.7  ELAPSED TIME: 53.00  MEM: 36.0M) ***
+[11/29 05:15:32    195s] 
+[11/29 05:15:32    195s] <CMD> set_verify_drc_mode -area {0 0 0 0}
+[11/29 05:18:28    225s] <CMD> streamOut ../Virtuoso/test/risc_v.gds -mapFile streamOut.map -libName DesignLib -structureName risc_v_Pad_Frame -outputMacros -dieAreaAsBoundary -units 2000 -mode ALL
+[11/29 05:18:28    225s] Parse flat map file...
+[11/29 05:18:28    225s] Writing GDSII file ...
+[11/29 05:18:28    225s] 	****** db unit per micron = 2000 ******
+[11/29 05:18:28    225s] 	****** output gds2 file unit per micron = 2000 ******
+[11/29 05:18:28    225s] 	****** unit scaling factor = 1 ******
+[11/29 05:18:28    225s] Output for instance
+[11/29 05:18:28    225s] Output for bump
+[11/29 05:18:28    225s] Output for physical terminals
+[11/29 05:18:28    225s] Output for logical terminals
+[11/29 05:18:28    225s] Output for regular nets
+[11/29 05:18:28    225s] Output for special nets and metal fills
+[11/29 05:18:28    225s] Output for via structure generation total number 43
+[11/29 05:18:28    225s] Statistics for GDS generated (version 3)
+[11/29 05:18:28    225s] ----------------------------------------
+[11/29 05:18:28    225s] Stream Out Layer Mapping Information:
+[11/29 05:18:28    225s] GDS Layer Number          GDS Layer Name
+[11/29 05:18:28    225s] ----------------------------------------
+[11/29 05:18:28    225s]     233                             COMP
+[11/29 05:18:28    225s]     234                          DIEAREA
+[11/29 05:18:28    225s]     223                          Metal11
+[11/29 05:18:28    225s]     221                          Metal11
+[11/29 05:18:28    225s]     220                          Metal11
+[11/29 05:18:28    225s]     219                          Metal11
+[11/29 05:18:28    225s]     218                          Metal11
+[11/29 05:18:28    225s]     217                            Via10
+[11/29 05:18:28    225s]     216                            Via10
+[11/29 05:18:28    225s]     212                            Via10
+[11/29 05:18:28    225s]     202                          Metal10
+[11/29 05:18:28    225s]     200                          Metal10
+[11/29 05:18:28    225s]     199                          Metal10
+[11/29 05:18:28    225s]     198                          Metal10
+[11/29 05:18:28    225s]     197                          Metal10
+[11/29 05:18:28    225s]     196                             Via9
+[11/29 05:18:28    225s]     195                             Via9
+[11/29 05:18:28    225s]     191                             Via9
+[11/29 05:18:28    225s]     181                           Metal9
+[11/29 05:18:28    225s]     179                           Metal9
+[11/29 05:18:28    225s]     178                           Metal9
+[11/29 05:18:28    225s]     177                           Metal9
+[11/29 05:18:28    225s]     176                           Metal9
+[11/29 05:18:28    225s]     175                             Via8
+[11/29 05:18:28    225s]     174                             Via8
+[11/29 05:18:28    225s]     170                             Via8
+[11/29 05:18:28    225s]     160                           Metal8
+[11/29 05:18:28    225s]     158                           Metal8
+[11/29 05:18:28    225s]     157                           Metal8
+[11/29 05:18:28    225s]     156                           Metal8
+[11/29 05:18:28    225s]     155                           Metal8
+[11/29 05:18:28    225s]     154                             Via7
+[11/29 05:18:28    225s]     153                             Via7
+[11/29 05:18:28    225s]     149                             Via7
+[11/29 05:18:28    225s]     139                           Metal7
+[11/29 05:18:28    225s]     137                           Metal7
+[11/29 05:18:28    225s]     136                           Metal7
+[11/29 05:18:28    225s]     135                           Metal7
+[11/29 05:18:28    225s]     134                           Metal7
+[11/29 05:18:28    225s]     133                             Via6
+[11/29 05:18:28    225s]     132                             Via6
+[11/29 05:18:28    225s]     131                             Via6
+[11/29 05:18:28    225s]     130                             Via6
+[11/29 05:18:28    225s]     129                             Via6
+[11/29 05:18:28    225s]     128                             Via6
+[11/29 05:18:28    225s]     127                             Via6
+[11/29 05:18:28    225s]     122                           Metal6
+[11/29 05:18:28    225s]     121                           Metal6
+[11/29 05:18:28    225s]     120                           Metal6
+[11/29 05:18:28    225s]     119                           Metal6
+[11/29 05:18:28    225s]     118                           Metal6
+[11/29 05:18:28    225s]     53                            Metal3
+[11/29 05:18:28    225s]     52                            Metal3
+[11/29 05:18:28    225s]     185                           Metal9
+[11/29 05:18:28    225s]     48                              Via2
+[11/29 05:18:28    225s]     29                            Metal2
+[11/29 05:18:28    225s]     180                           Metal9
+[11/29 05:18:28    225s]     47                              Via2
+[11/29 05:18:28    225s]     182                           Metal9
+[11/29 05:18:28    225s]     44                              Via2
+[11/29 05:18:28    225s]     43                              Via2
+[11/29 05:18:28    225s]     172                             Via8
+[11/29 05:18:28    225s]     38                            Metal2
+[11/29 05:18:28    225s]     95                            Metal5
+[11/29 05:18:28    225s]     36                            Metal2
+[11/29 05:18:28    225s]     93                            Metal5
+[11/29 05:18:28    225s]     112                             Via5
+[11/29 05:18:28    225s]     194                             Via9
+[11/29 05:18:28    225s]     55                            Metal3
+[11/29 05:18:28    225s]     113                           Metal6
+[11/29 05:18:28    225s]     32                            Metal2
+[11/29 05:18:28    225s]     54                            Metal3
+[11/29 05:18:28    225s]     31                            Metal2
+[11/29 05:18:28    225s]     107                             Via5
+[11/29 05:18:28    225s]     30                            Metal2
+[11/29 05:18:28    225s]     49                              Via2
+[11/29 05:18:28    225s]     106                             Via5
+[11/29 05:18:28    225s]     33                            Metal2
+[11/29 05:18:28    225s]     109                             Via5
+[11/29 05:18:28    225s]     10                            Metal1
+[11/29 05:18:28    225s]     224                          Metal11
+[11/29 05:18:28    225s]     86                              Via4
+[11/29 05:18:28    225s]     50                            Metal3
+[11/29 05:18:28    225s]     206                          Metal10
+[11/29 05:18:28    225s]     69                              Via3
+[11/29 05:18:28    225s]     143                           Metal7
+[11/29 05:18:28    225s]     6                               Cont
+[11/29 05:18:28    225s]     169                             Via8
+[11/29 05:18:28    225s]     35                            Metal2
+[11/29 05:18:28    225s]     8                             Metal1
+[11/29 05:18:28    225s]     164                           Metal8
+[11/29 05:18:28    225s]     27                              Via1
+[11/29 05:18:28    225s]     141                           Metal7
+[11/29 05:18:28    225s]     3                               Cont
+[11/29 05:18:28    225s]     51                            Metal3
+[11/29 05:18:28    225s]     70                              Via3
+[11/29 05:18:28    225s]     7                               Cont
+[11/29 05:18:28    225s]     64                              Via3
+[11/29 05:18:28    225s]     173                             Via8
+[11/29 05:18:28    225s]     34                            Metal2
+[11/29 05:18:28    225s]     92                            Metal5
+[11/29 05:18:28    225s]     111                             Via5
+[11/29 05:18:28    225s]     11                            Metal1
+[11/29 05:18:28    225s]     142                           Metal7
+[11/29 05:18:28    225s]     4                               Cont
+[11/29 05:18:28    225s]     9                             Metal1
+[11/29 05:18:28    225s]     28                              Via1
+[11/29 05:18:28    225s]     85                              Via4
+[11/29 05:18:28    225s]     138                           Metal7
+[11/29 05:18:28    225s]     5                               Cont
+[11/29 05:18:28    225s]     12                            Metal1
+[11/29 05:18:28    225s]     226                          Metal11
+[11/29 05:18:28    225s]     88                              Via4
+[11/29 05:18:28    225s]     183                           Metal9
+[11/29 05:18:28    225s]     45                              Via2
+[11/29 05:18:28    225s]     22                              Via1
+[11/29 05:18:28    225s]     152                             Via7
+[11/29 05:18:28    225s]     13                            Metal1
+[11/29 05:18:28    225s]     71                            Metal4
+[11/29 05:18:28    225s]     227                          Metal11
+[11/29 05:18:28    225s]     90                              Via4
+[11/29 05:18:28    225s]     184                           Metal9
+[11/29 05:18:28    225s]     46                              Via2
+[11/29 05:18:28    225s]     161                           Metal8
+[11/29 05:18:28    225s]     23                              Via1
+[11/29 05:18:28    225s]     171                             Via8
+[11/29 05:18:28    225s]     37                            Metal2
+[11/29 05:18:28    225s]     94                            Metal5
+[11/29 05:18:28    225s]     148                             Via7
+[11/29 05:18:28    225s]     14                            Metal1
+[11/29 05:18:28    225s]     15                            Metal1
+[11/29 05:18:28    225s]     72                            Metal4
+[11/29 05:18:28    225s]     91                              Via4
+[11/29 05:18:28    225s]     150                             Via7
+[11/29 05:18:28    225s]     16                            Metal1
+[11/29 05:18:28    225s]     73                            Metal4
+[11/29 05:18:28    225s]     159                           Metal8
+[11/29 05:18:28    225s]     26                              Via1
+[11/29 05:18:28    225s]     151                             Via7
+[11/29 05:18:28    225s]     17                            Metal1
+[11/29 05:18:28    225s]     74                            Metal4
+[11/29 05:18:28    225s]     1                               Cont
+[11/29 05:18:28    225s]     162                           Metal8
+[11/29 05:18:28    225s]     24                              Via1
+[11/29 05:18:28    225s]     140                           Metal7
+[11/29 05:18:28    225s]     2                               Cont
+[11/29 05:18:28    225s]     163                           Metal8
+[11/29 05:18:28    225s]     25                              Via1
+[11/29 05:18:28    225s]     190                             Via9
+[11/29 05:18:28    225s]     56                            Metal3
+[11/29 05:18:28    225s]     57                            Metal3
+[11/29 05:18:28    225s]     114                           Metal6
+[11/29 05:18:28    225s]     192                             Via9
+[11/29 05:18:28    225s]     58                            Metal3
+[11/29 05:18:28    225s]     115                           Metal6
+[11/29 05:18:28    225s]     193                             Via9
+[11/29 05:18:28    225s]     59                            Metal3
+[11/29 05:18:28    225s]     116                           Metal6
+[11/29 05:18:28    225s]     203                          Metal10
+[11/29 05:18:28    225s]     65                              Via3
+[11/29 05:18:28    225s]     204                          Metal10
+[11/29 05:18:28    225s]     66                              Via3
+[11/29 05:18:28    225s]     205                          Metal10
+[11/29 05:18:28    225s]     67                              Via3
+[11/29 05:18:28    225s]     201                          Metal10
+[11/29 05:18:28    225s]     68                              Via3
+[11/29 05:18:28    225s]     75                            Metal4
+[11/29 05:18:28    225s]     215                            Via10
+[11/29 05:18:28    225s]     76                            Metal4
+[11/29 05:18:28    225s]     211                            Via10
+[11/29 05:18:28    225s]     77                            Metal4
+[11/29 05:18:28    225s]     78                            Metal4
+[11/29 05:18:28    225s]     213                            Via10
+[11/29 05:18:28    225s]     79                            Metal4
+[11/29 05:18:28    225s]     214                            Via10
+[11/29 05:18:28    225s]     80                            Metal4
+[11/29 05:18:28    225s]     225                          Metal11
+[11/29 05:18:28    225s]     87                              Via4
+[11/29 05:18:28    225s]     222                          Metal11
+[11/29 05:18:28    225s]     89                              Via4
+[11/29 05:18:28    225s]     96                            Metal5
+[11/29 05:18:28    225s]     97                            Metal5
+[11/29 05:18:28    225s]     98                            Metal5
+[11/29 05:18:28    225s]     99                            Metal5
+[11/29 05:18:28    225s]     100                           Metal5
+[11/29 05:18:28    225s]     101                           Metal5
+[11/29 05:18:28    225s]     108                             Via5
+[11/29 05:18:28    225s]     110                             Via5
+[11/29 05:18:28    225s]     117                           Metal6
+[11/29 05:18:28    225s]     231                          Metal11
+[11/29 05:18:28    225s]     230                          Metal11
+[11/29 05:18:28    225s]     229                          Metal11
+[11/29 05:18:28    225s]     228                          Metal11
+[11/29 05:18:28    225s]     210                          Metal10
+[11/29 05:18:28    225s]     209                          Metal10
+[11/29 05:18:28    225s]     208                          Metal10
+[11/29 05:18:28    225s]     207                          Metal10
+[11/29 05:18:28    225s]     189                           Metal9
+[11/29 05:18:28    225s]     188                           Metal9
+[11/29 05:18:28    225s]     187                           Metal9
+[11/29 05:18:28    225s]     186                           Metal9
+[11/29 05:18:28    225s]     168                           Metal8
+[11/29 05:18:28    225s]     167                           Metal8
+[11/29 05:18:28    225s]     166                           Metal8
+[11/29 05:18:28    225s]     165                           Metal8
+[11/29 05:18:28    225s]     147                           Metal7
+[11/29 05:18:28    225s]     146                           Metal7
+[11/29 05:18:28    225s]     145                           Metal7
+[11/29 05:18:28    225s]     144                           Metal7
+[11/29 05:18:28    225s]     63                            Metal3
+[11/29 05:18:28    225s]     62                            Metal3
+[11/29 05:18:28    225s]     39                            Metal2
+[11/29 05:18:28    225s]     105                           Metal5
+[11/29 05:18:28    225s]     103                           Metal5
+[11/29 05:18:28    225s]     123                           Metal6
+[11/29 05:18:28    225s]     42                            Metal2
+[11/29 05:18:28    225s]     41                            Metal2
+[11/29 05:18:28    225s]     40                            Metal2
+[11/29 05:18:28    225s]     20                            Metal1
+[11/29 05:18:28    225s]     60                            Metal3
+[11/29 05:18:28    225s]     18                            Metal1
+[11/29 05:18:28    225s]     61                            Metal3
+[11/29 05:18:28    225s]     102                           Metal5
+[11/29 05:18:28    225s]     21                            Metal1
+[11/29 05:18:28    225s]     19                            Metal1
+[11/29 05:18:28    225s]     81                            Metal4
+[11/29 05:18:28    225s]     104                           Metal5
+[11/29 05:18:28    225s]     82                            Metal4
+[11/29 05:18:28    225s]     83                            Metal4
+[11/29 05:18:28    225s]     84                            Metal4
+[11/29 05:18:28    225s]     124                           Metal6
+[11/29 05:18:28    225s]     125                           Metal6
+[11/29 05:18:28    225s]     126                           Metal6
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Stream Out Information Processed for GDS version 3:
+[11/29 05:18:28    225s] Units: 2000 DBU
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Object                             Count
+[11/29 05:18:28    225s] ----------------------------------------
+[11/29 05:18:28    225s] Instances                           3923
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Ports/Pins                             0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Nets                               12773
+[11/29 05:18:28    225s]     metal layer Metal1                73
+[11/29 05:18:28    225s]     metal layer Metal2              6787
+[11/29 05:18:28    225s]     metal layer Metal3              4743
+[11/29 05:18:28    225s]     metal layer Metal4              1170
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s]     Via Instances                  11820
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Special Nets                         434
+[11/29 05:18:28    225s]     metal layer Metal1               391
+[11/29 05:18:28    225s]     metal layer Metal2                10
+[11/29 05:18:28    225s]     metal layer Metal3                 6
+[11/29 05:18:28    225s]     metal layer Metal4                14
+[11/29 05:18:28    225s]     metal layer Metal5                 1
+[11/29 05:18:28    225s]     metal layer Metal8                12
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s]     Via Instances                   5874
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Metal Fills                            0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s]     Via Instances                      0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Metal FillOPCs                         0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s]     Via Instances                      0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Metal FillDRCs                         0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s]     Via Instances                      0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Text                                 673
+[11/29 05:18:28    225s]     metal layer Metal1                 9
+[11/29 05:18:28    225s]     metal layer Metal2               491
+[11/29 05:18:28    225s]     metal layer Metal3               164
+[11/29 05:18:28    225s]     metal layer Metal4                 4
+[11/29 05:18:28    225s]     metal layer Metal8                 1
+[11/29 05:18:28    225s]     metal layer Metal11                4
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Blockages                              0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Custom Text                            0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Custom Box                             0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Trim Metal                             0
+[11/29 05:18:28    225s] 
+[11/29 05:18:28    225s] Output for cells
+[11/29 05:18:29    225s] ######Streamout is finished!
+[11/29 05:23:40    271s] <CMD> uiSetTool select
+[11/29 05:23:45    273s] <CMD> gui_select -rect {-10.16200 799.39650 810.16150 -6.93700}
+[11/29 05:27:58    314s] <CMD> streamOut ../Virtuoso/test/risc_v.gds -libName DesignLib -structureName risc_v_Pad_Frame -units 2000 -mode ALL
+[11/29 05:27:58    315s] Parse flat map file...
+[11/29 05:27:58    315s] Writing GDSII file ...
+[11/29 05:27:58    315s] 	****** db unit per micron = 2000 ******
+[11/29 05:27:58    315s] 	****** output gds2 file unit per micron = 2000 ******
+[11/29 05:27:58    315s] 	****** unit scaling factor = 1 ******
+[11/29 05:27:58    315s] Output for instance
+[11/29 05:27:58    315s] Output for bump
+[11/29 05:27:58    315s] Output for physical terminals
+[11/29 05:27:58    315s] Output for logical terminals
+[11/29 05:27:58    315s] Output for regular nets
+[11/29 05:27:58    315s] Output for special nets and metal fills
+[11/29 05:27:58    315s] Output for via structure generation total number 43
+[11/29 05:27:58    315s] Statistics for GDS generated (version 3)
+[11/29 05:27:58    315s] ----------------------------------------
+[11/29 05:27:58    315s] Stream Out Layer Mapping Information:
+[11/29 05:27:58    315s] GDS Layer Number          GDS Layer Name
+[11/29 05:27:58    315s] ----------------------------------------
+[11/29 05:27:58    315s]     233                             COMP
+[11/29 05:27:58    315s]     234                          DIEAREA
+[11/29 05:27:58    315s]     223                          Metal11
+[11/29 05:27:58    315s]     221                          Metal11
+[11/29 05:27:58    315s]     220                          Metal11
+[11/29 05:27:58    315s]     219                          Metal11
+[11/29 05:27:58    315s]     218                          Metal11
+[11/29 05:27:58    315s]     217                            Via10
+[11/29 05:27:58    315s]     216                            Via10
+[11/29 05:27:58    315s]     212                            Via10
+[11/29 05:27:58    315s]     202                          Metal10
+[11/29 05:27:58    315s]     200                          Metal10
+[11/29 05:27:58    315s]     199                          Metal10
+[11/29 05:27:58    315s]     198                          Metal10
+[11/29 05:27:58    315s]     197                          Metal10
+[11/29 05:27:58    315s]     196                             Via9
+[11/29 05:27:58    315s]     195                             Via9
+[11/29 05:27:58    315s]     191                             Via9
+[11/29 05:27:58    315s]     181                           Metal9
+[11/29 05:27:58    315s]     179                           Metal9
+[11/29 05:27:58    315s]     178                           Metal9
+[11/29 05:27:58    315s]     177                           Metal9
+[11/29 05:27:58    315s]     176                           Metal9
+[11/29 05:27:58    315s]     175                             Via8
+[11/29 05:27:58    315s]     174                             Via8
+[11/29 05:27:58    315s]     170                             Via8
+[11/29 05:27:58    315s]     160                           Metal8
+[11/29 05:27:58    315s]     158                           Metal8
+[11/29 05:27:58    315s]     157                           Metal8
+[11/29 05:27:58    315s]     156                           Metal8
+[11/29 05:27:58    315s]     155                           Metal8
+[11/29 05:27:58    315s]     154                             Via7
+[11/29 05:27:58    315s]     153                             Via7
+[11/29 05:27:58    315s]     149                             Via7
+[11/29 05:27:58    315s]     139                           Metal7
+[11/29 05:27:58    315s]     137                           Metal7
+[11/29 05:27:58    315s]     136                           Metal7
+[11/29 05:27:58    315s]     135                           Metal7
+[11/29 05:27:58    315s]     134                           Metal7
+[11/29 05:27:58    315s]     133                             Via6
+[11/29 05:27:58    315s]     132                             Via6
+[11/29 05:27:58    315s]     131                             Via6
+[11/29 05:27:58    315s]     130                             Via6
+[11/29 05:27:58    315s]     129                             Via6
+[11/29 05:27:58    315s]     128                             Via6
+[11/29 05:27:58    315s]     127                             Via6
+[11/29 05:27:58    315s]     122                           Metal6
+[11/29 05:27:58    315s]     121                           Metal6
+[11/29 05:27:58    315s]     120                           Metal6
+[11/29 05:27:58    315s]     119                           Metal6
+[11/29 05:27:58    315s]     118                           Metal6
+[11/29 05:27:58    315s]     53                            Metal3
+[11/29 05:27:58    315s]     52                            Metal3
+[11/29 05:27:58    315s]     185                           Metal9
+[11/29 05:27:58    315s]     48                              Via2
+[11/29 05:27:58    315s]     29                            Metal2
+[11/29 05:27:58    315s]     180                           Metal9
+[11/29 05:27:58    315s]     47                              Via2
+[11/29 05:27:58    315s]     182                           Metal9
+[11/29 05:27:58    315s]     44                              Via2
+[11/29 05:27:58    315s]     43                              Via2
+[11/29 05:27:58    315s]     172                             Via8
+[11/29 05:27:58    315s]     38                            Metal2
+[11/29 05:27:58    315s]     95                            Metal5
+[11/29 05:27:58    315s]     36                            Metal2
+[11/29 05:27:58    315s]     93                            Metal5
+[11/29 05:27:58    315s]     112                             Via5
+[11/29 05:27:58    315s]     194                             Via9
+[11/29 05:27:58    315s]     55                            Metal3
+[11/29 05:27:58    315s]     113                           Metal6
+[11/29 05:27:58    315s]     32                            Metal2
+[11/29 05:27:58    315s]     54                            Metal3
+[11/29 05:27:58    315s]     31                            Metal2
+[11/29 05:27:58    315s]     107                             Via5
+[11/29 05:27:58    315s]     30                            Metal2
+[11/29 05:27:58    315s]     49                              Via2
+[11/29 05:27:58    315s]     106                             Via5
+[11/29 05:27:58    315s]     33                            Metal2
+[11/29 05:27:58    315s]     109                             Via5
+[11/29 05:27:58    315s]     10                            Metal1
+[11/29 05:27:58    315s]     224                          Metal11
+[11/29 05:27:58    315s]     86                              Via4
+[11/29 05:27:58    315s]     50                            Metal3
+[11/29 05:27:58    315s]     206                          Metal10
+[11/29 05:27:58    315s]     69                              Via3
+[11/29 05:27:58    315s]     143                           Metal7
+[11/29 05:27:58    315s]     6                               Cont
+[11/29 05:27:58    315s]     169                             Via8
+[11/29 05:27:58    315s]     35                            Metal2
+[11/29 05:27:58    315s]     8                             Metal1
+[11/29 05:27:58    315s]     164                           Metal8
+[11/29 05:27:58    315s]     27                              Via1
+[11/29 05:27:58    315s]     141                           Metal7
+[11/29 05:27:58    315s]     3                               Cont
+[11/29 05:27:58    315s]     51                            Metal3
+[11/29 05:27:58    315s]     70                              Via3
+[11/29 05:27:58    315s]     7                               Cont
+[11/29 05:27:58    315s]     64                              Via3
+[11/29 05:27:58    315s]     173                             Via8
+[11/29 05:27:58    315s]     34                            Metal2
+[11/29 05:27:58    315s]     92                            Metal5
+[11/29 05:27:58    315s]     111                             Via5
+[11/29 05:27:58    315s]     11                            Metal1
+[11/29 05:27:58    315s]     142                           Metal7
+[11/29 05:27:58    315s]     4                               Cont
+[11/29 05:27:58    315s]     9                             Metal1
+[11/29 05:27:58    315s]     28                              Via1
+[11/29 05:27:58    315s]     85                              Via4
+[11/29 05:27:58    315s]     138                           Metal7
+[11/29 05:27:58    315s]     5                               Cont
+[11/29 05:27:58    315s]     12                            Metal1
+[11/29 05:27:58    315s]     226                          Metal11
+[11/29 05:27:58    315s]     88                              Via4
+[11/29 05:27:58    315s]     183                           Metal9
+[11/29 05:27:58    315s]     45                              Via2
+[11/29 05:27:58    315s]     22                              Via1
+[11/29 05:27:58    315s]     152                             Via7
+[11/29 05:27:58    315s]     13                            Metal1
+[11/29 05:27:58    315s]     71                            Metal4
+[11/29 05:27:58    315s]     227                          Metal11
+[11/29 05:27:58    315s]     90                              Via4
+[11/29 05:27:58    315s]     184                           Metal9
+[11/29 05:27:58    315s]     46                              Via2
+[11/29 05:27:58    315s]     161                           Metal8
+[11/29 05:27:58    315s]     23                              Via1
+[11/29 05:27:58    315s]     171                             Via8
+[11/29 05:27:58    315s]     37                            Metal2
+[11/29 05:27:58    315s]     94                            Metal5
+[11/29 05:27:58    315s]     148                             Via7
+[11/29 05:27:58    315s]     14                            Metal1
+[11/29 05:27:58    315s]     15                            Metal1
+[11/29 05:27:58    315s]     72                            Metal4
+[11/29 05:27:58    315s]     91                              Via4
+[11/29 05:27:58    315s]     150                             Via7
+[11/29 05:27:58    315s]     16                            Metal1
+[11/29 05:27:58    315s]     73                            Metal4
+[11/29 05:27:58    315s]     159                           Metal8
+[11/29 05:27:58    315s]     26                              Via1
+[11/29 05:27:58    315s]     151                             Via7
+[11/29 05:27:58    315s]     17                            Metal1
+[11/29 05:27:58    315s]     74                            Metal4
+[11/29 05:27:58    315s]     1                               Cont
+[11/29 05:27:58    315s]     162                           Metal8
+[11/29 05:27:58    315s]     24                              Via1
+[11/29 05:27:58    315s]     140                           Metal7
+[11/29 05:27:58    315s]     2                               Cont
+[11/29 05:27:58    315s]     163                           Metal8
+[11/29 05:27:58    315s]     25                              Via1
+[11/29 05:27:58    315s]     190                             Via9
+[11/29 05:27:58    315s]     56                            Metal3
+[11/29 05:27:58    315s]     57                            Metal3
+[11/29 05:27:58    315s]     114                           Metal6
+[11/29 05:27:58    315s]     192                             Via9
+[11/29 05:27:58    315s]     58                            Metal3
+[11/29 05:27:58    315s]     115                           Metal6
+[11/29 05:27:58    315s]     193                             Via9
+[11/29 05:27:58    315s]     59                            Metal3
+[11/29 05:27:58    315s]     116                           Metal6
+[11/29 05:27:58    315s]     203                          Metal10
+[11/29 05:27:58    315s]     65                              Via3
+[11/29 05:27:58    315s]     204                          Metal10
+[11/29 05:27:58    315s]     66                              Via3
+[11/29 05:27:58    315s]     205                          Metal10
+[11/29 05:27:58    315s]     67                              Via3
+[11/29 05:27:58    315s]     201                          Metal10
+[11/29 05:27:58    315s]     68                              Via3
+[11/29 05:27:58    315s]     75                            Metal4
+[11/29 05:27:58    315s]     215                            Via10
+[11/29 05:27:58    315s]     76                            Metal4
+[11/29 05:27:58    315s]     211                            Via10
+[11/29 05:27:58    315s]     77                            Metal4
+[11/29 05:27:58    315s]     78                            Metal4
+[11/29 05:27:58    315s]     213                            Via10
+[11/29 05:27:58    315s]     79                            Metal4
+[11/29 05:27:58    315s]     214                            Via10
+[11/29 05:27:58    315s]     80                            Metal4
+[11/29 05:27:58    315s]     225                          Metal11
+[11/29 05:27:58    315s]     87                              Via4
+[11/29 05:27:58    315s]     222                          Metal11
+[11/29 05:27:58    315s]     89                              Via4
+[11/29 05:27:58    315s]     96                            Metal5
+[11/29 05:27:58    315s]     97                            Metal5
+[11/29 05:27:58    315s]     98                            Metal5
+[11/29 05:27:58    315s]     99                            Metal5
+[11/29 05:27:58    315s]     100                           Metal5
+[11/29 05:27:58    315s]     101                           Metal5
+[11/29 05:27:58    315s]     108                             Via5
+[11/29 05:27:58    315s]     110                             Via5
+[11/29 05:27:58    315s]     117                           Metal6
+[11/29 05:27:58    315s]     231                          Metal11
+[11/29 05:27:58    315s]     230                          Metal11
+[11/29 05:27:58    315s]     229                          Metal11
+[11/29 05:27:58    315s]     228                          Metal11
+[11/29 05:27:58    315s]     210                          Metal10
+[11/29 05:27:58    315s]     209                          Metal10
+[11/29 05:27:58    315s]     208                          Metal10
+[11/29 05:27:58    315s]     207                          Metal10
+[11/29 05:27:58    315s]     189                           Metal9
+[11/29 05:27:58    315s]     188                           Metal9
+[11/29 05:27:58    315s]     187                           Metal9
+[11/29 05:27:58    315s]     186                           Metal9
+[11/29 05:27:58    315s]     168                           Metal8
+[11/29 05:27:58    315s]     167                           Metal8
+[11/29 05:27:58    315s]     166                           Metal8
+[11/29 05:27:58    315s]     165                           Metal8
+[11/29 05:27:58    315s]     147                           Metal7
+[11/29 05:27:58    315s]     146                           Metal7
+[11/29 05:27:58    315s]     145                           Metal7
+[11/29 05:27:58    315s]     144                           Metal7
+[11/29 05:27:58    315s]     63                            Metal3
+[11/29 05:27:58    315s]     62                            Metal3
+[11/29 05:27:58    315s]     39                            Metal2
+[11/29 05:27:58    315s]     105                           Metal5
+[11/29 05:27:58    315s]     103                           Metal5
+[11/29 05:27:58    315s]     123                           Metal6
+[11/29 05:27:58    315s]     42                            Metal2
+[11/29 05:27:58    315s]     41                            Metal2
+[11/29 05:27:58    315s]     40                            Metal2
+[11/29 05:27:58    315s]     20                            Metal1
+[11/29 05:27:58    315s]     60                            Metal3
+[11/29 05:27:58    315s]     18                            Metal1
+[11/29 05:27:58    315s]     61                            Metal3
+[11/29 05:27:58    315s]     102                           Metal5
+[11/29 05:27:58    315s]     21                            Metal1
+[11/29 05:27:58    315s]     19                            Metal1
+[11/29 05:27:58    315s]     81                            Metal4
+[11/29 05:27:58    315s]     104                           Metal5
+[11/29 05:27:58    315s]     82                            Metal4
+[11/29 05:27:58    315s]     83                            Metal4
+[11/29 05:27:58    315s]     84                            Metal4
+[11/29 05:27:58    315s]     124                           Metal6
+[11/29 05:27:58    315s]     125                           Metal6
+[11/29 05:27:58    315s]     126                           Metal6
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Stream Out Information Processed for GDS version 3:
+[11/29 05:27:58    315s] Units: 2000 DBU
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Object                             Count
+[11/29 05:27:58    315s] ----------------------------------------
+[11/29 05:27:58    315s] Instances                           3923
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Ports/Pins                             0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Nets                               12773
+[11/29 05:27:58    315s]     metal layer Metal1                73
+[11/29 05:27:58    315s]     metal layer Metal2              6787
+[11/29 05:27:58    315s]     metal layer Metal3              4743
+[11/29 05:27:58    315s]     metal layer Metal4              1170
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s]     Via Instances                  11820
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Special Nets                         434
+[11/29 05:27:58    315s]     metal layer Metal1               391
+[11/29 05:27:58    315s]     metal layer Metal2                10
+[11/29 05:27:58    315s]     metal layer Metal3                 6
+[11/29 05:27:58    315s]     metal layer Metal4                14
+[11/29 05:27:58    315s]     metal layer Metal5                 1
+[11/29 05:27:58    315s]     metal layer Metal8                12
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s]     Via Instances                   5874
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Metal Fills                            0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s]     Via Instances                      0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Metal FillOPCs                         0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s]     Via Instances                      0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Metal FillDRCs                         0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s]     Via Instances                      0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Text                                 673
+[11/29 05:27:58    315s]     metal layer Metal1                 9
+[11/29 05:27:58    315s]     metal layer Metal2               491
+[11/29 05:27:58    315s]     metal layer Metal3               164
+[11/29 05:27:58    315s]     metal layer Metal4                 4
+[11/29 05:27:58    315s]     metal layer Metal8                 1
+[11/29 05:27:58    315s]     metal layer Metal11                4
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Blockages                              0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Custom Text                            0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Custom Box                             0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] Trim Metal                             0
+[11/29 05:27:58    315s] 
+[11/29 05:27:58    315s] ######Streamout is finished!
+[11/29 05:28:38    321s] <CMD> streamOut ../Virtuoso/test/risc_v.gds -libName DesignLib -structureName risc_v_Pad_Frame -units 2000 -mode ALL
+[11/29 05:28:38    321s] Parse flat map file...
+[11/29 05:28:38    321s] Writing GDSII file ...
+[11/29 05:28:38    321s] 	****** db unit per micron = 2000 ******
+[11/29 05:28:38    321s] 	****** output gds2 file unit per micron = 2000 ******
+[11/29 05:28:38    321s] 	****** unit scaling factor = 1 ******
+[11/29 05:28:38    321s] Output for instance
+[11/29 05:28:38    321s] Output for bump
+[11/29 05:28:38    321s] Output for physical terminals
+[11/29 05:28:38    321s] Output for logical terminals
+[11/29 05:28:38    321s] Output for regular nets
+[11/29 05:28:38    321s] Output for special nets and metal fills
+[11/29 05:28:38    321s] Output for via structure generation total number 43
+[11/29 05:28:39    321s] Statistics for GDS generated (version 3)
+[11/29 05:28:39    321s] ----------------------------------------
+[11/29 05:28:39    321s] Stream Out Layer Mapping Information:
+[11/29 05:28:39    321s] GDS Layer Number          GDS Layer Name
+[11/29 05:28:39    321s] ----------------------------------------
+[11/29 05:28:39    321s]     233                             COMP
+[11/29 05:28:39    321s]     234                          DIEAREA
+[11/29 05:28:39    321s]     223                          Metal11
+[11/29 05:28:39    321s]     221                          Metal11
+[11/29 05:28:39    321s]     220                          Metal11
+[11/29 05:28:39    321s]     219                          Metal11
+[11/29 05:28:39    321s]     218                          Metal11
+[11/29 05:28:39    321s]     217                            Via10
+[11/29 05:28:39    321s]     216                            Via10
+[11/29 05:28:39    321s]     212                            Via10
+[11/29 05:28:39    321s]     202                          Metal10
+[11/29 05:28:39    321s]     200                          Metal10
+[11/29 05:28:39    321s]     199                          Metal10
+[11/29 05:28:39    321s]     198                          Metal10
+[11/29 05:28:39    321s]     197                          Metal10
+[11/29 05:28:39    321s]     196                             Via9
+[11/29 05:28:39    321s]     195                             Via9
+[11/29 05:28:39    321s]     191                             Via9
+[11/29 05:28:39    321s]     181                           Metal9
+[11/29 05:28:39    321s]     179                           Metal9
+[11/29 05:28:39    321s]     178                           Metal9
+[11/29 05:28:39    321s]     177                           Metal9
+[11/29 05:28:39    321s]     176                           Metal9
+[11/29 05:28:39    321s]     175                             Via8
+[11/29 05:28:39    321s]     174                             Via8
+[11/29 05:28:39    321s]     170                             Via8
+[11/29 05:28:39    321s]     160                           Metal8
+[11/29 05:28:39    321s]     158                           Metal8
+[11/29 05:28:39    321s]     157                           Metal8
+[11/29 05:28:39    321s]     156                           Metal8
+[11/29 05:28:39    321s]     155                           Metal8
+[11/29 05:28:39    321s]     154                             Via7
+[11/29 05:28:39    321s]     153                             Via7
+[11/29 05:28:39    321s]     149                             Via7
+[11/29 05:28:39    321s]     139                           Metal7
+[11/29 05:28:39    321s]     137                           Metal7
+[11/29 05:28:39    321s]     136                           Metal7
+[11/29 05:28:39    321s]     135                           Metal7
+[11/29 05:28:39    321s]     134                           Metal7
+[11/29 05:28:39    321s]     133                             Via6
+[11/29 05:28:39    321s]     132                             Via6
+[11/29 05:28:39    321s]     131                             Via6
+[11/29 05:28:39    321s]     130                             Via6
+[11/29 05:28:39    321s]     129                             Via6
+[11/29 05:28:39    321s]     128                             Via6
+[11/29 05:28:39    321s]     127                             Via6
+[11/29 05:28:39    321s]     122                           Metal6
+[11/29 05:28:39    321s]     121                           Metal6
+[11/29 05:28:39    321s]     120                           Metal6
+[11/29 05:28:39    321s]     119                           Metal6
+[11/29 05:28:39    321s]     118                           Metal6
+[11/29 05:28:39    321s]     53                            Metal3
+[11/29 05:28:39    321s]     52                            Metal3
+[11/29 05:28:39    321s]     185                           Metal9
+[11/29 05:28:39    321s]     48                              Via2
+[11/29 05:28:39    321s]     29                            Metal2
+[11/29 05:28:39    321s]     180                           Metal9
+[11/29 05:28:39    321s]     47                              Via2
+[11/29 05:28:39    321s]     182                           Metal9
+[11/29 05:28:39    321s]     44                              Via2
+[11/29 05:28:39    321s]     43                              Via2
+[11/29 05:28:39    321s]     172                             Via8
+[11/29 05:28:39    321s]     38                            Metal2
+[11/29 05:28:39    321s]     95                            Metal5
+[11/29 05:28:39    321s]     36                            Metal2
+[11/29 05:28:39    321s]     93                            Metal5
+[11/29 05:28:39    321s]     112                             Via5
+[11/29 05:28:39    321s]     194                             Via9
+[11/29 05:28:39    321s]     55                            Metal3
+[11/29 05:28:39    321s]     113                           Metal6
+[11/29 05:28:39    321s]     32                            Metal2
+[11/29 05:28:39    321s]     54                            Metal3
+[11/29 05:28:39    321s]     31                            Metal2
+[11/29 05:28:39    321s]     107                             Via5
+[11/29 05:28:39    321s]     30                            Metal2
+[11/29 05:28:39    321s]     49                              Via2
+[11/29 05:28:39    321s]     106                             Via5
+[11/29 05:28:39    321s]     33                            Metal2
+[11/29 05:28:39    321s]     109                             Via5
+[11/29 05:28:39    321s]     10                            Metal1
+[11/29 05:28:39    321s]     224                          Metal11
+[11/29 05:28:39    321s]     86                              Via4
+[11/29 05:28:39    321s]     50                            Metal3
+[11/29 05:28:39    321s]     206                          Metal10
+[11/29 05:28:39    321s]     69                              Via3
+[11/29 05:28:39    321s]     143                           Metal7
+[11/29 05:28:39    321s]     6                               Cont
+[11/29 05:28:39    321s]     169                             Via8
+[11/29 05:28:39    321s]     35                            Metal2
+[11/29 05:28:39    321s]     8                             Metal1
+[11/29 05:28:39    321s]     164                           Metal8
+[11/29 05:28:39    321s]     27                              Via1
+[11/29 05:28:39    321s]     141                           Metal7
+[11/29 05:28:39    321s]     3                               Cont
+[11/29 05:28:39    321s]     51                            Metal3
+[11/29 05:28:39    321s]     70                              Via3
+[11/29 05:28:39    321s]     7                               Cont
+[11/29 05:28:39    321s]     64                              Via3
+[11/29 05:28:39    321s]     173                             Via8
+[11/29 05:28:39    321s]     34                            Metal2
+[11/29 05:28:39    321s]     92                            Metal5
+[11/29 05:28:39    321s]     111                             Via5
+[11/29 05:28:39    321s]     11                            Metal1
+[11/29 05:28:39    321s]     142                           Metal7
+[11/29 05:28:39    321s]     4                               Cont
+[11/29 05:28:39    321s]     9                             Metal1
+[11/29 05:28:39    321s]     28                              Via1
+[11/29 05:28:39    321s]     85                              Via4
+[11/29 05:28:39    321s]     138                           Metal7
+[11/29 05:28:39    321s]     5                               Cont
+[11/29 05:28:39    321s]     12                            Metal1
+[11/29 05:28:39    321s]     226                          Metal11
+[11/29 05:28:39    321s]     88                              Via4
+[11/29 05:28:39    321s]     183                           Metal9
+[11/29 05:28:39    321s]     45                              Via2
+[11/29 05:28:39    321s]     22                              Via1
+[11/29 05:28:39    321s]     152                             Via7
+[11/29 05:28:39    321s]     13                            Metal1
+[11/29 05:28:39    321s]     71                            Metal4
+[11/29 05:28:39    321s]     227                          Metal11
+[11/29 05:28:39    321s]     90                              Via4
+[11/29 05:28:39    321s]     184                           Metal9
+[11/29 05:28:39    321s]     46                              Via2
+[11/29 05:28:39    321s]     161                           Metal8
+[11/29 05:28:39    321s]     23                              Via1
+[11/29 05:28:39    321s]     171                             Via8
+[11/29 05:28:39    321s]     37                            Metal2
+[11/29 05:28:39    321s]     94                            Metal5
+[11/29 05:28:39    321s]     148                             Via7
+[11/29 05:28:39    321s]     14                            Metal1
+[11/29 05:28:39    321s]     15                            Metal1
+[11/29 05:28:39    321s]     72                            Metal4
+[11/29 05:28:39    321s]     91                              Via4
+[11/29 05:28:39    321s]     150                             Via7
+[11/29 05:28:39    321s]     16                            Metal1
+[11/29 05:28:39    321s]     73                            Metal4
+[11/29 05:28:39    321s]     159                           Metal8
+[11/29 05:28:39    321s]     26                              Via1
+[11/29 05:28:39    321s]     151                             Via7
+[11/29 05:28:39    321s]     17                            Metal1
+[11/29 05:28:39    321s]     74                            Metal4
+[11/29 05:28:39    321s]     1                               Cont
+[11/29 05:28:39    321s]     162                           Metal8
+[11/29 05:28:39    321s]     24                              Via1
+[11/29 05:28:39    321s]     140                           Metal7
+[11/29 05:28:39    321s]     2                               Cont
+[11/29 05:28:39    321s]     163                           Metal8
+[11/29 05:28:39    321s]     25                              Via1
+[11/29 05:28:39    321s]     190                             Via9
+[11/29 05:28:39    321s]     56                            Metal3
+[11/29 05:28:39    321s]     57                            Metal3
+[11/29 05:28:39    321s]     114                           Metal6
+[11/29 05:28:39    321s]     192                             Via9
+[11/29 05:28:39    321s]     58                            Metal3
+[11/29 05:28:39    321s]     115                           Metal6
+[11/29 05:28:39    321s]     193                             Via9
+[11/29 05:28:39    321s]     59                            Metal3
+[11/29 05:28:39    321s]     116                           Metal6
+[11/29 05:28:39    321s]     203                          Metal10
+[11/29 05:28:39    321s]     65                              Via3
+[11/29 05:28:39    321s]     204                          Metal10
+[11/29 05:28:39    321s]     66                              Via3
+[11/29 05:28:39    321s]     205                          Metal10
+[11/29 05:28:39    321s]     67                              Via3
+[11/29 05:28:39    321s]     201                          Metal10
+[11/29 05:28:39    321s]     68                              Via3
+[11/29 05:28:39    321s]     75                            Metal4
+[11/29 05:28:39    321s]     215                            Via10
+[11/29 05:28:39    321s]     76                            Metal4
+[11/29 05:28:39    321s]     211                            Via10
+[11/29 05:28:39    321s]     77                            Metal4
+[11/29 05:28:39    321s]     78                            Metal4
+[11/29 05:28:39    321s]     213                            Via10
+[11/29 05:28:39    321s]     79                            Metal4
+[11/29 05:28:39    321s]     214                            Via10
+[11/29 05:28:39    321s]     80                            Metal4
+[11/29 05:28:39    321s]     225                          Metal11
+[11/29 05:28:39    321s]     87                              Via4
+[11/29 05:28:39    321s]     222                          Metal11
+[11/29 05:28:39    321s]     89                              Via4
+[11/29 05:28:39    321s]     96                            Metal5
+[11/29 05:28:39    321s]     97                            Metal5
+[11/29 05:28:39    321s]     98                            Metal5
+[11/29 05:28:39    321s]     99                            Metal5
+[11/29 05:28:39    321s]     100                           Metal5
+[11/29 05:28:39    321s]     101                           Metal5
+[11/29 05:28:39    321s]     108                             Via5
+[11/29 05:28:39    321s]     110                             Via5
+[11/29 05:28:39    321s]     117                           Metal6
+[11/29 05:28:39    321s]     231                          Metal11
+[11/29 05:28:39    321s]     230                          Metal11
+[11/29 05:28:39    321s]     229                          Metal11
+[11/29 05:28:39    321s]     228                          Metal11
+[11/29 05:28:39    321s]     210                          Metal10
+[11/29 05:28:39    321s]     209                          Metal10
+[11/29 05:28:39    321s]     208                          Metal10
+[11/29 05:28:39    321s]     207                          Metal10
+[11/29 05:28:39    321s]     189                           Metal9
+[11/29 05:28:39    321s]     188                           Metal9
+[11/29 05:28:39    321s]     187                           Metal9
+[11/29 05:28:39    321s]     186                           Metal9
+[11/29 05:28:39    321s]     168                           Metal8
+[11/29 05:28:39    321s]     167                           Metal8
+[11/29 05:28:39    321s]     166                           Metal8
+[11/29 05:28:39    321s]     165                           Metal8
+[11/29 05:28:39    321s]     147                           Metal7
+[11/29 05:28:39    321s]     146                           Metal7
+[11/29 05:28:39    321s]     145                           Metal7
+[11/29 05:28:39    321s]     144                           Metal7
+[11/29 05:28:39    321s]     63                            Metal3
+[11/29 05:28:39    321s]     62                            Metal3
+[11/29 05:28:39    321s]     39                            Metal2
+[11/29 05:28:39    321s]     105                           Metal5
+[11/29 05:28:39    321s]     103                           Metal5
+[11/29 05:28:39    321s]     123                           Metal6
+[11/29 05:28:39    321s]     42                            Metal2
+[11/29 05:28:39    321s]     41                            Metal2
+[11/29 05:28:39    321s]     40                            Metal2
+[11/29 05:28:39    321s]     20                            Metal1
+[11/29 05:28:39    321s]     60                            Metal3
+[11/29 05:28:39    321s]     18                            Metal1
+[11/29 05:28:39    321s]     61                            Metal3
+[11/29 05:28:39    321s]     102                           Metal5
+[11/29 05:28:39    321s]     21                            Metal1
+[11/29 05:28:39    321s]     19                            Metal1
+[11/29 05:28:39    321s]     81                            Metal4
+[11/29 05:28:39    321s]     104                           Metal5
+[11/29 05:28:39    321s]     82                            Metal4
+[11/29 05:28:39    321s]     83                            Metal4
+[11/29 05:28:39    321s]     84                            Metal4
+[11/29 05:28:39    321s]     124                           Metal6
+[11/29 05:28:39    321s]     125                           Metal6
+[11/29 05:28:39    321s]     126                           Metal6
+[11/29 05:28:39    321s] 
+[11/29 05:28:39    321s] 
+[11/29 05:28:39    322s] Stream Out Information Processed for GDS version 3:
+[11/29 05:28:39    322s] Units: 2000 DBU
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Object                             Count
+[11/29 05:28:39    322s] ----------------------------------------
+[11/29 05:28:39    322s] Instances                           3923
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Ports/Pins                             0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Nets                               12773
+[11/29 05:28:39    322s]     metal layer Metal1                73
+[11/29 05:28:39    322s]     metal layer Metal2              6787
+[11/29 05:28:39    322s]     metal layer Metal3              4743
+[11/29 05:28:39    322s]     metal layer Metal4              1170
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s]     Via Instances                  11820
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Special Nets                         434
+[11/29 05:28:39    322s]     metal layer Metal1               391
+[11/29 05:28:39    322s]     metal layer Metal2                10
+[11/29 05:28:39    322s]     metal layer Metal3                 6
+[11/29 05:28:39    322s]     metal layer Metal4                14
+[11/29 05:28:39    322s]     metal layer Metal5                 1
+[11/29 05:28:39    322s]     metal layer Metal8                12
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s]     Via Instances                   5874
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Metal Fills                            0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s]     Via Instances                      0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Metal FillOPCs                         0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s]     Via Instances                      0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Metal FillDRCs                         0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s]     Via Instances                      0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Text                                 673
+[11/29 05:28:39    322s]     metal layer Metal1                 9
+[11/29 05:28:39    322s]     metal layer Metal2               491
+[11/29 05:28:39    322s]     metal layer Metal3               164
+[11/29 05:28:39    322s]     metal layer Metal4                 4
+[11/29 05:28:39    322s]     metal layer Metal8                 1
+[11/29 05:28:39    322s]     metal layer Metal11                4
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Blockages                              0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Custom Text                            0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Custom Box                             0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] Trim Metal                             0
+[11/29 05:28:39    322s] 
+[11/29 05:28:39    322s] ######Streamout is finished!
+[11/29 05:34:25    374s] <CMD> streamOut ../Virtuoso/test/risc_v.gds -mapFile streamOut.map -libName DesignLib -structureName risc_v_Pad_Frame -units 2000 -mode ALL
+[11/29 05:34:25    374s] Parse flat map file...
+[11/29 05:34:25    374s] Writing GDSII file ...
+[11/29 05:34:25    374s] 	****** db unit per micron = 2000 ******
+[11/29 05:34:25    374s] 	****** output gds2 file unit per micron = 2000 ******
+[11/29 05:34:25    374s] 	****** unit scaling factor = 1 ******
+[11/29 05:34:25    374s] Output for instance
+[11/29 05:34:25    374s] Output for bump
+[11/29 05:34:25    374s] Output for physical terminals
+[11/29 05:34:25    374s] Output for logical terminals
+[11/29 05:34:25    374s] Output for regular nets
+[11/29 05:34:25    374s] Output for special nets and metal fills
+[11/29 05:34:25    374s] Output for via structure generation total number 43
+[11/29 05:34:25    374s] Statistics for GDS generated (version 3)
+[11/29 05:34:25    374s] ----------------------------------------
+[11/29 05:34:25    374s] Stream Out Layer Mapping Information:
+[11/29 05:34:25    374s] GDS Layer Number          GDS Layer Name
+[11/29 05:34:25    374s] ----------------------------------------
+[11/29 05:34:25    374s]     233                             COMP
+[11/29 05:34:25    374s]     234                          DIEAREA
+[11/29 05:34:25    374s]     223                          Metal11
+[11/29 05:34:25    374s]     221                          Metal11
+[11/29 05:34:25    374s]     220                          Metal11
+[11/29 05:34:25    374s]     219                          Metal11
+[11/29 05:34:25    374s]     218                          Metal11
+[11/29 05:34:25    374s]     217                            Via10
+[11/29 05:34:25    374s]     216                            Via10
+[11/29 05:34:25    374s]     212                            Via10
+[11/29 05:34:25    374s]     202                          Metal10
+[11/29 05:34:25    374s]     200                          Metal10
+[11/29 05:34:25    374s]     199                          Metal10
+[11/29 05:34:25    374s]     198                          Metal10
+[11/29 05:34:25    374s]     197                          Metal10
+[11/29 05:34:25    374s]     196                             Via9
+[11/29 05:34:25    374s]     195                             Via9
+[11/29 05:34:25    374s]     191                             Via9
+[11/29 05:34:25    374s]     181                           Metal9
+[11/29 05:34:25    374s]     179                           Metal9
+[11/29 05:34:25    374s]     178                           Metal9
+[11/29 05:34:25    374s]     177                           Metal9
+[11/29 05:34:25    374s]     176                           Metal9
+[11/29 05:34:25    374s]     175                             Via8
+[11/29 05:34:25    374s]     174                             Via8
+[11/29 05:34:25    374s]     170                             Via8
+[11/29 05:34:25    374s]     160                           Metal8
+[11/29 05:34:25    374s]     158                           Metal8
+[11/29 05:34:25    374s]     157                           Metal8
+[11/29 05:34:25    374s]     156                           Metal8
+[11/29 05:34:25    374s]     155                           Metal8
+[11/29 05:34:25    374s]     154                             Via7
+[11/29 05:34:25    374s]     153                             Via7
+[11/29 05:34:25    374s]     149                             Via7
+[11/29 05:34:25    374s]     139                           Metal7
+[11/29 05:34:25    374s]     137                           Metal7
+[11/29 05:34:25    374s]     136                           Metal7
+[11/29 05:34:25    374s]     135                           Metal7
+[11/29 05:34:25    374s]     134                           Metal7
+[11/29 05:34:25    374s]     133                             Via6
+[11/29 05:34:25    374s]     132                             Via6
+[11/29 05:34:25    374s]     131                             Via6
+[11/29 05:34:25    374s]     130                             Via6
+[11/29 05:34:25    374s]     129                             Via6
+[11/29 05:34:25    374s]     128                             Via6
+[11/29 05:34:25    374s]     127                             Via6
+[11/29 05:34:25    374s]     122                           Metal6
+[11/29 05:34:25    374s]     121                           Metal6
+[11/29 05:34:25    374s]     120                           Metal6
+[11/29 05:34:25    374s]     119                           Metal6
+[11/29 05:34:25    374s]     118                           Metal6
+[11/29 05:34:25    374s]     53                            Metal3
+[11/29 05:34:25    374s]     52                            Metal3
+[11/29 05:34:25    374s]     185                           Metal9
+[11/29 05:34:25    374s]     48                              Via2
+[11/29 05:34:25    374s]     29                            Metal2
+[11/29 05:34:25    374s]     180                           Metal9
+[11/29 05:34:25    374s]     47                              Via2
+[11/29 05:34:25    374s]     182                           Metal9
+[11/29 05:34:25    374s]     44                              Via2
+[11/29 05:34:25    374s]     43                              Via2
+[11/29 05:34:25    374s]     172                             Via8
+[11/29 05:34:25    374s]     38                            Metal2
+[11/29 05:34:25    374s]     95                            Metal5
+[11/29 05:34:25    374s]     36                            Metal2
+[11/29 05:34:25    374s]     93                            Metal5
+[11/29 05:34:25    374s]     112                             Via5
+[11/29 05:34:25    374s]     194                             Via9
+[11/29 05:34:25    374s]     55                            Metal3
+[11/29 05:34:25    374s]     113                           Metal6
+[11/29 05:34:25    374s]     32                            Metal2
+[11/29 05:34:25    374s]     54                            Metal3
+[11/29 05:34:25    374s]     31                            Metal2
+[11/29 05:34:25    374s]     107                             Via5
+[11/29 05:34:25    374s]     30                            Metal2
+[11/29 05:34:25    374s]     49                              Via2
+[11/29 05:34:25    374s]     106                             Via5
+[11/29 05:34:25    374s]     33                            Metal2
+[11/29 05:34:25    374s]     109                             Via5
+[11/29 05:34:25    374s]     10                            Metal1
+[11/29 05:34:25    374s]     224                          Metal11
+[11/29 05:34:25    374s]     86                              Via4
+[11/29 05:34:25    374s]     50                            Metal3
+[11/29 05:34:25    374s]     206                          Metal10
+[11/29 05:34:25    374s]     69                              Via3
+[11/29 05:34:25    374s]     143                           Metal7
+[11/29 05:34:25    374s]     6                               Cont
+[11/29 05:34:25    374s]     169                             Via8
+[11/29 05:34:25    374s]     35                            Metal2
+[11/29 05:34:25    374s]     8                             Metal1
+[11/29 05:34:25    374s]     164                           Metal8
+[11/29 05:34:25    374s]     27                              Via1
+[11/29 05:34:25    374s]     141                           Metal7
+[11/29 05:34:25    374s]     3                               Cont
+[11/29 05:34:25    374s]     51                            Metal3
+[11/29 05:34:25    374s]     70                              Via3
+[11/29 05:34:25    374s]     7                               Cont
+[11/29 05:34:25    374s]     64                              Via3
+[11/29 05:34:25    374s]     173                             Via8
+[11/29 05:34:25    374s]     34                            Metal2
+[11/29 05:34:25    374s]     92                            Metal5
+[11/29 05:34:25    374s]     111                             Via5
+[11/29 05:34:25    374s]     11                            Metal1
+[11/29 05:34:25    374s]     142                           Metal7
+[11/29 05:34:25    374s]     4                               Cont
+[11/29 05:34:25    374s]     9                             Metal1
+[11/29 05:34:25    374s]     28                              Via1
+[11/29 05:34:25    374s]     85                              Via4
+[11/29 05:34:25    374s]     138                           Metal7
+[11/29 05:34:25    374s]     5                               Cont
+[11/29 05:34:25    374s]     12                            Metal1
+[11/29 05:34:25    374s]     226                          Metal11
+[11/29 05:34:25    374s]     88                              Via4
+[11/29 05:34:25    374s]     183                           Metal9
+[11/29 05:34:25    374s]     45                              Via2
+[11/29 05:34:25    374s]     22                              Via1
+[11/29 05:34:25    374s]     152                             Via7
+[11/29 05:34:25    374s]     13                            Metal1
+[11/29 05:34:25    374s]     71                            Metal4
+[11/29 05:34:25    374s]     227                          Metal11
+[11/29 05:34:25    374s]     90                              Via4
+[11/29 05:34:25    374s]     184                           Metal9
+[11/29 05:34:25    374s]     46                              Via2
+[11/29 05:34:25    374s]     161                           Metal8
+[11/29 05:34:25    374s]     23                              Via1
+[11/29 05:34:25    374s]     171                             Via8
+[11/29 05:34:25    374s]     37                            Metal2
+[11/29 05:34:25    374s]     94                            Metal5
+[11/29 05:34:25    374s]     148                             Via7
+[11/29 05:34:25    374s]     14                            Metal1
+[11/29 05:34:25    374s]     15                            Metal1
+[11/29 05:34:25    374s]     72                            Metal4
+[11/29 05:34:25    374s]     91                              Via4
+[11/29 05:34:25    374s]     150                             Via7
+[11/29 05:34:25    374s]     16                            Metal1
+[11/29 05:34:25    374s]     73                            Metal4
+[11/29 05:34:25    374s]     159                           Metal8
+[11/29 05:34:25    374s]     26                              Via1
+[11/29 05:34:25    374s]     151                             Via7
+[11/29 05:34:25    374s]     17                            Metal1
+[11/29 05:34:25    374s]     74                            Metal4
+[11/29 05:34:25    374s]     1                               Cont
+[11/29 05:34:25    374s]     162                           Metal8
+[11/29 05:34:25    374s]     24                              Via1
+[11/29 05:34:25    374s]     140                           Metal7
+[11/29 05:34:25    374s]     2                               Cont
+[11/29 05:34:25    374s]     163                           Metal8
+[11/29 05:34:25    374s]     25                              Via1
+[11/29 05:34:25    374s]     190                             Via9
+[11/29 05:34:25    374s]     56                            Metal3
+[11/29 05:34:25    374s]     57                            Metal3
+[11/29 05:34:25    374s]     114                           Metal6
+[11/29 05:34:25    374s]     192                             Via9
+[11/29 05:34:25    374s]     58                            Metal3
+[11/29 05:34:25    374s]     115                           Metal6
+[11/29 05:34:25    374s]     193                             Via9
+[11/29 05:34:25    374s]     59                            Metal3
+[11/29 05:34:25    374s]     116                           Metal6
+[11/29 05:34:25    374s]     203                          Metal10
+[11/29 05:34:25    374s]     65                              Via3
+[11/29 05:34:25    374s]     204                          Metal10
+[11/29 05:34:25    374s]     66                              Via3
+[11/29 05:34:25    374s]     205                          Metal10
+[11/29 05:34:25    374s]     67                              Via3
+[11/29 05:34:25    374s]     201                          Metal10
+[11/29 05:34:25    374s]     68                              Via3
+[11/29 05:34:25    374s]     75                            Metal4
+[11/29 05:34:25    374s]     215                            Via10
+[11/29 05:34:25    374s]     76                            Metal4
+[11/29 05:34:25    374s]     211                            Via10
+[11/29 05:34:25    374s]     77                            Metal4
+[11/29 05:34:25    374s]     78                            Metal4
+[11/29 05:34:25    374s]     213                            Via10
+[11/29 05:34:25    374s]     79                            Metal4
+[11/29 05:34:25    374s]     214                            Via10
+[11/29 05:34:25    374s]     80                            Metal4
+[11/29 05:34:25    374s]     225                          Metal11
+[11/29 05:34:25    374s]     87                              Via4
+[11/29 05:34:25    374s]     222                          Metal11
+[11/29 05:34:25    374s]     89                              Via4
+[11/29 05:34:25    374s]     96                            Metal5
+[11/29 05:34:25    374s]     97                            Metal5
+[11/29 05:34:25    374s]     98                            Metal5
+[11/29 05:34:25    374s]     99                            Metal5
+[11/29 05:34:25    374s]     100                           Metal5
+[11/29 05:34:25    374s]     101                           Metal5
+[11/29 05:34:25    374s]     108                             Via5
+[11/29 05:34:25    374s]     110                             Via5
+[11/29 05:34:25    374s]     117                           Metal6
+[11/29 05:34:25    374s]     231                          Metal11
+[11/29 05:34:25    374s]     230                          Metal11
+[11/29 05:34:25    374s]     229                          Metal11
+[11/29 05:34:25    374s]     228                          Metal11
+[11/29 05:34:25    374s]     210                          Metal10
+[11/29 05:34:25    374s]     209                          Metal10
+[11/29 05:34:25    374s]     208                          Metal10
+[11/29 05:34:25    374s]     207                          Metal10
+[11/29 05:34:25    374s]     189                           Metal9
+[11/29 05:34:25    374s]     188                           Metal9
+[11/29 05:34:25    374s]     187                           Metal9
+[11/29 05:34:25    374s]     186                           Metal9
+[11/29 05:34:25    374s]     168                           Metal8
+[11/29 05:34:25    374s]     167                           Metal8
+[11/29 05:34:25    374s]     166                           Metal8
+[11/29 05:34:25    374s]     165                           Metal8
+[11/29 05:34:25    374s]     147                           Metal7
+[11/29 05:34:25    374s]     146                           Metal7
+[11/29 05:34:25    374s]     145                           Metal7
+[11/29 05:34:25    374s]     144                           Metal7
+[11/29 05:34:25    374s]     63                            Metal3
+[11/29 05:34:25    374s]     62                            Metal3
+[11/29 05:34:25    374s]     39                            Metal2
+[11/29 05:34:25    374s]     105                           Metal5
+[11/29 05:34:25    374s]     103                           Metal5
+[11/29 05:34:25    374s]     123                           Metal6
+[11/29 05:34:25    374s]     42                            Metal2
+[11/29 05:34:25    374s]     41                            Metal2
+[11/29 05:34:25    374s]     40                            Metal2
+[11/29 05:34:25    374s]     20                            Metal1
+[11/29 05:34:25    374s]     60                            Metal3
+[11/29 05:34:25    374s]     18                            Metal1
+[11/29 05:34:25    374s]     61                            Metal3
+[11/29 05:34:25    374s]     102                           Metal5
+[11/29 05:34:25    374s]     21                            Metal1
+[11/29 05:34:25    374s]     19                            Metal1
+[11/29 05:34:25    374s]     81                            Metal4
+[11/29 05:34:25    374s]     104                           Metal5
+[11/29 05:34:25    374s]     82                            Metal4
+[11/29 05:34:25    374s]     83                            Metal4
+[11/29 05:34:25    374s]     84                            Metal4
+[11/29 05:34:25    374s]     124                           Metal6
+[11/29 05:34:25    374s]     125                           Metal6
+[11/29 05:34:25    374s]     126                           Metal6
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Stream Out Information Processed for GDS version 3:
+[11/29 05:34:25    374s] Units: 2000 DBU
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Object                             Count
+[11/29 05:34:25    374s] ----------------------------------------
+[11/29 05:34:25    374s] Instances                           3923
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Ports/Pins                             0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Nets                               12773
+[11/29 05:34:25    374s]     metal layer Metal1                73
+[11/29 05:34:25    374s]     metal layer Metal2              6787
+[11/29 05:34:25    374s]     metal layer Metal3              4743
+[11/29 05:34:25    374s]     metal layer Metal4              1170
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s]     Via Instances                  11820
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Special Nets                         434
+[11/29 05:34:25    374s]     metal layer Metal1               391
+[11/29 05:34:25    374s]     metal layer Metal2                10
+[11/29 05:34:25    374s]     metal layer Metal3                 6
+[11/29 05:34:25    374s]     metal layer Metal4                14
+[11/29 05:34:25    374s]     metal layer Metal5                 1
+[11/29 05:34:25    374s]     metal layer Metal8                12
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s]     Via Instances                   5874
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Metal Fills                            0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s]     Via Instances                      0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Metal FillOPCs                         0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s]     Via Instances                      0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Metal FillDRCs                         0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s]     Via Instances                      0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Text                                 673
+[11/29 05:34:25    374s]     metal layer Metal1                 9
+[11/29 05:34:25    374s]     metal layer Metal2               491
+[11/29 05:34:25    374s]     metal layer Metal3               164
+[11/29 05:34:25    374s]     metal layer Metal4                 4
+[11/29 05:34:25    374s]     metal layer Metal8                 1
+[11/29 05:34:25    374s]     metal layer Metal11                4
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Blockages                              0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Custom Text                            0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Custom Box                             0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] Trim Metal                             0
+[11/29 05:34:25    374s] 
+[11/29 05:34:25    374s] ######Streamout is finished!
+[11/29 05:37:25    394s] <CMD> streamOut ../Virtuoso/test/risc_v.gds -mapFile streamOut.map -libName DesignLib -structureName risc_v_Pad_Frame -outputMacros -units 20000 -mode ALL
+[11/29 05:37:25    394s] Parse flat map file...
+[11/29 05:37:25    394s] Writing GDSII file ...
+[11/29 05:37:25    394s] 	****** db unit per micron = 2000 ******
+[11/29 05:37:25    394s] 	****** output gds2 file unit per micron = 20000 ******
+[11/29 05:37:25    394s] 	****** unit scaling factor = 10 ******
+[11/29 05:37:25    394s] Output for instance
+[11/29 05:37:25    394s] Output for bump
+[11/29 05:37:25    394s] Output for physical terminals
+[11/29 05:37:25    394s] Output for logical terminals
+[11/29 05:37:25    394s] Output for regular nets
+[11/29 05:37:26    394s] Output for special nets and metal fills
+[11/29 05:37:26    394s] Output for via structure generation total number 43
+[11/29 05:37:26    394s] Statistics for GDS generated (version 3)
+[11/29 05:37:26    394s] ----------------------------------------
+[11/29 05:37:26    394s] Stream Out Layer Mapping Information:
+[11/29 05:37:26    394s] GDS Layer Number          GDS Layer Name
+[11/29 05:37:26    394s] ----------------------------------------
+[11/29 05:37:26    394s]     233                             COMP
+[11/29 05:37:26    394s]     234                          DIEAREA
+[11/29 05:37:26    394s]     223                          Metal11
+[11/29 05:37:26    394s]     221                          Metal11
+[11/29 05:37:26    394s]     220                          Metal11
+[11/29 05:37:26    394s]     219                          Metal11
+[11/29 05:37:26    394s]     218                          Metal11
+[11/29 05:37:26    394s]     217                            Via10
+[11/29 05:37:26    394s]     216                            Via10
+[11/29 05:37:26    394s]     212                            Via10
+[11/29 05:37:26    394s]     202                          Metal10
+[11/29 05:37:26    394s]     200                          Metal10
+[11/29 05:37:26    394s]     199                          Metal10
+[11/29 05:37:26    394s]     198                          Metal10
+[11/29 05:37:26    394s]     197                          Metal10
+[11/29 05:37:26    394s]     196                             Via9
+[11/29 05:37:26    394s]     195                             Via9
+[11/29 05:37:26    394s]     191                             Via9
+[11/29 05:37:26    394s]     181                           Metal9
+[11/29 05:37:26    394s]     179                           Metal9
+[11/29 05:37:26    394s]     178                           Metal9
+[11/29 05:37:26    394s]     177                           Metal9
+[11/29 05:37:26    394s]     176                           Metal9
+[11/29 05:37:26    394s]     175                             Via8
+[11/29 05:37:26    394s]     174                             Via8
+[11/29 05:37:26    394s]     170                             Via8
+[11/29 05:37:26    394s]     160                           Metal8
+[11/29 05:37:26    394s]     158                           Metal8
+[11/29 05:37:26    394s]     157                           Metal8
+[11/29 05:37:26    394s]     156                           Metal8
+[11/29 05:37:26    394s]     155                           Metal8
+[11/29 05:37:26    394s]     154                             Via7
+[11/29 05:37:26    394s]     153                             Via7
+[11/29 05:37:26    394s]     149                             Via7
+[11/29 05:37:26    394s]     139                           Metal7
+[11/29 05:37:26    394s]     137                           Metal7
+[11/29 05:37:26    394s]     136                           Metal7
+[11/29 05:37:26    394s]     135                           Metal7
+[11/29 05:37:26    394s]     134                           Metal7
+[11/29 05:37:26    394s]     133                             Via6
+[11/29 05:37:26    394s]     132                             Via6
+[11/29 05:37:26    394s]     131                             Via6
+[11/29 05:37:26    394s]     130                             Via6
+[11/29 05:37:26    394s]     129                             Via6
+[11/29 05:37:26    394s]     128                             Via6
+[11/29 05:37:26    394s]     127                             Via6
+[11/29 05:37:26    394s]     122                           Metal6
+[11/29 05:37:26    394s]     121                           Metal6
+[11/29 05:37:26    394s]     120                           Metal6
+[11/29 05:37:26    394s]     119                           Metal6
+[11/29 05:37:26    394s]     118                           Metal6
+[11/29 05:37:26    394s]     53                            Metal3
+[11/29 05:37:26    394s]     52                            Metal3
+[11/29 05:37:26    394s]     185                           Metal9
+[11/29 05:37:26    394s]     48                              Via2
+[11/29 05:37:26    394s]     29                            Metal2
+[11/29 05:37:26    394s]     180                           Metal9
+[11/29 05:37:26    394s]     47                              Via2
+[11/29 05:37:26    394s]     182                           Metal9
+[11/29 05:37:26    394s]     44                              Via2
+[11/29 05:37:26    394s]     43                              Via2
+[11/29 05:37:26    394s]     172                             Via8
+[11/29 05:37:26    394s]     38                            Metal2
+[11/29 05:37:26    394s]     95                            Metal5
+[11/29 05:37:26    394s]     36                            Metal2
+[11/29 05:37:26    394s]     93                            Metal5
+[11/29 05:37:26    394s]     112                             Via5
+[11/29 05:37:26    394s]     194                             Via9
+[11/29 05:37:26    394s]     55                            Metal3
+[11/29 05:37:26    394s]     113                           Metal6
+[11/29 05:37:26    394s]     32                            Metal2
+[11/29 05:37:26    394s]     54                            Metal3
+[11/29 05:37:26    394s]     31                            Metal2
+[11/29 05:37:26    394s]     107                             Via5
+[11/29 05:37:26    394s]     30                            Metal2
+[11/29 05:37:26    394s]     49                              Via2
+[11/29 05:37:26    394s]     106                             Via5
+[11/29 05:37:26    394s]     33                            Metal2
+[11/29 05:37:26    394s]     109                             Via5
+[11/29 05:37:26    394s]     10                            Metal1
+[11/29 05:37:26    394s]     224                          Metal11
+[11/29 05:37:26    394s]     86                              Via4
+[11/29 05:37:26    394s]     50                            Metal3
+[11/29 05:37:26    394s]     206                          Metal10
+[11/29 05:37:26    394s]     69                              Via3
+[11/29 05:37:26    394s]     143                           Metal7
+[11/29 05:37:26    394s]     6                               Cont
+[11/29 05:37:26    394s]     169                             Via8
+[11/29 05:37:26    394s]     35                            Metal2
+[11/29 05:37:26    394s]     8                             Metal1
+[11/29 05:37:26    394s]     164                           Metal8
+[11/29 05:37:26    394s]     27                              Via1
+[11/29 05:37:26    394s]     141                           Metal7
+[11/29 05:37:26    394s]     3                               Cont
+[11/29 05:37:26    394s]     51                            Metal3
+[11/29 05:37:26    394s]     70                              Via3
+[11/29 05:37:26    394s]     7                               Cont
+[11/29 05:37:26    394s]     64                              Via3
+[11/29 05:37:26    394s]     173                             Via8
+[11/29 05:37:26    394s]     34                            Metal2
+[11/29 05:37:26    394s]     92                            Metal5
+[11/29 05:37:26    394s]     111                             Via5
+[11/29 05:37:26    394s]     11                            Metal1
+[11/29 05:37:26    394s]     142                           Metal7
+[11/29 05:37:26    394s]     4                               Cont
+[11/29 05:37:26    394s]     9                             Metal1
+[11/29 05:37:26    394s]     28                              Via1
+[11/29 05:37:26    394s]     85                              Via4
+[11/29 05:37:26    394s]     138                           Metal7
+[11/29 05:37:26    394s]     5                               Cont
+[11/29 05:37:26    394s]     12                            Metal1
+[11/29 05:37:26    394s]     226                          Metal11
+[11/29 05:37:26    394s]     88                              Via4
+[11/29 05:37:26    394s]     183                           Metal9
+[11/29 05:37:26    394s]     45                              Via2
+[11/29 05:37:26    394s]     22                              Via1
+[11/29 05:37:26    394s]     152                             Via7
+[11/29 05:37:26    394s]     13                            Metal1
+[11/29 05:37:26    394s]     71                            Metal4
+[11/29 05:37:26    394s]     227                          Metal11
+[11/29 05:37:26    394s]     90                              Via4
+[11/29 05:37:26    394s]     184                           Metal9
+[11/29 05:37:26    394s]     46                              Via2
+[11/29 05:37:26    394s]     161                           Metal8
+[11/29 05:37:26    394s]     23                              Via1
+[11/29 05:37:26    394s]     171                             Via8
+[11/29 05:37:26    394s]     37                            Metal2
+[11/29 05:37:26    394s]     94                            Metal5
+[11/29 05:37:26    394s]     148                             Via7
+[11/29 05:37:26    394s]     14                            Metal1
+[11/29 05:37:26    394s]     15                            Metal1
+[11/29 05:37:26    394s]     72                            Metal4
+[11/29 05:37:26    394s]     91                              Via4
+[11/29 05:37:26    394s]     150                             Via7
+[11/29 05:37:26    394s]     16                            Metal1
+[11/29 05:37:26    394s]     73                            Metal4
+[11/29 05:37:26    394s]     159                           Metal8
+[11/29 05:37:26    394s]     26                              Via1
+[11/29 05:37:26    394s]     151                             Via7
+[11/29 05:37:26    394s]     17                            Metal1
+[11/29 05:37:26    394s]     74                            Metal4
+[11/29 05:37:26    394s]     1                               Cont
+[11/29 05:37:26    394s]     162                           Metal8
+[11/29 05:37:26    394s]     24                              Via1
+[11/29 05:37:26    394s]     140                           Metal7
+[11/29 05:37:26    394s]     2                               Cont
+[11/29 05:37:26    394s]     163                           Metal8
+[11/29 05:37:26    394s]     25                              Via1
+[11/29 05:37:26    394s]     190                             Via9
+[11/29 05:37:26    394s]     56                            Metal3
+[11/29 05:37:26    394s]     57                            Metal3
+[11/29 05:37:26    394s]     114                           Metal6
+[11/29 05:37:26    394s]     192                             Via9
+[11/29 05:37:26    394s]     58                            Metal3
+[11/29 05:37:26    394s]     115                           Metal6
+[11/29 05:37:26    394s]     193                             Via9
+[11/29 05:37:26    394s]     59                            Metal3
+[11/29 05:37:26    394s]     116                           Metal6
+[11/29 05:37:26    394s]     203                          Metal10
+[11/29 05:37:26    394s]     65                              Via3
+[11/29 05:37:26    394s]     204                          Metal10
+[11/29 05:37:26    394s]     66                              Via3
+[11/29 05:37:26    394s]     205                          Metal10
+[11/29 05:37:26    394s]     67                              Via3
+[11/29 05:37:26    394s]     201                          Metal10
+[11/29 05:37:26    394s]     68                              Via3
+[11/29 05:37:26    394s]     75                            Metal4
+[11/29 05:37:26    394s]     215                            Via10
+[11/29 05:37:26    394s]     76                            Metal4
+[11/29 05:37:26    394s]     211                            Via10
+[11/29 05:37:26    394s]     77                            Metal4
+[11/29 05:37:26    394s]     78                            Metal4
+[11/29 05:37:26    394s]     213                            Via10
+[11/29 05:37:26    394s]     79                            Metal4
+[11/29 05:37:26    394s]     214                            Via10
+[11/29 05:37:26    394s]     80                            Metal4
+[11/29 05:37:26    394s]     225                          Metal11
+[11/29 05:37:26    394s]     87                              Via4
+[11/29 05:37:26    394s]     222                          Metal11
+[11/29 05:37:26    394s]     89                              Via4
+[11/29 05:37:26    394s]     96                            Metal5
+[11/29 05:37:26    394s]     97                            Metal5
+[11/29 05:37:26    394s]     98                            Metal5
+[11/29 05:37:26    394s]     99                            Metal5
+[11/29 05:37:26    394s]     100                           Metal5
+[11/29 05:37:26    394s]     101                           Metal5
+[11/29 05:37:26    394s]     108                             Via5
+[11/29 05:37:26    394s]     110                             Via5
+[11/29 05:37:26    394s]     117                           Metal6
+[11/29 05:37:26    394s]     231                          Metal11
+[11/29 05:37:26    394s]     230                          Metal11
+[11/29 05:37:26    394s]     229                          Metal11
+[11/29 05:37:26    394s]     228                          Metal11
+[11/29 05:37:26    394s]     210                          Metal10
+[11/29 05:37:26    394s]     209                          Metal10
+[11/29 05:37:26    394s]     208                          Metal10
+[11/29 05:37:26    394s]     207                          Metal10
+[11/29 05:37:26    394s]     189                           Metal9
+[11/29 05:37:26    394s]     188                           Metal9
+[11/29 05:37:26    394s]     187                           Metal9
+[11/29 05:37:26    394s]     186                           Metal9
+[11/29 05:37:26    394s]     168                           Metal8
+[11/29 05:37:26    394s]     167                           Metal8
+[11/29 05:37:26    394s]     166                           Metal8
+[11/29 05:37:26    394s]     165                           Metal8
+[11/29 05:37:26    394s]     147                           Metal7
+[11/29 05:37:26    394s]     146                           Metal7
+[11/29 05:37:26    394s]     145                           Metal7
+[11/29 05:37:26    394s]     144                           Metal7
+[11/29 05:37:26    394s]     63                            Metal3
+[11/29 05:37:26    394s]     62                            Metal3
+[11/29 05:37:26    394s]     39                            Metal2
+[11/29 05:37:26    394s]     105                           Metal5
+[11/29 05:37:26    394s]     103                           Metal5
+[11/29 05:37:26    394s]     123                           Metal6
+[11/29 05:37:26    394s]     42                            Metal2
+[11/29 05:37:26    394s]     41                            Metal2
+[11/29 05:37:26    394s]     40                            Metal2
+[11/29 05:37:26    394s]     20                            Metal1
+[11/29 05:37:26    394s]     60                            Metal3
+[11/29 05:37:26    394s]     18                            Metal1
+[11/29 05:37:26    394s]     61                            Metal3
+[11/29 05:37:26    394s]     102                           Metal5
+[11/29 05:37:26    394s]     21                            Metal1
+[11/29 05:37:26    394s]     19                            Metal1
+[11/29 05:37:26    394s]     81                            Metal4
+[11/29 05:37:26    394s]     104                           Metal5
+[11/29 05:37:26    394s]     82                            Metal4
+[11/29 05:37:26    394s]     83                            Metal4
+[11/29 05:37:26    394s]     84                            Metal4
+[11/29 05:37:26    394s]     124                           Metal6
+[11/29 05:37:26    394s]     125                           Metal6
+[11/29 05:37:26    394s]     126                           Metal6
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Stream Out Information Processed for GDS version 3:
+[11/29 05:37:26    394s] Units: 20000 DBU
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Object                             Count
+[11/29 05:37:26    394s] ----------------------------------------
+[11/29 05:37:26    394s] Instances                           3923
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Ports/Pins                             0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Nets                               12773
+[11/29 05:37:26    394s]     metal layer Metal1                73
+[11/29 05:37:26    394s]     metal layer Metal2              6787
+[11/29 05:37:26    394s]     metal layer Metal3              4743
+[11/29 05:37:26    394s]     metal layer Metal4              1170
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s]     Via Instances                  11820
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Special Nets                         434
+[11/29 05:37:26    394s]     metal layer Metal1               391
+[11/29 05:37:26    394s]     metal layer Metal2                10
+[11/29 05:37:26    394s]     metal layer Metal3                 6
+[11/29 05:37:26    394s]     metal layer Metal4                14
+[11/29 05:37:26    394s]     metal layer Metal5                 1
+[11/29 05:37:26    394s]     metal layer Metal8                12
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s]     Via Instances                   5874
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Metal Fills                            0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s]     Via Instances                      0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Metal FillOPCs                         0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s]     Via Instances                      0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Metal FillDRCs                         0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s]     Via Instances                      0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Text                                 673
+[11/29 05:37:26    394s]     metal layer Metal1                 9
+[11/29 05:37:26    394s]     metal layer Metal2               491
+[11/29 05:37:26    394s]     metal layer Metal3               164
+[11/29 05:37:26    394s]     metal layer Metal4                 4
+[11/29 05:37:26    394s]     metal layer Metal8                 1
+[11/29 05:37:26    394s]     metal layer Metal11                4
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Blockages                              0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Custom Text                            0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Custom Box                             0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Trim Metal                             0
+[11/29 05:37:26    394s] 
+[11/29 05:37:26    394s] Output for cells
+[11/29 05:37:26    394s] ######Streamout is finished!
+[11/29 06:23:03    785s] 
+[11/29 06:23:03    785s] *** Memory Usage v#1 (Current mem = 1437.211M, initial mem = 311.355M) ***
+[11/29 06:23:03    785s] 
+[11/29 06:23:03    785s] *** Summary of all messages that are not suppressed in this session:
+[11/29 06:23:03    785s] Severity  ID               Count  Summary                                  
+[11/29 06:23:03    785s] WARNING   IMPLF-58            16  MACRO '%s' has been found in the databas...
+[11/29 06:23:03    785s] WARNING   IMPLF-61             1  %d duplicated MACRO definitions have bee...
+[11/29 06:23:03    785s] WARNING   IMPLF-200           25  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[11/29 06:23:03    785s] WARNING   IMPLF-201            6  Pin '%s' in macro '%s' has no ANTENNADIF...
+[11/29 06:23:03    785s] WARNING   IMPFP-3961           8  The techSite '%s' has no related standar...
+[11/29 06:23:03    785s] WARNING   IMPFP-4008           1  The ring number '%d' is specified at sid...
+[11/29 06:23:03    785s] WARNING   IMPSYC-2             5  Timing information is not defined for ce...
+[11/29 06:23:03    785s] WARNING   IMPVL-159           16  Pin '%s' of cell '%s' is defined in LEF ...
+[11/29 06:23:03    785s] WARNING   IMPOPT-3602          1  The specified path group name %s is not ...
+[11/29 06:23:03    785s] WARNING   IMPCCOPT-2332        1  The property %s is deprecated. It still ...
+[11/29 06:23:03    785s] WARNING   TECHLIB-302         40  No function defined for cell '%s'. The c...
+[11/29 06:23:03    785s] WARNING   TECHLIB-459          2  Appending library '%s' to the previously...
+[11/29 06:23:03    785s] *** Message Summary: 122 warning(s), 0 error(s)
+[11/29 06:23:03    785s] 
+[11/29 06:23:03    785s] --- Ending "Innovus" (totcpu=0:13:06, real=1:11:35, mem=1437.2M) ---

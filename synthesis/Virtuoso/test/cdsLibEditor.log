@@ -1,0 +1,47 @@
+\o Program:		@(#)$CDS: cdsLibEditor version 6.1.8 - CAT37 01/05/2021 01:27 (sjfhw874) $
+\o Sub version:		sub-version  s164 
+\o Arguments:		-cdslib /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/cds.lib -mpssession virtuoso29214 -mpshost iteso-server 
+\o Working Directory:	iteso-server:/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test
+\o 64-bit offsets
+\a nrSetWindowVisibility(cdsLibEditor "show")
+\o Qt version: 		5.9.1
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrListItemAction(cdsLibEditor->mainTable 0 0)
+\o Active cell: 0 0 "sbaLib"
+\a nrResizeWindow(cdsLibEditor list(45 73 500 400))
+\a nrListItemAction(cdsLibEditor->mainTable 19 0)
+\o Active cell: 19 0 ""
+\a nrListItemRename(cdsLibEditor->mainTable, 19 0 "dm")
+\a nrListItemAction(cdsLibEditor->mainTable 19 1)
+\o Active cell: 19 1 ""
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrListItemRename(cdsLibEditor->mainTable, 19 1 "/users/iteso-s018/MyDesigns/Virtuoso/risc_v")
+\a nrSetWindowVisibility(needCreateDialog "show")
+\a nrListItemAction(cdsLibEditor->mainTable 16 1)
+\o Active cell: 16 1 "/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/risc_v_Pad_Frame"
+\a nrSetCurrentWindow(needCreateDialog)
+\a nrResizeWindow(needCreateDialog list(58 183 475 180))
+\a needCreateDialog->yesButton->value = t
+\a newLibraryDialog->filePathComboBox->value = "/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test"
+\a newLibraryDialog->libraryName->value = "dm"
+\a newLibraryDialog->filePathComboBox->value = "/users/iteso-s018/MyDesigns/Virtuoso"
+\a newLibraryDialog->useMappedName->value = nil
+\a nrSetWindowVisibility(newLibraryDialog "show")
+\a nrResizeWindow(newLibraryDialog list(0 0 531 513))
+\a nrResizeWindow(needCreateDialog list(58 146 475 180))
+\a nrSetCurrentWindow(newLibraryDialog)
+\a nrResizeWindow(newLibraryDialog list(30 28 531 513))
+\a newLibraryDialog->okButton->value = t
+\a newLibraryDialog->libraryName->value = ""
+\a nrListItemAction(cdsLibEditor->mainTable 20 0)
+\o Active cell: 20 0 ""
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrResizeWindow(newLibraryDialog list(30 -9 531 513))
+\a nrSetCurrentWindow(cdsLibEditor)
+\o QUESTION (CLE-205): You have made changes which have not been saved. \n\nWould you like to save your changes? 
+\a nrSetWindowVisibility(needSaveDialog "show")
+\a nrResizeWindow(needSaveDialog list(101 202 369 136))
+\a nrResizeWindow(cdsLibEditor list(45 36 500 400))
+\a nrSetCurrentWindow(needSaveDialog)
+\a needSaveDialog->yesButton->value = t
+\a exit(0)

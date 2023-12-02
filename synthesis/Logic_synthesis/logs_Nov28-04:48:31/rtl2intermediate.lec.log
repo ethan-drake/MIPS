@@ -1,0 +1,2450 @@
+                          CONFORMAL (R)
+                   Version 21.10-p100 (15-Apr-2021) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2021. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 957 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: usage -auto -elapse
+// Command: usage -auto -elapse
+CPU time     : 3.43    seconds
+Elapse time  : 16      seconds
+Memory usage : 61.73   M bytes
+0
+// Command: set_verification_information fv_map_risc_v_Pad_Frame_intermediatev_db
+// Command: set_verification_information fv_map_risc_v_Pad_Frame_intermediatev_db
+// Verification information is set to /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/fv_map_risc_v_Pad_Frame_intermediatev_db.
+// Advanced reporting is enabled and the output is written to /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/fv_map_risc_v_Pad_Frame_intermediatev_db
+0
+CPU time     : 3.84    seconds
+Elapse time  : 16      seconds
+Memory usage : 72.29   M bytes
+// Command: read_implementation_information fv/risc_v_Pad_Frame -golden fv_map -revised risc_v_Pad_Frame_intermediatev
+// Command: read_implementation_information fv/risc_v_Pad_Frame -golden fv_map -revised risc_v_Pad_Frame_intermediatev
+// Reading implementation information from fv/risc_v_Pad_Frame ...
+================================================================================
+          Information Category                         Count
+--------------------------------------------------------------------------------
+     Sequential instance phase                          7038
+       Sequential optimization                          3200
+        Sequential duplication                             0
+         Boundary optimization                             0
+            Synthesis equation                             0
+    Combinational loop breaker                             0
+                       Mapping                             0
+================================================================================
+// Note: Read implementation information successfully.
+0
+CPU time     : 4.01    seconds
+Elapse time  : 28      seconds
+Memory usage : 85.21   M bytes
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Number of threads is set to 1,4.
+0
+// Command: set_compare_options -threads 1,4
+// Command: set_compare_options -threads 1,4
+Set computing threads of compare to 1,4.
+0
+// Command: set env(RC_VERSION)     "20.11-s111_1"
+20.11-s111_1
+// Command: set env(CDN_SYNTH_ROOT) "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86
+// Command: set CDN_SYNTH_ROOT      "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86
+// Command: set env(CW_DIR) "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware
+// Command: set CW_DIR      "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware
+// Command: set_undefined_cell black_box -noascend -both
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: add_search_path /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/ /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/ /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/ /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef -library -both
+// Command: add_search_path /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/ /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/ /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/ /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef -library -both
+0
+// Command: read_library -liberty -both /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_SS_s1vg.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_FF_s1vg.lib
+// Command: read_library -liberty -both /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_SS_s1vg.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_FF_s1vg.lib
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_SS_s1vg.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_FF_s1vg.lib ...
+// Warning: (RTL9.16) Duplicated operating_condition, the second one is ignored (occurrence:2)
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:20)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:32)
+// Warning: (IGN3.2) Duplicate modules/entities are detected. Subsequent modules/entities are ignored (occurrence:513)
+// Note: Read Liberty library successfully
+0
+CPU time     : 4.56    seconds
+Elapse time  : 29      seconds
+Memory usage : 110.81  M bytes
+// Command: read_design -verilog95   -golden -lastmod -noelab fv/risc_v_Pad_Frame/fv_map.v.gz
+// Command: read_design -verilog95 -golden -lastmod -noelab fv/risc_v_Pad_Frame/fv_map.v.gz
+// Parsing file fv/risc_v_Pad_Frame/fv_map.v.gz ...
+0
+CPU time     : 4.75    seconds
+Elapse time  : 29      seconds
+Memory usage : 121.10  M bytes
+// Command: elaborate_design -golden -root {risc_v_Pad_Frame}
+// Command: elaborate_design -golden -root risc_v_Pad_Frame
+// Golden root module is set to 'risc_v_Pad_Frame'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:368)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:1)
+// Note: (HRC1.3) Undefined or non-translated modules will be blackboxed (occurrence:4)
+// Warning: Total black box modules referenced in Golden = 4
+0
+// Command: read_design -verilog95   -revised -lastmod -noelab Netlist/risc_v_Pad_Frame_intermediate.v
+// Command: read_design -verilog95 -revised -lastmod -noelab Netlist/risc_v_Pad_Frame_intermediate.v
+// Parsing file Netlist/risc_v_Pad_Frame_intermediate.v ...
+0
+CPU time     : 5.03    seconds
+Elapse time  : 30      seconds
+Memory usage : 125.58  M bytes
+// Command: elaborate_design -revised -root {risc_v_Pad_Frame}
+// Command: elaborate_design -revised -root risc_v_Pad_Frame
+// Revised root module is set to 'risc_v_Pad_Frame'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:3568)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:1)
+// Note: (HRC1.3) Undefined or non-translated modules will be blackboxed (occurrence:4)
+// Warning: Total black box modules referenced in Revised = 4
+0
+CPU time     : 5.21    seconds
+Elapse time  : 30      seconds
+Memory usage : 125.36  M bytes
+// Command: report_design_data
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         5               5
+Library-cells       3713            3713
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT                3                    3
+OUTPUT               1                    1
+INOUT                4                    4
+--------------------------------------------
+AND                382                  382
+BUF                  6                    6
+DFF               3519                 3519
+INV               1008                 1008
+NAND                20                   20
+NOR                 25                   25
+OR                  47                   47
+XNOR                 1                    1
+XOR                 61                   61
+------ word-level --------------------------
+BBOX                 4                    4
+--------------------------------------------
+Total             5073                 5073
+
+0
+// Command: report_black_box
+// Command: report_black_box
+SYSTEM: (G R) PADVDD
+SYSTEM: (G R) PADVDDIOR
+SYSTEM: (G R) PADVSS
+SYSTEM: (G R) PADVSSIOR
+0
+// Command: set_flatten_model -seq_constant
+// Command: set_flatten_model -seq_constant
+0
+// Command: set_flatten_model -seq_constant_x_to 0
+// Command: set_flatten_model -seq_constant_x_to 0
+0
+// Command: set_flatten_model -nodff_to_dlat_zero
+// Command: set_flatten_model -nodff_to_dlat_zero
+0
+// Command: set_flatten_model -nodff_to_dlat_feedback
+// Command: set_flatten_model -nodff_to_dlat_feedback
+0
+// Command: set_flatten_model -hier_seq_merge
+// Command: set_flatten_model -hier_seq_merge
+0
+// Command: set lec_version_required "20.10100"
+20.10100
+// Command: if {$lec_version >= $lec_version_required} {
+//              check_verification_information
+//          }
+// Command: check_verification_information
+Checking Sequential constant...
+Checking Sequential merge...
+Checking Synthesis equation...
+================================================================================
+Implementation Information Check Summary: 
+--------------------------------------------------------------------------------
+Total Sequential Constants:     3200
+  Name Collision:               0
+  Name Ambiguous:               0
+  Name not Found:               0
+--------------------------------------------------------------------------------
+Total Sequential Merges:        0
+  Name Collision:               0
+  Name Ambiguous:               0
+  Name not Found:               0
+  Merge Target:
+    Name Ambiguous:             0
+    Name not Found:             0
+--------------------------------------------------------------------------------
+Total Synthesis Equations:      0
+  Module not Found:             0
+  Equation Conflict:            0
+  Empty Equation:               0
+================================================================================
+0
+// Command: set_analyze_option -auto -report_map
+// Command: set_analyze_option -auto -report_map
+0
+// Command: set_system_mode lec
+// Command: set_system_mode lec
+// Warning: 30 sequential merge information is loaded from Netlist/risc_v_Pad_Frame_intermediate.v
+// Processing Golden ...
+// Modeling Golden ...
+// (F1) Created 4 wire resolution gate(s) due to multiple-driven net(s)
+// (F21) Merged 30 DFF/DLAT(s) due to added instance equivalences (flatten)
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 4 wire resolution gate(s) due to multiple-driven net(s)
+// Balanced modeling (auto) mapped 7038 out of 7038 DFF/DLATs
+// Collected 3200 sequential constant(s) via setup info for Golden
+CPU time     : 7.71    seconds
+Elapse time  : 33      seconds
+Memory usage : 153.62  M bytes
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            11     5      4         20      
+--------------------------------------------------------------------------------
+Revised           11     5      4         20      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       3519      3519    
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       3519      3519    
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 30 key point groups
+CPU time     : 8.53    seconds
+Elapse time  : 34      seconds
+Memory usage : 158.79  M bytes
+// Running automatic setup...
+// Converted 3200 DFF/DLAT(s) in (G) to ZERO/ONE
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            11     5      4         20      
+--------------------------------------------------------------------------------
+Revised           11     5      4         20      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       3519      3519    
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       3519      3519    
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 30 key point groups
+// Automatic setup finished.
+0
+CPU time     : 10.58   seconds
+Elapse time  : 36      seconds
+Memory usage : 160.76  M bytes
+// Command: report_unmapped_points -summary
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       3519      3519    
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       3519      3519    
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 30 key point groups
+0
+// Command: report_unmapped_points -notmapped
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+0
+// Command: add_compared_points -all
+// Command: add_compared_points -all
+// 9 compared points added to compare list
+0
+// Command: compare
+// Command: compare
+================================================================================
+Compared points      PO     BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           5      4         9       
+================================================================================
+Compare results of instance/output/pin equivalences and/or sequential merge      
+================================================================================
+Compared points      DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           30        30      
+================================================================================
+0
+CPU time     : 10.91   seconds
+Elapse time  : 36      seconds
+Memory usage : 162.30  M bytes
+// Command: report_compare_data -class nonequivalent -class abort -class notcompared
+// Command: report_compare_data -class nonequivalent -class abort -class notcompared
+0 Non-equivalent point(s) reported
+0 Abort point(s) reported
+0 Not-compared point(s) reported
+0 compared point(s) reported
+================================================================================
+Compared points      PO     BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           5      4         9       
+================================================================================
+0 Non-equivalent point(s) reported
+0 Abort point(s) reported
+0 Not-compared point(s) reported
+0 compared point(s) reported
+Compare results of instance/output/pin equivalences and/or sequential merge      
+================================================================================
+Compared points      DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           30        30      
+================================================================================
+0
+// Command: report_verification -verbose
+// Command: report_verification -verbose
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+     Tri-stated output:                                        checked
+     Revised X signals set to E:                               yes
+     Floating signals tied to Z:                               yes
+     Command "add clock" for clock-gating:                     not used
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+     All primary outputs are mapped:                           yes
+     Not-mapped DFF/DLAT is detected:                          no
+     All mapped points are added as compare points:            yes
+     All compared points are compared:                         yes
+     User added black box:                                     no
+     Black box mapped with different module name:              no
+     Empty module is not black boxed:                          no
+     Command "add ignore outputs" used:                        no
+     Always false constraints detected:                        no
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+     Change gate type:                                         no
+     Change wire:                                              no
+     Primary input added by user:                              no
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+     Multiple clocks in the design:                            no
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        4
+     Duplicate module definition:                              yes *
+     Black box due to undefined cells:                         yes *
+     Golden design has abnormal ratio of unreachable gates:    yes *
+     Ratio of golden unreachable gates:                        82%
+     Revised design has abnormal ratio of unreachable gates:   yes *
+     Ratio of revised unreachable gates:                       73%
+     All primary input bus ordering is consistent:             yes
+     All primary output bus ordering is consistent:            yes
+     DFF/DLAT not compared due to disabled clock port(s):        0
+     Always X compared point is detected:                      not checked
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+     Number of EQ compare points:                              39
+     Number of NON-EQ compare points:                          0
+     Number of Aborted compare points:                         0
+     Number of Uncompared compare points :                     0
+================================================================================
+pass
+// Command: report_statistics
+// Command: report_statistics
+Mapping and compare statistics
+================================================================================
+                     Compare Result       Golden            Revised
+--------------------------------------------------------------------------------
+Root module name                          risc_v_Pad_F...   risc_v_Pad_F...   
+
+Primary inputs                                11                 11
+   Mapped                                     11                 11
+
+Primary outputs                                5                  5
+   Mapped                                      5                  5
+      Equivalent                  5
+
+Black-box key points                           4                  4
+   Mapped                                      4                  4
+      Equivalent                  4
+
+State key points                            3519               3519
+   Unmapped                                 3519               3519
+      Unreachable                           3519               3519
+   Merged                                     30                  0
+================================================================================
+Compare results of instance/output/pin equivalences and/or sequential merge      
+================================================================================
+Compared points      DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           30        30      
+================================================================================
+0
+// Command: if {![is_pass]} {
+//              error "// ERROR: Compare was not equivalent."
+//          }
+// Command: write_verification_information
+// Command: write_verification_information
+// Verification information is written to fv_map_risc_v_Pad_Frame_intermediatev_db.
+0
+// Command: report_verification_information
+// Command: report_verification_information
+// Generating reports on verification information at /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/fv_map_risc_v_Pad_Frame_intermediatev_db...
+LEC run scores:
+================================================================================
+Step                Score     Range          
+--------------------------------------------------------------------------------
+result_status       10        10             
+runtime             10        10             
+mapping             10        10             
+sequential_constant 10        10             
+sequential_merge    10        10             
+sequential_phase    10        10             
+datapath_analysis   5         10             
+combinational_loop  5         10             
+mismatch_detection  5         10             
+overall             75        90             
+================================================================================
+LEC results versus attributes:
+================================================================================
+Attribute           Total     Inconsistency  Combined Table                
+--------------------------------------------------------------------------------
+sequential_constant 3208      0              sequential_constant.json      
+sequential_merge    30        0              sequential_merge.json         
+sequential_phase    0         0                                            
+================================================================================
+The tables can be viewed directly using web interface.
+// Done with reporting verification information.
+0
+CPU time     : 11.19   seconds
+Elapse time  : 38      seconds
+Memory usage : 163.12  M bytes
+// Command: set lec_version_required "18.20330"
+18.20330
+// Command: if {$lec_version >= $lec_version_required} {
+//              report_implementation_information
+//          }
+// Command: report_implementation_information
+// Reporting implementation information...
+// Information summary:
+================================================================================
+        Information Category     Total      Used    Unused  Rejected     Abort
+--------------------------------------------------------------------------------
+   Sequential instance phase      7038      7038         0         0         0
+               Phase mapping         0         0         0         0         0
+         Sequential constant      3200      3200         0         0         0
+            Sequential merge         0         0         0         0         0
+      Sequential unreachable         0         0         0         0         0
+      Sequential duplication         0         0         0         0         0
+       Boundary optimization         0         0         0         0         0
+          Synthesis equation         0         0         0         0         0
+  Combinational loop breaker         0         0         0         0         0
+ HDL indexed expression info         3         0         3         0         0
+================================================================================
+0
+CPU time     : 11.41   seconds
+Elapse time  : 39      seconds
+Memory usage : 163.13  M bytes
+// Command: reset
+// Command: reset
+// Warning: Reset the system and deleting all design data
+// Warning: Existing golden design has been deleted
+// Warning: Existing golden library has been deleted
+// Warning: Existing revised design has been deleted
+// Warning: Existing revised library has been deleted
+0
+CPU time     : 11.57   seconds
+Elapse time  : 39      seconds
+Memory usage : 163.78  M bytes
+// Command: set_verification_information rtl_fv_map_db
+// Command: set_verification_information rtl_fv_map_db
+// Verification information is set to /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/rtl_fv_map_db.
+// Advanced reporting is enabled and the output is written to /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/rtl_fv_map_db
+0
+CPU time     : 11.68   seconds
+Elapse time  : 39      seconds
+Memory usage : 164.09  M bytes
+// Command: read_implementation_information fv/risc_v_Pad_Frame -revised fv_map
+// Command: read_implementation_information fv/risc_v_Pad_Frame -revised fv_map
+// Reading implementation information from fv/risc_v_Pad_Frame ...
+================================================================================
+          Information Category                         Count
+--------------------------------------------------------------------------------
+     Sequential instance phase                          3519
+       Sequential optimization                          8572
+        Sequential duplication                             0
+         Boundary optimization                             0
+            Synthesis equation                             0
+    Combinational loop breaker                             0
+                       Mapping                             0
+================================================================================
+// Note: Read implementation information successfully.
+0
+CPU time     : 11.83   seconds
+Elapse time  : 41      seconds
+Memory usage : 164.10  M bytes
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Number of threads is set to 1,4.
+0
+// Command: set_compare_options -threads 1,4
+// Command: set_compare_options -threads 1,4
+Set computing threads of compare to 1,4.
+0
+// Command: set env(RC_VERSION)     "20.11-s111_1"
+20.11-s111_1
+// Command: set env(CDN_SYNTH_ROOT) "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86
+// Command: set CDN_SYNTH_ROOT      "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86
+// Command: set env(CW_DIR) "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware
+// Command: set CW_DIR      "/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware"
+/CMC/tools/cadence/GENUS20.11.000_lnx86/tools.lnx86/lib/chipware
+// Command: set_undefined_cell black_box -noascend -both
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: add_search_path /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/ /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/ /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/ /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef -library -both
+// Command: add_search_path /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/ /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/ /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/ /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef -library -both
+0
+// Command: read_library -liberty -both /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_SS_s1vg.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_FF_s1vg.lib
+// Command: read_library -liberty -both /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_SS_s1vg.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_FF_s1vg.lib
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_SS_s1vg.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib ...
+// Parsing file /CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_FF_s1vg.lib ...
+// Warning: (RTL9.16) Duplicated operating_condition, the second one is ignored (occurrence:2)
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:20)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:32)
+// Warning: (IGN3.2) Duplicate modules/entities are detected. Subsequent modules/entities are ignored (occurrence:513)
+// Note: Read Liberty library successfully
+0
+CPU time     : 12.40   seconds
+Elapse time  : 41      seconds
+Memory usage : 166.66  M bytes
+// Command: set_undriven_signal 0 -golden
+// Command: set_undriven_signal 0 -golden
+0
+// Command: set lec_version_required "16.20100"
+16.20100
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_naming_style genus -golden
+//          } else {
+//              set_naming_style rc -golden
+//          }
+// Command: set_naming_style genus -golden
+0
+// Command: set_naming_rule "%s\[%d\]" -instance_array -golden
+// Command: set_naming_rule %s[%d] -instance_array -golden
+0
+// Command: set_naming_rule "%s_reg" -register -golden
+// Command: set_naming_rule %s_reg -register -golden
+0
+// Command: set_naming_rule "%L.%s" "%L\[%d\].%s" "%s" -instance -golden
+// Command: set_naming_rule %L.%s %L[%d].%s %s -instance -golden
+0
+// Command: set_naming_rule "%L.%s" "%L\[%d\].%s" "%s" -variable -golden
+// Command: set_naming_rule %L.%s %L[%d].%s %s -variable -golden
+0
+// Command: set lec_version_required "17.10200"
+17.10200
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_naming_rule -ungroup_separator {_} -golden
+//          }
+// Command: set_naming_rule -ungroup_separator _ -golden
+0
+// Command: set lec_version_required "17.20301"
+17.20301
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_hdl_options -const_port_extend
+//          }
+// Command: set_hdl_options -const_port_extend
+0
+// Command: set_hdl_options -VERILOG_INCLUDE_DIR "sep:src:cwd"
+// Command: set_hdl_options -VERILOG_INCLUDE_DIR sep:src:cwd
+0
+// Command: delete_search_path -all -design -golden
+// Command: delete_search_path -all -design -golden
+0
+// Command: add_search_path ../../src -design -golden
+// Command: add_search_path ../../src -design -golden
+0
+// Command: read_design  -define SYNTHESIS  -merge bbox -golden -lastmod -noelab -verilog2k  ../../src/Counter_02Limit_ovf.v ../../src/risc_v_top.v ../../src/multiplexor_param.v ../../src/ffd_param_pc_risk.v ../../src/adder.v ../../src/branch_prediction.v ../../src/instr_memory.v ../../src/ffd_param_clear_n.v ../../src/imm_gen.v ../../src/register_file.v ../../src/jump_detection_unit.v ../../src/control_unit.v ../../src/hazard_detection_unit.v ../../src/ALU_control.v ../../src/double_multiplexor_param.v ../../src/ALU.v ../../src/forward_unit.v ../../src/master_memory_map.v ../../src/data_memory.v ../../src/uart_IP.v ../../src/branch_control_unit.v ../../src/uart_full_duplex.v ../../src/UART_Rx.v ../../src/uart_tx.v ../../src/uart_tx_fsm.v ../../src/ffd_param_clear.v ../../src/Delayer.v ../../src/Bit_Rate_Pulse.v ../../src/ffd_param.v ../../src/parallel2serial.v ../../src/Shift_Register_R_Param.v ../../src/FSM_UART_Rx.v ../../src/Counter_Param.v ../../src/risc_v_Pad_Frame.v
+// Command: read_design -define SYNTHESIS -merge bbox -golden -lastmod -noelab -verilog2k ../../src/Counter_02Limit_ovf.v ../../src/risc_v_top.v ../../src/multiplexor_param.v ../../src/ffd_param_pc_risk.v ../../src/adder.v ../../src/branch_prediction.v ../../src/instr_memory.v ../../src/ffd_param_clear_n.v ../../src/imm_gen.v ../../src/register_file.v ../../src/jump_detection_unit.v ../../src/control_unit.v ../../src/hazard_detection_unit.v ../../src/ALU_control.v ../../src/double_multiplexor_param.v ../../src/ALU.v ../../src/forward_unit.v ../../src/master_memory_map.v ../../src/data_memory.v ../../src/uart_IP.v ../../src/branch_control_unit.v ../../src/uart_full_duplex.v ../../src/UART_Rx.v ../../src/uart_tx.v ../../src/uart_tx_fsm.v ../../src/ffd_param_clear.v ../../src/Delayer.v ../../src/Bit_Rate_Pulse.v ../../src/ffd_param.v ../../src/parallel2serial.v ../../src/Shift_Register_R_Param.v ../../src/FSM_UART_Rx.v ../../src/Counter_Param.v ../../src/risc_v_Pad_Frame.v
+// Parsing file ../../src/Counter_02Limit_ovf.v ...
+// Parsing file ../../src/risc_v_top.v ...
+// Parsing file ../../src/multiplexor_param.v ...
+// Parsing file ../../src/ffd_param_pc_risk.v ...
+// Parsing file ../../src/adder.v ...
+// Parsing file ../../src/branch_prediction.v ...
+// Parsing file ../../src/instr_memory.v ...
+// Parsing file ../../src/ffd_param_clear_n.v ...
+// Parsing file ../../src/imm_gen.v ...
+// Parsing file ../../src/register_file.v ...
+// Parsing file ../../src/jump_detection_unit.v ...
+// Parsing file ../../src/control_unit.v ...
+// Parsing file ../../src/hazard_detection_unit.v ...
+// Parsing file ../../src/ALU_control.v ...
+// Parsing file ../../src/double_multiplexor_param.v ...
+// Parsing file ../../src/ALU.v ...
+// Parsing file ../../src/forward_unit.v ...
+// Parsing file ../../src/master_memory_map.v ...
+// Parsing file ../../src/data_memory.v ...
+// Parsing file ../../src/uart_IP.v ...
+// Parsing file ../../src/branch_control_unit.v ...
+// Parsing file ../../src/uart_full_duplex.v ...
+// Parsing file ../../src/UART_Rx.v ...
+// Parsing file ../../src/uart_tx.v ...
+// Parsing file ../../src/uart_tx_fsm.v ...
+// Parsing file ../../src/ffd_param_clear.v ...
+// Parsing file ../../src/Delayer.v ...
+// Parsing file ../../src/Bit_Rate_Pulse.v ...
+// Parsing file ../../src/ffd_param.v ...
+// Parsing file ../../src/parallel2serial.v ...
+// Parsing file ../../src/Shift_Register_R_Param.v ...
+// Parsing file ../../src/FSM_UART_Rx.v ...
+// Parsing file ../../src/Counter_Param.v ...
+// Parsing file ../../src/risc_v_Pad_Frame.v ...
+0
+CPU time     : 12.64   seconds
+Elapse time  : 42      seconds
+Memory usage : 172.21  M bytes
+// Command: elaborate_design -golden -root {risc_v_Pad_Frame} -rootonly 
+// Command: elaborate_design -golden -root risc_v_Pad_Frame -rootonly
+// Golden root module is set to 'risc_v_Pad_Frame'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:4)
+// Warning: (RTL1.4) Assignment with LHS bit width is greater than RHS bit width (occurrence:1)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:8)
+// Warning: (RTL1.7) Non-blocking assignment is in combinational always block (occurrence:72)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:29)
+// Note: (RTL5.6) Case statement with no default (occurrence:4)
+// Warning: (RTL7.3) Array index in RHS might be out of range (occurrence:3)
+// Warning: (RTL7.4) Array index in LHS might be out of range (occurrence:3)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:43)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:3)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:3)
+// Note: (VLG9.2) The `define macro is used (occurrence:1)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:1)
+// Note: (HRC1.3) Undefined or non-translated modules will be blackboxed (occurrence:5)
+// Warning: (HRC3.2) Component is instantiated without any specified port connections (occurrence:4)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:2)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:61)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:18)
+// Warning: Total black box modules referenced in Golden = 5
+// Warning: Total black box modules referenced in Golden = 5
+0
+CPU time     : 13.04   seconds
+Elapse time  : 43      seconds
+Memory usage : 196.16  M bytes
+// Command: read_design -verilog95   -revised -lastmod -noelab fv/risc_v_Pad_Frame/fv_map.v.gz
+// Command: read_design -verilog95 -revised -lastmod -noelab fv/risc_v_Pad_Frame/fv_map.v.gz
+// Parsing file fv/risc_v_Pad_Frame/fv_map.v.gz ...
+0
+CPU time     : 13.26   seconds
+Elapse time  : 43      seconds
+Memory usage : 204.97  M bytes
+// Command: elaborate_design -revised -root {risc_v_Pad_Frame}
+// Command: elaborate_design -revised -root risc_v_Pad_Frame
+// Revised root module is set to 'risc_v_Pad_Frame'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:368)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:1)
+// Note: (HRC1.3) Undefined or non-translated modules will be blackboxed (occurrence:4)
+// Warning: Total black box modules referenced in Revised = 4
+0
+CPU time     : 13.47   seconds
+Elapse time  : 44      seconds
+Memory usage : 203.25  M bytes
+// Command: uniquify -all -nolib -golden
+// Command: uniquify -all -nolib -golden
+Uniquified 4 instance(s) referring to module 'double_multiplexor_param_LENGTH32' in Golden
+Uniquified 2 instance(s) referring to module 'adder_LENGTH32' in Golden
+Uniquified 2 module(s)
+0
+CPU time     : 13.68   seconds
+Elapse time  : 44      seconds
+Memory usage : 203.64  M bytes
+// Command: report_design_data
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules        90               5
+Library-cells        484            3713
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT                3                    3
+OUTPUT               1                    1
+INOUT                4                    4
+--------------------------------------------
+AND        *     12724                  382
+BUF        *        63                    6
+DFF        *      8087                 3519
+INV        *       326                 1008
+MUX        *     13079                    0
+NAND       *        17                   20
+NOR        *       889                   25
+OR         *      1349                   47
+WIRE       *       737                    0
+XNOR       *       611                    1
+XOR        *      1810                   61
+------ word-level --------------------------
+ADD        *        16                    0
+EQ         *         9                    0
+GE         *         3                    0
+GT         *         3                    0
+LE         *         1                    0
+LT         *         3                    0
+MULT       *         1                    0
+NE         *         4                    0
+SLL        *         2                    0
+SRL        *         2                    0
+SUBTRACT   *         1                    0
+WAND       *         1                    0
+WINV       *         1                    0
+WMUX       *       388                    0
+WOR        *         1                    0
+WSEL       *        49                    0
+WXOR       *         1                    0
+BBOX       *         8                    4
+------ don't care --------------------------
+X-assignments       96                    0
+--------------------------------------------
+Total            39796                 5073
+
+0
+// Command: report_black_box
+// Command: report_black_box
+SYSTEM: (G) padIORINGCORNER
+SYSTEM: (G R) PADVDD
+SYSTEM: (G R) PADVDDIOR
+SYSTEM: (G R) PADVSS
+SYSTEM: (G R) PADVSSIOR
+0
+// Command: set_flatten_model -seq_constant
+// Command: set_flatten_model -seq_constant
+0
+// Command: set_flatten_model -seq_constant_x_to 0
+// Command: set_flatten_model -seq_constant_x_to 0
+0
+// Command: set_flatten_model -nodff_to_dlat_zero
+// Command: set_flatten_model -nodff_to_dlat_zero
+0
+// Command: set_flatten_model -nodff_to_dlat_feedback
+// Command: set_flatten_model -nodff_to_dlat_feedback
+0
+// Command: set_flatten_model -hier_seq_merge
+// Command: set_flatten_model -hier_seq_merge
+0
+// Command: set_flatten_model -balanced_modeling
+// Command: set_flatten_model -balanced_modeling
+0
+// Command: set lec_version_required "20.10100"
+20.10100
+// Command: if {$lec_version >= $lec_version_required} {
+//              check_verification_information
+//          }
+// Command: check_verification_information
+Checking Sequential constant...
+Checking Sequential merge...
+Checking Synthesis equation...
+================================================================================
+Implementation Information Check Summary: 
+--------------------------------------------------------------------------------
+Total Sequential Constants:     8155
+  Name Collision:               774
+  Name Ambiguous:               0
+  Name not Found:               0
+--------------------------------------------------------------------------------
+Total Sequential Merges:        30
+  Name Collision:               0
+  Name Ambiguous:               0
+  Name not Found:               0
+  Merge Target:
+    Name Ambiguous:             0
+    Name not Found:             0
+--------------------------------------------------------------------------------
+Total Synthesis Equations:      0
+  Module not Found:             0
+  Equation Conflict:            0
+  Empty Equation:               0
+================================================================================
+0
+// Command: set_analyze_option -auto -report_map
+// Command: set_analyze_option -auto -report_map
+0
+// Command: write_hier_compare_dofile hier_tmp2.lec.do -verbose -noexact_pin_match -constraint -usage \
+//          -replace -balanced_extraction -input_output_pin_equivalence \
+//          -prepend_string "report_design_data; report_unmapped_points -summary; report_unmapped_points -notmapped; analyze_datapath -module -verbose; eval analyze_datapath $DATAPATH_SOLVER_OPTION -verbose"
+// Command: write_hier_compare_dofile hier_tmp2.lec.do -verbose -noexact_pin_match -constraint -usage -replace -balanced_extraction -input_output_pin_equivalence -prepend_string {report_design_data; report_unmapped_points -summary; report_unmapped_points -notmapped; analyze_datapath -module -verbose; eval analyze_datapath -flowgraph -verbose}
+// The following settings are used for hierarchical dofile generation:
+// Modeling Options:
+    Auto setup disabled
+    GATED_Clock modeling enabled
+// Mapping Method:
+    Name Only
+--------------------------------------------------------------------------------
+// Flattening Golden and Revised designs ...
+--------------------------------------------------------------------------------
+// Read in 30 merge group(s) from verification information.
+// Processing Golden ...
+// Modeling Golden ...
+// Warning: (F34) Converted 96 X assignment(s) as don't care(s)
+// (F1) Created 4 wire resolution gate(s) due to multiple-driven net(s)
+// (F21) Merged 30 DFF/DLAT(s) due to added instance equivalences (flatten)
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 4 wire resolution gate(s) due to multiple-driven net(s)
+// Balanced modeling mapped 7038 out of 11606 DFF/DLATs
+// Collected 7768 sequential constant(s) via setup info for Golden
+// (F18) Converted 154 DFF/DLAT(s) in (G) to ZERO/ONE
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 8111
+// Revised key points = 3539
+// Warning: Automatic key point mapping is skipped
+// Note: Comparing instance equivalent points ...
+// Command: compare -nowriteuvi
+Compare results of instance/output/pin equivalences and/or sequential merge      
+================================================================================
+Compared points      DFF       Total   
+--------------------------------------------------------------------------------
+Non-equivalent       30        30      
+================================================================================
+CPU time     : 28.97   seconds
+Elapse time  : 60      seconds
+Memory usage : 221.85  M bytes
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[22] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[54] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[12] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[44] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[2] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[34] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[3] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[35] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[4] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[36] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[5] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[37] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[6] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[38] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[13] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[45] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[20] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[52] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[17] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[49] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[27] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[59] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[7] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[39] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[25] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[57] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[29] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[61] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[8] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[40] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[23] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[55] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[14] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[46] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[31] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[63] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[9] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[41] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[18] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[50] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[21] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[53] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[10] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[42] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[15] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[47] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[26] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[58] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[28] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[60] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[11] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[43] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[24] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[56] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[30] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[62] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[19] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[51] in Golden is non-equivalent
+// Warning: Comparison of instances risc_v_top_i/ex_mem_datapath_ffd/q_reg[16] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[48] in Golden is non-equivalent
+// Command: set system mode setup
+// Read in 30 merge group(s) from verification information.
+// Processing Golden ...
+// Modeling Golden ...
+// Warning: (F34) Converted 96 X assignment(s) as don't care(s)
+// (F1) Created 4 wire resolution gate(s) due to multiple-driven net(s)
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[2] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[34]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[3] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[35]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[4] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[36]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[5] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[37]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[6] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[38]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[7] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[39]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[8] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[40]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[9] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[41]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[10] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[42]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[11] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[43]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[12] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[44]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[13] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[45]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[14] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[46]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[15] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[47]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[16] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[48]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[17] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[49]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[18] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[50]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[19] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[51]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[20] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[52]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[21] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[53]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[22] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[54]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[23] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[55]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[24] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[56]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[25] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[57]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[26] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[58]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[27] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[59]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[28] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[60]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[29] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[61]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[30] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[62]
+// Note: Skip merging risc_v_top_i/ex_mem_datapath_ffd/q_reg[31] and risc_v_top_i/ex_mem_datapath_ffd/q_reg[63]
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 4 wire resolution gate(s) due to multiple-driven net(s)
+// Balanced modeling mapped 7038 out of 11606 DFF/DLATs
+// Collected 7768 sequential constant(s) via setup info for Golden
+// (F18) Converted 150 DFF/DLAT(s) in (G) to ZERO/ONE
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 8111
+// Revised key points = 3539
+// Warning: Automatic key point mapping is skipped
+// Command: MAP KEy Points
+// Mapping key points ...
+// Warning: Golden has 4417 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            11     5      3518   4         3538    
+--------------------------------------------------------------------------------
+Revised           11     5      3518   4         3538    
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       152    4         156     
+Not-mapped        4417   0         4417    
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Warning: Key point mapping is incomplete
+CPU time     : 119.66  seconds
+Elapse time  : 152     seconds
+Memory usage : 223.89  M bytes
+--------------------------------------------------------------------------------
+// Starting hierarchical dofile generation ...
+--------------------------------------------------------------------------------
+// Total Matching Module Instance Pairs =  1
+// Module Instantiation Ratio in Golden = 1.00
+// Module Instantiation Ratio in Revised = 1.00
+// Gathering Instance Boundary Information ...
+// Extracting Constraints in Golden ...
+// Extracting Constraints in Revised ...
+// Extracting logic-cone properties of pins ...
+// Balancing Constraints ...
+// Resolving Constraints ...
+// Writing hierarchical dofile ...
+# The following modules are not written  because they have been added as black box:
+# PADVDD (G)
+# PADVSS (G)
+# PADVDDIOR (G)
+# PADVSSIOR (G)
+# padIORINGCORNER (G)
+# PADVDD (R)
+# PADVDDIOR (R)
+# PADVSS (R)
+# PADVSSIOR (R)
+# The following Golden modules are not written because of non-matching
+# instance names in Revised:
+# ffd_param_clear_n_LENGTH206 (Instance: risc_v_top_i/ex_mem_datapath_ffd) (G)
+# instr_memory_DATA_WIDTH32_ADDR_WIDTH10 (Instance: risc_v_top_i/memory_rom) (G)
+# uart_tx_baud_rate5210 (Instance: risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart) (G)
+# imm_gen (Instance: risc_v_top_i/immediate_gen) (G)
+# Bit_Rate_Pulse_delay_counts5210 (Instance: risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/baudrate_counter) (G)
+# data_memory_DATA_WIDTH32_ADDR_WIDTH9 (Instance: risc_v_top_i/memory_ram) (G)
+# ffd_param_clear_n_LENGTH193 (Instance: risc_v_top_i/id_ex_datapath_ffd) (G)
+# double_multiplexor_param_LENGTH32_0 (Instance: risc_v_top_i/forwardB_mux) (G)
+# uart_IP_DATA_WIDTH32 (Instance: risc_v_top_i/uart_IP_module) (G)
+# adder_LENGTH32 (Instance: risc_v_top_i/adder_pc_4) (G)
+# FSM_UART_Rx (Instance: risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/FSM_Rx) (G)
+# uart_full_duplex (Instance: risc_v_top_i/uart_IP_module/UART_full_duplex) (G)
+# multiplexor_param_LENGTH64 (Instance: risc_v_top_i/mult_if_pipe) (G)
+# ffd_param_pc_risk_LENGTH32_RST_VAL32h00400000 (Instance: risc_v_top_i/ff_pc) (G)
+# UART_Rx_baud_rate5210 (Instance: risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart) (G)
+# branch_prediction_DATA_WIDTH32_BRANCH_NO8 (Instance: risc_v_top_i/branch_predictor) (G)
+# master_memory_map_DATA_WIDTH32_ADDR_WIDTH7 (Instance: risc_v_top_i/memory_map) (G)
+# ffd_param_clear_n_LENGTH133 (Instance: risc_v_top_i/mem_wb_datapath_ffd) (G)
+# risc_v_top (Instance: risc_v_top_i) (G)
+# control_unit (Instance: risc_v_top_i/cu) (G)
+# forward_unit (Instance: risc_v_top_i/fwd_unit) (G)
+# uart_tx_fsm (Instance: risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/tx_fsm) (G)
+# ALU_LENGTH32 (Instance: risc_v_top_i/alu_block) (G)
+# double_multiplexor_param_LENGTH32_3 (Instance: risc_v_top_i/mult_alu_param) (G)
+# adder_LENGTH32_1 (Instance: risc_v_top_i/adder_pc_prev_4) (G)
+# double_multiplexor_param_LENGTH32 (Instance: risc_v_top_i/forwardA_mux) (G)
+# register_file (Instance: risc_v_top_i/reg_file) (G)
+# adder_LENGTH32_0 (Instance: risc_v_top_i/adder_jump) (G)
+# ffd_param_clear_n_LENGTH64 (Instance: risc_v_top_i/if_id_datapath_ffd) (G)
+# double_multiplexor_param_LENGTH32_1 (Instance: risc_v_top_i/mult_fwd_SW) (G)
+# ALU_control (Instance: risc_v_top_i/alu_ctrl) (G)
+# branch_control_unit (Instance: risc_v_top_i/branch_control) (G)
+# Delayer_YY250000 (Instance: risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms) (G)
+# double_multiplexor_param_LENGTH32_2 (Instance: risc_v_top_i/memory_map/memory_map_mult) (G)
+9 modules are not written because they have been added as black box
+1 module pairs are written for hierarchical comparison
+0
+CPU time     : 120.63  seconds
+Elapse time  : 154     seconds
+Memory usage : 227.68  M bytes
+// Command: run_hier_compare hier_tmp2.lec.do -dynamic_hierarchy
+// Command: run_hier_compare hier_tmp2.lec.do -dynamic_hierarchy
+// Command: vpxmode
+CPU time     : 120.75  seconds
+Elapse time  : 154     seconds
+Memory usage : 227.74  M bytes
+// Command: delete set_seq_merge
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[2]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[34] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[3]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[35] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[4]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[36] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[5]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[37] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[6]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[38] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[7]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[39] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[8]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[40] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[9]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[41] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[10]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[42] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[11]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[43] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[12]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[44] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[13]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[45] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[14]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[46] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[15]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[47] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[16]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[48] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[17]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[49] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[18]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[50] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[19]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[51] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[20]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[52] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[21]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[53] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[22]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[54] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[23]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[55] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[24]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[56] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[25]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[57] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[26]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[58] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[27]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[59] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[28]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[60] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[29]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[61] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[30]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[62] -Golden
+// Command: set_seq_merge /risc_v_top_i/ex_mem_datapath_ffd_q_reg[31]  /risc_v_top_i/ex_mem_datapath_ffd_q_reg[63] -Golden
+// Command: tclmode
+// Running Module risc_v_Pad_Frame and risc_v_Pad_Frame
+// Command: set_root_module risc_v_Pad_Frame -Golden
+// Warning: Golden root module is already at 'risc_v_Pad_Frame'
+0
+// Command: set_root_module risc_v_Pad_Frame -Revised
+// Warning: Revised root module is already at 'risc_v_Pad_Frame'
+0
+// Command: set_module_property -instance / -Golden
+0
+// Command: set_module_property -instance / -Revised
+0
+// Command: report_black_box -NOHidden
+SYSTEM: (G) padIORINGCORNER
+SYSTEM: (G R) PADVDD
+SYSTEM: (G R) PADVDDIOR
+SYSTEM: (G R) PADVSS
+SYSTEM: (G R) PADVSSIOR
+0
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Warning: (F34) Converted 96 X assignment(s) as don't care(s)
+// (F1) Created 4 wire resolution gate(s) due to multiple-driven net(s)
+// (F21) Merged 30 DFF/DLAT(s) due to added instance equivalences (flatten)
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 4 wire resolution gate(s) due to multiple-driven net(s)
+// Balanced modeling mapped 7038 out of 11606 DFF/DLATs
+// Collected 7768 sequential constant(s) via setup info for Golden
+// (F18) Converted 154 DFF/DLAT(s) in (G) to ZERO/ONE
+CPU time     : 217.49  seconds
+Elapse time  : 252     seconds
+Memory usage : 232.04  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 8111
+// Revised key points = 3539
+// Mapping key points ...
+// Warning: Golden has 4413 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            11     5      3488   4         3508    
+--------------------------------------------------------------------------------
+Revised           11     5      3488   4         3508    
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 30 key point groups
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       156    4         160     
+Not-mapped        4413   0         4413    
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       31        31      
+================================================================================
+// Warning: Key point mapping is incomplete
+CPU time     : 232.32  seconds
+Elapse time  : 267     seconds
+Memory usage : 232.04  M bytes
+// Running automatic setup...
+// Remodeled the clock port for 3200 SEQ(s) in (G).
+// Remodeled the clock port for 3200 SEQ(s) in (R).
+// Remodeling sequential constants...
+// Remodeling Golden ...
+// Identified 7593 DFF/DLAT(s) as sequential constant in (G).
+// Identified 20 DFFs in constant group(s) in (G).
+// Remodeling Revised ...
+// Identified 3200 DFF/DLAT(s) as sequential constant in (R).
+// Converted 7613 DFF/DLAT(s) in (G) to ZERO/ONE
+// Converted 3200 DFF/DLAT(s) in (R) to ZERO/ONE
+// Modeling sequential merge in (G).
+Unmap unreachable keypoints:
+  (G) + 8073  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[27]
+  (R) + 194   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[27]/U$1
+Unmap unreachable keypoints:
+  (G) + 7909  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/Counter_bits/Q_reg[0]
+  (R) + 3492  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_Counter_bits_Q_reg[0]/U$1
+Unmap unreachable keypoints:
+  (G) + 4928  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[86]
+  (R) + 97    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[86]/U$1
+Unmap unreachable keypoints:
+  (G) + 4947  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[67]
+  (R) + 78    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[67]/U$1
+Unmap unreachable keypoints:
+  (G) + 4918  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[96]
+  (R) + 107   DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[96]/U$1
+Unmap unreachable keypoints:
+  (G) + 5003  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[11]
+  (R) + 26    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[11]/U$1
+Unmap unreachable keypoints:
+  (G) + 8095  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[5]
+  (R) + 172   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[5]/U$1
+Unmap unreachable keypoints:
+  (G) + 7907  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/Counter_bits/Q_reg[2]
+  (R) + 3494  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_Counter_bits_Q_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 7920  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[11]
+  (R) + 3529  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[11]/U$1
+Unmap unreachable keypoints:
+  (G) + 4924  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[90]
+  (R) + 101   DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[90]/U$1
+Unmap unreachable keypoints:
+  (G) + 24    DFF  /risc_v_top_i/ff_pc/q_reg[24]
+  (R) + 271   DFF  /risc_v_top_i_ff_pc_q_reg[24]/U$1
+Unmap unreachable keypoints:
+  (G) + 7770  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[4][4]
+  (R) + 243   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[4][4]/U$1
+Unmap unreachable keypoints:
+  (G) + 8027  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[73]
+  (R) + 214   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[73]/U$1
+Unmap unreachable keypoints:
+  (G) + 7926  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[5]
+  (R) + 3523  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[5]/U$1
+Unmap unreachable keypoints:
+  (G) + 3559  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[18]
+  (R) + 155   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[18]/U$1
+Unmap unreachable keypoints:
+  (G) + 3550  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[27]
+  (R) + 164   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[27]/U$1
+Unmap unreachable keypoints:
+  (G) + 19    DFF  /risc_v_top_i/ff_pc/q_reg[29]
+  (R) + 276   DFF  /risc_v_top_i_ff_pc_q_reg[29]/U$1
+Unmap unreachable keypoints:
+  (G) + 8032  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[68]
+  (R) + 209   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[68]/U$1
+Unmap unreachable keypoints:
+  (G) + 28    DFF  /risc_v_top_i/ff_pc/q_reg[20]
+  (R) + 267   DFF  /risc_v_top_i_ff_pc_q_reg[20]/U$1
+Unmap unreachable keypoints:
+  (G) + 4993  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[21]
+  (R) + 36    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[21]/U$1
+Unmap unreachable keypoints:
+  (G) + 8023  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[77]
+  (R) + 218   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[77]/U$1
+Unmap unreachable keypoints:
+  (G) + 4983  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[31]
+  (R) + 46    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[31]/U$1
+Unmap unreachable keypoints:
+  (G) + 4999  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[15]
+  (R) + 30    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[15]/U$1
+Unmap unreachable keypoints:
+  (G) + 8066  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[34]
+  (R) + 201   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[34]/U$1
+Unmap unreachable keypoints:
+  (G) + 46    DFF  /risc_v_top_i/ff_pc/q_reg[2]
+  (R) + 249   DFF  /risc_v_top_i_ff_pc_q_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 8005  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[95]
+  (R) + 236   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[95]/U$1
+Unmap unreachable keypoints:
+  (G) + 7894  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[8]
+  (R) + 3487  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[8]/U$1
+Unmap unreachable keypoints:
+  (G) + 4791  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[3]
+  (R) + 110   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[3]/U$1
+Unmap unreachable keypoints:
+  (G) + 4766  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[28]
+  (R) + 135   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[28]/U$1
+Unmap unreachable keypoints:
+  (G) + 8025  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[75]
+  (R) + 216   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[75]/U$1
+Unmap unreachable keypoints:
+  (G) + 3569  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[8]
+  (R) + 145   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[8]/U$1
+Unmap unreachable keypoints:
+  (G) + 26    DFF  /risc_v_top_i/ff_pc/q_reg[22]
+  (R) + 269   DFF  /risc_v_top_i_ff_pc_q_reg[22]/U$1
+Unmap unreachable keypoints:
+  (G) + 7915  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[16]
+  (R) + 3534  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[16]/U$1
+Unmap unreachable keypoints:
+  (G) + 3572  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[5]
+  (R) + 142   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[5]/U$1
+Unmap unreachable keypoints:
+  (G) + 4771  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[23]
+  (R) + 130   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[23]/U$1
+Unmap unreachable keypoints:
+  (G) + 7900  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[2]
+  (R) + 3481  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 8015  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[85]
+  (R) + 226   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[85]/U$1
+Unmap unreachable keypoints:
+  (G) + 8082  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[18]
+  (R) + 185   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[18]/U$1
+Unmap unreachable keypoints:
+  (G) + 4921  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[93]
+  (R) + 104   DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[93]/U$1
+Unmap unreachable keypoints:
+  (G) + 36    DFF  /risc_v_top_i/ff_pc/q_reg[12]
+  (R) + 259   DFF  /risc_v_top_i_ff_pc_q_reg[12]/U$1
+Unmap unreachable keypoints:
+  (G) + 4786  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[8]
+  (R) + 115   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[8]/U$1
+Unmap unreachable keypoints:
+  (G) + 33    DFF  /risc_v_top_i/ff_pc/q_reg[15]
+  (R) + 262   DFF  /risc_v_top_i_ff_pc_q_reg[15]/U$1
+Unmap unreachable keypoints:
+  (G) + 3565  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[12]
+  (R) + 149   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[12]/U$1
+Unmap unreachable keypoints:
+  (G) + 7806  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[5][0]
+  (R) + 247   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[5][0]/U$1
+Unmap unreachable keypoints:
+  (G) + 8018  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[82]
+  (R) + 223   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[82]/U$1
+Unmap unreachable keypoints:
+  (G) + 7923  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[8]
+  (R) + 3526  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[8]/U$1
+Unmap unreachable keypoints:
+  (G) + 3551  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[26]
+  (R) + 163   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[26]/U$1
+Unmap unreachable keypoints:
+  (G) + 3558  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[19]
+  (R) + 156   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[19]/U$1
+Unmap unreachable keypoints:
+  (G) + 40    DFF  /risc_v_top_i/ff_pc/q_reg[8]
+  (R) + 255   DFF  /risc_v_top_i_ff_pc_q_reg[8]/U$1
+Unmap unreachable keypoints:
+  (G) + 8011  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[89]
+  (R) + 230   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[89]/U$1
+Unmap unreachable keypoints:
+  (G) + 8065  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[35]
+  (R) + 202   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[35]/U$1
+Unmap unreachable keypoints:
+  (G) + 4984  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[30]
+  (R) + 45    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[30]/U$1
+Unmap unreachable keypoints:
+  (G) + 7773  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[4][1]
+  (R) + 240   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[4][1]/U$1
+Unmap unreachable keypoints:
+  (G) + 8090  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[10]
+  (R) + 177   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[10]/U$1
+Unmap unreachable keypoints:
+  (G) + 4992  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[22]
+  (R) + 37    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[22]/U$1
+Unmap unreachable keypoints:
+  (G) + 7885  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/rx_Data_Reg_i/q_reg[2]
+  (R) + 3503  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_rx_Data_Reg_i_q_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 4946  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[68]
+  (R) + 79    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[68]/U$1
+Unmap unreachable keypoints:
+  (G) + 4929  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[85]
+  (R) + 96    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[85]/U$1
+Unmap unreachable keypoints:
+  (G) + 7896  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[6]
+  (R) + 3485  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[6]/U$1
+Unmap unreachable keypoints:
+  (G) + 7898  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[4]
+  (R) + 3483  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[4]/U$1
+Unmap unreachable keypoints:
+  (G) + 3557  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[20]
+  (R) + 157   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[20]/U$1
+Unmap unreachable keypoints:
+  (G) + 5008  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[6]
+  (R) + 21    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[6]/U$1
+Unmap unreachable keypoints:
+  (G) + 7768  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[4][6]
+  (R) + 245   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[4][6]/U$1
+Unmap unreachable keypoints:
+  (G) + 8064  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[36]
+  (R) + 203   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[36]/U$1
+Unmap unreachable keypoints:
+  (G) + 3552  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[25]
+  (R) + 162   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[25]/U$1
+Unmap unreachable keypoints:
+  (G) + 8072  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[28]
+  (R) + 195   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[28]/U$1
+Unmap unreachable keypoints:
+  (G) + 8076  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[24]
+  (R) + 191   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[24]/U$1
+Unmap unreachable keypoints:
+  (G) + 4763  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[31]
+  (R) + 138   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[31]/U$1
+Unmap unreachable keypoints:
+  (G) + 7928  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[3]
+  (R) + 3521  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[3]/U$1
+Unmap unreachable keypoints:
+  (G) + 4985  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[29]
+  (R) + 44    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[29]/U$1
+Unmap unreachable keypoints:
+  (G) + 4808  DFF  /risc_v_top_i/id_ex_controlpath_ffd/q_reg[0]
+  (R) + 108   DFF  /risc_v_top_i_id_ex_controlpath_ffd_q_reg[0]/U$1
+Unmap unreachable keypoints:
+  (G) + 4991  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[23]
+  (R) + 38    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[23]/U$1
+Unmap unreachable keypoints:
+  (G) + 7870  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[7][0]
+  (R) + 248   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[7][0]/U$1
+Unmap unreachable keypoints:
+  (G) + 8063  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[37]
+  (R) + 204   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[37]/U$1
+Unmap unreachable keypoints:
+  (G) + 8061  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[39]
+  (R) + 206   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[39]/U$1
+Unmap unreachable keypoints:
+  (G) + 3556  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[21]
+  (R) + 158   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[21]/U$1
+Unmap unreachable keypoints:
+  (G) + 3553  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[24]
+  (R) + 161   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[24]/U$1
+Unmap unreachable keypoints:
+  (G) + 8062  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[38]
+  (R) + 205   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[38]/U$1
+Unmap unreachable keypoints:
+  (G) + 8084  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[16]
+  (R) + 183   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[16]/U$1
+Unmap unreachable keypoints:
+  (G) + 4772  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[22]
+  (R) + 129   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[22]/U$1
+Unmap unreachable keypoints:
+  (G) + 3554  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[23]
+  (R) + 160   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[23]/U$1
+Unmap unreachable keypoints:
+  (G) + 7914  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[17]
+  (R) + 3535  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[17]/U$1
+Unmap unreachable keypoints:
+  (G) + 8079  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[21]
+  (R) + 188   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[21]/U$1
+Unmap unreachable keypoints:
+  (G) + 4785  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[9]
+  (R) + 116   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[9]/U$1
+Unmap unreachable keypoints:
+  (G) + 3555  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[22]
+  (R) + 159   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[22]/U$1
+Unmap unreachable keypoints:
+  (G) + 8088  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[12]
+  (R) + 179   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[12]/U$1
+Unmap unreachable keypoints:
+  (G) + 7919  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[12]
+  (R) + 3530  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[12]/U$1
+Unmap unreachable keypoints:
+  (G) + 4990  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[24]
+  (R) + 39    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[24]/U$1
+Unmap unreachable keypoints:
+  (G) + 4986  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[28]
+  (R) + 43    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[28]/U$1
+Unmap unreachable keypoints:
+  (G) + 4998  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[16]
+  (R) + 31    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[16]/U$1
+Unmap unreachable keypoints:
+  (G) + 7891  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[11]
+  (R) + 3490  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[11]/U$1
+Unmap unreachable keypoints:
+  (G) + 8086  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[14]
+  (R) + 181   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[14]/U$1
+Unmap unreachable keypoints:
+  (G) + 5002  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[12]
+  (R) + 27    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[12]/U$1
+Unmap unreachable keypoints:
+  (G) + 21    DFF  /risc_v_top_i/ff_pc/q_reg[27]
+  (R) + 274   DFF  /risc_v_top_i_ff_pc_q_reg[27]/U$1
+Unmap unreachable keypoints:
+  (G) + 7930  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[1]
+  (R) + 3519  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[1]/U$1
+Unmap unreachable keypoints:
+  (G) + 4987  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[27]
+  (R) + 42    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[27]/U$1
+Unmap unreachable keypoints:
+  (G) + 4989  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[25]
+  (R) + 40    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[25]/U$1
+Unmap unreachable keypoints:
+  (G) + 8030  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[70]
+  (R) + 211   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[70]/U$1
+Unmap unreachable keypoints:
+  (G) + 4925  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[89]
+  (R) + 100   DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[89]/U$1
+Unmap unreachable keypoints:
+  (G) + 8096  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[4]
+  (R) + 171   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[4]/U$1
+Unmap unreachable keypoints:
+  (G) + 4988  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[26]
+  (R) + 41    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[26]/U$1
+Unmap unreachable keypoints:
+  (G) + 4790  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[4]
+  (R) + 111   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[4]/U$1
+Unmap unreachable keypoints:
+  (G) + 8093  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[7]
+  (R) + 174   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[7]/U$1
+Unmap unreachable keypoints:
+  (G) + 5010  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[4]
+  (R) + 19    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[4]/U$1
+Unmap unreachable keypoints:
+  (G) + 7884  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/rx_Data_Reg_i/q_reg[3]
+  (R) + 3504  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_rx_Data_Reg_i_q_reg[3]/U$1
+Unmap unreachable keypoints:
+  (G) + 3564  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[13]
+  (R) + 150   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[13]/U$1
+Unmap unreachable keypoints:
+  (G) + 4767  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[27]
+  (R) + 134   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[27]/U$1
+Unmap unreachable keypoints:
+  (G) + 3574  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[3]
+  (R) + 140   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[3]/U$1
+Unmap unreachable keypoints:
+  (G) + 4930  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[84]
+  (R) + 95    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[84]/U$1
+Unmap unreachable keypoints:
+  (G) + 4945  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[69]
+  (R) + 80    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[69]/U$1
+Unmap unreachable keypoints:
+  (G) + 5005  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[9]
+  (R) + 24    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[9]/U$1
+Unmap unreachable keypoints:
+  (G) + 8010  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[90]
+  (R) + 231   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[90]/U$1
+Unmap unreachable keypoints:
+  (G) + 41    DFF  /risc_v_top_i/ff_pc/q_reg[7]
+  (R) + 254   DFF  /risc_v_top_i_ff_pc_q_reg[7]/U$1
+Unmap unreachable keypoints:
+  (G) + 31    DFF  /risc_v_top_i/ff_pc/q_reg[17]
+  (R) + 264   DFF  /risc_v_top_i_ff_pc_q_reg[17]/U$1
+Unmap unreachable keypoints:
+  (G) + 8020  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[80]
+  (R) + 221   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[80]/U$1
+Unmap unreachable keypoints:
+  (G) + 4950  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[64]
+  (R) + 77    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[64]/U$1
+Unmap unreachable keypoints:
+  (G) + 4773  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[21]
+  (R) + 128   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[21]/U$1
+Unmap unreachable keypoints:
+  (G) + 3568  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[9]
+  (R) + 146   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[9]/U$1
+Unmap unreachable keypoints:
+  (G) + 5012  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[2]
+  (R) + 17    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 4784  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[10]
+  (R) + 117   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[10]/U$1
+Unmap unreachable keypoints:
+  (G) + 18    DFF  /risc_v_top_i/ff_pc/q_reg[30]
+  (R) + 277   DFF  /risc_v_top_i_ff_pc_q_reg[30]/U$1
+Unmap unreachable keypoints:
+  (G) + 4919  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[95]
+  (R) + 106   DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[95]/U$1
+Unmap unreachable keypoints:
+  (G) + 8033  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[67]
+  (R) + 208   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[67]/U$1
+Unmap unreachable keypoints:
+  (G) + 37    DFF  /risc_v_top_i/ff_pc/q_reg[11]
+  (R) + 258   DFF  /risc_v_top_i_ff_pc_q_reg[11]/U$1
+Unmap unreachable keypoints:
+  (G) + 8071  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[29]
+  (R) + 196   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[29]/U$1
+Unmap unreachable keypoints:
+  (G) + 8014  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[86]
+  (R) + 227   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[86]/U$1
+Unmap unreachable keypoints:
+  (G) + 7904  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/FSM_Rx/Rx_state_reg[1]
+  (R) + 3497  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_FSM_Rx_Rx_state_reg[1]/U$1
+Unmap unreachable keypoints:
+  (G) + 7925  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[6]
+  (R) + 3524  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[6]/U$1
+Unmap unreachable keypoints:
+  (G) + 7771  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[4][3]
+  (R) + 242   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[4][3]/U$1
+Unmap unreachable keypoints:
+  (G) + 7922  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[9]
+  (R) + 3527  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[9]/U$1
+Unmap unreachable keypoints:
+  (G) + 4922  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[92]
+  (R) + 103   DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[92]/U$1
+Unmap unreachable keypoints:
+  (G) + 3571  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[6]
+  (R) + 143   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[6]/U$1
+Unmap unreachable keypoints:
+  (G) + 7883  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/rx_Data_Reg_i/q_reg[4]
+  (R) + 3505  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_rx_Data_Reg_i_q_reg[4]/U$1
+Unmap unreachable keypoints:
+  (G) + 34    DFF  /risc_v_top_i/ff_pc/q_reg[14]
+  (R) + 261   DFF  /risc_v_top_i_ff_pc_q_reg[14]/U$1
+Unmap unreachable keypoints:
+  (G) + 8017  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[83]
+  (R) + 224   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[83]/U$1
+Unmap unreachable keypoints:
+  (G) + 4997  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[17]
+  (R) + 32    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[17]/U$1
+Unmap unreachable keypoints:
+  (G) + 4774  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[20]
+  (R) + 127   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[20]/U$1
+Unmap unreachable keypoints:
+  (G) + 4944  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[70]
+  (R) + 81    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[70]/U$1
+Unmap unreachable keypoints:
+  (G) + 4783  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[11]
+  (R) + 118   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[11]/U$1
+Unmap unreachable keypoints:
+  (G) + 8028  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[72]
+  (R) + 213   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[72]/U$1
+Unmap unreachable keypoints:
+  (G) + 7774  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[4][0]
+  (R) + 239   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[4][0]/U$1
+Unmap unreachable keypoints:
+  (G) + 4931  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[83]
+  (R) + 94    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[83]/U$1
+Unmap unreachable keypoints:
+  (G) + 23    DFF  /risc_v_top_i/ff_pc/q_reg[25]
+  (R) + 272   DFF  /risc_v_top_i_ff_pc_q_reg[25]/U$1
+Unmap unreachable keypoints:
+  (G) + 8075  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[25]
+  (R) + 192   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[25]/U$1
+Unmap unreachable keypoints:
+  (G) + 7906  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/Counter_bits/Q_reg[3]
+  (R) + 3495  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_Counter_bits_Q_reg[3]/U$1
+Unmap unreachable keypoints:
+  (G) + 7893  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[9]
+  (R) + 3488  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[9]/U$1
+Unmap unreachable keypoints:
+  (G) + 3563  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[14]
+  (R) + 151   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[14]/U$1
+Unmap unreachable keypoints:
+  (G) + 8081  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[19]
+  (R) + 186   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[19]/U$1
+Unmap unreachable keypoints:
+  (G) + 8022  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[78]
+  (R) + 219   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[78]/U$1
+Unmap unreachable keypoints:
+  (G) + 3546  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[31]
+  (R) + 168   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[31]/U$1
+Unmap unreachable keypoints:
+  (G) + 7918  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[13]
+  (R) + 3531  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[13]/U$1
+Unmap unreachable keypoints:
+  (G) + 29    DFF  /risc_v_top_i/ff_pc/q_reg[19]
+  (R) + 266   DFF  /risc_v_top_i_ff_pc_q_reg[19]/U$1
+Unmap unreachable keypoints:
+  (G) + 7908  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/Counter_bits/Q_reg[1]
+  (R) + 3493  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_Counter_bits_Q_reg[1]/U$1
+Unmap unreachable keypoints:
+  (G) + 4764  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[30]
+  (R) + 137   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[30]/U$1
+Unmap unreachable keypoints:
+  (G) + 8009  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[91]
+  (R) + 232   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[91]/U$1
+Unmap unreachable keypoints:
+  (G) + 42    DFF  /risc_v_top_i/ff_pc/q_reg[6]
+  (R) + 253   DFF  /risc_v_top_i_ff_pc_q_reg[6]/U$1
+Unmap unreachable keypoints:
+  (G) + 7901  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[1]
+  (R) + 3480  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[1]/U$1
+Unmap unreachable keypoints:
+  (G) + 4789  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[5]
+  (R) + 112   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[5]/U$1
+Unmap unreachable keypoints:
+  (G) + 4926  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[88]
+  (R) + 99    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[88]/U$1
+Unmap unreachable keypoints:
+  (G) + 4768  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[26]
+  (R) + 133   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[26]/U$1
+Unmap unreachable keypoints:
+  (G) + 4775  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[19]
+  (R) + 126   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[19]/U$1
+Unmap unreachable keypoints:
+  (G) + 8091  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[9]
+  (R) + 176   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[9]/U$1
+Unmap unreachable keypoints:
+  (G) + 4782  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[12]
+  (R) + 119   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[12]/U$1
+Unmap unreachable keypoints:
+  (G) + 8070  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[30]
+  (R) + 197   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[30]/U$1
+Unmap unreachable keypoints:
+  (G) + 25    DFF  /risc_v_top_i/ff_pc/q_reg[23]
+  (R) + 270   DFF  /risc_v_top_i_ff_pc_q_reg[23]/U$1
+Unmap unreachable keypoints:
+  (G) + 8026  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[74]
+  (R) + 215   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[74]/U$1
+Unmap unreachable keypoints:
+  (G) + 5001  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[13]
+  (R) + 28    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[13]/U$1
+Unmap unreachable keypoints:
+  (G) + 27    DFF  /risc_v_top_i/ff_pc/q_reg[21]
+  (R) + 268   DFF  /risc_v_top_i_ff_pc_q_reg[21]/U$1
+Unmap unreachable keypoints:
+  (G) + 8024  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[76]
+  (R) + 217   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[76]/U$1
+Unmap unreachable keypoints:
+  (G) + 7871  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/shift_reg/Q_reg[8]
+  (R) + 3517  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_shift_reg_Q_reg[8]/U$1
+Unmap unreachable keypoints:
+  (G) + 5007  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[7]
+  (R) + 22    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[7]/U$1
+Unmap unreachable keypoints:
+  (G) + 7882  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/rx_Data_Reg_i/q_reg[5]
+  (R) + 3506  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_rx_Data_Reg_i_q_reg[5]/U$1
+Unmap unreachable keypoints:
+  (G) + 8078  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[22]
+  (R) + 189   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[22]/U$1
+Unmap unreachable keypoints:
+  (G) + 4943  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[71]
+  (R) + 82    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[71]/U$1
+Unmap unreachable keypoints:
+  (G) + 4932  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[82]
+  (R) + 93    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[82]/U$1
+Unmap unreachable keypoints:
+  (G) + 8097  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[3]
+  (R) + 170   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[3]/U$1
+Unmap unreachable keypoints:
+  (G) + 4776  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[18]
+  (R) + 125   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[18]/U$1
+Unmap unreachable keypoints:
+  (G) + 4781  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[13]
+  (R) + 120   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[13]/U$1
+Unmap unreachable keypoints:
+  (G) + 7889  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/ff_rx_flag/q_reg[0]
+  (R) + 3500  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_ff_rx_flag_q_reg[0]/U$1
+Unmap unreachable keypoints:
+  (G) + 7769  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[4][5]
+  (R) + 244   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[4][5]/U$1
+Unmap unreachable keypoints:
+  (G) + 7927  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[4]
+  (R) + 3522  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[4]/U$1
+Unmap unreachable keypoints:
+  (G) + 7895  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[7]
+  (R) + 3486  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[7]/U$1
+Unmap unreachable keypoints:
+  (G) + 7890  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[12]
+  (R) + 3491  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[12]/U$1
+Unmap unreachable keypoints:
+  (G) + 3567  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[10]
+  (R) + 147   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[10]/U$1
+Unmap unreachable keypoints:
+  (G) + 4996  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[18]
+  (R) + 33    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[18]/U$1
+Unmap unreachable keypoints:
+  (G) + 7899  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[3]
+  (R) + 3482  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[3]/U$1
+Unmap unreachable keypoints:
+  (G) + 8013  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[87]
+  (R) + 228   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[87]/U$1
+Unmap unreachable keypoints:
+  (G) + 38    DFF  /risc_v_top_i/ff_pc/q_reg[10]
+  (R) + 257   DFF  /risc_v_top_i_ff_pc_q_reg[10]/U$1
+Unmap unreachable keypoints:
+  (G) + 4777  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[17]
+  (R) + 124   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[17]/U$1
+Unmap unreachable keypoints:
+  (G) + 4780  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[14]
+  (R) + 121   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[14]/U$1
+Unmap unreachable keypoints:
+  (G) + 8094  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[6]
+  (R) + 173   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[6]/U$1
+Unmap unreachable keypoints:
+  (G) + 3562  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[15]
+  (R) + 152   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[15]/U$1
+Unmap unreachable keypoints:
+  (G) + 3547  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[30]
+  (R) + 167   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[30]/U$1
+Unmap unreachable keypoints:
+  (G) + 5004  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[10]
+  (R) + 25    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[10]/U$1
+Unmap unreachable keypoints:
+  (G) + 20    DFF  /risc_v_top_i/ff_pc/q_reg[28]
+  (R) + 275   DFF  /risc_v_top_i_ff_pc_q_reg[28]/U$1
+Unmap unreachable keypoints:
+  (G) + 7897  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[5]
+  (R) + 3484  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[5]/U$1
+Unmap unreachable keypoints:
+  (G) + 8083  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[17]
+  (R) + 184   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[17]/U$1
+Unmap unreachable keypoints:
+  (G) + 4778  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[16]
+  (R) + 123   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[16]/U$1
+Unmap unreachable keypoints:
+  (G) + 4779  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[15]
+  (R) + 122   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[15]/U$1
+Unmap unreachable keypoints:
+  (G) + 8031  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[69]
+  (R) + 210   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[69]/U$1
+Unmap unreachable keypoints:
+  (G) + 7881  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/rx_Data_Reg_i/q_reg[6]
+  (R) + 3507  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_rx_Data_Reg_i_q_reg[6]/U$1
+Unmap unreachable keypoints:
+  (G) + 7872  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/shift_reg/Q_reg[7]
+  (R) + 3516  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_shift_reg_Q_reg[7]/U$1
+Unmap unreachable keypoints:
+  (G) + 43    DFF  /risc_v_top_i/ff_pc/q_reg[5]
+  (R) + 252   DFF  /risc_v_top_i_ff_pc_q_reg[5]/U$1
+Unmap unreachable keypoints:
+  (G) + 8008  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[92]
+  (R) + 233   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[92]/U$1
+Unmap unreachable keypoints:
+  (G) + 17    DFF  /risc_v_top_i/ff_pc/q_reg[31]
+  (R) + 278   DFF  /risc_v_top_i_ff_pc_q_reg[31]/U$1
+Unmap unreachable keypoints:
+  (G) + 4933  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[81]
+  (R) + 92    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[81]/U$1
+Unmap unreachable keypoints:
+  (G) + 4942  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[72]
+  (R) + 83    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[72]/U$1
+Unmap unreachable keypoints:
+  (G) + 8034  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[66]
+  (R) + 207   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[66]/U$1
+Unmap unreachable keypoints:
+  (G) + 8089  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[11]
+  (R) + 178   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[11]/U$1
+Unmap unreachable keypoints:
+  (G) + 3573  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[4]
+  (R) + 141   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[4]/U$1
+Unmap unreachable keypoints:
+  (G) + 8069  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[31]
+  (R) + 198   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[31]/U$1
+Unmap unreachable keypoints:
+  (G) + 7917  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[14]
+  (R) + 3532  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[14]/U$1
+Unmap unreachable keypoints:
+  (G) + 7921  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[10]
+  (R) + 3528  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[10]/U$1
+Unmap unreachable keypoints:
+  (G) + 7767  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[4][7]
+  (R) + 246   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[4][7]/U$1
+Unmap unreachable keypoints:
+  (G) + 8074  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[26]
+  (R) + 193   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[26]/U$1
+Unmap unreachable keypoints:
+  (G) + 4923  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[91]
+  (R) + 102   DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[91]/U$1
+Unmap unreachable keypoints:
+  (G) + 8019  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[81]
+  (R) + 222   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[81]/U$1
+Unmap unreachable keypoints:
+  (G) + 32    DFF  /risc_v_top_i/ff_pc/q_reg[16]
+  (R) + 263   DFF  /risc_v_top_i_ff_pc_q_reg[16]/U$1
+Unmap unreachable keypoints:
+  (G) + 4920  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[94]
+  (R) + 105   DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[94]/U$1
+Unmap unreachable keypoints:
+  (G) + 4769  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[25]
+  (R) + 132   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[25]/U$1
+Unmap unreachable keypoints:
+  (G) + 4788  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[6]
+  (R) + 113   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[6]/U$1
+Unmap unreachable keypoints:
+  (G) + 7929  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[2]
+  (R) + 3520  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 7887  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/rx_Data_Reg_i/q_reg[0]
+  (R) + 3501  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_rx_Data_Reg_i_q_reg[0]/U$1
+Unmap unreachable keypoints:
+  (G) + 5009  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[5]
+  (R) + 20    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[5]/U$1
+Unmap unreachable keypoints:
+  (G) + 7880  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/rx_Data_Reg_i/q_reg[7]
+  (R) + 3508  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_rx_Data_Reg_i_q_reg[7]/U$1
+Unmap unreachable keypoints:
+  (G) + 7873  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/shift_reg/Q_reg[6]
+  (R) + 3515  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_shift_reg_Q_reg[6]/U$1
+Unmap unreachable keypoints:
+  (G) + 7924  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[7]
+  (R) + 3525  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[7]/U$1
+Unmap unreachable keypoints:
+  (G) + 8085  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[15]
+  (R) + 182   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[15]/U$1
+Unmap unreachable keypoints:
+  (G) + 3570  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[7]
+  (R) + 144   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[7]/U$1
+Unmap unreachable keypoints:
+  (G) + 4927  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[87]
+  (R) + 98    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[87]/U$1
+Unmap unreachable keypoints:
+  (G) + 4941  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[73]
+  (R) + 84    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[73]/U$1
+Unmap unreachable keypoints:
+  (G) + 8087  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[13]
+  (R) + 180   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[13]/U$1
+Unmap unreachable keypoints:
+  (G) + 4934  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[80]
+  (R) + 91    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[80]/U$1
+Unmap unreachable keypoints:
+  (G) + 7772  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[4][2]
+  (R) + 241   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[4][2]/U$1
+Unmap unreachable keypoints:
+  (G) + 8016  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[84]
+  (R) + 225   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[84]/U$1
+Unmap unreachable keypoints:
+  (G) + 35    DFF  /risc_v_top_i/ff_pc/q_reg[13]
+  (R) + 260   DFF  /risc_v_top_i_ff_pc_q_reg[13]/U$1
+Unmap unreachable keypoints:
+  (G) + 4792  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[2]
+  (R) + 109   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 7913  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/ff_tx_finish_flag/q_reg[0]
+  (R) + 237   DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_ff_tx_finish_flag_q_reg[0]/U$1
+Unmap unreachable keypoints:
+  (G) + 4765  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[29]
+  (R) + 136   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[29]/U$1
+Unmap unreachable keypoints:
+  (G) + 4995  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[19]
+  (R) + 34    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[19]/U$1
+Unmap unreachable keypoints:
+  (G) + 3548  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[29]
+  (R) + 166   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[29]/U$1
+Unmap unreachable keypoints:
+  (G) + 7742  DFF  /risc_v_top_i/uart_IP_module/uart_val_reg[3][0]
+  (R) + 238   DFF  /risc_v_top_i_uart_IP_module_uart_val_reg[3][0]/U$1
+Unmap unreachable keypoints:
+  (G) + 7931  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[0]
+  (R) + 3518  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[0]/U$1
+Unmap unreachable keypoints:
+  (G) + 3561  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[16]
+  (R) + 153   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[16]/U$1
+Unmap unreachable keypoints:
+  (G) + 7903  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/FSM_Rx/Rx_state_reg[2]
+  (R) + 3498  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_FSM_Rx_Rx_state_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 5000  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[14]
+  (R) + 29    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[14]/U$1
+Unmap unreachable keypoints:
+  (G) + 44    DFF  /risc_v_top_i/ff_pc/q_reg[4]
+  (R) + 251   DFF  /risc_v_top_i_ff_pc_q_reg[4]/U$1
+Unmap unreachable keypoints:
+  (G) + 7874  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/shift_reg/Q_reg[5]
+  (R) + 3514  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_shift_reg_Q_reg[5]/U$1
+Unmap unreachable keypoints:
+  (G) + 7879  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/shift_reg/Q_reg[0]
+  (R) + 3509  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_shift_reg_Q_reg[0]/U$1
+Unmap unreachable keypoints:
+  (G) + 8007  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[93]
+  (R) + 234   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[93]/U$1
+Unmap unreachable keypoints:
+  (G) + 4935  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[79]
+  (R) + 90    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[79]/U$1
+Unmap unreachable keypoints:
+  (G) + 4940  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[74]
+  (R) + 85    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[74]/U$1
+Unmap unreachable keypoints:
+  (G) + 5011  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[3]
+  (R) + 18    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[3]/U$1
+Unmap unreachable keypoints:
+  (G) + 8068  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[32]
+  (R) + 199   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[32]/U$1
+Unmap unreachable keypoints:
+  (G) + 8098  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[2]
+  (R) + 169   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 7878  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/shift_reg/Q_reg[1]
+  (R) + 3510  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_shift_reg_Q_reg[1]/U$1
+Unmap unreachable keypoints:
+  (G) + 7875  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/shift_reg/Q_reg[4]
+  (R) + 3513  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_shift_reg_Q_reg[4]/U$1
+Unmap unreachable keypoints:
+  (G) + 3566  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[11]
+  (R) + 148   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[11]/U$1
+Unmap unreachable keypoints:
+  (G) + 4936  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[78]
+  (R) + 89    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[78]/U$1
+Unmap unreachable keypoints:
+  (G) + 4939  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[75]
+  (R) + 86    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[75]/U$1
+Unmap unreachable keypoints:
+  (G) + 8080  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[20]
+  (R) + 187   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[20]/U$1
+Unmap unreachable keypoints:
+  (G) + 7892  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[10]
+  (R) + 3489  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[10]/U$1
+Unmap unreachable keypoints:
+  (G) + 7876  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/shift_reg/Q_reg[3]
+  (R) + 3512  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_shift_reg_Q_reg[3]/U$1
+Unmap unreachable keypoints:
+  (G) + 22    DFF  /risc_v_top_i/ff_pc/q_reg[26]
+  (R) + 273   DFF  /risc_v_top_i_ff_pc_q_reg[26]/U$1
+Unmap unreachable keypoints:
+  (G) + 7877  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/shift_reg/Q_reg[2]
+  (R) + 3511  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_shift_reg_Q_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 8029  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[71]
+  (R) + 212   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[71]/U$1
+Unmap unreachable keypoints:
+  (G) + 8012  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[88]
+  (R) + 229   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[88]/U$1
+Unmap unreachable keypoints:
+  (G) + 4938  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[76]
+  (R) + 87    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[76]/U$1
+Unmap unreachable keypoints:
+  (G) + 39    DFF  /risc_v_top_i/ff_pc/q_reg[9]
+  (R) + 256   DFF  /risc_v_top_i_ff_pc_q_reg[9]/U$1
+Unmap unreachable keypoints:
+  (G) + 4937  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[77]
+  (R) + 88    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[77]/U$1
+Unmap unreachable keypoints:
+  (G) + 8077  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[23]
+  (R) + 190   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[23]/U$1
+Unmap unreachable keypoints:
+  (G) + 7916  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/tx_uart/delay_5ms/cuenta_reg[15]
+  (R) + 3533  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_tx_uart_delay_5ms_cuenta_reg[15]/U$1
+Unmap unreachable keypoints:
+  (G) + 3575  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[2]
+  (R) + 139   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[2]/U$1
+Unmap unreachable keypoints:
+  (G) + 4770  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[24]
+  (R) + 131   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[24]/U$1
+Unmap unreachable keypoints:
+  (G) + 30    DFF  /risc_v_top_i/ff_pc/q_reg[18]
+  (R) + 265   DFF  /risc_v_top_i_ff_pc_q_reg[18]/U$1
+Unmap unreachable keypoints:
+  (G) + 3560  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[17]
+  (R) + 154   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[17]/U$1
+Unmap unreachable keypoints:
+  (G) + 4994  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[20]
+  (R) + 35    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[20]/U$1
+Unmap unreachable keypoints:
+  (G) + 8021  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[79]
+  (R) + 220   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[79]/U$1
+Unmap unreachable keypoints:
+  (G) + 3549  DFF  /risc_v_top_i/if_id_datapath_ffd/q_reg[28]
+  (R) + 165   DFF  /risc_v_top_i_if_id_datapath_ffd_q_reg[28]/U$1
+Unmap unreachable keypoints:
+  (G) + 4787  DFF  /risc_v_top_i/id_ex_datapath_ffd/q_reg[7]
+  (R) + 114   DFF  /risc_v_top_i_id_ex_datapath_ffd_q_reg[7]/U$1
+Unmap unreachable keypoints:
+  (G) + 8092  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[8]
+  (R) + 175   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[8]/U$1
+Unmap unreachable keypoints:
+  (G) + 7902  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/BR_pulse/count_reg[0]
+  (R) + 3479  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_BR_pulse_count_reg[0]/U$1
+Unmap unreachable keypoints:
+  (G) + 45    DFF  /risc_v_top_i/ff_pc/q_reg[3]
+  (R) + 250   DFF  /risc_v_top_i_ff_pc_q_reg[3]/U$1
+Unmap unreachable keypoints:
+  (G) + 8006  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[94]
+  (R) + 235   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[94]/U$1
+Unmap unreachable keypoints:
+  (G) + 7905  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/FSM_Rx/Rx_state_reg[0]
+  (R) + 3496  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_FSM_Rx_Rx_state_reg[0]/U$1
+Unmap unreachable keypoints:
+  (G) + 5006  DFF  /risc_v_top_i/ex_mem_datapath_ffd/q_reg[8]
+  (R) + 23    DFF  /risc_v_top_i_ex_mem_datapath_ffd_q_reg[8]/U$1
+Unmap unreachable keypoints:
+  (G) + 7886  DFF  /risc_v_top_i/uart_IP_module/UART_full_duplex/rx_uart/rx_Data_Reg_i/q_reg[1]
+  (R) + 3502  DFF  /risc_v_top_i_uart_IP_module_UART_full_duplex_rx_uart_rx_Data_Reg_i_q_reg[1]/U$1
+Unmap unreachable keypoints:
+  (G) + 8067  DFF  /risc_v_top_i/mem_wb_datapath_ffd/q_reg[33]
+  (R) + 200   DFF  /risc_v_top_i_mem_wb_datapath_ffd_q_reg[33]/U$1
+// Unmapped 288 unreachable keypoint pairs.
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            11     5      4         20      
+--------------------------------------------------------------------------------
+Revised           11     5      4         20      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       8087   4         8091    
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       3519      3519    
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 30 key point groups
+// Automatic setup finished.
+0
+CPU time     : 312.19  seconds
+Elapse time  : 348     seconds
+Memory usage : 232.25  M bytes
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules        90               5
+Library-cells        484            3713
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT                3                    3
+OUTPUT               1                    1
+INOUT                4                    4
+--------------------------------------------
+AND        *     12724                  382
+BUF        *        63                    6
+DFF        *      8087                 3519
+INV        *       326                 1008
+MUX        *     13079                    0
+NAND       *        17                   20
+NOR        *       889                   25
+OR         *      1349                   47
+WIRE       *       737                    0
+XNOR       *       611                    1
+XOR        *      1810                   61
+------ word-level --------------------------
+ADD        *        16                    0
+EQ         *         9                    0
+GE         *         3                    0
+GT         *         3                    0
+LE         *         1                    0
+LT         *         3                    0
+MULT       *         1                    0
+NE         *         4                    0
+SLL        *         2                    0
+SRL        *         2                    0
+SUBTRACT   *         1                    0
+WAND       *         1                    0
+WINV       *         1                    0
+WMUX       *       388                    0
+WOR        *         1                    0
+WSEL       *        49                    0
+WXOR       *         1                    0
+BBOX       *         8                    4
+------ don't care --------------------------
+X-assignments       96                    0
+--------------------------------------------
+Total            39796                 5073
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       8087   4         8091    
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       3519      3519    
+================================================================================
+// Note: A key point group is counted as one key point
+// Golden has 30 key point groups
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Warning: No eligible datapath module in the design. Skip ...
+// Command: analyze_datapath -flowgraph -verbose
+0
+CPU time     : 313.41  seconds
+Elapse time  : 349     seconds
+Memory usage : 295.84  M bytes
+// Command: add_compared_points -all
+// 9 compared points added to compare list
+0
+// Command: compare -noneq_stop 1  -threads 1,4
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           5      4         9       
+================================================================================
+Compare results of instance/output/pin equivalences and/or sequential merge      
+================================================================================
+Compared points      DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           30        30      
+================================================================================
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+CPU time     : 313.96  seconds
+Elapse time  : 350     seconds
+Memory usage : 295.97  M bytes
+// Command: set_system_mode setup
+0
+// Command: usage
+CPU time     : 313.96  seconds
+Memory usage : 295.97  M bytes
+0
+Processed 1 out of 1 module pairs	EQ: 1	NEQ: 0	ABORT: 0
+
+================================================================================
+Module Comparison Results
+--------------------------------------------------------------------------------
+Equivalent                     1
+--------------------------------------------------------------------------------
+Total                          1
+--------------------------------------------------------------------------------
+Hierarchical compare : Equivalent 
+================================================================================
+0
+CPU time     : 314.14  seconds
+Elapse time  : 350     seconds
+Memory usage : 296.01  M bytes
+// Command: report_hier_compare_result -dynamicflattened
+// Command: report_hier_compare_result -dynamicflattened
+0
+// Command: report_verification -hier -verbose
+// Command: report_verification -hier -verbose
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      1
+     Tri-stated output:                                        checked
+     Revised X signals set to E:                               yes
+     Floating signals tied to Z:                               no *
+     Command "add clock" for clock-gating:                     not used
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+     All primary outputs are mapped:                           yes
+     Not-mapped DFF/DLAT is detected:                          no
+     All mapped points are added as compare points:            yes
+     All compared points are compared:                         yes
+     User added black box:                                     no
+     Black box mapped with different module name:              no
+     Empty module is not black boxed:                          no
+     Command "add ignore outputs" used:                        no
+     Always false constraints detected:                        no
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+     Change gate type:                                         no
+     Change wire:                                              no
+     Primary input added by user:                              no
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  1
+     Multiple clocks in the design:                            yes *
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        3
+     Duplicate module definition:                              yes *
+     Black box due to undefined cells:                         yes *
+     Golden design has abnormal ratio of unreachable gates:    no
+     Ratio of golden unreachable gates:                        1%
+     Revised design has abnormal ratio of unreachable gates:   yes *
+     Ratio of revised unreachable gates:                       82%
+     All primary input bus ordering is consistent:             yes
+     All primary output bus ordering is consistent:            yes
+     DFF/DLAT not compared due to disabled clock port(s):        0
+     Always X compared point is detected:                      not checked
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+     Number of EQ compare points:                              39
+     Number of NON-EQ compare points:                          0
+     Number of Aborted compare points:                         0
+     Number of Uncompared compare points :                     0
+================================================================================
+pass
+// Command: write_verification_information
+// Command: write_verification_information
+// Verification information is written to rtl_fv_map_db.
+0
+CPU time     : 314.34  seconds
+Elapse time  : 350     seconds
+Memory usage : 296.02  M bytes
+// Command: report_verification_information
+// Command: report_verification_information
+// Generating reports on verification information at /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/rtl_fv_map_db...
+LEC run scores:
+================================================================================
+Step                Score     Range          
+--------------------------------------------------------------------------------
+result_status       10        10             
+runtime             5         10             
+mapping             10        10             
+sequential_constant 5         10             
+sequential_merge    10        10             
+sequential_phase    10        10             
+datapath_analysis   5         10             
+combinational_loop  5         10             
+mismatch_detection  5         10             
+overall             65        90             
+================================================================================
+LEC results versus attributes:
+================================================================================
+Attribute           Total     Inconsistency  Combined Table                
+--------------------------------------------------------------------------------
+sequential_constant 10976     1              sequential_constant.json      
+sequential_merge    30        0              sequential_merge.json         
+sequential_phase    0         0                                            
+================================================================================
+The tables can be viewed directly using web interface.
+// Done with reporting verification information.
+0
+CPU time     : 314.46  seconds
+Elapse time  : 354     seconds
+Memory usage : 296.02  M bytes
+// Command: set lec_version_required "18.20330"
+18.20330
+// Command: if {$lec_version >= $lec_version_required} {
+//              report_implementation_information
+//          }
+// Command: report_implementation_information
+// Reporting implementation information...
+// Information summary:
+================================================================================
+        Information Category     Total      Used    Unused  Rejected     Abort
+--------------------------------------------------------------------------------
+   Sequential instance phase      3519      3519         0         0         0
+               Phase mapping         0         0         0         0         0
+         Sequential constant      8155      7768       387         0         0
+            Sequential merge        30        30         0         0         0
+      Sequential unreachable       387       387         0         0         0
+      Sequential duplication         0         0         0         0         0
+       Boundary optimization         0         0         0         0         0
+          Synthesis equation         0         0         0         0         0
+  Combinational loop breaker         0         0         0         0         0
+ HDL indexed expression info         3         0         3         0         0
+================================================================================
+0
+// Command: set_system_mode lec
+// Command: set_system_mode lec
+0
+// Command: puts "No of compare points = [get_compare_points -count]"
+// Command: get_compare_points -count
+No of compare points = 39
+// Command: puts "No of diff points    = [get_compare_points -NONequivalent -count]"
+// Command: get_compare_points -NONequivalent -count
+No of diff points    = 0
+// Command: puts "No of abort points   = [get_compare_points -abort -count]"
+// Command: get_compare_points -abort -count
+No of abort points   = 0
+// Command: puts "No of unknown points = [get_compare_points -unknown -count]"
+// Command: get_compare_points -unknown -count
+No of unknown points = 0
+// Command: if {[get_compare_points -count] == 0} {
+//              puts "---------------------------------"
+//              puts "ERROR: No compare points detected"
+//              puts "---------------------------------"
+//          }
+// Command: get_compare_points -count
+// Command: if {[get_compare_points -NONequivalent -count] > 0} {
+//              puts "------------------------------------"
+//              puts "ERROR: Different Key Points detected"
+//              puts "------------------------------------"
+//          }
+// Command: get_compare_points -NONequivalent -count
+// Command: if {[get_compare_points -abort -count] > 0} {
+//              puts "-----------------------------"
+//              puts "ERROR: Abort Points detected "
+//              puts "-----------------------------"
+//          }
+// Command: get_compare_points -abort -count
+// Command: if {[get_compare_points -unknown -count] > 0} {
+//              puts "----------------------------------"
+//              puts "ERROR: Unknown Key Points detected"
+//              puts "----------------------------------"
+//          }
+// Command: get_compare_points -unknown -count
+// Command: set lec_version_required "19.10100"
+19.10100
+// Command: if {$lec_version >= $lec_version_required} {
+//          analyze_results -logfiles logs_Nov28-04:48:31/rtl2intermediate.lec.log
+//          }
+// Command: analyze_results -logfiles logs_Nov28-04:48:31/rtl2intermediate.lec.log
+// Analyzing logfile 'logs_Nov28-04:48:31/rtl2intermediate.lec.log'
+Report Verification Error: no result.
+Report Verification Error: no result.
+// Warning: Analyze results collects information from the log file but does not
+//          qualify the execution or completeness of the run.
+// Logfile Results
+================================================================================
+|                  Conformal Version |21.10-p100 
+|                        Root Module |risc_v_Pad_Frame 
+|                           CPU Time |314.0 sec
+|                       Elapsed Time |354.0 sec
+|                             Memory |296.02 MB
+|              Power Grid Comparison |N/A 
+|               Power Intent Compare |N/A 
+|           Supply Power Consistency |N/A 
+|        Retention Power Consistency |N/A 
+|             Compare Power Crossing |N/A 
+|                     LEC Comparison |PASS 
+|                 Flatten Comparison |PASS 
+|            Hierarchical Comparison |PASS 
+|    Hierarchical Comparison Modules |1 
+|                      Logfile Lines |2328 
+|                       Logfile Name |rtl2intermediate.lec.log 
+|              Logfile Modified Time |Thu Nov 30 01:40:33 2023 
+|         Implementation Information |fv/risc_v_Pad_Frame 
+|       Set Verification Information |/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis/rtl_fv_map_db 
+|      Read Verification Information |N/A 
+|                   Analysis Elapsed |0.1 sec
+|                    Dynamic Flatten |0 
+|                    Runtime / #Gate |0.01 sec. 
+|    Low-power Rule Check Occurrence |N/A
+|Matched back-to-back isolation cell |N/A 
+|            Time-consuming commands | 1. set_system_mode lec: 310.0s(87.57%) (execute 5 time(s))
+|                                    | 2. usage: 16.0s(4.52%) (execute 2 time(s))
+|                                    | 3. read_implementation_information fv/risc_v_Pad_Frame -golden fv_map -re: 12.0s(3.39%) (execute 2 time(s))
+================================================================================
+               
+// Compare Strategy
+Compare #1: compare (line: 308)
+// Compare Settings:
+================================================================================
+|(default setting)   | 
+|Compare Result      | FAIL:INCOMPLETE
+================================================================================
+Compare #2: compare (line: 309)
+// Compare Settings:
+================================================================================
+|(default setting)   | 
+|Compare Result      | PASS
+================================================================================
+               
+               
+// Critical Warnings
+================================================================================
+|Count     |Warning
+--------------------------------------------------------------------------------
+|43        |(RTL7.10a) Comparison with different data sizes
+|3         |(RTL7.3) Array index in RHS might be out of range
+|3         |(RTL7.4) Array index in LHS might be out of range
+================================================================================
+               
+               
+// Hierarchical Comparison Information
+             
+#1
+// Write Dofile Command          : write_hier_compare_dofile hier_tmp2.lec.do -verbose -noexact_pin_match -constraint -usage  -replace -balanced_extraction -input_output_pin_equivalence  -prepend_string "report_design_data; report_unmapped_points -summary; report_unmapped_points -notmapped; analyze_datapath -module -verbose; eval analyze_datapath $DATAPATH_SOLVER_OPTION -verbose" (line: 824)
+// Run Dofile Command            : run_hier_compare hier_tmp2.lec.do -dynamic_hierarchy (line: 1036)
+// Hierarchical Compare Result   : PASS
+           
+// Hierarchical Comparison Statistics
+================================================================================
+|     Modules|       Total|         Max|         Min|         Avg
+--------------------------------------------------------------------------------
+|           1|          98|          98|          98|          98
+================================================================================
+  Modules: Total number of modules.
+  Total: Sum of all module runtimes(sec).
+  Max: Runtime of module with longest runtime.
+  Min: Runtime of module with shortest runtime.
+  Avg: Average runtime of all modules.
+// Bottleneck Modules: 
+================================================================================
+|#  |Total               |Modeling/Mapping    |Datapath            |Compare             |Analyze Abort       |Dynamic Flatten     
+|   |(sec, % all-module) |(sec, % module)     |(sec, % module)     |(sec, % module)     |(sec, % module)     |(sec, % module)     
+--------------------------------------------------------------------------------
+|1  |98 (100.00%)        |304.0 (310.20%)     |1.0 (1.02%)         |0 (0.00%)           |0 (0.00%)           |0 (0.00%)           
+================================================================================
+ Module Name:
+ #1  (G)risc_v_Pad_Frame / (R)risc_v_Pad_Frame
+--------------------------------------------------------------------------------
+ *Dynamic flatten runtime is calculated the process from the beginning of the module until the last black box module are deleted.
+================================================================================
+ 
+// Smart LEC Parallel Hierarchical Comparison Analysis
+================================================================================
+| Workers|     Max|     Min|  Eff(%)|   Speedup|     Saved|   Delta|   Total||
+--------------------------------------------------------------------------------
+|       1|      98|      98|     100|      1.00|         0|       0|     354| (*)
+|       2|      98|       0|      50|      1.00|         0|       0|     354| 
+|       3|      98|       0|      33|      1.00|         0|       0|     354| 
+|       4|      98|       0|      25|      1.00|         0|       0|     354| 
+|       5|      98|       0|      20|      1.00|         0|       0|     354| 
+|       6|      98|       0|      17|      1.00|         0|       0|     354| 
+|       7|      98|       0|      14|      1.00|         0|       0|     354| 
+|       8|      98|       0|      12|      1.00|         0|       0|     354| 
+================================================================================
+  Workers: Number of workers
+  Max: Cumulated runtime of the longest running worker
+  Min: Cumulated runtime of the shortest running worker
+  Efficiency(%): Percentage time workers are utilized
+  Speedup: Speedup over a serial run
+  Saved: Time saved with the # workers over a serial run
+  Delta: Incremental time savings with an additional workers
+  Total: Total runtime (including for example read design)
+  Row with (*) is number of workers actually used
+--------------------------------------------------------------------------------
+    Module parallelization is not recommended
+               
+// Resource usages of analysis: Cpu=0.22s Mem=274MB
+0
+// Command: vpxmode
+// Command: vpxmode

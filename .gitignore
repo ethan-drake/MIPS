@@ -22,7 +22,8 @@ proj_questasim/vsim.wlf
 *.ppf
 *.qip
 *.qdb
-*.jar
+*/synthesis/sim/*
+*.trn
 
 transcript
 !*.sof

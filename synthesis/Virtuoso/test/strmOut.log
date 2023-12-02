@@ -1,0 +1,103 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream Out
+Program   : @(#)$CDS: strmout version 6.1.8-64b 01/19/2021 19:08 (sjfhw317) $
+          : sub-version  IC6.1.8-64b.500.16 
+Started at: 29-Nov-2023  04:00:32
+User Name : iteso-s018
+Host Name : iteso-server
+Directory : /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+WARNING (XSTRM-20): Output Stream file '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/output_risc_v.gds' already exists. It will be overwritten.
+INFO (XSTRM-217): Reading the refliblist file, /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/Ref_Lib_GPDK_SC_IO.list
+INFO (XSTRM-217): Reading the layer map file, /CMC/kits/cadence/GPDK045/gpdk045_v_6_0/gpdk045/gpdk045.layermap
+INFO (XSTRM-162): You have not used the viaMap option. If the OpenAccess design has native oaVia instances, use the -viaMap option for preserving oaVia instances in a Stream Out - Stream In round trip. Using the -viaMap option improves performance and VM usage of applications using the Streamed-In design.  For details on the viaMap option, refer to the "Design Data Translator's Reference" guide for XStream.
+
+Summary of Options :
+library                                 risc_v_Pad_Frame
+strmFile                                /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/output_risc_v.gds
+topCell                                 risc_v_Pad_Frame
+view                                    layout
+logFile                                 strmOut.log
+techLib                                 gpdk045
+layerMap                                /CMC/kits/cadence/GPDK045/gpdk045_v_6_0/gpdk045/gpdk045.layermap
+refLibList                              /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/Ref_Lib_GPDK_SC_IO.list
+case                                    Preserve
+convertDot                              node
+
+INFO (XSTRM-223): 1. Translating cellView risc_v_Pad_Frame/M2_M1_HV/layout as STRUCTURE M2_M1_HV.
+INFO (XSTRM-223): 2. Translating cellView risc_v_Pad_Frame/M3_M2_VH/layout as STRUCTURE M3_M2_VH.
+INFO (XSTRM-223): 3. Translating cellView risc_v_Pad_Frame/M3_M2_HH/layout as STRUCTURE M3_M2_HH.
+INFO (XSTRM-223): 4. Translating cellView risc_v_Pad_Frame/M3_M2_VV/layout as STRUCTURE M3_M2_VV.
+INFO (XSTRM-223): 5. Translating cellView risc_v_Pad_Frame/M4_M3_HV/layout as STRUCTURE M4_M3_HV.
+INFO (XSTRM-223): 6. Translating cellView risc_v_Pad_Frame/M2_M1_VV/layout as STRUCTURE M2_M1_VV.
+INFO (XSTRM-223): 7. Translating cellView risc_v_Pad_Frame/M2_M1_HH/layout as STRUCTURE M2_M1_HH.
+INFO (XSTRM-223): 8. Translating cellView risc_v_Pad_Frame/M2_M1_VH/layout as STRUCTURE M2_M1_VH.
+INFO (XSTRM-223): 9. Translating cellView risc_v_Pad_Frame/M4_M3_HH/layout as STRUCTURE M4_M3_HH.
+INFO (XSTRM-223): 10. Translating cellView risc_v_Pad_Frame/M4_M3_VV/layout as STRUCTURE M4_M3_VV.
+INFO (XSTRM-223): 11. Translating cellView risc_v_Pad_Frame/M4_M3_M_WV/layout as STRUCTURE M4_M3_M_WV.
+INFO (XSTRM-223): 12. Translating cellView risc_v_Pad_Frame/M4_M3_VH/layout as STRUCTURE M4_M3_VH.
+INFO (XSTRM-223): 13. Translating cellView risc_v_Pad_Frame/M4_M3_1x2_HV_N/layout as STRUCTURE M4_M3_1x2_HV_N.
+INFO (XSTRM-223): 14. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA0/layout as STRUCTURE risc_v_Pad_Frame_VIA0.
+INFO (XSTRM-223): 15. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA1/layout as STRUCTURE risc_v_Pad_Frame_VIA1.
+INFO (XSTRM-223): 16. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA2/layout as STRUCTURE risc_v_Pad_Frame_VIA2.
+INFO (XSTRM-223): 17. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA3/layout as STRUCTURE risc_v_Pad_Frame_VIA3.
+INFO (XSTRM-223): 18. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA4/layout as STRUCTURE risc_v_Pad_Frame_VIA4.
+INFO (XSTRM-223): 19. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA5/layout as STRUCTURE risc_v_Pad_Frame_VIA5.
+WARNING (XSTRM-399): The STRUCT 'risc_v_Pad_Frame_VIA5' generated for 'risc_v_Pad_Frame/risc_v_Pad_Frame_VIA5/layout' in GDS is empty because either the design is empty or no shape or object was translated.
+INFO (XSTRM-223): 20. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA6/layout as STRUCTURE risc_v_Pad_Frame_VIA6.
+INFO (XSTRM-223): 21. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA7/layout as STRUCTURE risc_v_Pad_Frame_VIA7.
+INFO (XSTRM-223): 22. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA8/layout as STRUCTURE risc_v_Pad_Frame_VIA8.
+INFO (XSTRM-223): 23. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA9/layout as STRUCTURE risc_v_Pad_Frame_VIA9.
+INFO (XSTRM-223): 24. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA10/layout as STRUCTURE risc_v_Pad_Frame_VIA10.
+INFO (XSTRM-223): 25. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA11/layout as STRUCTURE risc_v_Pad_Frame_VIA11.
+INFO (XSTRM-223): 26. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA12/layout as STRUCTURE risc_v_Pad_Frame_VIA12.
+INFO (XSTRM-223): 27. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA13/layout as STRUCTURE risc_v_Pad_Frame_VIA13.
+INFO (XSTRM-223): 28. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA14/layout as STRUCTURE risc_v_Pad_Frame_VIA14.
+INFO (XSTRM-223): 29. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA15/layout as STRUCTURE risc_v_Pad_Frame_VIA15.
+INFO (XSTRM-223): 30. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA16/layout as STRUCTURE risc_v_Pad_Frame_VIA16.
+INFO (XSTRM-223): 31. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA17/layout as STRUCTURE risc_v_Pad_Frame_VIA17.
+INFO (XSTRM-223): 32. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA18/layout as STRUCTURE risc_v_Pad_Frame_VIA18.
+INFO (XSTRM-223): 33. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA19/layout as STRUCTURE risc_v_Pad_Frame_VIA19.
+INFO (XSTRM-223): 34. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA20/layout as STRUCTURE risc_v_Pad_Frame_VIA20.
+INFO (XSTRM-223): 35. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA21/layout as STRUCTURE risc_v_Pad_Frame_VIA21.
+INFO (XSTRM-223): 36. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA22/layout as STRUCTURE risc_v_Pad_Frame_VIA22.
+INFO (XSTRM-223): 37. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA23/layout as STRUCTURE risc_v_Pad_Frame_VIA23.
+WARNING (XSTRM-399): The STRUCT 'risc_v_Pad_Frame_VIA23' generated for 'risc_v_Pad_Frame/risc_v_Pad_Frame_VIA23/layout' in GDS is empty because either the design is empty or no shape or object was translated.
+INFO (XSTRM-223): 38. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA24/layout as STRUCTURE risc_v_Pad_Frame_VIA24.
+INFO (XSTRM-223): 39. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA25/layout as STRUCTURE risc_v_Pad_Frame_VIA25.
+INFO (XSTRM-223): 40. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA26/layout as STRUCTURE risc_v_Pad_Frame_VIA26.
+INFO (XSTRM-223): 41. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA27/layout as STRUCTURE risc_v_Pad_Frame_VIA27.
+INFO (XSTRM-223): 42. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA28/layout as STRUCTURE risc_v_Pad_Frame_VIA28.
+INFO (XSTRM-223): 43. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame_VIA29/layout as STRUCTURE risc_v_Pad_Frame_VIA29.
+INFO (XSTRM-223): 44. Translating cellView risc_v_Pad_Frame/risc_v_Pad_Frame/layout as STRUCTURE risc_v_Pad_Frame.
+
+Summary of Objects Translated:
+	Scalar Instances:                       21617
+	Array Instances:                        0
+	Polygons:                               0
+	Paths:                                  1243
+	Rectangles:                             10423
+	Lines:                                  0
+	Arcs:                                   0
+	Donuts:                                 0
+	Dots:                                   0
+	Ellipses:                               0
+	Boundaries:                             0
+	Area Blockages:                         0
+	Layer Blockages:                        0
+	Area Halos:                             0
+	Markers:                                0
+	Rows:                                   0
+	Standard Vias                           0
+	Custom Vias:                            0
+	CdsGen Vias:                            0
+	Pathsegs:                               0
+	Text:                                   668
+	TextDisplay:                            0
+	Cells:                                  44
+
+Elapsed Time: 0.4s   User Time: 0.3s   CPU Time: 0.1s   Peak VM: 15980KB
+INFO (XSTRM-234): Translation completed. '0' error(s) and '3' warning(s) found.

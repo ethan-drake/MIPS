@@ -9,18 +9,18 @@ module risc_v_Pad_Frame(
     inout VDDIOR1,
     inout VSSIOR1,
     input clk,
-    input reset_n,
+    input rst_n,
     input rx,
     output tx
     );
 
-wire clk_w, reset_n_w, rx_w, tx_w;
+wire clk_w, rst_n_w, rx_w, tx_w;
 
 
 risc_v_top risc_v_top_i (
 	//Inputs - Platform
 	.clk(clk_w),
-	.rst_n(reset_n_w),
+	.rst_n(rst_n_w),
 	//Input - RX
 	.rx(rx_w),
 	//Output - Tx
@@ -30,7 +30,7 @@ risc_v_top risc_v_top_i (
 // Input PADs
 PADDI pad_clk  (.PAD(clk),  .Y(clk_w));
 
-PADDI pad_nrst (.PAD(reset_n), .Y(reset_n_w));
+PADDI pad_nrst (.PAD(rst_n), .Y(rst_n_w));
 
 PADDI pad_rx (.PAD(rx), .Y(rx_w));
 

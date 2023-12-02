@@ -1,6 +1,6 @@
 source /CMC/scripts/cadence.genus20.11.000.csh
 # To run with file option
-genus -f ../Genus_inputs/Script_risc_v_mmmc.tcl -log log_risc_v__mmmc.log
+genus -gui -f ../Genus_inputs/Script_risc_v_mmmc.tcl -log log_risc_v__mmmc.log
 
 
 # To run in test mode

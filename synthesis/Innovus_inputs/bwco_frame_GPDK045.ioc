@@ -30,8 +30,8 @@
  
    ( left
       ( locals ring_number = 1)
-      ( inst name= "pad_vdd_dummy")
       ( inst name= "pad_nrst")
+      ( inst name= "pad_vdd_dummy")
       ( inst name= "pad_vdd_dummy2")
       ( inst name= "pad_vdd_i1" )
       ( inst name= "pad_vdd_dummy3")
@@ -44,8 +44,8 @@
  
    ( bottom
        ( locals ring_number = 1 )
-       ( inst name= "pad_vss_dummy")
-       ( inst name= "pad_clk" )
+       ( inst name= "pad_clk")
+       ( inst name= "pad_vss_dummy" )
        ( inst name= "pad_vss_dummy2")
        ( inst name= "pad_vss_i1" )
        ( inst name= "pad_vss_dummy3")
@@ -58,8 +58,8 @@
 
    ( right
        ( locals ring_number = 1    )
-       ( inst name= "pad_vdd_ior_dummy")
-       ( inst name= "pad_rx" )
+       ( inst name= "pad_rx")
+       ( inst name= "pad_vdd_ior_dummy" )
        ( inst name= "pad_vdd_ior_dummy2")
        ( inst name= "pad_vdd_ior" )
        ( inst name= "pad_vdd_ior_dummy3")
@@ -71,8 +71,8 @@
    )
    ( top
        ( locals ring_number = 1    )
-       ( inst name= "pad_vss_ior_dummy")
        ( inst name= "pad_tx")
+       ( inst name= "pad_vss_ior_dummy")
        ( inst name= "pad_vss_ior_dummy2")
        ( inst name= "pad_vss_ior" )
        ( inst name= "pad_vss_ior_dummy3")

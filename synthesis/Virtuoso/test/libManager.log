@@ -1,0 +1,66 @@
+\o Program:		@(#)$CDS: libManager version 6.1.8 - CAT37 01/05/2021 01:25 (sjfhw874) $
+\o Sub version:		sub-version  s164 
+\o Arguments:		-mpssession virtuoso12160 -mpshost iteso-server 
+\o Working Directory:	iteso-server:/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test
+\o 64-bit offsets
+\o Qt version: 		5.9.1
+\o Log file is "/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/libManager.log".
+\o Opening libManager window.
+\o changeWorkingDir("/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test") unnecessary.
+\o ddSetForcedLib("") unnecessary.
+\o MPS service: map window
+\o Library Manager customization server connected.
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(cdsLibManager list(326 99 1527 754))
+\a cdsLibManager->libListBox->value = "risc_v"
+\a cdsLibManager->libLineEdit->value = "risc_v"
+\a cdsLibManager->libListBox->value = "risc_v_Pad_Frame"
+\a cdsLibManager->libLineEdit->value = "risc_v_Pad_Frame"
+\a lmgrLogShowPopup("mainListPopup0" 70 199 2 "risc_v_Pad_Frame")
+\a cdsLibManager->editDeleteButton->value = t
+\a deleteForm->deleteFilterEdit->value = "*"
+\a deleteForm->notDeleteFilterEdit->value = "*"
+\a nrSetWindowVisibility(deleteForm "show")
+\a nrResizeWindow(deleteForm list(766 261 627 425))
+\a nrSetCurrentWindow(deleteForm)
+\a deleteForm->deleteListBox->value = '("risc_v_Pad_Frame" )
+\a deleteForm->notDeleteListBox->value = '("risc_v" )
+\a deleteForm->moveToDeleteButton->value = t
+\a deleteForm->OK->value = t
+\o QUESTION (CLM-199): The following 2 items are marked for deletion.  Are you sure?
+\a nrSetWindowVisibility(mcMBXDLG "show")
+\a nrSetCurrentWindow(mcMBXDLG)
+\a nrResizeWindow(mcMBXDLG list(940 292 278 289))
+\a mcMBXDLG->pushButton1->value = t
+\o Deleting 2 libraries.
+\o Deleting library "risc_v".
+\a nrSetWindowVisibility(workingDialogForm "show")
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(workingDialogForm list(945 407 268 133))
+\o Deleted library 'risc_v'.
+\o Delete of library "risc_v" succeeded.
+\o Deleting library "risc_v_Pad_Frame".
+\a nrResizeWindow(deleteForm list(766 187 627 425))
+\a nrSetCurrentWindow(workingDialogForm)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(workingDialogForm)
+\o Batching session updates...
+\a nrResizeWindow(workingDialogForm list(945 333 268 133))
+\o Deleted library 'risc_v_Pad_Frame'.
+\o Delete of library "risc_v_Pad_Frame" succeeded.
+\o Deletion of libraries done.
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->libLineEdit->value = ""
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(workingDialogForm list(945 296 268 133))
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\o DB was auto refreshed.
+\a nrResizeWindow(cdsLibManager list(326 114 1527 754))
+\a nrSetWindowVisibility(cdsLibManager "show")
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\o MPS service: shutdown
+\o libManager is exiting.
+\a exit(0)

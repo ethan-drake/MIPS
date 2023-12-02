@@ -73,7 +73,5 @@ create_analysis_view -name view_risc_v_fast -constraint_mode CM_risc_v_fast -del
 # create_analysis_view -name view_Adders_typ  -constraint_mode CM_Adders_typ  -delay_corner  DC_Adders_typ
 
 # SETTING OF ANALYSIS VIEW
-set_analysis_view -setup { view_risc_v_slow view_risc_v_fast }
-
-
+set_analysis_view -setup { view_risc_v_slow view_risc_v_fast } -hold { view_risc_v_fast view_risc_v_slow }
 

@@ -1,0 +1,70 @@
+
+
+Working Directory = /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Logic_synthesis
+QoS Summary for risc_v_Pad_Frame
+================================================================================
+Metric                          generic         map             syn_opt        
+================================================================================
+
+View : view_risc_v_slow
+Slack (ps):                     4,140           3,203           3,203
+  R2R (ps):                     4,140           3,203           3,203
+  I2R (ps):                     9,052           9,061           9,061
+  R2O (ps):                  no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value
+TNS (ps):                           0               0               0
+  R2R (ps):                         0               0               0
+  I2R (ps):                         0               0               0
+  R2O (ps):                  no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value
+Failing Paths:                      0               0               0
+
+View : view_risc_v_fast
+Slack (ps):                     4,724           4,499           4,499
+  R2R (ps):                     4,724           4,499           4,499
+  I2R (ps):                     9,677           9,693           9,693
+  R2O (ps):                  no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value
+TNS (ps):                           0               0               0
+  R2R (ps):                         0               0               0
+  I2R (ps):                         0               0               0
+  R2O (ps):                  no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value
+Failing Paths:                      0               0               0
+
+Leakage Power (mW):             0.077           0.077           0.077
+Cell Area:                    115,200         135,917         135,916
+Total Cell Area:              115,200         135,917         135,916
+Leaf Instances:                 4,297           3,717           3,720
+Total Instances:                4,297           3,717           3,720
+Utilization (%):                 0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:05:35        00:03:32        00:00:08
+Real Runtime (h:m:s):        00:04:39        00:02:15        00:00:08
+CPU  Elapsed (h:m:s):        00:06:06        00:09:33        00:09:41
+Real Elapsed (h:m:s):        00:04:55        00:07:05        00:07:13
+Memory (MB):                  1520.59         1519.80         1519.81
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:07:04
+Total Memory (MB):     1519.81
+Executable Version:    20.11-s111_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+

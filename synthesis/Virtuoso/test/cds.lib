@@ -1,0 +1,10 @@
+# File Created by  at Wed Nov 29 06:00:01 2023
+# assisted by CdsLibEditor
+INCLUDE tech.lib
+#Removed by ddDeleteObj: DEFINE risc_v_Pad_Frame /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/risc_v_Pad_Frame
+#Removed by ddDeleteObj: DEFINE risc_v_Pad_Frame_test /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/risc_v_Pad_Frame_test
+#Removed by ddDeleteObj: DEFINE tsmc018_STD_CELLS_TCB018GBWP7T_6LM_PINs /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/tsmc018_STD_CELLS_TCB018GBWP7T_6LM_PINs
+#Removed by ddDeleteObj: DEFINE risc_v /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/risc_v
+DEFINE test /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/test
+DEFINE dm /users/iteso-s018/MyDesigns/Virtuoso/risc_v
+DEFINE risc_v_Pad_Frame /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Virtuoso/test/risc_v_Pad_Frame

@@ -1,0 +1,1127 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Tue Nov 28 20:15:05 2023                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.12-s106_1 (64bit) 12/08/2021 18:19 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.12-s106_1 NR211128-2235/21_12-UB (database version 18.20.567) {superthreading v2.17}
+#@(#)CDS: AAE 21.12-s039 (64bit) 12/08/2021 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.12-s043_1 () Dec  1 2021 10:06:22 ( )
+#@(#)CDS: SYNTECH 21.12-s014_1 () Oct 27 2021 04:39:25 ( )
+#@(#)CDS: CPE v21.12-s094
+#@(#)CDS: IQuantus/TQuantus 20.1.2-s624 (64bit) Thu Sep 2 20:12:03 PDT 2021 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+win
+set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+set dbgDualViewAwareXTree 1
+set dcgHonorSignalNetNDR 1
+set defHierChar /
+set delaycal_input_transition_delay 0.1ps
+set distributed_client_message_echo 1
+set distributed_mmmc_disable_reports_auto_redirection 0
+set dlgflprecConfigFile /CMC/tools/cadence/INNOVUS21.12.000_lnx86/tools.lnx86/dlApp/run_flprec.cfg
+set edi_pe::pegWeightMultiplier2ForHLS 2.5
+set enable_ilm_dual_view_gui_and_attribute 1
+set enc_enable_print_mode_command_reset_options 1
+set floorplan_default_site CoreSite
+set fpIsMaxIoHeight 0
+set init_gnd_net VSS
+set init_io_file ../Innovus_inputs/bwco_frame_GPDK045.ioc
+set init_lef_file {/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_multibitsDFF.lef /CMC/kits/cadence/GPDK045/giolib045_v3.3/lef/giolib045_Hemanth.lef}
+set init_mmmc_file ../Innovus_inputs/WC_BC_GPDK045_bwco_Analysis.view
+set init_original_verilog_files ../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v
+set init_pwr_net VDD
+set init_verilog ../Logic_synthesis/Netlist/risc_v_Pad_Frame_opt.v
+get_message -id GLOBAL-100 -suppress
+get_message -id GLOBAL-100 -suppress
+set latch_time_borrow_mode max_borrow
+set metric_page_cfg_format {vivid {HUDDLE {!!map {version {!!str 2} data {!!seq {{!!map {id {!!str top} type {!!str tabs} tabs {!!seq {{!!map {title {!!str Masterboard} children {!!seq {{!!map {id {!!str masterboard_filters} type {!!str section} title {!!str {Run/Snapshot Filters}} children {!!seq {{!!map {id {!!str masterboard_filter} type {!!str run_snapshot_filter}}} {!!map {id {!!str masterboard_snapshot_navigation} type {!!str snapshot_picker}}}}}}} {!!map {id {!!str masterboard_summary} type {!!str section} title {!!str {Stylus QOR summary}} children {!!seq {{!!map {id {!!str masterboard_summary_t} type {!!str table} per_snapshot {!!true 1} ar_metric_control {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.setup.wns} title {!!str WNS} group {!!str {Setup (all)}} navigation {!!map {id {!!str setup_violating_paths_section}}}}} {!!map {metric {!!str timing.setup.tns} title {!!str TNS} group {!!str {Setup (all)}} navigation {!!map {id {!!str setup_violating_paths_section}}}}} {!!map {metric {!!str timing.setup.feps} title {!!str FEPS} group {!!str {Setup (all)}}}} {!!map {metric {!!str timing.setup.wns.path_group:reg2reg} title {!!str WNS} group {!!str {Setup (reg2reg)}} navigation {!!map {id {!!str setup_violating_paths_section}}}}} {!!map {metric {!!str timing.setup.tns.path_group:reg2reg} title {!!str TNS} group {!!str {Setup (reg2reg)}} navigation {!!map {id {!!str setup_violating_paths_section}}}}} {!!map {metric {!!str timing.setup.feps.path_group:reg2reg} title {!!str FEPS} group {!!str {Setup (reg2reg)}}}} {!!map {metric {!!str timing.hold.wns} title {!!str WNS} group {!!str {Hold (all)}} navigation {!!map {id {!!str hold_violating_paths_section}}}}} {!!map {metric {!!str timing.hold.tns} title {!!str TNS} group {!!str {Hold (all)}} navigation {!!map {id {!!str hold_violating_paths_section}}}}} {!!map {metric {!!str timing.hold.feps} title {!!str FEPS} group {!!str {Hold (all)}}}} {!!map {metric {!!str timing.hold.wns.path_group:reg2reg} title {!!str WNS} group {!!str {Hold (reg2reg)}} navigation {!!map {id {!!str hold_violating_paths_section}}}}} {!!map {metric {!!str timing.hold.tns.path_group:reg2reg} title {!!str TNS} group {!!str {Hold (reg2reg)}} navigation {!!map {id {!!str hold_violating_paths_section}}}}} {!!map {metric {!!str timing.hold.feps.path_group:reg2reg} title {!!str FEPS} group {!!str {Hold (reg2reg)}}}} {!!map {metric {!!str timing.drv.max_tran.total} title {!!str Tran} group {!!str DRV}}} {!!map {metric {!!str timing.drv.max_cap.total} title {!!str Load} group {!!str DRV}}} {!!map {metric {!!str timing.drv.max_fanout.total} title {!!str Fanout} group {!!str DRV}}} {!!map {metric {!!str clock.instances.total} title {!!str Insts} group {!!str Clock} navigation {!!map {id {!!str clock_phys}}}}} {!!map {metric {!!str clock.area.total} title {!!str Area} group {!!str Clock} navigation {!!map {id {!!str clock_phys}}}}} {!!map {metric {!!str design.density} title {!!str Density} group {!!str Design}}} {!!map {metric {!!str design.instances.logical} title {!!str Insts} group {!!str Design} navigation {!!map {id {!!str physical_physical}}}}} {!!map {metric {!!str design.area.logical} title {!!str Area} group {!!str Design} navigation {!!map {id {!!str physical_physical}}}}} {!!map {metric {!!str dft.registers.passing} title {!!str Passing} group {!!str DFT}}} {!!map {metric {!!str dft.registers.total} title {!!str Total} group {!!str DFT}}} {!!map {metric {!!str power} title {!!str Total} group {!!str Power} navigation {!!map {id {!!str power_power}}}}} {!!map {metric {!!str power.leakage} title {!!str Leakage} group {!!str Power} navigation {!!map {id {!!str power_leakage}}}}} {!!map {metric {!!str power.internal} title {!!str Internal} group {!!str Power} navigation {!!map {id {!!str power_internal}}}}} {!!map {metric {!!str power.switching} title {!!str Switching} group {!!str Power} navigation {!!map {id {!!str power_switching}}}}} {!!map {metric {!!str power.clock} title {!!str Clock} group {!!str Power} navigation {!!map {id {!!str power_power}}}}} {!!map {metric {!!str design.congestion.hotspot.max} title {!!str Max} group {!!str Congestion} navigation {!!map {id {!!str route_route}}}}} {!!map {metric {!!str design.congestion.hotspot.total} title {!!str Total} group {!!str Congestion} navigation {!!map {id {!!str route_route}}}}} {!!map {metric {!!str route.drc} title {!!str DRC} group {!!str Route} navigation {!!map {id {!!str route_route}}}}} {!!map {metric {!!str route.wirelength} title {!!str WL} group {!!str Route} navigation {!!map {id {!!str route_route}}}}} {!!map {metric {!!str messages} title {!!str Errors} group {!!str Tool}}} {!!map {metric {!!str flow.realtime} title {!!str Wall} group {!!str Tool} navigation {!!map {id {!!str flow_cpu}}}}} {!!map {metric {!!str flow.memory} title {!!str Memory} group {!!str Tool} navigation {!!map {id {!!str flow_cpu}}}}}}}}}}}}} {!!map {id {!!str masterboard_runtime} type {!!str section} title {!!str {Runtime Summary}} children {!!seq {{!!map {id {!!str masterboard_runtime_real_g} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {Real time}} ar_metric {!!seq {{!!map {metric {!!str flow.realtime} title {!!str Real} graph_type {!!str horizontalBar}}}}}}} {!!map {id {!!str masterboard_runtime_cpu} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {CPU Runtime}} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} graph_type {!!str horizontalBar}}}}}}}}}}} {!!map {id {!!str masterboard_reg2reg} type {!!str section} title {!!str {Timing Summary}} children {!!seq {{!!map {id {!!str masterboard_reg2reg_wns_g} type {!!str graph} title {!!str {Setup reg2reg WNS}} ar_metric {!!seq {{!!map {metric {!!str timing.setup.wns.path_group:reg2reg} title {!!str WNS} graph_type {!!str line}}}}}}} {!!map {id {!!str masterboard_reg2reg_tns_g} type {!!str graph} title {!!str {Setup reg2reg TNS}} ar_metric {!!seq {{!!map {metric {!!str timing.setup.tns.path_group:reg2reg} title {!!str TNS} graph_type {!!str line}}}}}}}}}}} {!!map {id {!!str masterboard_power} type {!!str section} title {!!str {Power Summary}} children {!!seq {{!!map {id {!!str masterboard_power_total_g} type {!!str graph} title {!!str {Total Power}} ar_metric {!!seq {{!!map {metric {!!str power} title {!!str Power} graph_type {!!str line}}}}}}} {!!map {id {!!str masterboard_power_leakage_g} type {!!str graph} title {!!str {Leakage Power}} ar_metric {!!seq {{!!map {metric {!!str power.leakage} title {!!str Power} graph_type {!!str line}}}}}}}}}}} {!!map {id {!!str masterboard_utilization} type {!!str section} title {!!str {Utilization Summary}} children {!!seq {{!!map {id {!!str masterboard_utilization_density_g} type {!!str graph} title {!!str {Design Density}} ar_metric {!!seq {{!!map {metric {!!str design.density} title {!!str Density} graph_type {!!str line}}}}}}} {!!map {id {!!str masterboard_utilization_stdcell_g} type {!!str graph} title {!!str {Standard cell instances}} ar_metric {!!seq {{!!map {metric {!!str design.instances.std_cell} title {!!str {Instance count}} graph_type {!!str line}}}}}}}}}}}}}}} {!!map {title {!!str Dashboard} children {!!seq {{!!map {id {!!str dashboard_tabs} type {!!str tabs} tabs {!!seq {{!!map {title {!!str Summary} children {!!seq {{!!map {id {!!str summary_flow_t} type {!!str table} flip_axis {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.name} title {!!str Design}}} {!!map {metric {!!str flow.tool_list} title {!!str Tools}}} {!!map {metric {!!str flow.template.type} title {!!str Flow}}} {!!map {metric {!!str flow.template.feature_enabled} title {!!str {Enabled features}}}} {!!map {metric {!!str flow.run_tag} title {!!str Tag}}} {!!map {metric {!!str flow.machine} title {!!str {Run host}}}} {!!map {metric {!!str flow.run_directory} title {!!str {Run directory}}}} {!!map {metric {!!str flow.last_child_snapshot} title {!!str {Last step}}}} {!!map {metric {!!str flowtool.status} title {!!str {Flowtool status}}}}}}}} {!!map {id {!!str design_image} type {!!str image_plot} ar_metric {!!seq {{!!map {metric {!!str design.floorplan.image}}} {!!map {metric {!!str design.blockages.image}}} {!!map {metric {!!str power.domains.image}}} {!!map {metric {!!str power.intent.image}}}}}}} {!!map {id {!!str summary_dashboard_filters} type {!!str section} title {!!str {Run/Snapshot Filters}} children {!!seq {{!!map {id {!!str summary_dashboard_filter} type {!!str run_snapshot_filter}}} {!!map {id {!!str summary_dashboard_snapshot_navigation} type {!!str snapshot_picker}}}}}}} {!!map {id {!!str summary_qor} type {!!str section} title {!!str {Stylus QOR summary}} children {!!seq {{!!map {id {!!str summary_qor_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.setup.wns} title {!!str WNS} group {!!str {Setup (all)}} navigation {!!map {id {!!str setup_violating_paths_section}}}}} {!!map {metric {!!str timing.setup.tns} title {!!str TNS} group {!!str {Setup (all)}} navigation {!!map {id {!!str setup_violating_paths_section}}}}} {!!map {metric {!!str timing.setup.feps} title {!!str FEPS} group {!!str {Setup (all)}}}} {!!map {metric {!!str timing.setup.wns.path_group:reg2reg} title {!!str WNS} group {!!str {Setup (reg2reg)}} navigation {!!map {id {!!str setup_violating_paths_section}}}}} {!!map {metric {!!str timing.setup.tns.path_group:reg2reg} title {!!str TNS} group {!!str {Setup (reg2reg)}} navigation {!!map {id {!!str setup_violating_paths_section}}}}} {!!map {metric {!!str timing.setup.feps.path_group:reg2reg} title {!!str FEPS} group {!!str {Setup (reg2reg)}}}} {!!map {metric {!!str timing.hold.wns} title {!!str WNS} group {!!str {Hold (all)}} navigation {!!map {id {!!str hold_violating_paths_section}}}}} {!!map {metric {!!str timing.hold.tns} title {!!str TNS} group {!!str {Hold (all)}} navigation {!!map {id {!!str hold_violating_paths_section}}}}} {!!map {metric {!!str timing.hold.feps} title {!!str FEPS} group {!!str {Hold (all)}}}} {!!map {metric {!!str timing.hold.wns.path_group:reg2reg} title {!!str WNS} group {!!str {Hold (reg2reg)}} navigation {!!map {id {!!str hold_violating_paths_section}}}}} {!!map {metric {!!str timing.hold.tns.path_group:reg2reg} title {!!str TNS} group {!!str {Hold (reg2reg)}} navigation {!!map {id {!!str hold_violating_paths_section}}}}} {!!map {metric {!!str timing.hold.feps.path_group:reg2reg} title {!!str FEPS} group {!!str {Hold (reg2reg)}}}} {!!map {metric {!!str timing.drv.max_tran.total} title {!!str Tran} group {!!str DRV}}} {!!map {metric {!!str timing.drv.max_cap.total} title {!!str Load} group {!!str DRV}}} {!!map {metric {!!str timing.drv.max_fanout.total} title {!!str Fanout} group {!!str DRV}}} {!!map {metric {!!str clock.instances.total} title {!!str Insts} group {!!str Clock} navigation {!!map {id {!!str clock_phys}}}}} {!!map {metric {!!str clock.area.total} title {!!str Area} group {!!str Clock} navigation {!!map {id {!!str clock_phys}}}}} {!!map {metric {!!str design.density} title {!!str Density} group {!!str Design}}} {!!map {metric {!!str design.instances.logical} title {!!str Insts} group {!!str Design} navigation {!!map {id {!!str physical_physical}}}}} {!!map {metric {!!str design.area.logical} title {!!str Area} group {!!str Design} navigation {!!map {id {!!str physical_physical}}}}} {!!map {metric {!!str dft.registers.passing} title {!!str Passing} group {!!str DFT}}} {!!map {metric {!!str dft.registers.total} title {!!str Total} group {!!str DFT}}} {!!map {metric {!!str power} title {!!str Total} group {!!str Power} navigation {!!map {id {!!str power_power}}}}} {!!map {metric {!!str power.leakage} title {!!str Leakage} group {!!str Power} navigation {!!map {id {!!str power_leakage}}}}} {!!map {metric {!!str power.internal} title {!!str Internal} group {!!str Power} navigation {!!map {id {!!str power_internal}}}}} {!!map {metric {!!str power.switching} title {!!str Switching} group {!!str Power} navigation {!!map {id {!!str power_switching}}}}} {!!map {metric {!!str power.clock} title {!!str Clock} group {!!str Power} navigation {!!map {id {!!str power_power}}}}} {!!map {metric {!!str design.congestion.hotspot.max} title {!!str Max} group {!!str Congestion} navigation {!!map {id {!!str route_route}}}}} {!!map {metric {!!str design.congestion.hotspot.total} title {!!str Total} group {!!str Congestion} navigation {!!map {id {!!str route_route}}}}} {!!map {metric {!!str route.drc} title {!!str DRC} group {!!str Route} navigation {!!map {id {!!str route_route}}}}} {!!map {metric {!!str route.wirelength} title {!!str WL} group {!!str Route} navigation {!!map {id {!!str route_route}}}}} {!!map {metric {!!str messages} title {!!str Errors} group {!!str Tool}}} {!!map {metric {!!str flow.realtime} title {!!str Wall} group {!!str Tool} navigation {!!map {id {!!str flow_cpu}}}}} {!!map {metric {!!str flow.memory} title {!!str Memory} group {!!str Tool} navigation {!!map {id {!!str flow_cpu}}}}}}}}}}}}} {!!map {id {!!str summary_cpu} type {!!str section} title {!!str {Stylus runtime summary}} children {!!seq {{!!map {id {!!str summary_real_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {Real time}} ar_metric {!!seq {{!!map {metric {!!str flow.realtime} title {!!str Real} graph_type {!!str horizontalBar}}}}}}} {!!map {id {!!str summary_cpu_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {CPU Runtime}} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} graph_type {!!str horizontalBar}}}}}}}}}}}}}}} {!!map {title {!!str Timing} children {!!seq {{!!map {id {!!str timing_dashboard_filters} type {!!str section} title {!!str {Run/Snapshot Filters}} hidden {!!true 1} children {!!seq {{!!map {id {!!str timing_dashboard_filter} type {!!str run_snapshot_filter}}} {!!map {id {!!str timing_dashboard_snapshot_navigation} type {!!str snapshot_picker}}}}}}} {!!map {id {!!str timing_setup} type {!!str section} title {!!str {Setup Timing}} children {!!seq {{!!map {id {!!str setup_tns_histogram_controls} type {!!str histogram_controls} parent_id {!!str timing_setup}}} {!!map {id {!!str setup_tns_histogram_first} type {!!str histogram} title {!!str {Setup TNS}} parent_id {!!str timing_setup} ar_metric {!!seq {{!!map {metric {!!str timing.setup.histogram} title {!!str {Per Group}} mode {!!str group}}} {!!map {metric {!!str timing.setup.histogram.views} title {!!str {Per View}} mode {!!str view}}}}}}} {!!map {id {!!str setup_tns_histogram_second} type {!!str histogram} title {!!str {Setup TNS}} parent_id {!!str timing_setup} ar_metric {!!seq {{!!map {metric {!!str timing.setup.histogram} title {!!str {Per Group}} mode {!!str group}}} {!!map {metric {!!str timing.setup.histogram.views} title {!!str {Per View}} mode {!!str view}}}}}}} {!!map {id {!!str timing_setup_t} type {!!str table} per_snapshot {!!true 1} collapsible_key {!!true 1} key {!!map {Group {!!str timing.setup.wns.path_group:*} View {!!str timing.setup.wns.analysis_view:*}}} ar_metric {!!seq {{!!map {metric {!!str timing.setup.type} title {!!str Type}}} {!!map {metric {!!str timing.setup.wns.path_group:%.analysis_view:%} title {!!str WNS}}} {!!map {metric {!!str timing.setup.tns.path_group:%.analysis_view:%} title {!!str TNS}}} {!!map {metric {!!str timing.setup.feps.path_group:%.analysis_view:%} title {!!str FEPS}}}}}}}}}}} {!!map {id {!!str setup_violating_paths_section} type {!!str section} title {!!str {Worst Setup Paths}} children {!!seq {{!!map {id {!!str setup_violating_paths} type {!!str violating_paths} ar_metric {!!seq {{!!map {metric {!!str timing.setup.paths}}} {!!map {metric {!!str timing.setup.paths.path_group:*}}}}}}}}}}} {!!map {id {!!str timing_hold} type {!!str section} title {!!str {Hold Timing}} children {!!seq {{!!map {id {!!str hold_tns_histogram_controls} type {!!str histogram_controls} parent_id {!!str timing_hold}}} {!!map {id {!!str hold_tns_histogram_first} type {!!str histogram} title {!!str {Hold TNS}} parent_id {!!str timing_hold} ar_metric {!!seq {{!!map {metric {!!str timing.hold.histogram} title {!!str {Per Group}} mode {!!str group}}} {!!map {metric {!!str timing.hold.histogram.views} title {!!str {Per View}} mode {!!str view}}}}}}} {!!map {id {!!str hold_tns_histogram_second} type {!!str histogram} title {!!str {Hold TNS}} parent_id {!!str timing_hold} ar_metric {!!seq {{!!map {metric {!!str timing.hold.histogram} title {!!str {Per Group}} mode {!!str group}}} {!!map {metric {!!str timing.hold.histogram.views} title {!!str {Per View}} mode {!!str view}}}}}}} {!!map {id {!!str timing_hold_t} type {!!str table} per_snapshot {!!true 1} collapsible_key {!!true 1} key {!!map {Group {!!str timing.hold.wns.path_group:*} View {!!str timing.hold.wns.analysis_view:*}}} ar_metric {!!seq {{!!map {metric {!!str timing.hold.type} title {!!str Type}}} {!!map {metric {!!str timing.hold.wns.path_group:%.analysis_view:%} title {!!str WNS}}} {!!map {metric {!!str timing.hold.tns.path_group:%.analysis_view:%} title {!!str TNS}}} {!!map {metric {!!str timing.hold.feps.path_group:%.analysis_view:%} title {!!str FEPS}}}}}}}}}}} {!!map {id {!!str hold_violating_paths_section} type {!!str section} title {!!str {Worst Hold Paths}} children {!!seq {{!!map {id {!!str hold_violating_paths} type {!!str violating_paths} ar_metric {!!seq {{!!map {metric {!!str timing.hold.paths}}} {!!map {metric {!!str timing.hold.paths.path_group:*}}}}}}}}}}} {!!map {id {!!str timing_drv} type {!!str section} title {!!str {Design Rule Violations}} children {!!seq {{!!map {id {!!str timing_drv_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.drv.max_tran.total} title {!!str Total} group {!!str Tran}}} {!!map {metric {!!str timing.drv.max_tran.worst} title {!!str Worst} group {!!str Tran}}} {!!map {metric {!!str timing.drv.max_tran.pins} title {!!str Pins} group {!!str Tran}}} {!!map {metric {!!str timing.drv.max_tran.nets} title {!!str Nets} group {!!str Tran}}} {!!map {metric {!!str timing.drv.max_cap.total} title {!!str Total} group {!!str Cap}}} {!!map {metric {!!str timing.drv.max_cap.worst} title {!!str Worst} group {!!str Cap}}} {!!map {metric {!!str timing.drv.max_cap.pins} title {!!str Pins} group {!!str Cap}}} {!!map {metric {!!str timing.drv.max_cap.nets} title {!!str Nets} group {!!str Cap}}} {!!map {metric {!!str timing.drv.max_fanout.total} title {!!str Total} group {!!str Fanout}}} {!!map {metric {!!str timing.drv.max_fanout.worst} title {!!str Worst} group {!!str Fanout}}} {!!map {metric {!!str timing.drv.max_fanout.pins} title {!!str Pins} group {!!str Fanout}}} {!!map {metric {!!str timing.drv.max_fanout.nets} title {!!str Nets} group {!!str Fanout}}} {!!map {metric {!!str timing.drv.max_length.total} title {!!str Total} group {!!str Length}}} {!!map {metric {!!str timing.drv.max_length.worst} title {!!str Worst} group {!!str Length}}} {!!map {metric {!!str timing.drv.max_length.pins} title {!!str Pins} group {!!str Length}}} {!!map {metric {!!str timing.drv.max_length.nets} title {!!str Nets} group {!!str Length}}} {!!map {metric {!!str timing.si.glitches} title {!!str Glitches} group {!!str SI}}} {!!map {metric {!!str timing.si.noise} title {!!str Noise} group {!!str SI}}}}}}} {!!map {id {!!str timing_double_clocking} type {!!str section} title {!!str {Double Clocking}} hidden {!!true 1} children {!!seq {{!!map {id {!!str timing_double_clocking_t} type {!!str table} per_snapshot {!!false 0} key {!!map {View {!!str timing.si.double_clocking.analysis_view:*}}} ar_metric {!!seq {{!!map {metric {!!str timing.si.double_clocking.frequency_violations.analysis_view:%} title {!!str {Frequency Violations}}}} {!!map {metric {!!str timing.si.double_clocking.report_file.analysis_view:%} title {!!str {Report File}}}}}}}}}}}} {!!map {id {!!str timing_min_pulse_width} type {!!str section} title {!!str {Min Pulse Width}} hidden {!!true 1} children {!!seq {{!!map {id {!!str timing_min_pulse_width_t} type {!!str table} per_snapshot {!!false 0} ar_metric {!!seq {{!!map {metric {!!str timing.setup.type} title {!!str Type}}} {!!map {metric {!!str timing.min_pulse_width.endpoints.wns} group {!!str Endpoints} title {!!str WNS}}} {!!map {metric {!!str timing.min_pulse_width.endpoints.tns} group {!!str Endpoints} title {!!str TNS}}} {!!map {metric {!!str timing.min_pulse_width.endpoints.feps} group {!!str Endpoints} title {!!str FEPS}}} {!!map {metric {!!str timing.min_pulse_width.clocktree.wns} group {!!str Clocktree} title {!!str WNS}}} {!!map {metric {!!str timing.min_pulse_width.clocktree.tns} group {!!str Clocktree} title {!!str TNS}}} {!!map {metric {!!str timing.min_pulse_width.clocktree.feps} group {!!str Clocktree} title {!!str FEPS}}}}}}} {!!map {id {!!str timing_min_pulse_width_breakdown_t} type {!!str table} per_snapshot {!!false 0} key {!!map {View {!!str timing.min_pulse_width.endpoints.wns.analysis_view:*} Clock {!!str timing.min_pulse_width.endpoints.wns.analysis_view:%.clock:*}}} ar_metric {!!seq {{!!map {metric {!!str timing.min_pulse_width.endpoints.wns.analysis_view:%.clock:%} group {!!str Endpoints} title {!!str WNS}}} {!!map {metric {!!str timing.min_pulse_width.endpoints.tns.analysis_view:%.clock:%} group {!!str Endpoints} title {!!str TNS}}} {!!map {metric {!!str timing.min_pulse_width.endpoints.feps.analysis_view:%.clock:%} group {!!str Endpoints} title {!!str FEPS}}} {!!map {metric {!!str timing.min_pulse_width.clocktree.wns.analysis_view:%.clock:%} group {!!str Clocktree} title {!!str WNS}}} {!!map {metric {!!str timing.min_pulse_width.clocktree.tns.analysis_view:%.clock:%} group {!!str Clocktree} title {!!str TNS}}} {!!map {metric {!!str timing.min_pulse_width.clocktree.feps.analysis_view:%.clock:%} group {!!str Clocktree} title {!!str FEPS}}}}}}}}}}}}}}} {!!map {id {!!str timing_cpu} type {!!str section} title {!!str Runtime} children {!!seq {{!!map {id {!!str timing_real_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {Real time}} ar_metric {!!seq {{!!map {metric {!!str flow.realtime} title {!!str Real} graph_type {!!str horizontalBar}}}}}}} {!!map {id {!!str timing_cpu_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {CPU Runtime}} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} graph_type {!!str horizontalBar}}}}}}}}}}}}}}} {!!map {title {!!str Clock} children {!!seq {{!!map {id {!!str clock_dashboard_filters} type {!!str section} title {!!str {Run/Snapshot Filters}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_dashboard_filter} type {!!str run_snapshot_filter}}} {!!map {id {!!str clock_dashboard_snapshot_navigation} type {!!str snapshot_picker}}}}}}} {!!map {id {!!str clock_phys} type {!!str section} title {!!str Physical} children {!!seq {{!!map {id {!!str clock_phys_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.instances.total} title {!!str #Total} group {!!str Instances}}} {!!map {metric {!!str clock.instances.buffer} title {!!str #Buffers} group {!!str Instances}}} {!!map {metric {!!str clock.instances.inverter} title {!!str #Inverters} group {!!str Instances}}} {!!map {metric {!!str clock.instances.clkgate} title {!!str {#Clock Gates}} group {!!str Instances}}} {!!map {metric {!!str clock.instances.nonicg} title {!!str {#Non Integrated}} group {!!str Instances}}} {!!map {metric {!!str clock.instances.logic} title {!!str #Logic} group {!!str Instances}}} {!!map {metric {!!str clock.area.total} title {!!str Total} group {!!str Area}}} {!!map {metric {!!str clock.area.buffer} title {!!str Buffers} group {!!str Area}}} {!!map {metric {!!str clock.area.inverter} title {!!str Inverters} group {!!str Area}}} {!!map {metric {!!str clock.area.clkgate} title {!!str {Clock Gates}} group {!!str Area}}} {!!map {metric {!!str clock.area.nonicg} title {!!str {Non Integrated}} group {!!str Area}}} {!!map {metric {!!str clock.area.logic} title {!!str Logic} group {!!str Area}}} {!!map {metric {!!str clock.nets.length.total} title {!!str {Tot Clk Net Length}} group {!!str Nets}}}}}}}}}}} {!!map {id {!!str clock_phys_cell_insts} type {!!str section} title {!!str {Per Cell Instances}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_phys_cell_insts_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.instances.total} title {!!str #Total}}} {!!map {metric {!!str clock.instances_distribution.buffer.base_cell:*} group {!!str #Buffers}}} {!!map {metric {!!str clock.instances_distribution.inverter.base_cell:*} group {!!str #Inverters}}} {!!map {metric {!!str clock.instances_distribution.clkgate.base_cell:*} group {!!str {#Clock Gates}}}} {!!map {metric {!!str clock.instances_distribution.nonicg.base_cell:*} group {!!str {#Non Integrated}}}} {!!map {metric {!!str clock.instances_distribution.logic.base_cell:*} group {!!str #Logic}}}}}}}}}}} {!!map {id {!!str clock_phys_cell_area} type {!!str section} title {!!str {Per Cell Area}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_phys_cell_area_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.area.total} title {!!str Total}}} {!!map {metric {!!str clock.area_distribution.buffer.base_cell:*} group {!!str Buffers}}} {!!map {metric {!!str clock.area_distribution.inverter.base_cell:*} group {!!str Inverters}}} {!!map {metric {!!str clock.area_distribution.clkgate.base_cell:*} group {!!str {Clock Gates}}}} {!!map {metric {!!str clock.area_distribution.nonicg.base_cell:*} group {!!str {Non Integrated}}}} {!!map {metric {!!str clock.area_distribution.logic.base_cell:*} group {!!str Logic}}}}}}}}}}} {!!map {id {!!str clock_phys_creator} type {!!str section} title {!!str {Cell Creators}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_phys_creator_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.instances.buffer.creator.*} group {!!str Buffers}}} {!!map {metric {!!str clock.instances.inverter.creator.*} group {!!str Inverters}}}}}}}}}}} {!!map {id {!!str clock_phys_nets} type {!!str section} title {!!str Nets} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_phys_nets_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.nets.length.total} title {!!str Total} group {!!str Nets}}} {!!map {metric {!!str clock.nets.length.top} title {!!str Top} group {!!str Nets}}} {!!map {metric {!!str clock.nets.length.trunk} title {!!str Trunk} group {!!str Nets}}} {!!map {metric {!!str clock.nets.length.leaf} title {!!str Leaf} group {!!str Nets}}}}}}}}}}} {!!map {id {!!str clock_phys_cap} type {!!str section} title {!!str Physical} children {!!seq {{!!map {id {!!str clock_phys_cap_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.capacitance.wire.top} title {!!str Top} group {!!str Wire}}} {!!map {metric {!!str clock.capacitance.wire.trunk} title {!!str Trunk} group {!!str Wire}}} {!!map {metric {!!str clock.capacitance.wire.leaf} title {!!str Leaf} group {!!str Wire}}} {!!map {metric {!!str clock.capacitance.gate.top} title {!!str Top} group {!!str Gate}}} {!!map {metric {!!str clock.capacitance.gate.trunk} title {!!str Trunk} group {!!str Gate}}} {!!map {metric {!!str clock.capacitance.gate.leaf} title {!!str Leaf} group {!!str Gate}}} {!!map {metric {!!str clock.capacitance.total.top} title {!!str Top} group {!!str Total}}} {!!map {metric {!!str clock.capacitance.total.trunk} title {!!str Trunk} group {!!str Total}}} {!!map {metric {!!str clock.capacitance.total.leaf} title {!!str Leaf} group {!!str Total}}} {!!map {metric {!!str clock.capacitance.sink.*} group {!!str Sink}}}}}}}}}}} {!!map {id {!!str clock_phys_buffer_constraint} type {!!str section} title {!!str {Buffer Depth Constraints}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_phys_buffer_constraint_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.buffer_depth_constraint.skew_group:*.*}}}}}}}}}}} {!!map {id {!!str clock_phys_stage_constraint} type {!!str section} title {!!str {Stage Depth Constraints}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_phys_stage_constraint_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.stage_depth_constraint.*}}}}}}}}}}} {!!map {id {!!str clock_drv} type {!!str section} title {!!str DRV} children {!!seq {{!!map {id {!!str clock_drv_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str {clock.drv.nets.remaining transition.count}} title {!!str Count} group {!!str {Remaining Transition}}}} {!!map {metric {!!str {clock.drv.nets.remaining transition.max}} title {!!str Max} group {!!str {Remaining Transition}}}} {!!map {metric {!!str {clock.drv.nets.unfixable transition.count}} title {!!str Count} group {!!str {Unfixable Transition}}}} {!!map {metric {!!str {clock.drv.nets.unfixable transition.max}} title {!!str Max} group {!!str {Unfixable Transition}}}} {!!map {metric {!!str clock.drv.nets.capacitance.count} title {!!str Count} group {!!str Capacitance}}} {!!map {metric {!!str clock.drv.nets.capacitance.max} title {!!str Max} group {!!str Capacitance}}} {!!map {metric {!!str clock.drv.nets.resistance.count} title {!!str Count} group {!!str Resistance}}} {!!map {metric {!!str clock.drv.nets.resistance.max} title {!!str Max} group {!!str Resistance}}} {!!map {metric {!!str clock.drv.nets.length.count} title {!!str Count} group {!!str Length}}} {!!map {metric {!!str clock.drv.nets.length.max} title {!!str Max} group {!!str Length}}} {!!map {metric {!!str clock.drv.nets.fanout.count} title {!!str Count} group {!!str Fanout}}} {!!map {metric {!!str clock.drv.nets.fanout.max} title {!!str Max} group {!!str Fanout}}}}}}}}}}} {!!map {id {!!str clock_drv_detail} type {!!str section} title {!!str Detail} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_drv_detail_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str {clock.drv.nets.remaining transition.*}} group {!!str {Remaining Transition}}}} {!!map {metric {!!str {clock.drv.nets.unfixable transition.*}} group {!!str {Unfixable Transition}}}} {!!map {metric {!!str clock.drv.nets.capacitance.*} group {!!str Capacitance}}} {!!map {metric {!!str clock.drv.nets.resistance.*} group {!!str Resistance}}} {!!map {metric {!!str clock.drv.nets.length.*} group {!!str Length}}} {!!map {metric {!!str clock.drv.nets.fanout.*} group {!!str Fanout}}}}}}}}}}} {!!map {id {!!str clock_drv_halo} type {!!str section} title {!!str {Clock Halo}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_drv_halo_t} type {!!str table} key {!!map {{Clock Tree} {!!str clock.halo.clock_tree:*.count}}} ar_metric {!!seq {{!!map {metric {!!str clock.halo.clock_tree:%.count} group {!!str Count}}} {!!map {metric {!!str clock.halo.clock_tree:%.violations} group {!!str Violations}}}}}}}}}}} {!!map {id {!!str clock_drv_tran_tar} type {!!str section} title {!!str Transition} children {!!seq {{!!map {id {!!str clock_drv_tran_tar_t} type {!!str table} ar_metric {!!seq {{!!map {metric {!!str clock.transition.target.primary_half_corner.top.*} group {!!str {Top Transition Target Stats}}}} {!!map {metric {!!str clock.transition.target.primary_half_corner.trunk.*} group {!!str {Trunk Transition Target Stats}}}} {!!map {metric {!!str clock.transition.target.primary_half_corner.leaf.*} group {!!str {Leaf Transition Target Stats}}}}}}}}}}}} {!!map {id {!!str clock_drv_tran_tar_early} type {!!str section} title {!!str {Per corner/clock tree transition Target (early)}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_drv_tran_tar_early_t} type {!!str table} key {!!map {{Corner | Clock Tree} {!!str clock.transition.target.delay_corner:*.early.top.clock_tree:*}}} ar_metric {!!seq {{!!map {metric {!!str clock.transition.auto_target.delay_corner:%.early.clock_tree:%} group {!!str {Auto Target}}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.early.top.clock_tree:%} group {!!str Top}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.early.trunk.clock_tree:%} group {!!str Trunk}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.early.leaf.clock_tree:%} group {!!str Leaf}}}}}}}}}}} {!!map {id {!!str clock_drv_tran_tar_late} type {!!str section} title {!!str {Per corner/clock tree transition Target (late)}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_drv_tran_tar_late_t} type {!!str table} key {!!map {{Corner | Clock Tree} {!!str clock.transition.target.delay_corner:*.late.top.clock_tree:*}}} ar_metric {!!seq {{!!map {metric {!!str clock.transition.auto_target.delay_corner:%.late.clock_tree:%} group {!!str {Auto Target}}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.late.top.clock_tree:%} group {!!str Top}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.late.trunk.clock_tree:%} group {!!str Trunk}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.late.leaf.clock_tree:%} group {!!str Leaf}}}}}}}}}}} {!!map {id {!!str clock_drv_tran_top} type {!!str section} title {!!str {Top Transition Distribution}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_drv_tran_top_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Target {!!str clock.transition.primary_half_corner.top.*.max}}} ar_metric {!!seq {{!!map {metric {!!str clock.transition.primary_half_corner.top.%.*}}}}}}}}}}} {!!map {id {!!str clock_drv_tran_trunk} type {!!str section} title {!!str {Trunk Transition Distribution}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_drv_tran_trunk_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Target {!!str clock.transition.primary_half_corner.trunk.*.max}}} ar_metric {!!seq {{!!map {metric {!!str clock.transition.primary_half_corner.trunk.%.*}}}}}}}}}}} {!!map {id {!!str clock_drv_tran_leaf} type {!!str section} title {!!str {Leaf Transition Distribution}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_drv_tran_leaf_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Target {!!str clock.transition.primary_half_corner.leaf.*.max}}} ar_metric {!!seq {{!!map {metric {!!str clock.transition.primary_half_corner.leaf.%.*}}}}}}}}}}} {!!map {id {!!str clock_skew} type {!!str section} title {!!str Latency/Skew} children {!!seq {{!!map {id {!!str clock_skew_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.latency.primary_reporting_skew_group.primary_half_corner.*} group {!!str Latency}}} {!!map {metric {!!str clock.skew.primary_reporting_skew_group.primary_half_corner.*} group {!!str Skew}}} {!!map {metric {!!str clock.skew.primary_reporting_skew_group.primary_half_corner.skew_band.*} group {!!str {Skew Band}}}}}}}}}}}} {!!map {id {!!str clock_skew_early_detail} type {!!str section} title {!!str {Per group/corner (early)}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_skew_early_detail_t} type {!!str table} per_snapshot {!!true 1} key {!!map {{Skew Group | Corner} {!!str clock.skew.skew_group:*.delay_corner:*.early.total}}} ar_metric {!!seq {{!!map {metric {!!str clock.latency.skew_group:%.delay_corner:%.early.*} group {!!str Latency}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.total} title {!!str Total}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.gate} title {!!str Gate}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.wire} title {!!str Wire}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.target} title {!!str Target}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.target_met} title {!!str {Target Met}}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.skew_band.*} group {!!str {Skew band}}}}}}}}}}}} {!!map {id {!!str clock_skew_late_detail} type {!!str section} title {!!str {Per group/corner (late)}} hidden {!!true 1} children {!!seq {{!!map {id {!!str clock_skew_late_detail_t} type {!!str table} per_snapshot {!!true 1} key {!!map {{Skew Group | Corner} {!!str clock.skew.skew_group:*.delay_corner:*.late.total}}} ar_metric {!!seq {{!!map {metric {!!str clock.latency.skew_group:%.delay_corner:%.late.*} group {!!str Latency}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.total} title {!!str Total} group {!!str Skew}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.gate} title {!!str Gate} group {!!str Skew}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.wire} title {!!str Wire} group {!!str Skew}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.target} title {!!str Target} group {!!str Skew}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.target_met} title {!!str {Target Met}} group {!!str Skew}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.skew_band.*} group {!!str {Skew band}}}}}}}}}}}} {!!map {id {!!str cts_cpu} type {!!str section} title {!!str Runtime} children {!!seq {{!!map {id {!!str cts_real_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {Real time}} ar_metric {!!seq {{!!map {metric {!!str flow.realtime} title {!!str Real} graph_type {!!str horizontalBar}}}}}}} {!!map {id {!!str cts_cpu_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {CPU Runtime}} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} graph_type {!!str horizontalBar}}}}}}}}}}}}}}} {!!map {title {!!str Design} children {!!seq {{!!map {id {!!str design_dashboard_filters} type {!!str section} title {!!str {Run/Snapshot Filters}} hidden {!!true 1} children {!!seq {{!!map {id {!!str design_dashboard_filter} type {!!str run_snapshot_filter}}} {!!map {id {!!str design_dashboard_snapshot_navigation} type {!!str snapshot_picker}}}}}}} {!!map {id {!!str physical_physical} type {!!str section} title {!!str Physical} children {!!seq {{!!map {id {!!str physical_physical_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.density} title {!!str Density}}} {!!map {metric {!!str design.instances.logical} title {!!str {Logical instances}}}} {!!map {metric {!!str design.area.logical} title {!!str {Logical area}}}} {!!map {metric {!!str design.instances} title {!!str {Total instances}}}} {!!map {metric {!!str design.area} title {!!str {Total area}}}} {!!map {metric {!!str design.blockages.place.area} title {!!str {Blocked area}}}}}}}}}}}} {!!map {id {!!str physical_physical_insts} type {!!str section} title {!!str {Instances Detail}} hidden {!!true 1} children {!!seq {{!!map {id {!!str physical_physical_insts_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.instances.register} title {!!str register} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.icg} title {!!str icg} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.latch} title {!!str latch} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.buffer} title {!!str buffer} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.inverter} title {!!str inverter} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.combinatorial} title {!!str combo} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.std_cell} title {!!str total} group {!!str {Total (SC)}}}} {!!map {metric {!!str design.instances.macro} title {!!str macro} group {!!str Other}}} {!!map {metric {!!str design.instances.physical} title {!!str physical} group {!!str Other}}} {!!map {metric {!!str design.instances.io} title {!!str io} group {!!str Other}}} {!!map {metric {!!str design.instances.blackbox} title {!!str blackbox} group {!!str Other}}} {!!map {metric {!!str design.instances.power_switch} title {!!str power_switch} group {!!str MSV}}} {!!map {metric {!!str design.instances.isolation} title {!!str isolation} group {!!str MSV}}} {!!map {metric {!!str design.instances.level_shifter} title {!!str level_shifter} group {!!str MSV}}} {!!map {metric {!!str design.instances.always_on} title {!!str always_on} group {!!str MSV}}} {!!map {metric {!!str design.instances} title {!!str total} group {!!str Total}}}}}}}}}}} {!!map {id {!!str physical_physical_area} type {!!str section} title {!!str {Area Detail}} hidden {!!true 1} children {!!seq {{!!map {id {!!str physical_physical_area_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.area.register} title {!!str register} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.icg} title {!!str icg} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.latch} title {!!str latch} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.buffer} title {!!str buffer} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.inverter} title {!!str inverter} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.combinatorial} title {!!str combo} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.std_cell} title {!!str total} group {!!str {Total (SC)}}}} {!!map {metric {!!str design.area.macro} title {!!str macro} group {!!str Other}}} {!!map {metric {!!str design.area.physical} title {!!str physical} group {!!str Other}}} {!!map {metric {!!str design.area.io} title {!!str io} group {!!str Other}}} {!!map {metric {!!str design.area.blackbox} title {!!str blackbox} group {!!str Other}}} {!!map {metric {!!str design.area.power_switch} title {!!str power_switch} group {!!str MSV}}} {!!map {metric {!!str design.area.isolation} title {!!str isolation} group {!!str MSV}}} {!!map {metric {!!str design.area.level_shifter} title {!!str level_shifter} group {!!str MSV}}} {!!map {metric {!!str design.area.always_on} title {!!str always_on} group {!!str MSV}}} {!!map {metric {!!str design.area} title {!!str total} group {!!str Total}}}}}}}}}}} {!!map {id {!!str physical_physical_multibit} type {!!str section} title {!!str {Multibit Detail}} hidden {!!true 1} children {!!seq {{!!map {id {!!str physical_physical_multibit_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.multibit.*}}}}}}}}}}} {!!map {id {!!str physical_physical_dp} type {!!str section} title {!!str {Data Path Report}} hidden {!!true 1} children {!!seq {{!!map {id {!!str physical_per_dp_t} type {!!str table} ar_metric {!!seq {{!!map {metric {!!str design.datapath.area.type:datapath_modules} group {!!str {Datapath Modules}} title {!!str Area}}} {!!map {metric {!!str design.datapath.ratio.type:datapath_modules} group {!!str {Datapath Modules}} title {!!str Ratio}}} {!!map {metric {!!str design.datapath.area.type:external_muxes} group {!!str {External Muxes}} title {!!str Area}}} {!!map {metric {!!str design.datapath.ratio.type:external_muxes} group {!!str {External Muxes}} title {!!str Ratio}}} {!!map {metric {!!str design.datapath.area.type:others} group {!!str Others} title {!!str Area}}} {!!map {metric {!!str design.datapath.ratio.type:others} group {!!str Others} title {!!str Ratio}}} {!!map {metric {!!str design.datapath.area.type:total} group {!!str Total} title {!!str Area}}} {!!map {metric {!!str design.datapath.ratio.type:total} group {!!str Total} title {!!str Ratio}}}}}}}}}}} {!!map {id {!!str physical_physical_vth} type {!!str section} title {!!str {Vth Detail}} hidden {!!true 1} children {!!seq {{!!map {id {!!str physical_per_vth_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Group {!!str design.instances.vth:*}}} ar_metric {!!seq {{!!map {metric {!!str design.instances.vth:%} group {!!str Instances} title {!!str Total}}} {!!map {metric {!!str design.instances.vth:%.ratio} group {!!str Instances} title {!!str Ratio}}} {!!map {metric {!!str design.area.vth:%} group {!!str Area} title {!!str Total}}} {!!map {metric {!!str design.area.vth:%.ratio} group {!!str Area} title {!!str Ratio}}}}}}} {!!map {id {!!str physical_per_vth_detail_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Group {!!str design.instances.vth:*}}} ar_metric {!!seq {{!!map {metric {!!str design.instances.register.vth:%} group {!!str Register} title {!!str Total}}} {!!map {metric {!!str design.instances.ratio.register.vth:%} group {!!str Register} title {!!str Ratio}}} {!!map {metric {!!str design.instances.icg.vth:%} group {!!str ICG} title {!!str Total}}} {!!map {metric {!!str design.instances.ratio.icg.vth:%} group {!!str ICG} title {!!str Ratio}}} {!!map {metric {!!str design.instances.latch.vth:%} group {!!str Latch} title {!!str Total}}} {!!map {metric {!!str design.instances.ratio.latch.vth:%} group {!!str Latch} title {!!str Ratio}}} {!!map {metric {!!str design.instances.buffer.vth:%} group {!!str Buffer} title {!!str Total}}} {!!map {metric {!!str design.instances.ratio.buffer.vth:%} group {!!str Buffer} title {!!str Ratio}}} {!!map {metric {!!str design.instances.inverter.vth:%} group {!!str Inverter} title {!!str Total}}} {!!map {metric {!!str design.instances.ratio.inverter.vth:%} group {!!str Inverter} title {!!str Ratio}}} {!!map {metric {!!str design.instances.combinatorial.vth:%} group {!!str Combinational} title {!!str Total}}} {!!map {metric {!!str design.instances.ratio.combinatorial.vth:%} group {!!str Combinational} title {!!str Ratio}}}}}}}}}}} {!!map {id {!!str physical_physical_lf} type {!!str section} title {!!str {Instances by Function}} hidden {!!true 1} children {!!seq {{!!map {id {!!str physical_per_lf_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.instances.function:*}}}}}}}}}}} {!!map {id {!!str physical_physical_ds} type {!!str section} title {!!str {Instances by Size}} hidden {!!true 1} children {!!seq {{!!map {id {!!str physical_per_ds_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.instances.strength:*}}}}}}}}}}} {!!map {id {!!str physical_physical_hinst} type {!!str section} title {!!str Per-Block} hidden {!!true 1} children {!!seq {{!!map {id {!!str physical_per_hinst_t} type {!!str table} key {!!map {Block {!!str design.instances.hinst:*}}} ar_metric {!!seq {{!!map {metric {!!str design.instances.hinst:%} title {!!str Instances}}} {!!map {metric {!!str design.area.hinst:%} title {!!str Area}}}}}}}}}}} {!!map {id {!!str physical_check_place} type {!!str section} title {!!str {Check Place}} children {!!seq {{!!map {id {!!str physical_check_place_t} type {!!str table} flip_axis {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str check.place.*}}}}}}}}}}} {!!map {id {!!str physical_cpu} type {!!str section} title {!!str Runtime} children {!!seq {{!!map {id {!!str physical_real_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {Real time}} ar_metric {!!seq {{!!map {metric {!!str flow.realtime} title {!!str Real} graph_type {!!str horizontalBar}}}}}}} {!!map {id {!!str physical_cpu_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {CPU Runtime}} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} graph_type {!!str horizontalBar}}}}}}}}}}}}}}} {!!map {title {!!str Power} children {!!seq {{!!map {id {!!str power_image} type {!!str image_plot} ar_metric {!!seq {{!!map {metric {!!str design.floorplan.image}}} {!!map {metric {!!str power.domains.image}}} {!!map {metric {!!str power.intent.image}}}}}}} {!!map {id {!!str power_dashboard_filters} type {!!str section} title {!!str {Run/Snapshot Filters}} hidden {!!true 1} children {!!seq {{!!map {id {!!str power_dashboard_filter} type {!!str run_snapshot_filter}}} {!!map {id {!!str power_dashboard_snapshot_navigation} type {!!str snapshot_picker}}}}}}} {!!map {id {!!str power_power} type {!!str section} title {!!str Power} children {!!seq {{!!map {id {!!str power_power_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str power} title {!!str Total} group {!!str {Whole Design}}}} {!!map {metric {!!str power.leakage} title {!!str Leakage} group {!!str {Whole Design}}}} {!!map {metric {!!str power.internal} title {!!str Internal} group {!!str {Whole Design}}}} {!!map {metric {!!str power.switching} title {!!str Switching} group {!!str {Whole Design}}}} {!!map {metric {!!str power.clock} title {!!str {Total Clock Power}}}}}}}}}}}} {!!map {id {!!str power_leakage} type {!!str section} title {!!str {Leakage Details}} hidden {!!true 1} children {!!seq {{!!map {id {!!str power_leakage_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str power.leakage.type:*} group {!!str {Leakage Power Breakdown}}}}}}}}}}}} {!!map {id {!!str power_internal} type {!!str section} title {!!str {Internal Details}} hidden {!!true 1} children {!!seq {{!!map {id {!!str power_internal_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str power.internal.type:*} group {!!str {Internal Power Breakdown}}}}}}}}}}}} {!!map {id {!!str power_switching} type {!!str section} title {!!str {Switching Details}} hidden {!!true 1} children {!!seq {{!!map {id {!!str power_switching_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str power.switching.type:*} group {!!str {Switching Power Breakdown}}}}}}}}}}}} {!!map {id {!!str power_clock_gating} type {!!str section} title {!!str {Clock Gating Details}} hidden {!!true 1} children {!!seq {{!!map {id {!!str power_clock_gating_t} type {!!str table} per_snapshot {!!false 0} ar_metric {!!seq {{!!map {metric {!!str power.cg.clock_gates} group {!!str Instances} title {!!str Total}}} {!!map {metric {!!str power.cg.clock_gates.genus} group {!!str Instances} title {!!str Genus}}} {!!map {metric {!!str power.cg.clock_gates.user} group {!!str Instances} title {!!str User}}} {!!map {metric {!!str power.cg.gated_bits} group {!!str {Gated Bits}} title {!!str Total}}} {!!map {metric {!!str power.cg.gated_bits.pct} group {!!str {Gated Bits}} title {!!str Percent}}} {!!map {metric {!!str power.cg.gated_bits.genus} group {!!str {Gated Bits}} title {!!str Genus}}} {!!map {metric {!!str power.cg.gated_bits.user} group {!!str {Gated Bits}} title {!!str User}}} {!!map {metric {!!str power.cg.gated_flops} group {!!str {Gated Flops}} title {!!str Total}}} {!!map {metric {!!str power.cg.gated_flops.pct} group {!!str {Gated Flops}} title {!!str Percent}}} {!!map {metric {!!str power.cg.gated_flops.genus} group {!!str {Gated Flops}} title {!!str Genus}}} {!!map {metric {!!str power.cg.gated_flops.user} group {!!str {Gated Flops}} title {!!str User}}} {!!map {metric {!!str power.cg.ungated_bits} group {!!str {Ungated Bits}} title {!!str Total}}} {!!map {metric {!!str power.cg.ungated_bits.pct} group {!!str {Ungated Bits}} title {!!str Percent}}} {!!map {metric {!!str power.cg.ungated_flops} group {!!str {Ungated Flops}} title {!!str Total}}} {!!map {metric {!!str power.cg.ungated_flops.pct} group {!!str {Ungated Flops}} title {!!str Percent}}} {!!map {metric {!!str power.cg.activity_saving} group {!!str Activity} title {!!str Total}}} {!!map {metric {!!str power.cg.activity_saving.hst} group {!!str Activity} title {!!str Distribution}}}}}}}}}}} {!!map {id {!!str power_per_block} type {!!str section} title {!!str {Per Block}} hidden {!!true 1} children {!!seq {{!!map {id {!!str power_per_block_t} type {!!str table} key {!!map {Block {!!str power.hinst:*}}} ar_metric {!!seq {{!!map {metric {!!str power.hinst:%} title {!!str Total}}} {!!map {metric {!!str power.switching.hinst:%} title {!!str Switching}}} {!!map {metric {!!str power.leakage.hinst:%} title {!!str Leakage}}} {!!map {metric {!!str power.internal.hinst:%} title {!!str Internal}}}}}}}}}}} {!!map {id {!!str emir_emir} type {!!str section} title {!!str {Rail Analysis}} hidden {!!true 1} children {!!seq {{!!map {id {!!str emir_t} type {!!str table} key {!!map {Net {!!str rail.referencevoltage.net:*}}} ar_metric {!!seq {{!!map {metric {!!str rail.thresholdvoltage.net:%} title {!!str T} group {!!str Voltage}}} {!!map {metric {!!str rail.referencevoltage.net:%} title {!!str R} group {!!str Voltage}}} {!!map {metric {!!str rail.gridcap.net:%} title {!!str Grid} group {!!str Cap}}} {!!map {metric {!!str rail.intrinsiccap.net:%} title {!!str Intrinsic} group {!!str Cap}}} {!!map {metric {!!str rail.loadingcap.net:%} title {!!str Loading} group {!!str Cap}}} {!!map {metric {!!str rail.totalcap.net:%} title {!!str Total} group {!!str Cap}}} {!!map {metric {!!str rail.averagedemandcurrent.net:%} title {!!str Avg} group {!!str TC_SUM}}} {!!map {metric {!!str rail.peakdemandcurrent.net:%} title {!!str Peak} group {!!str TC_SUM}}} {!!map {metric {!!str rail.averagesupplycurrent.net:%} title {!!str Avg} group {!!str VC_SUM}}} {!!map {metric {!!str rail.peaksupplycurrent.net:%} title {!!str Peak} group {!!str VC_SUM}}} {!!map {metric {!!str rail.rj.min.net:%} title {!!str Min} group {!!str RJ}}} {!!map {metric {!!str rail.rj.max.net:%} title {!!str Max} group {!!str RJ}}} {!!map {metric {!!str rail.rj.avg.net:%} title {!!str Avg} group {!!str RJ}}} {!!map {metric {!!str rail.rj.violations.net:%} title {!!str Viols} group {!!str RJ}}} {!!map {metric {!!str rail.ir.dynamic.min.net:%} title {!!str Min} group {!!str {Dynamic IR}}}} {!!map {metric {!!str rail.ir.dynamic.max.net:%} title {!!str Max} group {!!str {Dynamic IR}}}} {!!map {metric {!!str rail.ir.dynamic.avg.net:%} title {!!str Avg} group {!!str {Dynamic IR}}}} {!!map {metric {!!str rail.ir.dynamic.violations.net:%} title {!!str Viols} group {!!str {Dynamic IR}}}} {!!map {metric {!!str rail.ir.static.min.net:%} title {!!str Min} group {!!str {Static IR}}}} {!!map {metric {!!str rail.ir.static.max.net:%} title {!!str Max} group {!!str {Static IR}}}} {!!map {metric {!!str rail.ir.static.avg.net:%} title {!!str Avg} group {!!str {Static IR}}}} {!!map {metric {!!str rail.ir.static.violations.net:%} title {!!str Viols} group {!!str {Static IR}}}} {!!map {metric {!!str rail.worstircycle.net:%} title {!!str {Worst IR Cycle}} group {!!str Simulation}}} {!!map {metric {!!str rail.rushcurrent.net:%} title {!!str {Rush Current}} group {!!str Simulation}}} {!!map {metric {!!str rail.wakeuptime.net:%} title {!!str {Wake Up Time}} group {!!str Simulation}}} {!!map {metric {!!str rail.totalpowerswitchesturnedon.net:%} title {!!str {Power Switches On}} group {!!str Simulation}}}}}}} {!!map {id {!!str emir_iv_t} type {!!str table} key {!!map {{Domain | Net} {!!str rail.worstivreport.name:*.type:*}}} ar_metric {!!seq {{!!map {metric {!!str rail.worstivreport.name:%.type:%} title {!!str {IV Reports}}}}}}}} {!!map {id {!!str emir_em} type {!!str section} title {!!str {AC Limit}} children {!!seq {{!!map {id {!!str emir_em_t} type {!!str table} ar_metric {!!seq {{!!map {metric {!!str check.ac_limit.rms} title {!!str RMS} group {!!str {Total Nets}}}} {!!map {metric {!!str check.ac_limit.peak} title {!!str Peak} group {!!str {Total Nets}}}} {!!map {metric {!!str check.ac_limit.avg} title {!!str Avg} group {!!str {Total Nets}}}} {!!map {metric {!!str check.ac_limit.clocknet.rms} title {!!str RMS} group {!!str {Clock Nets}}}} {!!map {metric {!!str check.ac_limit.clocknet.peak} title {!!str Peak} group {!!str {Clock Nets}}}} {!!map {metric {!!str check.ac_limit.clocknet.avg} title {!!str Avg} group {!!str {Clock Nets}}}} {!!map {metric {!!str check.ac_limit.datanet.rms} title {!!str RMS} group {!!str {Data Nets}}}} {!!map {metric {!!str check.ac_limit.datanet.peak} title {!!str Peak} group {!!str {Data Nets}}}} {!!map {metric {!!str check.ac_limit.datanet.avg} title {!!str Avg} group {!!str {Data Nets}}}} {!!map {metric {!!str check.ac_limit.wiresegment.rms} title {!!str RMS} group {!!str {Wire Segments}}}} {!!map {metric {!!str check.ac_limit.wiresegment.peak} title {!!str Peak} group {!!str {Wire Segments}}}} {!!map {metric {!!str check.ac_limit.wiresegment.avg} title {!!str Avg} group {!!str {Wire Segments}}}}}}}}}}}} {!!map {id {!!str emir_frequency_violations} type {!!str section} title {!!str {Frequency Violations}} children {!!seq {{!!map {id {!!str emir_frequency_violations_t} type {!!str table} key {!!map {View {!!str frequency.violations.analysis_view:*}}} ar_metric {!!seq {{!!map {metric {!!str frequency.instances} title {!!str Instances} group {!!str Total}}} {!!map {metric {!!str frequency.violations.analysis_view:%} title {!!str Violations} group {!!str All}}} {!!map {metric {!!str frequency.violations.clock.analysis_view:%} title {!!str Violations} group {!!str Clock}}}}}}}}}}}}}}} {!!map {id {!!str power_cpu} type {!!str section} title {!!str Runtime} children {!!seq {{!!map {id {!!str power_real_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {Real time}} ar_metric {!!seq {{!!map {metric {!!str flow.realtime} title {!!str Real} graph_type {!!str horizontalBar}}}}}}} {!!map {id {!!str power_cpu_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {CPU Runtime}} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} graph_type {!!str horizontalBar}}}}}}}}}}}}}}} {!!map {title {!!str Test} children {!!seq {{!!map {id {!!str test_dashboard_filters} type {!!str section} title {!!str {Run/Snapshot Filters}} hidden {!!true 1} children {!!seq {{!!map {id {!!str test_dashboard_filter} type {!!str run_snapshot_filter}}}}}}} {!!map {id {!!str faults} type {!!str section} title {!!str Summmary} hidden {!!false 0} children {!!seq {{!!map {id {!!str test_design} type {!!str section} title {!!str {Design Statistics}} hidden {!!true 1} children {!!seq {{!!map {id {!!str test_design_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.instances} group {!!str Design} title {!!str Insts}}} {!!map {metric {!!str design.instances.register} group {!!str Design} title {!!str Flops}}} {!!map {metric {!!str design.ports.input} group {!!str Ports} title {!!str Input}}} {!!map {metric {!!str design.ports.output} group {!!str Ports} title {!!str Output}}} {!!map {metric {!!str design.ports.inout} group {!!str Ports} title {!!str Bidi}}}}}}}}}}} {!!map {id {!!str fault_coverage} type {!!str section} title {!!str {Fault Coverage Statistics}} hidden {!!true 1} children {!!seq {{!!map {id {!!str fault_coverage_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Type {!!str atpg.stats:*.atcov}}} ar_metric {!!seq {{!!map {metric {!!str atpg.stats:%.atcov} title {!!str %ATCOV}}} {!!map {metric {!!str atpg.stats:%.total_faults} title {!!str {Total Faults}}}} {!!map {metric {!!str atpg.stats:%.untested_faults} title {!!str {Untested Faults}}}} {!!map {metric {!!str atpg.stats:%.tested_faults} title {!!str {Tested Faults}}}} {!!map {metric {!!str atpg.stats:%.tested_faults} title {!!str {Tested Faults}}}} {!!map {metric {!!str atpg.stats:%.possible_faults} title {!!str {Possible Faults}}}} {!!map {metric {!!str atpg.stats:%.redundant_faults} title {!!str {Redundant Faults}}}}}}}}}}}} {!!map {id {!!str fault_count} type {!!str section} title {!!str {Fault Count}} hidden {!!true 1} children {!!seq {{!!map {id {!!str ignored_faults_t} type {!!str table} flip_axis {!!true 1} per_snapshot {!!true 1} key {!!map {Type {!!str atpg.stats:*.ignored_faults}}} ar_metric {!!seq {{!!map {metric {!!str atpg.stats:%.ignored_faults} title {!!str {Ignored Fault Count}}}}}}}}}}}}}}}} {!!map {id {!!str testmode} type {!!str section} title {!!str Testmodes} hidden {!!false 0} children {!!seq {{!!map {id {!!str testmode_summary} type {!!str section} title {!!str {Testmode Summary}} hidden {!!true 1} children {!!seq {{!!map {id {!!str testmode_summary_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Testmode {!!str tsv.testmode:*.is_opcg}}} ar_metric {!!seq {{!!map {metric {!!str tsv.testmode:%.compression_type} title {!!str {Compression (xor/misr)}}}} {!!map {metric {!!str tsv.testmode:%.is_decomp} title {!!str Decompression}}} {!!map {metric {!!str tsv.testmode:%.is_opcg} title {!!str {Is OPCG}}}} {!!map {metric {!!str tsv.testmode:%.masking_type} title {!!str {Masking Type}}}} {!!map {metric {!!str tsv.testmode:%.is_low_power_gating} title {!!str {Is Low Power Gating}}}} {!!map {metric {!!str tsv.testmode:%.is_lbist} title {!!str {Is Lbist}}}} {!!map {metric {!!str tsv.testmode:%.is_2d_elastic} title {!!str {Is 2D Elastic}}}}}}}}}}}} {!!map {id {!!str testmode_coverage} type {!!str section} title {!!str {Testmode Coverage}} hidden {!!true 1} children {!!seq {{!!map {id {!!str testmode_coverage_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Testmode {!!str atpg.testmode:*.stats:*.atcov}}} ar_metric {!!seq {{!!map {metric {!!str atpg.testmode:%.stats:%.atcov} title {!!str ATCOV}}} {!!map {metric {!!str atpg.testmode:%.stats:%.total_faults} title {!!str #faults}}} {!!map {metric {!!str atpg.testmode:%.stats:%.untested_faults} title {!!str #untested}}} {!!map {metric {!!str atpg.testmode:%.stats:%.tested_faults} title {!!str #tested}}} {!!map {metric {!!str atpg.testmode:%.stats:%.possible_faults} title {!!str #possible}}} {!!map {metric {!!str atpg.testmode:%.stats:%.redundant_faults} title {!!str #redundant}}}}}}}}}}} {!!map {id {!!str global_coverage} type {!!str section} title {!!str {Global Coverage}} hidden {!!true 1} children {!!seq {{!!map {id {!!str testmode_global_coverage_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Testmode {!!str atpg.testmode:*.stats:*.global_atcov}}} ar_metric {!!seq {{!!map {metric {!!str atpg.testmode:%.stats:%.global_atcov} title {!!str ATCOV}}} {!!map {metric {!!str atpg.testmode:%.stats:%.global_total_faults} title {!!str #faults}}} {!!map {metric {!!str atpg.testmode:%.stats:%.global_untested_faults} title {!!str #untested}}} {!!map {metric {!!str atpg.testmode:%.stats:%.global_tested_faults} title {!!str #tested}}} {!!map {metric {!!str atpg.testmode:%.stats:%.global_possible_faults} title {!!str #possible}}} {!!map {metric {!!str atpg.testmode:%.stats:%.global_redundant_faults} title {!!str #redundant}}}}}}}}}}} {!!map {id {!!str scan_chains} type {!!str section} title {!!str {Scan Chain Details}} hidden {!!true 1} children {!!seq {{!!map {id {!!str testmode_scan_chain_details_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Testmode {!!str tsv.testmode:*.num_controllable_chains}}} ar_metric {!!seq {{!!map {metric {!!str tsv.testmode:%.num_controllable_chains} title {!!str {#control chains}}}} {!!map {metric {!!str tsv.testmode:%.num_observable_chains} title {!!str {#observe chains}}}} {!!map {metric {!!str tsv.testmode:%.num_controllable_and_observable_chains} title {!!str {#controllable and observe chains}}}} {!!map {metric {!!str tsv.testmode:%.longest_scan_chain} title {!!str {Longest Scan Chain}}}} {!!map {metric {!!str tsv.testmode:%.shortest_scan_chain} title {!!str {Shortest Scan Chain}}}}}}}}}}}} {!!map {id {!!str pattern_statistics} type {!!str section} title {!!str {Pattern Statistics}} hidden {!!true 1} children {!!seq {{!!map {id {!!str testmode_pattern_statistics_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Testmode {!!str atpg.testmode:*.num_tests}}} ar_metric {!!seq {{!!map {metric {!!str atpg.testmode:%.num_scan_tests} title {!!str {#scan tests}}}} {!!map {metric {!!str atpg.testmode:%.num_scan_delay_tests} title {!!str {#scan delay tests}}}} {!!map {metric {!!str atpg.testmode:%.num_logic_tests} title {!!str {#logic tests}}}} {!!map {metric {!!str atpg.testmode:%.num_logic_delay_tests} title {!!str {#logic delay tests}}}} {!!map {metric {!!str atpg.testmode:%.num_iddq_tests} title {!!str {#iddq tests}}}} {!!map {metric {!!str atpg.testmode:%.num_tests} title {!!str #tests}}}}}}}}}}}}}}} {!!map {id {!!str experiments} type {!!str section} title {!!str Experiments} hidden {!!false 0} children {!!seq {{!!map {id {!!str experiments_global_statistics} type {!!str section} title {!!str {Global Statistics}} hidden {!!true 1} children {!!seq {{!!map {id {!!str global_statistics_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Experiment {!!str atpg.testmode:*.experiment:*.stats:*.global_atcov}}} ar_metric {!!seq {{!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.global_tcov} title {!!str TCOV}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.global_atcov} title {!!str ATCOV}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.global_total_faults} title {!!str #faults}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.global_tested_faults} title {!!str #tested}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.global_untested_faults} title {!!str #untested}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.global_possible_faults} title {!!str #possible}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.global_redundant_faults} title {!!str #redundant}}}}}}}}}}} {!!map {id {!!str experiments_testmode_statistics} type {!!str section} title {!!str {Testmode Statistics}} hidden {!!true 1} children {!!seq {{!!map {id {!!str testmode_statistics_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Experiment {!!str atpg.testmode:*.experiment:*.stats:*.atcov}}} ar_metric {!!seq {{!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.tcov} title {!!str TCOV}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.atcov} title {!!str ATCOV}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.faults} title {!!str #faults}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.tested_faults} title {!!str #tested}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.untested_faults} title {!!str #untested}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.possible_faults} title {!!str #possible}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.stats:%.redundant_faults} title {!!str #redundant}}}}}}}}}}} {!!map {id {!!str experiments_pattern_statistics} type {!!str section} title {!!str {Final Pattern Statistics}} hidden {!!true 1} children {!!seq {{!!map {id {!!str final_patterns_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Experiment {!!str atpg.testmode:*.experiment:*.num_tests}}} ar_metric {!!seq {{!!map {metric {!!str atpg.testmode:%.experiment:%.num_scan_tests} title {!!str {#scan tests}}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.num_scan_delay_tests} title {!!str {#scan delay tests}}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.num_logic_tests} title {!!str {#logic tests}}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.num_logic_delay_tests} title {!!str {#logic delay tests}}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.num_iddq_tests} title {!!str {#iddq tests}}}} {!!map {metric {!!str atpg.testmode:%.experiment:%.num_tests} title {!!str #tests}}}}}}}}}}}}}}}}}}} {!!map {title {!!str Route} children {!!seq {{!!map {id {!!str route_dashboard_filters} type {!!str section} title {!!str {Run/Snapshot Filters}} hidden {!!true 1} children {!!seq {{!!map {id {!!str route_dashboard_filter} type {!!str run_snapshot_filter}}} {!!map {id {!!str route_dashboard_snapshot_navigation} type {!!str snapshot_picker}}}}}}} {!!map {id {!!str route_route} type {!!str section} title {!!str Routing} children {!!seq {{!!map {id {!!str route_image} type {!!str image_plot} ar_metric {!!seq {{!!map {metric {!!str design.floorplan.image}}} {!!map {metric {!!str design.route.drc.image}}}}}}} {!!map {id {!!str route_route_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str route.overflow.horizontal} title {!!str Hor} group {!!str Congestion}}} {!!map {metric {!!str route.overflow.vertical} title {!!str Ver} group {!!str Congestion}}} {!!map {metric {!!str design.congestion.hotspot.max} title {!!str Max} group {!!str Congestion}}} {!!map {metric {!!str design.congestion.hotspot.total} title {!!str Total} group {!!str Congestion}}} {!!map {metric {!!str route.map.*} group {!!str {Congestion Map}}}} {!!map {metric {!!str route.wirelength} title {!!str Wirelength}}} {!!map {metric {!!str route.via.singlecut} title {!!str Single} group {!!str Vias}}} {!!map {metric {!!str route.via.multicut} title {!!str Multi} group {!!str Vias}}} {!!map {metric {!!str route.via} title {!!str Total} group {!!str Vias}}} {!!map {metric {!!str route.shielding.*} group {!!str Shielding}}} {!!map {metric {!!str route.drc} title {!!str Routing} group {!!str {Route DRC}}}} {!!map {metric {!!str route.drc.antenna} title {!!str Antenna} group {!!str {Route DRC}}}} {!!map {metric {!!str check.drc} title {!!str Routing} group {!!str {Check DRC}}}} {!!map {metric {!!str check.drc.antenna} title {!!str Antenna} group {!!str {Check DRC}}}}}}}}}}}} {!!map {id {!!str route_overflow} type {!!str section} title {!!str {Congestion Details}} hidden {!!true 1} children {!!seq {{!!map {id {!!str route_overflow_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str route.overflow} title {!!str Total}}} {!!map {metric {!!str route.overflow.layer:*} group {!!str Layer}}}}}}}}}}} {!!map {id {!!str per_layer_drc} type {!!str section} title {!!str {Per Layer DRC}} hidden {!!true 1} children {!!seq {{!!map {id {!!str per_layer_drc_t} type {!!str table} per_snapshot {!!true 1} key {!!map {Tool {!!str *.drc}}} ar_metric {!!seq {{!!map {metric {!!str %.drc} title {!!str Total}}} {!!map {metric {!!str %.drc.layer:*} group {!!str Layer}}}}}}}}}}} {!!map {id {!!str per_type_drc} type {!!str section} title {!!str {Per Type DRC}} hidden {!!true 1} children {!!seq {{!!map {id {!!str per_type_drc_t} type {!!str table} flip_axis {!!true 1} key {!!map {Tool {!!str *.drc}}} ar_metric {!!seq {{!!map {metric {!!str %.drc} title {!!str Total}}} {!!map {metric {!!str %.drc.type:*} group {!!str Type}}}}}}}}}}} {!!map {id {!!str per_layer_type} type {!!str section} title {!!str {Per Layer & Type DRC}} hidden {!!true 1} children {!!seq {{!!map {id {!!str per_layer_type_t} type {!!str table} flip_axis {!!true 1} key {!!map {Tool {!!str *.drc} Layer {!!str route.drc.layer:*}}} ar_metric {!!seq {{!!map {metric {!!str %.drc.layer:%.type:*} group {!!str Type}}}}}}}}}}} {!!map {id {!!str route_via} type {!!str section} title {!!str {Via Details}} hidden {!!true 1} children {!!seq {{!!map {id {!!str route_via_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str route.via.total} title {!!str Total} group {!!str Vias}}} {!!map {metric {!!str route.via.layer:*} group {!!str Vias}}} {!!map {metric {!!str route.via.singlecut} title {!!str Total} group {!!str {Single Cut Vias}}}} {!!map {metric {!!str route.via.singlecut.percentage} title {!!str Percent} group {!!str {Single Cut Vias}}}} {!!map {metric {!!str route.via.singlecut.layer:*} group {!!str {Single Cut Vias}}}} {!!map {metric {!!str route.via.multicut} title {!!str Total} group {!!str {Multiple Cut Vias}}}} {!!map {metric {!!str route.via.multicut.percentage} title {!!str Percent} group {!!str {Multiple Cut Vias}}}} {!!map {metric {!!str route.via.multicut.layer:*} group {!!str {Multiple Cut Vias}}}}}}}}}}}} {!!map {id {!!str rblkg} type {!!str section} title {!!str {Blockage Details}} hidden {!!true 1} children {!!seq {{!!map {id {!!str rblkg_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.blockages.route.area} title {!!str Total}}} {!!map {metric {!!str design.blockages.route.area.layer:*} group {!!str Layer}}}}}}}}}}} {!!map {id {!!str route_cpu} type {!!str section} title {!!str Runtime} children {!!seq {{!!map {id {!!str route_real_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {Real time}} ar_metric {!!seq {{!!map {metric {!!str flow.realtime} title {!!str Real} graph_type {!!str horizontalBar}}}}}}} {!!map {id {!!str route_cpu_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {CPU Runtime}} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} graph_type {!!str horizontalBar}}}}}}}}}}}}}}} {!!map {title {!!str Flow} children {!!seq {{!!map {id {!!str flow_dashboard_filters} type {!!str section} title {!!str {Run/Snapshot Filters}} hidden {!!true 1} children {!!seq {{!!map {id {!!str flow_dashboard_filter} type {!!str run_snapshot_filter}}} {!!map {id {!!str flow_dashboard_snapshot_navigation} type {!!str snapshot_picker}}}}}}} {!!map {id {!!str flow_log_flow} type {!!str section} title {!!str {Log and Flow Info}} children {!!seq {{!!map {id {!!str flow_log_flow_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str flow.user} title {!!str User}}} {!!map {metric {!!str flow.log} title {!!str {Log File}}}} {!!map {metric {!!str flow.run_directory} title {!!str {Run Dir}}}} {!!map {metric {!!str flow.run_tag} title {!!str {Run Tag}}}} {!!map {metric {!!str flow.step.tcl} title {!!str {Step TCL}}}}}}}}}}}} {!!map {id {!!str fv} type {!!str section} title {!!str {Formal Verification}} hidden {!!true 1} children {!!seq {{!!map {id {!!str fv_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str fv.result} title {!!str Result}}} {!!map {metric {!!str fv.points:*} group {!!str Points}}}}}}}}}}} {!!map {id {!!str flow_config} type {!!str section} title {!!str {Non-Default Root Config Options}} children {!!seq {{!!map {id {!!str flow_config_t} type {!!str dict_table} metric {!!map {metric {!!str flow.root_config}}}}}}}}} {!!map {id {!!str flow_cpu} type {!!str section} title {!!str Runtime} children {!!seq {{!!map {id {!!str flow_machine_t} type {!!str table} flip_axis {!!true 1} ar_metric {!!seq {{!!map {metric {!!str flow.machine.hostname} title {!!str Host}}} {!!map {metric {!!str flow.machine.cpu.model} title {!!str Model}}} {!!map {metric {!!str flow.machine.cpu.frequency} title {!!str Cpu}}} {!!map {metric {!!str flow.machine.cpu.number} title {!!str Cpus}}} {!!map {metric {!!str flow.machine.os} title {!!str OS}}} {!!map {metric {!!str flow.machine.memory.free} title {!!str Free} group {!!str Memory}}} {!!map {metric {!!str flow.machine.memory.total} title {!!str Total} group {!!str Memory}}} {!!map {metric {!!str flow.machine.swap.free} title {!!str Free} group {!!str Swap}}} {!!map {metric {!!str flow.machine.swap.total} title {!!str Total} group {!!str Swap}}}}}}} {!!map {id {!!str flow_runtime_t} type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} group {!!str Runtime}}} {!!map {metric {!!str flow.cputime.total} title {!!str {Total CPU}} group {!!str Runtime}}} {!!map {metric {!!str flow.realtime} title {!!str Wall} group {!!str Runtime}}} {!!map {metric {!!str flow.realtime.total} title {!!str {Total Wall}} group {!!str Runtime}}} {!!map {metric {!!str flow.machine.load} title {!!str Load} group {!!str Machine}}} {!!map {metric {!!str flow.memory} title {!!str Resi+Virtual} group {!!str Memory}}} {!!map {metric {!!str flow.memory.resident} title {!!str Resi} group {!!str Memory}}} {!!map {metric {!!str flow.memory.resident.peak} title {!!str {Peak Resi}} group {!!str Memory}}}}}}} {!!map {id {!!str flow_real_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {Real time}} ar_metric {!!seq {{!!map {metric {!!str flow.realtime} title {!!str Real} graph_type {!!str horizontalBar}}}}}}} {!!map {id {!!str flow_cpu_t} type {!!str graph} stacked {!!true 1} invert_axes {!!true 1} total_value_label {!!true 1} title {!!str {CPU Runtime}} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} graph_type {!!str horizontalBar}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} html {HUDDLE {!!seq {{!!map {Summary {!!seq {{!!map {summary_flow {!!map {type {!!str header} title {!!str {}}}}}} {!!map {summary_flow_t {!!map {type {!!str vertical_table} auto_hide {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.name} title {!!str Design}}} {!!map {metric {!!str flow.tool_list} title {!!str Tools}}} {!!map {metric {!!str flow.template.type} title {!!str Flow}}} {!!map {metric {!!str flow.template.feature_enabled} title {!!str {Enabled features}}}} {!!map {metric {!!str flow.run_tag} title {!!str Tag}}} {!!map {metric {!!str flow.machine} title {!!str {Run host}}}} {!!map {metric {!!str flow.run_directory} title {!!str {Run directory}}}} {!!map {metric {!!str flow.last_child_snapshot} title {!!str {Last step}}}} {!!map {metric {!!str flowtool.status} title {!!str {Flowtool status}}}}}}}}}} {!!map {design_image {!!map {type {!!str image_plot} ar_metric {!!seq {{!!map {metric {!!str design.floorplan.image} title {!!str {Design Display}}}}}}}}}} {!!map {summary_qor {!!map {type {!!str header} title {!!str {Stylus QOR summary}}}}}} {!!map {summary_qor_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.setup.wns} title {!!str WNS} group {!!str {Setup (all)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.tns} title {!!str TNS} group {!!str {Setup (all)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.feps} title {!!str FEPS} group {!!str {Setup (all)}}}} {!!map {metric {!!str timing.setup.wns.path_group:reg2reg} title {!!str WNS} group {!!str {Setup (reg2reg)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.tns.path_group:reg2reg} title {!!str TNS} group {!!str {Setup (reg2reg)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.feps.path_group:reg2reg} title {!!str FEPS} group {!!str {Setup (reg2reg)}}}} {!!map {metric {!!str timing.hold.wns} title {!!str WNS} group {!!str {Hold (all)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.tns} title {!!str TNS} group {!!str {Hold (all)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.feps} title {!!str FEPS} group {!!str {Hold (all)}}}} {!!map {metric {!!str timing.hold.wns.path_group:reg2reg} title {!!str WNS} group {!!str {Hold (reg2reg)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.tns.path_group:reg2reg} title {!!str TNS} group {!!str {Hold (reg2reg)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.feps.path_group:reg2reg} title {!!str FEPS} group {!!str {Hold (reg2reg)}}}} {!!map {metric {!!str timing.drv.max_tran.total} title {!!str Tran} group {!!str DRV} link_file_metric {!!str timing.drv.report_file}}} {!!map {metric {!!str timing.drv.max_cap.total} title {!!str Load} group {!!str DRV} link_file_metric {!!str timing.drv.report_file}}} {!!map {metric {!!str timing.drv.max_fanout.total} title {!!str Fanout} group {!!str DRV} link_file_metric {!!str timing.drv.report_file}}} {!!map {metric {!!str clock.instances.total} title {!!str Insts} group {!!str Clock} link_table {!!str clock_phys}}} {!!map {metric {!!str clock.area.total} title {!!str Area} group {!!str Clock} link_table {!!str clock_phys}}} {!!map {metric {!!str design.density} title {!!str Density} group {!!str Design}}} {!!map {metric {!!str design.instances.logical} title {!!str Insts} group {!!str Design} link_table {!!str physical_physical}}} {!!map {metric {!!str design.area.logical} title {!!str Area} group {!!str Design} link_table {!!str physical_physical}}} {!!map {metric {!!str power.leakage} title {!!str Leakage} group {!!str Power} link_table {!!str power_power}}} {!!map {metric {!!str route.drc} title {!!str DRC} group {!!str Route} link_table {!!str route_route}}} {!!map {metric {!!str route.wirelength} title {!!str WL} group {!!str Route} link_table {!!str route_route}}} {!!map {metric {!!str messages} title {!!str Errors} group {!!str Tool}}} {!!map {metric {!!str flow.realtime} title {!!str Wall} group {!!str Tool} link_table {!!str flow_cpu}}} {!!map {metric {!!str flow.memory} title {!!str Memory} group {!!str Tool} link_table {!!str flow_cpu}}}}}}}}} {!!map {summary_cpu {!!map {type {!!str header} title {!!str {Stylus runtime summary}}}}}} {!!map {summary_cpu_t {!!map {type {!!str cpu}}}}}}}}} {!!map {Timing {!!seq {{!!map {timing_setup {!!map {type {!!str header} title {!!str {Setup Timing}}}}}} {!!map {setup_tns_histogram {!!map {type {!!str histogram} metric {!!map {metric {!!str timing.setup.histogram} title {!!str {Setup TNS (Per Group)}}}} show_label_every {!!int 10}}}}} {!!map {setup_tns_view_histogram {!!map {type {!!str histogram} metric {!!map {metric {!!str timing.setup.histogram.views} title {!!str {Setup TNS (Per View)}}}} show_label_every {!!int 10}}}}} {!!map {timing_setup_t {!!map {type {!!str table} per_snapshot {!!true 1} key {!!map {Group {!!str timing.setup.wns.path_group:*} View {!!str timing.setup.wns.analysis_view:*}}} collapsible_key {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.setup.type} title {!!str Type}}} {!!map {metric {!!str timing.setup.wns.path_group:%.analysis_view:%} title {!!str WNS} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.tns.path_group:%.analysis_view:%} title {!!str TNS} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.feps.path_group:%.analysis_view:%} title {!!str FEPS}}}}}}}}} {!!map {timing_hold {!!map {type {!!str header} title {!!str {Hold Timing}}}}}} {!!map {hold_tns_histogram {!!map {type {!!str histogram} metric {!!map {metric {!!str timing.hold.histogram} title {!!str {Hold TNS (Per Group)}}}} show_label_every {!!int 10}}}}} {!!map {hold_tns_view_histogram {!!map {type {!!str histogram} metric {!!map {metric {!!str timing.hold.histogram.views} title {!!str {Hold TNS (Per View)}}}} show_label_every {!!int 10}}}}} {!!map {timing_hold_t {!!map {type {!!str table} per_snapshot {!!true 1} key {!!map {Group {!!str timing.hold.wns.path_group:*} View {!!str timing.hold.wns.analysis_view:*}}} collapsible_key {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.hold.type} title {!!str Type}}} {!!map {metric {!!str timing.hold.wns.path_group:%.analysis_view:%} title {!!str WNS} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.tns.path_group:%.analysis_view:%} title {!!str TNS} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.feps.path_group:%.analysis_view:%} title {!!str FEPS}}}}}}}}} {!!map {timing_drv {!!map {type {!!str header} title {!!str {Design Rule Violations}}}}}} {!!map {timing_drv_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.drv.max_tran.total} title {!!str Total} group {!!str Tran}}} {!!map {metric {!!str timing.drv.max_tran.worst} title {!!str Worst} group {!!str Tran} link_file_metric {!!str timing.drv.report_file}}} {!!map {metric {!!str timing.drv.max_cap.total} title {!!str Total} group {!!str Cap}}} {!!map {metric {!!str timing.drv.max_cap.worst} title {!!str Worst} group {!!str Cap}}} {!!map {metric {!!str timing.drv.max_fanout.total} title {!!str Total} group {!!str Fanout}}} {!!map {metric {!!str timing.drv.max_fanout.worst} title {!!str Worst} group {!!str Fanout}}} {!!map {metric {!!str timing.drv.max_length.total} title {!!str Total} group {!!str Length}}} {!!map {metric {!!str timing.drv.max_length.worst} title {!!str Worst} group {!!str Length}}} {!!map {metric {!!str timing.si.glitches} title {!!str Glitches} group {!!str SI}}} {!!map {metric {!!str timing.si.noise} title {!!str Noise} group {!!str SI}}}}}}}}} {!!map {timing_double_clocking {!!map {type {!!str collapse_header} nested {!!map {timing_double_clocking_t {!!map {type {!!str table} per_snapshot {!!false 0} key {!!map {View {!!str timing.si.double_clocking.analysis_view:*}}} ar_metric {!!seq {{!!map {metric {!!str timing.si.double_clocking.frequency_violations.analysis_view:%} title {!!str {Frequency Violations}}}} {!!map {metric {!!str timing.si.double_clocking.report_file.analysis_view:%} title {!!str {Report File}}}}}}}}}} hidden {!!true 1} title {!!str {Double Clocking}}}}}} {!!map {timing_min_pulse_width {!!map {type {!!str collapse_header} nested {!!map {timing_min_pulse_width_t {!!map {type {!!str table} per_snapshot {!!false 0} key {!!map {View {!!str timing.min_pulse_width.endpoints.wns.analysis_view:*} Clock {!!str timing.min_pulse_width.endpoints.wns.analysis_view:%.clock:*} {View | Clock} {!!str timing.min_pulse_width.endpoints.wns.analysis_view:*.clock:*}}} collapsible_key {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.setup.type} title {!!str Type}}} {!!map {metric {!!str timing.min_pulse_width.endpoints.wns.analysis_view:%.clock:%} group {!!str Endpoints} title {!!str WNS}}} {!!map {metric {!!str timing.min_pulse_width.endpoints.tns.analysis_view:%.clock:%} group {!!str Endpoints} title {!!str TNS}}} {!!map {metric {!!str timing.min_pulse_width.endpoints.feps.analysis_view:%.clock:%} group {!!str Endpoints} title {!!str FEPS}}} {!!map {metric {!!str timing.min_pulse_width.clocktree.wns.analysis_view:%.clock:%} group {!!str Clocktree} title {!!str WNS}}} {!!map {metric {!!str timing.min_pulse_width.clocktree.tns.analysis_view:%.clock:%} group {!!str Clocktree} title {!!str TNS}}} {!!map {metric {!!str timing.min_pulse_width.clocktree.feps.analysis_view:%.clock:%} group {!!str Clocktree} title {!!str FEPS}}}}} hide_footers {!!true 1} hide_graph_footers {!!true 1}}}}} hidden {!!true 1} title {!!str {Min Pulse Width Timing}}}}}} {!!map {timing_cpu {!!map {type {!!str header} title {!!str Runtime}}}}} {!!map {timing_cpu_t {!!map {type {!!str cpu}}}}}}}}} {!!map {Clock {!!seq {{!!map {clock_phys {!!map {type {!!str header} title {!!str Physical}}}}} {!!map {clock_phys_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.instances.total} title {!!str #Total} group {!!str Instances}}} {!!map {metric {!!str {^.*\.(?!total$)[^\.]+$}} title {!!str { }} group {!!str Instances} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.instances.buffer} title {!!str #Buffers} group {!!str Instances}}} {!!map {metric {!!str clock.instances.inverter} title {!!str #Inverters} group {!!str Instances}}} {!!map {metric {!!str clock.instances.clkgate} title {!!str {#Clock Gates}} group {!!str Instances}}} {!!map {metric {!!str clock.instances.nonicg} title {!!str {#Non Integrated}} group {!!str Instances}}} {!!map {metric {!!str clock.instances.logic} title {!!str #Logic} group {!!str Instances}}} {!!map {metric {!!str clock.area.total} title {!!str Total} group {!!str Area}}} {!!map {metric {!!str {^.*\.(?!total$)[^\.]+$}} title {!!str { }} group {!!str Area} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.area.buffer} title {!!str Buffers} group {!!str Area}}} {!!map {metric {!!str clock.area.inverter} title {!!str Inverters} group {!!str Area}}} {!!map {metric {!!str clock.area.clkgate} title {!!str {Clock Gates}} group {!!str Area}}} {!!map {metric {!!str clock.area.nonicg} title {!!str {Non Integrated}} group {!!str Area}}} {!!map {metric {!!str clock.area.logic} title {!!str Logic} group {!!str Area}}} {!!map {metric {!!str clock.nets.length.total} title {!!str {Tot Clk Net Length}} group {!!str Nets}}}}}}}}} {!!map {clock_phys_detail {!!map {type {!!str header} title {!!str {}}}}}} {!!map {clock_phys_cell_insts {!!map {type {!!str collapse_header} nested {!!map {clock_phys_cell_insts_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.instances.total} title {!!str #Total}}} {!!map {title {!!str { }} group {!!str #Buffers} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.instances_distribution.buffer.base_cell:*} group {!!str #Buffers}}} {!!map {title {!!str { }} group {!!str #Inverters} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.instances_distribution.inverter.base_cell:*} group {!!str #Inverters}}} {!!map {title {!!str { }} group {!!str {#Clock Gates}} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.instances_distribution.clkgate.base_cell:*} group {!!str {#Clock Gates}}}} {!!map {title {!!str { }} group {!!str {#Non Integrated}} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.instances_distribution.nonicg.base_cell:*} group {!!str {#Non Integrated}}}} {!!map {title {!!str { }} group {!!str #Logic} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.instances_distribution.logic.base_cell:*} group {!!str #Logic}}}}}}}}} hidden {!!true 1} title {!!str {Per Cell Instances}}}}}} {!!map {clock_phys_cell_area {!!map {type {!!str collapse_header} nested {!!map {clock_phys_cell_area_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.area.total} title {!!str Total}}} {!!map {title {!!str { }} group {!!str Buffers} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.area_distribution.buffer.base_cell:*} group {!!str Buffers}}} {!!map {title {!!str { }} group {!!str Inverters} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.area_distribution.inverter.base_cell:*} group {!!str Inverters}}} {!!map {title {!!str { }} group {!!str {Clock Gates}} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.area_distribution.clkgate.base_cell:*} group {!!str {Clock Gates}}}} {!!map {title {!!str { }} group {!!str {Non Integrated}} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.area_distribution.nonicg.base_cell:*} group {!!str {Non Integrated}}}} {!!map {title {!!str { }} group {!!str Logic} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.area_distribution.logic.base_cell:*} group {!!str Logic}}}}}}}}} hidden {!!true 1} title {!!str {Per Cell Area}}}}}} {!!map {clock_phys_creator {!!map {type {!!str collapse_header} nested {!!map {clock_phys_creator_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {title {!!str { }} group {!!str Buffers} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.instances.buffer.creator.*} group {!!str Buffers}}} {!!map {title {!!str { }} group {!!str Inverters} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.instances.inverter.creator.*} group {!!str Inverters}}}}}}}}} hidden {!!true 1} title {!!str {Cell Creators}}}}}} {!!map {clock_phys_nets {!!map {type {!!str collapse_header} nested {!!map {clock_phys_nets_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.nets.length.total} title {!!str Total} group {!!str Nets}}} {!!map {metric {!!str {^.*\.(?!total$)[^\.]+$}} title {!!str { }} group {!!str Nets} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.nets.length.top} title {!!str Top} group {!!str Nets}}} {!!map {metric {!!str clock.nets.length.trunk} title {!!str Trunk} group {!!str Nets}}} {!!map {metric {!!str clock.nets.length.leaf} title {!!str Leaf} group {!!str Nets}}}}}}}}} hidden {!!true 1} title {!!str Nets}}}}} {!!map {clock_phys_cap {!!map {type {!!str header} title {!!str {}}}}}} {!!map {clock_phys_cap_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {title {!!str { }} group {!!str Wire} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.capacitance.wire.top} title {!!str Top} group {!!str Wire}}} {!!map {metric {!!str clock.capacitance.wire.trunk} title {!!str Trunk} group {!!str Wire}}} {!!map {metric {!!str clock.capacitance.wire.leaf} title {!!str Leaf} group {!!str Wire}}} {!!map {title {!!str { }} group {!!str Gate} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.capacitance.gate.top} title {!!str Top} group {!!str Gate}}} {!!map {metric {!!str clock.capacitance.gate.trunk} title {!!str Trunk} group {!!str Gate}}} {!!map {metric {!!str clock.capacitance.gate.leaf} title {!!str Leaf} group {!!str Gate}}} {!!map {title {!!str { }} group {!!str Total} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.capacitance.total.top} title {!!str Top} group {!!str Total}}} {!!map {metric {!!str clock.capacitance.total.trunk} title {!!str Trunk} group {!!str Total}}} {!!map {metric {!!str clock.capacitance.total.leaf} title {!!str Leaf} group {!!str Total}}} {!!map {metric {!!str clock.capacitance.sink.*} group {!!str Sink}}}}}}}}} {!!map {clock_phys_advanced {!!map {type {!!str header} title {!!str {}}}}}} {!!map {clock_phys_buffer_constraint {!!map {type {!!str collapse_header} nested {!!map {clock_phys_buffer_constraint_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.buffer_depth_constraint.skew_group:*.*}}}}}}}}} hidden {!!true 1} title {!!str {Buffer Depth Constraints}}}}}} {!!map {clock_phys_stage_constraint {!!map {type {!!str collapse_header} nested {!!map {clock_phys_stage_constraint_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.stage_depth_constraint.*}}}}}}}}} hidden {!!true 1} title {!!str {Stage Depth Constraints}}}}}} {!!map {clock_drv {!!map {type {!!str header} title {!!str DRV}}}}} {!!map {clock_drv_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str {clock.drv.nets.remaining transition.count}} title {!!str Count} group {!!str {Remaining Transition}}}} {!!map {metric {!!str {clock.drv.nets.remaining transition.max}} title {!!str Max} group {!!str {Remaining Transition}}}} {!!map {metric {!!str {clock.drv.nets.unfixable transition.count}} title {!!str Count} group {!!str {Unfixable Transition}}}} {!!map {metric {!!str {clock.drv.nets.unfixable transition.max}} title {!!str Max} group {!!str {Unfixable Transition}}}} {!!map {metric {!!str clock.drv.nets.capacitance.count} title {!!str Count} group {!!str Capacitance}}} {!!map {metric {!!str clock.drv.nets.capacitance.max} title {!!str Max} group {!!str Capacitance}}} {!!map {metric {!!str clock.drv.nets.resistance.count} title {!!str Count} group {!!str Resistance}}} {!!map {metric {!!str clock.drv.nets.resistance.max} title {!!str Max} group {!!str Resistance}}} {!!map {metric {!!str clock.drv.nets.length.count} title {!!str Count} group {!!str Length}}} {!!map {metric {!!str clock.drv.nets.length.max} title {!!str Max} group {!!str Length}}} {!!map {metric {!!str clock.drv.nets.fanout.count} title {!!str Count} group {!!str Fanout}}} {!!map {metric {!!str clock.drv.nets.fanout.max} title {!!str Max} group {!!str Fanout}}}}}}}}} {!!map {clock_drv_advanced {!!map {type {!!str header} title {!!str {}}}}}} {!!map {clock_drv_detail {!!map {type {!!str collapse_header} nested {!!map {clock_drv_detail_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str {clock.drv.nets.remaining transition.*}} group {!!str {Remaining Transition}}}} {!!map {metric {!!str {clock.drv.nets.unfixable transition.*}} group {!!str {Unfixable Transition}}}} {!!map {metric {!!str clock.drv.nets.capacitance.*} group {!!str Capacitance}}} {!!map {metric {!!str clock.drv.nets.resistance.*} group {!!str Resistance}}} {!!map {metric {!!str clock.drv.nets.length.*} group {!!str Length}}} {!!map {metric {!!str clock.drv.nets.fanout.*} group {!!str Fanout}}}}}}}}} hidden {!!true 1} title {!!str Detail}}}}} {!!map {clock_drv_halo {!!map {type {!!str collapse_header} nested {!!map {clock_drv_halo_t {!!map {type {!!str table} auto_hide {!!true 1} key {!!map {{Clock Tree} {!!str clock.halo.clock_tree:*.count}}} ar_metric {!!seq {{!!map {metric {!!str clock.halo.clock_tree:%.count} group {!!str Count}}} {!!map {metric {!!str clock.halo.clock_tree:%.violations} group {!!str Violations}}}}}}}}} hidden {!!true 1} title {!!str {Clock Halo}}}}}} {!!map {clock_drv_tran_tar {!!map {type {!!str header} title {!!str Transition}}}}} {!!map {clock_drv_tran_tar_t {!!map {type {!!str table} auto_hide {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.transition.target.primary_half_corner.top.*} group {!!str {Top Transition Target Stats}}}} {!!map {metric {!!str clock.transition.target.primary_half_corner.trunk.*} group {!!str {Trunk Transition Target Stats}}}} {!!map {metric {!!str clock.transition.target.primary_half_corner.leaf.*} group {!!str {Leaf Transition Target Stats}}}}}}}}}} {!!map {clock_drv_tran {!!map {type {!!str header} title {!!str {}}}}}} {!!map {clock_drv_tran_tar_early {!!map {type {!!str collapse_header} nested {!!map {clock_drv_tran_tar_early_t {!!map {type {!!str table} auto_hide {!!true 1} key {!!map {{Corner | Clock Tree} {!!str clock.transition.target.delay_corner:*.early.top.clock_tree:*}}} ar_metric {!!seq {{!!map {metric {!!str clock.transition.auto_target.delay_corner:%.early.clock_tree:%} group {!!str {Auto Target}}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.early.top.clock_tree:%} group {!!str Top}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.early.trunk.clock_tree:%} group {!!str Trunk}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.early.leaf.clock_tree:%} group {!!str Leaf}}}}}}}}} hidden {!!true 1} title {!!str {Per corner/clock tree transition Target (early)}}}}}} {!!map {clock_drv_tran_tar_late {!!map {type {!!str collapse_header} nested {!!map {clock_drv_tran_tar_late_t {!!map {type {!!str table} auto_hide {!!true 1} key {!!map {{Corner | Clock Tree} {!!str clock.transition.target.delay_corner:*.late.top.clock_tree:*}}} ar_metric {!!seq {{!!map {metric {!!str clock.transition.auto_target.delay_corner:%.late.clock_tree:%} group {!!str {Auto Target}}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.late.top.clock_tree:%} group {!!str Top}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.late.trunk.clock_tree:%} group {!!str Trunk}}} {!!map {metric {!!str clock.transition.target.delay_corner:%.late.leaf.clock_tree:%} group {!!str Leaf}}}}}}}}} hidden {!!true 1} title {!!str {Per corner/clock tree transition Target (late)}}}}}} {!!map {clock_drv_tran_top {!!map {type {!!str collapse_header} nested {!!map {clock_drv_tran_top_t {!!map {type {!!str table} per_snapshot {!!true 1} key {!!map {Target {!!str clock.transition.primary_half_corner.top.*.max}}} ar_metric {!!seq {{!!map {metric {!!str clock.transition.primary_half_corner.top.%.*}}}}}}}}} hidden {!!true 1} title {!!str {Top Transition Distribution}}}}}} {!!map {clock_drv_tran_trunk {!!map {type {!!str collapse_header} nested {!!map {clock_drv_tran_trunk_t {!!map {type {!!str table} per_snapshot {!!true 1} key {!!map {Target {!!str clock.transition.primary_half_corner.trunk.*.max}}} ar_metric {!!seq {{!!map {metric {!!str clock.transition.primary_half_corner.trunk.%.*}}}}}}}}} hidden {!!true 1} title {!!str {Trunk Transition Distribution}}}}}} {!!map {clock_drv_tran_leaf {!!map {type {!!str collapse_header} nested {!!map {clock_drv_tran_leaf_t {!!map {type {!!str table} per_snapshot {!!true 1} key {!!map {Target {!!str clock.transition.primary_half_corner.leaf.*.max}}} ar_metric {!!seq {{!!map {metric {!!str clock.transition.primary_half_corner.leaf.%.*}}}}}}}}} hidden {!!true 1} title {!!str {Leaf Transition Distribution}}}}}} {!!map {clock_skew {!!map {type {!!str header} title {!!str Latency/Skew}}}}} {!!map {clock_skew_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.latency.primary_reporting_skew_group.primary_half_corner.*} group {!!str Latency}}} {!!map {metric {!!str clock.skew.primary_reporting_skew_group.primary_half_corner.*} group {!!str Skew}}} {!!map {metric {!!str clock.skew.primary_reporting_skew_group.primary_half_corner.skew_band.*} group {!!str {Skew Band}}}}}}}}}} {!!map {clock_skew_advanced {!!map {type {!!str header} title {!!str {}}}}}} {!!map {clock_skew_early_detail {!!map {type {!!str collapse_header} nested {!!map {clock_skew_early_detail_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} key {!!map {{Skew Group | Corner} {!!str clock.skew.skew_group:*.delay_corner:*.early.total}}} ar_metric {!!seq {{!!map {metric {!!str clock.latency.skew_group:%.delay_corner:%.early.*} group {!!str Latency}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.total} title {!!str Total}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.gate} title {!!str Gate}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.wire} title {!!str Wire}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.target} title {!!str Target}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.target_met} title {!!str {Target Met}}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.early.skew_band.*} group {!!str {Skew band}}}}}}}}}} hidden {!!true 1} title {!!str {Per group/corner (early)}}}}}} {!!map {clock_skew_late_detail {!!map {type {!!str collapse_header} nested {!!map {clock_skew_late_detail_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} key {!!map {{Skew Group | Corner} {!!str clock.skew.skew_group:*.delay_corner:*.late.total}}} ar_metric {!!seq {{!!map {metric {!!str clock.latency.skew_group:%.delay_corner:%.late.*} group {!!str Latency}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.total} title {!!str Total} group {!!str Skew}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.gate} title {!!str Gate} group {!!str Skew}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.wire} title {!!str Wire} group {!!str Skew}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.target} title {!!str Target} group {!!str Skew}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.target_met} title {!!str {Target Met}} group {!!str Skew}}} {!!map {metric {!!str clock.skew.skew_group:%.delay_corner:%.late.skew_band.*} group {!!str {Skew band}}}}}}}}}} hidden {!!true 1} title {!!str {Per group/corner (late)}}}}}} {!!map {cts_cpu {!!map {type {!!str header} title {!!str Runtime}}}}} {!!map {cts_cpu_t {!!map {type {!!str cpu}}}}}}}}} {!!map {Design {!!seq {{!!map {physical_physical {!!map {type {!!str header} title {!!str Physical}}}}} {!!map {physical_physical_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.density} title {!!str Density}}} {!!map {metric {!!str design.instances.logical} title {!!str {Logical instances}}}} {!!map {metric {!!str design.area.logical} title {!!str {Logical area}}}} {!!map {metric {!!str design.instances} title {!!str {Total instances}}}} {!!map {metric {!!str design.area} title {!!str {Total area}}}} {!!map {metric {!!str design.blockages.place.area} title {!!str {Blocked area}}}}}}}}}} {!!map {physical_physical_advanced {!!map {type {!!str header} title {!!str {}}}}}} {!!map {physical_physical_insts {!!map {type {!!str collapse_header} nested {!!map {physical_physical_insts_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {title {!!str { }} group {!!str {Standard Cell}} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str design.instances.register} title {!!str register} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.icg} title {!!str icg} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.latch} title {!!str latch} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.buffer} title {!!str buffer} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.inverter} title {!!str inverter} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.combinatorial} title {!!str combo} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.instances.std_cell} title {!!str total} group {!!str {Total (SC)}}}} {!!map {metric {!!str design.instances.macro} title {!!str macro} group {!!str Other}}} {!!map {metric {!!str design.instances.physical} title {!!str physical} group {!!str Other}}} {!!map {metric {!!str design.instances.io} title {!!str io} group {!!str Other}}} {!!map {metric {!!str design.instances.blackbox} title {!!str blackbox} group {!!str Other}}} {!!map {metric {!!str design.instances.power_switch} title {!!str power_switch} group {!!str MSV}}} {!!map {metric {!!str design.instances.isolation} title {!!str isolation} group {!!str MSV}}} {!!map {metric {!!str design.instances.level_shifter} title {!!str level_shifter} group {!!str MSV}}} {!!map {metric {!!str design.instances.always_on} title {!!str always_on} group {!!str MSV}}} {!!map {metric {!!str design.instances} title {!!str total} group {!!str Total}}}}}}}}} hidden {!!true 1} title {!!str {Instances Detail}}}}}} {!!map {physical_physical_area {!!map {type {!!str collapse_header} nested {!!map {physical_physical_area_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {title {!!str { }} group {!!str {Standard Cell}} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str design.area.register} title {!!str register} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.icg} title {!!str icg} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.latch} title {!!str latch} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.buffer} title {!!str buffer} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.inverter} title {!!str inverter} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.combinatorial} title {!!str combo} group {!!str {Standard Cell}}}} {!!map {metric {!!str design.area.std_cell} title {!!str total} group {!!str {Total (SC)}}}} {!!map {metric {!!str design.area.macro} title {!!str macro} group {!!str Other}}} {!!map {metric {!!str design.area.physical} title {!!str physical} group {!!str Other}}} {!!map {metric {!!str design.area.io} title {!!str io} group {!!str Other}}} {!!map {metric {!!str design.area.blackbox} title {!!str blackbox} group {!!str Other}}} {!!map {metric {!!str design.area.power_switch} title {!!str power_switch} group {!!str MSV}}} {!!map {metric {!!str design.area.isolation} title {!!str isolation} group {!!str MSV}}} {!!map {metric {!!str design.area.level_shifter} title {!!str level_shifter} group {!!str MSV}}} {!!map {metric {!!str design.area.always_on} title {!!str always_on} group {!!str MSV}}} {!!map {metric {!!str design.area} title {!!str total} group {!!str Total}}}}}}}}} hidden {!!true 1} title {!!str {Area Detail}}}}}} {!!map {physical_physical_multibit {!!map {type {!!str collapse_header} nested {!!map {physical_physical_multibit_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.multibit.*} group {!!str Multibit}}}}}}}}} hidden {!!true 1} title {!!str {Multibit Detail}}}}}} {!!map {physical_physical_vth {!!map {type {!!str collapse_header} nested {!!map {physical_per_vth_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} key {!!map {Group {!!str design.instances.vth:*}}} ar_metric {!!seq {{!!map {metric {!!str design.instances.vth:%} group {!!str Instances} title {!!str Total}}} {!!map {metric {!!str design.instances.vth:%.ratio} group {!!str Instances} title {!!str Ratio}}} {!!map {metric {!!str design.area.vth:%} group {!!str Area} title {!!str Total}}} {!!map {metric {!!str design.area.vth:%.ratio} group {!!str Area} title {!!str Ratio}}}}}}}}} hidden {!!true 1} title {!!str {Vth Detail}}}}}} {!!map {physical_physical_hinst {!!map {type {!!str collapse_header} nested {!!map {physical_per_hinst_t {!!map {type {!!str table} auto_hide {!!true 1} key {!!map {Block {!!str design.instances.hinst:*}}} ar_metric {!!seq {{!!map {metric {!!str design.instances.hinst:%} title {!!str Instances} graph_type {!!str treemap}}} {!!map {metric {!!str design.area.hinst:%} title {!!str Area} graph_type {!!str treemap}}}}} hierarchical_separator {!!str /}}}}} hidden {!!true 1} title {!!str Per-Block}}}}} {!!map {physical_check_place {!!map {type {!!str header} title {!!str {Check Place}}}}}} {!!map {physical_check_place_t {!!map {type {!!str vertical_table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str check.place.*}}}}}}}}} {!!map {physical_cpu {!!map {type {!!str header} title {!!str Runtime}}}}} {!!map {physical_cpu_t {!!map {type {!!str cpu}}}}}}}}} {!!map {Power {!!seq {{!!map {power_power {!!map {type {!!str header} title {!!str Power}}}}} {!!map {power_power_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str power} title {!!str Total} group {!!str {Whole Design}}}} {!!map {metric {!!str {^power\..*$}} title {!!str { }} group {!!str {Whole Design}} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str power.leakage} title {!!str Leakage} group {!!str {Whole Design}}}} {!!map {metric {!!str power.internal} title {!!str Internal} group {!!str {Whole Design}}}} {!!map {metric {!!str power.switching} title {!!str Switching} group {!!str {Whole Design}}}} {!!map {metric {!!str power.clock} title {!!str {Total Clock Power}}}}}}}}}} {!!map {power_advanced {!!map {type {!!str header} title {!!str {}}}}}} {!!map {power_leakage {!!map {type {!!str collapse_header} nested {!!map {power_leakage_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str power.leakage.type:*} group {!!str {Leakage Power Breakdown}}}}}}}}}} hidden {!!true 1} title {!!str {Leakage Details}}}}}} {!!map {power_internal {!!map {type {!!str collapse_header} nested {!!map {power_internal_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str power.internal.type:*} group {!!str {Internal Power Breakdown}}}}}}}}}} hidden {!!true 1} title {!!str {Internal Details}}}}}} {!!map {power_switching {!!map {type {!!str collapse_header} nested {!!map {power_switching_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str power.switching.type:*} group {!!str {Switching Power Breakdown}}}}}}}}}} hidden {!!true 1} title {!!str {Switching Details}}}}}} {!!map {power_per_block {!!map {type {!!str collapse_header} nested {!!map {power_per_block_t {!!map {type {!!str table} auto_hide {!!true 1} key {!!map {Block {!!str power.hinst:*}}} ar_metric {!!seq {{!!map {metric {!!str power.hinst:%} title {!!str Total} graph_type {!!str treemap}}} {!!map {metric {!!str power.switching.hinst:%} title {!!str Switching} graph_type {!!str treemap}}} {!!map {metric {!!str power.leakage.hinst:%} title {!!str Leakage} graph_type {!!str treemap}}} {!!map {metric {!!str power.internal.hinst:%} title {!!str Internal} graph_type {!!str treemap}}}}} hierarchical_separator {!!str /}}}}} hidden {!!true 1} title {!!str {Per Block}}}}}} {!!map {power_cpu {!!map {type {!!str header} title {!!str Runtime}}}}} {!!map {power_cpu_t {!!map {type {!!str cpu}}}}}}}}} {!!map {Route {!!seq {{!!map {route_route {!!map {type {!!str header} title {!!str Routing}}}}} {!!map {route_image {!!map {type {!!str image_plot} ar_metric {!!seq {{!!map {metric {!!str design.floorplan.image} title {!!str {Design Display}}}} {!!map {metric {!!str design.route.drc.image} title {!!str {Route DRC}}}}}}}}}} {!!map {route_route_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str route.overflow.horizontal} title {!!str Hor} group {!!str Congestion}}} {!!map {metric {!!str route.overflow.vertical} title {!!str Ver} group {!!str Congestion}}} {!!map {metric {!!str design.congestion.hotspot.max} title {!!str Max} group {!!str Congestion}}} {!!map {metric {!!str design.congestion.hotspot.total} title {!!str Total} group {!!str Congestion}}} {!!map {metric {!!str route.map.*} group {!!str {Congestion Map}}}} {!!map {metric {!!str route.wirelength} title {!!str Wirelength}}} {!!map {metric {!!str route.via.singlecut} title {!!str Single} group {!!str Vias}}} {!!map {metric {!!str route.via.multicut} title {!!str Multi} group {!!str Vias}}} {!!map {metric {!!str route.via} title {!!str Total} group {!!str Vias}}} {!!map {metric {!!str route.shielding.*} group {!!str Shielding}}} {!!map {metric {!!str route.drc.antenna} title {!!str Antenna} group {!!str {Route DRC}}}} {!!map {metric {!!str route.drc} title {!!str Routing} group {!!str {Route DRC}}}} {!!map {metric {!!str check.drc.antenna} title {!!str Antenna} group {!!str {Check DRC}} link_file_metric {!!str check.antenna.report_file}}} {!!map {metric {!!str check.drc} title {!!str Routing} group {!!str {Check DRC}} link_file_metric {!!str check.drc.report_file}}}}}}}}} {!!map {route_advanced {!!map {type {!!str header} title {!!str {}}}}}} {!!map {route_overflow {!!map {type {!!str collapse_header} nested {!!map {route_overflow_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str route.overflow} title {!!str Total}}} {!!map {title {!!str { }} group {!!str Layer} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str route.overflow.layer:*} group {!!str Layer}}}}}}}}} hidden {!!true 1} title {!!str {Congestion Details}}}}}} {!!map {per_layer_drc {!!map {type {!!str collapse_header} nested {!!map {per_layer_drc_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} key {!!map {Tool {!!str *.drc}}} ar_metric {!!seq {{!!map {metric {!!str %.drc} title {!!str Total}}} {!!map {title {!!str { }} group {!!str Layer} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str %.drc.layer:*} group {!!str Layer}}}}} hide_footers {!!true 1} hide_graph_footers {!!true 1}}}}} hidden {!!true 1} title {!!str {Per Layer DRC}}}}}} {!!map {per_type_drc {!!map {type {!!str collapse_header} nested {!!map {per_type_drc_t {!!map {type {!!str vertical_table} auto_hide {!!true 1} key {!!map {Tool {!!str *.drc}}} ar_metric {!!seq {{!!map {metric {!!str %.drc} title {!!str Total}}} {!!map {title {!!str { }} group {!!str Type} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str %.drc.type:*} group {!!str Type}}}}} hide_footers {!!true 1} hide_graph_footers {!!true 1}}}}} hidden {!!true 1} title {!!str {Per Type DRC}}}}}} {!!map {per_layer_type {!!map {type {!!str collapse_header} nested {!!map {per_layer_type_t {!!map {type {!!str vertical_table} key {!!map {Tool {!!str *.drc} Layer {!!str route.drc.layer:*}}} ar_metric {!!seq {{!!map {metric {!!str %.drc.layer:%.type:*} group {!!str Type}}}}} hide_footers {!!true 1} hide_graph_footers {!!true 1}}}}} hidden {!!true 1} title {!!str {Per Layer & Type DRC}}}}}} {!!map {route_via {!!map {type {!!str collapse_header} nested {!!map {route_via_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str route.via.total} title {!!str Total} group {!!str Vias}}} {!!map {metric {!!str {^.*layer:.*$}} title {!!str { }} group {!!str Vias} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str route.via.layer:*} group {!!str Vias}}} {!!map {metric {!!str route.via.singlecut} title {!!str Total} group {!!str {Single Cut Vias}}}} {!!map {metric {!!str route.via.singlecut.percentage} title {!!str Percent} group {!!str {Single Cut Vias}}}} {!!map {metric {!!str {^.*layer:.*$}} title {!!str { }} group {!!str {Single Cut Vias}} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str route.via.singlecut.layer:*} group {!!str {Single Cut Vias}}}} {!!map {metric {!!str route.via.multicut} title {!!str Total} group {!!str {Multiple Cut Vias}}}} {!!map {metric {!!str route.via.multicut.percentage} title {!!str Percent} group {!!str {Multiple Cut Vias}}}} {!!map {metric {!!str {^.*layer:.*$}} title {!!str { }} group {!!str {Multiple Cut Vias}} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str route.via.multicut.layer:*} group {!!str {Multiple Cut Vias}}}}}}}}}} hidden {!!true 1} title {!!str {Via Details}}}}}} {!!map {rblkg {!!map {type {!!str collapse_header} nested {!!map {rblkg_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.blockages.route.area} title {!!str Total}}} {!!map {title {!!str { }} group {!!str Layer} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str design.blockages.route.area.layer:*} group {!!str Layer}}}}}}}}} hidden {!!true 1} title {!!str {Blockage Details}}}}}} {!!map {route_cpu {!!map {type {!!str header} title {!!str Runtime}}}}} {!!map {route_cpu_t {!!map {type {!!str cpu}}}}}}}}} {!!map {Flow {!!seq {{!!map {flow_log_flow {!!map {type {!!str header} title {!!str {Log and Flow Info}}}}}} {!!map {flow_log_flow_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str flow.user} title {!!str User}}} {!!map {metric {!!str flow.log} title {!!str {Log File}} link_file_metric {!!str flow.log}}} {!!map {metric {!!str flow.run_directory} title {!!str {Run Dir}}}} {!!map {metric {!!str flow.run_tag} title {!!str {Run Tag}}}} {!!map {metric {!!str flow.step.tcl} title {!!str {Step TCL}}}}}} hide_footers {!!true 1} hide_graph_footers {!!true 1}}}}} {!!map {flow_config {!!map {type {!!str header} title {!!str {Non-Default Root Config Options}}}}}} {!!map {flow_config_t {!!map {type {!!str dict_table} metric {!!map {metric {!!str flow.root_config}}}}}}} {!!map {flow_cpu {!!map {type {!!str header} title {!!str Runtime}}}}} {!!map {flow_machine_t {!!map {type {!!str vertical_table} hide_footers {!!true 1} hide_graph_footers {!!true 1} ar_metric {!!seq {{!!map {metric {!!str flow.machine.hostname} title {!!str Host}}} {!!map {metric {!!str flow.machine.cpu.model} title {!!str Model}}} {!!map {metric {!!str flow.machine.cpu.frequency} title {!!str Cpu}}} {!!map {metric {!!str flow.machine.cpu.number} title {!!str Cpus}}} {!!map {metric {!!str flow.machine.os} title {!!str OS}}} {!!map {metric {!!str flow.machine.memory.free} title {!!str Free} group {!!str Memory}}} {!!map {metric {!!str flow.machine.memory.total} title {!!str Total} group {!!str Memory}}} {!!map {metric {!!str flow.machine.swap.free} title {!!str Free} group {!!str Swap}}} {!!map {metric {!!str flow.machine.swap.total} title {!!str Total} group {!!str Swap}}}}}}}}} {!!map {flow_runtime_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} group {!!str Runtime}}} {!!map {metric {!!str flow.cputime.total} title {!!str {Total CPU}} group {!!str Runtime}}} {!!map {metric {!!str flow.realtime} title {!!str Wall} group {!!str Runtime}}} {!!map {metric {!!str flow.realtime.total} title {!!str {Total Wall}} group {!!str Runtime}}} {!!map {metric {!!str flow.machine.load} title {!!str Load} group {!!str Machine}}} {!!map {metric {!!str flow.memory} title {!!str Resi+Virtual} group {!!str Memory}}} {!!map {metric {!!str flow.memory.resident} title {!!str Resi} group {!!str Memory}}} {!!map {metric {!!str flow.memory.resident.peak} title {!!str {Peak Resi}} group {!!str Memory}}}}}}}}} {!!map {flow_cpu_t {!!map {type {!!str cpu}}}}}}}}}}}} excel {HUDDLE {!!seq {{!!map {Summary {!!seq {{!!map {summary_flow {!!map {type {!!str header} title {!!str {}}}}}} {!!map {summary_flow_t {!!map {type {!!str vertical_table} auto_hide {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.name} title {!!str Design}}} {!!map {metric {!!str flow.tool_list} title {!!str Tools}}} {!!map {metric {!!str flow.template.type} title {!!str Flow}}} {!!map {metric {!!str flow.template.feature_enabled} title {!!str {Enabled features}}}} {!!map {metric {!!str flow.run_tag} title {!!str Tag}}} {!!map {metric {!!str flow.machine} title {!!str {Run host}}}} {!!map {metric {!!str flow.run_directory} title {!!str {Run directory}}}} {!!map {metric {!!str flow.last_child_snapshot} title {!!str {Last step}}}}}}}}}} {!!map {summary_qor {!!map {type {!!str header} title {!!str {Stylus QOR summary}}}}}} {!!map {summary_qor_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.setup.wns} title {!!str WNS} group {!!str {Setup (all)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.tns} title {!!str TNS} group {!!str {Setup (all)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.feps} title {!!str FEPS} group {!!str {Setup (all)}}}} {!!map {metric {!!str timing.setup.wns.path_group:reg2reg} title {!!str WNS} group {!!str {Setup (reg2reg)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.tns.path_group:reg2reg} title {!!str TNS} group {!!str {Setup (reg2reg)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.feps.path_group:reg2reg} title {!!str FEPS} group {!!str {Setup (reg2reg)}}}} {!!map {metric {!!str timing.hold.wns} title {!!str WNS} group {!!str {Hold (all)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.tns} title {!!str TNS} group {!!str {Hold (all)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.feps} title {!!str FEPS} group {!!str {Hold (all)}}}} {!!map {metric {!!str timing.hold.wns.path_group:reg2reg} title {!!str WNS} group {!!str {Hold (reg2reg)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.tns.path_group:reg2reg} title {!!str TNS} group {!!str {Hold (reg2reg)}} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.feps.path_group:reg2reg} title {!!str FEPS} group {!!str {Hold (reg2reg)}}}} {!!map {metric {!!str timing.drv.max_tran.total} title {!!str Tran} group {!!str DRV} link_file_metric {!!str timing.drv.report_file}}} {!!map {metric {!!str timing.drv.max_cap.total} title {!!str Load} group {!!str DRV} link_file_metric {!!str timing.drv.report_file}}} {!!map {metric {!!str timing.drv.max_fanout.total} title {!!str Fanout} group {!!str DRV} link_file_metric {!!str timing.drv.report_file}}} {!!map {metric {!!str clock.instances.total} title {!!str Insts} group {!!str Clock} link_table {!!str clock_phys}}} {!!map {metric {!!str clock.area.total} title {!!str Area} group {!!str Clock} link_table {!!str clock_phys}}} {!!map {metric {!!str design.density} title {!!str Density} group {!!str Design}}} {!!map {metric {!!str design.instances.logical} title {!!str Insts} group {!!str Design} link_table {!!str physical_physical}}} {!!map {metric {!!str design.area.logical} title {!!str Area} group {!!str Design} link_table {!!str physical_physical}}} {!!map {metric {!!str power.leakage} title {!!str Leakage} group {!!str Power} link_table {!!str power_power}}} {!!map {metric {!!str route.drc} title {!!str DRC} group {!!str Route} link_table {!!str route_route}}} {!!map {metric {!!str route.wirelength} title {!!str WL} group {!!str Route} link_table {!!str route_route}}} {!!map {metric {!!str messages} title {!!str Errors} group {!!str Tool}}} {!!map {metric {!!str flow.realtime} title {!!str Wall} group {!!str Tool} link_table {!!str flow_cpu}}} {!!map {metric {!!str flow.memory} title {!!str Memory} group {!!str Tool} link_table {!!str flow_cpu}}}}}}}}}}}}} {!!map {Timing {!!seq {{!!map {timing_setup {!!map {type {!!str header} title {!!str {Setup Timing}}}}}} {!!map {timing_setup_t {!!map {type {!!str table} per_snapshot {!!true 1} key {!!map {Group {!!str timing.setup.wns.path_group:*} View {!!str timing.setup.wns.analysis_view:*}}} collapsible_key {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.setup.wns.path_group:%.analysis_view:%} title {!!str WNS} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.tns.path_group:%.analysis_view:%} title {!!str TNS} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.setup.feps.path_group:%.analysis_view:%} title {!!str FEPS}}}}}}}}} {!!map {timing_hold {!!map {type {!!str header} title {!!str {Hold Timing}}}}}} {!!map {timing_hold_t {!!map {type {!!str table} per_snapshot {!!true 1} key {!!map {Group {!!str timing.hold.wns.path_group:*} View {!!str timing.hold.wns.analysis_view:*}}} collapsible_key {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.hold.wns.path_group:%.analysis_view:%} title {!!str WNS} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.tns.path_group:%.analysis_view:%} title {!!str TNS} navigation {!!map {view {!!str default_timing} tab {!!str Timing}}}}} {!!map {metric {!!str timing.hold.feps.path_group:%.analysis_view:%} title {!!str FEPS}}}}}}}}} {!!map {timing_drv {!!map {type {!!str header} title {!!str {Design Rule Violations}}}}}} {!!map {timing_drv_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.drv.max_tran.total} title {!!str Total} group {!!str Tran}}} {!!map {metric {!!str timing.drv.max_tran.worst} title {!!str Worst} group {!!str Tran} link_file_metric {!!str timing.drv.report_file}}} {!!map {metric {!!str timing.drv.max_cap.total} title {!!str Total} group {!!str Cap}}} {!!map {metric {!!str timing.drv.max_cap.worst} title {!!str Worst} group {!!str Cap}}} {!!map {metric {!!str timing.drv.max_fanout.total} title {!!str Total} group {!!str Fanout}}} {!!map {metric {!!str timing.drv.max_fanout.worst} title {!!str Worst} group {!!str Fanout}}} {!!map {metric {!!str timing.drv.max_length.total} title {!!str Total} group {!!str Length}}} {!!map {metric {!!str timing.drv.max_length.worst} title {!!str Worst} group {!!str Length}}} {!!map {metric {!!str timing.si.glitches} title {!!str Glitches} group {!!str SI}}} {!!map {metric {!!str timing.si.noise} title {!!str Noise} group {!!str SI}}}}}}}}}}}}} {!!map {Clock {!!seq {{!!map {clock_phys {!!map {type {!!str header} title {!!str Physical}}}}} {!!map {clock_phys_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.instances.total} title {!!str #Total} group {!!str Instances}}} {!!map {metric {!!str {^.*\.(?!total$)[^\.]+$}} title {!!str { }} group {!!str Instances} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.instances.buffer} title {!!str #Buffers} group {!!str Instances}}} {!!map {metric {!!str clock.instances.inverter} title {!!str #Inverters} group {!!str Instances}}} {!!map {metric {!!str clock.instances.clkgate} title {!!str {#Clock Gates}} group {!!str Instances}}} {!!map {metric {!!str clock.instances.nonicg} title {!!str {#Non Integrated}} group {!!str Instances}}} {!!map {metric {!!str clock.instances.logic} title {!!str #Logic} group {!!str Instances}}} {!!map {metric {!!str clock.area.total} title {!!str Total} group {!!str Area}}} {!!map {metric {!!str {^.*\.(?!total$)[^\.]+$}} title {!!str { }} group {!!str Area} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.area.buffer} title {!!str Buffers} group {!!str Area}}} {!!map {metric {!!str clock.area.inverter} title {!!str Inverters} group {!!str Area}}} {!!map {metric {!!str clock.area.clkgate} title {!!str {Clock Gates}} group {!!str Area}}} {!!map {metric {!!str clock.area.nonicg} title {!!str {Non Integrated}} group {!!str Area}}} {!!map {metric {!!str clock.area.logic} title {!!str Logic} group {!!str Area}}} {!!map {metric {!!str clock.nets.length.total} title {!!str {Tot Clk Net Length}} group {!!str Nets}}}}}}}}} {!!map {clock_phys_cap {!!map {type {!!str header} title {!!str {}}}}}} {!!map {clock_phys_cap_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {title {!!str { }} group {!!str Wire} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.capacitance.wire.top} title {!!str Top} group {!!str Wire}}} {!!map {metric {!!str clock.capacitance.wire.trunk} title {!!str Trunk} group {!!str Wire}}} {!!map {metric {!!str clock.capacitance.wire.leaf} title {!!str Leaf} group {!!str Wire}}} {!!map {title {!!str { }} group {!!str Gate} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.capacitance.gate.top} title {!!str Top} group {!!str Gate}}} {!!map {metric {!!str clock.capacitance.gate.trunk} title {!!str Trunk} group {!!str Gate}}} {!!map {metric {!!str clock.capacitance.gate.leaf} title {!!str Leaf} group {!!str Gate}}} {!!map {title {!!str { }} group {!!str Total} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str clock.capacitance.total.top} title {!!str Top} group {!!str Total}}} {!!map {metric {!!str clock.capacitance.total.trunk} title {!!str Trunk} group {!!str Total}}} {!!map {metric {!!str clock.capacitance.total.leaf} title {!!str Leaf} group {!!str Total}}} {!!map {metric {!!str clock.capacitance.sink.*} group {!!str Sink}}}}}}}}} {!!map {clock_drv {!!map {type {!!str header} title {!!str DRV}}}}} {!!map {clock_drv_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str {clock.drv.nets.remaining transition.count}} title {!!str Count} group {!!str {Remaining Transition}}}} {!!map {metric {!!str {clock.drv.nets.remaining transition.max}} title {!!str Max} group {!!str {Remaining Transition}}}} {!!map {metric {!!str {clock.drv.nets.unfixable transition.count}} title {!!str Count} group {!!str {Unfixable Transition}}}} {!!map {metric {!!str {clock.drv.nets.unfixable transition.max}} title {!!str Max} group {!!str {Unfixable Transition}}}} {!!map {metric {!!str clock.drv.nets.capacitance.count} title {!!str Count} group {!!str Capacitance}}} {!!map {metric {!!str clock.drv.nets.capacitance.max} title {!!str Max} group {!!str Capacitance}}} {!!map {metric {!!str clock.drv.nets.resistance.count} title {!!str Count} group {!!str Resistance}}} {!!map {metric {!!str clock.drv.nets.resistance.max} title {!!str Max} group {!!str Resistance}}} {!!map {metric {!!str clock.drv.nets.length.count} title {!!str Count} group {!!str Length}}} {!!map {metric {!!str clock.drv.nets.length.max} title {!!str Max} group {!!str Length}}} {!!map {metric {!!str clock.drv.nets.fanout.count} title {!!str Count} group {!!str Fanout}}} {!!map {metric {!!str clock.drv.nets.fanout.max} title {!!str Max} group {!!str Fanout}}}}}}}}} {!!map {clock_drv_tran_tar {!!map {type {!!str header} title {!!str Transition}}}}} {!!map {clock_drv_tran_tar_t {!!map {type {!!str table} auto_hide {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.transition.target.primary_half_corner.top.*} group {!!str {Top Transition Target Stats}}}} {!!map {metric {!!str clock.transition.target.primary_half_corner.trunk.*} group {!!str {Trunk Transition Target Stats}}}} {!!map {metric {!!str clock.transition.target.primary_half_corner.leaf.*} group {!!str {Leaf Transition Target Stats}}}}}}}}}} {!!map {clock_skew {!!map {type {!!str header} title {!!str Latency/Skew}}}}} {!!map {clock_skew_t {!!map {type {!!str table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str clock.latency.primary_reporting_skew_group.primary_half_corner.*} group {!!str Latency}}} {!!map {metric {!!str clock.skew.primary_reporting_skew_group.primary_half_corner.*} group {!!str Skew}}} {!!map {metric {!!str clock.skew.primary_reporting_skew_group.primary_half_corner.skew_band.*} group {!!str {Skew Band}}}}}}}}}}}}}} {!!map {Design {!!seq {{!!map {physical_physical {!!map {type {!!str header} title {!!str Physical}}}}} {!!map {physical_physical_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str design.density} title {!!str Density}}} {!!map {metric {!!str design.instances.logical} title {!!str {Logical instances}}}} {!!map {metric {!!str design.area.logical} title {!!str {Logical area}}}} {!!map {metric {!!str design.instances} title {!!str {Total instances}}}} {!!map {metric {!!str design.area} title {!!str {Total area}}}} {!!map {metric {!!str design.blockages.place.area} title {!!str {Blocked area}}}}}}}}}} {!!map {physical_check_place {!!map {type {!!str header} title {!!str {Check Place}}}}}} {!!map {physical_check_place_t {!!map {type {!!str vertical_table} auto_hide {!!true 1} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str check.place.*}}}}}}}}}}}}} {!!map {Power {!!seq {{!!map {power_power {!!map {type {!!str header} title {!!str Power}}}}} {!!map {power_power_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str power} title {!!str Total} group {!!str {Whole Design}}}} {!!map {metric {!!str {^power\..*$}} title {!!str { }} group {!!str {Whole Design}} graph_type {!!str none} renderer {!!str histogram}}} {!!map {metric {!!str power.leakage} title {!!str Leakage} group {!!str {Whole Design}}}} {!!map {metric {!!str power.internal} title {!!str Internal} group {!!str {Whole Design}}}} {!!map {metric {!!str power.switching} title {!!str Switching} group {!!str {Whole Design}}}} {!!map {metric {!!str power.clock} title {!!str {Total Clock Power}}}}}}}}}}}}}} {!!map {Route {!!seq {{!!map {route_route {!!map {type {!!str header} title {!!str Routing}}}}} {!!map {route_route_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str route.overflow.horizontal} title {!!str Hor} group {!!str Congestion}}} {!!map {metric {!!str route.overflow.vertical} title {!!str Ver} group {!!str Congestion}}} {!!map {metric {!!str design.congestion.hotspot.max} title {!!str Max} group {!!str Congestion}}} {!!map {metric {!!str design.congestion.hotspot.total} title {!!str Total} group {!!str Congestion}}} {!!map {metric {!!str route.map.*} group {!!str {Congestion Map}}}} {!!map {metric {!!str route.wirelength} title {!!str Wirelength}}} {!!map {metric {!!str route.via.singlecut} title {!!str Single} group {!!str Vias}}} {!!map {metric {!!str route.via.multicut} title {!!str Multi} group {!!str Vias}}} {!!map {metric {!!str route.via} title {!!str Total} group {!!str Vias}}} {!!map {metric {!!str route.drc.antenna} title {!!str Antenna} group {!!str {Route DRC}}}} {!!map {metric {!!str route.drc} title {!!str Total} group {!!str {Route DRC}}}} {!!map {metric {!!str route.shielding.*} group {!!str {Shielding Nets}}}} {!!map {metric {!!str check.drc.antenna} title {!!str Antenna} group {!!str {Check DRC}} link_file_metric {!!str check.antenna.report_file}}} {!!map {metric {!!str check.drc} title {!!str Total} group {!!str {Check DRC}} link_file_metric {!!str check.drc.report_file}}}}}}}}}}}}} {!!map {Flow {!!seq {{!!map {flow_log_flow {!!map {type {!!str header} title {!!str {Log and Flow Info}}}}}} {!!map {flow_log_flow_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str flow.user} title {!!str User}}} {!!map {metric {!!str flow.log} title {!!str {Log File}} link_file_metric {!!str flow.log}}} {!!map {metric {!!str flow.run_directory} title {!!str {Run Dir}}}} {!!map {metric {!!str flow.run_tag} title {!!str {Run Tag}}}} {!!map {metric {!!str flow.step.tcl} title {!!str {Step TCL}}}}}} hide_footers {!!true 1} hide_graph_footers {!!true 1}}}}} {!!map {flow_cpu {!!map {type {!!str header} title {!!str Runtime}}}}} {!!map {flow_machine_t {!!map {type {!!str vertical_table} hide_footers {!!true 1} hide_graph_footers {!!true 1} ar_metric {!!seq {{!!map {metric {!!str flow.machine.hostname} title {!!str Host}}} {!!map {metric {!!str flow.machine.cpu.model} title {!!str Model}}} {!!map {metric {!!str flow.machine.cpu.frequency} title {!!str Cpu}}} {!!map {metric {!!str flow.machine.cpu.number} title {!!str Cpus}}} {!!map {metric {!!str flow.machine.os} title {!!str OS}}} {!!map {metric {!!str flow.machine.memory.free} title {!!str Free} group {!!str Memory}}} {!!map {metric {!!str flow.machine.memory.total} title {!!str Total} group {!!str Memory}}} {!!map {metric {!!str flow.machine.swap.free} title {!!str Free} group {!!str Swap}}} {!!map {metric {!!str flow.machine.swap.total} title {!!str Total} group {!!str Swap}}}}}}}}} {!!map {flow_runtime_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str flow.cputime} title {!!str CPU} group {!!str Runtime}}} {!!map {metric {!!str flow.cputime.total} title {!!str {Total CPU}} group {!!str Runtime}}} {!!map {metric {!!str flow.realtime} title {!!str Wall} group {!!str Runtime}}} {!!map {metric {!!str flow.realtime.total} title {!!str {Total Wall}} group {!!str Runtime}}} {!!map {metric {!!str flow.memory} title {!!str Resi+Virtual} group {!!str Memory}}} {!!map {metric {!!str flow.memory.resident} title {!!str Resident} group {!!str Memory}}} {!!map {metric {!!str flow.memory.resident.peak} title {!!str {Peak Resident}} group {!!str Memory}}}}}}}}}}}}}}}} text {HUDDLE {!!seq {{!!map {{} {!!seq {{!!map {summary_qor_t {!!map {type {!!str table} per_snapshot {!!true 1} ar_metric {!!seq {{!!map {metric {!!str timing.setup.wns} title {!!str WNS}}} {!!map {metric {!!str timing.setup.tns} title {!!str TNS}}} {!!map {metric {!!str timing.setup.feps} title {!!str FEPS}}} {!!map {metric {!!str timing.setup.wns.path_group:reg2reg} title {!!str WNS_R2R}}} {!!map {metric {!!str timing.setup.tns.path_group:reg2reg} title {!!str TNS_R2R}}} {!!map {metric {!!str timing.setup.feps.path_group:reg2reg} title {!!str FEPS_R2R}}} {!!map {metric {!!str timing.drv.max_tran.total} title {!!str Tran} group {!!str DRV(T)}}} {!!map {metric {!!str timing.drv.max_cap.total} title {!!str Load} group {!!str DRV(C)}}} {!!map {metric {!!str power.leakage} title {!!str Leakage} group {!!str POWER(L)}}} {!!map {metric {!!str design.density} title {!!str Density} group {!!str UTIL}}} {!!map {metric {!!str design.instances.logical} title {!!str INSTS}}} {!!map {metric {!!str design.area.logical} title {!!str AREA}}} {!!map {metric {!!str route.drc} title {!!str DRC}}} {!!map {metric {!!str flow.realtime} title {!!str WALL}}}}}}}}}}}}}}}}}
+set pegDefaultResScaleFactor 1
+set pegDetailResScaleFactor 1
+set pegEnableDualViewForTQuantus 1
+get_message -id GLOBAL-100 -suppress
+get_message -id GLOBAL-100 -suppress
+set report_inactive_arcs_format {from to when arc_type sense reason}
+set spgUnflattenIlmInCheckPlace 2
+get_message -id GLOBAL-100 -suppress
+get_message -id GLOBAL-100 -suppress
+set timing_remove_data_path_pessimism_min_slack_threshold -1.70141e+38
+set defStreamOutCheckUncolored false
+set init_verilog_tolerate_port_mismatch 0
+set load_netlist_ignore_undefined_cell 1
+init_design
+setDesignMode -process 45
+floorPlan -site CoreSite -b 0.0 0.0 800.0 800.0 250.0 250.0 550.0 550.0 290.0 290 510 509.41
+clearGlobalNets
+globalNetConnect VDD -type pgpin -pin VDD -instanceBasename * -hierarchicalInstance {} -verbose
+globalNetConnect VSS -type pgpin -pin VSS -instanceBasename * -hierarchicalInstance {} -verbose
+globalNetConnect VDD -type tiehi -pin VDD -instanceBasename * -hierarchicalInstance {} -verbose
+globalNetConnect VSS -type tielo -pin VSS -instanceBasename * -hierarchicalInstance {} -verbose
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer Metal11 -stacked_via_bottom_layer Metal1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {VDD VSS} -type core_rings -follow core -layer {top Metal1 bottom Metal1 left Metal2 right Metal2} -width {top 10 bottom 10 left 10 right 10} -spacing {top 5 bottom 5 left 5 right 5} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 1 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+setSrouteMode -viaConnectToShape { noshape }
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1(1) Metal3(3) } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1(1) Metal11(11) } -nets { VDD VSS } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { Metal1(1) Metal11(11) }
+setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer Metal11 -stacked_via_bottom_layer Metal1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe -nets {VDD VSS} -layer Metal8 -direction vertical -width 0.3 -spacing 0.16 -number_of_sets 6 -start_from left -start_offset 15 -stop_offset 15 -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit Metal11 -padcore_ring_bottom_layer_limit Metal1 -block_ring_top_layer_limit Metal11 -block_ring_bottom_layer_limit Metal1 -use_wire_group 0 -snap_wire_center_to_grid None
+setPlaceMode -congEffort high -timingDriven 1 -clkGateAware 1 -powerDriven 0 -ignoreScan 1 -reorderScan 1 -ignoreSpare 0 -placeIOPins 1 -moduleAwareSpare 0 -preserveRouting 1 -rmAffectedRouting 1 -checkRoute 1 -honorSoftBlockage true -swapEEQ 0
+setPlaceMode -fp false
+place_design
+globalNetConnect VDD -type tiehi -pin VDD -instanceBasename * -hierarchicalInstance {} -verbose
+globalNetConnect VSS -type tielo -pin VSS -instanceBasename * -hierarchicalInstance {} -verbose
+checkPlace
+checkPinAssignment -report_violating_pin
+setAnalysisMode -analysisType onChipVariation
+timeDesign -preCTS -prefix preCTS_setup
+timeDesign -preCTS -prefix preCTS_hold -hold
+set_ccopt_property buffer_cells {CLKBUFX2 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20}
+set_ccopt_property inverter_cells {CLKINVX1 CLKINVX2     CLKINVX3 CLKINVX4 CLKINVX6 CLKINVX8 CLKINVX12 CLKINVX16 CLKINVX20}
+set_ccopt_property target_max_trans 100ps
+create_ccopt_clock_tree_spec -file risc_v_Pad_Frame_ccopt_CTS.spec
+get_ccopt_clock_trees
+ccopt_check_and_flatten_ilms_no_restore
+set_ccopt_property cts_is_sdc_clock_root -pin clk true
+create_ccopt_clock_tree -name My_CLK -source clk -no_skew_group
+set_ccopt_property target_max_trans_sdc -delay_corner DelayCorner_WC -early -clock_tree My_CLK 0.400
+set_ccopt_property target_max_trans_sdc -delay_corner DelayCorner_WC -late -clock_tree My_CLK 0.550
+set_ccopt_property target_max_trans_sdc -delay_corner DelayCorner_BC -early -clock_tree My_CLK 0.400
+set_ccopt_property target_max_trans_sdc -delay_corner DelayCorner_BC -late -clock_tree My_CLK 0.550
+set_ccopt_property source_latency -delay_corner DelayCorner_WC -early -rise -clock_tree My_CLK 0.200
+set_ccopt_property source_latency -delay_corner DelayCorner_WC -early -fall -clock_tree My_CLK 0.150
+set_ccopt_property source_latency -delay_corner DelayCorner_WC -late -rise -clock_tree My_CLK 0.200
+set_ccopt_property source_latency -delay_corner DelayCorner_WC -late -fall -clock_tree My_CLK 0.150
+set_ccopt_property source_latency -delay_corner DelayCorner_BC -early -rise -clock_tree My_CLK 0.200
+set_ccopt_property source_latency -delay_corner DelayCorner_BC -early -fall -clock_tree My_CLK 0.150
+set_ccopt_property source_latency -delay_corner DelayCorner_BC -late -rise -clock_tree My_CLK 0.200
+set_ccopt_property source_latency -delay_corner DelayCorner_BC -late -fall -clock_tree My_CLK 0.150
+set_ccopt_property clock_period -pin clk 10
+set_ccopt_property timing_connectivity_info {}
+create_ccopt_skew_group -name My_CLK/ConstraintMode_WC -sources clk -auto_sinks
+set_ccopt_property include_source_latency -skew_group My_CLK/ConstraintMode_WC true
+set_ccopt_property target_insertion_delay -skew_group My_CLK/ConstraintMode_WC 0.600
+set_ccopt_property extracted_from_clock_name -skew_group My_CLK/ConstraintMode_WC My_CLK
+set_ccopt_property extracted_from_constraint_mode_name -skew_group My_CLK/ConstraintMode_WC ConstraintMode_WC
+set_ccopt_property extracted_from_delay_corners -skew_group My_CLK/ConstraintMode_WC DelayCorner_WC
+create_ccopt_skew_group -name My_CLK/ConstraintMode_BC -sources clk -auto_sinks
+set_ccopt_property include_source_latency -skew_group My_CLK/ConstraintMode_BC true
+set_ccopt_property extracted_from_clock_name -skew_group My_CLK/ConstraintMode_BC My_CLK
+set_ccopt_property extracted_from_constraint_mode_name -skew_group My_CLK/ConstraintMode_BC ConstraintMode_BC
+set_ccopt_property extracted_from_delay_corners -skew_group My_CLK/ConstraintMode_BC DelayCorner_BC
+check_ccopt_clock_tree_convergence
+get_ccopt_property auto_design_state_for_ilms
+ccopt_design
+timeDesign -postCTS -prefix postCTS_setup
+timeDesign -postCTS -prefix postCTS_hold -hold
+report_ccopt_clock_trees -file clock_trees.rpt
+report_ccopt_skew_groups -file skew_groups.rpt
+setOptMode -fixFanoutLoad true
+setOptMode -addInstancePrefix postCTSdrv
+optDesign -postCTS -drv
+timeDesign -postCTS -prefix postCTS_setup_DRVfix
+timeDesign -postCTS -prefix postCTS_hold_DRVfix -hold
+setOptMode -addInstancePrefix postCTSsetup
+optDesign -postCTS
+timeDesign -postCTS -prefix postCTS_setup_Setupfix
+timeDesign -postCTS -prefix postCTS_hold_Setupfix -hold
+setOptMode -addInstancePrefix postCTShold
+optDesign -postCTS -hold
+timeDesign -postCTS -prefix postCTS_setup_Holdfix
+timeDesign -postCTS -prefix postCTS_hold_Holdfix -hold
+setNanoRouteMode -quiet -timingEngine {}
+setNanoRouteMode -quiet -routeWithSiPostRouteFix 0
+setNanoRouteMode -quiet -routeTopRoutingLayer default
+setNanoRouteMode -quiet -routeBottomRoutingLayer default
+setNanoRouteMode -quiet -drouteEndIteration default
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven true
+routeDesign -globalDetail
+timeDesign -postRoute -prefix postRoute_setup
+timeDesign -postRoute -prefix postRoute_hold -hold
+selectInst NW
+zoomBox -30.09350 18.85950 815.23400 766.85950
+zoomBox 26.99050 61.50850 745.51900 697.30850
+zoomBox 75.37250 95.80800 686.12200 636.23850
+zoomBox 116.49700 124.96300 635.63450 584.32900
+zoomBox 151.45300 149.74400 592.72000 540.20550
+zoomBox 181.16550 170.80850 556.24250 502.70050
+zoomBox 120.11300 159.93350 561.38000 550.39500
+zoomBox 48.28650 147.13950 567.42450 606.50600
+zoomBox 101.77850 171.82000 543.04600 562.28200
+zoomBox 146.73300 193.22700 521.81050 525.11950
+zoomBox 184.94450 211.42300 503.76000 493.53150
+zoomBox 244.91650 240.37900 475.26150 444.20300
+zoomBox 296.26800 261.21750 462.69250 408.48050
+zoomBox 273.05350 251.30100 468.84750 424.55200
+zoomBox 245.74250 239.63450 476.08850 443.45950
+zoomBox 213.61200 225.90950 484.60750 465.70350
+getMultiCpuUsage -localCpu
+get_verify_drc_mode -disable_rules -quiet
+get_verify_drc_mode -quiet -area
+get_verify_drc_mode -quiet -layer_range
+get_verify_drc_mode -check_ndr_spacing -quiet
+get_verify_drc_mode -check_only -quiet
+get_verify_drc_mode -check_same_via_cell -quiet
+get_verify_drc_mode -exclude_pg_net -quiet
+get_verify_drc_mode -ignore_trial_route -quiet
+get_verify_drc_mode -max_wrong_way_halo -quiet
+get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+get_verify_drc_mode -limit -quiet
+set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report risc_v_Pad_Frame.drc.rpt -limit 1000
+verify_drc
+set_verify_drc_mode -area {0 0 0 0}
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+violationBrowserClose
+verifyConnectivity -type all -error 1000 -warning 50
+verifyProcessAntenna -report risc_v_Pad_Frame.antenna.rpt -error 1000
+verifyPowerVia
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+zoomBox 106.21 132.04 667.93 687.575
+zoomBox 106.21 132.04 667.93 687.575
+zoomBox 106.21 132.04 667.93 687.575
+zoomBox -89.17 -89.285 889.285 889.375
+zoomBox -89.17 -89.285 889.285 889.375
+zoomBox -89.17 -89.285 889.285 889.375
+zoomBox 109.8425 98.9825 694.8125 689.6125
+zoomBox 109.8425 98.9825 694.8125 689.6125
+zoomBox 109.8425 98.9825 694.8125 689.6125
+zoomBox -61.5125 -61.5125 861.5125 861.5975
+zoomBox -61.5125 -61.5125 861.5125 861.5975
+zoomBox -61.5125 -61.5125 861.5125 861.5975
+zoomBox 246.645 491.16 251.675 497.86
+zoomBox 246.645 491.16 251.675 497.86
+zoomBox 246.645 491.16 251.675 497.86
+zoomBox 244.07600 489.69600 254.55650 498.97000
+zoomBox 242.27950 487.67050 256.78550 500.50650
+zoomBox 239.79300 484.88100 259.87050 502.64700
+zoomBox 238.21100 483.10700 261.83200 504.00850
+zoomBox 236.35050 481.02000 264.14000 505.61000
+zoomBox 227.62950 473.82150 272.88050 513.86250
+zoomBox 219.01800 466.73850 281.64950 522.15900
+zoomBox 213.54200 462.23450 287.22600 527.43500
+zoomBox 207.09900 456.93550 293.78650 533.64200
+setLayerPreference Poly -isVisible 0
+setLayerPreference Poly -isVisible 1
+setLayerPreference Via5 -isVisible 0
+setLayerPreference Via5 -isVisible 1
+setLayerPreference Metal6 -isVisible 0
+setLayerPreference Metal6 -isVisible 1
+setLayerPreference Metal9 -isVisible 0
+setLayerPreference Metal9 -isVisible 1
+setLayerPreference Via8 -isVisible 0
+setLayerPreference Via8 -isVisible 1
+deselectAll
+selectWire 246.6400 312.8350 250.0000 547.1450 2 VDD
+setLayerPreference Metal2 -isVisible 0
+setLayerPreference Metal2 -isVisible 1
+setLayerPreference Metal2 -isVisible 0
+setLayerPreference Metal2 -isVisible 1
+setLayerPreference Metal3 -isVisible 0
+setLayerPreference Metal3 -isVisible 1
+setLayerPreference Metal3 -isVisible 0
+setLayerPreference Metal2 -isVisible 0
+setLayerPreference Metal2 -isVisible 1
+setLayerPreference Metal3 -isVisible 1
+setLayerPreference Metal3 -isVisible 0
+deselectAll
+selectWire 246.6400 312.8350 250.0000 547.1450 2 VDD
+setLayerPreference Metal2 -isVisible 0
+setLayerPreference Metal3 -isVisible 1
+zoomBox 212.44850 462.31850 286.13250 527.51900
+zoomBox 216.99550 466.89400 279.62700 522.31450
+zoomBox 221.32200 470.80750 274.55900 517.91500
+zoomBox 224.99950 474.13400 270.25100 514.17550
+zoomBox 228.12550 476.96150 266.58950 510.99700
+zoomBox 230.78250 479.36500 263.47700 508.29500
+zoomBox 221.40900 474.12650 266.66100 514.16850
+zoomBox 208.43500 466.88650 271.06800 522.30800
+zoomBox 190.47800 456.86500 277.16750 533.57350
+zoomBox 165.62450 442.99500 285.61000 549.16600
+zoomBox 149.81950 434.17500 290.97900 559.08200
+zoomBox 131.22500 423.79850 297.29500 570.74800
+zoomBox 109.34900 411.59050 304.72600 584.47250
+zoomBox 78.08200 402.44650 307.93750 605.83750
+zoomBox 41.29700 391.68900 311.71550 630.97250
+zoomBox -2.04050 379.03350 316.09850 660.54350
+zoomBox -53.02650 364.14450 321.25500 695.33300
+zoomBox -113.01000 346.62800 327.32150 736.26150
+deselectAll
+selectInst pad_vdd_dummy3
+deselectAll
+selectInst pad_vdd_i1
+deselectAll
+selectInst pad_vdd_dummy2
+zoomBox -221.53000 287.99200 387.92650 827.27800
+zoomBox -372.33550 205.32150 471.20250 951.73800
+deselectAll
+selectInst pad_vdd_dummy
+deselectAll
+zoomBox -278.21550 209.41350 438.79250 843.86800
+zoomBox -198.21300 212.89150 411.24400 752.17800
+zoomBox -130.21100 215.84800 387.82750 674.24150
+zoomBox -71.70550 255.45500 368.62700 645.08950
+zoomBox -21.97600 289.12050 352.30700 620.31000
+zoomBox 19.78600 317.80900 337.92650 599.32000
+setLayerPreference Metal2 -isVisible 1
+zoomBox 51.76450 342.07050 322.18400 581.35500
+zoomBox 107.53150 381.58900 302.91000 554.47250
+zoomBox 147.86150 410.06500 289.02250 534.97350
+zoomBox 163.14600 421.62450 283.13350 527.79700
+zoomBox 178.23350 431.75250 280.22300 521.99950
+zoomBox 198.99300 447.82550 272.68050 513.02900
+zoomBox 208.40150 454.53150 271.03600 509.95450
+zoomBox 216.39900 460.23200 269.63850 507.34150
+zoomBox 222.74250 465.12900 267.99600 505.17200
+zoomBox 231.92100 473.25100 264.61700 502.18250
+zoomBox 235.48650 476.42950 263.27850 501.02150
+zoomBox 239.69650 481.76700 259.77650 499.53500
+uiSetTool addVia
+report_via -name_only -special
+setEditMode -via_cut_layer Via1
+setEditMode -cut_class {}
+setEditMode -via_cell_name 0x0
+setEditMode -via_create_by viacell
+uiSetTool select
+uiSetTool addWire
+setEditMode -type regular
+uiSetTool select
+selectWire 248.3200 492.8350 282.5000 496.1850 3 VDD
+uiSetTool addWire
+setEditMode -type special
+setEditMode -status ROUTED -nets VDD -layer_horizontal Metal3 -width_horizontal 3.350 -width_vertical 3.350 -shape IOWIRE
+zoomBox 241.02150 483.84350 258.08950 498.94650
+zoomBox 241.95200 485.75450 256.46000 498.59200
+zoomBox 242.74300 487.37900 255.07500 498.29100
+zoomBox 243.41500 488.75950 253.89750 498.03500
+setEditMode -spacing_horizontal 0.070
+setEditMode -spacing_vertical 0.070
+setEditMode -spacing 0.060
+editAddRoute 248.5 496.327
+editAddRoute 249.639 494.699
+editAddRoute 246.792 494.998
+editAddRoute 250.087 494.672
+editAddRoute 249.246 494.631
+editAddRoute 247.483 494.672
+editAddRoute 249.585 494.659
+editAddRoute 247.09 494.93
+editCommitRoute 247.09 494.93
+violationBrowser -all -no_display_false -displayByLayer
+verifyConnectivity -type all -error 1000 -warning 50
+violationBrowser -all -no_display_false -displayByLayer
+zoomBox 242.18700 487.57000 254.51950 498.48250
+zoomBox 239.04300 484.52450 256.11250 499.62850
+zoomBox 237.04400 482.58750 257.12550 500.35700
+zoomBox 234.69200 480.30900 258.31750 501.21450
+zoomBox 236.89250 480.59300 256.97450 498.36300
+zoomBox 240.35250 481.03950 254.86200 493.87850
+zoomBox 241.69250 481.34900 254.02600 492.26250
+zoomBox 242.83150 481.61200 253.31500 490.88850
+verifyProcessAntenna -report risc_v_Pad_Frame.antenna.rpt -error 1000
+violationBrowser -all -no_display_false -displayByLayer
+editAddRoute 249.341 485.613
+editAddRoute 247.022 485.68
+editCommitRoute 247.022 485.68
+zoomBox 241.81650 480.91300 254.15000 491.82650
+zoomBox 240.62250 480.09050 255.13250 492.93000
+zoomBox 239.21800 479.12350 256.28850 494.22850
+zoomBox 235.62150 476.64700 259.24850 497.55350
+zoomBox 230.64400 473.21900 263.34550 502.15550
+zoomBox 223.75450 468.47450 269.01650 508.52500
+zoomBox 219.37350 465.45750 272.62250 512.57550
+zoomBox 214.21900 461.90800 276.86500 517.34100
+zoomBox 208.15500 457.73150 281.85650 522.94750
+zoomBox 201.02100 452.81850 287.72850 529.54300
+zoomBox 192.62800 447.03850 294.63700 537.30250
+zoomBox 182.75400 440.23850 302.76450 546.43150
+zoomBox 192.62800 447.03850 294.63700 537.30250
+zoomBox 208.15500 457.76750 281.85650 522.98350
+zoomBox 219.37350 465.52000 272.62300 512.63850
+zoomBox 223.75450 468.54750 269.01700 508.59850
+zoomBox 230.64400 473.30850 263.34600 502.24550
+zoomBox 235.62150 476.74850 259.24900 497.65550
+zoomBox 239.23450 479.21650 256.30550 494.32200
+zoomBox 234.30600 476.58700 257.93400 497.49450
+zoomBox 231.17200 474.90400 258.96950 499.50100
+zoomBox 227.49700 472.89850 260.20050 501.83650
+zoomBox 218.20250 467.53650 263.46650 507.58900
+zoomBox 205.36050 460.11400 268.01000 515.55050
+zoomBox 187.58550 449.84100 274.29800 526.57000
+zoomBox 162.98350 435.62300 283.00100 541.82200
+zoomBox 128.93250 415.94350 295.04700 562.93250
+zoomBox 107.27800 403.42850 302.70750 576.35700
+zoomBox 148.74100 406.65550 289.93900 531.59650
+zoomBox 178.29250 409.54450 280.30800 499.81450
+zoomBox 189.67500 410.67300 276.38850 487.40250
+zoomBox 207.54300 412.44700 270.19400 467.88450
+zoomBox 214.36300 413.14000 267.61650 460.26200
+zoomBox 224.82000 414.17200 263.29600 448.21800
+zoomBox 232.37500 414.90400 260.17400 439.50250
+zoomBox 237.67200 415.48150 257.75700 433.25400
+zoomBox 239.65950 415.78100 256.73200 430.88800
+zoomBox 242.73050 416.28600 255.06600 427.20100
+editAddRoute 249.944 425.685
+editAddRoute 246.8 425.877
+editCommitRoute 246.8 425.877
+zoomBox 241.32550 415.44700 255.83750 428.28800
+zoomBox 239.67250 414.45950 256.74550 429.56700
+zoomBox 237.72750 413.29800 257.81350 431.07150
+zoomBox 235.27400 412.22500 258.90500 433.13500
+zoomBox 232.38250 410.97900 260.18350 435.57900
+zoomBox 224.97800 407.78750 263.45750 441.83650
+zoomBox 220.26950 405.75800 265.53950 445.81600
+zoomBox 208.21300 400.56200 270.87050 456.00550
+zoomBox 191.52550 393.37000 278.24950 470.10900
+zoomBox 168.42850 383.41550 288.46250 489.62950
+zoomBox 136.46050 369.63850 302.59750 516.64700
+zoomBox 92.21400 350.56950 322.16150 554.04200
+zoomBox 24.62700 321.72450 342.89400 603.34750
+zoomBox -69.62400 282.66400 370.88450 672.45400
+zoomBox -199.19950 228.38250 410.50100 767.88450
+zoomBox -377.93650 152.94950 465.94000 899.66550
+zoomBox -281.97750 174.72850 435.31800 809.43750
+zoomBox -200.41200 193.37950 409.28950 732.88250
+zoomBox -72.15000 223.58450 368.35950 613.37550
+zoomBox -22.05850 235.38050 352.37450 566.70300
+zoomBox 56.84450 253.25800 327.37250 492.63850
+zoomBox 112.41100 267.43650 307.86800 440.38950
+zoomBox 152.40650 277.68100 293.62400 402.63950
+zoomBox 181.30250 285.08250 283.33250 375.36500
+zoomBox 201.76350 291.13050 275.48050 356.36000
+zoomBox 215.31300 296.66100 268.57350 343.78950
+zoomBox 220.60400 298.82100 265.87600 338.88050
+zoomBox 224.25850 301.62350 262.73950 335.67400
+zoomBox 231.05500 304.78700 258.85750 329.38850
+zoomBox 235.94450 306.59350 256.03250 324.36850
+zoomBox 237.85450 307.29500 254.92950 322.40400
+zoomBox 239.47800 307.89100 253.99200 320.73400
+zoomBox 240.82700 308.46850 253.16400 319.38500
+editAddRoute 249.892 314.757
+editAddRoute 246.812 314.885
+editCommitRoute 246.812 314.885
+zoomBox 239.20750 307.97250 253.72150 320.81550
+zoomBox 237.30200 307.38950 254.37750 322.49900
+zoomBox 232.42350 305.89650 256.05750 326.80950
+zoomBox 225.67100 303.82950 258.38300 332.77500
+zoomBox 216.29250 300.96850 261.56850 341.03150
+zoomBox 203.53700 296.76100 266.20300 352.21200
+zoomBox 185.88150 290.93800 272.61700 367.68700
+zoomBox 161.44550 282.87850 281.49500 389.10600
+zoomBox 127.62400 271.72400 293.78300 418.75200
+zoomBox 80.81250 256.28500 310.79000 459.78400
+zoomBox 16.13550 234.91600 334.44400 516.57600
+zoomBox -73.38350 205.34000 367.18300 595.18150
+zoomBox -231.87100 186.51450 377.90950 726.08750
+fit
+zoomBox 28.01950 33.54900 746.62900 669.42100
+zoomBox 72.50250 62.55350 683.32100 603.04500
+zoomBox 110.31300 87.20750 629.50900 546.62550
+zoomBox 142.45200 108.16350 583.76850 498.66850
+zoomBox 169.77000 125.97550 544.88950 457.90550
+zoomBox 192.99000 141.11600 511.84200 423.25650
+zoomBox 210.50000 156.27500 481.52400 396.09450
+zoomBox 225.12050 169.37050 455.49100 373.21700
+zoomBox 249.60000 188.06100 416.04250 335.34000
+zoomBox 268.12250 201.44500 388.37750 307.85450
+zoomBox 281.50500 211.11500 368.38950 287.99600
+verifyConnectivity -type all -error 1000 -warning 50
+violationBrowser -all -no_display_false -displayByLayer
+verifyPowerVia
+violationBrowser -all -no_display_false -displayByLayer
+zoomBox 290.48800 222.09400 353.26200 277.64050
+zoomBox 293.99600 226.38200 347.35400 273.59650
+uiSetTool select
+selectWire 312.8450 248.3200 316.1950 267.4700 2 VSS
+uiSetTool addWire
+setEditMode -status ROUTED -nets VSS -layer_vertical Metal2 -width_horizontal 3.350 -width_vertical 3.350 -shape IOWIRE
+zoomBox 297.13300 229.93300 342.48750 270.06550
+zoomBox 299.79950 232.95150 338.35100 267.06450
+zoomBox 302.06600 235.51750 334.83500 264.51350
+zoomBox 305.60650 239.48900 329.28250 260.43900
+zoomBox 308.19900 242.03900 325.30500 257.17550
+zoomBox 309.19500 242.92550 323.73500 255.79150
+zoomBox 310.04150 243.67900 322.40050 254.61500
+editAddRoute 314.742 249.946
+editAddRoute 314.998 246.861
+editCommitRoute 314.998 246.861
+zoomBox 304.37500 241.63900 324.50000 259.44700
+zoomBox 298.73450 239.60900 326.58950 264.25700
+zoomBox 290.92800 236.79950 329.48200 270.91450
+zoomBox 280.12400 232.91100 333.48550 280.12850
+zoomBox 276.30600 226.73300 350.16250 292.08600
+zoomBox 271.09500 218.14600 373.31850 308.60000
+zoomBox 267.78100 212.68500 388.04400 319.10150
+zoomBox 263.88200 206.26050 405.36800 331.45650
+zoomBox 296.23650 217.02850 398.46000 307.48250
+zoomBox 319.46600 224.95500 393.32250 290.30800
+zoomBox 328.52350 228.06500 391.30150 283.61500
+zoomBox 342.42850 233.31600 387.78550 273.45100
+zoomBox 352.23900 237.25400 385.00950 266.25150
+zoomBox 355.90800 238.84350 383.76300 263.49150
+zoomBox 361.83750 241.09300 381.96300 258.90150
+zoomBox 364.03250 242.12800 381.13900 257.26500
+zoomBox 367.35950 243.82250 379.71950 254.75950
+editAddRoute 374.651 249.963
+editAddRoute 375.195 246.797
+editCommitRoute 375.195 246.797
+zoomBox 365.61000 242.98750 380.15100 255.85450
+zoomBox 365.06700 241.29650 385.19400 259.10600
+zoomBox 364.31650 238.95600 392.17400 263.60600
+zoomBox 363.29200 235.71700 401.84950 269.83500
+zoomBox 362.64050 233.65700 408.00250 273.79600
+zoomBox 361.87400 231.23350 415.24100 278.45600
+zoomBox 360.96000 228.41900 423.74500 283.97500
+zoomBox 359.88500 225.10800 433.74950 290.46800
+zoomBox 358.62000 221.21250 445.52000 298.10700
+zoomBox 355.38150 211.23800 475.65850 317.66700
+zoomBox 353.32200 204.89500 494.82450 330.10550
+zoomBox 347.37800 199.43550 513.85150 346.74200
+zoomBox 340.38500 193.01250 536.23650 366.31450
+zoomBox 363.03550 201.10750 529.50950 348.41450
+zoomBox 383.16100 208.21450 524.66400 333.42550
+zoomBox 400.26750 214.25550 520.54500 320.68450
+zoomBox 415.57850 219.67000 517.81450 310.13500
+zoomBox 437.19600 227.01050 511.06150 292.37150
+zoomBox 445.66700 230.49350 508.45300 286.05050
+zoomBox 458.92000 234.73100 504.28300 274.87100
+zoomBox 468.43000 237.59750 501.20550 266.59950
+zoomBox 475.28450 239.66850 498.96450 260.62200
+zoomBox 477.84400 240.46350 497.97200 258.27400
+zoomBox 481.47650 241.73500 496.01950 254.60350
+editAddRoute 485.672 249.994
+editAddRoute 486.18 246.796
+editCommitRoute 486.18 246.796
+editAddRoute 494.683 250.032
+editAddRoute 494.665 246.833
+editCommitRoute 494.665 246.833
+verifyPowerVia
+violationBrowser -all -no_display_false -displayByLayer
+zoomBox 479.82650 240.58950 496.93600 255.72900
+zoomBox 475.59250 237.65650 499.27350 258.61100
+zoomBox 472.87300 236.29400 500.73300 260.94650
+zoomBox 469.67350 234.69100 502.45050 263.69400
+zoomBox 465.90950 232.80500 504.47100 266.92650
+zoomBox 461.52550 230.59550 506.89200 270.73850
+verifyConnectivity -type all -error 1000 -warning 50
+violationBrowser -all -no_display_false -displayByLayer
+zoomBox 106.21 132.04 667.93 687.575
+zoomBox 106.21 132.04 667.93 687.575
+zoomBox 106.21 132.04 667.93 687.575
+zoomBox -89.17 -89.285 889.285 889.375
+zoomBox 109.8425 98.9825 694.8125 689.6125
+zoomBox -61.5125 -61.5125 861.5125 861.5975
+zoomBox 106.21 132.04 667.93 687.575
+zoomBox 82.29650 182.96400 615.94350 655.16900
+zoomBox 90.06300 226.24900 543.66300 627.62350
+zoomBox 96.66400 263.04150 482.22450 604.21000
+zoomBox 103.92100 306.28600 431.64750 596.27950
+uiSetTool select
+deselectAll
+selectMarker 155.4950 155.3800 644.6200 644.7100 -1 3 7
+deselectAll
+selectWire 169.2700 249.0000 180.5000 551.0900 4 VSS
+zoomBox 120.86250 341.58050 357.64550 551.10150
+zoomBox 127.57050 355.22700 328.83650 533.32000
+zoomBox 109.8425 98.9825 694.8125 689.6125
+zoomBox -61.5125 -61.5125 861.5125 861.5975
+zoomBox -89.17 -89.285 889.285 889.375
+zoomBox 106.21 132.04 667.93 687.575
+zoomBox 109.8425 98.9825 694.8125 689.6125
+zoomBox 110.99950 196.98700 593.25450 623.71700
+zoomBox 127.56350 235.35550 537.48000 598.07600
+zoomBox 111.09300 196.89350 593.34800 623.62350
+zoomBox 91.71600 151.64400 659.07500 653.67950
+zoomBox 32.78250 102.16600 700.26350 692.79600
+zoomBox -36.70350 43.95600 748.56850 738.81500
+zoomBox 56.70650 55.68950 724.18750 646.31950
+zoomBox 136.10450 65.66300 703.46350 567.69850
+zoomBox 194.23450 74.03000 676.49000 500.76050
+zoomBox 241.49300 81.23550 651.41000 443.95650
+zoomBox 281.66300 87.36050 630.09200 395.67300
+zoomBox 357.80800 110.45650 609.54850 333.21250
+zoomBox 387.80200 118.22350 601.78150 307.56650
+zoomBox 434.39450 131.43600 588.99500 268.23650
+zoomBox 467.52800 142.70250 579.22700 241.54100
+zoomBox 480.22950 146.90700 575.17400 230.92000
+zoomBox 500.13400 153.51900 568.73200 214.21900
+zoomBox 514.49050 158.34550 564.05300 202.20150
+zoomBox 519.98200 160.44150 562.11050 197.71950
+zoomBox 528.57200 163.75350 559.01000 190.68700
+zoomBox 534.74550 166.22300 556.73700 185.68250
+zoomBox 531.92400 164.67650 557.79650 187.57000
+zoomBox 528.60450 162.85750 559.04250 189.79100
+zoomBox 524.69950 160.71750 560.50850 192.40350
+zoomBox 514.70000 155.23700 564.26300 199.09350
+zoomBox 500.86000 147.65200 569.45950 208.35300
+zoomBox 476.33400 144.58950 571.28150 228.60500
+zoomBox 442.36700 140.43800 573.78200 256.72250
+zoomBox 395.35300 134.69150 577.24250 295.63900
+zoomBox 405.94150 151.80950 560.54750 288.61500
+zoomBox 414.94150 166.36000 546.35700 282.64500
+zoomBox 422.59150 178.72800 534.29500 277.57050
+zoomBox 433.27750 188.39550 528.22550 272.41150
+zoomBox 442.36100 196.61300 523.06650 268.02650
+zoomBox 450.01900 203.84850 518.61900 264.55000
+zoomBox 462.06150 215.23750 511.62500 259.09450
+zoomBox 466.76450 219.69050 508.89350 256.96900
+zoomBox 475.44550 228.26600 505.88350 255.19950
+zoomBox 471.46400 225.22950 507.27350 256.91600
+zoomBox 461.25050 217.48900 510.81450 261.34650
+zoomBox 447.21300 208.05700 515.81400 268.75950
+zoomBox 427.64750 195.68350 522.59700 279.70100
+zoomBox 401.65200 175.91550 533.07050 292.20300
+zoomBox 365.67250 150.97100 547.56700 311.92300
+zoomBox 315.87400 116.44650 567.63100 339.21700
+zoomBox 284.20550 94.49100 580.39050 356.57450
+zoomBox 313.46000 103.16950 565.21750 325.94050
+uiSetTool select
+deselectAll
+selectWire 272.5000 272.4700 527.5000 282.4700 1 VDD
+zoomBox 289.78050 86.09900 585.96600 348.18300
+zoomBox 261.92200 65.88100 610.37600 374.21550
+zoomBox 229.14750 42.09550 639.09350 404.84200
+zoomBox 190.58900 14.11250 672.87900 440.87350
+zoomBox 226.90100 34.79550 636.84750 397.54250
+zoomBox 257.52750 52.85350 605.98200 361.18850
+zoomBox 283.56000 68.20250 579.74650 330.28750
+deselectAll
+selectWire 272.5000 272.4700 527.5000 282.4700 1 VDD
+deselectAll
+selectInst pad_vss_dummy2
+uiSetTool select
+zoomBox 233.37600 18.01850 1115.31850 380.76550
+zoomBox 161.88000 -52.25550 1382.56200 449.81700
+fit
+zoomBox -475.72450 -0.63150 1343.08250 747.45250
+zoomBox -367.94150 63.34950 1178.04450 699.22100
+zoomBox -276.46550 118.01200 1037.62300 658.50300
+zoomBox -198.71100 164.47500 918.26450 623.89250
+zoomBox -75.69600 244.43500 731.31900 576.36400
+zoomBox -27.65350 275.88100 658.30900 558.02050
+zoomBox 47.89300 325.32950 543.50100 529.17550
+zoomBox 102.47500 361.05600 460.55300 508.33500
+zoomBox 141.79150 390.87150 400.50300 497.28100
+zoomBox 157.16850 402.53900 377.07450 492.98750
+zoomBox 170.27950 412.49650 357.19950 489.37750
+zoomBox 181.42400 420.96000 340.30600 486.30900
+fit
+zoomBox 106.21 132.04 667.93 687.575
+deselectAll
+zoomBox -211.02350 151.89800 937.04150 624.10250
+zoomBox -144.95600 177.16500 830.89900 578.53900
+zoomBox -88.79900 198.64200 740.67800 539.81000
+zoomBox -0.49350 232.41450 598.80550 478.90900
+fit
+zoomBox -523.59000 -29.38950 1295.21800 718.69500
+zoomBox -399.23750 -20.36650 1146.74950 615.50550
+zoomBox -293.53800 -12.69700 1020.55100 527.79400
+zoomBox -203.69300 -6.17800 913.28250 453.23950
+zoomBox -132.26200 31.80450 817.16750 422.30950
+zoomBox -70.86050 65.63100 736.15500 397.56050
+zoomBox 25.82850 114.78350 608.89700 354.60250
+zoomBox 64.01000 136.29350 559.61850 340.13950
+zoomBox 96.37500 153.23550 517.64250 326.50500
+zoomBox 147.12800 181.07250 451.49400 306.25950
+zoomBox 166.92200 191.61450 425.63300 298.02350
+zoomBox 183.74650 200.55150 403.65100 290.99950
+zoomBox 166.92100 191.87050 425.63300 298.28000
+zoomBox 123.84000 169.64300 481.91900 316.92250
+zoomBox 64.21250 138.87850 559.82350 342.72550
+zoomBox -18.31750 96.29700 667.65050 378.43900
+zoomBox -70.29150 73.00350 736.73050 404.93550
+zoomBox 77.16700 98.58950 660.24050 338.41050
+zoomBox 134.75500 108.58200 630.36800 312.43000
+selectWire 272.5000 272.4700 527.5000 282.4700 1 VDD
+uiSetTool addWire
+setEditMode -status ROUTED -nets VDD -layer_horizontal Metal1 -width_horizontal 10.000 -width_vertical 10.000 -shape RING
+setLayerPreference Metal4 -isVisible 0
+setLayerPreference Metal4 -isVisible 1
+setEditMode -layer_vertical Metal4
+editAddRoute 413.407 280.541
+editAddRoute 399.698 280.839
+editAddRoute 404.764 158.054
+editCommitRoute 404.764 158.054
+verifyConnectivity -type all -error 1000 -warning 50
+violationBrowser -all -no_display_false -displayByLayer
+fit
+zoomBox -538.64350 -4.29850 1280.16350 743.78550
+zoomBox -325.28400 94.78150 988.80450 635.27250
+zoomBox -242.07700 137.09600 874.89850 596.51350
+zoomBox -171.35100 173.06350 778.07850 563.56850
+zoomBox -111.57650 206.03350 695.43900 537.96300
+zoomBox -60.76900 234.05800 625.19550 516.19850
+zoomBox -17.58200 257.87900 565.48800 497.69850
+zoomBox 19.12700 278.12700 514.73650 481.97350
+uiSetTool select
+deselectAll
+selectWire 257.5000 257.4700 267.5000 541.9550 2 VSS
+uiSetTool addWire
+setEditMode -status ROUTED -nets VSS -layer_vertical Metal2 -width_horizontal 10.000 -width_vertical 10.000 -shape RING
+setLayerPreference Via4 -isVisible 0
+setLayerPreference Via4 -isVisible 1
+setLayerPreference Metal4 -isVisible 0
+setLayerPreference Metal4 -isVisible 1
+setEditMode -layer_vertical Metal4
+setLayerPreference Metal1 -isVisible 0
+setLayerPreference Metal2 -isVisible 0
+setLayerPreference Metal2 -isVisible 1
+setEditMode -layer_horizontal Metal2
+setLayerPreference Metal3 -isVisible 0
+setLayerPreference Metal3 -isVisible 1
+setLayerPreference Metal4 -isVisible 0
+setLayerPreference Metal4 -isVisible 1
+zoomBox -27.68000 263.66400 555.39000 503.48350
+zoomBox -82.68500 246.58700 603.27950 528.72750
+zoomBox -147.39700 226.49650 659.62050 558.42650
+zoomBox -87.12550 232.39250 598.83950 514.53300
+zoomBox -147.47000 210.33600 659.54800 542.26650
+zoomBox -91.12950 235.59450 594.83600 517.73550
+zoomBox -43.24000 257.06450 539.83100 496.88450
+zoomBox -2.53400 275.31400 493.07650 479.16100
+setEditMode -layer_horizontal Metal1
+setEditMode -layer_horizontal Metal5
+editAddRoute 266.58 404.06
+editAddRoute 169.722 407.039
+editCommitRoute 169.722 407.039
+violationBrowserClose
+setLayerPreference Metal1 -isVisible 1
+zoomBox 38.05650 294.31300 459.32550 467.58300
+zoomBox 72.29250 310.88000 430.37100 458.15950
+zoomBox 126.12850 336.93150 384.84050 443.34100
+zoomBox 165.02500 355.75400 351.94450 432.63500
+zoomBox 180.19850 363.10500 339.08050 428.45400
+zoomBox 193.08200 369.29600 328.13150 424.84250
+zoomBox 203.94750 374.55850 318.74000 421.77300
+zoomBox 212.97650 379.11400 310.55000 419.24650
+zoomBox 220.53650 383.07450 303.47400 417.18700
+zoomBox 226.96250 386.44050 297.45950 415.43650
+zoomBox 232.42400 389.30200 292.34700 413.94850
+zoomBox 237.06650 391.73400 288.00200 412.68400
+zoomBox 244.36750 395.55850 281.16850 410.69500
+zoomBox 249.64150 398.32150 276.23150 409.25800
+zoomBox 255.08250 400.89350 271.41350 407.61050
+zoomBox 256.38150 401.50750 270.26300 407.21700
+zoomBox 257.48850 402.01700 269.28750 406.87000
+zoomBox 258.42950 402.45000 268.45850 406.57500
+zoomBox 259.90850 403.13100 267.15500 406.11150
+zoomBox 260.97750 403.61100 266.21350 405.76450
+zoomBox 261.39500 403.79850 265.84550 405.62900
+zoomBox 261.75000 403.95800 265.53300 405.51400
+zoomBox 262.05150 404.09350 265.26700 405.41600
+zoomBox 262.30750 404.20850 265.04150 405.33300
+zoomBox 262.70000 404.39900 264.67600 405.21150
+zoomBox 262.98400 404.53650 264.41150 405.12350
+zoomBox 263.09150 404.59200 264.30500 405.09100
+zoomBox 263.18300 404.63900 264.21450 405.06350
+zoomBox 263.26000 404.67900 264.13750 405.04000
+zoomBox 263.16900 404.65500 264.20150 405.07950
+zoomBox 263.06150 404.62400 264.27600 405.12350
+zoomBox 262.93500 404.58800 264.36350 405.17550
+zoomBox 262.61050 404.49200 264.58750 405.30500
+zoomBox 262.16150 404.36000 264.89800 405.48550
+zoomBox 261.54000 404.17700 265.32800 405.73500
+zoomBox 261.14500 404.06050 265.60150 405.89350
+zoomBox 260.13250 403.76300 266.30200 406.30050
+zoomBox 258.73200 403.35100 267.27100 406.86300
+zoomBox 256.79300 402.78100 268.61200 407.64200
+zoomBox 254.10950 401.99200 270.46850 408.72050
+zoomBox 250.39900 400.89200 273.04150 410.20500
+zoomBox 245.26300 399.37050 276.60250 412.26050
+zoomBox 238.15450 397.26400 281.53150 415.10500
+zoomBox 228.31650 394.34850 288.35400 419.04200
+zoomBox 214.69950 390.31350 297.79650 424.49150
+zoomBox 195.85300 384.72850 310.86600 432.03400
+zoomBox 154.14850 376.86550 313.33650 442.34050
+zoomBox 96.75600 366.01900 317.08650 456.64200
+zoomBox 60.46900 359.14500 319.68200 465.76050
+zoomBox 73.11800 365.22400 293.44900 455.84700
+zoomBox 85.20100 370.51000 272.48250 447.54000
+zoomBox 109.01400 379.07250 244.32550 434.72700
+zoomBox 118.31350 382.41650 233.32900 429.72300
+zoomBox 126.41500 385.44550 224.17950 425.65650
+zoomBox 139.15600 390.20900 209.79100 419.26150
+zoomBox 144.13200 392.06950 204.17150 416.76400
+zoomBox 148.36150 393.65050 199.39500 414.64100
+zoomBox 155.00300 396.16250 191.87600 411.32850
+zoomBox 159.80100 397.97750 186.44300 408.93550
+zoomBox 163.26850 399.28900 182.51750 407.20600
+zoomBox 164.62300 399.80100 180.98450 406.53050
+zoomBox 165.77400 400.23650 179.68150 405.95650
+zoomBox 166.75250 400.60650 178.57400 405.46850
+zoomBox 167.58400 400.92100 177.63250 405.05400
+zoomBox 168.29100 401.18850 176.83200 404.70150
+zoomBox 168.89150 401.41550 176.15250 404.40200
+zoomBox 169.83600 401.77250 175.08250 403.93050
+zoomBox 170.51800 402.03050 174.30950 403.59000
+zoomBox 170.78500 402.13150 174.00750 403.45700
+zoomBox 171.20350 402.29000 173.53300 403.24800
+zoomBox 171.36700 402.35200 173.34750 403.16650
+zoomBox 171.62500 402.44950 173.05600 403.03800
+zoomBox 171.72500 402.48750 172.94200 402.98800
+zoomBox 171.81050 402.52000 172.84500 402.94550
+zoomBox 171.88300 402.54750 172.76250 402.90900
+zoomBox 171.94500 402.57050 172.69250 402.87800
+zoomBox 172.04150 402.60700 172.58250 402.82950
+zoomBox 172.07950 402.62150 172.53950 402.81050
+zoomBox 172.13900 402.64400 172.47200 402.78100
+zoomBox 172.16250 402.65300 172.44550 402.76950
+zoomBox 172.19950 402.66700 172.40400 402.75100
+zoomBox 172.18000 402.66000 172.42100 402.75900
+zoomBox 172.15700 402.65200 172.44050 402.76850
+fit
+verifyPowerVia
+verifyConnectivity -type all -error 1000 -warning 50
+verifyProcessAntenna -report risc_v_Pad_Frame.antenna.rpt -error 1000
+get_verify_drc_mode -disable_rules -quiet
+get_verify_drc_mode -quiet -area
+get_verify_drc_mode -quiet -layer_range
+get_verify_drc_mode -check_ndr_spacing -quiet
+get_verify_drc_mode -check_only -quiet
+get_verify_drc_mode -check_same_via_cell -quiet
+get_verify_drc_mode -exclude_pg_net -quiet
+get_verify_drc_mode -ignore_trial_route -quiet
+get_verify_drc_mode -max_wrong_way_halo -quiet
+get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+get_verify_drc_mode -limit -quiet
+set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report risc_v_Pad_Frame.drc.rpt -limit 1000
+verify_drc
+set_verify_drc_mode -area {0 0 0 0}
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+zoomBox 402.865 307.435 403.935 308.44
+editAddRoute 402.92 308.336
+editDeleteRoute
+zoomBox 402.35600 307.50700 404.43350 308.36150
+zoomBox 402.50850 307.56800 404.27500 308.29450
+zoomBox 402.74850 307.66300 404.02600 308.18850
+zoomBox 402.92350 307.73150 403.84750 308.11150
+zoomBox 402.83200 307.67350 403.91900 308.12050
+zoomBox 402.72400 307.60500 404.00300 308.13100
+zoomBox 402.59700 307.52450 404.10200 308.14350
+zoomBox 402.73800 307.61050 404.01800 308.13700
+zoomBox 402.85800 307.68400 403.94600 308.13150
+uiSetTool select
+deselectAll
+selectVia 403.4350 307.9150 403.5650 308.0450 2 {risc_v_top_i_ex_mem_datapath_out[96]}
+uiSetTool moveWire
+deselectAll
+selectVia 403.4350 307.9150 403.5650 308.0450 2 {risc_v_top_i_ex_mem_datapath_out[96]}
+uiSetTool select
+deselectAll
+selectInst risc_v_top_i_g17438__2398
+saveDesign risc_v_Pad_Frame_1_drc.enc
+deselectAll
+selectVia 403.4350 307.9150 403.5650 308.0450 2 {risc_v_top_i_ex_mem_datapath_out[96]}
+deleteSelectedFromFPlan
+selectWire 403.4600 305.0050 403.5400 308.0200 2 {risc_v_top_i_ex_mem_datapath_out[96]}
+uiSetTool addWire
+setEditMode -type regular
+setEditMode -status ROUTED -nets {risc_v_top_i_ex_mem_datapath_out[96]} -layer_vertical Metal2 -width_horizontal 0.080 -width_vertical 0.080 -shape None
+setEditMode -spacing_horizontal 0.080
+setEditMode -spacing_vertical 0.080
+setEditMode -layer_horizontal Metal1
+setEditMode -width_horizontal 0.060
+editAddRoute 403.507 308.012
+editAddRoute 403.498 308.009
+editAddRoute 403.467 308.003
+editAddRoute 403.485 308.118
+editCommitRoute 403.485 308.118
+get_verify_drc_mode -disable_rules -quiet
+get_verify_drc_mode -quiet -area
+get_verify_drc_mode -quiet -layer_range
+get_verify_drc_mode -check_ndr_spacing -quiet
+get_verify_drc_mode -check_only -quiet
+get_verify_drc_mode -check_same_via_cell -quiet
+get_verify_drc_mode -exclude_pg_net -quiet
+get_verify_drc_mode -ignore_trial_route -quiet
+get_verify_drc_mode -max_wrong_way_halo -quiet
+get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+get_verify_drc_mode -limit -quiet
+set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report risc_v_Pad_Frame.drc.rpt -limit 1000
+verify_drc
+set_verify_drc_mode -area {0 0 0 0}
+violationBrowser -all -no_display_false -displayByLayer
+verifyConnectivity -type all -error 1000 -warning 50
+violationBrowser -all -no_display_false -displayByLayer
+verifyProcessAntenna -report risc_v_Pad_Frame.antenna.rpt -error 1000
+violationBrowser -all -no_display_false -displayByLayer
+violationBrowserClose
+uiSetTool select
+deselectAll
+selectWire 403.4600 307.9400 403.5400 308.1200 2 {risc_v_top_i_ex_mem_datapath_out[96]}
+deleteSelectedFromFPlan
+get_verify_drc_mode -disable_rules -quiet
+get_verify_drc_mode -quiet -area
+get_verify_drc_mode -quiet -layer_range
+get_verify_drc_mode -check_ndr_spacing -quiet
+get_verify_drc_mode -check_only -quiet
+get_verify_drc_mode -check_same_via_cell -quiet
+get_verify_drc_mode -exclude_pg_net -quiet
+get_verify_drc_mode -ignore_trial_route -quiet
+get_verify_drc_mode -max_wrong_way_halo -quiet
+get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+get_verify_drc_mode -limit -quiet
+verifyConnectivity -type all -error 1000 -warning 50
+get_verify_drc_mode -disable_rules -quiet
+get_verify_drc_mode -quiet -area
+get_verify_drc_mode -quiet -layer_range
+get_verify_drc_mode -check_ndr_spacing -quiet
+get_verify_drc_mode -check_only -quiet
+get_verify_drc_mode -check_same_via_cell -quiet
+get_verify_drc_mode -exclude_pg_net -quiet
+get_verify_drc_mode -ignore_trial_route -quiet
+get_verify_drc_mode -max_wrong_way_halo -quiet
+get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+get_verify_drc_mode -limit -quiet
+set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report risc_v_Pad_Frame.drc.rpt -limit 1000
+verify_drc
+set_verify_drc_mode -area {0 0 0 0}
+verifyProcessAntenna -report risc_v_Pad_Frame.antenna.rpt -error 1000
+verifyPowerVia
+saveDesign risc_v_Pad_Frame_no_violations.enc
+zoomBox 402.71050 307.73300 403.99050 308.25950
+fit
+get_verify_drc_mode -disable_rules -quiet
+get_verify_drc_mode -quiet -area
+get_verify_drc_mode -quiet -layer_range
+get_verify_drc_mode -check_ndr_spacing -quiet
+get_verify_drc_mode -check_only -quiet
+get_verify_drc_mode -check_same_via_cell -quiet
+get_verify_drc_mode -exclude_pg_net -quiet
+get_verify_drc_mode -ignore_trial_route -quiet
+get_verify_drc_mode -max_wrong_way_halo -quiet
+get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+get_verify_drc_mode -limit -quiet
+set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report risc_v_Pad_Frame.drc.rpt -limit 1000
+verify_drc
+set_verify_drc_mode -area {0 0 0 0}
+gui_select -rect {291.78850 555.60650 286.32000 543.57600}
+zoomBox -542.69750 10.94850 1276.11050 759.03300
+verifyConnectivity -type all -error 1000 -warning 50
+verifyProcessAntenna -report risc_v_Pad_Frame.antenna.rpt -error 1000
+verifyPowerVia
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+violationBrowserClose
+zoomBox -425.89150 57.04750 1120.09550 692.91950
+zoomBox -326.60650 96.23150 987.48300 636.72300
+zoomBox -241.38500 136.17550 875.59200 595.59350
+zoomBox -168.94650 170.12800 780.48450 560.63350
+zoomBox -107.71650 201.72800 699.30050 533.65800
+zoomBox -55.67050 228.58800 630.29400 510.72850
+zoomBox -10.99850 252.59450 572.07150 492.41400
+zoomBox 26.97250 273.00000 522.58300 476.84700
+zoomBox 59.82950 291.95400 481.09850 465.22400
+zoomBox 87.75800 308.06500 445.83650 455.34450
+zoomBox 111.43250 323.05150 415.79900 448.23900
+zoomBox 148.66050 346.61750 368.56550 437.06550
+zoomBox 175.77750 363.86400 334.65950 429.21300
+zoomBox 186.52550 371.35900 321.57550 426.90550
+zoomBox 195.60000 377.52250 310.39300 424.73750
+zoomBox 203.31400 382.92750 300.88800 423.06000
+zoomBox 215.47650 391.76800 285.97400 420.76400
+zoomBox 220.29650 395.46250 280.21950 420.10900
+zoomBox 227.87450 401.27150 271.17100 419.07950
+zoomBox 230.83450 403.62600 267.63650 418.76300
+zoomBox 235.48900 407.32900 262.07900 418.26550
+uiSetTool move
+uiSetTool select
+zoomBox 232.28950 406.16950 263.57150 419.03600
+zoomBox 228.52450 404.80500 265.32800 419.94250
+zoomOut
+zoomOut
+zoomBox 106.52550 356.65350 388.07350 472.45550
+zoomBox 147.02200 377.18400 350.44150 460.85150
+zoomBox 162.69100 384.94500 335.59800 456.06250
+zoomBox 175.68200 391.23000 322.65350 451.68000
+zoomBox 196.06200 400.56250 302.24900 444.23750
+zoomBox 210.78600 407.29550 287.50650 438.85100
+zoomBox 221.42350 412.16000 276.85550 434.95950
+zoomBox 225.57850 414.06000 272.69550 433.43950
+zoomBox 232.11150 417.04750 266.15450 431.04950
+selectWire 246.6400 423.7950 282.5000 427.1450 3 VDD
+uiSetTool addWire
+setEditMode -status ROUTED -nets VDD -layer_horizontal Metal3 -width_horizontal 3.350 -width_vertical 3.350 -shape IOWIRE
+setEditMode -width_horizontal 0.080
+setEditMode -width_vertical 0.080
+editAddRoute 247.382 425.563
+uiSetTool select
+zoomBox 234.36200 418.22000 263.29900 430.12200
+zoomBox 238.14250 420.01650 259.04950 428.61550
+zoomBox 240.88100 421.29650 255.98650 427.50950
+zoomBox 242.85950 422.22150 253.77350 426.71050
+zoomBox 244.28950 422.89000 252.17450 426.13300
+zoomBox 244.84800 423.15100 251.55000 425.90750
+zoomBox 245.32250 423.37300 251.01900 425.71600
+zoomBox 246.06900 423.72200 250.18450 425.41450
+zoomBox 246.60850 423.97100 249.58250 425.19400
+zoomBox 247.04700 424.15400 249.19650 425.03800
+zoomBox 247.36450 424.28700 248.91800 424.92600
+zoomBox 247.59400 424.38300 248.71650 424.84450
+zoomBox 247.68250 424.42150 248.63650 424.81400
+zoomBox 247.82050 424.48200 248.51100 424.76600
+zoomBox 247.92050 424.52600 248.42000 424.73150
+zoomBox 247.99250 424.55750 248.35500 424.70650
+zoomBox 248.02100 424.57000 248.32900 424.69650
+zoomBox 248.06900 424.59050 248.29250 424.68250
+zoomBox 248.10400 424.60500 248.26650 424.67200
+zoomBox 248.12900 424.61600 248.24700 424.66450
+zoomBox 248.14750 424.62450 248.23400 424.66000
+zoomBox 248.16150 424.63100 248.22400 424.65650
+fit
+zoomBox -531.11650 29.67000 1287.69050 777.75400
+zoomBox -315.02550 139.84000 999.06300 680.33100
+deselectAll
+selectWire 169.2700 249.0000 180.5000 551.0900 4 VSS
+deselectAll
+selectWire 310.0000 155.5000 551.0000 166.6100 4 VDD
+deselectAll
+selectWire 169.2700 249.0000 180.5000 551.0900 4 VSS
+zoomBox -245.92350 162.95300 871.05200 622.37050
+zoomBox -134.65100 201.53500 672.36400 533.46400
+zoomBox -53.58300 231.16100 529.48500 470.97950
+zoomBox -21.29200 244.09850 474.31600 447.94450
+zoomBox 6.15550 255.09550 427.42250 428.36450
+zoomBox -20.71100 241.72900 474.89700 445.57500
+zoomBox -52.31900 226.00400 530.74950 465.82300
+zoomBox -92.10350 204.90550 593.85950 487.04550
+fit
+deselectAll
+uiSetTool addWire
+setEditMode -type special
+zoomBox -414.61900 81.75200 1131.36700 717.62350
+zoomBox -314.77600 129.30250 999.31200 669.79350
+zoomBox -229.91000 169.72050 887.06550 629.13800
+zoomBox -157.77350 204.07600 791.65600 594.58100
+zoomBox -96.45800 233.27800 710.55750 565.20750
+zoomBox -44.34000 258.17250 641.62450 540.31300
+zoomBox -0.59600 279.95150 582.47400 519.77100
+zoomBox 36.58650 298.46400 532.19600 502.31050
+uiSetTool select
+selectWire 246.6400 312.8350 250.0000 547.1450 2 VDD
+deselectAll
+selectWire 257.5000 257.4700 267.5000 541.9550 2 VSS
+deselectAll
+selectWire 169.2700 249.0000 180.5000 551.0900 4 VSS
+fit
+zoomBox -374.82150 5.01350 1171.16450 640.88500
+zoomBox -259.36100 22.72300 1054.72750 563.21400
+zoomBox -161.21950 37.77600 955.75600 497.19350
+zoomBox -77.79950 50.57100 871.63000 441.07600
+zoomBox -6.89250 64.10150 800.12300 396.03100
+zoomBox 53.37900 75.60250 739.34200 357.74250
+zoomBox 104.60900 85.68750 687.67900 325.50700
+zoomBox 148.52350 98.78300 644.13300 302.62950
+zoomBox 185.85050 109.91350 607.11900 283.18350
+zoomBox 217.57800 135.56200 575.65700 282.84150
+zoomBox 244.38550 157.49250 548.75250 282.68000
+zoomBox 286.54000 191.97800 506.44600 282.42650
+zoomBox 303.00250 205.44600 489.92350 282.32750
+zoomBox 316.99650 216.89400 475.87900 282.24300
+zoomBox 328.84800 226.03700 463.89850 281.58400
+zoomBox 316.72350 217.26650 475.60700 282.61600
+zoomBox 302.46000 206.93150 489.38150 283.81300
+zoomBox 285.42150 196.06150 505.32900 286.51050
+zoomBox 265.37600 183.27350 524.09100 289.68400
+zoomBox 230.09800 171.13900 534.46850 296.32800
+zoomBox 189.20750 156.44300 547.29100 303.72450
+zoomBox 141.10150 139.15350 562.37650 312.42600
+zoomBox 84.50600 118.81300 580.12400 322.66300
+zoomBox 20.55300 103.29800 603.63300 343.12150
+zoomBox -54.68600 85.04500 631.29050 367.19050
+zoomBox 19.74850 123.15950 602.82850 362.98300
+zoomBox 136.89400 182.99700 558.16950 356.26950
+zoomBox 221.53100 226.22900 525.90400 351.41900
+zoomBox 282.68150 257.46450 502.59150 347.91450
+zoomBox 326.86300 280.03250 485.74800 345.38250
+zoomBox 344.11750 288.84550 479.17000 344.39350
+zoomBox 371.24950 302.70500 468.82600 342.83850
+zoomBox 390.85300 312.71850 461.35200 341.71500
+zoomBox 405.01600 319.95300 455.95250 340.90350
+zoomBox 415.24850 325.18000 452.05100 340.31700
+zoomBox 422.64250 328.95700 449.23250 339.89350
+zoomBox 425.53000 330.43200 448.13150 339.72800
+zoomBox 429.99450 332.49050 446.32550 339.20750
+zoomBox 433.32750 333.97050 445.12650 338.82350
+zoomBox 435.73500 335.03950 444.26050 338.54600
+zoomBox 437.39400 335.75100 443.55400 338.28450
+zoomBox 438.59650 336.29750 443.04700 338.12800
+zoomBox 437.89550 336.05400 443.13150 338.20750
+zoomBox 436.10100 335.43050 443.34800 338.41100
+zoomBox 435.05900 335.26300 443.58500 338.77000
+zoomBox 433.83200 335.06650 443.86350 339.19250
+deselectAll
+selectWire 439.8600 338.3000 439.9400 338.4850 2 CTS_27
+deselectAll
+fit
+zoomBox -539.60900 16.73850 1279.19900 764.82300
+zoomBox -339.90650 115.07200 974.18200 655.56300
+zoomBox -195.62150 186.11750 753.80750 576.62250
+fit
+zoomBox -509.30700 -14.72100 1309.50000 733.36300
+zoomBox -372.97850 7.75400 1173.00750 643.62550
+zoomBox -157.31300 52.12550 959.66250 511.54300
+zoomBox -73.38900 67.03650 876.04050 457.54150
+zoomBox -2.05400 79.71050 804.96150 411.64000
+zoomBox 58.58150 90.48350 744.54450 372.62350
+zoomBox 110.12150 99.64050 693.19000 339.45950
+fit
+zoomBox -488.84850 17.89700 1329.95850 765.98100
+zoomBox -334.96650 67.11300 1211.01950 702.98450
+zoomBox -204.16700 108.94650 1109.92150 649.43750
+zoomBox -93.10600 144.26800 1023.86950 603.68550
+zoomBox 1.29600 174.29100 950.72550 564.79600
+zoomBox 63.04050 207.68950 870.05550 539.61850
+zoomBox 162.69200 262.43600 745.76050 502.25500
+zoomBox 232.55000 302.42450 653.81650 475.69350
+zoomBox 259.83250 318.04150 617.90900 465.32000
+zoomBox 302.73300 342.48450 561.44400 448.89350
+zoomBox 333.72950 360.05850 520.64800 436.93900
+zoomBox 356.12400 372.72150 491.17300 428.26800
+zoomBox 372.30350 381.83800 469.87700 421.97050
+zoomBox 378.62250 385.39350 461.56000 419.50600
+zoomBox 388.55950 390.98500 448.48150 415.63100
+zoomBox 395.73850 395.02400 439.03250 412.83100
+zoomBox 401.25800 398.03650 432.53800 410.90200
+zoomBox 405.18750 400.25450 427.78850 409.55050
+zoomBox 408.03750 401.83450 424.36850 408.55150
+zoomBox 410.11900 402.92150 421.91850 407.77450
+zoomBox 410.97150 403.38550 421.00100 407.51050
+zoomBox 412.30850 404.09000 419.55500 407.07050
+zoomBox 411.74600 403.77100 420.27150 407.27750
+zoomBox 411.08450 403.39600 421.11450 407.52150
+zoomBox 410.30600 402.95550 422.10650 407.80900
+zoomBox 409.39050 402.43700 423.27350 408.14700
+zoomBox 407.04600 401.10950 426.26200 409.01300
+zoomBox 405.55550 400.26500 428.16250 409.56350
+zoomBox 403.80150 399.27150 430.39850 410.21100
+zoomBox 401.73850 398.10300 433.02900 410.97300
+zoomBox 399.31100 396.72850 436.12350 411.86950
+zoomBox 399.58000 398.76050 430.87050 411.63050
+zoomBox 400.10700 401.95600 422.71550 411.25500
+zoomBox 400.39850 403.30750 419.61600 411.21200
+zoomBox 400.64600 404.45700 416.98100 411.17550
+zoomBox 401.03550 406.26350 412.83800 411.11800
+zoomBox 401.32450 407.56050 409.85200 411.06800
+zoomBox 401.44250 408.47950 407.60400 411.01400

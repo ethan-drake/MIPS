@@ -1,0 +1,1064 @@
+[11/29 03:28:26      0s] 
+[11/29 03:28:26      0s] Cadence Innovus(TM) Implementation System.
+[11/29 03:28:26      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[11/29 03:28:26      0s] 
+[11/29 03:28:26      0s] Version:	v21.12-s106_1, built Wed Dec 8 18:19:02 PST 2021
+[11/29 03:28:26      0s] Options:	-log risc_v_Pad_Frame_log.log 
+[11/29 03:28:26      0s] Date:		Wed Nov 29 03:28:26 2023
+[11/29 03:28:26      0s] Host:		iteso-server (x86_64 w/Linux 3.10.0-1160.95.1.el7.x86_64) (8cores*8cpus*Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz 46080KB)
+[11/29 03:28:26      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[11/29 03:28:26      0s] 
+[11/29 03:28:26      0s] License:
+[11/29 03:28:26      0s] 		[03:28:26.302505] Configured Lic search path (20.02-s004): 50009@10.16.0.85
+
+[11/29 03:28:26      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[11/29 03:28:26      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[11/29 03:29:41     75s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.12-s106_1 (64bit) 12/08/2021 18:19 (Linux 3.10.0-693.el7.x86_64)
+[11/29 03:29:57     91s] @(#)CDS: NanoRoute 21.12-s106_1 NR211128-2235/21_12-UB (database version 18.20.567) {superthreading v2.17}
+[11/29 03:29:57     91s] @(#)CDS: AAE 21.12-s039 (64bit) 12/08/2021 (Linux 3.10.0-693.el7.x86_64)
+[11/29 03:29:57     91s] @(#)CDS: CTE 21.12-s043_1 () Dec  1 2021 10:06:22 ( )
+[11/29 03:29:57     91s] @(#)CDS: SYNTECH 21.12-s014_1 () Oct 27 2021 04:39:25 ( )
+[11/29 03:29:57     91s] @(#)CDS: CPE v21.12-s094
+[11/29 03:29:57     91s] @(#)CDS: IQuantus/TQuantus 20.1.2-s624 (64bit) Thu Sep 2 20:12:03 PDT 2021 (Linux 2.6.32-431.11.2.el6.x86_64)
+[11/29 03:29:57     91s] @(#)CDS: OA 22.60-p059 Mon Jun 28 12:16:29 2021
+[11/29 03:29:57     91s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[11/29 03:29:57     91s] @(#)CDS: RCDB 11.15.0
+[11/29 03:29:57     91s] @(#)CDS: STYLUS 21.11-s011_1 (12/08/2021 02:58 PST)
+[11/29 03:29:57     91s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_12975_iteso-server_iteso-s018_xbvSQn.
+
+[11/29 03:29:57     91s] Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+[11/29 03:30:08    102s] 
+[11/29 03:30:08    102s] **INFO:  MMMC transition support version v31-84 
+[11/29 03:30:08    102s] 
+[11/29 03:30:08    102s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[11/29 03:30:08    102s] <CMD> suppressMessage ENCEXT-2799
+[11/29 03:30:09    103s] <CMD> win
+[11/29 03:31:33    115s] <CMD> encMessage warning 0
+[11/29 03:31:33    115s] Suppress "**WARN ..." messages.
+[11/29 03:31:33    115s] <CMD> encMessage debug 0
+[11/29 03:31:33    115s] <CMD> is_common_ui_mode
+[11/29 03:31:33    115s] <CMD> restoreDesign /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat risc_v_Pad_Frame
+[11/29 03:31:34    115s] #% Begin load design ... (date=11/29 03:31:33, mem=653.7M)
+[11/29 03:31:34    115s] Set Default Input Pin Transition as 0.1 ps.
+[11/29 03:31:36    118s] Loading design 'risc_v_Pad_Frame' saved by 'Innovus' '21.12-s106_1' on 'Tue Nov 28 21:12:35 2023'.
+[11/29 03:31:37    118s] % Begin Load MMMC data ... (date=11/29 03:31:37, mem=655.6M)
+[11/29 03:31:37    118s] % End Load MMMC data ... (date=11/29 03:31:37, total cpu=0:00:00.2, real=0:00:00.0, peak res=655.8M, current mem=655.8M)
+[11/29 03:31:37    118s] 
+[11/29 03:31:37    118s] Loading LEF file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/lef/gsclib045_tech.lef ...
+[11/29 03:31:37    118s] 
+[11/29 03:31:37    118s] Loading LEF file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/lef/gsclib045_macro.lef ...
+[11/29 03:31:37    118s] Set DBUPerIGU to M2 pitch 400.
+[11/29 03:31:39    120s] 
+[11/29 03:31:39    120s] Loading LEF file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/lef/gsclib045_multibitsDFF.lef ...
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'DFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'DFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'DFF2X1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'DFF2X2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'DFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'DFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'DFF4X1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'DFF4X2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'SDFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'SDFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'SDFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'SDFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'SPDFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'SPDFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'SPDFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-58):	MACRO 'SPDFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-58' for more detail.
+[11/29 03:31:39    120s] 
+[11/29 03:31:39    120s] Loading LEF file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/lef/giolib045_Hemanth.lef ...
+[11/29 03:31:39    120s] **WARN: (IMPLF-61):	16 duplicated MACRO definitions have been found in the LEF file(s). Their content except DENSITY and PIN ANTENNA* data, and certain properties, have been ignored.
+[11/29 03:31:39    120s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/29 03:31:39    120s] Type 'man IMPLF-61' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED60' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED60' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED5' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED5' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED3' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED3' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED10' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED10' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VDDPAD25' in macro 'padIORINGFEED1' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VSSPAD' in macro 'padIORINGFEED1' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VSS25' in macro 'PADVSS25' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'VDD25' in macro 'PADVDD25' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'OEN' in macro 'PADDOZ' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'A' in macro 'PADDOZ' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDOZ' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-201' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'A' in macro 'PADDO' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDO' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-201' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDI' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-201' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'PAD' in macro 'PADDI' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-201):	Pin 'Y' in macro 'PADDI' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-201' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-201):	Pin 'Y' in macro 'PADDB' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-201' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'A' in macro 'PADDB' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'OEN' in macro 'PADDB' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-201):	Pin 'PAD' in macro 'PADDB' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-201' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'PAD' in macro 'PADDB' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (IMPLF-200):	Pin 'AY' in macro 'PADANALOG' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/29 03:31:39    120s] Type 'man IMPLF-200' for more detail.
+[11/29 03:31:39    120s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[11/29 03:31:39    120s] To increase the message display limit, refer to the product command reference manual.
+[11/29 03:31:39    120s] 
+[11/29 03:31:39    120s] viaInitial starts at Wed Nov 29 03:31:39 2023
+viaInitial ends at Wed Nov 29 03:31:39 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[11/29 03:31:39    120s] Loading view definition file from /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/viewDefinition.tcl
+[11/29 03:31:39    120s] Reading Lib_Set_WC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib' ...
+[11/29 03:31:42    123s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 03:31:42    123s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 03:31:42    123s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP7'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 03:31:42    123s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP6'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 03:31:42    123s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP5'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 03:31:42    123s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP4'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 03:31:42    123s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP3'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 03:31:42    123s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP2'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 03:31:42    123s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 03:31:42    123s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+[11/29 03:31:42    123s] Read 489 cells in library 'slow_vdd1v0' 
+[11/29 03:31:42    123s] Reading Lib_Set_WC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib' ...
+[11/29 03:31:42    123s] **WARN: (TECHLIB-459):	Appending library 'slow_vdd1v0' to the previously read library of the same name and nominal PVT. Cell definitions from the previously read library will not be overridden. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP7'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP6'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP5'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP4'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP3'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP2'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] **WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_multibitsDFF.lib)
+[11/29 03:31:42    124s] Read 16 cells in library 'slow_vdd1v0' 
+[11/29 03:31:42    124s] Reading Lib_Set_WC timing library '/CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_SS_s1vg.lib' ...
+[11/29 03:31:42    124s] Read 8 cells in library 'giolib045' 
+[11/29 03:31:42    124s] Ending "PreSetAnalysisView" (total cpu=0:00:04.0, real=0:00:03.0, peak res=716.5M, current mem=673.1M)
+[11/29 03:31:42    124s] *** End library_loading (cpu=0.07min, real=0.05min, mem=15.5M, fe_cpu=2.07min, fe_real=3.27min, fe_mem=897.4M) ***
+[11/29 03:31:42    124s] % Begin Load netlist data ... (date=11/29 03:31:42, mem=673.1M)
+[11/29 03:31:42    124s] *** Begin netlist parsing (mem=897.4M) ***
+[11/29 03:31:42    124s] Pin 'VDD' of cell 'SDFF4RX2' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/29 03:31:42    124s] Pin 'VSS' of cell 'SDFF4RX2' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/29 03:31:42    124s] Pin 'VDD' of cell 'SDFF4RX1' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/29 03:31:42    124s] Pin 'VSS' of cell 'SDFF4RX1' is declared as power/ground in timing library but as signal in LEF.  Treat it as power/ground.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VDDIOR' of cell 'PADDOZ' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VSSIOR' of cell 'PADDOZ' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'PADDOZ' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'PADDOZ' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VDDIOR' of cell 'PADDO' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VSSIOR' of cell 'PADDO' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'PADDO' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'PADDO' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VDDIOR' of cell 'PADDI' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VSSIOR' of cell 'PADDI' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'PADDI' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'PADDI' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'PADDB' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'PADDB' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VSSIOR' of cell 'PADDB' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] **WARN: (IMPVL-159):	Pin 'VDDIOR' of cell 'PADDB' is defined in LEF but not in the timing library.
+[11/29 03:31:43    124s] Type 'man IMPVL-159' for more detail.
+[11/29 03:31:43    124s] Created 513 new cells from 2 timing libraries.
+[11/29 03:31:43    124s] Reading netlist ...
+[11/29 03:31:43    124s] Backslashed names will retain backslash and a trailing blank character.
+[11/29 03:31:43    124s] Reading verilogBinary netlist '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.v.bin'
+[11/29 03:31:43    124s] 
+[11/29 03:31:43    124s] *** Memory Usage v#1 (Current mem = 904.410M, initial mem = 311.355M) ***
+[11/29 03:31:43    124s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:01.0, mem=904.4M) ***
+[11/29 03:31:43    124s] % End Load netlist data ... (date=11/29 03:31:43, total cpu=0:00:00.3, real=0:00:01.0, peak res=681.4M, current mem=681.4M)
+[11/29 03:31:43    124s] Top level cell is risc_v_Pad_Frame.
+[11/29 03:31:44    125s] Hooked 513 DB cells to tlib cells.
+[11/29 03:31:44    125s] ** Removed 4 unused lib cells.
+[11/29 03:31:44    125s] Ending "BindLib:" (total cpu=0:00:00.3, real=0:00:01.0, peak res=689.5M, current mem=689.5M)
+[11/29 03:31:44    125s] Starting recursive module instantiation check.
+[11/29 03:31:44    125s] No recursion found.
+[11/29 03:31:44    125s] Building hierarchical netlist for Cell risc_v_Pad_Frame ...
+[11/29 03:31:44    125s] *** Netlist is unique.
+[11/29 03:31:44    125s] Setting Std. cell height to 3420 DBU (smallest netlist inst).
+[11/29 03:31:44    125s] ** info: there are 601 modules.
+[11/29 03:31:44    125s] ** info: there are 3899 stdCell insts.
+[11/29 03:31:44    125s] ** info: there are 24 Pad insts.
+[11/29 03:31:44    125s] 
+[11/29 03:31:44    125s] *** Memory Usage v#1 (Current mem = 951.836M, initial mem = 311.355M) ***
+[11/29 03:31:44    125s] *info: set bottom ioPad orient R0
+[11/29 03:31:44    125s] Reading IO assignment file "/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/iofile/bwco_frame_GPDK045.ioc" ...
+[11/29 03:31:44    125s] **WARN: (IMPFP-4008):	The ring number '1' is specified at sides ' top  left  bottom  right ' , so all IO pads defined in this ring honor margins for these sides to calculate the location.
+[11/29 03:31:44    125s] Type 'man IMPFP-4008' for more detail.
+[11/29 03:31:44    125s] Adjusting Core to Bottom to: 40.0600.
+[11/29 03:31:44    125s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 03:31:44    125s] Type 'man IMPFP-3961' for more detail.
+[11/29 03:31:44    125s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 03:31:44    125s] Type 'man IMPFP-3961' for more detail.
+[11/29 03:31:44    125s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 03:31:44    125s] Type 'man IMPFP-3961' for more detail.
+[11/29 03:31:44    125s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 03:31:44    125s] Type 'man IMPFP-3961' for more detail.
+[11/29 03:31:44    125s] Start create_tracks
+[11/29 03:31:44    126s] Set Default Net Delay as 1000 ps.
+[11/29 03:31:44    126s] Set Default Net Load as 0.5 pF. 
+[11/29 03:31:44    126s] Set Default Input Pin Transition as 0.1 ps.
+[11/29 03:31:44    126s] Pre-connect netlist-defined P/G connections...
+[11/29 03:31:44    126s]   Updated 4 instances.
+[11/29 03:31:45    126s] Loading preference file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/gui.pref.tcl ...
+[11/29 03:31:45    126s] ##  Process: 45            (User Set)               
+[11/29 03:31:45    126s] ##     Node: (not set)                           
+[11/29 03:31:45    126s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[11/29 03:31:45    126s] Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[11/29 03:31:45    126s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[11/29 03:31:45    126s] 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+[11/29 03:31:45    126s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+[11/29 03:31:45    126s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+[11/29 03:31:45    126s] **WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+[11/29 03:31:45    126s] Type 'man IMPOPT-3602' for more detail.
+[11/29 03:31:45    126s] Effort level <high> specified for reg2reg path_group
+[11/29 03:31:45    127s] AAE_INFO: switching -siAware from false to true ...
+[11/29 03:31:45    127s] AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+[11/29 03:31:45    127s] addRing command will ignore shorts while creating rings.
+[11/29 03:31:45    127s] addRing command will disallow rings to go over rows.
+[11/29 03:31:45    127s] addRing command will consider rows while creating rings.
+[11/29 03:31:45    127s] The ring targets are set to core/block ring wires.
+[11/29 03:31:45    127s] addStripe will allow jog to connect padcore ring and block ring.
+[11/29 03:31:45    127s] 
+[11/29 03:31:45    127s] Stripes will not extend to closest target.
+[11/29 03:31:45    127s] When breaking rings, the power planner will consider the existence of blocks.
+[11/29 03:31:45    127s] addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+[11/29 03:31:45    127s] The entire stripe set will break at the domain if one of the nets is not in the domain.
+[11/29 03:31:45    127s] Stripes will not be created over regions without power planning wires.
+[11/29 03:31:45    127s] Offset for stripe breaking is set to 0.
+[11/29 03:31:45    127s] Stripes will stop at the boundary of the specified area.
+[11/29 03:31:45    127s] The power planner will set stripe antenna targets to none (no trimming allowed).
+[11/29 03:31:45    127s] Change floorplan default-technical-site to 'CoreSite'.
+[11/29 03:31:46    128s] Extraction setup Delayed 
+[11/29 03:31:46    128s] *Info: initialize multi-corner CTS.
+[11/29 03:31:47    128s] Reading Lib_Set_BC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib' ...
+[11/29 03:31:50    131s] Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[11/29 03:31:50    131s] Read 489 cells in library 'fast_vdd1v2' 
+[11/29 03:31:50    131s] Reading Lib_Set_BC timing library '/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib' ...
+[11/29 03:31:50    131s] **WARN: (TECHLIB-459):	Appending library 'fast_vdd1v2' to the previously read library of the same name and nominal PVT. Cell definitions from the previously read library will not be overridden. (File /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_multibitsDFF.lib)
+[11/29 03:31:50    132s] Read 16 cells in library 'fast_vdd1v2' 
+[11/29 03:31:50    132s] Reading Lib_Set_BC timing library '/CMC/kits/cadence/GPDK045/giolib045_v3.3/lib/pads_FF_s1vg.lib' ...
+[11/29 03:31:50    132s] Read 4 cells in library 'giolib045' 
+[11/29 03:31:50    132s] Ignored 4 cells in library 'giolib045' because they are not defined in the LEF file, and they are not used in the Verilog netlist.
+[11/29 03:31:51    132s] Ending "SetAnalysisView" (total cpu=0:00:04.4, real=0:00:04.0, peak res=943.8M, current mem=723.1M)
+[11/29 03:31:52    133s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[11/29 03:31:52    133s] 
+[11/29 03:31:52    133s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[11/29 03:31:52    133s] Summary for sequential cells identification: 
+[11/29 03:31:52    133s]   Identified SBFF number: 104
+[11/29 03:31:52    133s]   Identified MBFF number: 16
+[11/29 03:31:52    133s]   Identified SB Latch number: 0
+[11/29 03:31:52    133s]   Identified MB Latch number: 0
+[11/29 03:31:52    133s]   Not identified SBFF number: 16
+[11/29 03:31:52    133s]   Not identified MBFF number: 0
+[11/29 03:31:52    133s]   Not identified SB Latch number: 0
+[11/29 03:31:52    133s]   Not identified MB Latch number: 0
+[11/29 03:31:52    133s]   Number of sequential cells which are not FFs: 32
+[11/29 03:31:52    133s] Total number of combinational cells: 327
+[11/29 03:31:52    133s] Total number of sequential cells: 168
+[11/29 03:31:52    133s] Total number of tristate cells: 10
+[11/29 03:31:52    133s] Total number of level shifter cells: 0
+[11/29 03:31:52    133s] Total number of power gating cells: 0
+[11/29 03:31:52    133s] Total number of isolation cells: 0
+[11/29 03:31:52    133s] Total number of power switch cells: 0
+[11/29 03:31:52    133s] Total number of pulse generator cells: 0
+[11/29 03:31:52    133s] Total number of always on buffers: 0
+[11/29 03:31:52    133s] Total number of retention cells: 0
+[11/29 03:31:52    133s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[11/29 03:31:52    133s] Total number of usable buffers: 16
+[11/29 03:31:52    133s] List of unusable buffers:
+[11/29 03:31:52    133s] Total number of unusable buffers: 0
+[11/29 03:31:52    133s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[11/29 03:31:52    133s] Total number of usable inverters: 19
+[11/29 03:31:52    133s] List of unusable inverters:
+[11/29 03:31:52    133s] Total number of unusable inverters: 0
+[11/29 03:31:52    133s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[11/29 03:31:52    133s] Total number of identified usable delay cells: 8
+[11/29 03:31:52    133s] List of identified unusable delay cells:
+[11/29 03:31:52    133s] Total number of identified unusable delay cells: 0
+[11/29 03:31:52    133s] 
+[11/29 03:31:52    133s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[11/29 03:31:52    133s] 
+[11/29 03:31:52    133s] TimeStamp Deleting Cell Server Begin ...
+[11/29 03:31:52    133s] 
+[11/29 03:31:52    133s] TimeStamp Deleting Cell Server End ...
+[11/29 03:31:52    134s] Ending "Cell type marking" (total cpu=0:00:00.1, real=0:00:00.0, peak res=964.3M, current mem=964.3M)
+[11/29 03:31:52    134s] 
+[11/29 03:31:52    134s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[11/29 03:31:52    134s] Summary for sequential cells identification: 
+[11/29 03:31:52    134s]   Identified SBFF number: 104
+[11/29 03:31:52    134s]   Identified MBFF number: 16
+[11/29 03:31:52    134s]   Identified SB Latch number: 0
+[11/29 03:31:52    134s]   Identified MB Latch number: 0
+[11/29 03:31:52    134s]   Not identified SBFF number: 16
+[11/29 03:31:52    134s]   Not identified MBFF number: 0
+[11/29 03:31:52    134s]   Not identified SB Latch number: 0
+[11/29 03:31:52    134s]   Not identified MB Latch number: 0
+[11/29 03:31:52    134s]   Number of sequential cells which are not FFs: 32
+[11/29 03:31:52    134s] 
+[11/29 03:31:52    134s] Trim Metal Layers:
+[11/29 03:31:52    134s]  Visiting view : AnalysisView_WC
+[11/29 03:31:52    134s]    : PowerDomain = none : Weighted F : unweighted  = 37.90 (1.000) with rcCorner = 0
+[11/29 03:31:52    134s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[11/29 03:31:52    134s]  Visiting view : AnalysisView_BC
+[11/29 03:31:52    134s]    : PowerDomain = none : Weighted F : unweighted  = 9.90 (1.000) with rcCorner = 1
+[11/29 03:31:52    134s]    : PowerDomain = none : Weighted F : unweighted  = 4.50 (1.000) with rcCorner = -1
+[11/29 03:31:52    134s]  Visiting view : AnalysisView_WC
+[11/29 03:31:52    134s]    : PowerDomain = none : Weighted F : unweighted  = 37.90 (1.000) with rcCorner = 0
+[11/29 03:31:52    134s]    : PowerDomain = none : Weighted F : unweighted  = 20.10 (1.000) with rcCorner = -1
+[11/29 03:31:52    134s]  Visiting view : AnalysisView_BC
+[11/29 03:31:52    134s]    : PowerDomain = none : Weighted F : unweighted  = 9.90 (1.000) with rcCorner = 1
+[11/29 03:31:52    134s]    : PowerDomain = none : Weighted F : unweighted  = 4.50 (1.000) with rcCorner = -1
+[11/29 03:31:52    134s] 
+[11/29 03:31:52    134s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[11/29 03:31:52    134s] **WARN: (IMPSYC-2):	Timing information is not defined for cell padIORINGCORNER; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/29 03:31:52    134s] Type 'man IMPSYC-2' for more detail.
+[11/29 03:31:52    134s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVSSIOR; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/29 03:31:52    134s] Type 'man IMPSYC-2' for more detail.
+[11/29 03:31:52    134s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVSS; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/29 03:31:52    134s] Type 'man IMPSYC-2' for more detail.
+[11/29 03:31:52    134s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVDDIOR; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/29 03:31:52    134s] Type 'man IMPSYC-2' for more detail.
+[11/29 03:31:52    134s] **WARN: (IMPSYC-2):	Timing information is not defined for cell PADVDD; Check the timing library (.lib) file and make sure the timing information exists for the cell and you can run the checkTimingLibrary command to verify if the timing library has complete information after the design is loaded.
+[11/29 03:31:52    134s] Type 'man IMPSYC-2' for more detail.
+[11/29 03:31:52    134s] Reading floorplan file - /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.fp.gz (mem = 1200.4M).
+[11/29 03:31:52    134s] % Begin Load floorplan data ... (date=11/29 03:31:52, mem=965.0M)
+[11/29 03:31:53    134s] *info: reset 4814 existing net BottomPreferredLayer and AvoidDetour
+[11/29 03:31:53    134s] Pre-connect netlist-defined P/G connections...
+[11/29 03:31:53    134s]   Updated 4 instances.
+[11/29 03:31:53    134s] Deleting old partition specification.
+[11/29 03:31:53    134s] Set FPlanBox to (0 0 1600000 1600180)
+[11/29 03:31:53    134s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 03:31:53    134s] Type 'man IMPFP-3961' for more detail.
+[11/29 03:31:53    134s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 03:31:53    134s] Type 'man IMPFP-3961' for more detail.
+[11/29 03:31:53    134s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 03:31:53    134s] Type 'man IMPFP-3961' for more detail.
+[11/29 03:31:53    134s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[11/29 03:31:53    134s] Type 'man IMPFP-3961' for more detail.
+[11/29 03:31:53    134s] Start create_tracks
+[11/29 03:31:53    134s]  ... processed partition successfully.
+[11/29 03:31:53    134s] Reading binary special route file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.fp.spr.gz (Created by Innovus v21.12-s106_1 on Tue Nov 28 21:12:33 2023, version: 1)
+[11/29 03:31:53    134s] Convert 0 swires and 0 svias from compressed groups
+[11/29 03:31:53    134s] 51 swires and 214 svias were compressed
+[11/29 03:31:53    134s] 51 swires and 214 svias were decompressed from small or sparse groups
+[11/29 03:31:53    134s] Ending "Read special route file" (total cpu=0:00:00.1, real=0:00:00.0, peak res=965.8M, current mem=965.8M)
+[11/29 03:31:53    134s] There are 24 io inst loaded
+[11/29 03:31:53    134s] There are 41 nets with weight being set
+[11/29 03:31:53    134s] There are 41 nets with bottomPreferredRoutingLayer being set
+[11/29 03:31:53    134s] There are 41 nets with avoidDetour being set
+[11/29 03:31:53    134s] Extracting standard cell pins and blockage ...... 
+[11/29 03:31:54    134s] Pin and blockage extraction finished
+[11/29 03:31:54    134s] % End Load floorplan data ... (date=11/29 03:31:54, total cpu=0:00:00.4, real=0:00:02.0, peak res=967.2M, current mem=967.2M)
+[11/29 03:31:54    134s] Reading congestion map file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.route.congmap.gz ...
+[11/29 03:31:54    134s] % Begin Load SymbolTable ... (date=11/29 03:31:54, mem=967.4M)
+[11/29 03:31:55    134s] routingBox: (200 190) (1599800 1599990)
+[11/29 03:31:55    134s] coreBox:    (580000 579880) (1020000 1018780)
+[11/29 03:31:55    134s] Un-suppress "**WARN ..." messages.
+[11/29 03:31:55    135s] % End Load SymbolTable ... (date=11/29 03:31:55, total cpu=0:00:00.2, real=0:00:01.0, peak res=973.7M, current mem=973.7M)
+[11/29 03:31:55    135s] Loading place ...
+[11/29 03:31:55    135s] % Begin Load placement data ... (date=11/29 03:31:55, mem=973.7M)
+[11/29 03:31:55    135s] Reading placement file - /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.place.gz.
+[11/29 03:31:55    135s] ** Reading stdCellPlacement_binary (Created by Innovus v21.12-s106_1 on Tue Nov 28 21:12:34 2023, version# 2) ...
+[11/29 03:31:55    135s] Read Views for adaptive view pruning ...
+[11/29 03:31:55    135s] Read 0 views from Binary DB for adaptive view pruning
+[11/29 03:31:55    135s] *** Completed restorePlace (cpu=0:00:00.1 real=0:00:00.0 mem=1208.5M) ***
+[11/29 03:31:55    135s] Total net length = 8.471e+03 (4.447e+03 4.025e+03) (ext = 0.000e+00)
+[11/29 03:31:55    135s] % End Load placement data ... (date=11/29 03:31:55, total cpu=0:00:00.2, real=0:00:00.0, peak res=974.6M, current mem=974.5M)
+[11/29 03:31:56    135s] Reading PG file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.pg.gz, version#2, (Created by Innovus v21.12-s106_1 on       Tue Nov 28 21:12:34 2023)
+[11/29 03:31:56    135s] *** Completed restorePGFile (cpu=0:00:00.0 real=0:00:01.0 mem=1204.5M) ***
+[11/29 03:31:56    135s] % Begin Load routing data ... (date=11/29 03:31:56, mem=974.6M)
+[11/29 03:31:56    135s] Reading routing file - /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.route.gz.
+[11/29 03:31:56    135s] Reading Innovus routing data (Created by Innovus v21.12-s106_1 on Tue Nov 28 21:12:34 2023 Format: 20.1) ...
+[11/29 03:31:57    135s] *** Total 4243 nets are successfully restored.
+[11/29 03:31:57    135s] *** Completed restoreRoute (cpu=0:00:00.2 real=0:00:01.0 mem=1207.5M) ***
+[11/29 03:31:57    136s] % End Load routing data ... (date=11/29 03:31:57, total cpu=0:00:00.3, real=0:00:01.0, peak res=977.8M, current mem=976.8M)
+[11/29 03:31:57    136s] TAT_INFO: restoreCongMap REAL = 1 : CPU = 0 : MEM = 0.
+[11/29 03:31:57    136s] Reading property file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.prop
+[11/29 03:31:57    136s] *** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1211.5M) ***
+[11/29 03:31:58    136s] Reading dirtyarea snapshot file /users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.db.da.gz (Create by Innovus v21.12-s106_1 on Tue Nov 28 21:12:34 2023, version: 4).
+[11/29 03:31:58    136s] Set Default Input Pin Transition as 0.1 ps.
+[11/29 03:32:01    138s] Loading preRoute extraction data from directory '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/extraction/' ...
+[11/29 03:32:01    138s] Restore PreRoute RC Grid meta data successful.
+[11/29 03:32:01    138s] Extraction setup Started 
+[11/29 03:32:01    138s] 
+[11/29 03:32:01    138s] Trim Metal Layers:
+[11/29 03:32:01    138s] Initializing multi-corner RC extraction with 2 active RC Corners ...
+[11/29 03:32:01    138s] Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[11/29 03:32:01    138s] __QRC_SADV_USE_LE__ is set 0
+[11/29 03:32:05    143s] Metal Layer Id 1 is Metal1 
+[11/29 03:32:05    143s] Metal Layer Id 2 is Metal2 
+[11/29 03:32:05    143s] Metal Layer Id 3 is Metal3 
+[11/29 03:32:05    143s] Metal Layer Id 4 is Metal4 
+[11/29 03:32:05    143s] Metal Layer Id 5 is Metal5 
+[11/29 03:32:05    143s] Metal Layer Id 6 is Metal6 
+[11/29 03:32:05    143s] Metal Layer Id 7 is Metal7 
+[11/29 03:32:05    143s] Metal Layer Id 8 is Metal8 
+[11/29 03:32:05    143s] Metal Layer Id 9 is Metal9 
+[11/29 03:32:05    143s] Metal Layer Id 10 is Metal10 
+[11/29 03:32:05    143s] Metal Layer Id 11 is Metal11 
+[11/29 03:32:05    143s] Via Layer Id 33 is Cont 
+[11/29 03:32:05    143s] Via Layer Id 34 is Via1 
+[11/29 03:32:05    143s] Via Layer Id 35 is Via2 
+[11/29 03:32:05    143s] Via Layer Id 36 is Via3 
+[11/29 03:32:05    143s] Via Layer Id 37 is Via4 
+[11/29 03:32:05    143s] Via Layer Id 38 is Via5 
+[11/29 03:32:05    143s] Via Layer Id 39 is Via6 
+[11/29 03:32:05    143s] Via Layer Id 40 is Via7 
+[11/29 03:32:05    143s] Via Layer Id 41 is Via8 
+[11/29 03:32:05    143s] Via Layer Id 42 is Via9 
+[11/29 03:32:05    143s] Via Layer Id 43 is Via10 
+[11/29 03:32:05    143s] Via Layer Id 44 is Bondpad 
+[11/29 03:32:05    143s] 
+[11/29 03:32:05    143s] Trim Metal Layers:
+[11/29 03:32:05    143s] Generating auto layer map file.
+[11/29 03:32:05    143s]  lef metal Layer Id 1 mapped to tech Id 5 of Layer metal_1 
+[11/29 03:32:05    143s]  lef via Layer Id 1 mapped to tech Id 6 of Layer via_1 
+[11/29 03:32:05    143s]  lef metal Layer Id 2 mapped to tech Id 7 of Layer metal_2 
+[11/29 03:32:05    143s]  lef via Layer Id 2 mapped to tech Id 8 of Layer via_2 
+[11/29 03:32:05    143s]  lef metal Layer Id 3 mapped to tech Id 9 of Layer metal_3 
+[11/29 03:32:05    143s]  lef via Layer Id 3 mapped to tech Id 10 of Layer via_3 
+[11/29 03:32:05    143s]  lef metal Layer Id 4 mapped to tech Id 11 of Layer metal_4 
+[11/29 03:32:05    143s]  lef via Layer Id 4 mapped to tech Id 12 of Layer via_4 
+[11/29 03:32:05    143s]  lef metal Layer Id 5 mapped to tech Id 13 of Layer metal_5 
+[11/29 03:32:05    143s]  lef via Layer Id 5 mapped to tech Id 14 of Layer via_5 
+[11/29 03:32:05    143s]  lef metal Layer Id 6 mapped to tech Id 15 of Layer metal_6 
+[11/29 03:32:05    143s]  lef via Layer Id 6 mapped to tech Id 16 of Layer via_6 
+[11/29 03:32:05    143s]  lef metal Layer Id 7 mapped to tech Id 17 of Layer metal_7 
+[11/29 03:32:05    143s]  lef via Layer Id 7 mapped to tech Id 18 of Layer via_7 
+[11/29 03:32:05    143s]  lef metal Layer Id 8 mapped to tech Id 19 of Layer metal_8 
+[11/29 03:32:05    143s]  lef via Layer Id 8 mapped to tech Id 20 of Layer via_8 
+[11/29 03:32:05    143s]  lef metal Layer Id 9 mapped to tech Id 21 of Layer metal_9 
+[11/29 03:32:05    143s]  lef via Layer Id 9 mapped to tech Id 22 of Layer via_9 
+[11/29 03:32:05    143s]  lef metal Layer Id 10 mapped to tech Id 23 of Layer metal_10 
+[11/29 03:32:05    143s]  lef via Layer Id 10 mapped to tech Id 24 of Layer via_10 
+[11/29 03:32:05    143s]  lef metal Layer Id 11 mapped to tech Id 25 of Layer metal_11 
+[11/29 03:32:05    143s] Metal Layer Id 1 mapped to 5 
+[11/29 03:32:05    143s] Via Layer Id 1 mapped to 6 
+[11/29 03:32:05    143s] Metal Layer Id 2 mapped to 7 
+[11/29 03:32:05    143s] Via Layer Id 2 mapped to 8 
+[11/29 03:32:05    143s] Metal Layer Id 3 mapped to 9 
+[11/29 03:32:05    143s] Via Layer Id 3 mapped to 10 
+[11/29 03:32:05    143s] Metal Layer Id 4 mapped to 11 
+[11/29 03:32:05    143s] Via Layer Id 4 mapped to 12 
+[11/29 03:32:05    143s] Metal Layer Id 5 mapped to 13 
+[11/29 03:32:05    143s] Via Layer Id 5 mapped to 14 
+[11/29 03:32:05    143s] Metal Layer Id 6 mapped to 15 
+[11/29 03:32:05    143s] Via Layer Id 6 mapped to 16 
+[11/29 03:32:05    143s] Metal Layer Id 7 mapped to 17 
+[11/29 03:32:05    143s] Via Layer Id 7 mapped to 18 
+[11/29 03:32:05    143s] Metal Layer Id 8 mapped to 19 
+[11/29 03:32:05    143s] Via Layer Id 8 mapped to 20 
+[11/29 03:32:05    143s] Metal Layer Id 9 mapped to 21 
+[11/29 03:32:05    143s] Via Layer Id 9 mapped to 22 
+[11/29 03:32:05    143s] Metal Layer Id 10 mapped to 23 
+[11/29 03:32:05    143s] Via Layer Id 10 mapped to 24 
+[11/29 03:32:05    143s] Metal Layer Id 11 mapped to 25 
+[11/29 03:32:06    143s] eee: pegPreRouteEnableSaveRestoreRCPatterns:1, retVal:1, doesAnyTechFileNeedExtraction1
+[11/29 03:32:06    143s] eee: Reading patterns meta data.
+[11/29 03:32:06    143s] Restore PreRoute Pattern Extraction data successful in header.
+[11/29 03:32:06    143s] Loading preRoute extracted patterns from file '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/risc_v_Pad_Frame.techData.gz' ...
+[11/29 03:32:06    143s] readViaRC viaRead:119, nrVia:119
+[11/29 03:32:06    143s] isWireRCValid Validate checksum:4711880, FromFile:4711880accessWirePatterns Pattern count:31752, FromFile:31752 Checksum:4711880, FromFile:4711880
+[11/29 03:32:06    143s] eee: PatternAvail:1, PreRoutePatternReadFailed:0
+[11/29 03:32:06    143s] Restore PreRoute Pattern Extraction data successful.
+[11/29 03:32:06    143s] Completed (cpu: 0:00:04.6 real: 0:00:05.0)
+[11/29 03:32:06    143s] Set Shrink Factor to 1.00000
+[11/29 03:32:06    143s] Summary of Active RC-Corners : 
+[11/29 03:32:06    143s]  
+[11/29 03:32:06    143s]  Analysis View: AnalysisView_WC
+[11/29 03:32:06    143s]     RC-Corner Name        : RC_Extraction_WC
+[11/29 03:32:06    143s]     RC-Corner Index       : 0
+[11/29 03:32:06    143s]     RC-Corner Temperature : 25 Celsius
+[11/29 03:32:06    143s]     RC-Corner Cap Table   : ''
+[11/29 03:32:06    143s]     RC-Corner PreRoute Res Factor         : 1
+[11/29 03:32:06    143s]     RC-Corner PreRoute Cap Factor         : 1
+[11/29 03:32:06    143s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[11/29 03:32:06    143s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[11/29 03:32:06    143s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[11/29 03:32:06    143s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[11/29 03:32:06    143s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[11/29 03:32:06    143s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[11/29 03:32:06    143s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[11/29 03:32:06    143s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[11/29 03:32:06    143s]     RC-Corner Technology file: '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch'
+[11/29 03:32:06    143s]  
+[11/29 03:32:06    143s]  Analysis View: AnalysisView_BC
+[11/29 03:32:06    143s]     RC-Corner Name        : RC_Extraction_BC
+[11/29 03:32:06    143s]     RC-Corner Index       : 1
+[11/29 03:32:06    143s]     RC-Corner Temperature : 25 Celsius
+[11/29 03:32:06    143s]     RC-Corner Cap Table   : ''
+[11/29 03:32:06    143s]     RC-Corner PreRoute Res Factor         : 1
+[11/29 03:32:06    143s]     RC-Corner PreRoute Cap Factor         : 1
+[11/29 03:32:06    143s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[11/29 03:32:06    143s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[11/29 03:32:06    143s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[11/29 03:32:06    143s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[11/29 03:32:06    143s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[11/29 03:32:06    143s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[11/29 03:32:06    143s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[11/29 03:32:06    143s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[11/29 03:32:06    143s]     RC-Corner Technology file: '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch'
+[11/29 03:32:06    143s] Technology file '/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch' associated with first view 'AnalysisView_WC' will be used as the primary corner for the multi-corner extraction.
+[11/29 03:32:06    143s] 
+[11/29 03:32:06    143s] Trim Metal Layers:
+[11/29 03:32:06    143s] LayerId::1 widthSet size::1
+[11/29 03:32:06    143s] LayerId::2 widthSet size::1
+[11/29 03:32:06    143s] LayerId::3 widthSet size::1
+[11/29 03:32:06    143s] LayerId::4 widthSet size::1
+[11/29 03:32:06    143s] LayerId::5 widthSet size::1
+[11/29 03:32:06    143s] LayerId::6 widthSet size::1
+[11/29 03:32:06    143s] LayerId::7 widthSet size::1
+[11/29 03:32:06    143s] LayerId::8 widthSet size::1
+[11/29 03:32:06    143s] LayerId::9 widthSet size::1
+[11/29 03:32:06    143s] LayerId::10 widthSet size::1
+[11/29 03:32:06    143s] LayerId::11 widthSet size::1
+[11/29 03:32:06    143s] Checksum of RCGrid density data read::(132 132) passed::1
+[11/29 03:32:06    143s] Restore PreRoute RC Grid data successful.
+[11/29 03:32:06    143s] eee: pegSigSF::1.070000
+[11/29 03:32:06    143s] Initializing multi-corner resistance tables ...
+[11/29 03:32:06    143s] ReadRoutingBlockageFactor status::1
+[11/29 03:32:06    143s] Restore PreRoute Blockage data successful.
+[11/29 03:32:06    143s] eee: Reading Grid unit RC.
+[11/29 03:32:06    143s] pesRestorePreRouteExtractionData::readRCGridUnitRC called for corner::RC_Extraction_WC
+[11/29 03:32:06    143s] RCCorner in design data Name::RC_Extraction_WC Tech::/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 03:32:06    143s] RCCorner in saved data Name::RC_Extraction_WC Tech::/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 03:32:06    143s] RCCorner in design data Name::RC_Extraction_WC Tech::/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 03:32:06    143s] RCCorner in saved data Name::RC_Extraction_BC Tech::/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 03:32:06    143s] RC corner RC_Extraction_WC not found in the saved preRoute extraction data.
+[11/29 03:32:06    143s] eee: RCGridUnitRC data read is unsuccessful
+[11/29 03:32:06    143s] pesRestorePreRouteExtractionData::readRCGridUnitRC called for corner::RC_Extraction_BC
+[11/29 03:32:06    143s] RCCorner in design data Name::RC_Extraction_BC Tech::/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 03:32:06    143s] RCCorner in saved data Name::RC_Extraction_WC Tech::/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 03:32:06    143s] RCCorner in design data Name::RC_Extraction_BC Tech::/users/iteso-s018/DM_Michel_Castillo_RISC_V/synthesis/Physical_synthesis/risc_v_Pad_Frame_no_violations.enc.dat/libs/mmmc/RC_Extraction_WC/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 03:32:06    143s] RCCorner in saved data Name::RC_Extraction_BC Tech::/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/qrc/qx/gpdk045.tch 25.000000 1.000000 1.000000 
+[11/29 03:32:06    143s] RC corner RC_Extraction_BC not found in the saved preRoute extraction data.
+[11/29 03:32:06    143s] eee: RCGridUnitRC data read is unsuccessful
+[11/29 03:32:06    143s] Number of RC corner to be extracted::4
+[11/29 03:32:06    144s] eee: l::1 avDens::0.081844 usedTrk::2114.035086 availTrk::25830.000000 sigTrk::2114.035086
+[11/29 03:32:06    144s] eee: l::2 avDens::0.016909 usedTrk::303.596198 availTrk::17955.000000 sigTrk::303.596198
+[11/29 03:32:06    144s] eee: l::3 avDens::0.033456 usedTrk::478.748830 availTrk::14310.000000 sigTrk::478.748830
+[11/29 03:32:06    144s] eee: l::4 avDens::0.020397 usedTrk::429.013452 availTrk::21033.000000 sigTrk::429.013452
+[11/29 03:32:06    144s] eee: l::5 avDens::0.001259 usedTrk::1.812865 availTrk::1440.000000 sigTrk::1.812865
+[11/29 03:32:06    144s] eee: l::6 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/29 03:32:06    144s] eee: l::7 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/29 03:32:06    144s] eee: l::8 avDens::0.021685 usedTrk::189.112281 availTrk::8721.000000 sigTrk::189.112281
+[11/29 03:32:06    144s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/29 03:32:06    144s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/29 03:32:06    144s] eee: l::11 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[11/29 03:32:06    144s] Preroute length aware model: n: 40 ; LLS: 2-3 ; HLS: 3-5 ; rDens: 0.000000 ; uaWl: 1.000000 ; uaWlH: 0.051600 ; aWlH: 0.000000 ; Pmax: 0.805900 ; wcR: 0.772700 ; newSi: 0.001600 ; pMod: 83 ; wHLS: 1.000000 ;
+[11/29 03:32:06    144s] Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+[11/29 03:32:06    144s] Restore PreRoute all RC Grid data successful.Start generating vias ..
+[11/29 03:32:07    144s] #create default rule from bind_ndr_rule rule=0x7f79311972f0 0x7f7917f32568
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[11/29 03:32:07    144s] ### import design signature (1): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1
+[11/29 03:32:07    144s] #Skip building auto via since it is not turned on.
+[11/29 03:32:07    144s] Extracting standard cell pins and blockage ...... 
+[11/29 03:32:07    144s] Pin and blockage extraction finished
+[11/29 03:32:07    144s] Via generation completed.
+[11/29 03:32:07    144s] % Begin Load power constraints ... (date=11/29 03:32:07, mem=1022.3M)
+[11/29 03:32:07    144s] % End Load power constraints ... (date=11/29 03:32:07, total cpu=0:00:00.2, real=0:00:00.0, peak res=1028.8M, current mem=1028.8M)
+[11/29 03:32:08    145s] % Begin load AAE data ... (date=11/29 03:32:08, mem=1049.0M)
+[11/29 03:32:10    147s] AAE DB initialization (MEM=1295.02 CPU=0:00:00.1 REAL=0:00:00.0) 
+[11/29 03:32:10    147s] % End load AAE data ... (date=11/29 03:32:10, total cpu=0:00:02.7, real=0:00:02.0, peak res=1054.8M, current mem=1054.8M)
+[11/29 03:32:10    147s] Restoring CCOpt config...
+[11/29 03:32:10    148s]   Extracting original clock gating for My_CLK...
+[11/29 03:32:11    148s]     clock_tree My_CLK contains 3519 sinks and 0 clock gates.
+[11/29 03:32:11    148s]   Extracting original clock gating for My_CLK done.
+[11/29 03:32:11    148s]   The skew group My_CLK/ConstraintMode_BC was created. It contains 3519 sinks and 1 sources.
+[11/29 03:32:11    148s]   The skew group My_CLK/ConstraintMode_WC was created. It contains 3519 sinks and 1 sources.
+[11/29 03:32:11    148s]   The skew group My_CLK/ConstraintMode_BC was created. It contains 3519 sinks and 1 sources.
+[11/29 03:32:11    148s]   The skew group My_CLK/ConstraintMode_WC was created. It contains 3519 sinks and 1 sources.
+[11/29 03:32:11    148s] **WARN: (IMPCCOPT-2332):	The property locked_originally is deprecated. It still works, but it may be removed in a future release.
+[11/29 03:32:11    148s] Restoring CCOpt config done.
+[11/29 03:32:11    148s] 
+[11/29 03:32:11    148s] TimeStamp Deleting Cell Server Begin ...
+[11/29 03:32:11    148s] 
+[11/29 03:32:11    148s] TimeStamp Deleting Cell Server End ...
+[11/29 03:32:11    148s] 
+[11/29 03:32:11    148s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[11/29 03:32:11    148s] Summary for sequential cells identification: 
+[11/29 03:32:11    148s]   Identified SBFF number: 104
+[11/29 03:32:11    148s]   Identified MBFF number: 16
+[11/29 03:32:11    148s]   Identified SB Latch number: 0
+[11/29 03:32:11    148s]   Identified MB Latch number: 0
+[11/29 03:32:11    148s]   Not identified SBFF number: 16
+[11/29 03:32:11    148s]   Not identified MBFF number: 0
+[11/29 03:32:11    148s]   Not identified SB Latch number: 0
+[11/29 03:32:11    148s]   Not identified MB Latch number: 0
+[11/29 03:32:11    148s]   Number of sequential cells which are not FFs: 32
+[11/29 03:32:11    148s] Total number of combinational cells: 327
+[11/29 03:32:11    148s] Total number of sequential cells: 168
+[11/29 03:32:11    148s] Total number of tristate cells: 10
+[11/29 03:32:11    148s] Total number of level shifter cells: 0
+[11/29 03:32:11    148s] Total number of power gating cells: 0
+[11/29 03:32:11    148s] Total number of isolation cells: 0
+[11/29 03:32:11    148s] Total number of power switch cells: 0
+[11/29 03:32:11    148s] Total number of pulse generator cells: 0
+[11/29 03:32:11    148s] Total number of always on buffers: 0
+[11/29 03:32:11    148s] Total number of retention cells: 0
+[11/29 03:32:11    148s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[11/29 03:32:11    148s] Total number of usable buffers: 16
+[11/29 03:32:11    148s] List of unusable buffers:
+[11/29 03:32:11    148s] Total number of unusable buffers: 0
+[11/29 03:32:11    148s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[11/29 03:32:11    148s] Total number of usable inverters: 19
+[11/29 03:32:11    148s] List of unusable inverters:
+[11/29 03:32:11    148s] Total number of unusable inverters: 0
+[11/29 03:32:11    148s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[11/29 03:32:11    148s] Total number of identified usable delay cells: 8
+[11/29 03:32:11    148s] List of identified unusable delay cells:
+[11/29 03:32:11    148s] Total number of identified unusable delay cells: 0
+[11/29 03:32:11    148s] 
+[11/29 03:32:11    148s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[11/29 03:32:11    148s] 
+[11/29 03:32:11    148s] TimeStamp Deleting Cell Server Begin ...
+[11/29 03:32:11    148s] 
+[11/29 03:32:11    148s] TimeStamp Deleting Cell Server End ...
+[11/29 03:32:11    149s] #% End load design ... (date=11/29 03:32:11, total cpu=0:00:33.8, real=0:00:37.0, peak res=1079.5M, current mem=1059.1M)
+[11/29 03:32:12    149s] 
+[11/29 03:32:12    149s] *** Summary of all messages that are not suppressed in this session:
+[11/29 03:32:12    149s] Severity  ID               Count  Summary                                  
+[11/29 03:32:12    149s] WARNING   IMPLF-58            16  MACRO '%s' has been found in the databas...
+[11/29 03:32:12    149s] WARNING   IMPLF-61             1  %d duplicated MACRO definitions have bee...
+[11/29 03:32:12    149s] WARNING   IMPLF-200           25  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[11/29 03:32:12    149s] WARNING   IMPLF-201            6  Pin '%s' in macro '%s' has no ANTENNADIF...
+[11/29 03:32:12    149s] WARNING   IMPFP-3961           8  The techSite '%s' has no related standar...
+[11/29 03:32:12    149s] WARNING   IMPFP-4008           1  The ring number '%d' is specified at sid...
+[11/29 03:32:12    149s] WARNING   IMPSYC-2             5  Timing information is not defined for ce...
+[11/29 03:32:12    149s] WARNING   IMPVL-159           16  Pin '%s' of cell '%s' is defined in LEF ...
+[11/29 03:32:12    149s] WARNING   IMPOPT-3602          1  The specified path group name %s is not ...
+[11/29 03:32:12    149s] WARNING   IMPCCOPT-2332        1  The property %s is deprecated. It still ...
+[11/29 03:32:12    149s] WARNING   TECHLIB-302         40  No function defined for cell '%s'. The c...
+[11/29 03:32:12    149s] WARNING   TECHLIB-459          2  Appending library '%s' to the previously...
+[11/29 03:32:12    149s] *** Message Summary: 122 warning(s), 0 error(s)
+[11/29 03:32:12    149s] 
+[11/29 03:32:12    149s] <CMD> setDrawView fplan
+[11/29 03:32:12    149s] <CMD> encMessage warning 1
+[11/29 03:32:12    149s] <CMD> encMessage debug 0
+[11/29 03:32:58    157s] <CMD> saveNetlist risc_v_Pad_Frame.v
+[11/29 03:32:58    157s] Writing Netlist "risc_v_Pad_Frame.v" ...
+[11/29 03:37:17    202s] <CMD> streamOut ../Virtuoso/test/risc_v_Pad_Frame.gds -libName risc_v_Pad_Frame -structureName risc_v_Pad_Frame -units 2000 -mode ALL
+[11/29 03:37:17    202s] Parse flat map file...
+[11/29 03:37:17    202s] Writing GDSII file ...
+[11/29 03:37:17    202s] Library name 'risc_v_Pad_Frame' is too long(>16) in gdWriteLibName.
+[11/29 03:37:17    202s] 	****** db unit per micron = 2000 ******
+[11/29 03:37:17    202s] 	****** output gds2 file unit per micron = 2000 ******
+[11/29 03:37:17    202s] 	****** unit scaling factor = 1 ******
+[11/29 03:37:17    202s] Output for instance
+[11/29 03:37:18    202s] Output for bump
+[11/29 03:37:18    202s] Output for physical terminals
+[11/29 03:37:18    202s] Output for logical terminals
+[11/29 03:37:18    202s] Output for regular nets
+[11/29 03:37:18    202s] Output for special nets and metal fills
+[11/29 03:37:18    202s] Output for via structure generation total number 43
+[11/29 03:37:18    203s] Statistics for GDS generated (version 3)
+[11/29 03:37:18    203s] ----------------------------------------
+[11/29 03:37:18    203s] Stream Out Layer Mapping Information:
+[11/29 03:37:18    203s] GDS Layer Number          GDS Layer Name
+[11/29 03:37:18    203s] ----------------------------------------
+[11/29 03:37:18    203s]     233                             COMP
+[11/29 03:37:18    203s]     234                          DIEAREA
+[11/29 03:37:18    203s]     223                          Metal11
+[11/29 03:37:18    203s]     221                          Metal11
+[11/29 03:37:18    203s]     220                          Metal11
+[11/29 03:37:18    203s]     219                          Metal11
+[11/29 03:37:18    203s]     218                          Metal11
+[11/29 03:37:18    203s]     217                            Via10
+[11/29 03:37:18    203s]     216                            Via10
+[11/29 03:37:18    203s]     212                            Via10
+[11/29 03:37:18    203s]     202                          Metal10
+[11/29 03:37:18    203s]     200                          Metal10
+[11/29 03:37:18    203s]     199                          Metal10
+[11/29 03:37:18    203s]     198                          Metal10
+[11/29 03:37:18    203s]     197                          Metal10
+[11/29 03:37:18    203s]     196                             Via9
+[11/29 03:37:18    203s]     195                             Via9
+[11/29 03:37:18    203s]     191                             Via9
+[11/29 03:37:18    203s]     181                           Metal9
+[11/29 03:37:18    203s]     179                           Metal9
+[11/29 03:37:18    203s]     178                           Metal9
+[11/29 03:37:18    203s]     177                           Metal9
+[11/29 03:37:18    203s]     176                           Metal9
+[11/29 03:37:18    203s]     175                             Via8
+[11/29 03:37:18    203s]     174                             Via8
+[11/29 03:37:18    203s]     170                             Via8
+[11/29 03:37:18    203s]     160                           Metal8
+[11/29 03:37:18    203s]     158                           Metal8
+[11/29 03:37:18    203s]     157                           Metal8
+[11/29 03:37:18    203s]     156                           Metal8
+[11/29 03:37:18    203s]     155                           Metal8
+[11/29 03:37:18    203s]     154                             Via7
+[11/29 03:37:18    203s]     153                             Via7
+[11/29 03:37:18    203s]     149                             Via7
+[11/29 03:37:18    203s]     139                           Metal7
+[11/29 03:37:18    203s]     137                           Metal7
+[11/29 03:37:18    203s]     136                           Metal7
+[11/29 03:37:18    203s]     135                           Metal7
+[11/29 03:37:18    203s]     134                           Metal7
+[11/29 03:37:18    203s]     133                             Via6
+[11/29 03:37:18    203s]     132                             Via6
+[11/29 03:37:18    203s]     131                             Via6
+[11/29 03:37:18    203s]     130                             Via6
+[11/29 03:37:18    203s]     129                             Via6
+[11/29 03:37:18    203s]     128                             Via6
+[11/29 03:37:18    203s]     127                             Via6
+[11/29 03:37:18    203s]     122                           Metal6
+[11/29 03:37:18    203s]     121                           Metal6
+[11/29 03:37:18    203s]     120                           Metal6
+[11/29 03:37:18    203s]     119                           Metal6
+[11/29 03:37:18    203s]     118                           Metal6
+[11/29 03:37:18    203s]     53                            Metal3
+[11/29 03:37:18    203s]     52                            Metal3
+[11/29 03:37:18    203s]     185                           Metal9
+[11/29 03:37:18    203s]     48                              Via2
+[11/29 03:37:18    203s]     29                            Metal2
+[11/29 03:37:18    203s]     180                           Metal9
+[11/29 03:37:18    203s]     47                              Via2
+[11/29 03:37:18    203s]     182                           Metal9
+[11/29 03:37:18    203s]     44                              Via2
+[11/29 03:37:18    203s]     43                              Via2
+[11/29 03:37:18    203s]     172                             Via8
+[11/29 03:37:18    203s]     38                            Metal2
+[11/29 03:37:18    203s]     95                            Metal5
+[11/29 03:37:18    203s]     36                            Metal2
+[11/29 03:37:18    203s]     93                            Metal5
+[11/29 03:37:18    203s]     112                             Via5
+[11/29 03:37:18    203s]     194                             Via9
+[11/29 03:37:18    203s]     55                            Metal3
+[11/29 03:37:18    203s]     113                           Metal6
+[11/29 03:37:18    203s]     32                            Metal2
+[11/29 03:37:18    203s]     54                            Metal3
+[11/29 03:37:18    203s]     31                            Metal2
+[11/29 03:37:18    203s]     107                             Via5
+[11/29 03:37:18    203s]     30                            Metal2
+[11/29 03:37:18    203s]     49                              Via2
+[11/29 03:37:18    203s]     106                             Via5
+[11/29 03:37:18    203s]     33                            Metal2
+[11/29 03:37:18    203s]     109                             Via5
+[11/29 03:37:18    203s]     10                            Metal1
+[11/29 03:37:18    203s]     224                          Metal11
+[11/29 03:37:18    203s]     86                              Via4
+[11/29 03:37:18    203s]     50                            Metal3
+[11/29 03:37:18    203s]     206                          Metal10
+[11/29 03:37:18    203s]     69                              Via3
+[11/29 03:37:18    203s]     143                           Metal7
+[11/29 03:37:18    203s]     6                               Cont
+[11/29 03:37:18    203s]     169                             Via8
+[11/29 03:37:18    203s]     35                            Metal2
+[11/29 03:37:18    203s]     8                             Metal1
+[11/29 03:37:18    203s]     164                           Metal8
+[11/29 03:37:18    203s]     27                              Via1
+[11/29 03:37:18    203s]     141                           Metal7
+[11/29 03:37:18    203s]     3                               Cont
+[11/29 03:37:18    203s]     51                            Metal3
+[11/29 03:37:18    203s]     70                              Via3
+[11/29 03:37:18    203s]     7                               Cont
+[11/29 03:37:18    203s]     64                              Via3
+[11/29 03:37:18    203s]     173                             Via8
+[11/29 03:37:18    203s]     34                            Metal2
+[11/29 03:37:18    203s]     92                            Metal5
+[11/29 03:37:18    203s]     111                             Via5
+[11/29 03:37:18    203s]     11                            Metal1
+[11/29 03:37:18    203s]     142                           Metal7
+[11/29 03:37:18    203s]     4                               Cont
+[11/29 03:37:18    203s]     9                             Metal1
+[11/29 03:37:18    203s]     28                              Via1
+[11/29 03:37:18    203s]     85                              Via4
+[11/29 03:37:18    203s]     138                           Metal7
+[11/29 03:37:18    203s]     5                               Cont
+[11/29 03:37:18    203s]     12                            Metal1
+[11/29 03:37:18    203s]     226                          Metal11
+[11/29 03:37:18    203s]     88                              Via4
+[11/29 03:37:18    203s]     183                           Metal9
+[11/29 03:37:18    203s]     45                              Via2
+[11/29 03:37:18    203s]     22                              Via1
+[11/29 03:37:18    203s]     152                             Via7
+[11/29 03:37:18    203s]     13                            Metal1
+[11/29 03:37:18    203s]     71                            Metal4
+[11/29 03:37:18    203s]     227                          Metal11
+[11/29 03:37:18    203s]     90                              Via4
+[11/29 03:37:18    203s]     184                           Metal9
+[11/29 03:37:18    203s]     46                              Via2
+[11/29 03:37:18    203s]     161                           Metal8
+[11/29 03:37:18    203s]     23                              Via1
+[11/29 03:37:18    203s]     171                             Via8
+[11/29 03:37:18    203s]     37                            Metal2
+[11/29 03:37:18    203s]     94                            Metal5
+[11/29 03:37:18    203s]     148                             Via7
+[11/29 03:37:18    203s]     14                            Metal1
+[11/29 03:37:18    203s]     15                            Metal1
+[11/29 03:37:18    203s]     72                            Metal4
+[11/29 03:37:18    203s]     91                              Via4
+[11/29 03:37:18    203s]     150                             Via7
+[11/29 03:37:18    203s]     16                            Metal1
+[11/29 03:37:18    203s]     73                            Metal4
+[11/29 03:37:18    203s]     159                           Metal8
+[11/29 03:37:18    203s]     26                              Via1
+[11/29 03:37:18    203s]     151                             Via7
+[11/29 03:37:18    203s]     17                            Metal1
+[11/29 03:37:18    203s]     74                            Metal4
+[11/29 03:37:18    203s]     1                               Cont
+[11/29 03:37:18    203s]     162                           Metal8
+[11/29 03:37:18    203s]     24                              Via1
+[11/29 03:37:18    203s]     140                           Metal7
+[11/29 03:37:18    203s]     2                               Cont
+[11/29 03:37:18    203s]     163                           Metal8
+[11/29 03:37:18    203s]     25                              Via1
+[11/29 03:37:18    203s]     190                             Via9
+[11/29 03:37:18    203s]     56                            Metal3
+[11/29 03:37:18    203s]     57                            Metal3
+[11/29 03:37:18    203s]     114                           Metal6
+[11/29 03:37:18    203s]     192                             Via9
+[11/29 03:37:18    203s]     58                            Metal3
+[11/29 03:37:18    203s]     115                           Metal6
+[11/29 03:37:18    203s]     193                             Via9
+[11/29 03:37:18    203s]     59                            Metal3
+[11/29 03:37:18    203s]     116                           Metal6
+[11/29 03:37:18    203s]     203                          Metal10
+[11/29 03:37:18    203s]     65                              Via3
+[11/29 03:37:18    203s]     204                          Metal10
+[11/29 03:37:18    203s]     66                              Via3
+[11/29 03:37:18    203s]     205                          Metal10
+[11/29 03:37:18    203s]     67                              Via3
+[11/29 03:37:18    203s]     201                          Metal10
+[11/29 03:37:18    203s]     68                              Via3
+[11/29 03:37:18    203s]     75                            Metal4
+[11/29 03:37:18    203s]     215                            Via10
+[11/29 03:37:18    203s]     76                            Metal4
+[11/29 03:37:18    203s]     211                            Via10
+[11/29 03:37:18    203s]     77                            Metal4
+[11/29 03:37:18    203s]     78                            Metal4
+[11/29 03:37:18    203s]     213                            Via10
+[11/29 03:37:18    203s]     79                            Metal4
+[11/29 03:37:18    203s]     214                            Via10
+[11/29 03:37:18    203s]     80                            Metal4
+[11/29 03:37:18    203s]     225                          Metal11
+[11/29 03:37:18    203s]     87                              Via4
+[11/29 03:37:18    203s]     222                          Metal11
+[11/29 03:37:18    203s]     89                              Via4
+[11/29 03:37:18    203s]     96                            Metal5
+[11/29 03:37:18    203s]     97                            Metal5
+[11/29 03:37:18    203s]     98                            Metal5
+[11/29 03:37:18    203s]     99                            Metal5
+[11/29 03:37:18    203s]     100                           Metal5
+[11/29 03:37:18    203s]     101                           Metal5
+[11/29 03:37:18    203s]     108                             Via5
+[11/29 03:37:18    203s]     110                             Via5
+[11/29 03:37:18    203s]     117                           Metal6
+[11/29 03:37:18    203s]     231                          Metal11
+[11/29 03:37:18    203s]     230                          Metal11
+[11/29 03:37:18    203s]     229                          Metal11
+[11/29 03:37:18    203s]     228                          Metal11
+[11/29 03:37:18    203s]     210                          Metal10
+[11/29 03:37:18    203s]     209                          Metal10
+[11/29 03:37:18    203s]     208                          Metal10
+[11/29 03:37:18    203s]     207                          Metal10
+[11/29 03:37:18    203s]     189                           Metal9
+[11/29 03:37:18    203s]     188                           Metal9
+[11/29 03:37:18    203s]     187                           Metal9
+[11/29 03:37:18    203s]     186                           Metal9
+[11/29 03:37:18    203s]     168                           Metal8
+[11/29 03:37:18    203s]     167                           Metal8
+[11/29 03:37:18    203s]     166                           Metal8
+[11/29 03:37:18    203s]     165                           Metal8
+[11/29 03:37:18    203s]     147                           Metal7
+[11/29 03:37:18    203s]     146                           Metal7
+[11/29 03:37:18    203s]     145                           Metal7
+[11/29 03:37:18    203s]     144                           Metal7
+[11/29 03:37:18    203s]     63                            Metal3
+[11/29 03:37:18    203s]     62                            Metal3
+[11/29 03:37:18    203s]     39                            Metal2
+[11/29 03:37:18    203s]     105                           Metal5
+[11/29 03:37:18    203s]     103                           Metal5
+[11/29 03:37:18    203s]     123                           Metal6
+[11/29 03:37:18    203s]     42                            Metal2
+[11/29 03:37:18    203s]     41                            Metal2
+[11/29 03:37:18    203s]     40                            Metal2
+[11/29 03:37:18    203s]     20                            Metal1
+[11/29 03:37:18    203s]     60                            Metal3
+[11/29 03:37:18    203s]     18                            Metal1
+[11/29 03:37:18    203s]     61                            Metal3
+[11/29 03:37:18    203s]     102                           Metal5
+[11/29 03:37:18    203s]     21                            Metal1
+[11/29 03:37:18    203s]     19                            Metal1
+[11/29 03:37:18    203s]     81                            Metal4
+[11/29 03:37:18    203s]     104                           Metal5
+[11/29 03:37:18    203s]     82                            Metal4
+[11/29 03:37:18    203s]     83                            Metal4
+[11/29 03:37:18    203s]     84                            Metal4
+[11/29 03:37:18    203s]     124                           Metal6
+[11/29 03:37:18    203s]     125                           Metal6
+[11/29 03:37:18    203s]     126                           Metal6
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Stream Out Information Processed for GDS version 3:
+[11/29 03:37:18    203s] Units: 2000 DBU
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Object                             Count
+[11/29 03:37:18    203s] ----------------------------------------
+[11/29 03:37:18    203s] Instances                           3923
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Ports/Pins                             0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Nets                               12773
+[11/29 03:37:18    203s]     metal layer Metal1                73
+[11/29 03:37:18    203s]     metal layer Metal2              6787
+[11/29 03:37:18    203s]     metal layer Metal3              4743
+[11/29 03:37:18    203s]     metal layer Metal4              1170
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s]     Via Instances                  11820
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Special Nets                         434
+[11/29 03:37:18    203s]     metal layer Metal1               391
+[11/29 03:37:18    203s]     metal layer Metal2                10
+[11/29 03:37:18    203s]     metal layer Metal3                 6
+[11/29 03:37:18    203s]     metal layer Metal4                14
+[11/29 03:37:18    203s]     metal layer Metal5                 1
+[11/29 03:37:18    203s]     metal layer Metal8                12
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s]     Via Instances                   5874
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Metal Fills                            0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s]     Via Instances                      0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Metal FillOPCs                         0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s]     Via Instances                      0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Metal FillDRCs                         0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s]     Via Instances                      0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Text                                 673
+[11/29 03:37:18    203s]     metal layer Metal1                 9
+[11/29 03:37:18    203s]     metal layer Metal2               491
+[11/29 03:37:18    203s]     metal layer Metal3               164
+[11/29 03:37:18    203s]     metal layer Metal4                 4
+[11/29 03:37:18    203s]     metal layer Metal8                 1
+[11/29 03:37:18    203s]     metal layer Metal11                4
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Blockages                              0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Custom Text                            0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Custom Box                             0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] Trim Metal                             0
+[11/29 03:37:18    203s] 
+[11/29 03:37:18    203s] ######Streamout is finished!
+[11/29 03:44:53    269s] 
+[11/29 03:44:53    269s] *** Memory Usage v#1 (Current mem = 1368.492M, initial mem = 311.355M) ***
+[11/29 03:44:53    269s] 
+[11/29 03:44:53    269s] *** Summary of all messages that are not suppressed in this session:
+[11/29 03:44:53    269s] Severity  ID               Count  Summary                                  
+[11/29 03:44:53    269s] WARNING   IMPLF-58            16  MACRO '%s' has been found in the databas...
+[11/29 03:44:53    269s] WARNING   IMPLF-61             1  %d duplicated MACRO definitions have bee...
+[11/29 03:44:53    269s] WARNING   IMPLF-200           25  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[11/29 03:44:53    269s] WARNING   IMPLF-201            6  Pin '%s' in macro '%s' has no ANTENNADIF...
+[11/29 03:44:53    269s] WARNING   IMPFP-3961           8  The techSite '%s' has no related standar...
+[11/29 03:44:53    269s] WARNING   IMPFP-4008           1  The ring number '%d' is specified at sid...
+[11/29 03:44:53    269s] WARNING   IMPSYC-2             5  Timing information is not defined for ce...
+[11/29 03:44:53    269s] WARNING   IMPVL-159           16  Pin '%s' of cell '%s' is defined in LEF ...
+[11/29 03:44:53    269s] WARNING   IMPOPT-3602          1  The specified path group name %s is not ...
+[11/29 03:44:53    269s] WARNING   IMPCCOPT-2332        1  The property %s is deprecated. It still ...
+[11/29 03:44:53    269s] WARNING   TECHLIB-302         40  No function defined for cell '%s'. The c...
+[11/29 03:44:53    269s] WARNING   TECHLIB-459          2  Appending library '%s' to the previously...
+[11/29 03:44:53    269s] *** Message Summary: 122 warning(s), 0 error(s)
+[11/29 03:44:53    269s] 
+[11/29 03:44:53    269s] --- Ending "Innovus" (totcpu=0:04:30, real=0:16:27, mem=1368.5M) ---
