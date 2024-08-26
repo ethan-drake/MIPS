@@ -31,7 +31,7 @@ end
 initial begin
 	registers[0] <= 32'h0;
 	registers[1] <= 32'h0;
-	registers[2] <= 32'h7fffefe4;
+	registers[2] <= 32'h0;//32'h7fffefe4;
 	registers[3] <= 32'h0;
 	registers[4] <= 32'h0;
 	registers[5] <= 32'h0;
@@ -58,7 +58,7 @@ initial begin
 	registers[26] <= 32'h0;
 	registers[27] <= 32'h0;
 	registers[28] <= 32'h0;
-	registers[29] <= 32'h0;
+	registers[29] <= 32'h7fffeffc;
 	registers[30] <= 32'h0;
 	registers[31] <= 32'h0;
 end

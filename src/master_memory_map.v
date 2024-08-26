@@ -29,7 +29,7 @@ always @(address) begin
 	//RAM/UART
 	if (address >= 32'h10_010_000 && address < 32'h10_040_000) begin
 		//UART
-		if (address >= 32'h10_010_020 && address <= 32'h10_010_040) begin
+		if (address >= 32'h10_010_040 && address <= 32'h10_010_060) begin
 			add_val = 2'b01;
 		end
 		else
@@ -67,7 +67,7 @@ always @(add_val, we, wd, address) begin
 				WSel_1 = 1'b0;
 				WSel_2 = we;
 				WSel_3 = 1'b0;
-				map_Address = address + (~32'h10_010_020 + 1'b1) >> 2'h2; //to UART
+				map_Address = address + (~32'h10_010_040 + 1'b1) >> 2'h2; //to UART
 				map_Data = wd;
 			end
 		2'b10:
