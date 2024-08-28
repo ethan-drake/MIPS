@@ -27,6 +27,7 @@ module ALU #(parameter LENGTH=32) (
 //and 8
 //shift left imm 9
 //shift right imm A
+//load upper imm B
 
 reg [LENGTH-1:0] temp_result;
 
@@ -76,6 +77,10 @@ always@(*) begin
 		4'hA: //shift right imm
 			begin
 				temp_result= i_a >> i_b[4:0];
+			end
+		4'hB:
+			begin
+				temp_result = {i_b,16'b0};
 			end
 		default: temp_result= 0; //Not specified which is the default value
 	endcase

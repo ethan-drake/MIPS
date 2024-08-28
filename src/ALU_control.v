@@ -7,14 +7,19 @@
 
 module ALU_control (
     //inputs
-	input [6:0] i_opcode, i_funct7,
-	input [2:0] i_funct3, i_aluop,
+	input [5:0] i_opcode,
+	input [3:0] i_aluop,
 	 //outputs
     output reg [3:0] o_alu_operation
 );
 
-parameter R_TYPE = 7'b0110011;
-parameter I_TYPE = 7'b0010011;
+parameter ADD = 6'h20;
+parameter SUB = 6'h22;
+parameter SLL = 6'h00;
+parameter SLT = 6'h2A;
+parameter SRL = 6'h02;
+parameter OR  = 6'h25;
+parameter AND = 6'h24;
 
 //add 0
 //subs 1
@@ -27,6 +32,7 @@ parameter I_TYPE = 7'b0010011;
 //and 8
 //shift left imm 9
 //shift right imm A
+//load upper imm B
 
 always@(*) begin
 	o_alu_operation = {4'b0};
@@ -41,62 +47,51 @@ always@(*) begin
 			end
 		3'h2 : //Operation determined by function
 			case(i_opcode)
-				R_TYPE:
+				ADD:
 					begin
-						case(i_funct3)
-							3'h0:
-								begin
-									case(i_funct7)
-										7'h0:
-											o_alu_operation = 4'h0;
-										7'h20:
-											o_alu_operation = 4'h1;
-										7'h1:
-											o_alu_operation = 4'h2;
-										default: o_alu_operation = {4'b0}; 
-									endcase
-								end
-							3'h1:
-								o_alu_operation = 4'h3;
-							3'h2,
-							3'h3:
-								o_alu_operation = 4'h4;
-							3'h4:
-								o_alu_operation = 4'h5;
-							3'h5:
-								o_alu_operation = 4'h6;
-							3'h6:
-								o_alu_operation = 4'h7;
-							3'h7:
-								o_alu_operation = 4'h8;
-							default: o_alu_operation = {4'b0}; 
-						endcase
+						o_alu_operation = 4'h0;
 					end
-				I_TYPE:
+				SUB:
 					begin
-						case(i_funct3)
-							3'h0:
-								o_alu_operation = 4'h0;
-							3'h1:
-								o_alu_operation = 4'h9;
-							3'h2,
-							3'h3:
-								o_alu_operation = 4'h4;
-							3'h4:
-								o_alu_operation = 4'h5;
-							3'h5:
-								o_alu_operation = 4'hA;
-							3'h6:
-								o_alu_operation = 4'h7;
-							3'h7:
-								o_alu_operation = 4'h8;
-							default: o_alu_operation = {4'b0};
-						endcase
+						o_alu_operation = 4'h1;
 					end
-				default: o_alu_operation = {4'b0}; 
+				SLL:
+					begin
+						o_alu_operation = 4'h3;
+					end
+				SLT:
+					begin
+						o_alu_operation = 4'h4;
+					end
+				SRL:
+					begin
+						o_alu_operation = 4'h6;
+					end
+				OR:
+					begin
+						o_alu_operation = 4'h7;
+					end
+				AND:
+					begin
+						o_alu_operation = 4'h8;
+					end
 			endcase
-			
-		default: o_alu_operation = {4'b0}; 
+		3'h3 : //And operation 
+			begin
+				o_alu_operation = 4'h8;
+			end
+		3'h4: //Or operation 
+			begin
+				o_alu_operation = 4'h7;
+			end
+		3'h5: //LUI operation
+			begin
+				o_alu_operation = 4'hB;
+			end
+		default: 
+			begin
+				o_alu_operation = 4'h0; 
+			end
 	endcase
 end
 

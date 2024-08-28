@@ -7,36 +7,35 @@
 
 module control_unit(
     //Inputs control unit
-    input[6:0] opcode,
+    input[5:0] opcode,
     //Inputs ALU Decoder
-    input[2:0] func3,
+    input[5:0] func3,
     //Output control unit
     //Multiplexer Selects
-    output reg [1:0] MemtoReg,
-    output reg PCSrc,
-    output reg ALUSrcA,
+    output reg MemtoReg,
     output reg ALUSrcB,
     //Register Enables
     output reg MemWrite,
     output reg MemRead,
-    output reg PCWriteCond,
-    output reg BNE,
+    output reg BEQ,
     output reg RegWrite,
-	 output reg JALR_o,
+    output reg RegDst,
+    output reg jump,
     //Outputs ALU Decoder
-    output reg [2:0] ALUOP
+    output reg [3:0] ALUOP
 );
 
+
 //opcodes
-parameter R_TYPE = 7'b0110011;
-parameter I_TYPE = 7'b0010011;
-parameter S_TYPE = 7'b0100011;
-parameter B_TYPE = 7'b1100011;
-parameter LUI_INS = 7'b0110111;
-parameter AUIPC_INS = 7'b0010111;
-parameter JAL_INS = 7'b1101111;
-parameter JALR_INS = 7'b1100111;
-parameter LOAD_INS = 7'b0000011;
+parameter JUMP_OP      = 6'b000010;
+parameter ADDI_OP      = 6'b001000;
+parameter BEQ_OP       = 6'b000100;
+parameter R_TYPE_OP    = 6'b000000;
+parameter LW_OP        = 6'b100011;
+parameter SW_OP        = 6'b101011;
+parameter ANDI_OP      = 6'b001100;
+parameter ORI_OP       = 6'b001101;
+parameter LUI_OP       = 6'b001111;
 
 //ALU Control
 //ADDITION 010, ALUOP 00
@@ -44,174 +43,135 @@ parameter LOAD_INS = 7'b0000011;
 //OUTPUT DEFINITION
 always @(*)
 	begin
-		 BNE = 1'b0;
-		 PCWriteCond = 1'b0;
-		 MemRead = 1'b0;
-		 MemWrite = 1'b0;
-		 MemtoReg = 2'b00;
-		 PCSrc = 1'b0;
-		 ALUOP = 2'b00;
-       ALUSrcA = 1'b0;
-		 ALUSrcB = 1'b0;
-		 RegWrite = 1'b0;
-		 JALR_o = 1'b0;
-		case(opcode)
-            LOAD_INS:
+        MemtoReg = 1'b0;
+        ALUSrcB = 1'b0;
+        MemWrite = 1'b0;
+        MemRead = 1'b0;
+        RegDst = 1'b0;
+        BEQ = 1'b0;
+        RegWrite = 1'b0;
+        jump = 1'b0;
+        ALUOP = 3'b00;
+        case(opcode)
+            JUMP_OP:
             begin
-                BNE = 1'b0;
-                PCWriteCond = 1'b0;
-                MemRead = 1'b1;
-                MemWrite = 1'b0;
-                MemtoReg = 2'b01;
-                PCSrc = 1'b0;
-                ALUOP = 2'b00;
-                ALUSrcA = 1'b1;
-                ALUSrcB = 1'b1;
-                RegWrite = 1'b1;
-					 JALR_o = 1'b0;
-            end
-            S_TYPE:
-            begin
-                BNE = 1'b0;
-                PCWriteCond = 1'b0;
-                MemRead = 1'b0;
-                MemWrite = 1'b1;
-                MemtoReg = 2'b00;
-                PCSrc = 1'b0;
-                ALUOP = 2'b00;
-                ALUSrcA = 1'b1;
-                ALUSrcB = 1'b1;
-                RegWrite = 1'b0;
-					 JALR_o = 1'b0;
-            end
-            R_TYPE:
-            begin
-                BNE = 1'b0;
-                PCWriteCond = 1'b0;
-                MemRead = 1'b0;
-                MemWrite = 1'b0;
-                MemtoReg = 2'b00;
-                PCSrc = 1'b0;
-                ALUOP = 2'b10;
-                ALUSrcA = 1'b1;
+                MemtoReg = 1'b0;
                 ALUSrcB = 1'b0;
-                RegWrite = 1'b1;
-					 JALR_o = 1'b0;
-            end
-            I_TYPE:
-            begin
-                BNE = 1'b0;
-                PCWriteCond = 1'b0;
-                MemRead = 1'b0;
                 MemWrite = 1'b0;
-                MemtoReg = 2'b00;
-                PCSrc = 1'b0;
-                ALUOP = 2'b10;
-                ALUSrcA = 1'b1;
-                ALUSrcB = 1'b1;
-                RegWrite = 1'b1;
-					 JALR_o = 1'b0;
-            end
-            JALR_INS:
-            begin
-                BNE = 1'b0;
-                PCWriteCond = 1'b0;
                 MemRead = 1'b0;
+                RegDst = 1'b0;
+                BEQ = 1'b0;
+                RegWrite = 1'b0;
+                jump = 1'b1;
+                ALUOP = 3'b00;
+            end
+            BEQ_OP:
+            begin
+                MemtoReg = 1'b0;
+                ALUSrcB = 1'b0;
                 MemWrite = 1'b0;
-                MemtoReg = 2'b10;
-                PCSrc = 1'b1;
-                ALUOP = 2'b10;
-                ALUSrcA = 1'b1;
-                ALUSrcB = 1'b1;
-                RegWrite = 1'b1;
-					 JALR_o = 1'b1;
-            end
-            B_TYPE:
-            begin
-                if(func3 == 3'b000) //BEQ
-                begin
-                    BNE = 1'b0;
-                    PCWriteCond = 1'b1;
-                    MemRead = 1'b0;
-                    MemWrite = 1'b0;
-                    MemtoReg = 2'b00;
-                    PCSrc = 1'b0;
-                    ALUOP = 2'b01;
-                    ALUSrcA = 1'b1;
-                    ALUSrcB = 1'b0;
-                    RegWrite = 1'b0;
-						  JALR_o = 1'b0;
-                end
-                else if(func3 == 3'b001) //BNE
-                begin
-                    BNE = 1'b1;
-                    PCWriteCond = 1'b1;
-                    MemRead = 1'b0;
-                    MemWrite = 1'b0;
-                    MemtoReg = 2'b00;
-                    PCSrc = 1'b0;
-                    ALUOP = 2'b01;
-                    ALUSrcA = 1'b1;
-                    ALUSrcB = 1'b0;
-                    RegWrite = 1'b0;
-						  JALR_o = 1'b0;
-                end
-            end
-            LUI_INS:
-            begin
-                BNE = 1'b0;
-                PCWriteCond = 1'b0;
                 MemRead = 1'b0;
-                MemWrite = 1'b0;
-                MemtoReg = 2'b11;
-                PCSrc = 1'b0;
-                ALUOP = 2'b00;
-                ALUSrcA = 1'b1;
-                ALUSrcB = 1'b1;
-                RegWrite = 1'b1;
-					 JALR_o = 1'b0;
+                RegDst = 1'b0;
+                BEQ = 1'b1;
+                RegWrite = 1'b0;
+                jump = 1'b0;
+                ALUOP = 3'b01;
             end
-            AUIPC_INS:
+            LW_OP:
             begin
-                BNE = 1'b0;
-                PCWriteCond = 1'b0;
-                MemRead = 1'b0;
-                MemWrite = 1'b0;
-                MemtoReg = 2'b00;
-                PCSrc = 1'b0;
-                ALUOP = 2'b00;
-                ALUSrcA = 1'b0;
+                MemtoReg = 1'b1;
                 ALUSrcB = 1'b1;
+                MemWrite = 1'b0;
+                MemRead = 1'b1;
+                RegDst = 1'b0;
+                BEQ = 1'b0;
                 RegWrite = 1'b1;
-					 JALR_o = 1'b0;
+                jump = 1'b0;
+                ALUOP = 3'b00;
             end
-            JAL_INS:
+            R_TYPE_OP:
             begin
-                BNE = 1'b0;
-                PCWriteCond = 1'b0;
-                MemRead = 1'b0;
+                MemtoReg = 1'b0;
+                ALUSrcB = 1'b0;
                 MemWrite = 1'b0;
-                MemtoReg = 2'b10;
-                PCSrc = 1'b1;
-                ALUOP = 2'b00;
-                ALUSrcA = 1'b1;
-                ALUSrcB = 1'b1;
+                MemRead = 1'b0;
+                RegDst = 1'b1;
+                BEQ = 1'b0;
                 RegWrite = 1'b1;
-					 JALR_o = 1'b0;
+                jump = 1'b0;
+                ALUOP = 3'b10;
+            end
+            ADDI_OP:
+            begin
+                MemtoReg = 1'b0;
+                ALUSrcB = 1'b1;
+                MemWrite = 1'b0;
+                MemRead = 1'b0;
+                RegDst = 1'b0;
+                BEQ = 1'b0;
+                RegWrite = 1'b1;
+                jump = 1'b0;
+                ALUOP = 3'b00;
+            end
+            SW_OP:
+            begin
+                MemtoReg = 1'b0;
+                ALUSrcB = 1'b1;
+                MemWrite = 1'b1;
+                MemRead = 1'b0;
+                RegDst = 1'b0;
+                BEQ = 1'b0;
+                RegWrite = 1'b0;
+                jump = 1'b0;
+                ALUOP = 3'b00;
+            end
+            ANDI_OP:
+            begin
+                MemtoReg = 1'b0;
+                ALUSrcB = 1'b1;
+                MemWrite = 1'b0;
+                MemRead = 1'b0;
+                RegDst = 1'b0;
+                BEQ = 1'b0;
+                RegWrite = 1'b1;
+                jump = 1'b0;
+                ALUOP = 3'b011;
+            end
+            ORI_OP:
+            begin
+                MemtoReg = 1'b0;
+                ALUSrcB = 1'b1;
+                MemWrite = 1'b0;
+                MemRead = 1'b0;
+                RegDst = 1'b0;
+                BEQ = 1'b0;
+                RegWrite = 1'b1;
+                jump = 1'b0;
+                ALUOP = 3'b100;
+            end
+            LUI_OP:
+            begin
+                MemtoReg = 1'b0;
+                ALUSrcB = 1'b1;
+                MemWrite = 1'b0;
+                MemRead = 1'b0;
+                RegDst = 1'b0;
+                BEQ = 1'b0;
+                RegWrite = 1'b1;
+                jump = 1'b0;
+                ALUOP = 3'b101;
             end
             default:
             begin
-                BNE = 1'b0;
-                PCWriteCond = 1'b0;
-                MemRead = 1'b0;
-                MemWrite = 1'b0;
-                MemtoReg = 2'b00;
-                PCSrc = 1'b0;
-                ALUOP = 2'b00;
-                ALUSrcA = 1'b1;
+                MemtoReg = 1'b0;
                 ALUSrcB = 1'b0;
+                MemWrite = 1'b0;
+                MemRead = 1'b0;
+                RegDst = 1'b0;
+                BEQ = 1'b0;
                 RegWrite = 1'b0;
-					 JALR_o = 1'b0;
+                jump = 1'b0;
+                ALUOP = 3'b00;
             end
 			endcase
 	end
