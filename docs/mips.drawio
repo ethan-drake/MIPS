@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.7">
   <diagram name="Page-1" id="W0EPyd7C3ClBssLKZqVx">
-    <mxGraphModel dx="7009" dy="2840" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="4203" dy="1355" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -473,7 +473,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="xbqD1QVgpgx-iQg0N3NT-7" value="&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Instr[6:0]&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;to&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Instr[31:26]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Opcode&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="xbqD1QVgpgx-iQg0N3NT-6" vertex="1" connectable="0">
+        <mxCell id="xbqD1QVgpgx-iQg0N3NT-7" value="&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Instr[31:26]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Opcode&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="xbqD1QVgpgx-iQg0N3NT-6" vertex="1" connectable="0">
           <mxGeometry x="0.5997" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -643,7 +643,7 @@
             <mxPoint x="1159" y="437" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="xbqD1QVgpgx-iQg0N3NT-54" value="&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Instr[14:12]&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;to&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Instr[5:0]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Funct&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="xbqD1QVgpgx-iQg0N3NT-53" vertex="1" connectable="0">
+        <mxCell id="xbqD1QVgpgx-iQg0N3NT-54" value="&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Instr[5:0]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Funct&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="xbqD1QVgpgx-iQg0N3NT-53" vertex="1" connectable="0">
           <mxGeometry x="-0.256" y="-4" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
