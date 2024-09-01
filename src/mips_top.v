@@ -16,22 +16,17 @@ module mips_top (
 );
 
 //Wires to interconnect modules
-wire ALUSrcB, ALUSrcA, MemWrite, pc_src, jump, regWrite, clk, pll_lock, RegDst, mem2Reg;
-wire [31:0] instr_shift_2, pc_out, rd1_data_reg, rd2_data, rd2_data_reg, pc_next, pc_plus_4, pc_target,pc_branch,branch_pc_out;
+wire ALUSrcB, MemWrite, pc_src, jump, regWrite, clk, pll_lock, RegDst, mem2Reg;
+wire [31:0] instr_shift_2, pc_out, rd1_data_reg, rd2_data, rd2_data_reg, pc_next, pc_plus_4,pc_branch,branch_pc_out;
 wire [31:0] memory_out, instr2perf, wd3_wire, sign_extend_out, write_register_out; 
-wire [31:0] SrcA, SrcB, alu_result, pc_jal;
+wire [31:0] SrcB, alu_result;
 wire [3:0] alu_control;
 wire[3:0] alu_operation;
 wire [31:0] data_memory_2_slave, address_memory_2_slave, data_return_rom, data_return_ram, data_return_uart;
 wire we_memory_2_rom, re_memory_2_rom, we_memory_2_ram, re_memory_2_ram, we_memory_2_uart, re_memory_2_uart;
-wire PCWriteCond;
 wire beq;
 wire alu_zero;
 wire MemRead;
-wire alu_zero_bne;
-wire [1:0] cs;
-wire [31:0] decoded_address,ram_rom_data, gpio_data;
-wire mem_select;
 ///////////////////////FETCH//////////////////////////////////////////////
 
 
