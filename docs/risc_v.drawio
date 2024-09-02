@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.8">
   <diagram name="Page-1" id="W0EPyd7C3ClBssLKZqVx">
-    <mxGraphModel dx="4075" dy="2435" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="4305" dy="2549" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2270,11 +2270,10 @@
             <mxPoint x="69" y="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="DyCnLTRVMj-1xTVPvyRo-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fillColor=#1ba1e2;strokeColor=#006EAF;exitX=1;exitY=0.198;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="DyCnLTRVMj-1xTVPvyRo-151" target="DyCnLTRVMj-1xTVPvyRo-28">
+        <mxCell id="DyCnLTRVMj-1xTVPvyRo-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fillColor=#1ba1e2;strokeColor=#006EAF;exitX=1.017;exitY=0.63;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="DyCnLTRVMj-1xTVPvyRo-147" target="DyCnLTRVMj-1xTVPvyRo-28">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="688" y="-1118" />
-              <mxPoint x="715" y="-1118" />
+              <mxPoint x="715" y="-1375" />
               <mxPoint x="715" y="-419" />
             </Array>
             <mxPoint x="489" y="-1115" as="sourcePoint" />
@@ -2309,6 +2308,19 @@
         </mxCell>
         <mxCell id="DyCnLTRVMj-1xTVPvyRo-159" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="DyCnLTRVMj-1xTVPvyRo-20" target="DyCnLTRVMj-1xTVPvyRo-147">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DyCnLTRVMj-1xTVPvyRo-162" value="ALUSrcB" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="DyCnLTRVMj-1xTVPvyRo-159">
+          <mxGeometry x="0.7444" y="-1" relative="1" as="geometry">
+            <mxPoint x="16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DyCnLTRVMj-1xTVPvyRo-161" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="DyCnLTRVMj-1xTVPvyRo-20" target="DyCnLTRVMj-1xTVPvyRo-147">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DyCnLTRVMj-1xTVPvyRo-163" value="ALUOp" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="DyCnLTRVMj-1xTVPvyRo-161">
+          <mxGeometry x="0.7173" y="1" relative="1" as="geometry">
+            <mxPoint x="23" as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="DyCnLTRVMj-1xTVPvyRo-20" value="OUTPUTS&lt;br&gt;CONTROL UNIT&lt;br&gt;&lt;br&gt;Op[6-0]" style="whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="358" y="-1266.12" width="120" height="380" as="geometry" />
