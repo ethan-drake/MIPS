@@ -1,33 +1,26 @@
-// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
-// Date:            03/05/23
+// Coder:           Eduardo Ethandrake Castillo Pulido
+// Date:            09/09/24
 // File:			     branch_control_unit.v
 // Module name:	  branch_control_unit
-// Project Name:	  risc_v_top
-// Description:	  This is the branch unit located in mem stage
+// Project Name:	  mips_top
+// Description:	  This is the branch unit located in decode stage
 
 module branch_control_unit (
-    input take_branch,
-    input[6:0] opcode,
-    input prediction_checkout_ex_mem,
-    input[31:0] prediction_target_ex_mem,
-    input[31:0] real_target,
-    output clear,
-    output PC_restore,
-	 output branch_validated
+    input [5:0] opcode,
+    input PCSrc,
+    output reg flush
 );
 
-// check if opcode is beq or bne, and if take branch is set
-// if so, clear the IF, ID, EX and jump delay flops
-localparam B_TYPE = 7'b1100011;
-localparam JAL_INS = 7'b1101111;
-localparam JALR_INS = 7'b1100111;
+localparam BEQ_OP = 6'h4;
+localparam BNE_OP = 6'h5;
 
-assign clear = (opcode ==B_TYPE) && ( (take_branch != prediction_checkout_ex_mem) || ( (take_branch == 1'b1) && (take_branch == prediction_checkout_ex_mem) && (prediction_target_ex_mem != real_target)) );
-
-assign PC_restore = ((opcode ==B_TYPE) && (prediction_checkout_ex_mem == 1'b1) && (take_branch == 1'b0)) ? 1'b1 : ((opcode ==B_TYPE) && (prediction_checkout_ex_mem == 1'b0) && (take_branch == 1'b1)) ? 1'b0:1'b0;
-
-assign branch_validated = (opcode == JALR_INS) ||  (opcode == JAL_INS) || ~( (opcode == B_TYPE) && (take_branch == 1'b1) && (take_branch == prediction_checkout_ex_mem) && (prediction_target_ex_mem == real_target) );
-
-//assign = (opcode == B_TYPE) && (take_branch == prediction_checkout_ex_mem) && (prediction_target_ex_mem != real_target)
+always @(*) begin
+    if(opcode == BEQ_OP && PCSrc)begin
+        flush = 1'b1;
+    end    
+    else begin
+        flush = 1'b0;
+    end
+end
 
 endmodule

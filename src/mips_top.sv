@@ -28,7 +28,7 @@ wire we_memory_2_rom, re_memory_2_rom, we_memory_2_ram, re_memory_2_ram, we_memo
 wire beq;
 wire alu_zero,is_equal_output;
 wire MemRead,mem_mux_sel;
-wire stall_mux_sel, pc_stall, if_id_stall, if_id_flush;
+wire stall_mux_sel, pc_stall, if_id_stall, if_id_flush_jmp,if_id_flush_branch;
 wire [169:0] id_ex_stall_mux_output;
 
 //***********************Structs for Pipeline***********************//
@@ -135,7 +135,7 @@ ffd_param_clear #(.LENGTH(96)) ffd_fetch_decode (
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(~if_id_stall),
-	.i_clear(if_id_flush),
+	.i_clear(if_id_flush_jmp | if_id_flush_branch),
 	.d(if_id_data_bus),
 	//outputs
 	.q(if_id_data_bus_next)
@@ -282,7 +282,13 @@ multiplexor_param #(.LENGTH(170)) id_ex_stall_mux (
 jump_detection_unit jmp_detect(
     .opcode(if_id_data_bus_next.instr[31:26]),
     .funct(if_id_data_bus_next.instr[5:0]),
-    .flush(if_id_flush)
+    .flush(if_id_flush_jmp)
+);
+
+branch_control_unit branch_detect(
+    .opcode(if_id_data_bus_next.instr[31:26]),
+    .PCSrc(pc_src),
+    .flush(if_id_flush_branch)
 );
 
 //****************************** DECODE->EXECUTE *******************************//
