@@ -1,20 +1,38 @@
-// Coder:           David Adrian Michel Torres, Eduardo Ethandrake Castillo Pulido
-// Date:            03/05/23
+// Coder:           Eduardo Ethandrake Castillo Pulido
+// Date:            09/09/24
 // File:			     jump_detection_unit.v
 // Module name:	  jump_detection_unit
 // Project Name:	  risc_v_top
 // Description:	  This is the jump detection unit located in decode stage
 
 module jump_detection_unit(
-    input [6:0] opcode,
-    output nop_inject
+    input [5:0] opcode,
+    input [5:0] funct,
+    output reg flush
 );
 
 //check if opcode relates to a jump and link or a jump and link reg
-//if true, set nop inject
-localparam JAL_INS = 7'b1101111;
-localparam JALR_INS = 7'b1100111;
+//if true, flush if_id pipe
+localparam J_OP = 6'h2;
+localparam JAL_OP = 6'h3;
+localparam R_OP = 6'h0;
+localparam JR_FUNC = 6'h8;
 
-assign nop_inject = (opcode == JAL_INS) ? 1'b1 : (opcode == JALR_INS) ? 1'b1 : 1'b0;
+always @(*) begin
+    if (opcode == J_OP)begin
+        flush = 1'b1;
+    end
+    else if (opcode == JAL_OP)begin
+        flush = 1'b1;
+    end
+    else if (opcode == R_OP && funct == JR_FUNC)begin
+        flush = 1'b1;
+    end
+    else begin
+        flush = 1'b0;
+    end
+
+end
+
 
 endmodule
