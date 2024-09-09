@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.12">
   <diagram name="Page-1" id="W0EPyd7C3ClBssLKZqVx">
-    <mxGraphModel dx="3856" dy="3126" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="4700" dy="3546" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2331,6 +2331,14 @@
         <mxCell id="QiXQXS4P3Ca54M05k279-23" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;EX Control Bus&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="QiXQXS4P3Ca54M05k279-22" vertex="1" connectable="0">
           <mxGeometry x="-0.4416" y="3" relative="1" as="geometry">
             <mxPoint x="-15" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rEuUuMdux7kyaUxfW2Zm-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="DyCnLTRVMj-1xTVPvyRo-20" target="rEuUuMdux7kyaUxfW2Zm-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rEuUuMdux7kyaUxfW2Zm-93" value="id_memWrite" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rEuUuMdux7kyaUxfW2Zm-92">
+          <mxGeometry x="0.9166" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="DyCnLTRVMj-1xTVPvyRo-20" value="OUTPUTS&lt;br&gt;CONTROL UNIT&lt;br&gt;&lt;br&gt;Op[6-0]" style="whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
