@@ -16,7 +16,8 @@ module mips_top (
 );
 
 //Wires to interconnect modules
-wire ALUSrcB, MemWrite, pc_src, jump, regWrite, clk, pll_lock, RegDst, mem2Reg, rd1_sel, rd2_sel;
+wire ALUSrcB, MemWrite, pc_src, jump, regWrite, clk, pll_lock, RegDst, mem2Reg;
+wire [1:0] rd1_sel, rd2_sel;
 wire [31:0] instr_shift_2, pc_out, rd1_data_reg, rd2_data, rf_rd1, rf_rd2, pc_next, pc_plus_4,pc_branch,branch_pc_out;
 wire [31:0] memory_out, wd3_wire, sign_extend_out, write_register_out; 
 wire [31:0] SrcB, alu_result;
@@ -200,16 +201,20 @@ register_file reg_file (
 	.rd2(rf_rd2)
 );
 
-multiplexor_param #(.LENGTH(32)) mux_rd1 (
+double_multiplexor_param #(.LENGTH(32)) mux_rd1 (
 	.i_a(rf_rd1),
 	.i_b(wd3_wire),
+	.i_c(ex_mem_data_bus_next.alu_result),
+	.i_d(ex_mem_data_bus_prev.alu_result),
 	.i_selector(rd1_sel),
 	.out(id_ex_data_bus_prev.rd1)
 );
 
-multiplexor_param #(.LENGTH(32)) mux_rd2 (
+double_multiplexor_param #(.LENGTH(32)) mux_rd2 (
 	.i_a(rf_rd2),
 	.i_b(wd3_wire),
+	.i_c(ex_mem_data_bus_next.alu_result),
+	.i_d(ex_mem_data_bus_prev.alu_result),
 	.i_selector(rd2_sel),
 	.out(id_ex_data_bus_prev.rd2)
 );
@@ -234,12 +239,22 @@ control_unit cu (
 rf_forward_unit rf_fwd_unit(
     .id_rs(if_id_data_bus_next.instr[25:21]),
     .id_rt(if_id_data_bus_next.instr[20:16]),
+	.wb_opcode(mem_wb_data_bus_next.instr[31:26]),
     .wb_rd(mem_wb_data_bus_next.instr[15:11]),
 	.wb_rt(mem_wb_data_bus_next.instr[20:16]),
     .wb_reg_write(mem_wb_control_bus_next.regWrite),
+	.mem_opcode(ex_mem_data_bus_next.instr[31:26]),
+	.mem_rd(ex_mem_data_bus_next.instr[15:11]),
+    .mem_rt(ex_mem_data_bus_next.instr[20:16]),
+    .mem_reg_write(ex_mem_control_bus_next.regWrite),
+	.ex_opcode(id_ex_data_bus_next.instr[31:26]),
+	.ex_rd(id_ex_data_bus_next.instr[15:11]),
+    .ex_rt(id_ex_data_bus_next.instr[20:16]),
+    .ex_reg_write(id_ex_control_bus_next.regWrite),
     .rd1_sel(rd1_sel),
     .rd2_sel(rd2_sel)
 );
+
 
 //****************************** DECODE->EXECUTE *******************************//
 ffd_param_clear #(.LENGTH(170)) ffd_decode_execute (
