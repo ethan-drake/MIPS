@@ -19,7 +19,7 @@ module mips_top (
 wire ALUSrcB, MemWrite, pc_src, jump, regWrite, clk, pll_lock, RegDst, mem2Reg;
 wire [1:0] rd1_sel, rd2_sel;
 wire [31:0] instr_shift_2, pc_out, rd1_data_reg, rd2_data, rf_rd1, rf_rd2, pc_next, pc_plus_4,pc_branch,branch_pc_out;
-wire [31:0] memory_out, wd3_wire, sign_extend_out, write_register_out; 
+wire [31:0] wd3_wire, sign_extend_out, write_register_out,mem_data_write; 
 wire [31:0] SrcB, alu_result;
 wire [3:0] alu_control;
 wire[3:0] alu_operation;
@@ -27,7 +27,9 @@ wire [31:0] data_memory_2_slave, address_memory_2_slave, data_return_rom, data_r
 wire we_memory_2_rom, re_memory_2_rom, we_memory_2_ram, re_memory_2_ram, we_memory_2_uart, re_memory_2_uart;
 wire beq;
 wire alu_zero,is_equal_output;
-wire MemRead;
+wire MemRead,mem_mux_sel;
+wire stall_mux_sel, pc_stall, if_id_stall;
+wire [169:0] id_ex_stall_mux_output;
 
 //***********************Structs for Pipeline***********************//
 typedef struct packed {
@@ -75,6 +77,8 @@ typedef struct packed {
 } ex_mem_control_bus;
 
 typedef struct packed {
+	logic MemRead;
+	logic MemWrite;
 	logic mem2Reg;
 	logic regWrite;
 	logic RegDst;
@@ -100,7 +104,7 @@ if_data_bus if_id_data_bus_next;
 ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 	.i_clk(clk), 
 	.i_rst_n(rst_n), 
-	.i_en(1'b1),
+	.i_en(~pc_stall),
 	.pll_lock(pll_lock), //start the program when PLL is lock
 	.d(pc_next),
 	.q(pc_out)
@@ -130,7 +134,7 @@ instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 ffd_param_clear #(.LENGTH(96)) ffd_fetch_decode (
 	.i_clk(clk),
 	.i_rst_n(rst_n),
-	.i_en(1'b1),
+	.i_en(~if_id_stall),
 	.i_clear(1'b0),
 	.d(if_id_data_bus),
 	//outputs
@@ -255,6 +259,24 @@ rf_forward_unit rf_fwd_unit(
     .rd2_sel(rd2_sel)
 );
 
+hazard_detection_unit hazard_unit(
+	.id_ex_memread(id_ex_control_bus_next.MemRead),
+    .id_ex_rt(id_ex_data_bus_next.instr[20:16]),
+    .if_id_rs(if_id_data_bus_next.instr[25:21]),
+    .if_id_rt(if_id_data_bus_next.instr[20:16]),
+	.if_id_memwrite(id_ex_control_bus_prev.MemWrite),
+    //.branch_taken(),
+    .pc_stall(pc_stall),
+    .if_id_stall(if_id_stall),
+    .stall_mux(stall_mux_sel)
+);
+
+multiplexor_param #(.LENGTH(170)) id_ex_stall_mux (
+	.i_a({id_ex_control_bus_prev,id_ex_data_bus_prev}),
+	.i_b(170'h0),
+	.i_selector(stall_mux_sel),
+	.out(id_ex_stall_mux_output)
+);
 
 //****************************** DECODE->EXECUTE *******************************//
 ffd_param_clear #(.LENGTH(170)) ffd_decode_execute (
@@ -262,7 +284,7 @@ ffd_param_clear #(.LENGTH(170)) ffd_decode_execute (
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
 	.i_clear(1'b0),
-	.d({id_ex_control_bus_prev,id_ex_data_bus_prev}),
+	.d(id_ex_stall_mux_output),
 	//outputs
 	.q({id_ex_control_bus_next,id_ex_data_bus_next})
 );
@@ -326,10 +348,17 @@ mem_data_bus mem_wb_data_bus_next;
 assign mem_wb_control_bus_prev.RegDst = ex_mem_control_bus_next.RegDst;
 assign mem_wb_data_bus_prev.instr = ex_mem_data_bus_next.instr;
 
+multiplexor_param #(.LENGTH(32)) mult_mem_sel (
+	.i_a(ex_mem_data_bus_next.rd2),
+	.i_b(mem_wb_data_bus_next.memory_out),
+	.i_selector(mem_mux_sel),
+	.out(mem_data_write)
+);
+
 //Memory map
 master_memory_map #(.DATA_WIDTH(32), .ADDR_WIDTH(7)) memory_map (
 	//CORES <--> Memory map
-	.wd(ex_mem_data_bus_next.rd2),
+	.wd(mem_data_write),
 	.address(ex_mem_data_bus_next.alu_result),
 	.we(ex_mem_control_bus_next.MemWrite),
 	.re(ex_mem_control_bus_next.MemRead),
@@ -370,16 +399,27 @@ uart_IP #(.DATA_WIDTH(32)) uart_IP_module (
 	.tx(tx)
 );
 
+
+mem_fwd_unit mem_forward_unit(
+    .ex_mem_write(ex_mem_control_bus_next.MemWrite),
+    .wb_mem_read(mem_wb_control_bus_next.MemRead),
+    .wb_rt(mem_wb_data_bus_next.instr[20:16]),
+    .ex_rt(ex_mem_data_bus_next.instr[20:16]),
+    .mem_mux_sel(mem_mux_sel)
+);
+
+
 assign mem_wb_data_bus_prev.alu_result = ex_mem_data_bus_next.alu_result;
 
-
+assign mem_wb_control_bus_prev.MemRead = ex_mem_control_bus_next.MemRead;
+assign mem_wb_control_bus_prev.MemWrite = ex_mem_control_bus_next.MemWrite;
 assign mem_wb_control_bus_prev.mem2Reg = ex_mem_control_bus_next.mem2Reg;
 assign mem_wb_control_bus_prev.regWrite = ex_mem_control_bus_next.regWrite;
 
 //****************************** *******************************//
 //****************************** MEM->WB *******************************//
 
-ffd_param_clear #(.LENGTH(99)) ffd_mem_wb (
+ffd_param_clear #(.LENGTH(101)) ffd_mem_wb (
 	.i_clk(clk),
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
