@@ -28,7 +28,7 @@ wire we_memory_2_rom, re_memory_2_rom, we_memory_2_ram, re_memory_2_ram, we_memo
 wire beq;
 wire alu_zero,is_equal_output;
 wire MemRead,mem_mux_sel;
-wire stall_mux_sel, pc_stall, if_id_stall, if_id_flush_jmp,if_id_flush_branch;
+wire stalling, if_id_flush_jmp,if_id_flush_branch;
 wire [169:0] id_ex_stall_mux_output;
 
 //***********************Structs for Pipeline***********************//
@@ -104,7 +104,7 @@ if_data_bus if_id_data_bus_next;
 ffd_param_pc_risk #(.LENGTH(32)) ff_pc (
 	.i_clk(clk), 
 	.i_rst_n(rst_n), 
-	.i_en(~pc_stall),
+	.i_en(~stalling),
 	.pll_lock(pll_lock), //start the program when PLL is lock
 	.d(pc_next),
 	.q(pc_out)
@@ -134,7 +134,7 @@ instr_memory #(.DATA_WIDTH(32), .ADDR_WIDTH(6)) memory_rom (
 ffd_param_clear #(.LENGTH(96)) ffd_fetch_decode (
 	.i_clk(clk),
 	.i_rst_n(rst_n),
-	.i_en(~if_id_stall),
+	.i_en(~stalling),
 	.i_clear(if_id_flush_jmp | if_id_flush_branch),
 	.d(if_id_data_bus),
 	//outputs
@@ -260,21 +260,22 @@ rf_forward_unit rf_fwd_unit(
 );
 
 hazard_detection_unit hazard_unit(
+	.i_clk(clk),
+	.i_rst_n(rst_n),
 	.id_ex_memread(id_ex_control_bus_next.MemRead),
     .id_ex_rt(id_ex_data_bus_next.instr[20:16]),
     .if_id_rs(if_id_data_bus_next.instr[25:21]),
     .if_id_rt(if_id_data_bus_next.instr[20:16]),
 	.if_id_memwrite(id_ex_control_bus_prev.MemWrite),
     //.branch_taken(),
-    .pc_stall(pc_stall),
-    .if_id_stall(if_id_stall),
-    .stall_mux(stall_mux_sel)
+    .stalling(stalling)
 );
+
 
 multiplexor_param #(.LENGTH(170)) id_ex_stall_mux (
 	.i_a({id_ex_control_bus_prev,id_ex_data_bus_prev}),
 	.i_b(170'h0),
-	.i_selector(stall_mux_sel),
+	.i_selector(stalling),
 	.out(id_ex_stall_mux_output)
 );
 
