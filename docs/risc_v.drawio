@@ -4048,7 +4048,7 @@
         </mxCell>
         <mxCell id="rEuUuMdux7kyaUxfW2Zm-185" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Instruction [5:0]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: rgb(255, 255, 51);&quot;&gt;Opcode&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rEuUuMdux7kyaUxfW2Zm-179">
           <mxGeometry x="0.9034" y="-1" relative="1" as="geometry">
-            <mxPoint x="16" y="-12" as="offset" />
+            <mxPoint x="-18" y="-10" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="rEuUuMdux7kyaUxfW2Zm-177" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverting_contact;fillColor=#000000;" vertex="1" parent="1">
