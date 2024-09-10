@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.12">
   <diagram name="Page-1" id="W0EPyd7C3ClBssLKZqVx">
-    <mxGraphModel dx="4200" dy="3697" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="4600" dy="3896" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4369,13 +4369,15 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rEuUuMdux7kyaUxfW2Zm-268" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rEuUuMdux7kyaUxfW2Zm-265" target="rEuUuMdux7kyaUxfW2Zm-259">
+        <mxCell id="rEuUuMdux7kyaUxfW2Zm-268" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.49;entryY=0.988;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" edge="1" parent="1" source="rEuUuMdux7kyaUxfW2Zm-265" target="rEuUuMdux7kyaUxfW2Zm-270">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1623" y="-300" />
               <mxPoint x="1623" y="-572" />
               <mxPoint x="1778" y="-572" />
-              <mxPoint x="1778" y="-1337" />
+              <mxPoint x="1778" y="-1275" />
+              <mxPoint x="1777" y="-1275" />
+              <mxPoint x="1777" y="-1303" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -4386,6 +4388,21 @@
         </mxCell>
         <mxCell id="rEuUuMdux7kyaUxfW2Zm-265" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverting_contact;fillColor=#000000;" vertex="1" parent="1">
           <mxGeometry x="1728.75" y="-304.9999999999999" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="rEuUuMdux7kyaUxfW2Zm-276" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rEuUuMdux7kyaUxfW2Zm-270" target="rEuUuMdux7kyaUxfW2Zm-259">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rEuUuMdux7kyaUxfW2Zm-277" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="rEuUuMdux7kyaUxfW2Zm-270" target="rEuUuMdux7kyaUxfW2Zm-251">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1821" y="-1308" />
+              <mxPoint x="1821" y="-1684" />
+              <mxPoint x="1781" y="-1684" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rEuUuMdux7kyaUxfW2Zm-270" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.logic_gates.inverting_contact;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1773" y="-1313.12" width="10" height="10" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
