@@ -29,7 +29,20 @@ wire beq;
 wire alu_zero,is_equal_output;
 wire MemRead,mem_mux_sel;
 wire stalling,stalling_hazard_unit,stalling_fw_fwd_unit, if_id_flush_jmp,if_id_flush_branch;
-wire [169:0] id_ex_stall_mux_output;
+wire [169:0] id_ex_stall_mux_output,ex_mem_stall_mux_output;
+wire [31:0] wb_mult_org_pipe_out;
+wire [4:0] rd_first_mux_out;
+wire mult_detected;
+
+//***********************Structs for Mult Pipeline***********************//
+typedef struct packed {
+	logic [31:0] mult_result;
+	logic [4:0] mult_rd;
+    logic mult_ready;
+} mult_bus;
+
+mult_bus pipe_mult_result;
+
 
 //***********************Structs for Pipeline***********************//
 typedef struct packed {
@@ -190,13 +203,21 @@ multiplexor_param #(.LENGTH(5)) mult_write_register (
 	.i_a(mem_wb_data_bus_next.instr[20:16]),
 	.i_b(mem_wb_data_bus_next.instr[15:11]),
 	.i_selector(mem_wb_control_bus_next.RegDst),
+	.out(rd_first_mux_out)
+);
+
+
+multiplexor_param #(.LENGTH(5)) mux_mult_write_rf (
+	.i_a(rd_first_mux_out),
+	.i_b(pipe_mult_result.mult_rd),
+	.i_selector(pipe_mult_result.mult_ready),
 	.out(write_register_out)
 );
 
 //Register file
 register_file reg_file (
 	.clk(clk),
-	.we3(mem_wb_control_bus_next.regWrite),
+	.we3(mem_wb_control_bus_next.regWrite | pipe_mult_result.mult_ready),
 	.a1(if_id_data_bus_next.instr[25:21]),
 	.a2(if_id_data_bus_next.instr[20:16]),
 	.a3(write_register_out),
@@ -343,6 +364,29 @@ ALU #(.LENGTH(32)) alu_block (
 	.o_alu_zero(alu_zero),
 	.alu_result(ex_mem_data_bus_prev.alu_result)
 );
+
+pipeline_multiplier_top pipe_mult(
+    .i_clk(clk),
+    .i_rst_n(rst_n),
+    .i_opcode(id_ex_data_bus_next.instr[31:26]),
+    .i_funct(id_ex_data_bus_next.instr[5:0]),
+    .i_a(id_ex_data_bus_next.rd1),
+    .i_b(rd2_data),
+	.i_instr_rd(id_ex_data_bus_next.instr[15:11]),
+	.o_mult_detected(mult_detected),
+    .o_result(pipe_mult_result.mult_result),
+	.o_ready(pipe_mult_result.mult_ready),
+	.o_rd(pipe_mult_result.mult_rd)
+
+);
+
+multiplexor_param #(.LENGTH(170)) ex_mem_stall_mux (
+	.i_a({ex_mem_control_bus_prev,ex_mem_data_bus_prev}),
+	.i_b(170'h0),
+	.i_selector(mult_detected),
+	.out(ex_mem_stall_mux_output)
+);
+
 //****************************** *******************************//
 //****************************** EXECUTE->MEM *******************************//
 ffd_param_clear #(.LENGTH(170)) ffd_execute_mem (
@@ -350,7 +394,7 @@ ffd_param_clear #(.LENGTH(170)) ffd_execute_mem (
 	.i_rst_n(rst_n),
 	.i_en(1'b1),
 	.i_clear(1'b0),
-	.d({ex_mem_control_bus_prev,ex_mem_data_bus_prev}),
+	.d(ex_mem_stall_mux_output),
 	//outputs
 	.q({ex_mem_control_bus_next,ex_mem_data_bus_next})
 );
@@ -452,9 +496,16 @@ multiplexor_param #(.LENGTH(32)) mult_alu_param (
 	.i_a(mem_wb_data_bus_next.alu_result),
 	.i_b(mem_wb_data_bus_next.memory_out),
 	.i_selector(mem_wb_control_bus_next.mem2Reg),
-	.out(wd3_wire)
+	.out(wb_mult_org_pipe_out)
 );
 
+
+multiplexor_param #(.LENGTH(32)) mux_mult_alu (
+	.i_a(wb_mult_org_pipe_out),
+	.i_b(pipe_mult_result.mult_result),
+	.i_selector(pipe_mult_result.mult_ready),
+	.out(wd3_wire)
+);
 
 
 endmodule

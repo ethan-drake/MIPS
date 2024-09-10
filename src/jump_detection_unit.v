@@ -2,7 +2,7 @@
 // Date:            09/09/24
 // File:			     jump_detection_unit.v
 // Module name:	  jump_detection_unit
-// Project Name:	  risc_v_top
+// Project Name:	  mips_top
 // Description:	  This is the jump detection unit located in decode stage
 
 module jump_detection_unit(
