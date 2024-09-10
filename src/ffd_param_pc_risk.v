@@ -5,11 +5,12 @@
 // Project Name:	  risc_v_top
 // Description:	  This is a flipflopD register module with PC start hack
 
-module ffd_param_pc_risk #(parameter LENGTH=1, parameter RST_VAL=0)(
+module ffd_param_pc_risk #(parameter LENGTH=1)(
 	//inputs
 	input i_clk,
 	input i_rst_n,
 	input i_en,
+	input pll_lock,
 	input [LENGTH-1:0] d,
 	//outputs
 	output reg[LENGTH-1:0] q
@@ -19,9 +20,8 @@ module ffd_param_pc_risk #(parameter LENGTH=1, parameter RST_VAL=0)(
 always@(posedge i_clk, negedge i_rst_n)
 begin
 	if(!i_rst_n)
-		//q <= 32'h400_000;  //Default risk-v address 32'h400_000
-		q <= RST_VAL;
-	else if(i_en)
+		q <= 32'h400_000;  //Default risk-v address 32'h400_000
+	else if(i_en && pll_lock)
 		q <= d;
 	else
 		q <= q;

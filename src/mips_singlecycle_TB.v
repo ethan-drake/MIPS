@@ -29,14 +29,14 @@ initial begin
 	#1 rst = 0;
 	#1 rst = 1;
 	procesador.memory_ram.ram[0] = 32'h9;
-	procesador.memory_ram.ram[1] = 32'h5;
+	procesador.memory_ram.ram[1] = 32'h8;
 	procesador.memory_ram.ram[2] = 32'h7;
-	procesador.memory_ram.ram[3] = 32'h8;
-	procesador.memory_ram.ram[4] = 32'h1;
-	procesador.memory_ram.ram[5] = 32'h3;
-	procesador.memory_ram.ram[6] = 32'h5;
-	procesador.memory_ram.ram[7] = 32'h7;
-	procesador.memory_ram.ram[8] = 32'h8;
+	procesador.memory_ram.ram[3] = 32'h6;
+	procesador.memory_ram.ram[4] = 32'h5;
+	procesador.memory_ram.ram[5] = 32'h4;
+	procesador.memory_ram.ram[6] = 32'h3;
+	procesador.memory_ram.ram[7] = 32'h2;
+	procesador.memory_ram.ram[8] = 32'h1;
 	procesador.memory_ram.ram[9] = 32'h4;
 end
 

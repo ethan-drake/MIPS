@@ -28,7 +28,7 @@ wire we_memory_2_rom, re_memory_2_rom, we_memory_2_ram, re_memory_2_ram, we_memo
 wire beq;
 wire alu_zero,is_equal_output;
 wire MemRead,mem_mux_sel;
-wire stalling, if_id_flush_jmp,if_id_flush_branch;
+wire stalling,stalling_hazard_unit,stalling_fw_fwd_unit, if_id_flush_jmp,if_id_flush_branch;
 wire [169:0] id_ex_stall_mux_output;
 
 //***********************Structs for Pipeline***********************//
@@ -209,7 +209,6 @@ double_multiplexor_param #(.LENGTH(32)) mux_rd1 (
 	.i_a(rf_rd1),
 	.i_b(wd3_wire),
 	.i_c(ex_mem_data_bus_next.alu_result),
-	.i_d(ex_mem_data_bus_prev.alu_result),
 	.i_selector(rd1_sel),
 	.out(id_ex_data_bus_prev.rd1)
 );
@@ -218,7 +217,6 @@ double_multiplexor_param #(.LENGTH(32)) mux_rd2 (
 	.i_a(rf_rd2),
 	.i_b(wd3_wire),
 	.i_c(ex_mem_data_bus_next.alu_result),
-	.i_d(ex_mem_data_bus_prev.alu_result),
 	.i_selector(rd2_sel),
 	.out(id_ex_data_bus_prev.rd2)
 );
@@ -256,7 +254,8 @@ rf_forward_unit rf_fwd_unit(
     .ex_rt(id_ex_data_bus_next.instr[20:16]),
     .ex_reg_write(id_ex_control_bus_next.regWrite),
     .rd1_sel(rd1_sel),
-    .rd2_sel(rd2_sel)
+    .rd2_sel(rd2_sel),
+	.stalling(stalling_fw_fwd_unit)
 );
 
 hazard_detection_unit hazard_unit(
@@ -268,7 +267,7 @@ hazard_detection_unit hazard_unit(
     .if_id_rt(if_id_data_bus_next.instr[20:16]),
 	.if_id_memwrite(id_ex_control_bus_prev.MemWrite),
     //.branch_taken(),
-    .stalling(stalling)
+    .stalling(stalling_hazard_unit)
 );
 
 
@@ -279,16 +278,19 @@ multiplexor_param #(.LENGTH(170)) id_ex_stall_mux (
 	.out(id_ex_stall_mux_output)
 );
 
+assign stalling = stalling_fw_fwd_unit | stalling_hazard_unit;
 
 jump_detection_unit jmp_detect(
     .opcode(if_id_data_bus_next.instr[31:26]),
     .funct(if_id_data_bus_next.instr[5:0]),
+	.stalling(stalling_fw_fwd_unit),
     .flush(if_id_flush_jmp)
 );
 
 branch_control_unit branch_detect(
     .opcode(if_id_data_bus_next.instr[31:26]),
     .PCSrc(pc_src),
+	.stalling(stalling_fw_fwd_unit),
     .flush(if_id_flush_branch)
 );
 

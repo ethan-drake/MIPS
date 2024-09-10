@@ -8,6 +8,7 @@
 module jump_detection_unit(
     input [5:0] opcode,
     input [5:0] funct,
+    input stalling,
     output reg flush
 );
 
@@ -19,19 +20,23 @@ localparam R_OP = 6'h0;
 localparam JR_FUNC = 6'h8;
 
 always @(*) begin
-    if (opcode == J_OP)begin
-        flush = 1'b1;
-    end
-    else if (opcode == JAL_OP)begin
-        flush = 1'b1;
-    end
-    else if (opcode == R_OP && funct == JR_FUNC)begin
-        flush = 1'b1;
+    if (~stalling)begin
+        if (opcode == J_OP)begin
+            flush = 1'b1;
+        end
+        else if (opcode == JAL_OP)begin
+            flush = 1'b1;
+        end
+        else if (opcode == R_OP && funct == JR_FUNC)begin
+            flush = 1'b1;
+        end
+        else begin
+            flush = 1'b0;
+        end
     end
     else begin
         flush = 1'b0;
     end
-
 end
 
 

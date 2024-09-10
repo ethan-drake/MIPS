@@ -8,6 +8,7 @@
 module branch_control_unit (
     input [5:0] opcode,
     input PCSrc,
+    input stalling,
     output reg flush
 );
 
@@ -16,7 +17,12 @@ localparam BNE_OP = 6'h5;
 
 always @(*) begin
     if(opcode == BEQ_OP && PCSrc)begin
-        flush = 1'b1;
+        if(stalling) begin
+            flush = 1'b0;
+        end
+        else begin
+            flush = 1'b1;
+        end
     end    
     else begin
         flush = 1'b0;
