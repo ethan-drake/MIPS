@@ -16,7 +16,10 @@ module pipeline_multiplier_top(
     output o_mult_detected,
     output [31:0] o_result,
     output o_ready,
-    output [4:0] o_rd
+    output [4:0] o_rd,
+    output [4:0] p1_mult_rd,
+    output [4:0] p2_mult_rd,
+    output [4:0] p3_mult_rd
 
 );
 typedef struct packed {
@@ -133,5 +136,8 @@ ffd_param_clear #(.LENGTH(32)) p4(
 assign o_result = p_result.mult_result;
 assign o_ready = p_result.mult_ready;
 assign o_rd = p_result.mult_rd;
+assign p1_mult_rd = p2_result.mult_rd;
+assign p2_mult_rd = p3_result.mult_rd;
+assign p3_mult_rd = p4_result.mult_rd;
 
 endmodule

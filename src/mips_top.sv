@@ -31,7 +31,7 @@ wire MemRead,mem_mux_sel;
 wire stalling,stalling_hazard_unit,stalling_fw_fwd_unit, if_id_flush_jmp,if_id_flush_branch;
 wire [169:0] id_ex_stall_mux_output,ex_mem_stall_mux_output;
 wire [31:0] wb_mult_org_pipe_out;
-wire [4:0] rd_first_mux_out;
+wire [4:0] rd_first_mux_out, p1_mult_rd, p2_mult_rd, p3_mult_rd;
 wire mult_detected;
 
 //***********************Structs for Mult Pipeline***********************//
@@ -279,6 +279,9 @@ rf_forward_unit rf_fwd_unit(
     .ex_reg_write(id_ex_control_bus_next.regWrite),
 	.mult_ready(pipe_mult_result.mult_ready),
 	.mult_rd(pipe_mult_result.mult_rd),
+	.p1_mult_rd(p1_mult_rd),
+	.p2_mult_rd(p2_mult_rd),
+	.p3_mult_rd(p3_mult_rd),
     .rd1_sel(rd1_sel),
     .rd2_sel(rd2_sel),
 	.stalling(stalling_fw_fwd_unit)
@@ -381,7 +384,10 @@ pipeline_multiplier_top pipe_mult(
 	.o_mult_detected(mult_detected),
     .o_result(pipe_mult_result.mult_result),
 	.o_ready(pipe_mult_result.mult_ready),
-	.o_rd(pipe_mult_result.mult_rd)
+	.o_rd(pipe_mult_result.mult_rd),
+	.p1_mult_rd(p1_mult_rd),
+	.p2_mult_rd(p2_mult_rd),
+	.p3_mult_rd(p3_mult_rd)
 
 );
 
