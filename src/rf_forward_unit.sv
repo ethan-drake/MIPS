@@ -55,7 +55,7 @@ fwd_stalling stall_from_mult;
 always @(*) begin
     //STALLING FROM DEPENDENCIES ON MULT PIPELINE for RS
     if (id_rs != 0)begin
-        if (id_rs == p1_mult_rd)begin
+        if ((id_rs == p1_mult_rd) || (p1_mult_rd != 0))begin
             stall_from_mult.rd1 = 1'b1;
         end
         else if (id_rs == p2_mult_rd)begin
@@ -73,7 +73,7 @@ always @(*) begin
     end
     //STALLING FROM DEPENDENCIES ON MULT PIPELINE for RT
     if (id_rt != 0)begin
-        if (id_rt == p1_mult_rd)begin
+        if ((id_rt == p1_mult_rd) || (p1_mult_rd != 0))begin
             stall_from_mult.rd2 = 1'b1;
         end
         else if (id_rt == p2_mult_rd)begin
