@@ -260,6 +260,8 @@ control_unit cu (
 );
 
 rf_forward_unit rf_fwd_unit(
+	.i_clk(clk),
+	.i_rst_n(rst_n),
     .id_rs(if_id_data_bus_next.instr[25:21]),
     .id_rt(if_id_data_bus_next.instr[20:16]),
 	.wb_opcode(mem_wb_data_bus_next.instr[31:26]),
@@ -271,9 +273,12 @@ rf_forward_unit rf_fwd_unit(
     .mem_rt(ex_mem_data_bus_next.instr[20:16]),
     .mem_reg_write(ex_mem_control_bus_next.regWrite),
 	.ex_opcode(id_ex_data_bus_next.instr[31:26]),
+	.ex_funct(id_ex_data_bus_next.instr[5:0]),
 	.ex_rd(id_ex_data_bus_next.instr[15:11]),
     .ex_rt(id_ex_data_bus_next.instr[20:16]),
     .ex_reg_write(id_ex_control_bus_next.regWrite),
+	.mult_ready(pipe_mult_result.mult_ready),
+	.mult_rd(pipe_mult_result.mult_rd),
     .rd1_sel(rd1_sel),
     .rd2_sel(rd2_sel),
 	.stalling(stalling_fw_fwd_unit)
